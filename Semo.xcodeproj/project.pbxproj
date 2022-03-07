@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B41AC6E327D5A69F00CDF4AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC6E227D5A69F00CDF4AB /* AppDelegate.m */; };
+		B41AC6E627D5A69F00CDF4AB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC6E527D5A69F00CDF4AB /* SceneDelegate.m */; };
+		B41AC6E927D5A69F00CDF4AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC6E827D5A69F00CDF4AB /* ViewController.m */; };
+		B41AC6EC27D5A69F00CDF4AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B41AC6EA27D5A69F00CDF4AB /* Main.storyboard */; };
+		B41AC6EE27D5A6A400CDF4AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41AC6ED27D5A6A400CDF4AB /* Assets.xcassets */; };
+		B41AC6F127D5A6A400CDF4AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B41AC6EF27D5A6A400CDF4AB /* LaunchScreen.storyboard */; };
+		B41AC6F427D5A6A400CDF4AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC6F327D5A6A400CDF4AB /* main.m */; };
+		B41AC6FE27D5A6A500CDF4AB /* SemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC6FD27D5A6A500CDF4AB /* SemoTests.m */; };
+		B41AC70827D5A6A500CDF4AB /* SemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC70727D5A6A500CDF4AB /* SemoUITests.m */; };
+		B41AC70A27D5A6A500CDF4AB /* SemoUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC70927D5A6A500CDF4AB /* SemoUITestsLaunchTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B41AC6FA27D5A6A500CDF4AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B41AC6D627D5A69F00CDF4AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B41AC6DD27D5A69F00CDF4AB;
+			remoteInfo = Semo;
+		};
+		B41AC70427D5A6A500CDF4AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B41AC6D627D5A69F00CDF4AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B41AC6DD27D5A69F00CDF4AB;
+			remoteInfo = Semo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B41AC6DE27D5A69F00CDF4AB /* Semo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Semo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B41AC6E127D5A69F00CDF4AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B41AC6E227D5A69F00CDF4AB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B41AC6E427D5A69F00CDF4AB /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		B41AC6E527D5A69F00CDF4AB /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		B41AC6E727D5A69F00CDF4AB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B41AC6E827D5A69F00CDF4AB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B41AC6EB27D5A69F00CDF4AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B41AC6ED27D5A6A400CDF4AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B41AC6F027D5A6A400CDF4AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B41AC6F227D5A6A400CDF4AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B41AC6F327D5A6A400CDF4AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B41AC6F927D5A6A500CDF4AB /* SemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B41AC6FD27D5A6A500CDF4AB /* SemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SemoTests.m; sourceTree = "<group>"; };
+		B41AC70327D5A6A500CDF4AB /* SemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B41AC70727D5A6A500CDF4AB /* SemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SemoUITests.m; sourceTree = "<group>"; };
+		B41AC70927D5A6A500CDF4AB /* SemoUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SemoUITestsLaunchTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B41AC6DB27D5A69F00CDF4AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B41AC6F627D5A6A500CDF4AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B41AC70027D5A6A500CDF4AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B41AC6D527D5A69F00CDF4AB = {
+			isa = PBXGroup;
+			children = (
+				B41AC6E027D5A69F00CDF4AB /* Semo */,
+				B41AC6FC27D5A6A500CDF4AB /* SemoTests */,
+				B41AC70627D5A6A500CDF4AB /* SemoUITests */,
+				B41AC6DF27D5A69F00CDF4AB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B41AC6DF27D5A69F00CDF4AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B41AC6DE27D5A69F00CDF4AB /* Semo.app */,
+				B41AC6F927D5A6A500CDF4AB /* SemoTests.xctest */,
+				B41AC70327D5A6A500CDF4AB /* SemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B41AC6E027D5A69F00CDF4AB /* Semo */ = {
+			isa = PBXGroup;
+			children = (
+				B41AC6E127D5A69F00CDF4AB /* AppDelegate.h */,
+				B41AC6E227D5A69F00CDF4AB /* AppDelegate.m */,
+				B41AC6E427D5A69F00CDF4AB /* SceneDelegate.h */,
+				B41AC6E527D5A69F00CDF4AB /* SceneDelegate.m */,
+				B41AC6E727D5A69F00CDF4AB /* ViewController.h */,
+				B41AC6E827D5A69F00CDF4AB /* ViewController.m */,
+				B41AC6EA27D5A69F00CDF4AB /* Main.storyboard */,
+				B41AC6ED27D5A6A400CDF4AB /* Assets.xcassets */,
+				B41AC6EF27D5A6A400CDF4AB /* LaunchScreen.storyboard */,
+				B41AC6F227D5A6A400CDF4AB /* Info.plist */,
+				B41AC6F327D5A6A400CDF4AB /* main.m */,
+			);
+			path = Semo;
+			sourceTree = "<group>";
+		};
+		B41AC6FC27D5A6A500CDF4AB /* SemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				B41AC6FD27D5A6A500CDF4AB /* SemoTests.m */,
+			);
+			path = SemoTests;
+			sourceTree = "<group>";
+		};
+		B41AC70627D5A6A500CDF4AB /* SemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B41AC70727D5A6A500CDF4AB /* SemoUITests.m */,
+				B41AC70927D5A6A500CDF4AB /* SemoUITestsLaunchTests.m */,
+			);
+			path = SemoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B41AC6DD27D5A69F00CDF4AB /* Semo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B41AC70D27D5A6A500CDF4AB /* Build configuration list for PBXNativeTarget "Semo" */;
+			buildPhases = (
+				B41AC6DA27D5A69F00CDF4AB /* Sources */,
+				B41AC6DB27D5A69F00CDF4AB /* Frameworks */,
+				B41AC6DC27D5A69F00CDF4AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Semo;
+			productName = Semo;
+			productReference = B41AC6DE27D5A69F00CDF4AB /* Semo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B41AC6F827D5A6A500CDF4AB /* SemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B41AC71027D5A6A500CDF4AB /* Build configuration list for PBXNativeTarget "SemoTests" */;
+			buildPhases = (
+				B41AC6F527D5A6A500CDF4AB /* Sources */,
+				B41AC6F627D5A6A500CDF4AB /* Frameworks */,
+				B41AC6F727D5A6A500CDF4AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B41AC6FB27D5A6A500CDF4AB /* PBXTargetDependency */,
+			);
+			name = SemoTests;
+			productName = SemoTests;
+			productReference = B41AC6F927D5A6A500CDF4AB /* SemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B41AC70227D5A6A500CDF4AB /* SemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B41AC71327D5A6A500CDF4AB /* Build configuration list for PBXNativeTarget "SemoUITests" */;
+			buildPhases = (
+				B41AC6FF27D5A6A500CDF4AB /* Sources */,
+				B41AC70027D5A6A500CDF4AB /* Frameworks */,
+				B41AC70127D5A6A500CDF4AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B41AC70527D5A6A500CDF4AB /* PBXTargetDependency */,
+			);
+			name = SemoUITests;
+			productName = SemoUITests;
+			productReference = B41AC70327D5A6A500CDF4AB /* SemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B41AC6D627D5A69F00CDF4AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					B41AC6DD27D5A69F00CDF4AB = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					B41AC6F827D5A6A500CDF4AB = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = B41AC6DD27D5A69F00CDF4AB;
+					};
+					B41AC70227D5A6A500CDF4AB = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = B41AC6DD27D5A69F00CDF4AB;
+					};
+				};
+			};
+			buildConfigurationList = B41AC6D927D5A69F00CDF4AB /* Build configuration list for PBXProject "Semo" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B41AC6D527D5A69F00CDF4AB;
+			productRefGroup = B41AC6DF27D5A69F00CDF4AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B41AC6DD27D5A69F00CDF4AB /* Semo */,
+				B41AC6F827D5A6A500CDF4AB /* SemoTests */,
+				B41AC70227D5A6A500CDF4AB /* SemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B41AC6DC27D5A69F00CDF4AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B41AC6F127D5A6A400CDF4AB /* LaunchScreen.storyboard in Resources */,
+				B41AC6EE27D5A6A400CDF4AB /* Assets.xcassets in Resources */,
+				B41AC6EC27D5A69F00CDF4AB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B41AC6F727D5A6A500CDF4AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B41AC70127D5A6A500CDF4AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B41AC6DA27D5A69F00CDF4AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B41AC6E927D5A69F00CDF4AB /* ViewController.m in Sources */,
+				B41AC6E327D5A69F00CDF4AB /* AppDelegate.m in Sources */,
+				B41AC6F427D5A6A400CDF4AB /* main.m in Sources */,
+				B41AC6E627D5A69F00CDF4AB /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B41AC6F527D5A6A500CDF4AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B41AC6FE27D5A6A500CDF4AB /* SemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B41AC6FF27D5A6A500CDF4AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B41AC70A27D5A6A500CDF4AB /* SemoUITestsLaunchTests.m in Sources */,
+				B41AC70827D5A6A500CDF4AB /* SemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B41AC6FB27D5A6A500CDF4AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B41AC6DD27D5A69F00CDF4AB /* Semo */;
+			targetProxy = B41AC6FA27D5A6A500CDF4AB /* PBXContainerItemProxy */;
+		};
+		B41AC70527D5A6A500CDF4AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B41AC6DD27D5A69F00CDF4AB /* Semo */;
+			targetProxy = B41AC70427D5A6A500CDF4AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B41AC6EA27D5A69F00CDF4AB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B41AC6EB27D5A69F00CDF4AB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B41AC6EF27D5A6A400CDF4AB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B41AC6F027D5A6A400CDF4AB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B41AC70B27D5A6A500CDF4AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B41AC70C27D5A6A500CDF4AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B41AC70E27D5A6A500CDF4AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5XWZB6V6UY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Semo/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiyang.Semo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B41AC70F27D5A6A500CDF4AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5XWZB6V6UY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Semo/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiyang.Semo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B41AC71127D5A6A500CDF4AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5XWZB6V6UY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiyang.SemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Semo.app/Semo";
+			};
+			name = Debug;
+		};
+		B41AC71227D5A6A500CDF4AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5XWZB6V6UY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiyang.SemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Semo.app/Semo";
+			};
+			name = Release;
+		};
+		B41AC71427D5A6A500CDF4AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5XWZB6V6UY;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiyang.SemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Semo;
+			};
+			name = Debug;
+		};
+		B41AC71527D5A6A500CDF4AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5XWZB6V6UY;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiyang.SemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Semo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B41AC6D927D5A69F00CDF4AB /* Build configuration list for PBXProject "Semo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B41AC70B27D5A6A500CDF4AB /* Debug */,
+				B41AC70C27D5A6A500CDF4AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B41AC70D27D5A6A500CDF4AB /* Build configuration list for PBXNativeTarget "Semo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B41AC70E27D5A6A500CDF4AB /* Debug */,
+				B41AC70F27D5A6A500CDF4AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B41AC71027D5A6A500CDF4AB /* Build configuration list for PBXNativeTarget "SemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B41AC71127D5A6A500CDF4AB /* Debug */,
+				B41AC71227D5A6A500CDF4AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B41AC71327D5A6A500CDF4AB /* Build configuration list for PBXNativeTarget "SemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B41AC71427D5A6A500CDF4AB /* Debug */,
+				B41AC71527D5A6A500CDF4AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B41AC6D627D5A69F00CDF4AB /* Project object */;
+}
