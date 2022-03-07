@@ -17,6 +17,10 @@
 		B41AC6FE27D5A6A500CDF4AB /* SemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC6FD27D5A6A500CDF4AB /* SemoTests.m */; };
 		B41AC70827D5A6A500CDF4AB /* SemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC70727D5A6A500CDF4AB /* SemoUITests.m */; };
 		B41AC70A27D5A6A500CDF4AB /* SemoUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC70927D5A6A500CDF4AB /* SemoUITestsLaunchTests.m */; };
+		B41AC71B27D5AA5B00CDF4AB /* JYHomeBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC71A27D5AA5B00CDF4AB /* JYHomeBottomView.m */; };
+		B41AC72427D5AA9D00CDF4AB /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC71D27D5AA9D00CDF4AB /* UIColor+Extensions.m */; };
+		B41AC72527D5AA9D00CDF4AB /* UIView+JYFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC71E27D5AA9D00CDF4AB /* UIView+JYFrame.m */; };
+		B41AC72627D5AA9D00CDF4AB /* UIDeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC72327D5AA9D00CDF4AB /* UIDeviceHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,15 @@
 		B41AC70327D5A6A500CDF4AB /* SemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41AC70727D5A6A500CDF4AB /* SemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SemoUITests.m; sourceTree = "<group>"; };
 		B41AC70927D5A6A500CDF4AB /* SemoUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SemoUITestsLaunchTests.m; sourceTree = "<group>"; };
+		B41AC71927D5AA5B00CDF4AB /* JYHomeBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYHomeBottomView.h; sourceTree = "<group>"; };
+		B41AC71A27D5AA5B00CDF4AB /* JYHomeBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYHomeBottomView.m; sourceTree = "<group>"; };
+		B41AC71D27D5AA9D00CDF4AB /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extensions.m"; sourceTree = "<group>"; };
+		B41AC71E27D5AA9D00CDF4AB /* UIView+JYFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JYFrame.m"; sourceTree = "<group>"; };
+		B41AC71F27D5AA9D00CDF4AB /* UIDeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDeviceHelper.h; sourceTree = "<group>"; };
+		B41AC72027D5AA9D00CDF4AB /* UIView+JYFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JYFrame.h"; sourceTree = "<group>"; };
+		B41AC72127D5AA9D00CDF4AB /* UIColor+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extensions.h"; sourceTree = "<group>"; };
+		B41AC72227D5AA9D00CDF4AB /* JYPrefixHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYPrefixHeader.h; sourceTree = "<group>"; };
+		B41AC72327D5AA9D00CDF4AB /* UIDeviceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDeviceHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +117,8 @@
 		B41AC6E027D5A69F00CDF4AB /* Semo */ = {
 			isa = PBXGroup;
 			children = (
+				B41AC71C27D5AA9C00CDF4AB /* Tool */,
+				B41AC71827D5A9FF00CDF4AB /* Home */,
 				B41AC6E127D5A69F00CDF4AB /* AppDelegate.h */,
 				B41AC6E227D5A69F00CDF4AB /* AppDelegate.m */,
 				B41AC6E427D5A69F00CDF4AB /* SceneDelegate.h */,
@@ -134,6 +149,29 @@
 				B41AC70927D5A6A500CDF4AB /* SemoUITestsLaunchTests.m */,
 			);
 			path = SemoUITests;
+			sourceTree = "<group>";
+		};
+		B41AC71827D5A9FF00CDF4AB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B41AC71927D5AA5B00CDF4AB /* JYHomeBottomView.h */,
+				B41AC71A27D5AA5B00CDF4AB /* JYHomeBottomView.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B41AC71C27D5AA9C00CDF4AB /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				B41AC72127D5AA9D00CDF4AB /* UIColor+Extensions.h */,
+				B41AC71D27D5AA9D00CDF4AB /* UIColor+Extensions.m */,
+				B41AC72027D5AA9D00CDF4AB /* UIView+JYFrame.h */,
+				B41AC71E27D5AA9D00CDF4AB /* UIView+JYFrame.m */,
+				B41AC71F27D5AA9D00CDF4AB /* UIDeviceHelper.h */,
+				B41AC72327D5AA9D00CDF4AB /* UIDeviceHelper.m */,
+				B41AC72227D5AA9D00CDF4AB /* JYPrefixHeader.h */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +305,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B41AC6E927D5A69F00CDF4AB /* ViewController.m in Sources */,
+				B41AC72627D5AA9D00CDF4AB /* UIDeviceHelper.m in Sources */,
+				B41AC71B27D5AA5B00CDF4AB /* JYHomeBottomView.m in Sources */,
 				B41AC6E327D5A69F00CDF4AB /* AppDelegate.m in Sources */,
 				B41AC6F427D5A6A400CDF4AB /* main.m in Sources */,
 				B41AC6E627D5A69F00CDF4AB /* SceneDelegate.m in Sources */,
+				B41AC72427D5AA9D00CDF4AB /* UIColor+Extensions.m in Sources */,
+				B41AC72527D5AA9D00CDF4AB /* UIView+JYFrame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
