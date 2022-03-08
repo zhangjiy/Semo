@@ -12,30 +12,24 @@
 #import "UIView+JYFrame.h"
 #import "UIColor+Extensions.h"
 
-#define SMHomeBottomLineMagin 5
-#define SMHomeBottomViewHeight 66
+#define SMHomeLeft 15
 
-#define SMHomeHeaderViewHeight 66
+// PluginControl
+#define SMPluginControlInset 6
+#define SMPluginControlBorderWidth 4
+#define SMPluginControlWidth 33
+#define SMPluginControlHeight 33
 
-#define SMHomeLeft 10
+// FeelingListView
+#define SMFeelingListCellHeight 88
 
-#define SMHomeItemInset 10
-#define SMHomeItemImageSize CGSizeMake(44, 44)
-
+// Color
 #define SMHomeBackgroudColor [UIColor wbt_ColorWithHexString:@"#F5F5F5"]
-
-#define SMItemBackgroudColor [UIColor wbt_ColorWithHexString:@"#FFFFFF"]
-
-#define SMNavigationBarBackgroudColor [UIColor wbt_ColorWithHexString:@"#FFFFFF"]
-
-#define SMThemeBlueColor [UIColor wbt_ColorWithHexString:@"#4682B4"]
-
-#define SMItemCornerRadius 8
+#define SMPureBackgroudColor [UIColor wbt_ColorWithHexString:@"#FFFFFF"]
+#define SMReddishBlueColor [UIColor wbt_ColorWithHexString:@"#4169E1"]
 
 #define StatusBarHeight  [UIDeviceHelper statusBarHeight]
-
 #define NavigationBarHeight (JYStatusBarHeight + 44)
-
 #define SafeAreaHeight [UIDeviceHelper safeAreaHeight]
 
 #define Feelings @[@"喜", @"怒", @"忧", @"思", @"悲", @"恐", @"惊"]

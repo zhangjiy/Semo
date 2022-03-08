@@ -17,10 +17,14 @@
 		B41AC6FE27D5A6A500CDF4AB /* SemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC6FD27D5A6A500CDF4AB /* SemoTests.m */; };
 		B41AC70827D5A6A500CDF4AB /* SemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC70727D5A6A500CDF4AB /* SemoUITests.m */; };
 		B41AC70A27D5A6A500CDF4AB /* SemoUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC70927D5A6A500CDF4AB /* SemoUITestsLaunchTests.m */; };
-		B41AC71B27D5AA5B00CDF4AB /* JYHomeBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC71A27D5AA5B00CDF4AB /* JYHomeBottomView.m */; };
 		B41AC72427D5AA9D00CDF4AB /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC71D27D5AA9D00CDF4AB /* UIColor+Extensions.m */; };
 		B41AC72527D5AA9D00CDF4AB /* UIView+JYFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC71E27D5AA9D00CDF4AB /* UIView+JYFrame.m */; };
 		B41AC72627D5AA9D00CDF4AB /* UIDeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC72327D5AA9D00CDF4AB /* UIDeviceHelper.m */; };
+		B41AC72F27D6F11D00CDF4AB /* JYPlusControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC72E27D6F11D00CDF4AB /* JYPlusControl.m */; };
+		B41AC73327D6F9BF00CDF4AB /* JYWriteFeelingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC73227D6F9BF00CDF4AB /* JYWriteFeelingViewController.m */; };
+		B41AC73727D7007300CDF4AB /* JYFeelingListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC73627D7007300CDF4AB /* JYFeelingListView.m */; };
+		B41AC73C27D71A5700CDF4AB /* JYFeelingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC73B27D71A5600CDF4AB /* JYFeelingTableViewCell.m */; };
+		B41AC74027D71EBB00CDF4AB /* JYFeelingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC73F27D71EBB00CDF4AB /* JYFeelingModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +62,6 @@
 		B41AC70327D5A6A500CDF4AB /* SemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41AC70727D5A6A500CDF4AB /* SemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SemoUITests.m; sourceTree = "<group>"; };
 		B41AC70927D5A6A500CDF4AB /* SemoUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SemoUITestsLaunchTests.m; sourceTree = "<group>"; };
-		B41AC71927D5AA5B00CDF4AB /* JYHomeBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYHomeBottomView.h; sourceTree = "<group>"; };
-		B41AC71A27D5AA5B00CDF4AB /* JYHomeBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYHomeBottomView.m; sourceTree = "<group>"; };
 		B41AC71D27D5AA9D00CDF4AB /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extensions.m"; sourceTree = "<group>"; };
 		B41AC71E27D5AA9D00CDF4AB /* UIView+JYFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JYFrame.m"; sourceTree = "<group>"; };
 		B41AC71F27D5AA9D00CDF4AB /* UIDeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDeviceHelper.h; sourceTree = "<group>"; };
@@ -67,6 +69,16 @@
 		B41AC72127D5AA9D00CDF4AB /* UIColor+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extensions.h"; sourceTree = "<group>"; };
 		B41AC72227D5AA9D00CDF4AB /* JYPrefixHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYPrefixHeader.h; sourceTree = "<group>"; };
 		B41AC72327D5AA9D00CDF4AB /* UIDeviceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDeviceHelper.m; sourceTree = "<group>"; };
+		B41AC72D27D6F11D00CDF4AB /* JYPlusControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPlusControl.h; sourceTree = "<group>"; };
+		B41AC72E27D6F11D00CDF4AB /* JYPlusControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPlusControl.m; sourceTree = "<group>"; };
+		B41AC73127D6F9BF00CDF4AB /* JYWriteFeelingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYWriteFeelingViewController.h; sourceTree = "<group>"; };
+		B41AC73227D6F9BF00CDF4AB /* JYWriteFeelingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYWriteFeelingViewController.m; sourceTree = "<group>"; };
+		B41AC73527D7007300CDF4AB /* JYFeelingListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYFeelingListView.h; sourceTree = "<group>"; };
+		B41AC73627D7007300CDF4AB /* JYFeelingListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYFeelingListView.m; sourceTree = "<group>"; };
+		B41AC73A27D71A5600CDF4AB /* JYFeelingTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYFeelingTableViewCell.h; sourceTree = "<group>"; };
+		B41AC73B27D71A5600CDF4AB /* JYFeelingTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYFeelingTableViewCell.m; sourceTree = "<group>"; };
+		B41AC73E27D71EBB00CDF4AB /* JYFeelingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYFeelingModel.h; sourceTree = "<group>"; };
+		B41AC73F27D71EBB00CDF4AB /* JYFeelingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYFeelingModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +129,7 @@
 		B41AC6E027D5A69F00CDF4AB /* Semo */ = {
 			isa = PBXGroup;
 			children = (
+				B41AC73027D6F96700CDF4AB /* Write */,
 				B41AC71C27D5AA9C00CDF4AB /* Tool */,
 				B41AC71827D5A9FF00CDF4AB /* Home */,
 				B41AC6E127D5A69F00CDF4AB /* AppDelegate.h */,
@@ -154,8 +167,8 @@
 		B41AC71827D5A9FF00CDF4AB /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B41AC71927D5AA5B00CDF4AB /* JYHomeBottomView.h */,
-				B41AC71A27D5AA5B00CDF4AB /* JYHomeBottomView.m */,
+				B41AC73D27D71E9600CDF4AB /* Model */,
+				B41AC73427D7000A00CDF4AB /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -172,6 +185,37 @@
 				B41AC72227D5AA9D00CDF4AB /* JYPrefixHeader.h */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		B41AC73027D6F96700CDF4AB /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				B41AC73127D6F9BF00CDF4AB /* JYWriteFeelingViewController.h */,
+				B41AC73227D6F9BF00CDF4AB /* JYWriteFeelingViewController.m */,
+			);
+			path = Write;
+			sourceTree = "<group>";
+		};
+		B41AC73427D7000A00CDF4AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B41AC72D27D6F11D00CDF4AB /* JYPlusControl.h */,
+				B41AC72E27D6F11D00CDF4AB /* JYPlusControl.m */,
+				B41AC73527D7007300CDF4AB /* JYFeelingListView.h */,
+				B41AC73627D7007300CDF4AB /* JYFeelingListView.m */,
+				B41AC73A27D71A5600CDF4AB /* JYFeelingTableViewCell.h */,
+				B41AC73B27D71A5600CDF4AB /* JYFeelingTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B41AC73D27D71E9600CDF4AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B41AC73E27D71EBB00CDF4AB /* JYFeelingModel.h */,
+				B41AC73F27D71EBB00CDF4AB /* JYFeelingModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,12 +348,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B41AC72F27D6F11D00CDF4AB /* JYPlusControl.m in Sources */,
 				B41AC6E927D5A69F00CDF4AB /* ViewController.m in Sources */,
+				B41AC73327D6F9BF00CDF4AB /* JYWriteFeelingViewController.m in Sources */,
 				B41AC72627D5AA9D00CDF4AB /* UIDeviceHelper.m in Sources */,
-				B41AC71B27D5AA5B00CDF4AB /* JYHomeBottomView.m in Sources */,
 				B41AC6E327D5A69F00CDF4AB /* AppDelegate.m in Sources */,
 				B41AC6F427D5A6A400CDF4AB /* main.m in Sources */,
+				B41AC73727D7007300CDF4AB /* JYFeelingListView.m in Sources */,
 				B41AC6E627D5A69F00CDF4AB /* SceneDelegate.m in Sources */,
+				B41AC73C27D71A5700CDF4AB /* JYFeelingTableViewCell.m in Sources */,
+				B41AC74027D71EBB00CDF4AB /* JYFeelingModel.m in Sources */,
 				B41AC72427D5AA9D00CDF4AB /* UIColor+Extensions.m in Sources */,
 				B41AC72527D5AA9D00CDF4AB /* UIView+JYFrame.m in Sources */,
 			);
