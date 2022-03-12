@@ -21,15 +21,17 @@
 #define SMPluginControlHeight 33
 
 // FeelingListView
-#define SMFeelingListCellHeight 88
+#define SMFeelingListCellHeight 180
+
+#define SMViewInset 20
 
 // Color
 #define SMHomeBackgroudColor [UIColor wbt_ColorWithHexString:@"#F5F5F5"]
 #define SMPureBackgroudColor [UIColor wbt_ColorWithHexString:@"#FFFFFF"]
 #define SMReddishBlueColor [UIColor wbt_ColorWithHexString:@"#4169E1"]
 
-#define StatusBarHeight  [UIDeviceHelper statusBarHeight]
 #define NavigationBarHeight (JYStatusBarHeight + 44)
+#define StatusBarHeight  [UIDeviceHelper statusBarHeight]
 #define SafeAreaHeight [UIDeviceHelper safeAreaHeight]
 
 #define Feelings @[@"喜", @"怒", @"忧", @"思", @"悲", @"恐", @"惊"]

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36881FC5D564A565C0F44D30 /* libPods-Semo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F37D355BB07710ECF332148E /* libPods-Semo.a */; };
 		B41AC6E327D5A69F00CDF4AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC6E227D5A69F00CDF4AB /* AppDelegate.m */; };
 		B41AC6E627D5A69F00CDF4AB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC6E527D5A69F00CDF4AB /* SceneDelegate.m */; };
 		B41AC6E927D5A69F00CDF4AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC6E827D5A69F00CDF4AB /* ViewController.m */; };
@@ -25,6 +26,9 @@
 		B41AC73727D7007300CDF4AB /* JYFeelingListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC73627D7007300CDF4AB /* JYFeelingListView.m */; };
 		B41AC73C27D71A5700CDF4AB /* JYFeelingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC73B27D71A5600CDF4AB /* JYFeelingTableViewCell.m */; };
 		B41AC74027D71EBB00CDF4AB /* JYFeelingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC73F27D71EBB00CDF4AB /* JYFeelingModel.m */; };
+		B4AC37A627DC789200529722 /* JYARCArrangeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37A527DC789200529722 /* JYARCArrangeTextView.swift */; };
+		B4AC37A927DC78D300529722 /* JYARCArrangeStartView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37A727DC78D300529722 /* JYARCArrangeStartView.m */; };
+		B4F5455527D83E5D00D6184C /* JYFeelingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F5455427D83E5D00D6184C /* JYFeelingView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		198F52BE70F9FB1EB88BFFB5 /* Pods-Semo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Semo.debug.xcconfig"; path = "Target Support Files/Pods-Semo/Pods-Semo.debug.xcconfig"; sourceTree = "<group>"; };
+		4019989A400F21FB12E7117C /* Pods-Semo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Semo.release.xcconfig"; path = "Target Support Files/Pods-Semo/Pods-Semo.release.xcconfig"; sourceTree = "<group>"; };
 		B41AC6DE27D5A69F00CDF4AB /* Semo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Semo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41AC6E127D5A69F00CDF4AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B41AC6E227D5A69F00CDF4AB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -79,6 +85,13 @@
 		B41AC73B27D71A5600CDF4AB /* JYFeelingTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYFeelingTableViewCell.m; sourceTree = "<group>"; };
 		B41AC73E27D71EBB00CDF4AB /* JYFeelingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYFeelingModel.h; sourceTree = "<group>"; };
 		B41AC73F27D71EBB00CDF4AB /* JYFeelingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYFeelingModel.m; sourceTree = "<group>"; };
+		B4AC37A427DC789200529722 /* Semo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Semo-Bridging-Header.h"; sourceTree = "<group>"; };
+		B4AC37A527DC789200529722 /* JYARCArrangeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JYARCArrangeTextView.swift; sourceTree = "<group>"; };
+		B4AC37A727DC78D300529722 /* JYARCArrangeStartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYARCArrangeStartView.m; sourceTree = "<group>"; };
+		B4AC37A827DC78D300529722 /* JYARCArrangeStartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYARCArrangeStartView.h; sourceTree = "<group>"; };
+		B4F5455327D83E5D00D6184C /* JYFeelingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYFeelingView.h; sourceTree = "<group>"; };
+		B4F5455427D83E5D00D6184C /* JYFeelingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYFeelingView.m; sourceTree = "<group>"; };
+		F37D355BB07710ECF332148E /* libPods-Semo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Semo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36881FC5D564A565C0F44D30 /* libPods-Semo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +120,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30E74E0A019721B64551FC30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F37D355BB07710ECF332148E /* libPods-Semo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B41AC6D527D5A69F00CDF4AB = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +135,8 @@
 				B41AC6FC27D5A6A500CDF4AB /* SemoTests */,
 				B41AC70627D5A6A500CDF4AB /* SemoUITests */,
 				B41AC6DF27D5A69F00CDF4AB /* Products */,
+				C0759EA134BA2C104347931C /* Pods */,
+				30E74E0A019721B64551FC30 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,6 +153,7 @@
 		B41AC6E027D5A69F00CDF4AB /* Semo */ = {
 			isa = PBXGroup;
 			children = (
+				B4AC37A327DC782700529722 /* Seal */,
 				B41AC73027D6F96700CDF4AB /* Write */,
 				B41AC71C27D5AA9C00CDF4AB /* Tool */,
 				B41AC71827D5A9FF00CDF4AB /* Home */,
@@ -205,6 +230,8 @@
 				B41AC73627D7007300CDF4AB /* JYFeelingListView.m */,
 				B41AC73A27D71A5600CDF4AB /* JYFeelingTableViewCell.h */,
 				B41AC73B27D71A5600CDF4AB /* JYFeelingTableViewCell.m */,
+				B4F5455327D83E5D00D6184C /* JYFeelingView.h */,
+				B4F5455427D83E5D00D6184C /* JYFeelingView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,6 +245,26 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B4AC37A327DC782700529722 /* Seal */ = {
+			isa = PBXGroup;
+			children = (
+				B4AC37A827DC78D300529722 /* JYARCArrangeStartView.h */,
+				B4AC37A727DC78D300529722 /* JYARCArrangeStartView.m */,
+				B4AC37A527DC789200529722 /* JYARCArrangeTextView.swift */,
+				B4AC37A427DC789200529722 /* Semo-Bridging-Header.h */,
+			);
+			path = Seal;
+			sourceTree = "<group>";
+		};
+		C0759EA134BA2C104347931C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				198F52BE70F9FB1EB88BFFB5 /* Pods-Semo.debug.xcconfig */,
+				4019989A400F21FB12E7117C /* Pods-Semo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -225,6 +272,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B41AC70D27D5A6A500CDF4AB /* Build configuration list for PBXNativeTarget "Semo" */;
 			buildPhases = (
+				ABE71810CB25E878C2D4AA92 /* [CP] Check Pods Manifest.lock */,
 				B41AC6DA27D5A69F00CDF4AB /* Sources */,
 				B41AC6DB27D5A69F00CDF4AB /* Frameworks */,
 				B41AC6DC27D5A69F00CDF4AB /* Resources */,
@@ -285,6 +333,7 @@
 				TargetAttributes = {
 					B41AC6DD27D5A69F00CDF4AB = {
 						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1300;
 					};
 					B41AC6F827D5A6A500CDF4AB = {
 						CreatedOnToolsVersion = 13.0;
@@ -343,6 +392,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		ABE71810CB25E878C2D4AA92 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Semo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B41AC6DA27D5A69F00CDF4AB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -350,13 +424,16 @@
 			files = (
 				B41AC72F27D6F11D00CDF4AB /* JYPlusControl.m in Sources */,
 				B41AC6E927D5A69F00CDF4AB /* ViewController.m in Sources */,
+				B4AC37A927DC78D300529722 /* JYARCArrangeStartView.m in Sources */,
 				B41AC73327D6F9BF00CDF4AB /* JYWriteFeelingViewController.m in Sources */,
 				B41AC72627D5AA9D00CDF4AB /* UIDeviceHelper.m in Sources */,
 				B41AC6E327D5A69F00CDF4AB /* AppDelegate.m in Sources */,
 				B41AC6F427D5A6A400CDF4AB /* main.m in Sources */,
 				B41AC73727D7007300CDF4AB /* JYFeelingListView.m in Sources */,
+				B4F5455527D83E5D00D6184C /* JYFeelingView.m in Sources */,
 				B41AC6E627D5A69F00CDF4AB /* SceneDelegate.m in Sources */,
 				B41AC73C27D71A5700CDF4AB /* JYFeelingTableViewCell.m in Sources */,
+				B4AC37A627DC789200529722 /* JYARCArrangeTextView.swift in Sources */,
 				B41AC74027D71EBB00CDF4AB /* JYFeelingModel.m in Sources */,
 				B41AC72427D5AA9D00CDF4AB /* UIColor+Extensions.m in Sources */,
 				B41AC72527D5AA9D00CDF4AB /* UIView+JYFrame.m in Sources */,
@@ -529,9 +606,11 @@
 		};
 		B41AC70E27D5A6A500CDF4AB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 198F52BE70F9FB1EB88BFFB5 /* Pods-Semo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5XWZB6V6UY;
@@ -550,15 +629,20 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiyang.Semo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Semo/Seal/Semo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		B41AC70F27D5A6A500CDF4AB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4019989A400F21FB12E7117C /* Pods-Semo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5XWZB6V6UY;
@@ -577,6 +661,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiyang.Semo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Semo/Seal/Semo-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -584,6 +670,7 @@
 		B41AC71127D5A6A500CDF4AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -607,6 +694,7 @@
 		B41AC71227D5A6A500CDF4AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -630,6 +718,7 @@
 		B41AC71427D5A6A500CDF4AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5XWZB6V6UY;
@@ -651,6 +740,7 @@
 		B41AC71527D5A6A500CDF4AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5XWZB6V6UY;

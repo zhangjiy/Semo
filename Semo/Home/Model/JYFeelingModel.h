@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JYFeelingModel : NSObject
+@property (nonatomic, strong) NSString *feelingString;
 @property (nonatomic, strong) NSString *feelingImageUrl;
 @property (nonatomic, strong) NSString *weak;
 @property (nonatomic, strong) NSString *month;

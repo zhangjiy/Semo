@@ -6,11 +6,13 @@
 //
 
 #import "JYFeelingTableViewCell.h"
+#import "JYFeelingView.h"
+#import "JYFeelingModel.h"
 #import "JYPrefixHeader.h"
 
 @interface JYFeelingTableViewCell ()
 @property (nonatomic, strong) UIView *borderView;
-@property (nonatomic, strong) UIImageView *feelingImageView;
+@property (nonatomic, strong) JYFeelingView *feelingView;
 @property (nonatomic, strong) UILabel *weakLabel;
 @property (nonatomic, strong) UILabel *monthLabel;
 @property (nonatomic, strong) UILabel *outlineLabel;
@@ -22,6 +24,9 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.backgroundColor = [UIColor clearColor];
+        self.contentView.backgroundColor = [UIColor clearColor];
+        [self initSubViews];
     }
     
     return self;
@@ -29,7 +34,7 @@
 
 - (void)initSubViews {
     [self.contentView addSubview:self.borderView];
-    [self.contentView addSubview:self.feelingImageView];
+    [self.contentView addSubview:self.feelingView];
     [self.contentView addSubview:self.weakLabel];
     [self.contentView addSubview:self.dateLineView];
     [self.contentView addSubview:self.monthLabel];
@@ -39,17 +44,17 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     _borderView.width = self.contentView.width - 15 * 2;
-    _borderView.height = self.contentView.width - 15 - 30;
+    _borderView.height = self.contentView.height - 15 - 20;
     _borderView.left = 15;
     _borderView.top = 15;
     
-    _feelingImageView.size = CGSizeMake(60, 60);
-    _feelingImageView.top = _borderView.bottom + 30;
-    _feelingImageView.centerX = self.contentView.width / 2.f;
+    _feelingView.size = CGSizeMake(60, 60);
+    _feelingView.top = _borderView.top + 15;
+    _feelingView.centerX = self.contentView.width / 2.f;
     
     [_weakLabel sizeToFit];
-    _weakLabel.left = _borderView.left + 20;
-    _weakLabel.top = _borderView.top + 20;
+    _weakLabel.left = _borderView.left + 15;
+    _weakLabel.top = _borderView.top + 15;
     
     _dateLineView.size = CGSizeMake(33, 1);
     _dateLineView.centerX = _weakLabel.centerX;
@@ -61,24 +66,25 @@
     
     [_outlineLabel sizeToFit];
     _outlineLabel.centerX = self.contentView.width / 2.f;;
-    _outlineLabel.top = _feelingImageView.bottom + 30;
+    _outlineLabel.top = _feelingView.bottom + 15;
 }
 
 - (UIView *)borderView {
     if (!_borderView) {
         _borderView = [[UIView alloc] initWithFrame:CGRectZero];
         _borderView.layer.borderColor = [[UIColor blackColor] CGColor];
-        _borderView.layer.borderWidth = 2.f;
+        _borderView.layer.borderWidth = 1.f;
     }
     return _borderView;
 }
 
-- (UIImageView *)feelingImageView {
-    if (!_feelingImageView) {
-        _feelingImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+- (JYFeelingView *)feelingView {
+    if (!_feelingView) {
+        _feelingView = [[JYFeelingView alloc] initWithFrame:CGRectZero];
+        _feelingView.font = [UIFont systemFontOfSize:30 weight:UIFontWeightBlack];
     }
     
-    return _feelingImageView;
+    return _feelingView;
 }
 
 - (UILabel *)weakLabel {
@@ -112,7 +118,14 @@
 }
 
 - (void)updateViewWithModel:(JYFeelingModel *)feelingModel {
-    self.feelingImageView.image = [UIImage imag]
+    if (feelingModel.feelingImageUrl) {
+        
+    } else {
+        self.feelingView.text = feelingModel.feelingString;
+    }
+    self.weakLabel.text = feelingModel.weak;
+    self.monthLabel.text = feelingModel.month;
+    self.outlineLabel.text = feelingModel.outline;
 }
 
 @end

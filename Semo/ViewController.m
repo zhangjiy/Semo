@@ -7,12 +7,13 @@
 
 #import "ViewController.h"
 #import "JYPlusControl.h"
+#import "JYFeelingListView.h"
 #import "JYWriteFeelingViewController.h"
 #import "JYPrefixHeader.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) JYPlusControl * plusControl;
-
+@property (nonatomic, strong) JYFeelingListView * feelingListView;
 @end
 
 @implementation ViewController
@@ -25,6 +26,7 @@
 
 - (void)initSubviews {
     [self.view addSubview:self.plusControl];
+    [self.view addSubview:self.feelingListView];
 }
 
 - (void)viewWillLayoutSubviews {
@@ -34,6 +36,10 @@
     _plusControl.height = SMPluginControlHeight;
     _plusControl.centerX = self.view.width / 2.f;
     _plusControl.bottom = self.view.height - SafeAreaHeight;
+    
+    _feelingListView.width = self.view.width;
+    _feelingListView.height = self.view.height - (StatusBarHeight);
+    _feelingListView.top = StatusBarHeight;
 }
 
 - (JYPlusControl *)plusControl {
@@ -45,6 +51,14 @@
     }
     
     return _plusControl;
+}
+
+- (JYFeelingListView *)feelingListView {
+    if (!_feelingListView) {
+        _feelingListView = [[JYFeelingListView alloc] initWithFrame:CGRectZero];
+    }
+    
+    return _feelingListView;
 }
 
 - (void)plusControlAction:(UIControl *)sender {
