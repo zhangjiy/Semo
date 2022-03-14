@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class JYARCArrangeTextView: UIView {
-    @objc public var text:String = "莲富大厦的长时间的发生的看法"
+    var text:String = ""
     var textLength:Int = 0 // 文字长度
     var viewWidth:CGFloat = 0 // view宽度
     var viewHeight:CGFloat = 0 // view高度
@@ -18,9 +18,9 @@ class JYARCArrangeTextView: UIView {
     var totalRadian:CGFloat = 0 // 总弧度
     var eachRadian:CGFloat = 0 // 每个夹角弧度
     
-    public override init(frame: CGRect) {
+  @objc public init(frame: CGRect, text: String) {
         super.init(frame: frame)
-        
+        self.text = text
         setupConfig()
         setupView()
     }
@@ -35,7 +35,7 @@ class JYARCArrangeTextView: UIView {
         arcRadius = viewHeight / 2 + viewWidth * viewWidth / 8 / viewHeight // 根据垂径定理得到
         textLength = text.isEmpty ? 1 : text.count
         
-        eachRadian = 0.1 // 0.85 // 此处是弧度值 ，可以任意一个角度，0.1弧度约为5.7度
+        eachRadian = 0.18 // 0.85 // 此处是弧度值 ，可以任意一个角度，0.1弧度约为5.7度
         totalRadian = eachRadian * (CGFloat(textLength) - 1)
 //        totalRadian =  asin(viewWidth / 2 / arcRadius) * 2 * 4 / 5
 //        eachRadian = totalRadian / (CGFloat(textLength) - 1)
@@ -57,12 +57,12 @@ class JYARCArrangeTextView: UIView {
             
             if text.isEmpty {return}
             let textLayer = CATextLayer()
-            textLayer.bounds = CGRect(x: 0, y: 0, width: 20, height: 20)
+            textLayer.bounds = CGRect(x: 0, y: 0, width: 15, height: 15)
             let character:Character = text[text.index(text.startIndex, offsetBy: i)]
             textLayer.string = String(character)
-            textLayer.foregroundColor = UIColor.black.cgColor
-            textLayer.font = UIFont.systemFont(ofSize: 15)
-            textLayer.fontSize = 15
+            textLayer.foregroundColor = UIColor.red.cgColor
+            textLayer.font = UIFont.boldSystemFont(ofSize: 10)
+            textLayer.fontSize = 10
             textLayer.alignmentMode = .center
             textLayer.contentsScale = UIScreen.main.scale
             textLayer.position = center

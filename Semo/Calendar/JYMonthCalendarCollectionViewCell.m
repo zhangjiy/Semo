@@ -45,7 +45,7 @@
 - (JYDayCalendarView *)dayCalendarView {
     if (!_dayCalendarView) {
         _dayCalendarView = [[JYDayCalendarView alloc]initWithFrame:CGRectZero];
-        _dayCalendarView.backgroundColor = [UIColor greenColor];
+        _dayCalendarView.backgroundColor = [UIColor clearColor];
     }
     
     return _dayCalendarView;

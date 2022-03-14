@@ -6,27 +6,43 @@
 //
 
 #import "JYWriteFeelingViewController.h"
+#import "JYWriteFeelingView.h"
 #import "JYPrefixHeader.h"
 
 @interface JYWriteFeelingViewController ()
-
+@property (nonatomic, strong) JYWriteFeelingView *writeFeelingView;
 @end
 
 @implementation JYWriteFeelingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupConfig];
+    [self initSubviews];
+}
+
+- (void)setupConfig {
     self.view.backgroundColor = SMHomeBackgroudColor;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)initSubviews {
+    [self.view addSubview:self.writeFeelingView];
 }
-*/
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    _writeFeelingView.frame = self.view.bounds;
+}
+
+- (JYWriteFeelingView *)writeFeelingView {
+    if (!_writeFeelingView) {
+        _writeFeelingView = [[JYWriteFeelingView alloc] initWithFrame:CGRectZero];
+        _writeFeelingView.backgroundColor = [UIColor greenColor];
+    }
+    
+    return _writeFeelingView;
+        
+}
 
 @end

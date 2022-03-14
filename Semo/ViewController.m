@@ -29,20 +29,20 @@
 
 - (void)setupConfig {
     self.view.backgroundColor = SMHomeBackgroudColor;
-    //self.calendar = [[JYCalendar alloc] init];
 }
 
 - (void)initSubviews {
-//    [self.view addSubview:self.plusControl];
 //    [self.view addSubview:self.feelingListView];
     [self.view addSubview:self.monthCalendarView];
+    [self.view addSubview:self.plusControl];
 }
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
-//    _monthCalendarView.size = CGSizeMake(self.view.width - 15 * 2, self.view.height);
-//    _monthCalendarView.left = 15;
+    _feelingListView.width = self.view.width;
+    _feelingListView.height = self.view.height - (StatusBarHeight);
+    _feelingListView.top = StatusBarHeight;
     
     _monthCalendarView.frame = self.view.bounds;
     
@@ -50,10 +50,6 @@
     _plusControl.height = SMPluginControlHeight;
     _plusControl.centerX = self.view.width / 2.f;
     _plusControl.bottom = self.view.height - SafeAreaHeight;
-    
-    _feelingListView.width = self.view.width;
-    _feelingListView.height = self.view.height - (StatusBarHeight);
-    _feelingListView.top = StatusBarHeight;
 }
 
 - (JYMonthCalendarView *)monthCalendarView {

@@ -21,7 +21,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame calendar:(JYCalendar *)calendar {
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = [UIColor clearColor];
         self.calculator = [[JYCalendarCalculator alloc] initWithCalendar:calendar];
         self.calculator.delegate = self;
         [self initSubViews];
