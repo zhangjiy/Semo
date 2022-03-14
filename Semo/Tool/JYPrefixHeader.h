@@ -30,9 +30,12 @@
 #define SMPureBackgroudColor [UIColor wbt_ColorWithHexString:@"#FFFFFF"]
 #define SMReddishBlueColor [UIColor wbt_ColorWithHexString:@"#4169E1"]
 
-#define NavigationBarHeight (JYStatusBarHeight + 44)
 #define StatusBarHeight  [UIDeviceHelper statusBarHeight]
 #define SafeAreaHeight [UIDeviceHelper safeAreaHeight]
+#define NavigationBarHeight (StatusBarHeight + 44)
+
+#define ScreenWidth  [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight  [UIScreen mainScreen].bounds.size.height
 
 #define Feelings @[@"喜", @"怒", @"忧", @"思", @"悲", @"恐", @"惊"]
 
