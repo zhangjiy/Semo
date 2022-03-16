@@ -13,11 +13,9 @@
 
 @implementation JYARCArrangeStartView {
     NSArray *views;
-    NSInteger textLength;
     CGFloat viewWidth;
     CGFloat viewHeight;
     CGFloat arcRadius;
-    CGFloat textHeight;
     CGFloat totalRadian;
     CGFloat eachRadian;
 }
@@ -32,15 +30,13 @@
 }
 
 - (void)setupConfig {
-    views = @[@1, @1, @1, @1, @1];
-    textHeight = 20;
-    viewWidth = self.frame.size.width - textHeight * 2;
-    viewHeight = self.frame.size.height - textHeight;
+    views = @[@3.f, @4.5f, @6.f, @4.5f, @3.f];
+    viewWidth = self.frame.size.width;
+    viewHeight = self.frame.size.height;
     arcRadius = viewHeight / 2.f + viewWidth * viewWidth / 8.f / viewHeight; // 根据垂径定理得到
-    textLength = views.count == 0 ? 1 : views.count;
 
     totalRadian =  asin(viewWidth / 2.f / arcRadius) * 2 * 4 / 5.f;
-    eachRadian = totalRadian / (textLength - 1);
+    eachRadian = totalRadian / (views.count - 1);
 }
 
 - (void)setupView {
@@ -48,25 +44,20 @@
     for (UIView *subview in self.subviews) {
         [subview removeFromSuperview];
     }
-
+    
     CGFloat startAngle = -M_PI / 2.f - totalRadian / 2.f; // 起始角度，从左到右，取第一个字符的位置为起始角度
-
-    for (int i = 0; i < textLength; i ++) {
+    
+    for (int i = 0; i < views.count; i ++) {
         CGFloat angle = startAngle + eachRadian * i;
         CGFloat x = arcRadius * cos(angle);
         CGFloat y = arcRadius * sin(angle);
-        CGPoint center = CGPointMake((self.frame.size.width / 2.f + x), (arcRadius + textHeight + y)); // 各个label中点坐标
+        CGPoint center = CGPointMake((self.frame.size.width / 2.f + x), (arcRadius + y)); // 各个label中点坐标
         
-        if (views.count == 0) {
-            return;
-        }
-        
-        
+        float width = [views[i] floatValue];
         CAShapeLayer *startLayer = [[CAShapeLayer alloc] init];
-        startLayer.bounds = CGRectMake(0, 0, 20, 20);
-        
+        startLayer.bounds = CGRectMake(0, 0, width, width);
         CGPoint arcCenter = CGPointMake(startLayer.position.x + startLayer.frame.size.width / 2.f, startLayer.position.y + startLayer.frame.size.height / 2.f);
-        CGFloat radius = 10;
+        CGFloat radius = width;
         CGFloat rate = 0.3;
         startLayer.strokeColor = [UIColor clearColor].CGColor;
         startLayer.fillColor = [UIColor redColor].CGColor;
@@ -95,10 +86,7 @@
         });
         startLayer.lineWidth = 1.f;
         startLayer.lineJoin = kCALineJoinRound;
-        
-        startLayer.backgroundColor = [UIColor greenColor].CGColor;
         startLayer.position = center;
-
         [self.layer addSublayer:startLayer];
         // 旋转
         CGFloat alpha = angle + M_PI / 2.f;

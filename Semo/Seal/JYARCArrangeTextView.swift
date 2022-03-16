@@ -35,10 +35,10 @@ class JYARCArrangeTextView: UIView {
         arcRadius = viewHeight / 2 + viewWidth * viewWidth / 8 / viewHeight // 根据垂径定理得到
         textLength = text.isEmpty ? 1 : text.count
         
-        eachRadian = 0.18 // 0.85 // 此处是弧度值 ，可以任意一个角度，0.1弧度约为5.7度
-        totalRadian = eachRadian * (CGFloat(textLength) - 1)
-//        totalRadian =  asin(viewWidth / 2 / arcRadius) * 2 * 4 / 5
-//        eachRadian = totalRadian / (CGFloat(textLength) - 1)
+//        eachRadian = 0.1 // 0.85 // 此处是弧度值 ，可以任意一个角度，0.1弧度约为5.7度
+//        totalRadian = eachRadian * (CGFloat(textLength) - 1)
+        totalRadian =  asin(viewWidth / 2 / arcRadius) * 2 * 4 / 5
+        eachRadian = totalRadian / (CGFloat(textLength) - 1)
     }
     
     private func setupView() {
@@ -57,12 +57,12 @@ class JYARCArrangeTextView: UIView {
             
             if text.isEmpty {return}
             let textLayer = CATextLayer()
-            textLayer.bounds = CGRect(x: 0, y: 0, width: 15, height: 15)
+            textLayer.bounds = CGRect(x: 0, y: 0, width: 9, height: 9)
             let character:Character = text[text.index(text.startIndex, offsetBy: i)]
             textLayer.string = String(character)
             textLayer.foregroundColor = UIColor.red.cgColor
-            textLayer.font = UIFont.boldSystemFont(ofSize: 10)
-            textLayer.fontSize = 10
+            textLayer.font = UIFont.boldSystemFont(ofSize: 9)
+            textLayer.fontSize = 9
             textLayer.alignmentMode = .center
             textLayer.contentsScale = UIScreen.main.scale
             textLayer.position = center
