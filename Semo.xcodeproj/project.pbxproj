@@ -26,6 +26,7 @@
 		B41AC73727D7007300CDF4AB /* JYFeelingListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC73627D7007300CDF4AB /* JYFeelingListView.m */; };
 		B41AC73C27D71A5700CDF4AB /* JYFeelingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC73B27D71A5600CDF4AB /* JYFeelingTableViewCell.m */; };
 		B41AC74027D71EBB00CDF4AB /* JYFeelingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC73F27D71EBB00CDF4AB /* JYFeelingModel.m */; };
+		B4A90C5927E415F10085CAC4 /* JYGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C5827E415F10085CAC4 /* JYGridView.m */; };
 		B4AC37A627DC789200529722 /* JYARCArrangeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37A527DC789200529722 /* JYARCArrangeTextView.swift */; };
 		B4AC37A927DC78D300529722 /* JYARCArrangeStartView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37A727DC78D300529722 /* JYARCArrangeStartView.m */; };
 		B4AC37EE27DCC09500529722 /* JYMonthCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37ED27DCC09500529722 /* JYMonthCalendarView.m */; };
@@ -98,6 +99,8 @@
 		B41AC73B27D71A5600CDF4AB /* JYFeelingTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYFeelingTableViewCell.m; sourceTree = "<group>"; };
 		B41AC73E27D71EBB00CDF4AB /* JYFeelingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYFeelingModel.h; sourceTree = "<group>"; };
 		B41AC73F27D71EBB00CDF4AB /* JYFeelingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYFeelingModel.m; sourceTree = "<group>"; };
+		B4A90C5727E415F10085CAC4 /* JYGridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYGridView.h; sourceTree = "<group>"; };
+		B4A90C5827E415F10085CAC4 /* JYGridView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYGridView.m; sourceTree = "<group>"; };
 		B4AC37A427DC789200529722 /* Semo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Semo-Bridging-Header.h"; sourceTree = "<group>"; };
 		B4AC37A527DC789200529722 /* JYARCArrangeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JYARCArrangeTextView.swift; sourceTree = "<group>"; };
 		B4AC37A727DC78D300529722 /* JYARCArrangeStartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYARCArrangeStartView.m; sourceTree = "<group>"; };
@@ -273,6 +276,8 @@
 				B41AC73B27D71A5600CDF4AB /* JYFeelingTableViewCell.m */,
 				B4F5455327D83E5D00D6184C /* JYFeelingView.h */,
 				B4F5455427D83E5D00D6184C /* JYFeelingView.m */,
+				B4A90C5727E415F10085CAC4 /* JYGridView.h */,
+				B4A90C5827E415F10085CAC4 /* JYGridView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -533,6 +538,7 @@
 				B4EC076C27DF013F00CB0877 /* JYWriteFeelingListView.m in Sources */,
 				B4AC37FA27DCCFD000529722 /* JYCalendar.m in Sources */,
 				B4AC37A627DC789200529722 /* JYARCArrangeTextView.swift in Sources */,
+				B4A90C5927E415F10085CAC4 /* JYGridView.m in Sources */,
 				B4EC077427DF07D800CB0877 /* JYSealFeelingPassView.m in Sources */,
 				B41AC74027D71EBB00CDF4AB /* JYFeelingModel.m in Sources */,
 				B4EC076927DF00D800CB0877 /* JYWriteFeelingTableViewCell.m in Sources */,

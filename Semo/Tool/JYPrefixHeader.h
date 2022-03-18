@@ -30,6 +30,9 @@
 #define SMPureBackgroudColor [UIColor wbt_ColorWithHexString:@"#FFFFFF"]
 #define SMReddishBlueColor [UIColor wbt_ColorWithHexString:@"#4169E1"]
 
+#define SMSealRedColor [UIColor wbt_ColorWithHexString:@"#B42828"]
+
+
 #define StatusBarHeight  [UIDeviceHelper statusBarHeight]
 #define SafeAreaHeight [UIDeviceHelper safeAreaHeight]
 #define NavigationBarHeight (StatusBarHeight + 44)

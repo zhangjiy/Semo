@@ -6,6 +6,7 @@
 //
 
 #import "JYARCArrangeStartView.h"
+#import "JYPrefixHeader.h"
 
 @interface JYARCArrangeStartView()
 
@@ -60,7 +61,7 @@
         CGFloat radius = width;
         CGFloat rate = 0.3;
         startLayer.strokeColor = [UIColor clearColor].CGColor;
-        startLayer.fillColor = [UIColor redColor].CGColor;
+        startLayer.fillColor = SMSealRedColor.CGColor;
         startLayer.path = ({
             UIBezierPath *path = [UIBezierPath bezierPath];
             

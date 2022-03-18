@@ -7,6 +7,7 @@
 
 #import "JYWriteFeelingListView.h"
 #import "JYWriteFeelingListCollectionViewCell.h"
+#import "JYPrefixHeader.h"
 
 @interface JYWriteFeelingListView () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView * collectionView;
@@ -51,10 +52,10 @@
 - (UICollectionViewFlowLayout *)collectionViewFlowLayout {
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc] init];
     layout.minimumLineSpacing = 0;
-    layout.minimumInteritemSpacing = 0;
-    layout.itemSize = [UIScreen mainScreen].bounds.size;
-    layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    layout.minimumInteritemSpacing = 10;
+    layout.itemSize = CGSizeMake(44, 44);
+    layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     return layout;
 }
 
@@ -67,16 +68,14 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return 7;
+    return Feelings.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     JYWriteFeelingListCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    NSString *text = Feelings[indexPath.row];
+    cell.text = text;
     return cell;
-}
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(50, 50);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

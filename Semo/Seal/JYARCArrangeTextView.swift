@@ -60,7 +60,7 @@ class JYARCArrangeTextView: UIView {
             textLayer.bounds = CGRect(x: 0, y: 0, width: 9, height: 9)
             let character:Character = text[text.index(text.startIndex, offsetBy: i)]
             textLayer.string = String(character)
-            textLayer.foregroundColor = UIColor.red.cgColor
+            textLayer.foregroundColor = UIColor.init(red: 180/255.0, green: 40/255.0, blue: 40/255.0, alpha: 1.0).cgColor;
             textLayer.font = UIFont.boldSystemFont(ofSize: 9)
             textLayer.fontSize = 9
             textLayer.alignmentMode = .center

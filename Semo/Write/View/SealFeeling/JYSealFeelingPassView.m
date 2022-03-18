@@ -83,7 +83,7 @@
     if (!_circleLayer0) {
         _circleLayer0 = [[CAShapeLayer alloc] init];
         _circleLayer0.lineWidth = 3;
-        _circleLayer0.strokeColor = [UIColor redColor].CGColor;
+        _circleLayer0.strokeColor = SMSealRedColor.CGColor;
         _circleLayer0.fillColor = [UIColor clearColor].CGColor;
     }
      
@@ -94,7 +94,7 @@
     if (!_circleLayer1) {
         _circleLayer1 = [[CAShapeLayer alloc] init];
         _circleLayer1.lineWidth = 0.5;
-        _circleLayer1.strokeColor = [UIColor redColor].CGColor;
+        _circleLayer1.strokeColor = SMSealRedColor.CGColor;
         _circleLayer1.fillColor = [UIColor clearColor].CGColor;
     }
      
@@ -105,7 +105,7 @@
     if (!_circleLayer2) {
         _circleLayer2 = [[CAShapeLayer alloc] init];
         _circleLayer2.lineWidth = 1;
-        _circleLayer2.strokeColor = [UIColor redColor].CGColor;
+        _circleLayer2.strokeColor = SMSealRedColor.CGColor;
         _circleLayer2.fillColor = [UIColor clearColor].CGColor;
     }
      
@@ -116,7 +116,7 @@
     if (!_circleLayer3) {
         _circleLayer3 = [[CAShapeLayer alloc] init];
         _circleLayer3.lineWidth = 1;
-        _circleLayer3.strokeColor = [UIColor redColor].CGColor;
+        _circleLayer3.strokeColor = SMSealRedColor.CGColor;
         _circleLayer3.fillColor = [UIColor clearColor].CGColor;
     }
      
@@ -163,7 +163,7 @@
         CGSize size = CGSizeMake(80, 80);
         _textLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, (self.height - size.height) / 2.f, size.width, size.height)];
         _textLabel.font = [UIFont boldSystemFontOfSize:50];
-        _textLabel.textColor = [UIColor redColor];
+        _textLabel.textColor = SMSealRedColor;
         _textLabel.textAlignment = NSTextAlignmentCenter;
         _textLabel.text = @"乐";
     }

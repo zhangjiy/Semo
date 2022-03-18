@@ -38,7 +38,6 @@
 - (JYWriteFeelingView *)writeFeelingView {
     if (!_writeFeelingView) {
         _writeFeelingView = [[JYWriteFeelingView alloc] initWithFrame:CGRectZero];
-        _writeFeelingView.backgroundColor = [UIColor greenColor];
     }
     
     return _writeFeelingView;

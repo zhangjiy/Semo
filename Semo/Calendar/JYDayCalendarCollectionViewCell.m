@@ -9,6 +9,7 @@
 #import "JYPrefixHeader.h"
 
 @interface JYDayCalendarCollectionViewCell ()
+@property (nonatomic, strong) UIView * backgroundContentView;
 @property (nonatomic, strong) UILabel * titleLabel;
 @property (nonatomic, strong) JYCalendarCalculator * calculator;
 @end
@@ -23,6 +24,7 @@
 }
 
 - (void)initWithSubViews {
+    [self.contentView addSubview:self.backgroundContentView];
     [self.contentView addSubview:self.titleLabel];
 }
 
@@ -40,14 +42,25 @@
     return _titleLabel;
 }
 
+- (UIView *)backgroundContentView {
+    if (!_backgroundContentView) {
+        _backgroundContentView = [[UIView alloc] initWithFrame:CGRectZero];
+    }
+    
+    return _backgroundContentView;
+}
+
 - (void)updateViewWithText:(NSString *)text {
     self.titleLabel.text = text;
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    
+    _backgroundContentView.frame = self.bounds;
+    
     [self.titleLabel sizeToFit];
-    self.titleLabel.top = SafeAreaHeight;
+    self.titleLabel.centerY = self.contentView.height / 2.f;
     self.titleLabel.centerX = self.contentView.width / 2.f;
 }
 

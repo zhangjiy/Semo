@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JYWriteFeelingListCollectionViewCell : UICollectionViewCell
-
+@property (nonatomic, strong) NSString * text;
 @end
 
 NS_ASSUME_NONNULL_END
