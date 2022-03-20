@@ -32,11 +32,8 @@
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.layer.shadowRadius = 4.0f;
-        _titleLabel.layer.shadowOpacity = 0.4f;
-        _titleLabel.layer.shadowOffset = CGSizeMake(0, 0);
         _titleLabel.textColor = [UIColor blackColor];
-        _titleLabel.font = [UIFont systemFontOfSize:15];
+        _titleLabel.font = [UIFont fontWithName:@"Zapfino" size:15];
     }
     
     return _titleLabel;
@@ -60,12 +57,11 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    [_titleLabel sizeToFit];
-    _titleLabel.top = SafeAreaHeight;
+    _titleLabel.size = CGSizeMake(self.contentView.width, 25);
     _titleLabel.centerX = self.contentView.width / 2.f;
     
-    _dayCalendarView.width = self.contentView.width;
-    _dayCalendarView.height = self.contentView.height - _titleLabel.height;
+    _dayCalendarView.width = JYHomeGridWidth;
+    _dayCalendarView.height = JYHomeGridHeight;
     _dayCalendarView.top = _titleLabel.bottom;
 }
 

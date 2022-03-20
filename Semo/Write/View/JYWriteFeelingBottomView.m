@@ -1,0 +1,71 @@
+//
+//  JYWriteFeelingBottomView.m
+//  Semo
+//
+//  Created by jiyang on 2022/3/19.
+//
+
+#import "JYWriteFeelingBottomView.h"
+#import "JYWritePaintingListView.h"
+#import "JYWriteFeelingListView.h"
+#import "JYPrefixHeader.h"
+
+@interface JYWriteFeelingBottomView () <JYWriteFeelingListViewDelegate>
+@property (nonatomic, strong) JYWritePaintingListView *paintingListView;
+@property (nonatomic, strong) JYWriteFeelingListView *feelingListView;
+@end
+
+@implementation JYWriteFeelingBottomView
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self initSubviews];
+    }
+    
+    return self;
+}
+
+- (void)initSubviews {
+    [self addSubview:self.paintingListView];
+    [self addSubview:self.feelingListView];
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    CGFloat height = (self.width - 100 - 60) / (float)Plantings.count;
+    _paintingListView.size = CGSizeMake(self.width, height);
+    _paintingListView.top = 10;
+    
+    height = (self.width - 40 - 60) / (float)Feelings.count;
+    _feelingListView.size = CGSizeMake(self.width, height);
+    _feelingListView.bottom = self.height - SafeAreaHeight;
+}
+
+- (JYWritePaintingListView *)paintingListView {
+    if (!_paintingListView) {
+        _paintingListView = [[JYWritePaintingListView alloc] initWithFrame:CGRectZero];
+    }
+    
+    return _paintingListView;
+}
+
+- (JYWriteFeelingListView *)feelingListView {
+    if (!_feelingListView) {
+        _feelingListView = [[JYWriteFeelingListView alloc] initWithFrame:CGRectZero];
+        _feelingListView.delegate = self;
+    }
+    
+    return _feelingListView;
+}
+
+#pragma -- mark -- JYWriteFeelingListViewDelegate
+
+- (void)writeFeelingListView:(JYWriteFeelingListView *)listView didSelectItem:(NSString *)item {
+    if ([self.delegate respondsToSelector:@selector(writeFeelingBottomView:didSelectItem:)]) {
+        [self.delegate writeFeelingBottomView:self didSelectItem:item];
+    }
+}
+
+@end

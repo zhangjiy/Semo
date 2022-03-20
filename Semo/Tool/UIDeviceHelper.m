@@ -19,7 +19,7 @@ static WBT_ScreenType screenType = WBT_ScreenTypeUndefined;
 }
 
 + (CGFloat)safeAreaHeight {
-    return ((WBT_ScreenTypeIphoneX == [UIDeviceHelper screenType] || WBT_ScreenTypeIphoneXSM == [UIDeviceHelper screenType])? 44.f : 0.f);
+    return ((WBT_ScreenTypeIphoneX == [UIDeviceHelper screenType] || WBT_ScreenTypeIphoneXSM == [UIDeviceHelper screenType])? 38.f : 0.f);
 }
 
 + (WBT_ScreenType)screenType

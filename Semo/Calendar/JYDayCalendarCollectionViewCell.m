@@ -32,11 +32,13 @@
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.layer.shadowRadius = 4.0f;
-        _titleLabel.layer.shadowOpacity = 0.4f;
-        _titleLabel.layer.shadowOffset = CGSizeMake(0, 0);
         _titleLabel.textColor = [UIColor blackColor];
-        _titleLabel.font = [UIFont systemFontOfSize:15];
+        //Zapfino
+        //BodoniOrnamentsITCTT
+        //PartyLetPlain
+        //MarkerFelt-Wide
+        //SnellRoundhand
+        _titleLabel.font = [UIFont fontWithName:@"Zapfino" size:20];
     }
     
     return _titleLabel;

@@ -30,38 +30,33 @@
 }
 
 - (void)setupConfig {
-    self.view.backgroundColor = SMHomeBackgroudColor;
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)initSubviews {
     [self.view addSubview:self.gridView];
     [self.view addSubview:self.monthCalendarView];
     [self.view addSubview:self.plusControl];
-    self.gridView.frame = CGRectMake(10, 100, self.view.width - 10 * 2, self.view.width - 10 * 2);
-    [self.gridView ff:500 size:CGSizeMake(30, 30)];
+    [self.gridView drawGridWithVerLineCount:4 horLineCount:8];
 }
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
-    //_gridView.frame = self.view.bounds;
-    
-    _feelingListView.width = self.view.width;
-    _feelingListView.height = self.view.height - (StatusBarHeight);
-    _feelingListView.top = StatusBarHeight;
-    
-    //_monthCalendarView.frame = self.view.bounds;
-    
+    _monthCalendarView.width = self.gridView.width;
+    _monthCalendarView.height = self.gridView.height + 25;
+    _monthCalendarView.top = StatusBarHeight;
+    _monthCalendarView.left = JYViewInset;
     _plusControl.width = SMPluginControlWidth;
     _plusControl.height = SMPluginControlHeight;
     _plusControl.centerX = self.view.width / 2.f;
-    _plusControl.bottom = self.view.height - SafeAreaHeight;
+    _plusControl.top = _monthCalendarView.bottom + 10;
 }
 
 - (JYGridView *)gridView {
     if (!_gridView) {
-        _gridView = [[JYGridView alloc] initWithFrame:CGRectZero];
-        _gridView.backgroundColor = [UIColor redColor];
+        _gridView = [[JYGridView alloc] initWithFrame:CGRectMake(JYViewInset, NavigationBarHeight, JYHomeGridWidth, JYHomeGridHeight)];
+        _gridView.backgroundColor = SMHomeBackgroudColor;
     }
     
     return _gridView;
@@ -89,7 +84,7 @@
 
 - (JYFeelingListView *)feelingListView {
     if (!_feelingListView) {
-        _feelingListView = [[JYFeelingListView alloc] initWithFrame:CGRectZero];
+        _feelingListView = [[JYFeelingListView alloc] initWithFrame:CGRectMake(JYViewInset, NavigationBarHeight, JYHomeGridWidth, JYHomeGridHeight)];
     }
     
     return _feelingListView;

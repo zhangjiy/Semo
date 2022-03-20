@@ -27,6 +27,9 @@
 		B41AC73C27D71A5700CDF4AB /* JYFeelingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC73B27D71A5600CDF4AB /* JYFeelingTableViewCell.m */; };
 		B41AC74027D71EBB00CDF4AB /* JYFeelingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC73F27D71EBB00CDF4AB /* JYFeelingModel.m */; };
 		B4A90C5927E415F10085CAC4 /* JYGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C5827E415F10085CAC4 /* JYGridView.m */; };
+		B4A90C5E27E6168E0085CAC4 /* JYWriteFeelingBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C5D27E6168E0085CAC4 /* JYWriteFeelingBottomView.m */; };
+		B4A90C6127E62AE50085CAC4 /* JYWritePaintingListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C6027E62AE50085CAC4 /* JYWritePaintingListView.m */; };
+		B4A90C6427E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C6327E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.m */; };
 		B4AC37A627DC789200529722 /* JYARCArrangeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37A527DC789200529722 /* JYARCArrangeTextView.swift */; };
 		B4AC37A927DC78D300529722 /* JYARCArrangeStartView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37A727DC78D300529722 /* JYARCArrangeStartView.m */; };
 		B4AC37EE27DCC09500529722 /* JYMonthCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37ED27DCC09500529722 /* JYMonthCalendarView.m */; };
@@ -101,6 +104,12 @@
 		B41AC73F27D71EBB00CDF4AB /* JYFeelingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYFeelingModel.m; sourceTree = "<group>"; };
 		B4A90C5727E415F10085CAC4 /* JYGridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYGridView.h; sourceTree = "<group>"; };
 		B4A90C5827E415F10085CAC4 /* JYGridView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYGridView.m; sourceTree = "<group>"; };
+		B4A90C5C27E6168E0085CAC4 /* JYWriteFeelingBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYWriteFeelingBottomView.h; sourceTree = "<group>"; };
+		B4A90C5D27E6168E0085CAC4 /* JYWriteFeelingBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYWriteFeelingBottomView.m; sourceTree = "<group>"; };
+		B4A90C5F27E62AE50085CAC4 /* JYWritePaintingListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYWritePaintingListView.h; sourceTree = "<group>"; };
+		B4A90C6027E62AE50085CAC4 /* JYWritePaintingListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYWritePaintingListView.m; sourceTree = "<group>"; };
+		B4A90C6227E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYWritePaintingListCollectionViewCell.h; sourceTree = "<group>"; };
+		B4A90C6327E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYWritePaintingListCollectionViewCell.m; sourceTree = "<group>"; };
 		B4AC37A427DC789200529722 /* Semo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Semo-Bridging-Header.h"; sourceTree = "<group>"; };
 		B4AC37A527DC789200529722 /* JYARCArrangeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JYARCArrangeTextView.swift; sourceTree = "<group>"; };
 		B4AC37A727DC78D300529722 /* JYARCArrangeStartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYARCArrangeStartView.m; sourceTree = "<group>"; };
@@ -331,10 +340,16 @@
 				B4EC077127DF07AB00CB0877 /* SealFeeling */,
 				B4EC076427DEFF4500CB0877 /* JYWriteFeelingView.h */,
 				B4EC076527DEFF4500CB0877 /* JYWriteFeelingView.m */,
+				B4A90C5C27E6168E0085CAC4 /* JYWriteFeelingBottomView.h */,
+				B4A90C5D27E6168E0085CAC4 /* JYWriteFeelingBottomView.m */,
 				B4EC076727DF00D800CB0877 /* JYWriteFeelingTableViewCell.h */,
 				B4EC076827DF00D800CB0877 /* JYWriteFeelingTableViewCell.m */,
 				B4EC076A27DF013F00CB0877 /* JYWriteFeelingListView.h */,
 				B4EC076B27DF013F00CB0877 /* JYWriteFeelingListView.m */,
+				B4A90C5F27E62AE50085CAC4 /* JYWritePaintingListView.h */,
+				B4A90C6027E62AE50085CAC4 /* JYWritePaintingListView.m */,
+				B4A90C6227E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.h */,
+				B4A90C6327E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.m */,
 				B4EC076E27DF01D000CB0877 /* JYWriteFeelingListCollectionViewCell.h */,
 				B4EC076F27DF01D000CB0877 /* JYWriteFeelingListCollectionViewCell.m */,
 			);
@@ -527,12 +542,15 @@
 				B4EC077027DF01D000CB0877 /* JYWriteFeelingListCollectionViewCell.m in Sources */,
 				B41AC6F427D5A6A400CDF4AB /* main.m in Sources */,
 				B4AC37F427DCC56600529722 /* JYCalendarCalculator.m in Sources */,
+				B4A90C5E27E6168E0085CAC4 /* JYWriteFeelingBottomView.m in Sources */,
 				B4EC076627DEFF4500CB0877 /* JYWriteFeelingView.m in Sources */,
+				B4A90C6427E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.m in Sources */,
 				B4AC37F127DCC41100529722 /* JYMonthCalendarCollectionViewCell.m in Sources */,
 				B41AC73727D7007300CDF4AB /* JYFeelingListView.m in Sources */,
 				B4F5455527D83E5D00D6184C /* JYFeelingView.m in Sources */,
 				B4AC37FD27DD9FB400529722 /* JYDayCalendarView.m in Sources */,
 				B41AC6E627D5A69F00CDF4AB /* SceneDelegate.m in Sources */,
+				B4A90C6127E62AE50085CAC4 /* JYWritePaintingListView.m in Sources */,
 				B4AC380027DDA4CF00529722 /* JYDayCalendarCollectionViewCell.m in Sources */,
 				B41AC73C27D71A5700CDF4AB /* JYFeelingTableViewCell.m in Sources */,
 				B4EC076C27DF013F00CB0877 /* JYWriteFeelingListView.m in Sources */,

@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JYGridView : UIView
-- (void)ff:(CGFloat)width size:(CGSize)size;
+- (void)drawGridWithVerLineCount:(NSInteger)verLineCount horLineCount:(NSInteger)horLineCount;
 @end
 
 NS_ASSUME_NONNULL_END

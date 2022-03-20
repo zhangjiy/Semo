@@ -9,8 +9,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JYWriteFeelingListView : UIView
+@class JYWriteFeelingListView;
 
+@protocol JYWriteFeelingListViewDelegate <NSObject>
+@optional
+- (void)writeFeelingListView:(JYWriteFeelingListView *)listView didSelectItem:(NSString *)item;
+@end
+
+@interface JYWriteFeelingListView : UIView
+@property (nonatomic, weak) id <JYWriteFeelingListViewDelegate> delegate;
 @end
 
 NS_ASSUME_NONNULL_END

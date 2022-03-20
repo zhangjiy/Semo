@@ -1,21 +1,19 @@
 //
-//  JYDayCalendarView.m
+//  JYWritePaintingListView.m
 //  Semo
 //
-//  Created by jiyang on 2022/3/13.
+//  Created by jiyang on 2022/3/19.
 //
 
-#import "JYDayCalendarView.h"
-#import "JYDayCalendarCollectionViewCell.h"
+#import "JYWritePaintingListView.h"
+#import "JYWritePaintingListCollectionViewCell.h"
 #import "JYPrefixHeader.h"
 
-@interface JYDayCalendarView () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface JYWritePaintingListView () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView * collectionView;
-
-@property (nonatomic, strong) JYCalendar *calendar;
 @end
 
-@implementation JYDayCalendarView
+@implementation JYWritePaintingListView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -42,7 +40,7 @@
         _collectionView.pagingEnabled = YES;
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
-        [_collectionView registerClass:[JYDayCalendarCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+        [_collectionView registerClass:[JYWritePaintingListCollectionViewCell class] forCellWithReuseIdentifier:@"JYWritePaintingListCollectionViewCell"];
         _collectionView.scrollsToTop = NO;
         _collectionView.contentInset = UIEdgeInsetsZero;
         if (@available(iOS 11.0, *)) _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -54,19 +52,13 @@
 - (UICollectionViewFlowLayout *)collectionViewFlowLayout {
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc] init];
     layout.minimumLineSpacing = 0;
-    layout.minimumInteritemSpacing = 0;
+    layout.minimumInteritemSpacing = 10;
     layout.itemSize = [UIScreen mainScreen].bounds.size;
-    layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    layout.sectionInset = UIEdgeInsetsMake(0, 50, 0, 50);
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     return layout;
 }
 
-- (void)setMonth:(NSDate *)month {
-    if (_month != month) {
-        _month = month;
-        [self.collectionView reloadData];
-    }
-}
 
 #pragma mark - UICollectionViewDataSource
 
@@ -75,23 +67,23 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    NSInteger numberOfRows = [self.calculator numberOfRowsInMonth:self.month];
-    return 32;
+    
+    return Plantings.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    JYDayCalendarCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    NSString *text = [self.calculator dayTextForMonth:self.month index:indexPath.row];
-    [cell updateViewWithText:text];
+    JYWritePaintingListCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYWritePaintingListCollectionViewCell" forIndexPath:indexPath];
+    NSString *text = Plantings[indexPath.row];
+    cell.text = text;
     return cell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat width = JYHomeGridWidth / 4.f;
-    return CGSizeMake(width, width);
+    return CGSizeMake(self.height, self.height);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 @end
+

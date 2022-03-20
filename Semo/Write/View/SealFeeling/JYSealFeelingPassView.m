@@ -165,9 +165,15 @@
         _textLabel.font = [UIFont boldSystemFontOfSize:50];
         _textLabel.textColor = SMSealRedColor;
         _textLabel.textAlignment = NSTextAlignmentCenter;
-        _textLabel.text = @"乐";
     }
     return _textLabel;
+}
+
+- (void)setText:(NSString *)text {
+    if (_text != text) {
+        _text = text;
+        self.textLabel.text = text;
+    }
 }
 
 @end

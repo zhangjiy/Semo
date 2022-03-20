@@ -11,6 +11,7 @@
 
 @interface JYWriteFeelingListView () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView * collectionView;
+@property (nonatomic, strong) NSIndexPath * indexPath;
 @end
 
 @implementation JYWriteFeelingListView
@@ -53,8 +54,8 @@
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc] init];
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing = 10;
-    layout.itemSize = CGSizeMake(44, 44);
-    layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    layout.itemSize = [UIScreen mainScreen].bounds.size;
+    layout.sectionInset = UIEdgeInsetsMake(0, 20, 0, 20);
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     return layout;
 }
@@ -74,11 +75,24 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     JYWriteFeelingListCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     NSString *text = Feelings[indexPath.row];
+    UIColor *color = FeelingColors[indexPath.row];
     cell.text = text;
+    cell.color = color;
+    cell.isSelected = indexPath.row == self.indexPath.row ? YES : NO;
     return cell;
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(self.height, self.height);
+}
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    self.indexPath = indexPath;
+    [self.collectionView reloadData];
+    NSString *text = Feelings[indexPath.row];
+    if ([self.delegate respondsToSelector:@selector(writeFeelingListView:didSelectItem:)]) {
+        [self.delegate writeFeelingListView:self didSelectItem:text];
+    }
 }
 
 @end

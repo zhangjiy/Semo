@@ -77,12 +77,10 @@
             for (int i= 1; i <= 5; i++) {
                 CGFloat x = arcCenter.x - sinf(i * angle) * radius;
                 CGFloat y = arcCenter.y - cosf(i * angle) * radius;
-                
                 CGFloat midx = arcCenter.x - sinf(i * angle - 2 * M_PI / 5.f) * radius * rate;
                 CGFloat midy = arcCenter.y - cosf(i * angle -2 * M_PI / 5.f) * radius*rate;
                 [path addQuadCurveToPoint:CGPointMake(x, y) controlPoint:CGPointMake(midx, midy)];
             }
-            
             path.CGPath;
         });
         startLayer.lineWidth = 1.f;
