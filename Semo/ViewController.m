@@ -92,6 +92,7 @@
 
 - (void)plusControlAction:(UIControl *)sender {
     JYWriteFeelingViewController *controller = [[JYWriteFeelingViewController alloc] init];
+    controller.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:controller animated:YES completion:nil];
 }
 

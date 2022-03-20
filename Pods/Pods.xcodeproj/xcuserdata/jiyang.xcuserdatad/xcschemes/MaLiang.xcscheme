@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E631E27C5D04BC21AB3851D6CCE8E73E"
-               BuildableName = "libMaLiang.a"
+               BuildableName = "MaLiang.framework"
                BlueprintName = "MaLiang"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

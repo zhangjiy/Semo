@@ -1,4 +1,4 @@
-module Comet {
+framework module Comet {
   umbrella header "Comet-umbrella.h"
 
   export *

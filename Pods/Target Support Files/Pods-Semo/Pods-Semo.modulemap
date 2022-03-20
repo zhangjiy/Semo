@@ -1,4 +1,4 @@
-module Pods_Semo {
+framework module Pods_Semo {
   umbrella header "Pods-Semo-umbrella.h"
 
   export *

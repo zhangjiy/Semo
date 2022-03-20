@@ -7,13 +7,15 @@
 
 #import "JYWriteFeelingViewController.h"
 #import "JYGridView.h"
-#import "JYWriteFeelingView.h"
+#import "JYRecordFeelingsManager.h"
+#import "JYWriteFeelingBottomView.h"
 #import "LGDrawer.h"
 #import "JYPrefixHeader.h"
 
-@interface JYWriteFeelingViewController ()
+@interface JYWriteFeelingViewController () <JYWriteFeelingBottomViewDelegate>
 @property (nonatomic, strong) JYGridView *gridView;
-@property (nonatomic, strong) JYWriteFeelingView *writeFeelingView;
+@property (nonatomic, strong) id <JYViewProtocol> recordManager;
+@property (nonatomic, strong) JYWriteFeelingBottomView * bottomView;
 @property (nonatomic, strong) UIButton *cancelButton;
 @property (nonatomic, strong) UIButton *confirmButton;
 @end
@@ -33,7 +35,8 @@
 - (void)initSubviews {
     [self.view addSubview:self.gridView];
     [self.gridView drawGridWithVerLineCount:7 horLineCount:14];
-    [self.view addSubview:self.writeFeelingView];
+    [self.view addSubview:self.recordManager.containerView];
+    [self.view addSubview:self.bottomView];
     [self.view addSubview:self.cancelButton];
     [self.view addSubview:self.confirmButton];
 }
@@ -41,7 +44,8 @@
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
-    _writeFeelingView.frame = self.view.bounds;
+    _bottomView.size = CGSizeMake(self.view.width, JYWriteBottomHeight);
+    _bottomView.bottom = self.view.height;
     
     _cancelButton.size = CGSizeMake(30, 30);
     _cancelButton.left = 20;
@@ -55,16 +59,25 @@
 - (JYGridView *)gridView {
     if (!_gridView) {
         _gridView = [[JYGridView alloc] initWithFrame:CGRectMake(-1, -1, JYWriteGridWidth, JYWriteGridHeight)];
-        //_gridView.backgroundColor = SMHomeBackgroudColor;
     }
     return _gridView;
 }
 
-- (JYWriteFeelingView *)writeFeelingView {
-    if (!_writeFeelingView) {
-        _writeFeelingView = [[JYWriteFeelingView alloc] initWithFrame:CGRectZero];
+- (id<JYViewProtocol>)recordManager {
+    if (!_recordManager) {
+        _recordManager = [[JYRecordFeelingsManager alloc] initWithFrame:self.view.bounds];
     }
-    return _writeFeelingView;
+    
+    return _recordManager;
+}
+
+- (JYWriteFeelingBottomView *)bottomView {
+    if (!_bottomView) {
+        _bottomView = [[JYWriteFeelingBottomView alloc] initWithFrame:CGRectZero];
+        _bottomView.backgroundColor = [UIColor colorWithRed:223/225.f green:225/225.f blue:215/225.f alpha:1.f];
+        _bottomView.delegate = self;
+    }
+    return _bottomView;
 }
 
 - (UIButton *)cancelButton {
@@ -116,6 +129,13 @@
                                shadowColor:JYShadowColor
                               shadowOffset:JYShadowOffset
                                 shadowBlur:JYShadowBlur];
+}
+
+#pragma -- mark -- JYWriteFeelingBottomViewDelegate
+
+- (void)writeFeelingBottomView:(JYWriteFeelingBottomView *)bottomView didSelectItem:(NSString *)item {
+//    self.sealFeelingPassView.hidden = NO;
+//    self.sealFeelingPassView.text = item;
 }
 
 @end

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		36881FC5D564A565C0F44D30 /* libPods-Semo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F37D355BB07710ECF332148E /* libPods-Semo.a */; };
+		AF6E6458AA744AAA00D4465E /* Pods_Semo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA25C72885D57D9EEC085F12 /* Pods_Semo.framework */; };
 		B41AC6E327D5A69F00CDF4AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC6E227D5A69F00CDF4AB /* AppDelegate.m */; };
 		B41AC6E627D5A69F00CDF4AB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC6E527D5A69F00CDF4AB /* SceneDelegate.m */; };
 		B41AC6E927D5A69F00CDF4AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC6E827D5A69F00CDF4AB /* ViewController.m */; };
@@ -41,6 +41,18 @@
 		B4AC380027DDA4CF00529722 /* JYDayCalendarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37FF27DDA4CF00529722 /* JYDayCalendarCollectionViewCell.m */; };
 		B4AC380727DE30E500529722 /* JYCalendarCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC380627DE30E500529722 /* JYCalendarCollectionViewLayout.m */; };
 		B4EA2BF927E7000D00779793 /* LGDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EA2BF827E7000D00779793 /* LGDrawer.m */; };
+		B4EA2C0027E7482000779793 /* JYPaintingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EA2BFF27E7482000779793 /* JYPaintingView.swift */; };
+		B4EA2C0727E74E0000779793 /* ChartletEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EA2C0227E74E0000779793 /* ChartletEditor.swift */; };
+		B4EA2C0827E74E0000779793 /* ChartletImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EA2C0327E74E0000779793 /* ChartletImageCache.swift */; };
+		B4EA2C0927E74E0000779793 /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EA2C0427E74E0000779793 /* MathUtils.swift */; };
+		B4EA2C0A27E74E0000779793 /* ChartletPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4EA2C0527E74E0000779793 /* ChartletPicker.storyboard */; };
+		B4EA2C0B27E74E0000779793 /* ChartletPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EA2C0627E74E0000779793 /* ChartletPicker.swift */; };
+		B4EA2C0D27E74E8800779793 /* PaintingPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EA2C0C27E74E8800779793 /* PaintingPreview.swift */; };
+		B4EA2C1227E752BA00779793 /* JYRecordFeelingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EA2C1127E752BA00779793 /* JYRecordFeelingsManager.m */; };
+		B4EA2C1827E7598500779793 /* brush.png in Resources */ = {isa = PBXBuildFile; fileRef = B4EA2C1427E7598500779793 /* brush.png */; };
+		B4EA2C1927E7598500779793 /* glow.png in Resources */ = {isa = PBXBuildFile; fileRef = B4EA2C1527E7598500779793 /* glow.png */; };
+		B4EA2C1A27E7598500779793 /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = B4EA2C1627E7598500779793 /* pencil.png */; };
+		B4EA2C1B27E7598500779793 /* claw.png in Resources */ = {isa = PBXBuildFile; fileRef = B4EA2C1727E7598500779793 /* claw.png */; };
 		B4EC076627DEFF4500CB0877 /* JYWriteFeelingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EC076527DEFF4500CB0877 /* JYWriteFeelingView.m */; };
 		B4EC076927DF00D800CB0877 /* JYWriteFeelingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EC076827DF00D800CB0877 /* JYWriteFeelingTableViewCell.m */; };
 		B4EC076C27DF013F00CB0877 /* JYWriteFeelingListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EC076B27DF013F00CB0877 /* JYWriteFeelingListView.m */; };
@@ -133,6 +145,20 @@
 		B4AC380627DE30E500529722 /* JYCalendarCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYCalendarCollectionViewLayout.m; sourceTree = "<group>"; };
 		B4EA2BF727E7000D00779793 /* LGDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGDrawer.h; sourceTree = "<group>"; };
 		B4EA2BF827E7000D00779793 /* LGDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGDrawer.m; sourceTree = "<group>"; };
+		B4EA2BFF27E7482000779793 /* JYPaintingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JYPaintingView.swift; sourceTree = "<group>"; };
+		B4EA2C0227E74E0000779793 /* ChartletEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartletEditor.swift; sourceTree = "<group>"; };
+		B4EA2C0327E74E0000779793 /* ChartletImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartletImageCache.swift; sourceTree = "<group>"; };
+		B4EA2C0427E74E0000779793 /* MathUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathUtils.swift; sourceTree = "<group>"; };
+		B4EA2C0527E74E0000779793 /* ChartletPicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChartletPicker.storyboard; sourceTree = "<group>"; };
+		B4EA2C0627E74E0000779793 /* ChartletPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartletPicker.swift; sourceTree = "<group>"; };
+		B4EA2C0C27E74E8800779793 /* PaintingPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintingPreview.swift; sourceTree = "<group>"; };
+		B4EA2C0F27E7524F00779793 /* JYViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYViewProtocol.h; sourceTree = "<group>"; };
+		B4EA2C1027E752BA00779793 /* JYRecordFeelingsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYRecordFeelingsManager.h; sourceTree = "<group>"; };
+		B4EA2C1127E752BA00779793 /* JYRecordFeelingsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYRecordFeelingsManager.m; sourceTree = "<group>"; };
+		B4EA2C1427E7598500779793 /* brush.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brush.png; sourceTree = "<group>"; };
+		B4EA2C1527E7598500779793 /* glow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glow.png; sourceTree = "<group>"; };
+		B4EA2C1627E7598500779793 /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
+		B4EA2C1727E7598500779793 /* claw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = claw.png; sourceTree = "<group>"; };
 		B4EC076427DEFF4500CB0877 /* JYWriteFeelingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYWriteFeelingView.h; sourceTree = "<group>"; };
 		B4EC076527DEFF4500CB0877 /* JYWriteFeelingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYWriteFeelingView.m; sourceTree = "<group>"; };
 		B4EC076727DF00D800CB0877 /* JYWriteFeelingTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYWriteFeelingTableViewCell.h; sourceTree = "<group>"; };
@@ -145,7 +171,7 @@
 		B4EC077327DF07D800CB0877 /* JYSealFeelingPassView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYSealFeelingPassView.m; sourceTree = "<group>"; };
 		B4F5455327D83E5D00D6184C /* JYFeelingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYFeelingView.h; sourceTree = "<group>"; };
 		B4F5455427D83E5D00D6184C /* JYFeelingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYFeelingView.m; sourceTree = "<group>"; };
-		F37D355BB07710ECF332148E /* libPods-Semo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Semo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA25C72885D57D9EEC085F12 /* Pods_Semo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Semo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36881FC5D564A565C0F44D30 /* libPods-Semo.a in Frameworks */,
+				AF6E6458AA744AAA00D4465E /* Pods_Semo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,7 +203,7 @@
 		30E74E0A019721B64551FC30 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F37D355BB07710ECF332148E /* libPods-Semo.a */,
+				BA25C72885D57D9EEC085F12 /* Pods_Semo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -207,8 +233,11 @@
 		B41AC6E027D5A69F00CDF4AB /* Semo */ = {
 			isa = PBXGroup;
 			children = (
+				B4EA2C1327E7598500779793 /* Textures */,
+				B4EA2C0E27E7522C00779793 /* Base */,
 				B4AC37EB27DCC07B00529722 /* Calendar */,
 				B4AC37A327DC782700529722 /* Seal */,
+				B4EA2BFA27E747AC00779793 /* Record */,
 				B41AC73027D6F96700CDF4AB /* Write */,
 				B41AC71C27D5AA9C00CDF4AB /* Tool */,
 				B41AC71827D5A9FF00CDF4AB /* Home */,
@@ -347,6 +376,55 @@
 			path = DrawImage;
 			sourceTree = "<group>";
 		};
+		B4EA2BFA27E747AC00779793 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				B4EA2C0127E74E0000779793 /* Components */,
+				B4EA2BFB27E747C300779793 /* Painting */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		B4EA2BFB27E747C300779793 /* Painting */ = {
+			isa = PBXGroup;
+			children = (
+				B4EA2C0C27E74E8800779793 /* PaintingPreview.swift */,
+				B4EA2BFF27E7482000779793 /* JYPaintingView.swift */,
+			);
+			path = Painting;
+			sourceTree = "<group>";
+		};
+		B4EA2C0127E74E0000779793 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B4EA2C0227E74E0000779793 /* ChartletEditor.swift */,
+				B4EA2C0327E74E0000779793 /* ChartletImageCache.swift */,
+				B4EA2C0427E74E0000779793 /* MathUtils.swift */,
+				B4EA2C0527E74E0000779793 /* ChartletPicker.storyboard */,
+				B4EA2C0627E74E0000779793 /* ChartletPicker.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B4EA2C0E27E7522C00779793 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				B4EA2C0F27E7524F00779793 /* JYViewProtocol.h */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		B4EA2C1327E7598500779793 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				B4EA2C1427E7598500779793 /* brush.png */,
+				B4EA2C1527E7598500779793 /* glow.png */,
+				B4EA2C1627E7598500779793 /* pencil.png */,
+				B4EA2C1727E7598500779793 /* claw.png */,
+			);
+			path = Textures;
+			sourceTree = "<group>";
+		};
 		B4EC076D27DF018A00CB0877 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +443,8 @@
 				B4A90C6327E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.m */,
 				B4EC076E27DF01D000CB0877 /* JYWriteFeelingListCollectionViewCell.h */,
 				B4EC076F27DF01D000CB0877 /* JYWriteFeelingListCollectionViewCell.m */,
+				B4EA2C1027E752BA00779793 /* JYRecordFeelingsManager.h */,
+				B4EA2C1127E752BA00779793 /* JYRecordFeelingsManager.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -398,6 +478,7 @@
 				B41AC6DA27D5A69F00CDF4AB /* Sources */,
 				B41AC6DB27D5A69F00CDF4AB /* Frameworks */,
 				B41AC6DC27D5A69F00CDF4AB /* Resources */,
+				CA95E3245B4B159ABADC416F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -492,7 +573,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4EA2C1827E7598500779793 /* brush.png in Resources */,
+				B4EA2C1A27E7598500779793 /* pencil.png in Resources */,
+				B4EA2C1B27E7598500779793 /* claw.png in Resources */,
 				B41AC6F127D5A6A400CDF4AB /* LaunchScreen.storyboard in Resources */,
+				B4EA2C1927E7598500779793 /* glow.png in Resources */,
+				B4EA2C0A27E74E0000779793 /* ChartletPicker.storyboard in Resources */,
 				B41AC6EE27D5A6A400CDF4AB /* Assets.xcassets in Resources */,
 				B41AC6EC27D5A69F00CDF4AB /* Main.storyboard in Resources */,
 			);
@@ -537,6 +623,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CA95E3245B4B159ABADC416F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Semo/Pods-Semo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Semo/Pods-Semo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Semo/Pods-Semo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -545,6 +648,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B41AC72F27D6F11D00CDF4AB /* JYPlusControl.m in Sources */,
+				B4EA2C1227E752BA00779793 /* JYRecordFeelingsManager.m in Sources */,
+				B4EA2C0827E74E0000779793 /* ChartletImageCache.swift in Sources */,
 				B41AC6E927D5A69F00CDF4AB /* ViewController.m in Sources */,
 				B4AC37A927DC78D300529722 /* JYARCArrangeStartView.m in Sources */,
 				B4AC37EE27DCC09500529722 /* JYMonthCalendarView.m in Sources */,
@@ -559,12 +664,16 @@
 				B4EC076627DEFF4500CB0877 /* JYWriteFeelingView.m in Sources */,
 				B4A90C6427E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.m in Sources */,
 				B4AC37F127DCC41100529722 /* JYMonthCalendarCollectionViewCell.m in Sources */,
+				B4EA2C0D27E74E8800779793 /* PaintingPreview.swift in Sources */,
 				B41AC73727D7007300CDF4AB /* JYFeelingListView.m in Sources */,
 				B4F5455527D83E5D00D6184C /* JYFeelingView.m in Sources */,
 				B4EA2BF927E7000D00779793 /* LGDrawer.m in Sources */,
 				B4AC37FD27DD9FB400529722 /* JYDayCalendarView.m in Sources */,
+				B4EA2C0B27E74E0000779793 /* ChartletPicker.swift in Sources */,
 				B41AC6E627D5A69F00CDF4AB /* SceneDelegate.m in Sources */,
+				B4EA2C0927E74E0000779793 /* MathUtils.swift in Sources */,
 				B4A90C6127E62AE50085CAC4 /* JYWritePaintingListView.m in Sources */,
+				B4EA2C0027E7482000779793 /* JYPaintingView.swift in Sources */,
 				B4AC380027DDA4CF00529722 /* JYDayCalendarCollectionViewCell.m in Sources */,
 				B41AC73C27D71A5700CDF4AB /* JYFeelingTableViewCell.m in Sources */,
 				B4EC076C27DF013F00CB0877 /* JYWriteFeelingListView.m in Sources */,
@@ -576,6 +685,7 @@
 				B4EC076927DF00D800CB0877 /* JYWriteFeelingTableViewCell.m in Sources */,
 				B41AC72427D5AA9D00CDF4AB /* UIColor+Extensions.m in Sources */,
 				B41AC72527D5AA9D00CDF4AB /* UIView+JYFrame.m in Sources */,
+				B4EA2C0727E74E0000779793 /* ChartletEditor.swift in Sources */,
 				B4AC37F727DCC93500529722 /* NSCalendar+JYCalendarExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

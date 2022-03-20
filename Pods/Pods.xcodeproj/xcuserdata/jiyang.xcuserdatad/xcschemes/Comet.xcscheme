@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1649FBA23FB2629C4588CCD889379F15"
-               BuildableName = "libComet.a"
+               BuildableName = "Comet.framework"
                BlueprintName = "Comet"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

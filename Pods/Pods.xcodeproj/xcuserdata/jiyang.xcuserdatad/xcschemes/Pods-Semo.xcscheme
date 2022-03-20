@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E69C055C472441BE017C888D2D7AF72B"
-               BuildableName = "libPods-Semo.a"
+               BuildableName = "Pods_Semo.framework"
                BlueprintName = "Pods-Semo"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

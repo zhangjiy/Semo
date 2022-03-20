@@ -1,4 +1,4 @@
-module MaLiang {
+framework module MaLiang {
   umbrella header "MaLiang-umbrella.h"
 
   export *

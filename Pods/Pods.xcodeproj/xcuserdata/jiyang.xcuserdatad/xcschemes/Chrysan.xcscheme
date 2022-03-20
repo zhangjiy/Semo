@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE73943546CCECA8EB06D4885289C66D"
-               BuildableName = "libChrysan.a"
+               BuildableName = "Chrysan.framework"
                BlueprintName = "Chrysan"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

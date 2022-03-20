@@ -1,4 +1,4 @@
-module Chrysan {
+framework module Chrysan {
   umbrella header "Chrysan-umbrella.h"
 
   export *
