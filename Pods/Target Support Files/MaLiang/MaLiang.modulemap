@@ -1,0 +1,6 @@
+module MaLiang {
+  umbrella header "MaLiang-umbrella.h"
+
+  export *
+  module * { export * }
+}

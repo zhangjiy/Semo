@@ -1,18 +1,39 @@
 PODS:
+  - Chrysan (2.0.4):
+    - SnapKit (~> 5.0)
+  - Comet (1.6.2)
+  - MaLiang (2.9.2)
   - SDWebImage (5.12.4):
     - SDWebImage/Core (= 5.12.4)
   - SDWebImage/Core (5.12.4)
+  - SnapKit (5.0.1)
+  - Zip (2.1.2)
 
 DEPENDENCIES:
+  - Chrysan
+  - Comet
+  - MaLiang
   - SDWebImage
+  - SnapKit
+  - Zip
 
 SPEC REPOS:
   trunk:
+    - Chrysan
+    - Comet
+    - MaLiang
     - SDWebImage
+    - SnapKit
+    - Zip
 
 SPEC CHECKSUMS:
+  Chrysan: d8607b02a90e7b4a10129c5f3878a8e565902e7a
+  Comet: ec129472bd2b9683c13aefa939703cc3ef0efb14
+  MaLiang: 7cf6c70e37577b5ec1b34add37fa6d58808f5451
   SDWebImage: 631cf572cc93dfdfe54162e556410a61f1141928
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Zip: b3fef584b147b6e582b2256a9815c897d60ddc67
 
-PODFILE CHECKSUM: f06755504fed447767e2d8f2b7857055d6bb9af0
+PODFILE CHECKSUM: 5109d86fbc2e71f498407444746960ef1a97c739
 
 COCOAPODS: 1.11.2
