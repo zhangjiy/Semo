@@ -51,6 +51,21 @@
 #define JYWriteGridWidth (ceilf((ScreenWidth) / 14.f) * 14.f)
 #define JYWriteGridHeight (JYWriteGridWidth * 2.f)
 
+// image
+#define JYOffset CGPointMake(-1.f, -1.f)
+
+#define JYRotate 0.f
+#define JYCornerRadius 12.f
+
+#define JYStrokeThickness    2.f
+#define JYStrokeDash         @[@4.f, @2.f]
+#define JYStrokeType         LGDrawerStrokeTypeCenter
+
+#define JYShadowColor    [UIColor colorWithWhite:0.f alpha:0.6]
+#define JYShadowOffset   CGPointMake(2.f, 2.f)
+#define JYShadowBlur     6.f
+#define JYShadowType     LGDrawerShadowTypeFill
+
 
 #define Feelings @[@"喜", @"怒", @"忧", @"思", @"悲", @"恐", @"惊"]
 
