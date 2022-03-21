@@ -6,6 +6,7 @@
 //
 
 #import "JYWritePaintingListCollectionViewCell.h"
+#import "JYPainting.h"
 #import "JYPrefixHeader.h"
 
 @interface JYWritePaintingListCollectionViewCell ()
@@ -45,11 +46,8 @@
     return _textLabel;
 }
 
-- (void)setText:(NSString *)text {
-    if (_text != text) {
-        _text = text;
-        self.textLabel.text = text;
-    }
+- (void)updateViewWithModel:(JYPaintingItem *)model {
+    self.textLabel.text = model.title;
 }
 
 @end

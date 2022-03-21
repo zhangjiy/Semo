@@ -13,24 +13,16 @@ import Chrysan
 import Zip
 
 class JYPaintingView: UIView {
-    
-    var strokeSizeLabel: UILabel!
-    var brushSegement: UISegmentedControl!
-    var sizeSlider: UISlider!
-    var undoButton: UIButton!
-    var redoButton: UIButton!
-    var backgroundSwitchButton: UIButton!
-    var backgroundView: UIImageView!
-    
+    var hollowView: UIView!
     var canvas: Canvas!
     
     var filePath: String?
     
-    var brushes: [Brush] = []
+    public var brushes: [Brush] = []
     var chartlets: [MLTexture] = []
     
     var color: UIColor {
-        return UIColor(red: r, green: g, blue: b, alpha: 1)
+        return UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1)
     }
     
     private func registerBrush(with imageName: String) throws -> Brush {
@@ -38,7 +30,7 @@ class JYPaintingView: UIView {
         return try canvas.registerBrush(name: imageName, textureID: texture.id)
     }
     
-   override public init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
         setupConfig()
@@ -59,25 +51,15 @@ class JYPaintingView: UIView {
     }
     
     private func setupView() {
-        backgroundView = UIImageView(frame:bounds)
-        addSubview(backgroundView)
+        hollowView = UIView(frame: bounds)
+        hollowView.backgroundColor = UIColor(red: 236/225, green: 237/225, blue: 232/225, alpha: 1)
+        addSubview(hollowView)
         canvas = Canvas(frame: bounds)
         addSubview(canvas)
-        brushSegement = UISegmentedControl(items: ["pen", "pencil", "brush"])
-        //brushSegement.addTarget(self, action: #selector("styleChanged"), for: .touchUpInside)
-        addSubview(brushSegement)
-        
-        undoButton = UIButton(frame: CGRect(x: 0, y: 400, width: 40, height: 40))
-        addSubview(undoButton)
-        
-        redoButton = UIButton(frame: CGRect(x: 0, y: 450, width: 40, height: 40))
-        addSubview(redoButton)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        backgroundView.frame = bounds
-        canvas.frame = bounds
     }
     
     func registerBrushes() {
@@ -123,10 +105,6 @@ class JYPaintingView: UIView {
             chartletBrush.renderStyle = .ordered
             chartletBrush.rotation = .random
             
-            // make eraser with a texture for claw
-            //            let eraser = try canvas.registerBrush(name: "Eraser", textureID: claw.textureID) as Eraser
-            //            eraser.rotation = .ahead
-            
             /// make eraser with default round point
             let eraser = try! canvas.registerBrush(name: "Eraser") as Eraser
             eraser.opacity = 1
@@ -143,87 +121,36 @@ class JYPaintingView: UIView {
             //self.present(alert, animated: true, completion: nil)
         }
         
-        brushSegement.removeAllSegments()
-        for i in 0 ..< brushes.count {
-            let name = brushes[i].name
-            brushSegement.insertSegment(withTitle: name, at: i, animated: false)
-        }
-        
         if brushes.count > 0 {
-            brushSegement.selectedSegmentIndex = 0
-            styleChanged(brushSegement)
+            styleChanged(0)
         }
     }
     
-    @IBAction func switchBackground(_ sender: UIButton) {
-        sender.isSelected.toggle()
-        backgroundView.isHidden = !sender.isSelected
-    }
-    
-    @IBAction func changeSizeAction(_ sender: UISlider) {
-        let size = Int(sender.value)
+    func changeSizeAction(_ size: CGFloat) {
         canvas.currentBrush.pointSize = CGFloat(size)
-        strokeSizeLabel.text = "\(size)"
     }
     
-    func styleChanged(_ sender: UISegmentedControl) {
-        let index = sender.selectedSegmentIndex
+    func styleChanged(_ index: Int) {
         let brush = brushes[index]
         brush.color = color
         brush.use()
-        strokeSizeLabel.text = "\(brush.pointSize)"
-        sizeSlider.value = Float(brush.pointSize)
+        //sizeSlider.value = Float(brush.pointSize)
     }
     
-    @IBAction func togglePencilMode(_ sender: UISwitch) {
-        canvas.isPencilMode = sender.isOn
+    func togglePencilMode(_ isOn: Bool) {
+        canvas.isPencilMode = isOn
     }
     
-    @IBAction func undoAction(_ sender: Any) {
+    func undoAction() {
         canvas.undo()
     }
     
-    @IBAction func redoAction(_ sender: Any) {
+    func redoAction() {
         canvas.redo()
     }
     
-    @IBAction func clearAction(_ sender: Any) {
+    func clearAction() {
         canvas.clear()
-    }
-    
-    @IBAction func moreAction(_ sender: UIBarButtonItem) {
-        let actionSheet = UIAlertController(title: "Choose Actions", message: nil, preferredStyle: .actionSheet)
-        actionSheet.addAction(title: "Add Chartlet", style: .default) { [unowned self] (_) in
-            self.addChartletAction()
-        }
-        actionSheet.addAction(title: "Snapshot", style: .default) { [unowned self] (_) in
-            self.snapshotAction(sender)
-        }
-        actionSheet.addAction(title: "Save", style: .default) { [unowned self] (_) in
-            self.saveData()
-        }
-        actionSheet.addAction(title: "Cancel", style: .cancel)
-        actionSheet.popoverPresentationController?.barButtonItem = sender
-        //present(actionSheet, animated: true, completion: nil)
-    }
-    
-    func addChartletAction() {
-//        ChartletPicker.present(from: self, textures: chartlets) { [unowned self] (texture) in
-//            self.showEditor(for: texture)
-//        }
-    }
-    
-    func showEditor(for texture: MLTexture) {
-//        ChartletEditor.present(from: self, for: texture) { [unowned self] (editor) in
-//            let result = editor.convertCoordinate(to: self.canvas)
-//            self.canvas.renderChartlet(at: result.center, size: result.size, textureID: texture.id, rotation: result.angle)
-//        }
-    }
-    
-    func snapshotAction(_ sender: Any) {
-//        let preview = PaintingPreview.create(from: .main)
-//        preview.image = canvas.snapshot()
-        //navigationController?.pushViewController(preview, animated: true)
     }
     
     func saveData() {
@@ -288,36 +215,7 @@ class JYPaintingView: UIView {
         }
     }
     
-    // MARK: - color
-    @IBOutlet weak var colorSampleView: UIView!
-    @IBOutlet weak var redSlider: UISlider!
-    @IBOutlet weak var greenSlider: UISlider!
-    @IBOutlet weak var blueSlider: UISlider!
-    @IBOutlet weak var rl: UILabel!
-    @IBOutlet weak var gl: UILabel!
-    @IBOutlet weak var bl: UILabel!
-    
-    var r: CGFloat = 0
-    var g: CGFloat = 0
-    var b: CGFloat = 0
-    
-    @IBAction func colorChanged(_ sender: UISlider) {
-        let value = Int(sender.value)
-        let colorv = CGFloat(value) / 255
-        switch sender.tag {
-        case 0:
-            r = colorv
-            rl.text = "\(value)"
-        case 1:
-            g = colorv
-            gl.text = "\(value)"
-        case 2:
-            b = colorv
-            bl.text = "\(value)"
-        default: break
-        }
-        
-        colorSampleView.backgroundColor = color
+    func colorChanged(_ color: UIColor) {
         canvas.currentBrush.color = color
     }
 }
@@ -325,12 +223,12 @@ class JYPaintingView: UIView {
 extension JYPaintingView: DataObserver {
     /// called when a line strip is begin
     func lineStrip(_ strip: LineStrip, didBeginOn data: CanvasData) {
-        self.redoButton.isEnabled = false
+        //self.redoButton.isEnabled = false
     }
     
     /// called when a element is finished
     func element(_ element: CanvasElement, didFinishOn data: CanvasData) {
-        self.undoButton.isEnabled = true
+        //self.undoButton.isEnabled = true
     }
     
     /// callen when clear the canvas
@@ -340,14 +238,14 @@ extension JYPaintingView: DataObserver {
     
     /// callen when undo
     func dataDidUndo(_ data: CanvasData) {
-        self.undoButton.isEnabled = true
-        self.redoButton.isEnabled = data.canRedo
+        //self.undoButton.isEnabled = true
+        //self.redoButton.isEnabled = data.canRedo
     }
     
     /// callen when redo
     func dataDidRedo(_ data: CanvasData) {
-        self.undoButton.isEnabled = true
-        self.redoButton.isEnabled = data.canRedo
+        //self.undoButton.isEnabled = true
+        //self.redoButton.isEnabled = data.canRedo
     }
 }
 

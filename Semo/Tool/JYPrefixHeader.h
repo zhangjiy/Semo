@@ -66,6 +66,10 @@
 #define JYShadowBlur     6.f
 #define JYShadowType     LGDrawerShadowTypeFill
 
+#define JYCanvasWidth     330
+#define JYCanvasHeight    165
+#define JYCanvasTop       100
+
 
 #define Feelings @[@"喜", @"怒", @"忧", @"思", @"悲", @"恐", @"惊"]
 

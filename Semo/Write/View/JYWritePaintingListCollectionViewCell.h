@@ -9,8 +9,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class JYPaintingItem;
+
 @interface JYWritePaintingListCollectionViewCell : UICollectionViewCell
-@property (nonatomic, strong) NSString * text;
+- (void)updateViewWithModel:(JYPaintingItem *)model;
 @end
 
 NS_ASSUME_NONNULL_END

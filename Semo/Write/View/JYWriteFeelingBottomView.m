@@ -8,9 +8,10 @@
 #import "JYWriteFeelingBottomView.h"
 #import "JYWritePaintingListView.h"
 #import "JYWriteFeelingListView.h"
+#import "JYPainting.h"
 #import "JYPrefixHeader.h"
 
-@interface JYWriteFeelingBottomView () <JYWriteFeelingListViewDelegate>
+@interface JYWriteFeelingBottomView () <JYWriteFeelingListViewDelegate, JYWritePaintingListViewDelegate>
 @property (nonatomic, strong) JYWritePaintingListView *paintingListView;
 @property (nonatomic, strong) JYWriteFeelingListView *feelingListView;
 @end
@@ -43,6 +44,10 @@
     _feelingListView.bottom = self.height - SafeAreaHeight;
 }
 
+- (void)updateViewWithModel:(JYPainting *)model {
+    [self.paintingListView updateViewWithModel:model];
+}
+
 - (JYWritePaintingListView *)paintingListView {
     if (!_paintingListView) {
         _paintingListView = [[JYWritePaintingListView alloc] initWithFrame:CGRectZero];
@@ -60,11 +65,11 @@
     return _feelingListView;
 }
 
-#pragma -- mark -- JYWriteFeelingListViewDelegate
+#pragma -- mark -- JYWritePaintingListViewDelegate
 
-- (void)writeFeelingListView:(JYWriteFeelingListView *)listView didSelectItem:(NSString *)item {
-    if ([self.delegate respondsToSelector:@selector(writeFeelingBottomView:didSelectItem:)]) {
-        [self.delegate writeFeelingBottomView:self didSelectItem:item];
+- (void)writeFeelingBottomView:(JYWriteFeelingBottomView *)bottomView didSelectPaintingItem:(JYPaintingItem *)item {
+    if ([self.delegate respondsToSelector:@selector(writeFeelingBottomView:didSelectPaintingItem:)]) {
+        [self.delegate writeFeelingBottomView:self didSelectPaintingItem:item];
     }
 }
 

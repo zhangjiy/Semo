@@ -7,10 +7,12 @@
 
 #import "JYWritePaintingListView.h"
 #import "JYWritePaintingListCollectionViewCell.h"
+#import "JYPainting.h"
 #import "JYPrefixHeader.h"
 
 @interface JYWritePaintingListView () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView * collectionView;
+@property (nonatomic, strong) JYPainting *painting;
 @end
 
 @implementation JYWritePaintingListView
@@ -29,6 +31,12 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     _collectionView.frame = self.bounds;
+}
+
+- (void)updateViewWithModel:(JYPainting *)model {
+    self.painting = model;
+    [self.collectionView reloadData];
+    
 }
 
 - (UICollectionView *)collectionView {
@@ -68,13 +76,13 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return Plantings.count;
+    return self.painting.plantings.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     JYWritePaintingListCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYWritePaintingListCollectionViewCell" forIndexPath:indexPath];
-    NSString *text = Plantings[indexPath.row];
-    cell.text = text;
+    JYPaintingItem *item = self.painting.plantings[indexPath.row];
+    [cell updateViewWithModel:item];
     return cell;
 }
 
@@ -83,6 +91,10 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    JYPaintingItem *item = self.painting.plantings[indexPath.row];
+    if ([self.delegate respondsToSelector:@selector(writePaintingListView:didSelectItem:)]) {
+        [self.delegate writePaintingListView:self didSelectItem:item];
+    }
 }
 
 @end

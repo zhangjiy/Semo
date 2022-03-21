@@ -9,15 +9,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class JYWriteFeelingBottomView;
+@class JYWriteFeelingBottomView, JYPainting, JYPaintingItem;
 
 @protocol JYWriteFeelingBottomViewDelegate <NSObject>
 @optional
-- (void)writeFeelingBottomView:(JYWriteFeelingBottomView *)bottomView didSelectItem:(NSString *)item;
+- (void)writeFeelingBottomView:(JYWriteFeelingBottomView *)bottomView didSelectPaintingItem:(JYPaintingItem *)item;
 @end
 
 @interface JYWriteFeelingBottomView : UIView
 @property (nonatomic, weak) id <JYWriteFeelingBottomViewDelegate> delegate;
+- (void)updateViewWithModel:(JYPainting *)model;
 @end
 
 NS_ASSUME_NONNULL_END

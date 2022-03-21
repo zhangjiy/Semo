@@ -7,14 +7,17 @@
 
 #import "JYRecordFeelingsManager.h"
 #import "JYSealFeelingPassView.h"
+#import "JYWriteFeelingBottomView.h"
+#import "JYPainting.h"
 #import "Semo-Swift.h"
 #import "JYPrefixHeader.h"
 
-@interface JYRecordFeelingsManager ()
+@interface JYRecordFeelingsManager () <JYWriteFeelingBottomViewDelegate>
 @property (nonatomic, strong) UIView * containerView;
-@property (nonatomic, strong) UIView * hollowView;
 @property (nonatomic, strong) JYSealFeelingPassView * sealFeelingPassView;
 @property (nonatomic, strong) JYPaintingView * paintingView;
+@property (nonatomic, strong) JYPainting *painting;
+@property (nonatomic, strong) JYWriteFeelingBottomView * bottomView;
 @end
 
 @implementation JYRecordFeelingsManager
@@ -24,39 +27,35 @@
     if (self) {
         self.containerView = [[UIView alloc] initWithFrame:frame];
         [self initSubviews];
+        [self initConfig];
     }
     
     return self;
 }
 
 - (void)initConfig {
-    
+    [self.bottomView updateViewWithModel:self.painting];
 }
 
 - (void)initSubviews {
-    [self.containerView addSubview:self.hollowView];
     [self.containerView addSubview:self.sealFeelingPassView];
     [self.containerView addSubview:self.paintingView];
+    [self.containerView addSubview:self.bottomView];
 }
 
 - (void)layoutSubviews {
     
-    _hollowView.size = CGSizeMake(330, 165);
-    _hollowView.top = 100;
-    _hollowView.centerX = self.containerView.width / 2.f;
+//    _sealFeelingPassView.size = CGSizeMake(120, 120);
+//    _sealFeelingPassView.centerY = _hollowView.height / 2.f;
+//    _sealFeelingPassView.centerX = _hollowView.width / 2.f;
     
-    _sealFeelingPassView.size = CGSizeMake(120, 120);
-    _sealFeelingPassView.centerY = _hollowView.height / 2.f;
-    _sealFeelingPassView.centerX = _hollowView.width / 2.f;
+    _paintingView.size = CGSizeMake(JYCanvasWidth, JYCanvasHeight);
+    _paintingView.top = JYCanvasTop;
+    _paintingView.centerX = self.containerView.width / 2.f;
     
-}
-
-- (UIView *)hollowView {
-    if (!_hollowView) {
-        _hollowView = [[UIView alloc] initWithFrame:CGRectZero];
-        _hollowView.backgroundColor = SMHomeBackgroudColor;
-    }
-    return _hollowView;
+    _bottomView.size = CGSizeMake(self.containerView.width, JYWriteBottomHeight);
+    _bottomView.bottom = self.containerView.height;
+    
 }
 
 - (JYSealFeelingPassView *)sealFeelingPassView {
@@ -70,10 +69,33 @@
 
 - (JYPaintingView *)paintingView {
     if (!_paintingView) {
-        _paintingView = [[JYPaintingView alloc] initWithFrame:self.containerView.frame];
+        _paintingView = [[JYPaintingView alloc] initWithFrame:CGRectMake((self.containerView.width - 330) / 2.f, JYCanvasTop, JYCanvasWidth, JYCanvasHeight)];
     }
     
     return _paintingView;
+}
+
+- (JYWriteFeelingBottomView *)bottomView {
+    if (!_bottomView) {
+        _bottomView = [[JYWriteFeelingBottomView alloc] initWithFrame:CGRectZero];
+        _bottomView.backgroundColor = [UIColor colorWithRed:223/225.f green:225/225.f blue:215/225.f alpha:1.f];
+        _bottomView.delegate = self;
+    }
+    return _bottomView;
+}
+
+- (JYPainting *)painting {
+    if (!_painting) {
+        _painting = [[JYPainting alloc] init];
+    }
+    
+    return _painting;
+}
+
+#pragma -- mark -- JYWriteFeelingBottomViewDelegate
+
+- (void)writeFeelingBottomView:(JYWriteFeelingBottomView *)bottomView didSelectPaintingItem:(JYPaintingItem *)item {
+    
 }
 
 @end

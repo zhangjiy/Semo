@@ -26,6 +26,7 @@
 		B41AC73727D7007300CDF4AB /* JYFeelingListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC73627D7007300CDF4AB /* JYFeelingListView.m */; };
 		B41AC73C27D71A5700CDF4AB /* JYFeelingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC73B27D71A5600CDF4AB /* JYFeelingTableViewCell.m */; };
 		B41AC74027D71EBB00CDF4AB /* JYFeelingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC73F27D71EBB00CDF4AB /* JYFeelingModel.m */; };
+		B41FF20427E84AB9004D0329 /* JYPainting.m in Sources */ = {isa = PBXBuildFile; fileRef = B41FF20327E84AB9004D0329 /* JYPainting.m */; };
 		B4A90C5927E415F10085CAC4 /* JYGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C5827E415F10085CAC4 /* JYGridView.m */; };
 		B4A90C5E27E6168E0085CAC4 /* JYWriteFeelingBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C5D27E6168E0085CAC4 /* JYWriteFeelingBottomView.m */; };
 		B4A90C6127E62AE50085CAC4 /* JYWritePaintingListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C6027E62AE50085CAC4 /* JYWritePaintingListView.m */; };
@@ -115,6 +116,8 @@
 		B41AC73B27D71A5600CDF4AB /* JYFeelingTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYFeelingTableViewCell.m; sourceTree = "<group>"; };
 		B41AC73E27D71EBB00CDF4AB /* JYFeelingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYFeelingModel.h; sourceTree = "<group>"; };
 		B41AC73F27D71EBB00CDF4AB /* JYFeelingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYFeelingModel.m; sourceTree = "<group>"; };
+		B41FF20227E84AB9004D0329 /* JYPainting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPainting.h; sourceTree = "<group>"; };
+		B41FF20327E84AB9004D0329 /* JYPainting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPainting.m; sourceTree = "<group>"; };
 		B4A90C5727E415F10085CAC4 /* JYGridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYGridView.h; sourceTree = "<group>"; };
 		B4A90C5827E415F10085CAC4 /* JYGridView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYGridView.m; sourceTree = "<group>"; };
 		B4A90C5C27E6168E0085CAC4 /* JYWriteFeelingBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYWriteFeelingBottomView.h; sourceTree = "<group>"; };
@@ -333,6 +336,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B41FF20127E84A9B004D0329 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B41FF20227E84AB9004D0329 /* JYPainting.h */,
+				B41FF20327E84AB9004D0329 /* JYPainting.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B4AC37A327DC782700529722 /* Seal */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,6 +391,7 @@
 		B4EA2BFA27E747AC00779793 /* Record */ = {
 			isa = PBXGroup;
 			children = (
+				B41FF20127E84A9B004D0329 /* Model */,
 				B4EA2C0127E74E0000779793 /* Components */,
 				B4EA2BFB27E747C300779793 /* Painting */,
 			);
@@ -660,6 +673,7 @@
 				B4EC077027DF01D000CB0877 /* JYWriteFeelingListCollectionViewCell.m in Sources */,
 				B41AC6F427D5A6A400CDF4AB /* main.m in Sources */,
 				B4AC37F427DCC56600529722 /* JYCalendarCalculator.m in Sources */,
+				B41FF20427E84AB9004D0329 /* JYPainting.m in Sources */,
 				B4A90C5E27E6168E0085CAC4 /* JYWriteFeelingBottomView.m in Sources */,
 				B4EC076627DEFF4500CB0877 /* JYWriteFeelingView.m in Sources */,
 				B4A90C6427E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.m in Sources */,
