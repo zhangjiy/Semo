@@ -6,8 +6,20 @@
 //
 
 #import "JYPainting.h"
+#import <UIKit/UIKit.h>
 
 @implementation JYPaintingItem
+@synthesize colors = _colors;
+
+- (NSArray<UIColor *> *)colors {
+    if (!_colors) {
+        if (_type == JYPaintingTypeColor) {
+            _colors = @[[UIColor whiteColor],[UIColor blackColor],[UIColor redColor],[UIColor yellowColor],[UIColor greenColor],[UIColor blueColor],[UIColor colorWithHue:0.8 saturation:1 brightness:1 alpha:1]];
+        }
+    }
+    
+    return _colors;
+}
 
 @end
 

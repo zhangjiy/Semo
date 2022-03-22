@@ -27,6 +27,7 @@
 		B41AC73C27D71A5700CDF4AB /* JYFeelingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC73B27D71A5600CDF4AB /* JYFeelingTableViewCell.m */; };
 		B41AC74027D71EBB00CDF4AB /* JYFeelingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC73F27D71EBB00CDF4AB /* JYFeelingModel.m */; };
 		B41FF20427E84AB9004D0329 /* JYPainting.m in Sources */ = {isa = PBXBuildFile; fileRef = B41FF20327E84AB9004D0329 /* JYPainting.m */; };
+		B4609CB727E995BF009BC2A5 /* JYPopupMenuOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CB627E995BF009BC2A5 /* JYPopupMenuOverlayView.m */; };
 		B4A90C5927E415F10085CAC4 /* JYGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C5827E415F10085CAC4 /* JYGridView.m */; };
 		B4A90C5E27E6168E0085CAC4 /* JYWriteFeelingBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C5D27E6168E0085CAC4 /* JYWriteFeelingBottomView.m */; };
 		B4A90C6127E62AE50085CAC4 /* JYWritePaintingListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C6027E62AE50085CAC4 /* JYWritePaintingListView.m */; };
@@ -41,6 +42,16 @@
 		B4AC37FD27DD9FB400529722 /* JYDayCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37FC27DD9FB400529722 /* JYDayCalendarView.m */; };
 		B4AC380027DDA4CF00529722 /* JYDayCalendarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37FF27DDA4CF00529722 /* JYDayCalendarCollectionViewCell.m */; };
 		B4AC380727DE30E500529722 /* JYCalendarCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC380627DE30E500529722 /* JYCalendarCollectionViewLayout.m */; };
+		B4BF762A27E8B220003BBAC5 /* QBPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF761E27E8B220003BBAC5 /* QBPopupMenu.m */; };
+		B4BF762B27E8B220003BBAC5 /* QBPopupMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF762227E8B220003BBAC5 /* QBPopupMenuItemView.m */; };
+		B4BF762C27E8B220003BBAC5 /* QBPopupMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF762327E8B220003BBAC5 /* QBPopupMenuItem.m */; };
+		B4BF762D27E8B220003BBAC5 /* QBPlasticPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF762427E8B220003BBAC5 /* QBPlasticPopupMenu.m */; };
+		B4BF762E27E8B220003BBAC5 /* QBPopupMenuOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF762727E8B220003BBAC5 /* QBPopupMenuOverlayView.m */; };
+		B4BF762F27E8B220003BBAC5 /* QBPopupMenuPagenatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF762827E8B220003BBAC5 /* QBPopupMenuPagenatorView.m */; };
+		B4BF763427E95C7B003BBAC5 /* JYPopupMenuListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF763327E95C7B003BBAC5 /* JYPopupMenuListView.m */; };
+		B4BF763827E95CFC003BBAC5 /* JYPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF763727E95CFC003BBAC5 /* JYPopupMenu.m */; };
+		B4BF763C27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF763B27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.m */; };
+		B4BF764227E963C9003BBAC5 /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF764127E963C9003BBAC5 /* UIView+ViewController.m */; };
 		B4EA2BF927E7000D00779793 /* LGDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EA2BF827E7000D00779793 /* LGDrawer.m */; };
 		B4EA2C0027E7482000779793 /* JYPaintingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EA2BFF27E7482000779793 /* JYPaintingView.swift */; };
 		B4EA2C0727E74E0000779793 /* ChartletEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EA2C0227E74E0000779793 /* ChartletEditor.swift */; };
@@ -118,6 +129,9 @@
 		B41AC73F27D71EBB00CDF4AB /* JYFeelingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYFeelingModel.m; sourceTree = "<group>"; };
 		B41FF20227E84AB9004D0329 /* JYPainting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPainting.h; sourceTree = "<group>"; };
 		B41FF20327E84AB9004D0329 /* JYPainting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPainting.m; sourceTree = "<group>"; };
+		B4609CB427E99167009BC2A5 /* JYPopupListMenuDataProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupListMenuDataProtocol.h; sourceTree = "<group>"; };
+		B4609CB527E995BF009BC2A5 /* JYPopupMenuOverlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuOverlayView.h; sourceTree = "<group>"; };
+		B4609CB627E995BF009BC2A5 /* JYPopupMenuOverlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupMenuOverlayView.m; sourceTree = "<group>"; };
 		B4A90C5727E415F10085CAC4 /* JYGridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYGridView.h; sourceTree = "<group>"; };
 		B4A90C5827E415F10085CAC4 /* JYGridView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYGridView.m; sourceTree = "<group>"; };
 		B4A90C5C27E6168E0085CAC4 /* JYWriteFeelingBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYWriteFeelingBottomView.h; sourceTree = "<group>"; };
@@ -146,6 +160,26 @@
 		B4AC37FF27DDA4CF00529722 /* JYDayCalendarCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYDayCalendarCollectionViewCell.m; sourceTree = "<group>"; };
 		B4AC380527DE30E500529722 /* JYCalendarCollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYCalendarCollectionViewLayout.h; sourceTree = "<group>"; };
 		B4AC380627DE30E500529722 /* JYCalendarCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYCalendarCollectionViewLayout.m; sourceTree = "<group>"; };
+		B4BF761E27E8B220003BBAC5 /* QBPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenu.m; sourceTree = "<group>"; };
+		B4BF761F27E8B220003BBAC5 /* QBPlasticPopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPlasticPopupMenu.h; sourceTree = "<group>"; };
+		B4BF762027E8B220003BBAC5 /* QBPopupMenuPagenatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPopupMenuPagenatorView.h; sourceTree = "<group>"; };
+		B4BF762127E8B220003BBAC5 /* QBPopupMenuOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPopupMenuOverlayView.h; sourceTree = "<group>"; };
+		B4BF762227E8B220003BBAC5 /* QBPopupMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenuItemView.m; sourceTree = "<group>"; };
+		B4BF762327E8B220003BBAC5 /* QBPopupMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenuItem.m; sourceTree = "<group>"; };
+		B4BF762427E8B220003BBAC5 /* QBPlasticPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPlasticPopupMenu.m; sourceTree = "<group>"; };
+		B4BF762527E8B220003BBAC5 /* QBPopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPopupMenu.h; sourceTree = "<group>"; };
+		B4BF762627E8B220003BBAC5 /* QBPopupMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPopupMenuItemView.h; sourceTree = "<group>"; };
+		B4BF762727E8B220003BBAC5 /* QBPopupMenuOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenuOverlayView.m; sourceTree = "<group>"; };
+		B4BF762827E8B220003BBAC5 /* QBPopupMenuPagenatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenuPagenatorView.m; sourceTree = "<group>"; };
+		B4BF762927E8B220003BBAC5 /* QBPopupMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPopupMenuItem.h; sourceTree = "<group>"; };
+		B4BF763227E95C7B003BBAC5 /* JYPopupMenuListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuListView.h; sourceTree = "<group>"; };
+		B4BF763327E95C7B003BBAC5 /* JYPopupMenuListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupMenuListView.m; sourceTree = "<group>"; };
+		B4BF763627E95CFC003BBAC5 /* JYPopupMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenu.h; sourceTree = "<group>"; };
+		B4BF763727E95CFC003BBAC5 /* JYPopupMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupMenu.m; sourceTree = "<group>"; };
+		B4BF763A27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuCollectionViewCell.h; sourceTree = "<group>"; };
+		B4BF763B27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupMenuCollectionViewCell.m; sourceTree = "<group>"; };
+		B4BF764027E963C9003BBAC5 /* UIView+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewController.h"; sourceTree = "<group>"; };
+		B4BF764127E963C9003BBAC5 /* UIView+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewController.m"; sourceTree = "<group>"; };
 		B4EA2BF727E7000D00779793 /* LGDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGDrawer.h; sourceTree = "<group>"; };
 		B4EA2BF827E7000D00779793 /* LGDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGDrawer.m; sourceTree = "<group>"; };
 		B4EA2BFF27E7482000779793 /* JYPaintingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JYPaintingView.swift; sourceTree = "<group>"; };
@@ -288,11 +322,11 @@
 		B41AC71C27D5AA9C00CDF4AB /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				B4BF763F27E96399003BBAC5 /* View */,
+				B4BF761D27E8B220003BBAC5 /* QBPopupMenu */,
 				B4EA2BF527E6FFDC00779793 /* DrawImage */,
 				B41AC72127D5AA9D00CDF4AB /* UIColor+Extensions.h */,
 				B41AC71D27D5AA9D00CDF4AB /* UIColor+Extensions.m */,
-				B41AC72027D5AA9D00CDF4AB /* UIView+JYFrame.h */,
-				B41AC71E27D5AA9D00CDF4AB /* UIView+JYFrame.m */,
 				B41AC71F27D5AA9D00CDF4AB /* UIDeviceHelper.h */,
 				B41AC72327D5AA9D00CDF4AB /* UIDeviceHelper.m */,
 				B41AC72227D5AA9D00CDF4AB /* JYPrefixHeader.h */,
@@ -303,9 +337,9 @@
 		B41AC73027D6F96700CDF4AB /* Write */ = {
 			isa = PBXGroup;
 			children = (
+				B4BF763127E95C46003BBAC5 /* Manager */,
+				B4BF763027E95C32003BBAC5 /* Controller */,
 				B4EC076D27DF018A00CB0877 /* View */,
-				B41AC73127D6F9BF00CDF4AB /* JYWriteFeelingViewController.h */,
-				B41AC73227D6F9BF00CDF4AB /* JYWriteFeelingViewController.m */,
 			);
 			path = Write;
 			sourceTree = "<group>";
@@ -379,6 +413,70 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
+		B4BF761D27E8B220003BBAC5 /* QBPopupMenu */ = {
+			isa = PBXGroup;
+			children = (
+				B4BF762527E8B220003BBAC5 /* QBPopupMenu.h */,
+				B4BF761E27E8B220003BBAC5 /* QBPopupMenu.m */,
+				B4BF761F27E8B220003BBAC5 /* QBPlasticPopupMenu.h */,
+				B4BF762427E8B220003BBAC5 /* QBPlasticPopupMenu.m */,
+				B4BF762627E8B220003BBAC5 /* QBPopupMenuItemView.h */,
+				B4BF762227E8B220003BBAC5 /* QBPopupMenuItemView.m */,
+				B4BF762027E8B220003BBAC5 /* QBPopupMenuPagenatorView.h */,
+				B4BF762827E8B220003BBAC5 /* QBPopupMenuPagenatorView.m */,
+				B4BF762927E8B220003BBAC5 /* QBPopupMenuItem.h */,
+				B4BF762327E8B220003BBAC5 /* QBPopupMenuItem.m */,
+				B4BF762127E8B220003BBAC5 /* QBPopupMenuOverlayView.h */,
+				B4BF762727E8B220003BBAC5 /* QBPopupMenuOverlayView.m */,
+			);
+			path = QBPopupMenu;
+			sourceTree = "<group>";
+		};
+		B4BF763027E95C32003BBAC5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B41AC73127D6F9BF00CDF4AB /* JYWriteFeelingViewController.h */,
+				B41AC73227D6F9BF00CDF4AB /* JYWriteFeelingViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B4BF763127E95C46003BBAC5 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				B4EA2C1027E752BA00779793 /* JYRecordFeelingsManager.h */,
+				B4EA2C1127E752BA00779793 /* JYRecordFeelingsManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		B4BF763527E95CB5003BBAC5 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				B4BF763627E95CFC003BBAC5 /* JYPopupMenu.h */,
+				B4BF763727E95CFC003BBAC5 /* JYPopupMenu.m */,
+				B4BF763227E95C7B003BBAC5 /* JYPopupMenuListView.h */,
+				B4BF763327E95C7B003BBAC5 /* JYPopupMenuListView.m */,
+				B4BF763A27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.h */,
+				B4BF763B27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.m */,
+				B4609CB427E99167009BC2A5 /* JYPopupListMenuDataProtocol.h */,
+				B4609CB527E995BF009BC2A5 /* JYPopupMenuOverlayView.h */,
+				B4609CB627E995BF009BC2A5 /* JYPopupMenuOverlayView.m */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		B4BF763F27E96399003BBAC5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4BF764027E963C9003BBAC5 /* UIView+ViewController.h */,
+				B4BF764127E963C9003BBAC5 /* UIView+ViewController.m */,
+				B41AC72027D5AA9D00CDF4AB /* UIView+JYFrame.h */,
+				B41AC71E27D5AA9D00CDF4AB /* UIView+JYFrame.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B4EA2BF527E6FFDC00779793 /* DrawImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,6 +539,7 @@
 		B4EC076D27DF018A00CB0877 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B4BF763527E95CB5003BBAC5 /* Menu */,
 				B4EC077127DF07AB00CB0877 /* SealFeeling */,
 				B4EC076427DEFF4500CB0877 /* JYWriteFeelingView.h */,
 				B4EC076527DEFF4500CB0877 /* JYWriteFeelingView.m */,
@@ -456,8 +555,6 @@
 				B4A90C6327E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.m */,
 				B4EC076E27DF01D000CB0877 /* JYWriteFeelingListCollectionViewCell.h */,
 				B4EC076F27DF01D000CB0877 /* JYWriteFeelingListCollectionViewCell.m */,
-				B4EA2C1027E752BA00779793 /* JYRecordFeelingsManager.h */,
-				B4EA2C1127E752BA00779793 /* JYRecordFeelingsManager.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -663,15 +760,20 @@
 				B41AC72F27D6F11D00CDF4AB /* JYPlusControl.m in Sources */,
 				B4EA2C1227E752BA00779793 /* JYRecordFeelingsManager.m in Sources */,
 				B4EA2C0827E74E0000779793 /* ChartletImageCache.swift in Sources */,
+				B4BF763427E95C7B003BBAC5 /* JYPopupMenuListView.m in Sources */,
 				B41AC6E927D5A69F00CDF4AB /* ViewController.m in Sources */,
+				B4BF762D27E8B220003BBAC5 /* QBPlasticPopupMenu.m in Sources */,
 				B4AC37A927DC78D300529722 /* JYARCArrangeStartView.m in Sources */,
 				B4AC37EE27DCC09500529722 /* JYMonthCalendarView.m in Sources */,
 				B41AC73327D6F9BF00CDF4AB /* JYWriteFeelingViewController.m in Sources */,
 				B4AC380727DE30E500529722 /* JYCalendarCollectionViewLayout.m in Sources */,
+				B4BF762B27E8B220003BBAC5 /* QBPopupMenuItemView.m in Sources */,
 				B41AC72627D5AA9D00CDF4AB /* UIDeviceHelper.m in Sources */,
 				B41AC6E327D5A69F00CDF4AB /* AppDelegate.m in Sources */,
 				B4EC077027DF01D000CB0877 /* JYWriteFeelingListCollectionViewCell.m in Sources */,
 				B41AC6F427D5A6A400CDF4AB /* main.m in Sources */,
+				B4BF764227E963C9003BBAC5 /* UIView+ViewController.m in Sources */,
+				B4BF762A27E8B220003BBAC5 /* QBPopupMenu.m in Sources */,
 				B4AC37F427DCC56600529722 /* JYCalendarCalculator.m in Sources */,
 				B41FF20427E84AB9004D0329 /* JYPainting.m in Sources */,
 				B4A90C5E27E6168E0085CAC4 /* JYWriteFeelingBottomView.m in Sources */,
@@ -679,8 +781,12 @@
 				B4A90C6427E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.m in Sources */,
 				B4AC37F127DCC41100529722 /* JYMonthCalendarCollectionViewCell.m in Sources */,
 				B4EA2C0D27E74E8800779793 /* PaintingPreview.swift in Sources */,
+				B4609CB727E995BF009BC2A5 /* JYPopupMenuOverlayView.m in Sources */,
+				B4BF763827E95CFC003BBAC5 /* JYPopupMenu.m in Sources */,
 				B41AC73727D7007300CDF4AB /* JYFeelingListView.m in Sources */,
 				B4F5455527D83E5D00D6184C /* JYFeelingView.m in Sources */,
+				B4BF762E27E8B220003BBAC5 /* QBPopupMenuOverlayView.m in Sources */,
+				B4BF762C27E8B220003BBAC5 /* QBPopupMenuItem.m in Sources */,
 				B4EA2BF927E7000D00779793 /* LGDrawer.m in Sources */,
 				B4AC37FD27DD9FB400529722 /* JYDayCalendarView.m in Sources */,
 				B4EA2C0B27E74E0000779793 /* ChartletPicker.swift in Sources */,
@@ -692,10 +798,12 @@
 				B41AC73C27D71A5700CDF4AB /* JYFeelingTableViewCell.m in Sources */,
 				B4EC076C27DF013F00CB0877 /* JYWriteFeelingListView.m in Sources */,
 				B4AC37FA27DCCFD000529722 /* JYCalendar.m in Sources */,
+				B4BF763C27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.m in Sources */,
 				B4AC37A627DC789200529722 /* JYARCArrangeTextView.swift in Sources */,
 				B4A90C5927E415F10085CAC4 /* JYGridView.m in Sources */,
 				B4EC077427DF07D800CB0877 /* JYSealFeelingPassView.m in Sources */,
 				B41AC74027D71EBB00CDF4AB /* JYFeelingModel.m in Sources */,
+				B4BF762F27E8B220003BBAC5 /* QBPopupMenuPagenatorView.m in Sources */,
 				B4EC076927DF00D800CB0877 /* JYWriteFeelingTableViewCell.m in Sources */,
 				B41AC72427D5AA9D00CDF4AB /* UIColor+Extensions.m in Sources */,
 				B41AC72527D5AA9D00CDF4AB /* UIView+JYFrame.m in Sources */,

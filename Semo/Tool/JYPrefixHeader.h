@@ -10,6 +10,7 @@
 
 #import "UIDeviceHelper.h"
 #import "UIView+JYFrame.h"
+#import "UIView+ViewController.h"
 #import "UIColor+Extensions.h"
 
 #define SMHomeLeft 15
@@ -23,10 +24,14 @@
 // FeelingListView
 #define SMFeelingListCellHeight 180
 
+#define SMPaintingMenuHeight 100
+
 // Color
 //[UIColor wbt_ColorWithHexString:@"#F5F5F5"]
 #define SMHomeBackgroudColor [UIColor colorWithRed:236/225.f green:237/225.f blue:232/225.f alpha:1.f]
 #define SMPureBackgroudColor [UIColor wbt_ColorWithHexString:@"#FFFFFF"]
+#define SMGhostWhiteColor [UIColor wbt_ColorWithHexString:@"F8F8FF"]
+
 #define SMReddishBlueColor [UIColor wbt_ColorWithHexString:@"#4169E1"]
 
 #define SMSealRedColor [UIColor wbt_ColorWithHexString:@"#B42828"]

@@ -1,23 +1,40 @@
 //
-//  JYWritePaintingListView.m
+//  JYPopupMenuListView.m
 //  Semo
 //
-//  Created by jiyang on 2022/3/19.
+//  Created by jiyang on 2022/3/22.
 //
 
-#import "JYWritePaintingListView.h"
-#import "JYWritePaintingListCollectionViewCell.h"
-#import "JYPopupMenu.h"
+#import "JYPopupMenuListView.h"
+#import "JYPopupMenuCollectionViewCell.h"
 #import "JYPainting.h"
 #import "JYPrefixHeader.h"
 
-@interface JYWritePaintingListView () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface JYPopupMenuListView () <UICollectionViewDelegate, UICollectionViewDataSource>
+@property (nonatomic, strong) UIImageView * imageView;
 @property (nonatomic, strong) UICollectionView * collectionView;
-@property (nonatomic, strong) JYPopupMenu *popupMenu;
-@property (nonatomic, strong) JYPainting *painting;
 @end
 
-@implementation JYWritePaintingListView
+@implementation JYPopupMenuListView
+
++ (instancetype)itemViewWithItem:(id <JYPopupListMenuDataProtocol>)item {
+    return [[self alloc] initWithItem:item];
+}
+
+- (instancetype)initWithItem:( id<JYPopupListMenuDataProtocol>)item {
+    self = [self initWithFrame:CGRectZero];
+    
+    if (self) {
+        // View settings
+        self.opaque = NO;
+        self.backgroundColor = [UIColor clearColor];
+        self.clipsToBounds = YES;
+        
+        self.item = item;
+    }
+    
+    return self;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -27,18 +44,41 @@
 }
 
 - (void)initSubViews {
+    [self addSubview:self.imageView];
     [self addSubview:self.collectionView];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    _imageView.frame = self.bounds;
     _collectionView.frame = self.bounds;
 }
 
-- (void)updateViewWithModel:(JYPainting *)model {
-    self.painting = model;
-    [self.collectionView reloadData];
+- (void)setImage:(UIImage *)image {
+    self.imageView.image = image;
+}
+
+#pragma mark - Updating the View
+
+- (void)sizeToFit
+{
+    CGSize size = [self sizeThatFits:CGSizeZero];
     
+    CGRect frame = self.frame;
+    frame.size = size;
+    self.frame = frame;
+}
+
+- (CGSize)sizeThatFits:(CGSize)size {
+    return CGSizeMake(ScreenWidth - JYViewInset * 2, SMPaintingMenuHeight);
+}
+
+- (UIImageView *)imageView {
+    if (!_imageView) {
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    }
+    
+    return _imageView;
 }
 
 - (UICollectionView *)collectionView {
@@ -50,7 +90,7 @@
         _collectionView.pagingEnabled = YES;
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
-        [_collectionView registerClass:[JYWritePaintingListCollectionViewCell class] forCellWithReuseIdentifier:@"JYWritePaintingListCollectionViewCell"];
+        [_collectionView registerClass:[JYPopupMenuCollectionViewCell class] forCellWithReuseIdentifier:@"JYPopupMenuCollectionViewCell"];
         _collectionView.scrollsToTop = NO;
         _collectionView.contentInset = UIEdgeInsetsZero;
         if (@available(iOS 11.0, *)) _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -69,6 +109,7 @@
     return layout;
 }
 
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -77,13 +118,14 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return self.painting.plantings.count;
+    //return self.painting.plantings.count;
+    return 10;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    JYWritePaintingListCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYWritePaintingListCollectionViewCell" forIndexPath:indexPath];
-    JYPaintingItem *item = self.painting.plantings[indexPath.row];
-    [cell updateViewWithModel:item];
+    JYPopupMenuCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYPopupMenuCollectionViewCell" forIndexPath:indexPath];
+//    JYPaintingItem *item = self.painting.plantings[indexPath.row];
+//    [cell updateViewWithModel:item];
     return cell;
 }
 
@@ -92,23 +134,6 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    JYPaintingItem *item = self.painting.plantings[indexPath.row];
-
-    if (!self.popupMenu) {
-        self.popupMenu = [[JYPopupMenu alloc] initWithItem:item];
-        self.popupMenu.height = SMPaintingMenuHeight;
-        self.popupMenu.color = [UIColor redColor];
-    }
-    JYWritePaintingListCollectionViewCell * cell = (JYWritePaintingListCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    CGRect rectInCollectionView =[self.collectionView convertRect:cell.frame toView:self.collectionView];
-    UIView *view = self.firstAvailableWBViewController.view;
-    CGRect rect = [self.collectionView convertRect:rectInCollectionView toView:view];
-    [self.popupMenu showInView:view targetRect:rect animated:YES];
-    
-    if ([self.delegate respondsToSelector:@selector(writePaintingListView:didSelectItem:)]) {
-        [self.delegate writePaintingListView:self didSelectItem:item];
-    }
 }
 
 @end
-
