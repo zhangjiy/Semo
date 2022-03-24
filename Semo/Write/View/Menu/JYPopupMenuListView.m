@@ -7,12 +7,16 @@
 
 #import "JYPopupMenuListView.h"
 #import "JYPopupMenuCollectionViewCell.h"
+#import "JYSizeSlider.h"
+#import "JYColorSlider.h"
 #import "JYPainting.h"
 #import "JYPrefixHeader.h"
 
 @interface JYPopupMenuListView () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UIImageView * imageView;
 @property (nonatomic, strong) UICollectionView * collectionView;
+@property (nonatomic, strong) JYSizeSlider * sizeSlider;
+@property (nonatomic, strong) JYColorSlider * colorSlider;
 @end
 
 @implementation JYPopupMenuListView
@@ -46,6 +50,8 @@
 - (void)initSubViews {
     [self addSubview:self.imageView];
     [self addSubview:self.collectionView];
+    [self addSubview:self.sizeSlider];
+    [self addSubview:self.colorSlider];
 }
 
 - (void)layoutSubviews {
@@ -56,6 +62,22 @@
 
 - (void)setImage:(UIImage *)image {
     self.imageView.image = image;
+}
+
+- (void)setItem:(id<JYPopupListMenuDataProtocol>)item {
+    if (_item != item) {
+        _item = item;
+        if (item.type == JYPaintingTypeSize) {
+            _sizeSlider.hidden = NO;
+            _colorSlider.hidden = YES;
+        } else if (item.type == JYPaintingTypeColor) {
+            _colorSlider.hidden = NO;
+            _sizeSlider.hidden = YES;
+        } else {
+            _sizeSlider.hidden = YES;
+            _colorSlider.hidden = YES;
+        }
+    }
 }
 
 #pragma mark - Updating the View
@@ -70,7 +92,7 @@
 }
 
 - (CGSize)sizeThatFits:(CGSize)size {
-    return CGSizeMake(ScreenWidth - JYViewInset * 2, SMPaintingMenuHeight);
+    return CGSizeMake(SMPaintingMenuWidth, SMPaintingMenuHeight);
 }
 
 - (UIImageView *)imageView {
@@ -104,11 +126,27 @@
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing = 10;
     layout.itemSize = [UIScreen mainScreen].bounds.size;
-    layout.sectionInset = UIEdgeInsetsMake(0, 50, 0, 50);
+    layout.sectionInset = UIEdgeInsetsMake((SMPaintingMenuHeight - SMPaintingMenuItemHeight), 10, 0, 10);
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     return layout;
 }
 
+- (JYSizeSlider *)sizeSlider {
+    if (!_sizeSlider) {
+        _sizeSlider = [[JYSizeSlider alloc] initWithFrame:CGRectMake(JYViewInset, JYViewInset, SMPaintingMenuSliderWidth, SMPaintingMenuSliderHeight)];
+        _sizeSlider.hidden = YES;
+    }
+    
+    return _sizeSlider;
+}
+
+- (JYColorSlider *)colorSlider {
+    if (!_colorSlider) {
+        _colorSlider = [[JYColorSlider alloc] initWithFrame:CGRectMake(JYViewInset, JYViewInset, SMPaintingMenuSliderWidth, SMPaintingMenuSliderHeight) color:[UIColor blackColor]];
+        _colorSlider.hidden = YES;
+    }
+    return _colorSlider;
+}
 
 #pragma mark - UICollectionViewDataSource
 
@@ -117,20 +155,18 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    
-    //return self.painting.plantings.count;
-    return 10;
+    return _item.menus.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     JYPopupMenuCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYPopupMenuCollectionViewCell" forIndexPath:indexPath];
-//    JYPaintingItem *item = self.painting.plantings[indexPath.row];
-//    [cell updateViewWithModel:item];
+    JYMenu *menu = _item.menus[indexPath.row];
+    [cell updateViewWithModel:menu];
     return cell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(self.height, self.height);
+    return CGSizeMake(SMPaintingMenuItemHeight, SMPaintingMenuItemHeight);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

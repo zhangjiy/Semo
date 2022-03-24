@@ -187,6 +187,9 @@ UIColor *wbt_UIColorMakeRGBA(CGFloat red, CGFloat green, CGFloat blue, CGFloat a
  */
 + (UIColor *)wbt_colorWithHexString:(NSString *)hexString alpha:(CGFloat)alpha;
 
+- (NSArray *)HSBArray;
+- (NSArray *)RGBArray;
+- (CGFloat)whiteValue;
 @end
 
 NS_ASSUME_NONNULL_END

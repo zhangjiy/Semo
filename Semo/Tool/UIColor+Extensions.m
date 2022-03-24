@@ -7,13 +7,13 @@
 
 #import "UIColor+Extensions.h"
 
-UIColor *wbt_UIColorMakeRGB(CGFloat red, CGFloat green, CGFloat blue)
-{
+#define ColorValue(value)  MAX(0, MIN(1, value))
+
+UIColor *wbt_UIColorMakeRGB(CGFloat red, CGFloat green, CGFloat blue) {
     return [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:1.0f];
 }
 
-UIColor *wbt_UIColorMakeRGBA(CGFloat red, CGFloat green, CGFloat blue, CGFloat alpha)
-{
+UIColor *wbt_UIColorMakeRGBA(CGFloat red, CGFloat green, CGFloat blue, CGFloat alpha) {
     return [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:alpha];
 }
 
@@ -56,9 +56,7 @@ UIColor *wbt_UIColorMakeRGBA(CGFloat red, CGFloat green, CGFloat blue, CGFloat a
 {
     if (hexString == nil ||
         [hexString isEqualToString:@""] ||
-        [hexString isEqualToString:@"#"])
-    {
-//        return [UIColor clearColor];
+        [hexString isEqualToString:@"#"]) {
         return nil;
     }
     
@@ -67,38 +65,30 @@ UIColor *wbt_UIColorMakeRGBA(CGFloat red, CGFloat green, CGFloat blue, CGFloat a
     NSString *cString = [[hexString stringByTrimmingCharactersInSet:set] uppercaseString];
     
     // 转换 3/4 位为 6/8 位
-    if (cString.length == 3)
-    {
+    if (cString.length == 3) {
         cString = [self transferToNewString:cString];
-    }
-    else if (cString.length == 4)
-    {
+    } else if (cString.length == 4) {
         cString = [self transferToNewString:cString];
     }
     
     unsigned long hexValue = strtoul([cString UTF8String], 0, 16);
-    if (cString.length <= 6)
-    {
+    if (cString.length <= 6) {
         return [UIColor wbt_colorWithHexValue:hexValue alpha:alpha];
-    }
-    else
-    {
+    } else {
         return [UIColor wbt_colorWithHexValue:hexValue alpha:[self wbt_alphaValueFromRGBAColor:hexValue]];
     }
     
     return [UIColor wbt_colorWithHexValue:hexValue alpha:alpha];
 }
 
-+ (UIColor *)wbt_ColorWithHexString:(NSString *)hexString
-{
++ (UIColor *)wbt_ColorWithHexString:(NSString *)hexString {
     return [self wbt_colorWithHexString:hexString alpha:1.0];
 }
 
-- (void)wbt_getColorComponentsWithRed:(CGFloat *)red green:(CGFloat *)green blue:(CGFloat *)blue alpha:(CGFloat *)alpha
-{
+- (void)wbt_getColorComponentsWithRed:(CGFloat *)red green:(CGFloat *)green blue:(CGFloat *)blue alpha:(CGFloat *)alpha {
     if ([self respondsToSelector:@selector(getRed:green:blue:alpha:)]) {
         [self getRed:red green:green blue:blue alpha:alpha];
-    }else {
+    } else {
         const CGFloat *components = CGColorGetComponents(self.CGColor);
         *red = components[0];
         *green = components[1];
@@ -107,8 +97,7 @@ UIColor *wbt_UIColorMakeRGBA(CGFloat red, CGFloat green, CGFloat blue, CGFloat a
     }
 }
 
-+ (NSString *)transferToNewString:(NSString *)oldString
-{
++ (NSString *)transferToNewString:(NSString *)oldString {
     NSInteger length = oldString.length;
     if (length == 3) {
         NSString *subString1 = [oldString substringWithRange:NSMakeRange(0, 1)];
@@ -117,9 +106,7 @@ UIColor *wbt_UIColorMakeRGBA(CGFloat red, CGFloat green, CGFloat blue, CGFloat a
         NSString *newString = [NSString stringWithFormat: @"%@%@%@%@%@%@", subString1, subString1, subString2, subString2, subString3, subString3];
         
         return newString;
-    }
-    else if (length == 4)
-    {
+    } else if (length == 4) {
         NSString *subString1 = [oldString substringWithRange:NSMakeRange(0, 1)];
         NSString *subString2 = [oldString substringWithRange:NSMakeRange(1, 1)];
         NSString *subString3 = [oldString substringWithRange:NSMakeRange(2, 1)];
@@ -129,6 +116,41 @@ UIColor *wbt_UIColorMakeRGBA(CGFloat red, CGFloat green, CGFloat blue, CGFloat a
         return newString;
     }
     return nil;
+}
+
+- (NSArray *)HSBArray {
+
+    CGFloat h = 0.0,s = 0.0,b = 0.0,a = 0.0;
+    
+    [self getHue:&h saturation:&s brightness:&b alpha:&a];
+    
+    return @[@(ColorValue(h)), @(ColorValue(s)),@(ColorValue(b)),@(ColorValue(a))];
+}
+
+- (NSArray *)RGBArray {
+    CGFloat r = 0.0,g = 0.0,b = 0.0,a = 0.0;
+    
+    [self getRed:&r green:&g blue:&b alpha:&a];
+    
+    return @[@(ColorValue(r)), @(ColorValue(g)), @(ColorValue(b)), @(ColorValue(a))];
+}
+
+- (CGFloat)whiteValue {
+    CGFloat whiteValue = -1;
+    
+    NSArray * rgbArray = self.RGBArray;
+    
+    if (rgbArray.count == 4) {
+        
+        CGFloat red = [rgbArray[0] floatValue];
+        CGFloat green = [rgbArray[1] floatValue];
+        CGFloat blue = [rgbArray[2] floatValue];
+        
+        if (red == green && red == blue) {
+            whiteValue = [rgbArray[0] floatValue];
+        }
+    }
+    return whiteValue;
 }
 
 @end

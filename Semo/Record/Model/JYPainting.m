@@ -9,16 +9,38 @@
 #import <UIKit/UIKit.h>
 
 @implementation JYPaintingItem
-@synthesize colors = _colors;
+@synthesize menus = _menus;
 
-- (NSArray<UIColor *> *)colors {
-    if (!_colors) {
+- (NSArray<JYMenu *> *)menus {
+    if (!_menus) {
+        NSMutableArray *tempMutableArray = [NSMutableArray array];
         if (_type == JYPaintingTypeColor) {
-            _colors = @[[UIColor whiteColor],[UIColor blackColor],[UIColor redColor],[UIColor yellowColor],[UIColor greenColor],[UIColor blueColor],[UIColor colorWithHue:0.8 saturation:1 brightness:1 alpha:1]];
+            NSArray *colorArray = @[[UIColor whiteColor], [UIColor blackColor], [UIColor redColor], [UIColor yellowColor], [UIColor greenColor], [UIColor blueColor], [UIColor colorWithHue:0.8 saturation:1 brightness:1 alpha:1]];
+            for (int i = 0; i < colorArray.count; i ++) {
+                JYMenu *menu = [[JYMenu alloc] initWithType:_type];
+                menu.color = colorArray[i];
+                [tempMutableArray addObject:menu];
+            }
+        } else if (_type == JYPaintingTypeSize) {
+            NSArray *lineWidthArray = @[@(3), @(5), @(7), @(9), @(11), @(13), @(15)];
+            for (int i = 0; i < lineWidthArray.count; i ++) {
+                JYMenu *menu = [[JYMenu alloc] initWithType:_type];
+                menu.lineWidth = [lineWidthArray[i] floatValue];
+                [tempMutableArray addObject:menu];
+            }
+        } else if (_type == JYPaintingTypeStyle) {
+            NSArray *lineWidthArray = @[@"Pen", @"pencil", @"brush", @"Eraser"];
+            for (int i = 0; i < lineWidthArray.count; i ++) {
+                JYMenu *menu = [[JYMenu alloc] initWithType:_type];
+                menu.name = lineWidthArray[i];
+                [tempMutableArray addObject:menu];
+            }
         }
+        
+        _menus = [tempMutableArray copy];
     }
     
-    return _colors;
+    return _menus;
 }
 
 @end

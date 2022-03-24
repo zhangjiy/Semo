@@ -7,11 +7,13 @@
 
 #ifndef JYPopupListMenuDataProtocol_h
 #define JYPopupListMenuDataProtocol_h
-#import <UIKit/UIKit.h>
+#import "JYMenu.h"
 
 @protocol JYPopupListMenuDataProtocol <NSObject>
 @optional
-@property (nonatomic, strong) NSArray <UIColor *> * colors;
+
+@property (nonatomic, assign, readonly) JYPaintingType type;
+@property (nonatomic, copy) NSArray <JYMenu *> * menus;
 
 @end
 

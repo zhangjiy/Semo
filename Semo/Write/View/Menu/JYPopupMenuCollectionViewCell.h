@@ -9,8 +9,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JYPopupMenuCollectionViewCell : UICollectionViewCell
+@class JYMenu;
 
+@interface JYPopupMenuCollectionViewCell : UICollectionViewCell
+- (void)updateViewWithModel:(JYMenu *)model;
 @end
 
 NS_ASSUME_NONNULL_END

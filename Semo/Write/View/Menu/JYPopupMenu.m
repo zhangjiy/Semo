@@ -37,15 +37,13 @@ static const NSTimeInterval kQBPopupMenuAnimationDuration = 0.2;
     return [[self alloc] initWithItem:item];
 }
 
-- (instancetype)initWithItem:(id <JYPopupListMenuDataProtocol>)item {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:CGRectZero];
-    
     if (self) {
         self.opaque = NO;
         self.backgroundColor = [UIColor clearColor];
         self.clipsToBounds = YES;
-        
-        self.item = item;
+
         self.height = 36;
         self.cornerRadius = 8;
         self.arrowSize = 9;
@@ -55,6 +53,16 @@ static const NSTimeInterval kQBPopupMenuAnimationDuration = 0.2;
         
         self.color = [[UIColor blackColor] colorWithAlphaComponent:0.8];
         self.highlightedColor = [[UIColor darkGrayColor] colorWithAlphaComponent:0.8];
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithItem:(id <JYPopupListMenuDataProtocol>)item {
+    self = [self initWithFrame:CGRectZero];
+    
+    if (self) {
+        self.item = item;
     }
     
     return self;

@@ -13,7 +13,8 @@
 
 @interface JYWritePaintingListView () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView * collectionView;
-@property (nonatomic, strong) JYPopupMenu *popupMenu;
+@property (nonatomic, strong) JYPopupMenu *popupColorMenu;
+@property (nonatomic, strong) JYPopupMenu *popupLineWidthMenu;
 @property (nonatomic, strong) JYPainting *painting;
 @end
 
@@ -69,6 +70,26 @@
     return layout;
 }
 
+- (JYPopupMenu *)popupColorMenu {
+    if (!_popupColorMenu) {
+        _popupColorMenu = [[JYPopupMenu alloc] init];
+        _popupColorMenu.height = SMPaintingMenuHeight;
+        _popupColorMenu.color = SMGhostWhiteColor;
+    }
+    
+    return _popupColorMenu;
+}
+
+- (JYPopupMenu *)popupLineWidthMenu {
+    if (!_popupLineWidthMenu) {
+        _popupLineWidthMenu = [[JYPopupMenu alloc] init];
+        _popupLineWidthMenu.height = SMPaintingMenuHeight;
+        _popupLineWidthMenu.color = SMGhostWhiteColor;
+    }
+    
+    return _popupLineWidthMenu;
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -94,16 +115,17 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     JYPaintingItem *item = self.painting.plantings[indexPath.row];
 
-    if (!self.popupMenu) {
-        self.popupMenu = [[JYPopupMenu alloc] initWithItem:item];
-        self.popupMenu.height = SMPaintingMenuHeight;
-        self.popupMenu.color = [UIColor redColor];
-    }
     JYWritePaintingListCollectionViewCell * cell = (JYWritePaintingListCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     CGRect rectInCollectionView =[self.collectionView convertRect:cell.frame toView:self.collectionView];
     UIView *view = self.firstAvailableWBViewController.view;
     CGRect rect = [self.collectionView convertRect:rectInCollectionView toView:view];
-    [self.popupMenu showInView:view targetRect:rect animated:YES];
+    if (item.type == JYPaintingTypeColor) {
+        self.popupColorMenu.item = item;
+        [self.popupColorMenu showInView:view targetRect:rect animated:YES];
+    } else if (item.type == JYPaintingTypeSize) {
+        self.popupLineWidthMenu.item = item;
+        [self.popupLineWidthMenu showInView:view targetRect:rect animated:YES];
+    }
     
     if ([self.delegate respondsToSelector:@selector(writePaintingListView:didSelectItem:)]) {
         [self.delegate writePaintingListView:self didSelectItem:item];

@@ -12,15 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class UIColor;
 
-typedef NS_ENUM(NSInteger, JYPaintingType) {
-    JYPaintingTypeStyle = 0,
-    JYPaintingTypeSize,
-    JYPaintingTypeColor,
-    JYPaintingTypeUndo,
-    JYPaintingTypeRedo,
-    JYPaintingTypeClear,
-};
-
 @interface JYPaintingItem : NSObject <JYPopupListMenuDataProtocol>
 @property (nonatomic, assign) JYPaintingType type;
 @property (nonatomic, assign) BOOL enabled;

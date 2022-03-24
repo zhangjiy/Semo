@@ -24,7 +24,12 @@
 // FeelingListView
 #define SMFeelingListCellHeight 180
 
+#define SMPaintingMenuWidth (ScreenWidth - JYViewInset * 2)
 #define SMPaintingMenuHeight 100
+#define SMPaintingMenuItemHeight 40
+
+#define SMPaintingMenuSliderWidth (SMPaintingMenuWidth - JYViewInset * 2)
+#define SMPaintingMenuSliderHeight 40
 
 // Color
 //[UIColor wbt_ColorWithHexString:@"#F5F5F5"]
@@ -57,7 +62,7 @@
 #define JYWriteGridHeight (JYWriteGridWidth * 2.f)
 
 // image
-#define JYOffset CGPointMake(-1.f, -1.f)
+#define JYOffset CGPointMake(0.f, 0.f)
 
 #define JYRotate 0.f
 #define JYCornerRadius 12.f

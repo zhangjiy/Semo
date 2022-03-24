@@ -28,6 +28,12 @@
 		B41AC74027D71EBB00CDF4AB /* JYFeelingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC73F27D71EBB00CDF4AB /* JYFeelingModel.m */; };
 		B41FF20427E84AB9004D0329 /* JYPainting.m in Sources */ = {isa = PBXBuildFile; fileRef = B41FF20327E84AB9004D0329 /* JYPainting.m */; };
 		B4609CB727E995BF009BC2A5 /* JYPopupMenuOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CB627E995BF009BC2A5 /* JYPopupMenuOverlayView.m */; };
+		B4609CCD27EAB0AE009BC2A5 /* JYMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CCC27EAB0AE009BC2A5 /* JYMenu.m */; };
+		B4609CD227EAE62F009BC2A5 /* UIImageView+CornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CD127EAE62F009BC2A5 /* UIImageView+CornerRadius.m */; };
+		B4609CD527EAE670009BC2A5 /* UIImage+CornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CD427EAE670009BC2A5 /* UIImage+CornerRadius.m */; };
+		B4609CE027EB3CE1009BC2A5 /* JYColorSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CDF27EB3CE1009BC2A5 /* JYColorSlider.m */; };
+		B4609CE327EB3E44009BC2A5 /* UIControl+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CE227EB3E44009BC2A5 /* UIControl+Block.m */; };
+		B4609CE627EB40BB009BC2A5 /* JYSizeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CE527EB40BB009BC2A5 /* JYSizeSlider.m */; };
 		B4A90C5927E415F10085CAC4 /* JYGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C5827E415F10085CAC4 /* JYGridView.m */; };
 		B4A90C5E27E6168E0085CAC4 /* JYWriteFeelingBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C5D27E6168E0085CAC4 /* JYWriteFeelingBottomView.m */; };
 		B4A90C6127E62AE50085CAC4 /* JYWritePaintingListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C6027E62AE50085CAC4 /* JYWritePaintingListView.m */; };
@@ -132,6 +138,18 @@
 		B4609CB427E99167009BC2A5 /* JYPopupListMenuDataProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupListMenuDataProtocol.h; sourceTree = "<group>"; };
 		B4609CB527E995BF009BC2A5 /* JYPopupMenuOverlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuOverlayView.h; sourceTree = "<group>"; };
 		B4609CB627E995BF009BC2A5 /* JYPopupMenuOverlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupMenuOverlayView.m; sourceTree = "<group>"; };
+		B4609CCB27EAB0AE009BC2A5 /* JYMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYMenu.h; sourceTree = "<group>"; };
+		B4609CCC27EAB0AE009BC2A5 /* JYMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYMenu.m; sourceTree = "<group>"; };
+		B4609CD027EAE62F009BC2A5 /* UIImageView+CornerRadius.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+CornerRadius.h"; sourceTree = "<group>"; };
+		B4609CD127EAE62F009BC2A5 /* UIImageView+CornerRadius.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+CornerRadius.m"; sourceTree = "<group>"; };
+		B4609CD327EAE670009BC2A5 /* UIImage+CornerRadius.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+CornerRadius.h"; sourceTree = "<group>"; };
+		B4609CD427EAE670009BC2A5 /* UIImage+CornerRadius.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CornerRadius.m"; sourceTree = "<group>"; };
+		B4609CDE27EB3CE1009BC2A5 /* JYColorSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYColorSlider.h; sourceTree = "<group>"; };
+		B4609CDF27EB3CE1009BC2A5 /* JYColorSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYColorSlider.m; sourceTree = "<group>"; };
+		B4609CE127EB3E44009BC2A5 /* UIControl+Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+Block.h"; sourceTree = "<group>"; };
+		B4609CE227EB3E44009BC2A5 /* UIControl+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Block.m"; sourceTree = "<group>"; };
+		B4609CE427EB40BB009BC2A5 /* JYSizeSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYSizeSlider.h; sourceTree = "<group>"; };
+		B4609CE527EB40BB009BC2A5 /* JYSizeSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYSizeSlider.m; sourceTree = "<group>"; };
 		B4A90C5727E415F10085CAC4 /* JYGridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYGridView.h; sourceTree = "<group>"; };
 		B4A90C5827E415F10085CAC4 /* JYGridView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYGridView.m; sourceTree = "<group>"; };
 		B4A90C5C27E6168E0085CAC4 /* JYWriteFeelingBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYWriteFeelingBottomView.h; sourceTree = "<group>"; };
@@ -379,6 +397,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B4609CCA27EAB09C009BC2A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B4609CCB27EAB0AE009BC2A5 /* JYMenu.h */,
+				B4609CCC27EAB0AE009BC2A5 /* JYMenu.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B4AC37A327DC782700529722 /* Seal */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +500,16 @@
 				B4BF764127E963C9003BBAC5 /* UIView+ViewController.m */,
 				B41AC72027D5AA9D00CDF4AB /* UIView+JYFrame.h */,
 				B41AC71E27D5AA9D00CDF4AB /* UIView+JYFrame.m */,
+				B4609CD027EAE62F009BC2A5 /* UIImageView+CornerRadius.h */,
+				B4609CD127EAE62F009BC2A5 /* UIImageView+CornerRadius.m */,
+				B4609CD327EAE670009BC2A5 /* UIImage+CornerRadius.h */,
+				B4609CD427EAE670009BC2A5 /* UIImage+CornerRadius.m */,
+				B4609CDE27EB3CE1009BC2A5 /* JYColorSlider.h */,
+				B4609CDF27EB3CE1009BC2A5 /* JYColorSlider.m */,
+				B4609CE427EB40BB009BC2A5 /* JYSizeSlider.h */,
+				B4609CE527EB40BB009BC2A5 /* JYSizeSlider.m */,
+				B4609CE127EB3E44009BC2A5 /* UIControl+Block.h */,
+				B4609CE227EB3E44009BC2A5 /* UIControl+Block.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -539,6 +576,7 @@
 		B4EC076D27DF018A00CB0877 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B4609CCA27EAB09C009BC2A5 /* Model */,
 				B4BF763527E95CB5003BBAC5 /* Menu */,
 				B4EC077127DF07AB00CB0877 /* SealFeeling */,
 				B4EC076427DEFF4500CB0877 /* JYWriteFeelingView.h */,
@@ -774,6 +812,7 @@
 				B41AC6F427D5A6A400CDF4AB /* main.m in Sources */,
 				B4BF764227E963C9003BBAC5 /* UIView+ViewController.m in Sources */,
 				B4BF762A27E8B220003BBAC5 /* QBPopupMenu.m in Sources */,
+				B4609CD227EAE62F009BC2A5 /* UIImageView+CornerRadius.m in Sources */,
 				B4AC37F427DCC56600529722 /* JYCalendarCalculator.m in Sources */,
 				B41FF20427E84AB9004D0329 /* JYPainting.m in Sources */,
 				B4A90C5E27E6168E0085CAC4 /* JYWriteFeelingBottomView.m in Sources */,
@@ -800,13 +839,18 @@
 				B4AC37FA27DCCFD000529722 /* JYCalendar.m in Sources */,
 				B4BF763C27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.m in Sources */,
 				B4AC37A627DC789200529722 /* JYARCArrangeTextView.swift in Sources */,
+				B4609CE627EB40BB009BC2A5 /* JYSizeSlider.m in Sources */,
 				B4A90C5927E415F10085CAC4 /* JYGridView.m in Sources */,
 				B4EC077427DF07D800CB0877 /* JYSealFeelingPassView.m in Sources */,
 				B41AC74027D71EBB00CDF4AB /* JYFeelingModel.m in Sources */,
+				B4609CE027EB3CE1009BC2A5 /* JYColorSlider.m in Sources */,
 				B4BF762F27E8B220003BBAC5 /* QBPopupMenuPagenatorView.m in Sources */,
+				B4609CE327EB3E44009BC2A5 /* UIControl+Block.m in Sources */,
 				B4EC076927DF00D800CB0877 /* JYWriteFeelingTableViewCell.m in Sources */,
 				B41AC72427D5AA9D00CDF4AB /* UIColor+Extensions.m in Sources */,
+				B4609CCD27EAB0AE009BC2A5 /* JYMenu.m in Sources */,
 				B41AC72527D5AA9D00CDF4AB /* UIView+JYFrame.m in Sources */,
+				B4609CD527EAE670009BC2A5 /* UIImage+CornerRadius.m in Sources */,
 				B4EA2C0727E74E0000779793 /* ChartletEditor.swift in Sources */,
 				B4AC37F727DCC93500529722 /* NSCalendar+JYCalendarExtensions.m in Sources */,
 			);
