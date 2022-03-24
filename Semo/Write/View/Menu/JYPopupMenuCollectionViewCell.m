@@ -11,9 +11,22 @@
 #import "LGDrawer.h"
 #import "JYPrefixHeader.h"
 
+@interface JYPopupMenuLabel : UILabel
+
+@end
+
+@implementation JYPopupMenuLabel
+
+- (void)setText:(NSString *)text {
+    [super setText:text];
+    self.hidden = text.length > 0 ? NO:YES;
+}
+
+@end
+
 @interface JYPopupMenuCollectionViewCell ()
 @property (nonatomic, strong) UIImageView *imageView;
-@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) JYPopupMenuLabel *titleLabel;
 @end
 
 @implementation JYPopupMenuCollectionViewCell
@@ -37,7 +50,8 @@
     _imageView.centerX = self.contentView.width / 2.f;
     _imageView.centerY = self.contentView.height / 2.f;
     
-    _titleLabel.frame = _imageView.bounds;
+    _titleLabel.frame = self.contentView.bounds;
+
 }
 
 - (UIImageView *)imageView {
@@ -52,14 +66,15 @@
     return _imageView;
 }
 
-- (UILabel *)titleLabel {
+- (JYPopupMenuLabel *)titleLabel {
     if (!_titleLabel) {
-        _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        _titleLabel = [[JYPopupMenuLabel alloc] initWithFrame:CGRectZero];
+        _titleLabel.font = [UIFont systemFontOfSize:12];
         _titleLabel.backgroundColor = [UIColor blackColor];
         _titleLabel.textColor = [UIColor whiteColor];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.layer.masksToBounds = YES;
-        _titleLabel.layer.cornerRadius = (self.contentView.width - 15) / 2.f;
+        _titleLabel.layer.cornerRadius = self.contentView.width / 2.f;
     }
     return _titleLabel;
 }

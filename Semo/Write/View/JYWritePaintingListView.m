@@ -15,6 +15,7 @@
 @property (nonatomic, strong) UICollectionView * collectionView;
 @property (nonatomic, strong) JYPopupMenu *popupColorMenu;
 @property (nonatomic, strong) JYPopupMenu *popupLineWidthMenu;
+@property (nonatomic, strong) JYPopupMenu *popupStyleMenu;
 @property (nonatomic, strong) JYPainting *painting;
 @end
 
@@ -90,6 +91,16 @@
     return _popupLineWidthMenu;
 }
 
+- (JYPopupMenu *)popupStyleMenu {
+    if (!_popupStyleMenu) {
+        _popupStyleMenu = [[JYPopupMenu alloc] init];
+        _popupStyleMenu.height = SMPaintingMenuHeight;
+        _popupStyleMenu.color = SMGhostWhiteColor;
+    }
+    
+    return _popupStyleMenu;
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -125,6 +136,9 @@
     } else if (item.type == JYPaintingTypeSize) {
         self.popupLineWidthMenu.item = item;
         [self.popupLineWidthMenu showInView:view targetRect:rect animated:YES];
+    } else if (item.type == JYPaintingTypeStyle) {
+        self.popupStyleMenu.item = item;
+        [self.popupStyleMenu showInView:view targetRect:rect animated:YES];
     }
     
     if ([self.delegate respondsToSelector:@selector(writePaintingListView:didSelectItem:)]) {
