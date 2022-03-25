@@ -28,7 +28,7 @@
                 menu.lineWidth = [lineWidthArray[i] floatValue];
                 [tempMutableArray addObject:menu];
             }
-        } else if (_type == JYPaintingTypeStyle) {
+        } else if (_type == JYPaintingTypePen) {
             NSArray *lineWidthArray = @[@"Pen", @"pencil", @"brush", @"Eraser"];
             for (int i = 0; i < lineWidthArray.count; i ++) {
                 JYMenu *menu = [[JYMenu alloc] initWithType:_type];
@@ -63,11 +63,11 @@
         item2.title = @"2";
         [temp addObject:item2];
         JYPaintingItem *item3 = [[JYPaintingItem alloc] init];
-        item3.type = JYPaintingTypeUndo;
+        item3.type = JYPaintingTypePen;
         item3.title = @"3";
         [temp addObject:item3];
         JYPaintingItem *item4 = [[JYPaintingItem alloc] init];
-        item4.type = JYPaintingTypeRedo;
+        item4.type = JYPaintingTypeUndo;
         item4.title = @"4";
         [temp addObject:item4];
         _plantings = [NSArray arrayWithArray:temp];

@@ -13,7 +13,6 @@ import Chrysan
 import Zip
 
 class JYPaintingView: UIView {
-    var hollowView: UIView!
     var canvas: Canvas!
     
     var filePath: String?
@@ -51,9 +50,6 @@ class JYPaintingView: UIView {
     }
     
     private func setupView() {
-        hollowView = UIView(frame: bounds)
-        hollowView.backgroundColor = UIColor(red: 236/225, green: 237/225, blue: 232/225, alpha: 1)
-        addSubview(hollowView)
         canvas = Canvas(frame: bounds)
         addSubview(canvas)
     }

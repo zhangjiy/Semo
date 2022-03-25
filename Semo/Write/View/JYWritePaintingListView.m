@@ -136,7 +136,7 @@
     } else if (item.type == JYPaintingTypeSize) {
         self.popupLineWidthMenu.item = item;
         [self.popupLineWidthMenu showInView:view targetRect:rect animated:YES];
-    } else if (item.type == JYPaintingTypeStyle) {
+    } else if (item.type == JYPaintingTypePen) {
         self.popupStyleMenu.item = item;
         [self.popupStyleMenu showInView:view targetRect:rect animated:YES];
     }

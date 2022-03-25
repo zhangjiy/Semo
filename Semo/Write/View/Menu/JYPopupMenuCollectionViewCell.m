@@ -87,7 +87,7 @@
     } else if (model.type == JYPaintingTypeSize) {
         self.imageView.image = [self ellipseImageWithSize:CGSizeMake(model.lineWidth, model.lineWidth)];
         self.imageView.hidden = NO;
-    } else if (model.type == JYPaintingTypeStyle){
+    } else if (model.type == JYPaintingTypePen){
         self.imageView.hidden = YES;
     }
 }

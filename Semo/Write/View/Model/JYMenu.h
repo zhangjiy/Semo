@@ -12,11 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, JYPaintingType) {
     JYPaintingTypeStyle = 0,
-    JYPaintingTypeSize,
     JYPaintingTypeColor,
+    JYPaintingTypeSize,
+    JYPaintingTypePen,
     JYPaintingTypeUndo,
-    JYPaintingTypeRedo,
-    JYPaintingTypeClear,
 };
 
 @interface JYMenu : NSObject

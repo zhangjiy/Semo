@@ -38,20 +38,21 @@
 }
 
 - (void)initSubviews {
-    [self.containerView addSubview:self.sealFeelingPassView];
+    //[self.containerView addSubview:self.sealFeelingPassView];
     [self.containerView addSubview:self.paintingView];
     [self.containerView addSubview:self.bottomView];
 }
 
 - (void)layoutSubviews {
     
-//    _sealFeelingPassView.size = CGSizeMake(120, 120);
-//    _sealFeelingPassView.centerY = _hollowView.height / 2.f;
-//    _sealFeelingPassView.centerX = _hollowView.width / 2.f;
     
     _paintingView.size = CGSizeMake(JYCanvasWidth, JYCanvasHeight);
     _paintingView.top = JYCanvasTop;
     _paintingView.centerX = self.containerView.width / 2.f;
+    
+    _sealFeelingPassView.size = CGSizeMake(120, 120);
+    _sealFeelingPassView.top = JYCanvasTop + _paintingView.height / 2.f;
+    _sealFeelingPassView.centerX = self.containerView.width / 2.f;
     
     _bottomView.size = CGSizeMake(self.containerView.width, JYWriteBottomHeight);
     _bottomView.bottom = self.containerView.height;
@@ -61,7 +62,7 @@
 - (JYSealFeelingPassView *)sealFeelingPassView {
     if (!_sealFeelingPassView) {
         _sealFeelingPassView = [[JYSealFeelingPassView alloc] initWithFrame:CGRectMake(0, 0, 120, 120)];
-        _sealFeelingPassView.hidden = YES;
+        _sealFeelingPassView.hidden = NO;
     }
     
     return _sealFeelingPassView;
