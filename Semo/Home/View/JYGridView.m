@@ -29,21 +29,24 @@
         layerLine.strokeColor = SMGridLineColor.CGColor;
         [self.layer addSublayer:layerLine];
     };
-    
-    CGFloat gridWidth = self.width / (verLineCount * 2.f);
-    CGFloat gridHeight = self.height / (horLineCount * 2.f);
+    CGFloat rVerlineCount = verLineCount * 2.f;
+    CGFloat rHorLineCount = horLineCount * 2.f;
+    CGFloat gridWidth = floorf(self.width / rVerlineCount);
+    CGFloat gridHeight = floorf(self.height / rHorLineCount * 3 / 4);
+    CGFloat rWidth = rVerlineCount * gridWidth;
+    CGFloat rHeight = rHorLineCount * gridHeight;
     NSInteger count = 0;
-    for (int i = 0; i <= self.width; i += gridWidth) {
+    for (int i = 0; i <= rVerlineCount; i ++) {
         count ++;
         BOOL dashPattern = fmod(count, 2) == 0 ? YES : NO;
-        addLineWidthRect(CGPointMake(i, 0.f), CGPointMake(i, self.height), dashPattern);
+        addLineWidthRect(CGPointMake(i * gridWidth, 0.f), CGPointMake(i * gridWidth, rHeight), dashPattern);
     }
     
     count = 0;
-    for (int i = 0; i <= self.height; i += gridHeight) {
+    for (int i = 0; i <= rHorLineCount; i ++) {
         count ++;
         BOOL dashPattern = fmod(count, 2) == 0 ? YES : NO;
-        addLineWidthRect(CGPointMake(0.f, i), CGPointMake(self.width, i), dashPattern);
+        addLineWidthRect(CGPointMake(0.f, i * gridHeight), CGPointMake(rWidth, i * gridHeight), dashPattern);
     }
 }
 

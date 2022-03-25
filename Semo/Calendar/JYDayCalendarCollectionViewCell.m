@@ -38,7 +38,7 @@
         //PartyLetPlain
         //MarkerFelt-Wide
         //SnellRoundhand
-        _titleLabel.font = [UIFont fontWithName:@"Zapfino" size:20];
+        _titleLabel.font = [UIFont systemFontOfSize:30];
     }
     
     return _titleLabel;

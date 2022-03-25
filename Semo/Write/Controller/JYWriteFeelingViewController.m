@@ -67,13 +67,19 @@
     return _recordManager;
 }
 
+
 - (UIButton *)cancelButton {
     if (!_cancelButton) {
         _cancelButton = [[UIButton alloc] initWithFrame:CGRectZero];
         [_cancelButton setImage:[self crossImage] forState:UIControlStateNormal];
+        [_cancelButton addTarget:self action:@selector(cancelButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     
     return _cancelButton;
+}
+
+- (void)cancelButtonAction:(UIButton *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (UIImage *)crossImage {

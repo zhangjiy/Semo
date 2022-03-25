@@ -33,7 +33,7 @@
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.textColor = [UIColor blackColor];
-        _titleLabel.font = [UIFont fontWithName:@"Zapfino" size:15];
+        _titleLabel.font = [UIFont fontWithName:@"MarkerFelt-Wide" size:15];
     }
     
     return _titleLabel;

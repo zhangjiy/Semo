@@ -41,7 +41,7 @@
 
 #define SMSealRedColor [UIColor wbt_ColorWithHexString:@"#B42828"]
 
-#define SMGridLineColor [UIColor wbt_ColorWithHexString:@"#B42828"]
+#define SMGridLineColor [UIColor wbt_ColorWithHexString:@"#d3d3d3"]
 
 #define StatusBarHeight  [UIDeviceHelper statusBarHeight]
 #define SafeAreaHeight [UIDeviceHelper safeAreaHeight]
@@ -52,13 +52,13 @@
 
 #define JYViewInset 20
 
-#define JYHomeGridWidth (ceilf((ScreenWidth - JYViewInset * 2) / 8.f) * 8.f)
+#define JYHomeGridWidth (ScreenWidth - JYViewInset * 2)
 #define JYHomeGridHeight (JYHomeGridWidth * 2.f)
 
 #define JYWriteTop 50
 #define JYWriteBottomHeight 155
 
-#define JYWriteGridWidth (ceilf((ScreenWidth) / 14.f) * 14.f)
+#define JYWriteGridWidth ScreenWidth
 #define JYWriteGridHeight (JYWriteGridWidth * 2.f)
 
 // image
