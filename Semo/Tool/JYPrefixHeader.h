@@ -52,13 +52,13 @@
 
 #define JYViewInset 20
 
-#define JYHomeGridWidth (ScreenWidth - JYViewInset * 2)
+#define JYHomeGridWidth (ScreenWidth - SMHomeLeft * 2)
 #define JYHomeGridHeight (JYHomeGridWidth * 2.f)
 
 #define JYWriteTop 50
 #define JYWriteBottomHeight 155
 
-#define JYWriteGridWidth ScreenWidth
+#define JYWriteGridWidth (ScreenWidth + [UIScreen mainScreen].scale * 2)
 #define JYWriteGridHeight (JYWriteGridWidth * 2.f)
 
 // image

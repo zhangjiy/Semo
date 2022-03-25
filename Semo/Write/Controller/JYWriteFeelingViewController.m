@@ -32,7 +32,7 @@
 
 - (void)initSubviews {
     [self.view addSubview:self.gridView];
-    [self.gridView drawGridWithVerLineCount:7 horLineCount:14];
+    self.gridView.size = [self.gridView drawGridWithVerLineCount:7 horLineCount:14 scale:1.f];
     [self.view addSubview:self.recordManager.containerView];
     [self.view addSubview:self.cancelButton];
     [self.view addSubview:self.confirmButton];
@@ -42,7 +42,7 @@
     [super viewWillLayoutSubviews];
     
     [_recordManager layoutSubviews];
-    
+    _gridView.centerX = self.view.width / 2.f;
     _cancelButton.size = CGSizeMake(30, 30);
     _cancelButton.left = 20;
     _cancelButton.top = StatusBarHeight;
@@ -54,7 +54,7 @@
 
 - (JYGridView *)gridView {
     if (!_gridView) {
-        _gridView = [[JYGridView alloc] initWithFrame:CGRectMake(-1, -1, JYWriteGridWidth, JYWriteGridHeight)];
+        _gridView = [[JYGridView alloc] initWithFrame:CGRectMake(0, 0, JYWriteGridWidth, JYWriteGridHeight)];
     }
     return _gridView;
 }

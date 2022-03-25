@@ -57,12 +57,13 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    _titleLabel.top = 10;
     _titleLabel.size = CGSizeMake(self.contentView.width, 25);
     _titleLabel.centerX = self.contentView.width / 2.f;
     
-    _dayCalendarView.width = JYHomeGridWidth;
-    _dayCalendarView.height = JYHomeGridHeight;
-    _dayCalendarView.top = _titleLabel.bottom;
+    _dayCalendarView.width = self.contentView.width;
+    _dayCalendarView.height = self.contentView.height - _titleLabel.bottom - JYViewInset;
+    _dayCalendarView.top = _titleLabel.bottom + JYViewInset;
 }
 
 @end

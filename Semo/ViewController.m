@@ -6,7 +6,6 @@
 //
 
 #import "ViewController.h"
-#import "JYGridView.h"
 #import "JYPlusControl.h"
 #import "JYFeelingListView.h"
 #import "JYMonthCalendarView.h"
@@ -15,7 +14,6 @@
 #import "JYPrefixHeader.h"
 
 @interface ViewController ()
-@property (nonatomic, strong) JYGridView *gridView;
 @property (nonatomic, strong) JYPlusControl * plusControl;
 @property (nonatomic, strong) JYFeelingListView * feelingListView;
 @property (nonatomic, strong) JYMonthCalendarView *monthCalendarView;
@@ -34,32 +32,21 @@
 }
 
 - (void)initSubviews {
-    [self.view addSubview:self.gridView];
     [self.view addSubview:self.monthCalendarView];
     [self.view addSubview:self.plusControl];
-    [self.gridView drawGridWithVerLineCount:4 horLineCount:8];
 }
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
-    _monthCalendarView.width = self.gridView.width;
-    _monthCalendarView.height = self.gridView.height + 25;
+    _monthCalendarView.width = self.view.width - SMHomeLeft * 2;
+    _monthCalendarView.height = self.view.height - StatusBarHeight;
     _monthCalendarView.top = StatusBarHeight;
-    _monthCalendarView.left = JYViewInset;
+    _monthCalendarView.left = SMHomeLeft;
     _plusControl.width = SMPluginControlWidth;
     _plusControl.height = SMPluginControlHeight;
     _plusControl.centerX = self.view.width / 2.f;
-    _plusControl.top = _monthCalendarView.bottom + 10;
-}
-
-- (JYGridView *)gridView {
-    if (!_gridView) {
-        _gridView = [[JYGridView alloc] initWithFrame:CGRectMake(JYViewInset, NavigationBarHeight, JYHomeGridWidth, JYHomeGridHeight)];
-        _gridView.backgroundColor = SMHomeBackgroudColor;
-    }
-    
-    return _gridView;
+    _plusControl.bottom = self.view.height - SafeAreaHeight;
 }
 
 - (JYMonthCalendarView *)monthCalendarView {
@@ -82,13 +69,13 @@
     return _plusControl;
 }
 
-- (JYFeelingListView *)feelingListView {
-    if (!_feelingListView) {
-        _feelingListView = [[JYFeelingListView alloc] initWithFrame:CGRectMake(JYViewInset, NavigationBarHeight, JYHomeGridWidth, JYHomeGridHeight)];
-    }
-    
-    return _feelingListView;
-}
+//- (JYFeelingListView *)feelingListView {
+//    if (!_feelingListView) {
+//        _feelingListView = [[JYFeelingListView alloc] initWithFrame:CGRectMake(SMHomeLeft, NavigationBarHeight, self.view.width - SMHomeLeft * 2, JYHomeGridHeight)];
+//    }
+//    
+//    return _feelingListView;
+//}
 
 - (void)plusControlAction:(UIControl *)sender {
     JYWriteFeelingViewController *controller = [[JYWriteFeelingViewController alloc] init];

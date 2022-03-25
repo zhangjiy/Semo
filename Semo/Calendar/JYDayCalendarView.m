@@ -7,10 +7,12 @@
 
 #import "JYDayCalendarView.h"
 #import "JYDayCalendarCollectionViewCell.h"
+#import "JYGridView.h"
 #import "JYPrefixHeader.h"
 
 @interface JYDayCalendarView () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView * collectionView;
+@property (nonatomic, strong) JYGridView *gridView;
 
 @property (nonatomic, strong) JYCalendar *calendar;
 @end
@@ -25,11 +27,14 @@
 }
 
 - (void)initSubViews {
+    [self addSubview:self.gridView];
+    self.gridView.size = [self.gridView drawGridWithVerLineCount:4 horLineCount:8 scale:4/3.f];
     [self addSubview:self.collectionView];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    _gridView.centerX = self.width / 2.f;
     _collectionView.frame = self.bounds;
 }
 
@@ -59,6 +64,15 @@
     layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     return layout;
+}
+
+- (JYGridView *)gridView {
+    if (!_gridView) {
+        _gridView = [[JYGridView alloc] initWithFrame:CGRectMake(0, 0, JYHomeGridWidth, JYHomeGridHeight)];
+        _gridView.backgroundColor = SMHomeBackgroudColor;
+    }
+    
+    return _gridView;
 }
 
 - (void)setMonth:(NSDate *)month {

@@ -12,7 +12,7 @@
 
 #pragma mark 绘制直线
 
-- (void)drawGridWithVerLineCount:(NSInteger)verLineCount horLineCount:(NSInteger)horLineCount {
+- (CGSize)drawGridWithVerLineCount:(NSInteger)verLineCount horLineCount:(NSInteger)horLineCount scale:(CGFloat)scale {
     CGFloat lineWidth = 1.f;
     void (^addLineWidthRect)(CGPoint rect, CGPoint rects, BOOL dashPattern) = ^(CGPoint rect, CGPoint rects, BOOL dashPattern) {
         UIBezierPath *pathLine = [UIBezierPath bezierPath];
@@ -32,7 +32,8 @@
     CGFloat rVerlineCount = verLineCount * 2.f;
     CGFloat rHorLineCount = horLineCount * 2.f;
     CGFloat gridWidth = floorf(self.width / rVerlineCount);
-    CGFloat gridHeight = floorf(self.height / rHorLineCount * 3 / 4);
+    CGFloat rScale = scale > 0 ? scale : 1.f;
+    CGFloat gridHeight = floorf(self.height / rHorLineCount / rScale);
     CGFloat rWidth = rVerlineCount * gridWidth;
     CGFloat rHeight = rHorLineCount * gridHeight;
     NSInteger count = 0;
@@ -48,6 +49,8 @@
         BOOL dashPattern = fmod(count, 2) == 0 ? YES : NO;
         addLineWidthRect(CGPointMake(0.f, i * gridHeight), CGPointMake(rWidth, i * gridHeight), dashPattern);
     }
+    
+    return CGSizeMake(rWidth, rHeight);
 }
 
 @end
