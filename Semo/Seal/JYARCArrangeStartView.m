@@ -31,9 +31,9 @@
 }
 
 - (void)setupConfig {
-    views = @[@3.f, @4.5f, @6.f, @4.5f, @3.f];
-    viewWidth = self.frame.size.width;
-    viewHeight = self.frame.size.height;
+    views = @[@(3.f * (self.width / 50)), @(4.5f * (self.width / 50)), @(6.f * (self.width / 50)), @(4.5f * (self.width / 50)), @(3.f * (self.width / 50))];
+    viewWidth = self.width;
+    viewHeight = self.height;
     arcRadius = viewHeight / 2.f + viewWidth * viewWidth / 8.f / viewHeight; // 根据垂径定理得到
 
     totalRadian =  asin(viewWidth / 2.f / arcRadius) * 2 * 4 / 5.f;

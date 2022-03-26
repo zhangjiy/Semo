@@ -38,7 +38,7 @@
 }
 
 - (void)initSubviews {
-    //[self.containerView addSubview:self.sealFeelingPassView];
+    [self.containerView addSubview:self.sealFeelingPassView];
     [self.containerView addSubview:self.paintingView];
     [self.containerView addSubview:self.bottomView];
 }
@@ -49,9 +49,7 @@
     _paintingView.size = CGSizeMake(JYCanvasWidth, JYCanvasHeight);
     _paintingView.top = JYCanvasTop;
     _paintingView.centerX = self.containerView.width / 2.f;
-    
-    _sealFeelingPassView.size = CGSizeMake(120, 120);
-    _sealFeelingPassView.top = JYCanvasTop + _paintingView.height / 2.f;
+    _sealFeelingPassView.top = _paintingView.centerY - _sealFeelingPassView.height / 2.f;
     _sealFeelingPassView.centerX = self.containerView.width / 2.f;
     
     _bottomView.size = CGSizeMake(self.containerView.width, JYWriteBottomHeight);
@@ -71,6 +69,8 @@
 - (JYPaintingView *)paintingView {
     if (!_paintingView) {
         _paintingView = [[JYPaintingView alloc] initWithFrame:CGRectMake((self.containerView.width - 330) / 2.f, JYCanvasTop, JYCanvasWidth, JYCanvasHeight)];
+        _paintingView.layer.borderColor = [UIColor blackColor].CGColor;
+        _paintingView.layer.borderWidth = 1.f;
     }
     
     return _paintingView;

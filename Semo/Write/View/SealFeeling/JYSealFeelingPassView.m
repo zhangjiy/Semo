@@ -61,19 +61,19 @@
     }
     
     if (!_circleLayer1.path) {
-        CGFloat radius = (self.width - 10) / 2.f;
+        CGFloat radius = (self.width * 0.9) / 2.f;
         UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.width / 2.f, self.height / 2.f) radius:radius startAngle:0 endAngle:2.f * M_PI clockwise:false];
         _circleLayer1.path = [path CGPath];
     }
     
     if (!_circleLayer2.path) {
-        CGFloat radius = (self.width - 38) / 2.f;
+        CGFloat radius = (self.width * 0.68) / 2.f;
         UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.width / 2.f, self.height / 2.f) radius:radius startAngle:1.2f * M_PI endAngle:1.8f * M_PI clockwise:true];
         _circleLayer2.path = [path CGPath];
     }
     
     if (!_circleLayer3.path) {
-        CGFloat radius = (self.width - 38) / 2.f;
+        CGFloat radius = (self.width * 0.68) / 2.f;
         UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.width / 2.f, self.height / 2.f) radius:radius startAngle:0.2 * M_PI endAngle:0.8f * M_PI clockwise:true];
         _circleLayer3.path = [path CGPath];
     }
@@ -125,16 +125,16 @@
 
 - (JYARCArrangeTextView *)arrangeTextView0 {
     if (!_arrangeTextView0) {
-        CGSize size = CGSizeMake(120, 40);
-        _arrangeTextView0 = [[JYARCArrangeTextView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, -9, size.width, size.height) text:@"20220316 10:45"];
+        CGSize size = CGSizeMake(self.width * 0.8, self.height * 0.6);
+        _arrangeTextView0 = [[JYARCArrangeTextView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, self.height / 20.f, size.width, size.height) text:@"20220316 10:45"];
     }
     return _arrangeTextView0;
 }
 
 - (JYARCArrangeTextView *)arrangeTextView1 {
     if (!_arrangeTextView1) {
-        CGSize size = CGSizeMake(120, 40);
-        _arrangeTextView1 = [[JYARCArrangeTextView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, 89, size.width, size.height) text:@"20220316 10:45"];
+        CGSize size = CGSizeMake(self.width * 0.8, self.width * 0.6);
+        _arrangeTextView1 = [[JYARCArrangeTextView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, (self.height * 0.35), size.width, size.height) text:@"20220316 10:45"];
     }
     return _arrangeTextView1;
 }
@@ -142,8 +142,8 @@
 
 - (JYARCArrangeStartView *)arrangeStartView0 {
     if (!_arrangeStartView0) {
-        CGSize size = CGSizeMake(50, 10);
-        _arrangeStartView0 = [[JYARCArrangeStartView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, 28, size.width, size.height)];
+        CGSize size = CGSizeMake(self.width / 2.4, self.height / 12.f);
+        _arrangeStartView0 = [[JYARCArrangeStartView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, self.height / 4.3, size.width, size.height)];
     }
     
     return _arrangeStartView0;
@@ -151,8 +151,8 @@
 
 - (JYARCArrangeStartView *)arrangeStartView1 {
     if (!_arrangeStartView1) {
-        CGSize size = CGSizeMake(50, 10);
-        _arrangeStartView1 = [[JYARCArrangeStartView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, 82, size.width, size.height)];
+        CGSize size = CGSizeMake(self.width / 2.4, self.height / 12.f);
+        _arrangeStartView1 = [[JYARCArrangeStartView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, self.height / 1.5, size.width, size.height)];
     }
     
     return _arrangeStartView1;

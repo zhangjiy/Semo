@@ -18,8 +18,9 @@ class JYARCArrangeTextView: UIView {
     var totalRadian:CGFloat = 0 // 总弧度
     var eachRadian:CGFloat = 0 // 每个夹角弧度
     
-  @objc public init(frame: CGRect, text: String) {
+    @objc public init(frame: CGRect, text: String) {
         super.init(frame: frame)
+        textHeight = frame.height / 12
         self.text = text
         setupConfig()
         setupView()
@@ -57,12 +58,12 @@ class JYARCArrangeTextView: UIView {
             
             if text.isEmpty {return}
             let textLayer = CATextLayer()
-            textLayer.bounds = CGRect(x: 0, y: 0, width: 9, height: 9)
+            textLayer.bounds = CGRect(x: 0, y: 0, width: frame.width / 16, height: frame.height / 8)
             let character:Character = text[text.index(text.startIndex, offsetBy: i)]
             textLayer.string = String(character)
             textLayer.foregroundColor = UIColor.init(red: 180/255.0, green: 40/255.0, blue: 40/255.0, alpha: 1.0).cgColor;
-            textLayer.font = UIFont.boldSystemFont(ofSize: 9)
-            textLayer.fontSize = 9
+            textLayer.font = UIFont.boldSystemFont(ofSize: frame.height / 8)
+            textLayer.fontSize = frame.height / 8
             textLayer.alignmentMode = .center
             textLayer.contentsScale = UIScreen.main.scale
             textLayer.position = center
