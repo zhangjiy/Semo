@@ -58,6 +58,7 @@
     [super layoutSubviews];
     _imageView.frame = self.bounds;
     _collectionView.frame = self.bounds;
+    _collectionView.contentInset = UIEdgeInsetsMake((self.height - SMPaintingMenuItemHeight - JYViewItemInset), JYViewItemInset, 0, JYViewItemInset);
     _sizeSlider.size = CGSizeMake(self.width - JYViewInset * 2, SMPaintingMenuSliderHeight);
     _sizeSlider.left = JYViewInset;
     _sizeSlider.top = JYViewItemInset;
@@ -90,16 +91,13 @@
 
 #pragma mark - Updating the View
 
-- (void)sizeToFit {
-    CGSize size = [self sizeThatFits:CGSizeZero];
-    
-    CGRect frame = self.frame;
-    frame.size = size;
-    self.frame = frame;
-}
-
 - (CGSize)sizeThatFits:(CGSize)size {
-    return CGSizeMake(SMPaintingMenuItemHeight * _item.menus.count + JYViewItemInset * 2 + JYViewItemInset * (_item.menus.count - 1), SMPaintingMenuHeight);
+    CGFloat height = SMPaintingMenuHeight;
+    if (self.item.type == JYPaintingTypePen) {
+        height = 60;
+    }
+    CGSize viewSize = CGSizeMake(SMPaintingMenuItemHeight * _item.menus.count + JYViewItemInset * 2 + JYViewItemInset * (_item.menus.count - 1), height);
+    return viewSize;
 }
 
 - (UIImageView *)imageView {
@@ -133,7 +131,6 @@
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing = JYViewItemInset;
     layout.itemSize = [UIScreen mainScreen].bounds.size;
-    layout.sectionInset = UIEdgeInsetsMake((SMPaintingMenuHeight - SMPaintingMenuItemHeight - JYViewItemInset), JYViewItemInset, 0, JYViewItemInset);
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     return layout;
 }

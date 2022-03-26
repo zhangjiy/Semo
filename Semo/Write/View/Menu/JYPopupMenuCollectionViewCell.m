@@ -50,7 +50,8 @@
     _imageView.centerX = self.contentView.width / 2.f;
     _imageView.centerY = self.contentView.height / 2.f;
     
-    _titleLabel.frame = self.contentView.bounds;
+    _titleLabel.size = CGSizeMake(self.contentView.width, self.contentView.height * 0.65);
+    _titleLabel.centerX = self.contentView.width / 2.f;
 
 }
 
@@ -69,12 +70,12 @@
 - (JYPopupMenuLabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[JYPopupMenuLabel alloc] initWithFrame:CGRectZero];
-        _titleLabel.font = [UIFont systemFontOfSize:12];
-        _titleLabel.backgroundColor = [UIColor blackColor];
-        _titleLabel.textColor = [UIColor whiteColor];
+        _titleLabel.font = [UIFont systemFontOfSize:10];
+        _titleLabel.backgroundColor = SMGridLineColor;
+        _titleLabel.textColor = [UIColor blackColor];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.layer.masksToBounds = YES;
-        _titleLabel.layer.cornerRadius = self.contentView.width / 2.f;
+        _titleLabel.layer.cornerRadius = 5;
     }
     return _titleLabel;
 }

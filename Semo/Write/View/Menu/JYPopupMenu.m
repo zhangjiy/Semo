@@ -263,19 +263,19 @@ static const NSTimeInterval kQBPopupMenuAnimationDuration = 0.2;
 
 
 - (void)layoutVisibleItemViews {
-    CGFloat height = self.height;
+    CGSize size = [self.listView sizeThatFits:CGSizeZero];
+    self.height = size.height;
+    CGFloat height = size.height;
     if (self.actualArrorDirection == JYPopupMenuArrowDirectionDown || self.actualArrorDirection == JYPopupMenuArrowDirectionUp) {
         height += self.arrowSize;
     }
-    // Set item view frame
-    CGSize size = [self.listView sizeThatFits:CGSizeZero];
     CGFloat width = size.width;
     if ((self.actualArrorDirection == JYPopupMenuArrowDirectionLeft) ||
         (self.actualArrorDirection == JYPopupMenuArrowDirectionRight)) {
         width += self.arrowSize;
     }
-    self.listView.frame = CGRectMake(0, 0, width, height);
     
+    self.listView.frame = CGRectMake(0, 0, width, height);
 }
 
 - (void)updatePopupMenuImage {

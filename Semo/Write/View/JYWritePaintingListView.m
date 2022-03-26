@@ -74,7 +74,6 @@
 - (JYPopupMenu *)popupColorMenu {
     if (!_popupColorMenu) {
         _popupColorMenu = [[JYPopupMenu alloc] init];
-        _popupColorMenu.height = SMPaintingMenuHeight;
         _popupColorMenu.color = SMGhostWhiteColor;
     }
     
@@ -84,7 +83,6 @@
 - (JYPopupMenu *)popupLineWidthMenu {
     if (!_popupLineWidthMenu) {
         _popupLineWidthMenu = [[JYPopupMenu alloc] init];
-        _popupLineWidthMenu.height = SMPaintingMenuHeight;
         _popupLineWidthMenu.color = SMGhostWhiteColor;
     }
     
@@ -94,7 +92,6 @@
 - (JYPopupMenu *)popupStyleMenu {
     if (!_popupStyleMenu) {
         _popupStyleMenu = [[JYPopupMenu alloc] init];
-        _popupStyleMenu.height = SMPaintingMenuHeight;
         _popupStyleMenu.color = SMGhostWhiteColor;
     }
     
