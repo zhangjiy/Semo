@@ -77,11 +77,11 @@
             continueAfterRunningActions = "No"
             filePath = "Semo/Write/View/Menu/JYPopupMenuListView.m"
             startingColumnNumber = "5"
-            endingColumnNumber = "36"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
-            landmarkName = "-collectionView:cellForItemAtIndexPath:"
-            landmarkType = "7">
+            endingColumnNumber = "5"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "JYPopupMenuListView"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

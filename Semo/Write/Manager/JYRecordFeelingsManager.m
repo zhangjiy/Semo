@@ -49,7 +49,7 @@
     _paintingView.size = CGSizeMake(JYCanvasWidth, JYCanvasHeight);
     _paintingView.top = JYCanvasTop;
     _paintingView.centerX = self.containerView.width / 2.f;
-    _sealFeelingPassView.top = _paintingView.centerY - _sealFeelingPassView.height / 2.f;
+    _sealFeelingPassView.top = JYCanvasTop + 40;
     _sealFeelingPassView.centerX = self.containerView.width / 2.f;
     
     _bottomView.size = CGSizeMake(self.containerView.width, JYWriteBottomHeight);
@@ -70,7 +70,7 @@
     if (!_paintingView) {
         _paintingView = [[JYPaintingView alloc] initWithFrame:CGRectMake((self.containerView.width - 330) / 2.f, JYCanvasTop, JYCanvasWidth, JYCanvasHeight)];
         _paintingView.layer.borderColor = [UIColor blackColor].CGColor;
-        _paintingView.layer.borderWidth = 1.f;
+        _paintingView.layer.borderWidth = 1.5f;
     }
     
     return _paintingView;

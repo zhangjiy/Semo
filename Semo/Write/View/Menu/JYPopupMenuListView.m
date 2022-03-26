@@ -58,6 +58,14 @@
     [super layoutSubviews];
     _imageView.frame = self.bounds;
     _collectionView.frame = self.bounds;
+    _sizeSlider.size = CGSizeMake(self.width - JYViewInset * 2, SMPaintingMenuSliderHeight);
+    _sizeSlider.left = JYViewInset;
+    _sizeSlider.top = JYViewItemInset;
+    
+    _colorSlider.size = CGSizeMake(self.width - JYViewInset * 2, SMPaintingMenuSliderHeight);
+    _colorSlider.left = JYViewInset;
+    _colorSlider.top = JYViewItemInset;
+
 }
 
 - (void)setImage:(UIImage *)image {
@@ -82,8 +90,7 @@
 
 #pragma mark - Updating the View
 
-- (void)sizeToFit
-{
+- (void)sizeToFit {
     CGSize size = [self sizeThatFits:CGSizeZero];
     
     CGRect frame = self.frame;
@@ -92,7 +99,7 @@
 }
 
 - (CGSize)sizeThatFits:(CGSize)size {
-    return CGSizeMake(SMPaintingMenuWidth, SMPaintingMenuHeight);
+    return CGSizeMake(SMPaintingMenuItemHeight * _item.menus.count + JYViewItemInset * 2 + JYViewItemInset * (_item.menus.count - 1), SMPaintingMenuHeight);
 }
 
 - (UIImageView *)imageView {
@@ -124,16 +131,16 @@
 - (UICollectionViewFlowLayout *)collectionViewFlowLayout {
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc] init];
     layout.minimumLineSpacing = 0;
-    layout.minimumInteritemSpacing = 10;
+    layout.minimumInteritemSpacing = JYViewItemInset;
     layout.itemSize = [UIScreen mainScreen].bounds.size;
-    layout.sectionInset = UIEdgeInsetsMake((SMPaintingMenuHeight - SMPaintingMenuItemHeight), 10, 0, 10);
+    layout.sectionInset = UIEdgeInsetsMake((SMPaintingMenuHeight - SMPaintingMenuItemHeight - JYViewItemInset), JYViewItemInset, 0, JYViewItemInset);
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     return layout;
 }
 
 - (JYSizeSlider *)sizeSlider {
     if (!_sizeSlider) {
-        _sizeSlider = [[JYSizeSlider alloc] initWithFrame:CGRectMake(JYViewInset, JYViewInset, SMPaintingMenuSliderWidth, SMPaintingMenuSliderHeight)];
+        _sizeSlider = [[JYSizeSlider alloc] initWithFrame:CGRectZero];
         _sizeSlider.hidden = YES;
     }
     
@@ -142,7 +149,7 @@
 
 - (JYColorSlider *)colorSlider {
     if (!_colorSlider) {
-        _colorSlider = [[JYColorSlider alloc] initWithFrame:CGRectMake(JYViewInset, JYViewInset, SMPaintingMenuSliderWidth, SMPaintingMenuSliderHeight) color:[UIColor blackColor]];
+        _colorSlider = [[JYColorSlider alloc] initWithFrame:CGRectZero color:[UIColor blackColor]];
         _colorSlider.hidden = YES;
     }
     return _colorSlider;

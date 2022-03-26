@@ -15,7 +15,7 @@
     if (!_menus) {
         NSMutableArray *tempMutableArray = [NSMutableArray array];
         if (_type == JYPaintingTypeColor) {
-            NSArray *colorArray = @[[UIColor whiteColor], [UIColor blackColor], [UIColor redColor], [UIColor yellowColor], [UIColor greenColor], [UIColor blueColor], [UIColor colorWithHue:0.8 saturation:1 brightness:1 alpha:1]];
+            NSArray *colorArray = @[[UIColor blackColor], [UIColor whiteColor], [UIColor redColor], [UIColor yellowColor], [UIColor greenColor], [UIColor blueColor], [UIColor colorWithHue:0.8 saturation:1 brightness:1 alpha:1]];
             for (int i = 0; i < colorArray.count; i ++) {
                 JYMenu *menu = [[JYMenu alloc] initWithType:_type];
                 menu.color = colorArray[i];

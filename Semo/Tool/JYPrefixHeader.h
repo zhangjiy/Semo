@@ -35,7 +35,7 @@
 //[UIColor wbt_ColorWithHexString:@"#F5F5F5"]
 #define SMHomeBackgroudColor [UIColor colorWithRed:236/225.f green:237/225.f blue:232/225.f alpha:1.f]
 #define SMPureBackgroudColor [UIColor wbt_ColorWithHexString:@"#FFFFFF"]
-#define SMGhostWhiteColor [UIColor wbt_ColorWithHexString:@"F8F8FF"]
+#define SMGhostWhiteColor [UIColor wbt_ColorWithHexString:@"#f5f5f5"]
 
 #define SMReddishBlueColor [UIColor wbt_ColorWithHexString:@"#4169E1"]
 
@@ -51,6 +51,7 @@
 #define ScreenHeight  [UIScreen mainScreen].bounds.size.height
 
 #define JYViewInset 20
+#define JYViewItemInset 10
 
 #define JYHomeGridWidth (ScreenWidth - SMHomeLeft * 2)
 #define JYHomeGridHeight (JYHomeGridWidth * 2.f)
@@ -77,9 +78,8 @@
 #define JYShadowType     LGDrawerShadowTypeFill
 
 #define JYCanvasWidth   (ScreenWidth - SMHomeLeft * 2.f)
-#define JYCanvasHeight  ((ScreenWidth - SMHomeLeft * 2.f) / 2.f)
+#define JYCanvasHeight  ((ScreenWidth - SMHomeLeft * 2.f) * 0.65)
 #define JYCanvasTop     130
-
 
 #define Feelings @[@"喜", @"怒", @"忧", @"思", @"悲", @"恐", @"惊"]
 

@@ -8,13 +8,15 @@
 #import "JYSizeSlider.h"
 #import "UIColor+Extensions.h"
 
-@implementation JYSizeSlider
+@implementation JYSizeSlider {
+    CGSize _viewSize;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
 
-        self.backgroundColor = [UIColor colorWithPatternImage:[self widthSliderBackground]];
+        self.backgroundColor = [UIColor colorWithPatternImage:[self sliderBackgroundWithSize:frame.size]];
         
         [self setMaximumTrackImage:[UIImage new] forState:UIControlStateNormal];
         
@@ -27,10 +29,19 @@
     return self;
 }
 
-- (UIImage*)widthSliderBackground {
-    
-    CGSize size = self.frame.size;
-    
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self updateViewSize:self.frame.size];
+}
+
+- (void)updateViewSize:(CGSize)size {
+    if (!CGSizeEqualToSize(size, _viewSize)) {
+        _viewSize = size;
+        self.backgroundColor = [UIColor colorWithPatternImage:[self sliderBackgroundWithSize:size]];
+    }
+}
+
+- (UIImage *)sliderBackgroundWithSize:(CGSize)size {
     UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
     
     CGContextRef context = UIGraphicsGetCurrentContext();

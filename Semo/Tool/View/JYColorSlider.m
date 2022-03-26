@@ -9,12 +9,14 @@
 #import "UIControl+Block.h"
 #import "UIColor+Extensions.h"
 
-@implementation JYColorSlider
+@implementation JYColorSlider {
+    CGSize _viewSize;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame color:(UIColor *)color {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor colorWithPatternImage:[self colorSliderBackground]];
+        self.backgroundColor = [UIColor colorWithPatternImage:[self sliderBackgroundWithSize:frame.size]];
         [self setMaximumTrackImage:[UIImage new] forState:UIControlStateNormal];
         
         [self setMinimumTrackImage:[UIImage new] forState:UIControlStateNormal];
@@ -32,6 +34,18 @@
     }
     
     return self;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self updateViewSize:self.frame.size];
+}
+
+- (void)updateViewSize:(CGSize)size {
+    if (!CGSizeEqualToSize(size, _viewSize)) {
+        _viewSize = size;
+        self.backgroundColor = [UIColor colorWithPatternImage:[self sliderBackgroundWithSize:size]];
+    }
 }
 
 - (UIColor*)colorForValue:(CGFloat)value {
@@ -65,8 +79,7 @@
     self.thumbTintColor = _currentColor = [self colorForValue:self.value];
 }
 
-- (UIImage*)colorSliderBackground {
-    CGSize size = self.frame.size;
+- (UIImage *)sliderBackgroundWithSize:(CGSize)size {
     
     UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
     
