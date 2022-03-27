@@ -18,8 +18,17 @@ typedef NS_ENUM(NSInteger, JYPaintingType) {
     JYPaintingTypeUndo,
 };
 
+typedef NS_ENUM(NSInteger, JYFeelingStyleType) {
+    JYFeelingStyleTypePass = 0,
+    JYFeelingStyleTypeEllipse,
+    JYFeelingStyleTypeRectangle,
+    JYFeelingStyleTypeTriangle,
+    JYFeelingStyleTypeHeart
+};
+
 @interface JYMenu : NSObject
 @property (nonatomic, assign, readonly) JYPaintingType type;
+@property (nonatomic, assign) JYFeelingStyleType styleType;
 @property (nonatomic, assign) NSString  * name;
 @property (nonatomic, assign) CGFloat lineWidth;
 @property (nonatomic, strong) UIColor * color;

@@ -14,7 +14,15 @@
 - (NSArray<JYMenu *> *)menus {
     if (!_menus) {
         NSMutableArray *tempMutableArray = [NSMutableArray array];
-        if (_type == JYPaintingTypeColor) {
+        
+        if (_type == JYPaintingTypeStyle) {
+            NSArray *styleArray = @[@(JYFeelingStyleTypePass), @(JYFeelingStyleTypeEllipse), @(JYFeelingStyleTypeRectangle), @(JYFeelingStyleTypeTriangle), @(JYFeelingStyleTypeHeart)];
+            for (int i = 0; i < styleArray.count; i ++) {
+                JYMenu *menu = [[JYMenu alloc] initWithType:_type];
+                menu.styleType = [styleArray[i] integerValue];
+                [tempMutableArray addObject:menu];
+            }
+        } else if (_type == JYPaintingTypeColor) {
             NSArray *colorArray = @[[UIColor blackColor], [UIColor whiteColor], [UIColor redColor], [UIColor yellowColor], [UIColor greenColor], [UIColor blueColor], [UIColor colorWithHue:0.8 saturation:1 brightness:1 alpha:1]];
             for (int i = 0; i < colorArray.count; i ++) {
                 JYMenu *menu = [[JYMenu alloc] initWithType:_type];
@@ -29,10 +37,10 @@
                 [tempMutableArray addObject:menu];
             }
         } else if (_type == JYPaintingTypePen) {
-            NSArray *lineWidthArray = @[@"Pen", @"pencil", @"brush", @"Eraser"];
-            for (int i = 0; i < lineWidthArray.count; i ++) {
+            NSArray *penArray = @[@"Pen", @"pencil", @"brush", @"Eraser"];
+            for (int i = 0; i < penArray.count; i ++) {
                 JYMenu *menu = [[JYMenu alloc] initWithType:_type];
-                menu.name = lineWidthArray[i];
+                menu.name = penArray[i];
                 [tempMutableArray addObject:menu];
             }
         }

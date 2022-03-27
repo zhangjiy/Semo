@@ -51,6 +51,7 @@
 - (JYWritePaintingListView *)paintingListView {
     if (!_paintingListView) {
         _paintingListView = [[JYWritePaintingListView alloc] initWithFrame:CGRectZero];
+        _paintingListView.delegate = self;
     }
     
     return _paintingListView;
@@ -70,6 +71,14 @@
 - (void)writeFeelingBottomView:(JYWriteFeelingBottomView *)bottomView didSelectPaintingItem:(JYPaintingItem *)item {
     if ([self.delegate respondsToSelector:@selector(writeFeelingBottomView:didSelectPaintingItem:)]) {
         [self.delegate writeFeelingBottomView:self didSelectPaintingItem:item];
+    }
+}
+
+#pragma -- mark -- JYWriteFeelingListViewDelegate
+
+- (void)writeFeelingListView:(JYWriteFeelingListView *)listView didSelectItem:(NSString *)item {
+    if ([self.delegate respondsToSelector:@selector(writeFeelingBottomView:didSelectFeelingItem:)]) {
+        [self.delegate writeFeelingBottomView:self didSelectFeelingItem:item];
     }
 }
 

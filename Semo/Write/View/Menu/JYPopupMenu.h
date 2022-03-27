@@ -52,8 +52,6 @@ typedef NS_ENUM(NSUInteger, JYPopupMenuArrowDirection) {
 - (void)dismissAnimated:(BOOL)animated;
 - (void)updateWithTargetRect:(CGRect)targetRect;
 
-+ (Class)itemViewClass;
-
 - (CGMutablePathRef)arrowPathInRect:(CGRect)rect direction:(JYPopupMenuArrowDirection)direction CF_RETURNS_RETAINED;
 - (CGMutablePathRef)headPathInRect:(CGRect)rect cornerRadius:(CGFloat)cornerRadius CF_RETURNS_RETAINED;
 - (CGMutablePathRef)tailPathInRect:(CGRect)rect cornerRadius:(CGFloat)cornerRadius CF_RETURNS_RETAINED;

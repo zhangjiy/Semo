@@ -86,14 +86,14 @@
         self.imageView.backgroundColor = model.color;
         self.imageView.hidden = NO;
     } else if (model.type == JYPaintingTypeSize) {
-        self.imageView.image = [self ellipseImageWithSize:CGSizeMake(model.lineWidth, model.lineWidth)];
+        self.imageView.image = [self sizeImageWithSize:CGSizeMake(model.lineWidth, model.lineWidth)];
         self.imageView.hidden = NO;
-    } else if (model.type == JYPaintingTypePen){
+    } else {
         self.imageView.hidden = YES;
     }
 }
 
-- (UIImage *)ellipseImageWithSize:(CGSize)size {
+- (UIImage *)sizeImageWithSize:(CGSize)size {
     if (!self.imageView.image) {
         return [LGDrawer drawEllipseWithImageSize:size
                                              size:size

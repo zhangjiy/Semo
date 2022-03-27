@@ -7,7 +7,8 @@
 
 #import "JYPopupMenu.h"
 #import "JYPopupMenuOverlayView.h"
-#import "JYPopupMenuListView.h"
+#import "JYPopupStyleMenuListView.h"
+#import "JYPopupColorMenuListView.h"
 
 static const NSTimeInterval kQBPopupMenuAnimationDuration = 0.2;
 
@@ -23,14 +24,18 @@ static const NSTimeInterval kQBPopupMenuAnimationDuration = 0.2;
 @property (nonatomic, assign) JYPopupMenuArrowDirection actualArrorDirection;
 @property (nonatomic, assign) CGPoint arrowPoint;
 
-@property (nonatomic, strong) JYPopupMenuListView *listView;
+@property (nonatomic, strong) UIView <JYPopupMenuListViewProtocol> * listView;
 
 @end
 
 @implementation JYPopupMenu
 
-+ (Class)itemViewClass {
-    return [JYPopupMenuListView class];
+- (Class)itemViewClass {
+    if (self.item.type == JYPaintingTypeStyle) {
+        return [JYPopupStyleMenuListView class];
+    }
+    
+    return [JYPopupColorMenuListView class];
 }
 
 + (instancetype)popupListMenuWithItem:(id <JYPopupListMenuDataProtocol>)item {
@@ -257,7 +262,7 @@ static const NSTimeInterval kQBPopupMenuAnimationDuration = 0.2;
 #pragma mark - Updating Content
 
 - (void)createListView {
-    JYPopupMenuListView *listView = [[[self class] itemViewClass] itemViewWithItem:self.item];
+    UIView <JYPopupMenuListViewProtocol> * listView = [[self itemViewClass] itemViewWithItem:self.item];
     self.listView = listView;
 }
 

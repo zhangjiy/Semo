@@ -1,20 +1,17 @@
 //
-//  JYPopupMenuListView.h
+//  JYPopupMenuListViewProtocol.h
 //  Semo
 //
-//  Created by jiyang on 2022/3/22.
+//  Created by jiyang on 2022/3/27.
 //
+
+#ifndef JYPopupMenuListViewProtocol_h
+#define JYPopupMenuListViewProtocol_h
 
 #import <Foundation/Foundation.h>
 #import "JYPopupListMenuDataProtocol.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
-@class JYPopupMenu;
-
-@interface JYPopupMenuListView : UIView
-
-@property (nonatomic, weak) JYPopupMenu *popupMenu;
+@protocol JYPopupMenuListViewProtocol <NSObject>
 
 @property (nonatomic, strong) id <JYPopupListMenuDataProtocol> item;
 @property (nonatomic, strong) UIImage *image;
@@ -23,4 +20,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-NS_ASSUME_NONNULL_END
+#endif /* JYPopupMenuListViewProtocol_h */

@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol JYWriteFeelingBottomViewDelegate <NSObject>
 @optional
 - (void)writeFeelingBottomView:(JYWriteFeelingBottomView *)bottomView didSelectPaintingItem:(JYPaintingItem *)item;
+- (void)writeFeelingBottomView:(JYWriteFeelingBottomView *)bottomView didSelectFeelingItem:(NSString *)item;
 @end
 
 @interface JYWriteFeelingBottomView : UIView

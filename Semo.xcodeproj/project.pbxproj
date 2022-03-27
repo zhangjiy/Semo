@@ -34,6 +34,8 @@
 		B4609CE027EB3CE1009BC2A5 /* JYColorSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CDF27EB3CE1009BC2A5 /* JYColorSlider.m */; };
 		B4609CE327EB3E44009BC2A5 /* UIControl+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CE227EB3E44009BC2A5 /* UIControl+Block.m */; };
 		B4609CE627EB40BB009BC2A5 /* JYSizeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CE527EB40BB009BC2A5 /* JYSizeSlider.m */; };
+		B490453327F00BE7005A265A /* JYPopupStyleMenuListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B490453227F00BE7005A265A /* JYPopupStyleMenuListView.m */; };
+		B490453627F00EEF005A265A /* JYPopupStyleMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B490453527F00EEF005A265A /* JYPopupStyleMenuCollectionViewCell.m */; };
 		B4A90C5927E415F10085CAC4 /* JYGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C5827E415F10085CAC4 /* JYGridView.m */; };
 		B4A90C5E27E6168E0085CAC4 /* JYWriteFeelingBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C5D27E6168E0085CAC4 /* JYWriteFeelingBottomView.m */; };
 		B4A90C6127E62AE50085CAC4 /* JYWritePaintingListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C6027E62AE50085CAC4 /* JYWritePaintingListView.m */; };
@@ -54,7 +56,7 @@
 		B4BF762D27E8B220003BBAC5 /* QBPlasticPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF762427E8B220003BBAC5 /* QBPlasticPopupMenu.m */; };
 		B4BF762E27E8B220003BBAC5 /* QBPopupMenuOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF762727E8B220003BBAC5 /* QBPopupMenuOverlayView.m */; };
 		B4BF762F27E8B220003BBAC5 /* QBPopupMenuPagenatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF762827E8B220003BBAC5 /* QBPopupMenuPagenatorView.m */; };
-		B4BF763427E95C7B003BBAC5 /* JYPopupMenuListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF763327E95C7B003BBAC5 /* JYPopupMenuListView.m */; };
+		B4BF763427E95C7B003BBAC5 /* JYPopupColorMenuListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF763327E95C7B003BBAC5 /* JYPopupColorMenuListView.m */; };
 		B4BF763827E95CFC003BBAC5 /* JYPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF763727E95CFC003BBAC5 /* JYPopupMenu.m */; };
 		B4BF763C27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF763B27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.m */; };
 		B4BF764227E963C9003BBAC5 /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF764127E963C9003BBAC5 /* UIView+ViewController.m */; };
@@ -150,6 +152,11 @@
 		B4609CE227EB3E44009BC2A5 /* UIControl+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Block.m"; sourceTree = "<group>"; };
 		B4609CE427EB40BB009BC2A5 /* JYSizeSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYSizeSlider.h; sourceTree = "<group>"; };
 		B4609CE527EB40BB009BC2A5 /* JYSizeSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYSizeSlider.m; sourceTree = "<group>"; };
+		B490453027F009C3005A265A /* JYPopupMenuListViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuListViewProtocol.h; sourceTree = "<group>"; };
+		B490453127F00BE7005A265A /* JYPopupStyleMenuListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupStyleMenuListView.h; sourceTree = "<group>"; };
+		B490453227F00BE7005A265A /* JYPopupStyleMenuListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupStyleMenuListView.m; sourceTree = "<group>"; };
+		B490453427F00EEF005A265A /* JYPopupStyleMenuCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupStyleMenuCollectionViewCell.h; sourceTree = "<group>"; };
+		B490453527F00EEF005A265A /* JYPopupStyleMenuCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupStyleMenuCollectionViewCell.m; sourceTree = "<group>"; };
 		B4A90C5727E415F10085CAC4 /* JYGridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYGridView.h; sourceTree = "<group>"; };
 		B4A90C5827E415F10085CAC4 /* JYGridView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYGridView.m; sourceTree = "<group>"; };
 		B4A90C5C27E6168E0085CAC4 /* JYWriteFeelingBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYWriteFeelingBottomView.h; sourceTree = "<group>"; };
@@ -190,8 +197,8 @@
 		B4BF762727E8B220003BBAC5 /* QBPopupMenuOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenuOverlayView.m; sourceTree = "<group>"; };
 		B4BF762827E8B220003BBAC5 /* QBPopupMenuPagenatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenuPagenatorView.m; sourceTree = "<group>"; };
 		B4BF762927E8B220003BBAC5 /* QBPopupMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPopupMenuItem.h; sourceTree = "<group>"; };
-		B4BF763227E95C7B003BBAC5 /* JYPopupMenuListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuListView.h; sourceTree = "<group>"; };
-		B4BF763327E95C7B003BBAC5 /* JYPopupMenuListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupMenuListView.m; sourceTree = "<group>"; };
+		B4BF763227E95C7B003BBAC5 /* JYPopupColorMenuListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupColorMenuListView.h; sourceTree = "<group>"; };
+		B4BF763327E95C7B003BBAC5 /* JYPopupColorMenuListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupColorMenuListView.m; sourceTree = "<group>"; };
 		B4BF763627E95CFC003BBAC5 /* JYPopupMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenu.h; sourceTree = "<group>"; };
 		B4BF763727E95CFC003BBAC5 /* JYPopupMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupMenu.m; sourceTree = "<group>"; };
 		B4BF763A27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuCollectionViewCell.h; sourceTree = "<group>"; };
@@ -482,10 +489,15 @@
 			children = (
 				B4BF763627E95CFC003BBAC5 /* JYPopupMenu.h */,
 				B4BF763727E95CFC003BBAC5 /* JYPopupMenu.m */,
-				B4BF763227E95C7B003BBAC5 /* JYPopupMenuListView.h */,
-				B4BF763327E95C7B003BBAC5 /* JYPopupMenuListView.m */,
+				B490453027F009C3005A265A /* JYPopupMenuListViewProtocol.h */,
+				B490453127F00BE7005A265A /* JYPopupStyleMenuListView.h */,
+				B490453227F00BE7005A265A /* JYPopupStyleMenuListView.m */,
+				B4BF763227E95C7B003BBAC5 /* JYPopupColorMenuListView.h */,
+				B4BF763327E95C7B003BBAC5 /* JYPopupColorMenuListView.m */,
 				B4BF763A27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.h */,
 				B4BF763B27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.m */,
+				B490453427F00EEF005A265A /* JYPopupStyleMenuCollectionViewCell.h */,
+				B490453527F00EEF005A265A /* JYPopupStyleMenuCollectionViewCell.m */,
 				B4609CB427E99167009BC2A5 /* JYPopupListMenuDataProtocol.h */,
 				B4609CB527E995BF009BC2A5 /* JYPopupMenuOverlayView.h */,
 				B4609CB627E995BF009BC2A5 /* JYPopupMenuOverlayView.m */,
@@ -798,7 +810,7 @@
 				B41AC72F27D6F11D00CDF4AB /* JYPlusControl.m in Sources */,
 				B4EA2C1227E752BA00779793 /* JYRecordFeelingsManager.m in Sources */,
 				B4EA2C0827E74E0000779793 /* ChartletImageCache.swift in Sources */,
-				B4BF763427E95C7B003BBAC5 /* JYPopupMenuListView.m in Sources */,
+				B4BF763427E95C7B003BBAC5 /* JYPopupColorMenuListView.m in Sources */,
 				B41AC6E927D5A69F00CDF4AB /* ViewController.m in Sources */,
 				B4BF762D27E8B220003BBAC5 /* QBPlasticPopupMenu.m in Sources */,
 				B4AC37A927DC78D300529722 /* JYARCArrangeStartView.m in Sources */,
@@ -822,6 +834,7 @@
 				B4EA2C0D27E74E8800779793 /* PaintingPreview.swift in Sources */,
 				B4609CB727E995BF009BC2A5 /* JYPopupMenuOverlayView.m in Sources */,
 				B4BF763827E95CFC003BBAC5 /* JYPopupMenu.m in Sources */,
+				B490453627F00EEF005A265A /* JYPopupStyleMenuCollectionViewCell.m in Sources */,
 				B41AC73727D7007300CDF4AB /* JYFeelingListView.m in Sources */,
 				B4F5455527D83E5D00D6184C /* JYFeelingView.m in Sources */,
 				B4BF762E27E8B220003BBAC5 /* QBPopupMenuOverlayView.m in Sources */,
@@ -843,6 +856,7 @@
 				B4A90C5927E415F10085CAC4 /* JYGridView.m in Sources */,
 				B4EC077427DF07D800CB0877 /* JYSealFeelingPassView.m in Sources */,
 				B41AC74027D71EBB00CDF4AB /* JYFeelingModel.m in Sources */,
+				B490453327F00BE7005A265A /* JYPopupStyleMenuListView.m in Sources */,
 				B4609CE027EB3CE1009BC2A5 /* JYColorSlider.m in Sources */,
 				B4BF762F27E8B220003BBAC5 /* QBPopupMenuPagenatorView.m in Sources */,
 				B4609CE327EB3E44009BC2A5 /* UIControl+Block.m in Sources */,

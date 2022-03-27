@@ -13,9 +13,10 @@
 
 @interface JYWritePaintingListView () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView * collectionView;
+@property (nonatomic, strong) JYPopupMenu *popupStyleMenu;
 @property (nonatomic, strong) JYPopupMenu *popupColorMenu;
 @property (nonatomic, strong) JYPopupMenu *popupLineWidthMenu;
-@property (nonatomic, strong) JYPopupMenu *popupStyleMenu;
+@property (nonatomic, strong) JYPopupMenu *popupPenMenu;
 @property (nonatomic, strong) JYPainting *painting;
 @end
 
@@ -71,6 +72,15 @@
     return layout;
 }
 
+- (JYPopupMenu *)popupStyleMenu {
+    if (!_popupStyleMenu) {
+        _popupStyleMenu = [[JYPopupMenu alloc] init];
+        _popupStyleMenu.color = SMGhostWhiteColor;
+    }
+    
+    return _popupStyleMenu;
+}
+
 - (JYPopupMenu *)popupColorMenu {
     if (!_popupColorMenu) {
         _popupColorMenu = [[JYPopupMenu alloc] init];
@@ -89,13 +99,13 @@
     return _popupLineWidthMenu;
 }
 
-- (JYPopupMenu *)popupStyleMenu {
-    if (!_popupStyleMenu) {
-        _popupStyleMenu = [[JYPopupMenu alloc] init];
-        _popupStyleMenu.color = SMGhostWhiteColor;
+- (JYPopupMenu *)popupPenMenu {
+    if (!_popupPenMenu) {
+        _popupPenMenu = [[JYPopupMenu alloc] init];
+        _popupPenMenu.color = SMGhostWhiteColor;
     }
     
-    return _popupStyleMenu;
+    return _popupPenMenu;
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -127,15 +137,18 @@
     CGRect rectInCollectionView =[self.collectionView convertRect:cell.frame toView:self.collectionView];
     UIView *view = self.firstAvailableWBViewController.view;
     CGRect rect = [self.collectionView convertRect:rectInCollectionView toView:view];
-    if (item.type == JYPaintingTypeColor) {
+    if (item.type == JYPaintingTypeStyle) {
+        self.popupStyleMenu.item = item;
+        [self.popupStyleMenu showInView:view targetRect:rect animated:YES];
+    } else if (item.type == JYPaintingTypeColor) {
         self.popupColorMenu.item = item;
         [self.popupColorMenu showInView:view targetRect:rect animated:YES];
     } else if (item.type == JYPaintingTypeSize) {
         self.popupLineWidthMenu.item = item;
         [self.popupLineWidthMenu showInView:view targetRect:rect animated:YES];
     } else if (item.type == JYPaintingTypePen) {
-        self.popupStyleMenu.item = item;
-        [self.popupStyleMenu showInView:view targetRect:rect animated:YES];
+        self.popupPenMenu.item = item;
+        [self.popupPenMenu showInView:view targetRect:rect animated:YES];
     }
     
     if ([self.delegate respondsToSelector:@selector(writePaintingListView:didSelectItem:)]) {

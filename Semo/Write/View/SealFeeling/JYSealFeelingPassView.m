@@ -82,7 +82,7 @@
 - (CAShapeLayer *)circleLayer0 {
     if (!_circleLayer0) {
         _circleLayer0 = [[CAShapeLayer alloc] init];
-        _circleLayer0.lineWidth = 3;
+        _circleLayer0.lineWidth = self.width / 40.f;
         _circleLayer0.strokeColor = SMSealRedColor.CGColor;
         _circleLayer0.fillColor = [UIColor clearColor].CGColor;
     }
@@ -93,7 +93,7 @@
 - (CAShapeLayer *)circleLayer1 {
     if (!_circleLayer1) {
         _circleLayer1 = [[CAShapeLayer alloc] init];
-        _circleLayer1.lineWidth = 0.5;
+        _circleLayer1.lineWidth = self.width / 240.f;
         _circleLayer1.strokeColor = SMSealRedColor.CGColor;
         _circleLayer1.fillColor = [UIColor clearColor].CGColor;
     }
@@ -104,7 +104,7 @@
 - (CAShapeLayer *)circleLayer2 {
     if (!_circleLayer2) {
         _circleLayer2 = [[CAShapeLayer alloc] init];
-        _circleLayer2.lineWidth = 1;
+        _circleLayer2.lineWidth = self.width / 120.f;
         _circleLayer2.strokeColor = SMSealRedColor.CGColor;
         _circleLayer2.fillColor = [UIColor clearColor].CGColor;
     }
@@ -115,7 +115,7 @@
 - (CAShapeLayer *)circleLayer3 {
     if (!_circleLayer3) {
         _circleLayer3 = [[CAShapeLayer alloc] init];
-        _circleLayer3.lineWidth = 1;
+        _circleLayer3.lineWidth = self.width / 120.f;
         _circleLayer3.strokeColor = SMSealRedColor.CGColor;
         _circleLayer3.fillColor = [UIColor clearColor].CGColor;
     }
@@ -152,7 +152,7 @@
 - (JYARCArrangeStartView *)arrangeStartView1 {
     if (!_arrangeStartView1) {
         CGSize size = CGSizeMake(self.width / 2.4, self.height / 12.f);
-        _arrangeStartView1 = [[JYARCArrangeStartView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, self.height / 1.5, size.width, size.height)];
+        _arrangeStartView1 = [[JYARCArrangeStartView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, self.height / 1.47, size.width, size.height)];
     }
     
     return _arrangeStartView1;
@@ -160,11 +160,12 @@
 
 - (UILabel *)textLabel {
     if (!_textLabel) {
-        CGSize size = CGSizeMake(80, 80);
+        CGSize size = CGSizeMake(self.width * 0.68, self.width * 0.68);
         _textLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, (self.height - size.height) / 2.f, size.width, size.height)];
-        _textLabel.font = [UIFont boldSystemFontOfSize:50];
+        _textLabel.font = [UIFont boldSystemFontOfSize:self.width * 0.42];
         _textLabel.textColor = SMSealRedColor;
         _textLabel.textAlignment = NSTextAlignmentCenter;
+        _textLabel.hidden = YES;
     }
     return _textLabel;
 }
@@ -172,6 +173,7 @@
 - (void)setText:(NSString *)text {
     if (_text != text) {
         _text = text;
+        self.textLabel.hidden = text.length > 0 ? NO:YES;
         self.textLabel.text = text;
     }
 }
