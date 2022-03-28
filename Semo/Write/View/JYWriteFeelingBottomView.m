@@ -39,8 +39,7 @@
     _paintingListView.size = CGSizeMake(self.width, height);
     _paintingListView.top = 10;
     
-    height = (self.width - 40 - 60) / (float)Feelings.count;
-    _feelingListView.size = CGSizeMake(self.width, height);
+    _feelingListView.size = CGSizeMake(self.width, 50);
     _feelingListView.bottom = self.height - SafeAreaHeight;
 }
 

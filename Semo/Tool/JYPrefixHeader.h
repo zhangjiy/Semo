@@ -33,7 +33,7 @@
 
 // Color
 //[UIColor wbt_ColorWithHexString:@"#F5F5F5"]
-#define SMHomeBackgroudColor [UIColor colorWithRed:236/225.f green:237/225.f blue:232/225.f alpha:1.f]
+#define SMHomeBackgroudColor [UIColor colorWithRed:236/255.f green:237/255.f blue:232/255.f alpha:1.f]
 #define SMPureBackgroudColor [UIColor wbt_ColorWithHexString:@"#FFFFFF"]
 #define SMGhostWhiteColor [UIColor wbt_ColorWithHexString:@"#f5f5f5"]
 
@@ -81,9 +81,9 @@
 #define JYCanvasHeight  ((ScreenWidth - SMHomeLeft * 2.f) * 0.65)
 #define JYCanvasTop     130
 
-#define Feelings @[@"喜", @"怒", @"忧", @"思", @"悲", @"恐", @"惊"]
+#define Feelings @[@"", @"喜", @"怒", @"忧", @"思", @"悲", @"恐", @"惊"]
 
-#define FeelingColors @[[UIColor colorWithRed:218/225.f green:88/225.f blue:78/225.f alpha:1.f], [UIColor colorWithRed:230/225.f green:157/225.f blue:78/225.f alpha:1.f], [UIColor colorWithRed:241/225.f green:206/225.f blue:97/225.f alpha:1.f], [UIColor colorWithRed:121/225.f green:193/225.f blue:114/225.f alpha:1.f], [UIColor colorWithRed:64/225.f green:122/225.f blue:235/225.f alpha:1.f], [UIColor colorWithRed:173/225.f green:127/225.f blue:207/225.f alpha:1.f], [UIColor colorWithRed:149/225.f green:134/225.f blue:108/225.f alpha:1.f]]
+#define FeelingColors @[[UIColor whiteColor], [UIColor colorWithRed:218/255.f green:88/255.f blue:78/255.f alpha:1.f], [UIColor colorWithRed:230/255.f green:157/255.f blue:78/255.f alpha:1.f], [UIColor colorWithRed:241/255.f green:206/255.f blue:97/255.f alpha:1.f], [UIColor colorWithRed:121/255.f green:193/255.f blue:114/255.f alpha:1.f], [UIColor colorWithRed:64/255.f green:122/255.f blue:235/255.f alpha:1.f], [UIColor colorWithRed:173/255.f green:127/255.f blue:207/255.f alpha:1.f], [UIColor colorWithRed:149/255.f green:134/255.f blue:108/255.f alpha:1.f]]
 
 #define Plantings @[@"1", @"2", @"3", @"4", @"5"]
 

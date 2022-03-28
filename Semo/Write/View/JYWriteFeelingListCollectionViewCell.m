@@ -56,18 +56,21 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _textLabel.size = CGSizeMake(self.contentView.width - 10, self.contentView.width - 10);
+    _textLabel.size = CGSizeMake(ceilf(self.contentView.width - 14), ceilf(self.contentView.width - 14));
     _textLabel.centerX = self.contentView.width / 2.f;
     _textLabel.centerY = self.contentView.height / 2.f;
     
-    _selectedLayer.frame = self.bounds;
+    _selectedLayer.frame = CGRectMake(5, 5, ceilf(self.contentView.width - 10), ceilf(self.contentView.width - 10));
 }
 
 - (CAShapeLayer *)selectedLayer {
     if (!_selectedLayer) {
         _selectedLayer = [[CAShapeLayer alloc] init];
-        _selectedLayer.cornerRadius = self.contentView.width / 2.f;
-        _selectedLayer.borderColor = [UIColor colorWithRed:193/225.f green:193/225.f blue:193/225.f alpha:1.f].CGColor;
+        _selectedLayer.masksToBounds = YES;
+        _selectedLayer.cornerRadius = ceilf((self.contentView.width - 10)) / 2.f;
+        _selectedLayer.borderWidth = 4.f;
+        _selectedLayer.borderColor = SMGridLineColor.CGColor;
+        _selectedLayer.hidden = YES;
     }
     
     return _selectedLayer;
@@ -79,7 +82,7 @@
         _textLabel.font = [UIFont systemFontOfSize:13];
         _textLabel.textColor = [UIColor blackColor];
         _textLabel.layer.masksToBounds = YES;
-        _textLabel.layer.cornerRadius = (self.contentView.width - 10) / 2.f;
+        _textLabel.layer.cornerRadius = ceilf((self.contentView.width - 14)) / 2.f;
         _textLabel.textAlignment = NSTextAlignmentCenter;
     }
     return _textLabel;
@@ -102,7 +105,7 @@
 - (void)setIsSelected:(BOOL)isSelected {
     if (_isSelected != isSelected) {
         _isSelected = isSelected;
-        _selectedLayer.borderWidth = isSelected ? 2.f : 0.f;
+        _selectedLayer.hidden = isSelected ? NO : YES;
     }
 }
 

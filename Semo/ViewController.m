@@ -28,7 +28,7 @@
 }
 
 - (void)setupConfig {
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = SMHomeBackgroudColor;
 }
 
 - (void)initSubviews {

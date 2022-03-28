@@ -75,7 +75,7 @@
 - (JYWriteFeelingBottomView *)bottomView {
     if (!_bottomView) {
         _bottomView = [[JYWriteFeelingBottomView alloc] initWithFrame:CGRectZero];
-        _bottomView.backgroundColor = [UIColor colorWithRed:223/225.f green:225/225.f blue:215/225.f alpha:1.f];
+        _bottomView.backgroundColor = [UIColor colorWithRed:223/255.f green:225/255.f blue:215/255.f alpha:1.f];
         _bottomView.delegate = self;
     }
     return _bottomView;

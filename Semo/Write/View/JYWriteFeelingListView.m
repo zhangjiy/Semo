@@ -43,7 +43,7 @@
         _collectionView.delegate = self;
         [_collectionView registerClass:[JYWriteFeelingListCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
         _collectionView.scrollsToTop = NO;
-        _collectionView.contentInset = UIEdgeInsetsZero;
+        _collectionView.contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
         if (@available(iOS 11.0, *)) _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
     
@@ -53,10 +53,9 @@
 - (UICollectionViewFlowLayout *)collectionViewFlowLayout {
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc] init];
     layout.minimumLineSpacing = 0;
-    layout.minimumInteritemSpacing = 10;
+    layout.minimumInteritemSpacing = 0;
     layout.itemSize = [UIScreen mainScreen].bounds.size;
-    layout.sectionInset = UIEdgeInsetsMake(0, 20, 0, 20);
-    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     return layout;
 }
 
@@ -83,7 +82,8 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(self.height, self.height);
+    CGFloat width = (self.width - collectionView.contentInset.left * 2) / (float)Feelings.count;
+    return CGSizeMake(width, width);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
