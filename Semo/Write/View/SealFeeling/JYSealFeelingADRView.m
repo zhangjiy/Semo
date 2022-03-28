@@ -1,16 +1,16 @@
 //
-//  JYSealFeelingPassView.m
+//  JYSealFeelingADRView.m
 //  Semo
 //
-//  Created by jiyang on 2022/3/14.
+//  Created by jiyang on 2022/3/28.
 //
 
-#import "JYSealFeelingPassView.h"
+#import "JYSealFeelingADRView.h"
 #import "Semo-Swift.h"
 #import "JYARCArrangeStartView.h"
 #import "JYPrefixHeader.h"
 
-@interface JYSealFeelingPassView ()
+@interface JYSealFeelingADRView ()
 @property (nonatomic, strong) CAShapeLayer *circleLayer0;
 @property (nonatomic, strong) CAShapeLayer *circleLayer1;
 @property (nonatomic, strong) CAShapeLayer *circleLayer2;
@@ -22,7 +22,7 @@
 @property (nonatomic, strong) UILabel *textLabel;
 @end
 
-@implementation JYSealFeelingPassView
+@implementation JYSealFeelingADRView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -37,7 +37,6 @@
     [self.layer addSublayer:self.circleLayer0];
     [self.layer addSublayer:self.circleLayer1];
     [self.layer addSublayer:self.circleLayer2];
-    [self.layer addSublayer:self.circleLayer3];
     [self addSubview:self.arrangeTextView0];
     [self addSubview:self.arrangeTextView1];
     [self addSubview:self.arrangeStartView0];
@@ -61,29 +60,24 @@
     }
     
     if (!_circleLayer1.path) {
-        CGFloat radius = (self.width * 0.9) / 2.f;
+        CGFloat radius = (self.width * 0.95) / 2.f;
         UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.width / 2.f, self.height / 2.f) radius:radius startAngle:0 endAngle:2.f * M_PI clockwise:false];
         _circleLayer1.path = [path CGPath];
     }
     
     if (!_circleLayer2.path) {
         CGFloat radius = (self.width * 0.68) / 2.f;
-        UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.width / 2.f, self.height / 2.f) radius:radius startAngle:1.2f * M_PI endAngle:1.8f * M_PI clockwise:true];
+        UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.width / 2.f, self.height / 2.f) radius:radius startAngle:0 endAngle:2.f * M_PI clockwise:false];
         _circleLayer2.path = [path CGPath];
     }
     
-    if (!_circleLayer3.path) {
-        CGFloat radius = (self.width * 0.68) / 2.f;
-        UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.width / 2.f, self.height / 2.f) radius:radius startAngle:0.2 * M_PI endAngle:0.8f * M_PI clockwise:true];
-        _circleLayer3.path = [path CGPath];
-    }
 }
 
 - (CAShapeLayer *)circleLayer0 {
     if (!_circleLayer0) {
         _circleLayer0 = [[CAShapeLayer alloc] init];
-        _circleLayer0.lineWidth = self.width / 40.f;
-        _circleLayer0.strokeColor = SMSealRedColor.CGColor;
+        _circleLayer0.lineWidth = self.width / 60.f;
+        _circleLayer0.strokeColor = SMSealGreenColor.CGColor;
         _circleLayer0.fillColor = [UIColor clearColor].CGColor;
     }
      
@@ -94,7 +88,7 @@
     if (!_circleLayer1) {
         _circleLayer1 = [[CAShapeLayer alloc] init];
         _circleLayer1.lineWidth = self.width / 240.f;
-        _circleLayer1.strokeColor = SMSealRedColor.CGColor;
+        _circleLayer1.strokeColor = SMSealGreenColor.CGColor;
         _circleLayer1.fillColor = [UIColor clearColor].CGColor;
     }
      
@@ -104,30 +98,21 @@
 - (CAShapeLayer *)circleLayer2 {
     if (!_circleLayer2) {
         _circleLayer2 = [[CAShapeLayer alloc] init];
-        _circleLayer2.lineWidth = self.width / 120.f;
-        _circleLayer2.strokeColor = SMSealRedColor.CGColor;
+        _circleLayer2.lineWidth = self.width / 240.f;
+        _circleLayer2.strokeColor = SMSealGreenColor.CGColor;
         _circleLayer2.fillColor = [UIColor clearColor].CGColor;
     }
      
     return _circleLayer2;
 }
 
-- (CAShapeLayer *)circleLayer3 {
-    if (!_circleLayer3) {
-        _circleLayer3 = [[CAShapeLayer alloc] init];
-        _circleLayer3.lineWidth = self.width / 120.f;
-        _circleLayer3.strokeColor = SMSealRedColor.CGColor;
-        _circleLayer3.fillColor = [UIColor clearColor].CGColor;
-    }
-     
-    return _circleLayer3;
-}
 
 - (JYARCArrangeTextView *)arrangeTextView0 {
     if (!_arrangeTextView0) {
-        CGSize size = CGSizeMake(self.width * 0.8, self.height * 0.6);
-        _arrangeTextView0 = [[JYARCArrangeTextView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, self.height / 20.f, size.width, size.height)];
-        _arrangeTextView0.text = @"20220316 10:45";
+        CGSize size = CGSizeMake(self.width * 0.9, self.width * 0.6);
+        _arrangeTextView0 = [[JYARCArrangeTextView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, self.height / 38.f, size.width, size.height)];
+        _arrangeTextView0.text = @"20220316.1045Fri.MOOD";
+        _arrangeTextView0.color = SMSealGreenColor;
         [_arrangeTextView0 drawText];
     }
     return _arrangeTextView0;
@@ -135,9 +120,10 @@
 
 - (JYARCArrangeTextView *)arrangeTextView1 {
     if (!_arrangeTextView1) {
-        CGSize size = CGSizeMake(self.width * 0.8, self.width * 0.6);
-        _arrangeTextView1 = [[JYARCArrangeTextView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, (self.height * 0.35), size.width, size.height)];
-        _arrangeTextView1.text = @"20220316 10:45";
+        CGSize size = CGSizeMake(self.width * 0.9, self.width * 0.6);
+        _arrangeTextView1 = [[JYARCArrangeTextView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, (self.height * 0.36), size.width, size.height)];
+        _arrangeTextView1.text = @"20220316.1045Fri.MOOD";
+        _arrangeTextView1.color = SMSealGreenColor;
         [_arrangeTextView1 drawText];
     }
     return _arrangeTextView1;
@@ -146,8 +132,10 @@
 
 - (JYARCArrangeStartView *)arrangeStartView0 {
     if (!_arrangeStartView0) {
-        CGSize size = CGSizeMake(self.width / 2.4, self.height / 12.f);
-        _arrangeStartView0 = [[JYARCArrangeStartView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, self.height / 4.3, size.width, size.height)];
+        CGSize size = CGSizeMake(self.width / 12.f, self.height / 24.f);
+        _arrangeStartView0 = [[JYARCArrangeStartView alloc] initWithFrame:CGRectMake(self.width / 12.f, self.height / 2.2f, size.width, size.height)];
+        _arrangeStartView0.color = SMSealGreenColor;
+        _arrangeStartView0.stars = @[@(5.f * (self.width / 130))];
         [_arrangeStartView0 drawStars];
     }
     
@@ -156,8 +144,10 @@
 
 - (JYARCArrangeStartView *)arrangeStartView1 {
     if (!_arrangeStartView1) {
-        CGSize size = CGSizeMake(self.width / 2.4, self.height / 12.f);
-        _arrangeStartView1 = [[JYARCArrangeStartView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, self.height / 1.47, size.width, size.height)];
+        CGSize size = CGSizeMake(self.width / 12.f, self.height / 24.f);
+        _arrangeStartView1 = [[JYARCArrangeStartView alloc] initWithFrame:CGRectMake(self.width * 0.82, self.height / 2.1f, size.width, size.height)];
+        _arrangeStartView1.color = SMSealGreenColor;
+        _arrangeStartView1.stars = @[@(5.f * (self.width / 130))];
         [_arrangeStartView1 drawStars];
     }
     
@@ -169,7 +159,7 @@
         CGSize size = CGSizeMake(self.width * 0.68, self.width * 0.68);
         _textLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, (self.height - size.height) / 2.f, size.width, size.height)];
         _textLabel.font = [UIFont boldSystemFontOfSize:self.width * 0.42];
-        _textLabel.textColor = SMSealRedColor;
+        _textLabel.textColor = SMSealGreenColor;
         _textLabel.textAlignment = NSTextAlignmentCenter;
         _textLabel.hidden = YES;
     }

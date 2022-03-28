@@ -40,6 +40,7 @@
 #define SMReddishBlueColor [UIColor wbt_ColorWithHexString:@"#4169E1"]
 
 #define SMSealRedColor [UIColor wbt_ColorWithHexString:@"#B42828"]
+#define SMSealGreenColor [UIColor wbt_ColorWithHexString:@"#3cb371"]
 
 #define SMGridLineColor [UIColor wbt_ColorWithHexString:@"#d3d3d3"]
 

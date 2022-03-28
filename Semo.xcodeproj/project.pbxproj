@@ -27,6 +27,7 @@
 		B41AC73C27D71A5700CDF4AB /* JYFeelingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC73B27D71A5600CDF4AB /* JYFeelingTableViewCell.m */; };
 		B41AC74027D71EBB00CDF4AB /* JYFeelingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC73F27D71EBB00CDF4AB /* JYFeelingModel.m */; };
 		B41FF20427E84AB9004D0329 /* JYPainting.m in Sources */ = {isa = PBXBuildFile; fileRef = B41FF20327E84AB9004D0329 /* JYPainting.m */; };
+		B43C4CA527F1460F00F4C22B /* JYSealFeelingADRView.m in Sources */ = {isa = PBXBuildFile; fileRef = B43C4CA427F1460F00F4C22B /* JYSealFeelingADRView.m */; };
 		B4609CB727E995BF009BC2A5 /* JYPopupMenuOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CB627E995BF009BC2A5 /* JYPopupMenuOverlayView.m */; };
 		B4609CCD27EAB0AE009BC2A5 /* JYMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CCC27EAB0AE009BC2A5 /* JYMenu.m */; };
 		B4609CD227EAE62F009BC2A5 /* UIImageView+CornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CD127EAE62F009BC2A5 /* UIImageView+CornerRadius.m */; };
@@ -137,6 +138,8 @@
 		B41AC73F27D71EBB00CDF4AB /* JYFeelingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYFeelingModel.m; sourceTree = "<group>"; };
 		B41FF20227E84AB9004D0329 /* JYPainting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPainting.h; sourceTree = "<group>"; };
 		B41FF20327E84AB9004D0329 /* JYPainting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPainting.m; sourceTree = "<group>"; };
+		B43C4CA327F1460F00F4C22B /* JYSealFeelingADRView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYSealFeelingADRView.h; sourceTree = "<group>"; };
+		B43C4CA427F1460F00F4C22B /* JYSealFeelingADRView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYSealFeelingADRView.m; sourceTree = "<group>"; };
 		B4609CB427E99167009BC2A5 /* JYPopupListMenuDataProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupListMenuDataProtocol.h; sourceTree = "<group>"; };
 		B4609CB527E995BF009BC2A5 /* JYPopupMenuOverlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuOverlayView.h; sourceTree = "<group>"; };
 		B4609CB627E995BF009BC2A5 /* JYPopupMenuOverlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupMenuOverlayView.m; sourceTree = "<group>"; };
@@ -614,6 +617,8 @@
 			children = (
 				B4EC077227DF07D800CB0877 /* JYSealFeelingPassView.h */,
 				B4EC077327DF07D800CB0877 /* JYSealFeelingPassView.m */,
+				B43C4CA327F1460F00F4C22B /* JYSealFeelingADRView.h */,
+				B43C4CA427F1460F00F4C22B /* JYSealFeelingADRView.m */,
 			);
 			path = SealFeeling;
 			sourceTree = "<group>";
@@ -842,6 +847,7 @@
 				B4EA2BF927E7000D00779793 /* LGDrawer.m in Sources */,
 				B4AC37FD27DD9FB400529722 /* JYDayCalendarView.m in Sources */,
 				B4EA2C0B27E74E0000779793 /* ChartletPicker.swift in Sources */,
+				B43C4CA527F1460F00F4C22B /* JYSealFeelingADRView.m in Sources */,
 				B41AC6E627D5A69F00CDF4AB /* SceneDelegate.m in Sources */,
 				B4EA2C0927E74E0000779793 /* MathUtils.swift in Sources */,
 				B4A90C6127E62AE50085CAC4 /* JYWritePaintingListView.m in Sources */,

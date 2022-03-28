@@ -13,7 +13,6 @@
 @end
 
 @implementation JYARCArrangeStartView {
-    NSArray *views;
     CGFloat viewWidth;
     CGFloat viewHeight;
     CGFloat arcRadius;
@@ -23,24 +22,27 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if ([super initWithFrame:frame]) {
-        [self setupConfig];
-        [self setupView];
+        self.color = SMSealRedColor;
+        self.stars = @[@(3.f * (self.width / 50)), @(4.5f * (self.width / 50)), @(6.f * (self.width / 50)), @(4.5f * (self.width / 50)), @(3.f * (self.width / 50))];
     }
         
     return self;
 }
 
-- (void)setupConfig {
-    views = @[@(3.f * (self.width / 50)), @(4.5f * (self.width / 50)), @(6.f * (self.width / 50)), @(4.5f * (self.width / 50)), @(3.f * (self.width / 50))];
+
+- (void)updateConfig {
     viewWidth = self.width;
     viewHeight = self.height;
     arcRadius = viewHeight / 2.f + viewWidth * viewWidth / 8.f / viewHeight; // 根据垂径定理得到
 
     totalRadian =  asin(viewWidth / 2.f / arcRadius) * 2 * 4 / 5.f;
-    eachRadian = totalRadian / (views.count - 1);
+    if (self.stars.count > 1) {
+        eachRadian = totalRadian / (self.stars.count - 1);
+    }
 }
 
-- (void)setupView {
+- (void)drawStars {
+    [self updateConfig];
     // 先移除之前创建的
     for (UIView *subview in self.subviews) {
         [subview removeFromSuperview];
@@ -48,20 +50,20 @@
     
     CGFloat startAngle = -M_PI / 2.f - totalRadian / 2.f; // 起始角度，从左到右，取第一个字符的位置为起始角度
     
-    for (int i = 0; i < views.count; i ++) {
+    for (int i = 0; i < self.stars.count; i ++) {
         CGFloat angle = startAngle + eachRadian * i;
         CGFloat x = arcRadius * cos(angle);
         CGFloat y = arcRadius * sin(angle);
         CGPoint center = CGPointMake((self.frame.size.width / 2.f + x), (arcRadius + y)); // 各个label中点坐标
         
-        float width = [views[i] floatValue];
+        float width = [self.stars[i] floatValue];
         CAShapeLayer *startLayer = [[CAShapeLayer alloc] init];
         startLayer.bounds = CGRectMake(0, 0, width, width);
         CGPoint arcCenter = CGPointMake(startLayer.position.x + startLayer.frame.size.width / 2.f, startLayer.position.y + startLayer.frame.size.height / 2.f);
         CGFloat radius = width;
-        CGFloat rate = 0.3;
+        CGFloat rate = 0.5;
         startLayer.strokeColor = [UIColor clearColor].CGColor;
-        startLayer.fillColor = SMSealRedColor.CGColor;
+        startLayer.fillColor = self.color.CGColor;
         startLayer.path = ({
             UIBezierPath *path = [UIBezierPath bezierPath];
             

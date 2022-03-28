@@ -7,6 +7,7 @@
 
 #import "JYRecordFeelingsManager.h"
 #import "JYSealFeelingPassView.h"
+#import "JYSealFeelingADRView.h"
 #import "JYWriteFeelingBottomView.h"
 #import "JYPainting.h"
 #import "Semo-Swift.h"
@@ -14,7 +15,8 @@
 
 @interface JYRecordFeelingsManager () <JYWriteFeelingBottomViewDelegate>
 @property (nonatomic, strong) UIView * containerView;
-@property (nonatomic, strong) JYSealFeelingPassView * sealFeelingPassView;
+@property (nonatomic, strong) JYSealFeelingPassView * feelingPassView;
+@property (nonatomic, strong) JYSealFeelingADRView * feelingARDView;
 @property (nonatomic, strong) JYPaintingView * paintingView;
 @property (nonatomic, strong) JYPainting *painting;
 @property (nonatomic, strong) JYWriteFeelingBottomView * bottomView;
@@ -38,7 +40,8 @@
 }
 
 - (void)initSubviews {
-    [self.containerView addSubview:self.sealFeelingPassView];
+    //[self.containerView addSubview:self.feelingPassView];
+    [self.containerView addSubview:self.feelingARDView];//节省性能不一定要用懒加载
     [self.containerView addSubview:self.paintingView];
     [self.containerView addSubview:self.bottomView];
 }
@@ -47,21 +50,34 @@
     
     _paintingView.top = JYCanvasTop;
     _paintingView.centerX = self.containerView.width / 2.f;
-    _sealFeelingPassView.top = JYCanvasTop;
-    _sealFeelingPassView.centerX = self.containerView.width / 2.f;
+    
+    _feelingPassView.top = JYCanvasTop;
+    _feelingPassView.centerX = self.containerView.width / 2.f;
+    
+    _feelingARDView.top = JYCanvasTop;
+    _feelingARDView.centerX = self.containerView.width / 2.f;
     
     _bottomView.size = CGSizeMake(self.containerView.width, JYWriteBottomHeight);
     _bottomView.bottom = self.containerView.height;
     
 }
 
-- (JYSealFeelingPassView *)sealFeelingPassView {
-    if (!_sealFeelingPassView) {
-        _sealFeelingPassView = [[JYSealFeelingPassView alloc] initWithFrame:CGRectMake(JYViewInset, JYCanvasTop, self.containerView.width - JYViewInset * 2, self.containerView.width - JYViewInset * 2)];
-        _sealFeelingPassView.hidden = NO;
+- (JYSealFeelingPassView *)feelingPassView {
+    if (!_feelingPassView) {
+        _feelingPassView = [[JYSealFeelingPassView alloc] initWithFrame:CGRectMake(JYViewInset, JYCanvasTop, self.containerView.width - JYViewInset * 2, self.containerView.width - JYViewInset * 2)];
+        _feelingPassView.hidden = NO;
     }
     
-    return _sealFeelingPassView;
+    return _feelingPassView;
+}
+
+- (JYSealFeelingADRView *)feelingARDView {
+    if (!_feelingARDView) {
+        _feelingARDView = [[JYSealFeelingADRView alloc] initWithFrame:CGRectMake(JYViewInset, JYCanvasTop, self.containerView.width - JYViewInset * 2, self.containerView.width - JYViewInset * 2)];
+        _feelingARDView.hidden = NO;
+    }
+    
+    return _feelingARDView;
 }
 
 - (JYPaintingView *)paintingView {
@@ -96,7 +112,8 @@
 }
 
 - (void)writeFeelingBottomView:(JYWriteFeelingBottomView *)bottomView didSelectFeelingItem:(NSString *)item {
-    self.sealFeelingPassView.text = item;
+    //self.feelingPassView.text = item;
+    self.feelingARDView.text = item;
 }
 
 @end
