@@ -35,10 +35,12 @@
     viewHeight = self.height;
     arcRadius = viewHeight / 2.f + viewWidth * viewWidth / 8.f / viewHeight; // 根据垂径定理得到
 
-    totalRadian =  asin(viewWidth / 2.f / arcRadius) * 2 * 4 / 5.f;
-    if (self.stars.count > 1) {
-        eachRadian = totalRadian / (self.stars.count - 1);
-    }
+    eachRadian = 0.3;
+    totalRadian = eachRadian * (self.stars.count - 1);
+//    totalRadian =  asin(viewWidth / 2.f / arcRadius) * 2 * 4 / 5.f;
+//    if (self.stars.count > 1) {
+//        eachRadian = totalRadian / (self.stars.count - 1);
+//    }
 }
 
 - (void)drawStars {

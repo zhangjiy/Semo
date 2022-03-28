@@ -8,6 +8,7 @@
 #import "JYRecordFeelingsManager.h"
 #import "JYSealFeelingPassView.h"
 #import "JYSealFeelingADRView.h"
+#import "JYSealFeelingSellView.h"
 #import "JYWriteFeelingBottomView.h"
 #import "JYPainting.h"
 #import "Semo-Swift.h"
@@ -17,6 +18,7 @@
 @property (nonatomic, strong) UIView * containerView;
 @property (nonatomic, strong) JYSealFeelingPassView * feelingPassView;
 @property (nonatomic, strong) JYSealFeelingADRView * feelingARDView;
+@property (nonatomic, strong) JYSealFeelingSellView *feelingSellView;
 @property (nonatomic, strong) JYPaintingView * paintingView;
 @property (nonatomic, strong) JYPainting *painting;
 @property (nonatomic, strong) JYWriteFeelingBottomView * bottomView;
@@ -41,7 +43,8 @@
 
 - (void)initSubviews {
     //[self.containerView addSubview:self.feelingPassView];
-    [self.containerView addSubview:self.feelingARDView];//节省性能不一定要用懒加载
+    //[self.containerView addSubview:self.feelingARDView];//节省性能不一定要用懒加载
+    [self.containerView addSubview:self.feelingSellView];
     [self.containerView addSubview:self.paintingView];
     [self.containerView addSubview:self.bottomView];
 }
@@ -56,6 +59,9 @@
     
     _feelingARDView.top = JYCanvasTop;
     _feelingARDView.centerX = self.containerView.width / 2.f;
+    
+    _feelingSellView.top = JYCanvasTop;
+    _feelingSellView.centerX = self.containerView.width / 2.f;
     
     _bottomView.size = CGSizeMake(self.containerView.width, JYWriteBottomHeight);
     _bottomView.bottom = self.containerView.height;
@@ -78,6 +84,15 @@
     }
     
     return _feelingARDView;
+}
+
+- (JYSealFeelingSellView *)feelingSellView {
+    if (!_feelingSellView) {
+        _feelingSellView = [[JYSealFeelingSellView alloc] initWithFrame:CGRectMake(JYViewInset, JYCanvasTop, self.containerView.width - JYViewInset * 2, self.containerView.width - JYViewInset * 2)];
+        _feelingSellView.hidden = NO;
+    }
+    
+    return _feelingSellView;
 }
 
 - (JYPaintingView *)paintingView {
@@ -113,7 +128,8 @@
 
 - (void)writeFeelingBottomView:(JYWriteFeelingBottomView *)bottomView didSelectFeelingItem:(NSString *)item {
     //self.feelingPassView.text = item;
-    self.feelingARDView.text = item;
+    //self.feelingARDView.text = item;
+    self.feelingSellView.text = item;
 }
 
 @end
