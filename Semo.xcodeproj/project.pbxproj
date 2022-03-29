@@ -54,6 +54,7 @@
 		B4AC380027DDA4CF00529722 /* JYDayCalendarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37FF27DDA4CF00529722 /* JYDayCalendarCollectionViewCell.m */; };
 		B4AC380727DE30E500529722 /* JYCalendarCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC380627DE30E500529722 /* JYCalendarCollectionViewLayout.m */; };
 		B4B66B9427F29C32007D3267 /* JYHeartView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B66B9327F29C32007D3267 /* JYHeartView.m */; };
+		B4B66B9827F2CAE0007D3267 /* JYStyleImageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B66B9727F2CADF007D3267 /* JYStyleImageFactory.m */; };
 		B4BF762A27E8B220003BBAC5 /* QBPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF761E27E8B220003BBAC5 /* QBPopupMenu.m */; };
 		B4BF762B27E8B220003BBAC5 /* QBPopupMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF762227E8B220003BBAC5 /* QBPopupMenuItemView.m */; };
 		B4BF762C27E8B220003BBAC5 /* QBPopupMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF762327E8B220003BBAC5 /* QBPopupMenuItem.m */; };
@@ -197,6 +198,8 @@
 		B4AC380627DE30E500529722 /* JYCalendarCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYCalendarCollectionViewLayout.m; sourceTree = "<group>"; };
 		B4B66B9227F29C32007D3267 /* JYHeartView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYHeartView.h; sourceTree = "<group>"; };
 		B4B66B9327F29C32007D3267 /* JYHeartView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYHeartView.m; sourceTree = "<group>"; };
+		B4B66B9627F2CADF007D3267 /* JYStyleImageFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYStyleImageFactory.h; sourceTree = "<group>"; };
+		B4B66B9727F2CADF007D3267 /* JYStyleImageFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYStyleImageFactory.m; sourceTree = "<group>"; };
 		B4BF761E27E8B220003BBAC5 /* QBPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenu.m; sourceTree = "<group>"; };
 		B4BF761F27E8B220003BBAC5 /* QBPlasticPopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPlasticPopupMenu.h; sourceTree = "<group>"; };
 		B4BF762027E8B220003BBAC5 /* QBPopupMenuPagenatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPopupMenuPagenatorView.h; sourceTree = "<group>"; };
@@ -461,6 +464,15 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
+		B4B66B9527F2CA6A007D3267 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B4B66B9627F2CADF007D3267 /* JYStyleImageFactory.h */,
+				B4B66B9727F2CADF007D3267 /* JYStyleImageFactory.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		B4BF761D27E8B220003BBAC5 /* QBPopupMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -602,6 +614,7 @@
 		B4EC076D27DF018A00CB0877 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B4B66B9527F2CA6A007D3267 /* Helper */,
 				B4609CCA27EAB09C009BC2A5 /* Model */,
 				B4BF763527E95CB5003BBAC5 /* Menu */,
 				B4EC077127DF07AB00CB0877 /* SealFeeling */,
@@ -843,6 +856,7 @@
 				B4EC077027DF01D000CB0877 /* JYWriteFeelingListCollectionViewCell.m in Sources */,
 				B41AC6F427D5A6A400CDF4AB /* main.m in Sources */,
 				B4BF764227E963C9003BBAC5 /* UIView+ViewController.m in Sources */,
+				B4B66B9827F2CAE0007D3267 /* JYStyleImageFactory.m in Sources */,
 				B4BF762A27E8B220003BBAC5 /* QBPopupMenu.m in Sources */,
 				B4609CD227EAE62F009BC2A5 /* UIImageView+CornerRadius.m in Sources */,
 				B4AC37F427DCC56600529722 /* JYCalendarCalculator.m in Sources */,

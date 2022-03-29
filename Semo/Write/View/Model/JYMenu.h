@@ -20,6 +20,9 @@ typedef NS_ENUM(NSInteger, JYPaintingType) {
 
 typedef NS_ENUM(NSInteger, JYFeelingStyleType) {
     JYFeelingStyleTypePass = 0,
+    JYFeelingStyleTypeADR,
+    JYFeelingStyleTypeSell,
+    JYFeelingStyleTypeLove,
     JYFeelingStyleTypeEllipse,
     JYFeelingStyleTypeRectangle,
     JYFeelingStyleTypeTriangle,

@@ -47,7 +47,7 @@
     //[self.containerView addSubview:self.feelingPassView];
     //[self.containerView addSubview:self.feelingARDView];//节省性能不一定要用懒加载
     //[self.containerView addSubview:self.feelingSellView];
-    [self.containerView addSubview:self.feelingLoveView];
+    //[self.containerView addSubview:self.feelingLoveView];
     [self.containerView addSubview:self.paintingView];
     [self.containerView addSubview:self.bottomView];
 }
@@ -146,6 +146,23 @@
     //self.feelingARDView.text = item;
     //self.feelingSellView.text = item;
     self.feelingLoveView.text = item;
+    [self tou];
+}
+
+- (void)tou{
+    
+    UIImage *image = [self makeImageWithView:self.feelingSellView withSize:self.feelingSellView.size];
+    
+}
+
+
+#pragma mark 生成image
+- (UIImage *)makeImageWithView:(UIView *)view withSize:(CGSize)size {
+    UIGraphicsBeginImageContextWithOptions(size, YES, [UIScreen mainScreen].scale);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
 }
 
 @end

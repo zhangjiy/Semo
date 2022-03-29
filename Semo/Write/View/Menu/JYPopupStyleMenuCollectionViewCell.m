@@ -7,8 +7,7 @@
 
 #import "JYPopupStyleMenuCollectionViewCell.h"
 #import "UIImageView+CornerRadius.h"
-#import "JYMenu.h"
-#import "LGDrawer.h"
+#import "JYStyleImageFactory.h"
 #import "JYPrefixHeader.h"
 #define kCornerRadius 4.f
 @interface JYPopupStyleMenuCollectionViewCell ()
@@ -54,67 +53,8 @@
 
 - (UIImage *)styleImageWithStyleType:(JYFeelingStyleType)styleType {
     if (!self.imageView.image) {
-        CGSize imageSize = CGSizeMake(60, 60);
-        CGSize size = CGSizeMake(58, 58);
-        if (styleType == JYFeelingStyleTypeEllipse) {
-            return [LGDrawer drawEllipseWithImageSize:imageSize
-                                                 size:size
-                                               offset:JYOffset
-                                               rotate:JYRotate
-                                      backgroundColor:[UIColor clearColor]
-                                            fillColor:[UIColor clearColor]
-                                          strokeColor:SMSealRedColor
-                                      strokeThickness:2.f
-                                           strokeDash:nil
-                                           strokeType:JYStrokeType
-                                          shadowColor:[UIColor clearColor]
-                                         shadowOffset:CGPointMake(0, 0)
-                                           shadowBlur:0];
-        } else if (styleType == JYFeelingStyleTypeRectangle) {
-            return [LGDrawer drawRectangleWithImageSize:imageSize
-                                                   size:size
-                                                 offset:JYOffset
-                                                 rotate:JYRotate
-                                         roundedCorners:UIRectCornerAllCorners
-                                           cornerRadius:0.f
-                                        backgroundColor:[UIColor clearColor]
-                                              fillColor:[UIColor clearColor]
-                                            strokeColor:SMSealRedColor
-                                        strokeThickness:2.f
-                                             strokeDash:nil
-                                             strokeType:JYStrokeType
-                                            shadowColor:[UIColor clearColor]
-                                           shadowOffset:CGPointMake(0, 0)
-                                             shadowBlur:0];
-        } else if (styleType == JYFeelingStyleTypeTriangle) {
-            return [LGDrawer drawTriangleWithImageSize:imageSize
-                                                  size:size
-                                                offset:JYOffset
-                                                rotate:JYRotate
-                                          cornerRadius:0
-                                             direction:LGDrawerDirectionTop
-                                       backgroundColor:[UIColor clearColor]
-                                             fillColor:[UIColor clearColor]
-                                           strokeColor:SMSealRedColor
-                                       strokeThickness:2.f
-                                            strokeDash:nil
-                                           shadowColor:[UIColor clearColor]
-                                          shadowOffset:CGPointMake(0, 0)
-                                            shadowBlur:0];
-        } else {
-            return [LGDrawer drawHeartWithImageSize:imageSize
-                                               size:size
-                                             offset:JYOffset
-                                             rotate:JYRotate
-                                    backgroundColor:[UIColor clearColor]
-                                          fillColor:[UIColor clearColor]
-                                        strokeColor:SMSealRedColor
-                                    strokeThickness:2.f
-                                         strokeDash:nil
-                                        shadowColor:[UIColor clearColor]
-                                       shadowOffset:CGPointMake(0, 0)
-                                         shadowBlur:0];
-        }
+        CGSize size = CGSizeMake(self.contentView.width - 15, self.contentView.width - 15);
+        return [JYStyleImageFactory styleImageFactoryFromStyleType:styleType size:size];
     } else {
         return self.imageView.image;
     }
