@@ -41,6 +41,7 @@
 
 #define SMSealRedColor [UIColor wbt_ColorWithHexString:@"#B42828"]
 #define SMSealGreenColor [UIColor wbt_ColorWithHexString:@"#3cb371"]
+#define SMSealBlueColor [UIColor wbt_ColorWithHexString:@"#1e90ff"]
 
 #define SMGridLineColor [UIColor wbt_ColorWithHexString:@"#d3d3d3"]
 

@@ -96,7 +96,6 @@
     return _circleLayer2;
 }
 
-
 - (JYARCArrangeStartView *)arrangeStartView0 {
     if (!_arrangeStartView0) {
         CGSize size = CGSizeMake(self.width * 0.74, self.height * 0.74);
