@@ -30,7 +30,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _imageView.size = CGSizeMake(self.contentView.width - 15, self.contentView.width - 15);
+    _imageView.size = CGSizeMake(self.contentView.width, self.contentView.width);
     _imageView.centerX = self.contentView.width / 2.f;
     _imageView.centerY = self.contentView.height / 2.f;
 

@@ -55,6 +55,7 @@
 		B4AC380727DE30E500529722 /* JYCalendarCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC380627DE30E500529722 /* JYCalendarCollectionViewLayout.m */; };
 		B4B66B9427F29C32007D3267 /* JYHeartView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B66B9327F29C32007D3267 /* JYHeartView.m */; };
 		B4B66B9827F2CAE0007D3267 /* JYStyleImageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B66B9727F2CADF007D3267 /* JYStyleImageFactory.m */; };
+		B4B66B9B27F2D3D1007D3267 /* JYSealFeelingSimpleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B66B9A27F2D3D1007D3267 /* JYSealFeelingSimpleView.m */; };
 		B4BF762A27E8B220003BBAC5 /* QBPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF761E27E8B220003BBAC5 /* QBPopupMenu.m */; };
 		B4BF762B27E8B220003BBAC5 /* QBPopupMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF762227E8B220003BBAC5 /* QBPopupMenuItemView.m */; };
 		B4BF762C27E8B220003BBAC5 /* QBPopupMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF762327E8B220003BBAC5 /* QBPopupMenuItem.m */; };
@@ -65,6 +66,32 @@
 		B4BF763827E95CFC003BBAC5 /* JYPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF763727E95CFC003BBAC5 /* JYPopupMenu.m */; };
 		B4BF763C27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF763B27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.m */; };
 		B4BF764227E963C9003BBAC5 /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF764127E963C9003BBAC5 /* UIView+ViewController.m */; };
+		B4E7FA6527F6C42D00604F5E /* ZHDrawingLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA2F27F6C42C00604F5E /* ZHDrawingLineLayer.m */; };
+		B4E7FA6627F6C42D00604F5E /* ZHDrawingCuboidLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA3027F6C42C00604F5E /* ZHDrawingCuboidLayer.m */; };
+		B4E7FA6727F6C42D00604F5E /* ZHDrawingRighTangleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA3127F6C42C00604F5E /* ZHDrawingRighTangleLayer.m */; };
+		B4E7FA6827F6C42D00604F5E /* ZHDrawingSphereLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA3427F6C42C00604F5E /* ZHDrawingSphereLayer.m */; };
+		B4E7FA6927F6C42D00604F5E /* ZHDrawingAxisLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA3527F6C42C00604F5E /* ZHDrawingAxisLayer.m */; };
+		B4E7FA6A27F6C42D00604F5E /* ZHDrawingHexagonLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA3727F6C42D00604F5E /* ZHDrawingHexagonLayer.m */; };
+		B4E7FA6B27F6C42D00604F5E /* ZHDrawingDottedlineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA3827F6C42D00604F5E /* ZHDrawingDottedlineLayer.m */; };
+		B4E7FA6C27F6C42D00604F5E /* ZHDrawingThreeDCoordinateLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA3927F6C42D00604F5E /* ZHDrawingThreeDCoordinateLayer.m */; };
+		B4E7FA6D27F6C42D00604F5E /* ZHDrawingTriangularPyramidLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA3A27F6C42D00604F5E /* ZHDrawingTriangularPyramidLayer.m */; };
+		B4E7FA6E27F6C42D00604F5E /* ZHDrawingRegularPolygonLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA3D27F6C42D00604F5E /* ZHDrawingRegularPolygonLayer.m */; };
+		B4E7FA6F27F6C42D00604F5E /* ZHDrawingRectLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA3E27F6C42D00604F5E /* ZHDrawingRectLayer.m */; };
+		B4E7FA7027F6C42D00604F5E /* ZHDrawingTriangleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA3F27F6C42D00604F5E /* ZHDrawingTriangleLayer.m */; };
+		B4E7FA7127F6C42D00604F5E /* ZHDrawingRhombusLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA4027F6C42D00604F5E /* ZHDrawingRhombusLayer.m */; };
+		B4E7FA7227F6C42D00604F5E /* ZHDrawingArcLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA4127F6C42D00604F5E /* ZHDrawingArcLayer.m */; };
+		B4E7FA7327F6C42D00604F5E /* ZHDrawingCosineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA4227F6C42D00604F5E /* ZHDrawingCosineLayer.m */; };
+		B4E7FA7427F6C42D00604F5E /* ZHDrawingGraffitiLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA4727F6C42D00604F5E /* ZHDrawingGraffitiLayer.m */; };
+		B4E7FA7527F6C42D00604F5E /* ZHDrawingCircleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA4827F6C42D00604F5E /* ZHDrawingCircleLayer.m */; };
+		B4E7FA7627F6C42D00604F5E /* ZHDrawingArrowLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA4A27F6C42D00604F5E /* ZHDrawingArrowLayer.m */; };
+		B4E7FA7727F6C42D00604F5E /* ZHDrawingOvalLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA4B27F6C42D00604F5E /* ZHDrawingOvalLayer.m */; };
+		B4E7FA7827F6C42D00604F5E /* ZHDrawingRulerLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA4E27F6C42D00604F5E /* ZHDrawingRulerLineLayer.m */; };
+		B4E7FA7927F6C42D00604F5E /* ZHDrawingPentagonLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA5227F6C42D00604F5E /* ZHDrawingPentagonLayer.m */; };
+		B4E7FA7A27F6C42D00604F5E /* ZHDrawingTrapezoidLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA5527F6C42D00604F5E /* ZHDrawingTrapezoidLayer.m */; };
+		B4E7FA7B27F6C42D00604F5E /* ZHDrawingRulerArrowLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA5727F6C42D00604F5E /* ZHDrawingRulerArrowLayer.m */; };
+		B4E7FA7C27F6C42D00604F5E /* ZHDrawingCylinderLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA5827F6C42D00604F5E /* ZHDrawingCylinderLayer.m */; };
+		B4E7FA7D27F6C42D00604F5E /* ZHDrawingConeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA5D27F6C42D00604F5E /* ZHDrawingConeLayer.m */; };
+		B4E7FA8027F6C42D00604F5E /* ZHFigureDrawingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA6327F6C42D00604F5E /* ZHFigureDrawingLayer.m */; };
 		B4EA2BF927E7000D00779793 /* LGDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EA2BF827E7000D00779793 /* LGDrawer.m */; };
 		B4EA2C0027E7482000779793 /* JYPaintingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EA2BFF27E7482000779793 /* JYPaintingView.swift */; };
 		B4EA2C0727E74E0000779793 /* ChartletEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EA2C0227E74E0000779793 /* ChartletEditor.swift */; };
@@ -200,6 +227,8 @@
 		B4B66B9327F29C32007D3267 /* JYHeartView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYHeartView.m; sourceTree = "<group>"; };
 		B4B66B9627F2CADF007D3267 /* JYStyleImageFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYStyleImageFactory.h; sourceTree = "<group>"; };
 		B4B66B9727F2CADF007D3267 /* JYStyleImageFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYStyleImageFactory.m; sourceTree = "<group>"; };
+		B4B66B9927F2D3D1007D3267 /* JYSealFeelingSimpleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYSealFeelingSimpleView.h; sourceTree = "<group>"; };
+		B4B66B9A27F2D3D1007D3267 /* JYSealFeelingSimpleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYSealFeelingSimpleView.m; sourceTree = "<group>"; };
 		B4BF761E27E8B220003BBAC5 /* QBPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenu.m; sourceTree = "<group>"; };
 		B4BF761F27E8B220003BBAC5 /* QBPlasticPopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPlasticPopupMenu.h; sourceTree = "<group>"; };
 		B4BF762027E8B220003BBAC5 /* QBPopupMenuPagenatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPopupMenuPagenatorView.h; sourceTree = "<group>"; };
@@ -220,6 +249,58 @@
 		B4BF763B27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupMenuCollectionViewCell.m; sourceTree = "<group>"; };
 		B4BF764027E963C9003BBAC5 /* UIView+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewController.h"; sourceTree = "<group>"; };
 		B4BF764127E963C9003BBAC5 /* UIView+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewController.m"; sourceTree = "<group>"; };
+		B4E7FA2D27F6C42C00604F5E /* ZHDrawingCircleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingCircleLayer.h; sourceTree = "<group>"; };
+		B4E7FA2E27F6C42C00604F5E /* ZHDrawingGraffitiLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingGraffitiLayer.h; sourceTree = "<group>"; };
+		B4E7FA2F27F6C42C00604F5E /* ZHDrawingLineLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingLineLayer.m; sourceTree = "<group>"; };
+		B4E7FA3027F6C42C00604F5E /* ZHDrawingCuboidLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingCuboidLayer.m; sourceTree = "<group>"; };
+		B4E7FA3127F6C42C00604F5E /* ZHDrawingRighTangleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingRighTangleLayer.m; sourceTree = "<group>"; };
+		B4E7FA3227F6C42C00604F5E /* ZHDrawingOvalLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingOvalLayer.h; sourceTree = "<group>"; };
+		B4E7FA3327F6C42C00604F5E /* ZHDrawingArrowLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingArrowLayer.h; sourceTree = "<group>"; };
+		B4E7FA3427F6C42C00604F5E /* ZHDrawingSphereLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingSphereLayer.m; sourceTree = "<group>"; };
+		B4E7FA3527F6C42C00604F5E /* ZHDrawingAxisLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingAxisLayer.m; sourceTree = "<group>"; };
+		B4E7FA3627F6C42C00604F5E /* ZHDrawingPentagonLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingPentagonLayer.h; sourceTree = "<group>"; };
+		B4E7FA3727F6C42D00604F5E /* ZHDrawingHexagonLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingHexagonLayer.m; sourceTree = "<group>"; };
+		B4E7FA3827F6C42D00604F5E /* ZHDrawingDottedlineLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingDottedlineLayer.m; sourceTree = "<group>"; };
+		B4E7FA3927F6C42D00604F5E /* ZHDrawingThreeDCoordinateLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingThreeDCoordinateLayer.m; sourceTree = "<group>"; };
+		B4E7FA3A27F6C42D00604F5E /* ZHDrawingTriangularPyramidLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingTriangularPyramidLayer.m; sourceTree = "<group>"; };
+		B4E7FA3B27F6C42D00604F5E /* ZHDrawingRulerLineLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingRulerLineLayer.h; sourceTree = "<group>"; };
+		B4E7FA3C27F6C42D00604F5E /* ZHDrawingConeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingConeLayer.h; sourceTree = "<group>"; };
+		B4E7FA3D27F6C42D00604F5E /* ZHDrawingRegularPolygonLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingRegularPolygonLayer.m; sourceTree = "<group>"; };
+		B4E7FA3E27F6C42D00604F5E /* ZHDrawingRectLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingRectLayer.m; sourceTree = "<group>"; };
+		B4E7FA3F27F6C42D00604F5E /* ZHDrawingTriangleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingTriangleLayer.m; sourceTree = "<group>"; };
+		B4E7FA4027F6C42D00604F5E /* ZHDrawingRhombusLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingRhombusLayer.m; sourceTree = "<group>"; };
+		B4E7FA4127F6C42D00604F5E /* ZHDrawingArcLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingArcLayer.m; sourceTree = "<group>"; };
+		B4E7FA4227F6C42D00604F5E /* ZHDrawingCosineLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingCosineLayer.m; sourceTree = "<group>"; };
+		B4E7FA4327F6C42D00604F5E /* ZHDrawingRulerArrowLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingRulerArrowLayer.h; sourceTree = "<group>"; };
+		B4E7FA4427F6C42D00604F5E /* ZHDrawingCylinderLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingCylinderLayer.h; sourceTree = "<group>"; };
+		B4E7FA4527F6C42D00604F5E /* ZHDrawingTrapezoidLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingTrapezoidLayer.h; sourceTree = "<group>"; };
+		B4E7FA4627F6C42D00604F5E /* ZHDrawingLineLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingLineLayer.h; sourceTree = "<group>"; };
+		B4E7FA4727F6C42D00604F5E /* ZHDrawingGraffitiLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingGraffitiLayer.m; sourceTree = "<group>"; };
+		B4E7FA4827F6C42D00604F5E /* ZHDrawingCircleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingCircleLayer.m; sourceTree = "<group>"; };
+		B4E7FA4927F6C42D00604F5E /* ZHDrawingSphereLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingSphereLayer.h; sourceTree = "<group>"; };
+		B4E7FA4A27F6C42D00604F5E /* ZHDrawingArrowLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingArrowLayer.m; sourceTree = "<group>"; };
+		B4E7FA4B27F6C42D00604F5E /* ZHDrawingOvalLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingOvalLayer.m; sourceTree = "<group>"; };
+		B4E7FA4C27F6C42D00604F5E /* ZHDrawingRighTangleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingRighTangleLayer.h; sourceTree = "<group>"; };
+		B4E7FA4D27F6C42D00604F5E /* ZHDrawingCuboidLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingCuboidLayer.h; sourceTree = "<group>"; };
+		B4E7FA4E27F6C42D00604F5E /* ZHDrawingRulerLineLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingRulerLineLayer.m; sourceTree = "<group>"; };
+		B4E7FA4F27F6C42D00604F5E /* ZHDrawingTriangularPyramidLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingTriangularPyramidLayer.h; sourceTree = "<group>"; };
+		B4E7FA5027F6C42D00604F5E /* ZHDrawingThreeDCoordinateLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingThreeDCoordinateLayer.h; sourceTree = "<group>"; };
+		B4E7FA5127F6C42D00604F5E /* ZHDrawingDottedlineLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingDottedlineLayer.h; sourceTree = "<group>"; };
+		B4E7FA5227F6C42D00604F5E /* ZHDrawingPentagonLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingPentagonLayer.m; sourceTree = "<group>"; };
+		B4E7FA5327F6C42D00604F5E /* ZHDrawingHexagonLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingHexagonLayer.h; sourceTree = "<group>"; };
+		B4E7FA5427F6C42D00604F5E /* ZHDrawingAxisLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingAxisLayer.h; sourceTree = "<group>"; };
+		B4E7FA5527F6C42D00604F5E /* ZHDrawingTrapezoidLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingTrapezoidLayer.m; sourceTree = "<group>"; };
+		B4E7FA5627F6C42D00604F5E /* ZHDrawingCosineLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingCosineLayer.h; sourceTree = "<group>"; };
+		B4E7FA5727F6C42D00604F5E /* ZHDrawingRulerArrowLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingRulerArrowLayer.m; sourceTree = "<group>"; };
+		B4E7FA5827F6C42D00604F5E /* ZHDrawingCylinderLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingCylinderLayer.m; sourceTree = "<group>"; };
+		B4E7FA5927F6C42D00604F5E /* ZHDrawingArcLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingArcLayer.h; sourceTree = "<group>"; };
+		B4E7FA5A27F6C42D00604F5E /* ZHDrawingTriangleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingTriangleLayer.h; sourceTree = "<group>"; };
+		B4E7FA5B27F6C42D00604F5E /* ZHDrawingRhombusLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingRhombusLayer.h; sourceTree = "<group>"; };
+		B4E7FA5C27F6C42D00604F5E /* ZHDrawingRectLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingRectLayer.h; sourceTree = "<group>"; };
+		B4E7FA5D27F6C42D00604F5E /* ZHDrawingConeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingConeLayer.m; sourceTree = "<group>"; };
+		B4E7FA5E27F6C42D00604F5E /* ZHDrawingRegularPolygonLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingRegularPolygonLayer.h; sourceTree = "<group>"; };
+		B4E7FA5F27F6C42D00604F5E /* ZHFigureDrawingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFigureDrawingLayer.h; sourceTree = "<group>"; };
+		B4E7FA6327F6C42D00604F5E /* ZHFigureDrawingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFigureDrawingLayer.m; sourceTree = "<group>"; };
 		B4EA2BF727E7000D00779793 /* LGDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGDrawer.h; sourceTree = "<group>"; };
 		B4EA2BF827E7000D00779793 /* LGDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGDrawer.m; sourceTree = "<group>"; };
 		B4EA2BFF27E7482000779793 /* JYPaintingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JYPaintingView.swift; sourceTree = "<group>"; };
@@ -362,6 +443,7 @@
 		B41AC71C27D5AA9C00CDF4AB /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				B4E7FA2727F6C3FC00604F5E /* Draw */,
 				B4BF763F27E96399003BBAC5 /* View */,
 				B4BF761D27E8B220003BBAC5 /* QBPopupMenu */,
 				B4EA2BF527E6FFDC00779793 /* DrawImage */,
@@ -552,6 +634,81 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B4E7FA2727F6C3FC00604F5E /* Draw */ = {
+			isa = PBXGroup;
+			children = (
+				B4E7FA2827F6C42C00604F5E /* ZHFigureDrawingLayer */,
+			);
+			path = Draw;
+			sourceTree = "<group>";
+		};
+		B4E7FA2827F6C42C00604F5E /* ZHFigureDrawingLayer */ = {
+			isa = PBXGroup;
+			children = (
+				B4E7FA5F27F6C42D00604F5E /* ZHFigureDrawingLayer.h */,
+				B4E7FA6327F6C42D00604F5E /* ZHFigureDrawingLayer.m */,
+				B4E7FA2C27F6C42C00604F5E /* ZHDrawingLayer */,
+			);
+			path = ZHFigureDrawingLayer;
+			sourceTree = "<group>";
+		};
+		B4E7FA2C27F6C42C00604F5E /* ZHDrawingLayer */ = {
+			isa = PBXGroup;
+			children = (
+				B4E7FA4627F6C42D00604F5E /* ZHDrawingLineLayer.h */,
+				B4E7FA2F27F6C42C00604F5E /* ZHDrawingLineLayer.m */,
+				B4E7FA3327F6C42C00604F5E /* ZHDrawingArrowLayer.h */,
+				B4E7FA4A27F6C42D00604F5E /* ZHDrawingArrowLayer.m */,
+				B4E7FA2D27F6C42C00604F5E /* ZHDrawingCircleLayer.h */,
+				B4E7FA4827F6C42D00604F5E /* ZHDrawingCircleLayer.m */,
+				B4E7FA3227F6C42C00604F5E /* ZHDrawingOvalLayer.h */,
+				B4E7FA4B27F6C42D00604F5E /* ZHDrawingOvalLayer.m */,
+				B4E7FA2E27F6C42C00604F5E /* ZHDrawingGraffitiLayer.h */,
+				B4E7FA4727F6C42D00604F5E /* ZHDrawingGraffitiLayer.m */,
+				B4E7FA3027F6C42C00604F5E /* ZHDrawingCuboidLayer.m */,
+				B4E7FA4D27F6C42D00604F5E /* ZHDrawingCuboidLayer.h */,
+				B4E7FA4C27F6C42D00604F5E /* ZHDrawingRighTangleLayer.h */,
+				B4E7FA3127F6C42C00604F5E /* ZHDrawingRighTangleLayer.m */,
+				B4E7FA4927F6C42D00604F5E /* ZHDrawingSphereLayer.h */,
+				B4E7FA3427F6C42C00604F5E /* ZHDrawingSphereLayer.m */,
+				B4E7FA5427F6C42D00604F5E /* ZHDrawingAxisLayer.h */,
+				B4E7FA3527F6C42C00604F5E /* ZHDrawingAxisLayer.m */,
+				B4E7FA3627F6C42C00604F5E /* ZHDrawingPentagonLayer.h */,
+				B4E7FA5227F6C42D00604F5E /* ZHDrawingPentagonLayer.m */,
+				B4E7FA5327F6C42D00604F5E /* ZHDrawingHexagonLayer.h */,
+				B4E7FA3727F6C42D00604F5E /* ZHDrawingHexagonLayer.m */,
+				B4E7FA5127F6C42D00604F5E /* ZHDrawingDottedlineLayer.h */,
+				B4E7FA3827F6C42D00604F5E /* ZHDrawingDottedlineLayer.m */,
+				B4E7FA5027F6C42D00604F5E /* ZHDrawingThreeDCoordinateLayer.h */,
+				B4E7FA3927F6C42D00604F5E /* ZHDrawingThreeDCoordinateLayer.m */,
+				B4E7FA4327F6C42D00604F5E /* ZHDrawingRulerArrowLayer.h */,
+				B4E7FA5727F6C42D00604F5E /* ZHDrawingRulerArrowLayer.m */,
+				B4E7FA3B27F6C42D00604F5E /* ZHDrawingRulerLineLayer.h */,
+				B4E7FA4E27F6C42D00604F5E /* ZHDrawingRulerLineLayer.m */,
+				B4E7FA4F27F6C42D00604F5E /* ZHDrawingTriangularPyramidLayer.h */,
+				B4E7FA3A27F6C42D00604F5E /* ZHDrawingTriangularPyramidLayer.m */,
+				B4E7FA3C27F6C42D00604F5E /* ZHDrawingConeLayer.h */,
+				B4E7FA5D27F6C42D00604F5E /* ZHDrawingConeLayer.m */,
+				B4E7FA5E27F6C42D00604F5E /* ZHDrawingRegularPolygonLayer.h */,
+				B4E7FA3D27F6C42D00604F5E /* ZHDrawingRegularPolygonLayer.m */,
+				B4E7FA5C27F6C42D00604F5E /* ZHDrawingRectLayer.h */,
+				B4E7FA3E27F6C42D00604F5E /* ZHDrawingRectLayer.m */,
+				B4E7FA5A27F6C42D00604F5E /* ZHDrawingTriangleLayer.h */,
+				B4E7FA3F27F6C42D00604F5E /* ZHDrawingTriangleLayer.m */,
+				B4E7FA5B27F6C42D00604F5E /* ZHDrawingRhombusLayer.h */,
+				B4E7FA4027F6C42D00604F5E /* ZHDrawingRhombusLayer.m */,
+				B4E7FA5927F6C42D00604F5E /* ZHDrawingArcLayer.h */,
+				B4E7FA4127F6C42D00604F5E /* ZHDrawingArcLayer.m */,
+				B4E7FA5627F6C42D00604F5E /* ZHDrawingCosineLayer.h */,
+				B4E7FA4227F6C42D00604F5E /* ZHDrawingCosineLayer.m */,
+				B4E7FA4427F6C42D00604F5E /* ZHDrawingCylinderLayer.h */,
+				B4E7FA5827F6C42D00604F5E /* ZHDrawingCylinderLayer.m */,
+				B4E7FA4527F6C42D00604F5E /* ZHDrawingTrapezoidLayer.h */,
+				B4E7FA5527F6C42D00604F5E /* ZHDrawingTrapezoidLayer.m */,
+			);
+			path = ZHDrawingLayer;
+			sourceTree = "<group>";
+		};
 		B4EA2BF527E6FFDC00779793 /* DrawImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -647,6 +804,8 @@
 				B43C4CA927F1ACC200F4C22B /* JYSealFeelingSellView.m */,
 				B43C4CAB27F1B52700F4C22B /* JYSealFeelingLoveView.h */,
 				B43C4CAC27F1B52700F4C22B /* JYSealFeelingLoveView.m */,
+				B4B66B9927F2D3D1007D3267 /* JYSealFeelingSimpleView.h */,
+				B4B66B9A27F2D3D1007D3267 /* JYSealFeelingSimpleView.m */,
 			);
 			path = SealFeeling;
 			sourceTree = "<group>";
@@ -845,43 +1004,68 @@
 				B4EA2C0827E74E0000779793 /* ChartletImageCache.swift in Sources */,
 				B4BF763427E95C7B003BBAC5 /* JYPopupColorMenuListView.m in Sources */,
 				B41AC6E927D5A69F00CDF4AB /* ViewController.m in Sources */,
+				B4E7FA6527F6C42D00604F5E /* ZHDrawingLineLayer.m in Sources */,
 				B4BF762D27E8B220003BBAC5 /* QBPlasticPopupMenu.m in Sources */,
+				B4E7FA7727F6C42D00604F5E /* ZHDrawingOvalLayer.m in Sources */,
 				B4AC37A927DC78D300529722 /* JYARCArrangeStartView.m in Sources */,
+				B4E7FA6727F6C42D00604F5E /* ZHDrawingRighTangleLayer.m in Sources */,
 				B4AC37EE27DCC09500529722 /* JYMonthCalendarView.m in Sources */,
+				B4E7FA6627F6C42D00604F5E /* ZHDrawingCuboidLayer.m in Sources */,
 				B41AC73327D6F9BF00CDF4AB /* JYWriteFeelingViewController.m in Sources */,
+				B4E7FA6A27F6C42D00604F5E /* ZHDrawingHexagonLayer.m in Sources */,
+				B4E7FA6F27F6C42D00604F5E /* ZHDrawingRectLayer.m in Sources */,
+				B4B66B9B27F2D3D1007D3267 /* JYSealFeelingSimpleView.m in Sources */,
 				B4AC380727DE30E500529722 /* JYCalendarCollectionViewLayout.m in Sources */,
+				B4E7FA6927F6C42D00604F5E /* ZHDrawingAxisLayer.m in Sources */,
 				B4BF762B27E8B220003BBAC5 /* QBPopupMenuItemView.m in Sources */,
 				B41AC72627D5AA9D00CDF4AB /* UIDeviceHelper.m in Sources */,
 				B41AC6E327D5A69F00CDF4AB /* AppDelegate.m in Sources */,
+				B4E7FA7627F6C42D00604F5E /* ZHDrawingArrowLayer.m in Sources */,
+				B4E7FA6B27F6C42D00604F5E /* ZHDrawingDottedlineLayer.m in Sources */,
+				B4E7FA7427F6C42D00604F5E /* ZHDrawingGraffitiLayer.m in Sources */,
 				B4EC077027DF01D000CB0877 /* JYWriteFeelingListCollectionViewCell.m in Sources */,
 				B41AC6F427D5A6A400CDF4AB /* main.m in Sources */,
+				B4E7FA7D27F6C42D00604F5E /* ZHDrawingConeLayer.m in Sources */,
 				B4BF764227E963C9003BBAC5 /* UIView+ViewController.m in Sources */,
 				B4B66B9827F2CAE0007D3267 /* JYStyleImageFactory.m in Sources */,
 				B4BF762A27E8B220003BBAC5 /* QBPopupMenu.m in Sources */,
 				B4609CD227EAE62F009BC2A5 /* UIImageView+CornerRadius.m in Sources */,
 				B4AC37F427DCC56600529722 /* JYCalendarCalculator.m in Sources */,
+				B4E7FA7127F6C42D00604F5E /* ZHDrawingRhombusLayer.m in Sources */,
 				B41FF20427E84AB9004D0329 /* JYPainting.m in Sources */,
 				B4A90C5E27E6168E0085CAC4 /* JYWriteFeelingBottomView.m in Sources */,
 				B4EC076627DEFF4500CB0877 /* JYWriteFeelingView.m in Sources */,
+				B4E7FA7027F6C42D00604F5E /* ZHDrawingTriangleLayer.m in Sources */,
 				B4A90C6427E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.m in Sources */,
 				B4AC37F127DCC41100529722 /* JYMonthCalendarCollectionViewCell.m in Sources */,
+				B4E7FA7227F6C42D00604F5E /* ZHDrawingArcLayer.m in Sources */,
 				B4EA2C0D27E74E8800779793 /* PaintingPreview.swift in Sources */,
 				B4609CB727E995BF009BC2A5 /* JYPopupMenuOverlayView.m in Sources */,
 				B4B66B9427F29C32007D3267 /* JYHeartView.m in Sources */,
 				B4BF763827E95CFC003BBAC5 /* JYPopupMenu.m in Sources */,
+				B4E7FA7A27F6C42D00604F5E /* ZHDrawingTrapezoidLayer.m in Sources */,
 				B490453627F00EEF005A265A /* JYPopupStyleMenuCollectionViewCell.m in Sources */,
+				B4E7FA7827F6C42D00604F5E /* ZHDrawingRulerLineLayer.m in Sources */,
+				B4E7FA6D27F6C42D00604F5E /* ZHDrawingTriangularPyramidLayer.m in Sources */,
 				B41AC73727D7007300CDF4AB /* JYFeelingListView.m in Sources */,
 				B4F5455527D83E5D00D6184C /* JYFeelingView.m in Sources */,
+				B4E7FA7C27F6C42D00604F5E /* ZHDrawingCylinderLayer.m in Sources */,
 				B4BF762E27E8B220003BBAC5 /* QBPopupMenuOverlayView.m in Sources */,
 				B43C4CAA27F1ACC200F4C22B /* JYSealFeelingSellView.m in Sources */,
 				B4BF762C27E8B220003BBAC5 /* QBPopupMenuItem.m in Sources */,
 				B4EA2BF927E7000D00779793 /* LGDrawer.m in Sources */,
+				B4E7FA7527F6C42D00604F5E /* ZHDrawingCircleLayer.m in Sources */,
+				B4E7FA7B27F6C42D00604F5E /* ZHDrawingRulerArrowLayer.m in Sources */,
 				B4AC37FD27DD9FB400529722 /* JYDayCalendarView.m in Sources */,
+				B4E7FA6827F6C42D00604F5E /* ZHDrawingSphereLayer.m in Sources */,
 				B4EA2C0B27E74E0000779793 /* ChartletPicker.swift in Sources */,
+				B4E7FA8027F6C42D00604F5E /* ZHFigureDrawingLayer.m in Sources */,
 				B43C4CA527F1460F00F4C22B /* JYSealFeelingADRView.m in Sources */,
 				B41AC6E627D5A69F00CDF4AB /* SceneDelegate.m in Sources */,
 				B4EA2C0927E74E0000779793 /* MathUtils.swift in Sources */,
+				B4E7FA7327F6C42D00604F5E /* ZHDrawingCosineLayer.m in Sources */,
 				B4A90C6127E62AE50085CAC4 /* JYWritePaintingListView.m in Sources */,
+				B4E7FA6C27F6C42D00604F5E /* ZHDrawingThreeDCoordinateLayer.m in Sources */,
 				B4EA2C0027E7482000779793 /* JYPaintingView.swift in Sources */,
 				B4AC380027DDA4CF00529722 /* JYDayCalendarCollectionViewCell.m in Sources */,
 				B41AC73C27D71A5700CDF4AB /* JYFeelingTableViewCell.m in Sources */,
@@ -889,9 +1073,11 @@
 				B4AC37FA27DCCFD000529722 /* JYCalendar.m in Sources */,
 				B4BF763C27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.m in Sources */,
 				B4AC37A627DC789200529722 /* JYARCArrangeTextView.swift in Sources */,
+				B4E7FA6E27F6C42D00604F5E /* ZHDrawingRegularPolygonLayer.m in Sources */,
 				B4609CE627EB40BB009BC2A5 /* JYSizeSlider.m in Sources */,
 				B4A90C5927E415F10085CAC4 /* JYGridView.m in Sources */,
 				B4EC077427DF07D800CB0877 /* JYSealFeelingPassView.m in Sources */,
+				B4E7FA7927F6C42D00604F5E /* ZHDrawingPentagonLayer.m in Sources */,
 				B41AC74027D71EBB00CDF4AB /* JYFeelingModel.m in Sources */,
 				B490453327F00BE7005A265A /* JYPopupStyleMenuListView.m in Sources */,
 				B4609CE027EB3CE1009BC2A5 /* JYColorSlider.m in Sources */,
