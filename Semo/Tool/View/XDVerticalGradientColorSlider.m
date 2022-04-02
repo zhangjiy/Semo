@@ -11,11 +11,11 @@
 
 static float kXDVerticalGradientColorSliderBorderPadding = 2.0f;
 static float kXDVerticalGradientColorSliderWidth = 12.0f;
-static float kXDVerticalGradientColorThumbViewCicleSize = 48.0f;
-static float kXDVerticalGradientColorThumbViewBubbleWidth = 58.0f;
+static float kXDVerticalGradientColorThumbViewCicleSize = 32.0f;
+static float kXDVerticalGradientColorThumbViewBubbleWidth = 40.0f;
 static float kXDVerticalGradientColorSliderCornerRadius = 6.0f;
 static float kXDVerticalGradientColorBarCornerRadius = 4.0f;
-static float kXDVerticalGradientColorThumbBubblePadding = 8.0f;
+static float kXDVerticalGradientColorThumbBubblePadding = 18.0f;
 
 @interface XDVerticalGradientColorBar : UIView
 
@@ -165,7 +165,8 @@ UIColor *XDVerticalGradientColorSliderGetFromIntegers(float r, float g, float b)
 - (void)commonInit {
     self.backgroundColor = [UIColor clearColor];
     _bubbleImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-    _bubbleImageView.image = [UIImage imageNamed:@"XDVerticalGradientColorSlider.bundle/ic_gradient__color_slider_bubble"];
+    _bubbleImageView.contentMode = UIViewContentModeScaleAspectFit;
+    _bubbleImageView.image = [UIImage imageNamed:@"ic_gradient__color_slider_bubble"];
     
     _colorDisplayView = [[UIView alloc] initWithFrame:CGRectZero];
     [self addSubview:_colorDisplayView];
@@ -253,7 +254,7 @@ UIColor *XDVerticalGradientColorSliderGetFromIntegers(float r, float g, float b)
     self.thumbView = [[XDVerticalGradientColorSliderThumbView alloc] initWithFrame:CGRectMake(-thumbViewXOffset,
                                                                                               0,
                                                                                               kXDVerticalGradientColorThumbViewBubbleWidth,
-                                                                                              kXDVerticalGradientColorThumbViewCicleSize)];
+                                                                                              kXDVerticalGradientColorThumbViewBubbleWidth)];
     [self addSubview:self.colorBarContainerView];
     [self addSubview:self.thumbView];
     self.thumbView.alpha = 0.0f;

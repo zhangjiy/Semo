@@ -8,7 +8,7 @@
 #import "JYPopupColorMenuListView.h"
 #import "JYPopupMenuCollectionViewCell.h"
 #import "JYSizeSlider.h"
-#import "JYColorSlider.h"
+#import "XDVerticalGradientColorSlider.h"
 #import "JYPainting.h"
 #import "JYPrefixHeader.h"
 
@@ -16,7 +16,7 @@
 @property (nonatomic, strong) UIImageView * imageView;
 @property (nonatomic, strong) UICollectionView * collectionView;
 @property (nonatomic, strong) JYSizeSlider * sizeSlider;
-@property (nonatomic, strong) JYColorSlider * colorSlider;
+@property (nonatomic, strong) XDVerticalGradientColorSlider * colorSlider;
 @end
 
 @implementation JYPopupColorMenuListView
@@ -67,7 +67,7 @@
     
     _colorSlider.size = CGSizeMake(self.width - JYViewInset * 2, SMPaintingMenuSliderHeight);
     _colorSlider.left = JYViewInset;
-    _colorSlider.top = JYViewItemInset;
+    _colorSlider.top = JYViewInset + 10;
 
 }
 
@@ -145,10 +145,15 @@
     return _sizeSlider;
 }
 
-- (JYColorSlider *)colorSlider {
+- (XDVerticalGradientColorSlider *)colorSlider {
     if (!_colorSlider) {
-        _colorSlider = [[JYColorSlider alloc] initWithFrame:CGRectZero color:[UIColor blackColor]];
+        _colorSlider = [XDVerticalGradientColorSlider createGradientColorSliderWithColors:nil];
         _colorSlider.hidden = YES;
+        CGFloat alpha = M_PI / 2.f;
+        CATransform3D trans = CATransform3DIdentity;
+        _colorSlider.layer.transform = CATransform3DRotate(trans, alpha, 0, 0, 1);
+        [_colorSlider setValueChangedHandler:^(UIColor *color) {
+        }];
     }
     return _colorSlider;
 }
