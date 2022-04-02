@@ -25,11 +25,18 @@
 #define SMFeelingListCellHeight 180
 
 #define SMPaintingMenuWidth (ScreenWidth - JYViewInset * 2)
-#define SMPaintingMenuHeight 100
+#define SMPaintingMenuHeight 120
 #define SMPaintingMenuItemHeight 40
+#define SMPaintingStyleMenuItemInset 20
+
+#define SMPaintingStyleMenuHeight 100
+#define SMPaintingStyleMenuItemWidth 70
 
 #define SMPaintingMenuSliderWidth (SMPaintingMenuWidth - JYViewInset * 2)
 #define SMPaintingMenuSliderHeight 40
+
+#define SMPaintingMenuSizeSlideTop 28
+#define SMPaintingMenuColorSlideTop 33
 
 // Color
 //[UIColor wbt_ColorWithHexString:@"#F5F5F5"]

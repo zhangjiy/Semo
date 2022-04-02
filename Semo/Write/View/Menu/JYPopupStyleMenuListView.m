@@ -54,7 +54,7 @@
     [super layoutSubviews];
     _imageView.frame = self.bounds;
     _collectionView.frame = self.bounds;
-    _collectionView.contentInset = UIEdgeInsetsMake((self.height - 70 - JYViewItemInset), JYViewItemInset, JYViewItemInset, JYViewItemInset);
+    _collectionView.contentInset = UIEdgeInsetsMake((self.height - SMPaintingStyleMenuItemWidth - JYViewItemInset), JYViewItemInset, JYViewInset, JYViewItemInset);
 }
 
 - (void)setImage:(UIImage *)image {
@@ -70,8 +70,8 @@
 #pragma mark - Updating the View
 
 - (CGSize)sizeThatFits:(CGSize)size {
-    CGFloat height = 200;
-    CGFloat viewWidth = 70 * _item.menus.count + JYViewItemInset * 2 + JYViewItemInset * (_item.menus.count - 1);
+    CGFloat height = SMPaintingStyleMenuHeight;
+    CGFloat viewWidth = SMPaintingStyleMenuItemWidth * _item.menus.count + JYViewItemInset * 2 + JYViewItemInset * (_item.menus.count - 1);
     CGSize viewSize = CGSizeMake(MIN(viewWidth, ScreenWidth - JYViewItemInset * 2), height);
     return viewSize;
 }
@@ -128,7 +128,7 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(70, 50);
+    return CGSizeMake(SMPaintingStyleMenuItemWidth, SMPaintingStyleMenuItemWidth);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

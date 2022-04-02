@@ -60,14 +60,14 @@
     [super layoutSubviews];
     _imageView.frame = self.bounds;
     _collectionView.frame = self.bounds;
-    _collectionView.contentInset = UIEdgeInsetsMake((self.height - SMPaintingMenuItemHeight - JYViewItemInset), JYViewItemInset, 0, JYViewItemInset);
+    _collectionView.contentInset = UIEdgeInsetsMake((self.height - SMPaintingMenuItemHeight - JYViewItemInset), JYViewItemInset, JYViewInset, JYViewItemInset);
     _sizeSlider.size = CGSizeMake(self.width - JYViewInset * 2, SMPaintingMenuSliderHeight);
     _sizeSlider.left = JYViewInset;
-    _sizeSlider.top = JYViewItemInset;
+    _sizeSlider.top = SMPaintingMenuSizeSlideTop;
     
     _colorSlider.size = CGSizeMake(self.width - JYViewInset * 2, SMPaintingMenuSliderHeight);
     _colorSlider.left = JYViewInset;
-    _colorSlider.top = JYViewInset + 10;
+    _colorSlider.top = SMPaintingMenuColorSlideTop;
 
 }
 
