@@ -53,7 +53,7 @@
 
 - (UIImage *)styleImageWithStyleType:(JYFeelingStyleType)styleType {
     if (!self.imageView.image) {
-        CGSize size = CGSizeMake(self.contentView.width - 15, self.contentView.width - 15);
+        CGSize size = CGSizeMake(self.contentView.width - JYViewInset, self.contentView.width - JYViewInset);
         return [JYStyleImageFactory styleImageFactoryFromStyleType:styleType size:size];
     } else {
         return self.imageView.image;

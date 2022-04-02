@@ -25,8 +25,8 @@ typedef NS_ENUM(NSInteger, JYFeelingStyleType) {
     JYFeelingStyleTypeLove,
     JYFeelingStyleTypeEllipse,
     JYFeelingStyleTypeRectangle,
-    JYFeelingStyleTypeTriangle,
-    JYFeelingStyleTypeHeart
+    JYFeelingStyleTypeRhombus,
+    JYFeelingStyleTypeHexagon
 };
 
 @interface JYMenu : NSObject

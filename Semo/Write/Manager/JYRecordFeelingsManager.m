@@ -10,6 +10,7 @@
 #import "JYSealFeelingADRView.h"
 #import "JYSealFeelingSellView.h"
 #import "JYSealFeelingLoveView.h"
+#import "JYSealFeelingSimpleView.h"
 #import "JYWriteFeelingBottomView.h"
 #import "JYPainting.h"
 #import "Semo-Swift.h"
@@ -21,6 +22,7 @@
 @property (nonatomic, strong) JYSealFeelingADRView * feelingARDView;
 @property (nonatomic, strong) JYSealFeelingSellView *feelingSellView;
 @property (nonatomic, strong) JYSealFeelingLoveView *feelingLoveView;
+@property (nonatomic, strong) JYSealFeelingSimpleView *feelingSimpleView;
 @property (nonatomic, strong) JYPaintingView * paintingView;
 @property (nonatomic, strong) JYPainting *painting;
 @property (nonatomic, strong) JYWriteFeelingBottomView * bottomView;
@@ -48,6 +50,7 @@
     //[self.containerView addSubview:self.feelingARDView];//节省性能不一定要用懒加载
     //[self.containerView addSubview:self.feelingSellView];
     //[self.containerView addSubview:self.feelingLoveView];
+    [self.containerView addSubview:self.feelingSimpleView];
     [self.containerView addSubview:self.paintingView];
     [self.containerView addSubview:self.bottomView];
 }
@@ -68,6 +71,9 @@
     
     _feelingLoveView.top = JYCanvasTop;
     _feelingLoveView.centerX = self.containerView.width / 2.f;
+    
+    _feelingSimpleView.top = JYCanvasTop;
+    _feelingSimpleView.centerX = self.containerView.width / 2.f;
     
     _bottomView.size = CGSizeMake(self.containerView.width, JYWriteBottomHeight);
     _bottomView.bottom = self.containerView.height;
@@ -110,6 +116,15 @@
     return _feelingLoveView;
 }
 
+- (JYSealFeelingSimpleView *)feelingSimpleView {
+    if (!_feelingSimpleView) {
+        _feelingSimpleView = [[JYSealFeelingSimpleView alloc] initWithFrame:CGRectMake(JYViewInset, JYCanvasTop, self.containerView.width - JYViewInset * 2, self.containerView.width - JYViewInset * 2) type:ZHFigureDrawingTypeCircle];
+        _feelingSimpleView.hidden = NO;
+    }
+    
+    return _feelingSimpleView;
+}
+
 - (JYPaintingView *)paintingView {
     if (!_paintingView) {
         _paintingView = [[JYPaintingView alloc] initWithFrame:CGRectMake(JYViewInset, JYCanvasTop, self.containerView.width - JYViewInset, self.containerView.width - JYViewInset)];
@@ -145,16 +160,9 @@
     //self.feelingPassView.text = item;
     //self.feelingARDView.text = item;
     //self.feelingSellView.text = item;
-    self.feelingLoveView.text = item;
-    [self tou];
+    //self.feelingLoveView.text = item;
+    //self.feelingSimpleView.text = item;
 }
-
-- (void)tou{
-    
-    UIImage *image = [self makeImageWithView:self.feelingSellView withSize:self.feelingSellView.size];
-    
-}
-
 
 #pragma mark 生成image
 - (UIImage *)makeImageWithView:(UIView *)view withSize:(CGSize)size {

@@ -10,6 +10,7 @@
 #import "JYSealFeelingADRView.h"
 #import "JYSealFeelingSellView.h"
 #import "JYSealFeelingLoveView.h"
+#import "JYSealFeelingSimpleView.h"
 
 @implementation JYStyleImageFactory
 
@@ -31,6 +32,22 @@
         return [[self class] makeImageWithView:containerView withSize:size];
     } else if (styleType == JYFeelingStyleTypeLove) {
         JYSealFeelingLoveView *view = [[JYSealFeelingLoveView alloc] initWithFrame:CGRectMake(viewInsert, viewInsert, viewSize.width, viewSize.height)];
+        [containerView addSubview:view];
+        return [[self class] makeImageWithView:containerView withSize:size];
+    } else if (styleType == JYFeelingStyleTypeEllipse) {
+        JYSealFeelingSimpleView *view = [[JYSealFeelingSimpleView alloc] initWithFrame:CGRectMake(viewInsert, viewInsert, viewSize.width, viewSize.height) type:ZHFigureDrawingTypeOval];
+        [containerView addSubview:view];
+        return [[self class] makeImageWithView:containerView withSize:size];
+    } else if (styleType == JYFeelingStyleTypeRectangle) {
+        JYSealFeelingSimpleView *view = [[JYSealFeelingSimpleView alloc] initWithFrame:CGRectMake(viewInsert, viewInsert, viewSize.width, viewSize.height) type:ZHFigureDrawingTypeRect];
+        [containerView addSubview:view];
+        return [[self class] makeImageWithView:containerView withSize:size];
+    } else if (styleType == JYFeelingStyleTypeRhombus) {
+        JYSealFeelingSimpleView *view = [[JYSealFeelingSimpleView alloc] initWithFrame:CGRectMake(viewInsert, viewInsert, viewSize.width, viewSize.height) type:ZHFigureDrawingTypeRhombus];
+        [containerView addSubview:view];
+        return [[self class] makeImageWithView:containerView withSize:size];
+    } else if (styleType == JYFeelingStyleTypeHexagon) {
+        JYSealFeelingSimpleView *view = [[JYSealFeelingSimpleView alloc] initWithFrame:CGRectMake(viewInsert, viewInsert, viewSize.width, viewSize.height) type:ZHFigureDrawingTypeHexagon];
         [containerView addSubview:view];
         return [[self class] makeImageWithView:containerView withSize:size];
     }
