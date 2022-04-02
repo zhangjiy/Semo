@@ -16,6 +16,9 @@
 #import "Semo-Swift.h"
 #import "JYPrefixHeader.h"
 
+#import "XDVerticalGradientColorSlider.h"
+
+
 @interface JYRecordFeelingsManager () <JYWriteFeelingBottomViewDelegate>
 @property (nonatomic, strong) UIView * containerView;
 @property (nonatomic, strong) JYSealFeelingPassView * feelingPassView;
@@ -53,6 +56,16 @@
     [self.containerView addSubview:self.feelingSimpleView];
     [self.containerView addSubview:self.paintingView];
     [self.containerView addSubview:self.bottomView];
+    
+    XDVerticalGradientColorSlider *colorSlider = [XDVerticalGradientColorSlider createGradientColorSliderWithColors:nil];
+    colorSlider.frame = CGRectMake(180, 100, 40, 400);
+    [self.containerView addSubview:colorSlider];
+    CGFloat alpha = M_PI / 2.f;
+    CATransform3D trans = CATransform3DIdentity;
+    colorSlider.layer.transform = CATransform3DRotate(trans, alpha, 0, 0, 1);
+    [colorSlider setValueChangedHandler:^(UIColor *color) {
+        NSLog(@"%@", color);
+    }];
 }
 
 - (void)layoutSubviews {

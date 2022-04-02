@@ -92,6 +92,7 @@
 		B4E7FA7C27F6C42D00604F5E /* ZHDrawingCylinderLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA5827F6C42D00604F5E /* ZHDrawingCylinderLayer.m */; };
 		B4E7FA7D27F6C42D00604F5E /* ZHDrawingConeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA5D27F6C42D00604F5E /* ZHDrawingConeLayer.m */; };
 		B4E7FA8027F6C42D00604F5E /* ZHFigureDrawingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA6327F6C42D00604F5E /* ZHFigureDrawingLayer.m */; };
+		B4E7FA8627F865DF00604F5E /* XDVerticalGradientColorSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA8427F865DE00604F5E /* XDVerticalGradientColorSlider.m */; };
 		B4EA2BF927E7000D00779793 /* LGDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EA2BF827E7000D00779793 /* LGDrawer.m */; };
 		B4EA2C0027E7482000779793 /* JYPaintingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EA2BFF27E7482000779793 /* JYPaintingView.swift */; };
 		B4EA2C0727E74E0000779793 /* ChartletEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EA2C0227E74E0000779793 /* ChartletEditor.swift */; };
@@ -301,6 +302,8 @@
 		B4E7FA5E27F6C42D00604F5E /* ZHDrawingRegularPolygonLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingRegularPolygonLayer.h; sourceTree = "<group>"; };
 		B4E7FA5F27F6C42D00604F5E /* ZHFigureDrawingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFigureDrawingLayer.h; sourceTree = "<group>"; };
 		B4E7FA6327F6C42D00604F5E /* ZHFigureDrawingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFigureDrawingLayer.m; sourceTree = "<group>"; };
+		B4E7FA8427F865DE00604F5E /* XDVerticalGradientColorSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDVerticalGradientColorSlider.m; sourceTree = "<group>"; };
+		B4E7FA8527F865DF00604F5E /* XDVerticalGradientColorSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDVerticalGradientColorSlider.h; sourceTree = "<group>"; };
 		B4EA2BF727E7000D00779793 /* LGDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGDrawer.h; sourceTree = "<group>"; };
 		B4EA2BF827E7000D00779793 /* LGDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGDrawer.m; sourceTree = "<group>"; };
 		B4EA2BFF27E7482000779793 /* JYPaintingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JYPaintingView.swift; sourceTree = "<group>"; };
@@ -616,6 +619,8 @@
 		B4BF763F27E96399003BBAC5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B4E7FA8527F865DF00604F5E /* XDVerticalGradientColorSlider.h */,
+				B4E7FA8427F865DE00604F5E /* XDVerticalGradientColorSlider.m */,
 				B4BF764027E963C9003BBAC5 /* UIView+ViewController.h */,
 				B4BF764127E963C9003BBAC5 /* UIView+ViewController.m */,
 				B41AC72027D5AA9D00CDF4AB /* UIView+JYFrame.h */,
@@ -1062,6 +1067,7 @@
 				B4E7FA8027F6C42D00604F5E /* ZHFigureDrawingLayer.m in Sources */,
 				B43C4CA527F1460F00F4C22B /* JYSealFeelingADRView.m in Sources */,
 				B41AC6E627D5A69F00CDF4AB /* SceneDelegate.m in Sources */,
+				B4E7FA8627F865DF00604F5E /* XDVerticalGradientColorSlider.m in Sources */,
 				B4EA2C0927E74E0000779793 /* MathUtils.swift in Sources */,
 				B4E7FA7327F6C42D00604F5E /* ZHDrawingCosineLayer.m in Sources */,
 				B4A90C6127E62AE50085CAC4 /* JYWritePaintingListView.m in Sources */,
