@@ -9,6 +9,8 @@
 #import "JYPopupMenuOverlayView.h"
 #import "JYPopupStyleMenuListView.h"
 #import "JYPopupColorMenuListView.h"
+#import "JYPopupSizeMenuListView.h"
+#import "JYPopupPenMenuListView.h"
 
 static const NSTimeInterval kQBPopupMenuAnimationDuration = 0.2;
 
@@ -33,6 +35,10 @@ static const NSTimeInterval kQBPopupMenuAnimationDuration = 0.2;
 - (Class)itemViewClass {
     if (self.item.type == JYPaintingTypeStyle) {
         return [JYPopupStyleMenuListView class];
+    }  else if (self.item.type == JYPaintingTypeSize) {
+        return [JYPopupSizeMenuListView class];
+    }  if (self.item.type == JYPaintingTypePen) {
+        return [JYPopupPenMenuListView class];
     }
     
     return [JYPopupColorMenuListView class];

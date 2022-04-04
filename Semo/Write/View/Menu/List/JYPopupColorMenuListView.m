@@ -7,7 +7,6 @@
 
 #import "JYPopupColorMenuListView.h"
 #import "JYPopupMenuCollectionViewCell.h"
-#import "JYSizeSlider.h"
 #import "XDVerticalGradientColorSlider.h"
 #import "JYPainting.h"
 #import "JYPrefixHeader.h"
@@ -15,8 +14,8 @@
 @interface JYPopupColorMenuListView () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UIImageView * imageView;
 @property (nonatomic, strong) UICollectionView * collectionView;
-@property (nonatomic, strong) JYSizeSlider * sizeSlider;
 @property (nonatomic, strong) XDVerticalGradientColorSlider * colorSlider;
+@property (nonatomic, strong) NSIndexPath *indexPath;
 @end
 
 @implementation JYPopupColorMenuListView
@@ -53,7 +52,6 @@
 - (void)initSubViews {
     [self addSubview:self.imageView];
     [self addSubview:self.collectionView];
-    [self addSubview:self.sizeSlider];
     [self addSubview:self.colorSlider];
 }
 
@@ -62,9 +60,6 @@
     _imageView.frame = self.bounds;
     _collectionView.frame = self.bounds;
     _collectionView.contentInset = UIEdgeInsetsMake((self.height - SMPaintingMenuItemHeight - JYViewItemInset), JYViewItemInset, JYViewInset, JYViewItemInset);
-    _sizeSlider.size = CGSizeMake(self.width - JYViewInset * 2, SMPaintingMenuSliderHeight);
-    _sizeSlider.left = JYViewInset;
-    _sizeSlider.top = SMPaintingMenuSizeSlideTop;
     
     _colorSlider.size = CGSizeMake(self.width - JYViewInset * 2, SMPaintingMenuSliderHeight);
     _colorSlider.left = JYViewInset;
@@ -79,27 +74,13 @@
 - (void)setItem:(id<JYPopupListMenuDataProtocol>)item {
     if (_item != item) {
         _item = item;
-        if (item.type == JYPaintingTypeSize) {
-            _sizeSlider.hidden = NO;
-            _colorSlider.hidden = YES;
-        } else if (item.type == JYPaintingTypeColor) {
-            _colorSlider.hidden = NO;
-            _sizeSlider.hidden = YES;
-        } else {
-            _sizeSlider.hidden = YES;
-            _colorSlider.hidden = YES;
-        }
     }
 }
 
 #pragma mark - Updating the View
 
 - (CGSize)sizeThatFits:(CGSize)size {
-    CGFloat height = SMPaintingMenuHeight;
-    if (self.item.type == JYPaintingTypePen) {
-        height = 60;
-    }
-    CGSize viewSize = CGSizeMake(SMPaintingMenuItemHeight * _item.menus.count + JYViewItemInset * 2 + JYViewItemInset * (_item.menus.count - 1), height);
+    CGSize viewSize = CGSizeMake(SMPaintingMenuItemHeight * _item.menus.count + JYViewItemInset * 2 + JYViewItemInset * (_item.menus.count - 1), SMPaintingMenuHeight);
     return viewSize;
 }
 
@@ -137,19 +118,9 @@
     return layout;
 }
 
-- (JYSizeSlider *)sizeSlider {
-    if (!_sizeSlider) {
-        _sizeSlider = [[JYSizeSlider alloc] initWithFrame:CGRectZero];
-        _sizeSlider.hidden = YES;
-    }
-    
-    return _sizeSlider;
-}
-
 - (XDVerticalGradientColorSlider *)colorSlider {
     if (!_colorSlider) {
         _colorSlider = [XDVerticalGradientColorSlider createGradientColorSliderWithColors:nil];
-        _colorSlider.hidden = YES;
         CGFloat alpha = M_PI / 2.f;
         CATransform3D trans = CATransform3DIdentity;
         _colorSlider.layer.transform = CATransform3DRotate(trans, alpha, 0, 0, 1);
@@ -173,6 +144,7 @@
     JYPopupMenuCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYPopupMenuCollectionViewCell" forIndexPath:indexPath];
     JYMenu *menu = _item.menus[indexPath.row];
     [cell updateViewWithModel:menu];
+    cell.isSelected = indexPath.row == self.indexPath.row ? YES : NO;
     return cell;
 }
 
@@ -181,7 +153,8 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+    self.indexPath = indexPath;
+    [self.collectionView reloadData];
 }
 
 @end
