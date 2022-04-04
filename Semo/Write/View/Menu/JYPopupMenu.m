@@ -12,7 +12,7 @@
 
 static const NSTimeInterval kQBPopupMenuAnimationDuration = 0.2;
 
-@interface JYPopupMenu ()
+@interface JYPopupMenu () <JYPopupMenuListViewDelegate>
 
 @property (nonatomic, assign, getter = isVisible, readwrite) BOOL visible;
 @property (nonatomic, strong) JYPopupMenuOverlayView *overlayView;
@@ -263,6 +263,7 @@ static const NSTimeInterval kQBPopupMenuAnimationDuration = 0.2;
 
 - (void)createListView {
     UIView <JYPopupMenuListViewProtocol> * listView = [[self itemViewClass] itemViewWithItem:self.item];
+    listView.delegate = self;
     self.listView = listView;
 }
 
@@ -673,6 +674,14 @@ static const NSTimeInterval kQBPopupMenuAnimationDuration = 0.2;
     CGContextSaveGState(context); {
         CGContextClearRect(context, rect);
     } CGContextRestoreGState(context);
+}
+
+#pragma -- mark - JYPopupMenuListViewDelegate
+
+- (void)menuListView:(JYPopupStyleMenuListView *)listView didSelectItem:(JYMenu *)item {
+    if ([self.delegate respondsToSelector:@selector(popupMenu:didSelectItem:)]) {
+        [self.delegate popupMenu:self didSelectItem:item];
+    }
 }
 
 @end

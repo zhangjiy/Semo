@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class JYMenu;
 
 @interface JYPopupStyleMenuCollectionViewCell : UICollectionViewCell
+@property (nonatomic, assign) BOOL isSelected;
 - (void)updateViewWithModel:(JYMenu *)model;
 @end
 

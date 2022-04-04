@@ -11,8 +11,15 @@
 #import <Foundation/Foundation.h>
 #import "JYPopupListMenuDataProtocol.h"
 
-@protocol JYPopupMenuListViewProtocol <NSObject>
+@class JYPopupStyleMenuListView;
 
+@protocol JYPopupMenuListViewDelegate <NSObject>
+@optional
+- (void)menuListView:(JYPopupStyleMenuListView *)listView didSelectItem:(JYMenu *)item;
+@end
+
+@protocol JYPopupMenuListViewProtocol <NSObject>
+@property (nonatomic, weak) id <JYPopupMenuListViewDelegate> delegate;
 @property (nonatomic, strong) id <JYPopupListMenuDataProtocol> item;
 @property (nonatomic, strong) UIImage *image;
 + (instancetype)itemViewWithItem:(id <JYPopupListMenuDataProtocol>)item;

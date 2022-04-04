@@ -35,6 +35,7 @@ typedef NS_ENUM(NSInteger, JYFeelingStyleType) {
 @property (nonatomic, assign) NSString  * name;
 @property (nonatomic, assign) CGFloat lineWidth;
 @property (nonatomic, strong) UIColor * color;
+@property (nonatomic, strong) UIImage * image;
 - (instancetype)initWithType:(JYPaintingType)type;
 @end
 

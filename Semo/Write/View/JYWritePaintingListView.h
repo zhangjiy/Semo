@@ -9,11 +9,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class JYWritePaintingListView, JYPainting, JYPaintingItem;
+@class JYWritePaintingListView, JYPainting, JYPaintingItem, JYMenu;
 
 @protocol JYWritePaintingListViewDelegate <NSObject>
 @optional
-- (void)writePaintingListView:(JYWritePaintingListView *)listView didSelectItem:(JYPaintingItem *)item;
+- (void)writePaintingListView:(JYWritePaintingListView *)listView didSelectPaintingItem:(JYPaintingItem *)item;
+- (void)writePaintingListView:(JYWritePaintingListView *)listView didSelectMenuItem:(JYMenu *)item;
 @end
 
 @interface JYWritePaintingListView : UIView

@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)popupMenuDidAppear:(JYPopupMenu *)popupMenu;
 - (void)popupMenuWillDisappear:(JYPopupMenu *)popupMenu;
 - (void)popupMenuDidDisappear:(JYPopupMenu *)popupMenu;
-
+- (void)popupMenu:(JYPopupMenu *)popupMenu didSelectItem:(JYMenu *)item;
 @end
 
 typedef NS_ENUM(NSUInteger, JYPopupMenuArrowDirection) {

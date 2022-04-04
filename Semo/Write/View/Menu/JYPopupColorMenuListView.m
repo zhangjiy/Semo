@@ -22,6 +22,7 @@
 @implementation JYPopupColorMenuListView
 @synthesize item = _item;
 @synthesize image = _image;
+@synthesize delegate = _delegate;
 
 + (instancetype)itemViewWithItem:(id <JYPopupListMenuDataProtocol>)item {
     return [[self alloc] initWithItem:item];
@@ -180,6 +181,7 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
 }
 
 @end

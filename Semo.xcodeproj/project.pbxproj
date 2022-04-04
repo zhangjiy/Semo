@@ -30,6 +30,9 @@
 		B43C4CA527F1460F00F4C22B /* JYSealFeelingADRView.m in Sources */ = {isa = PBXBuildFile; fileRef = B43C4CA427F1460F00F4C22B /* JYSealFeelingADRView.m */; };
 		B43C4CAA27F1ACC200F4C22B /* JYSealFeelingSellView.m in Sources */ = {isa = PBXBuildFile; fileRef = B43C4CA927F1ACC200F4C22B /* JYSealFeelingSellView.m */; };
 		B43C4CAD27F1B52700F4C22B /* JYSealFeelingLoveView.m in Sources */ = {isa = PBXBuildFile; fileRef = B43C4CAC27F1B52700F4C22B /* JYSealFeelingLoveView.m */; };
+		B448897727F9DC02007BD0FA /* JYWriteFeelingDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B448897627F9DC02007BD0FA /* JYWriteFeelingDisplayView.m */; };
+		B448897A27FAC7E2007BD0FA /* JYSealFeelingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B448897927FAC7E2007BD0FA /* JYSealFeelingView.m */; };
+		B448897D27FAC922007BD0FA /* JYRecordFeelingsContextManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B448897C27FAC922007BD0FA /* JYRecordFeelingsContextManager.m */; };
 		B4609CB727E995BF009BC2A5 /* JYPopupMenuOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CB627E995BF009BC2A5 /* JYPopupMenuOverlayView.m */; };
 		B4609CCD27EAB0AE009BC2A5 /* JYMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CCC27EAB0AE009BC2A5 /* JYMenu.m */; };
 		B4609CD227EAE62F009BC2A5 /* UIImageView+CornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CD127EAE62F009BC2A5 /* UIImageView+CornerRadius.m */; };
@@ -176,6 +179,12 @@
 		B43C4CA927F1ACC200F4C22B /* JYSealFeelingSellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYSealFeelingSellView.m; sourceTree = "<group>"; };
 		B43C4CAB27F1B52700F4C22B /* JYSealFeelingLoveView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYSealFeelingLoveView.h; sourceTree = "<group>"; };
 		B43C4CAC27F1B52700F4C22B /* JYSealFeelingLoveView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYSealFeelingLoveView.m; sourceTree = "<group>"; };
+		B448897527F9DC02007BD0FA /* JYWriteFeelingDisplayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYWriteFeelingDisplayView.h; sourceTree = "<group>"; };
+		B448897627F9DC02007BD0FA /* JYWriteFeelingDisplayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYWriteFeelingDisplayView.m; sourceTree = "<group>"; };
+		B448897827FAC7E2007BD0FA /* JYSealFeelingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYSealFeelingView.h; sourceTree = "<group>"; };
+		B448897927FAC7E2007BD0FA /* JYSealFeelingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYSealFeelingView.m; sourceTree = "<group>"; };
+		B448897B27FAC922007BD0FA /* JYRecordFeelingsContextManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYRecordFeelingsContextManager.h; sourceTree = "<group>"; };
+		B448897C27FAC922007BD0FA /* JYRecordFeelingsContextManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYRecordFeelingsContextManager.m; sourceTree = "<group>"; };
 		B4609CB427E99167009BC2A5 /* JYPopupListMenuDataProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupListMenuDataProtocol.h; sourceTree = "<group>"; };
 		B4609CB527E995BF009BC2A5 /* JYPopupMenuOverlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuOverlayView.h; sourceTree = "<group>"; };
 		B4609CB627E995BF009BC2A5 /* JYPopupMenuOverlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupMenuOverlayView.m; sourceTree = "<group>"; };
@@ -591,6 +600,8 @@
 			children = (
 				B4EA2C1027E752BA00779793 /* JYRecordFeelingsManager.h */,
 				B4EA2C1127E752BA00779793 /* JYRecordFeelingsManager.m */,
+				B448897B27FAC922007BD0FA /* JYRecordFeelingsContextManager.h */,
+				B448897C27FAC922007BD0FA /* JYRecordFeelingsContextManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -794,6 +805,8 @@
 				B4A90C6327E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.m */,
 				B4EC076E27DF01D000CB0877 /* JYWriteFeelingListCollectionViewCell.h */,
 				B4EC076F27DF01D000CB0877 /* JYWriteFeelingListCollectionViewCell.m */,
+				B448897527F9DC02007BD0FA /* JYWriteFeelingDisplayView.h */,
+				B448897627F9DC02007BD0FA /* JYWriteFeelingDisplayView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -811,6 +824,8 @@
 				B43C4CAC27F1B52700F4C22B /* JYSealFeelingLoveView.m */,
 				B4B66B9927F2D3D1007D3267 /* JYSealFeelingSimpleView.h */,
 				B4B66B9A27F2D3D1007D3267 /* JYSealFeelingSimpleView.m */,
+				B448897827FAC7E2007BD0FA /* JYSealFeelingView.h */,
+				B448897927FAC7E2007BD0FA /* JYSealFeelingView.m */,
 			);
 			path = SealFeeling;
 			sourceTree = "<group>";
@@ -1011,6 +1026,7 @@
 				B41AC6E927D5A69F00CDF4AB /* ViewController.m in Sources */,
 				B4E7FA6527F6C42D00604F5E /* ZHDrawingLineLayer.m in Sources */,
 				B4BF762D27E8B220003BBAC5 /* QBPlasticPopupMenu.m in Sources */,
+				B448897727F9DC02007BD0FA /* JYWriteFeelingDisplayView.m in Sources */,
 				B4E7FA7727F6C42D00604F5E /* ZHDrawingOvalLayer.m in Sources */,
 				B4AC37A927DC78D300529722 /* JYARCArrangeStartView.m in Sources */,
 				B4E7FA6727F6C42D00604F5E /* ZHDrawingRighTangleLayer.m in Sources */,
@@ -1087,11 +1103,13 @@
 				B41AC74027D71EBB00CDF4AB /* JYFeelingModel.m in Sources */,
 				B490453327F00BE7005A265A /* JYPopupStyleMenuListView.m in Sources */,
 				B4609CE027EB3CE1009BC2A5 /* JYColorSlider.m in Sources */,
+				B448897D27FAC922007BD0FA /* JYRecordFeelingsContextManager.m in Sources */,
 				B4BF762F27E8B220003BBAC5 /* QBPopupMenuPagenatorView.m in Sources */,
 				B4609CE327EB3E44009BC2A5 /* UIControl+Block.m in Sources */,
 				B4EC076927DF00D800CB0877 /* JYWriteFeelingTableViewCell.m in Sources */,
 				B41AC72427D5AA9D00CDF4AB /* UIColor+Extensions.m in Sources */,
 				B4609CCD27EAB0AE009BC2A5 /* JYMenu.m in Sources */,
+				B448897A27FAC7E2007BD0FA /* JYSealFeelingView.m in Sources */,
 				B41AC72527D5AA9D00CDF4AB /* UIView+JYFrame.m in Sources */,
 				B4609CD527EAE670009BC2A5 /* UIImage+CornerRadius.m in Sources */,
 				B4EA2C0727E74E0000779793 /* ChartletEditor.swift in Sources */,

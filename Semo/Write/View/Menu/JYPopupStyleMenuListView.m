@@ -13,11 +13,13 @@
 @interface JYPopupStyleMenuListView () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UIImageView * imageView;
 @property (nonatomic, strong) UICollectionView * collectionView;
+@property (nonatomic, strong) NSIndexPath *indexPath;
 @end
 
 @implementation JYPopupStyleMenuListView
 @synthesize item = _item;
 @synthesize image = _image;
+@synthesize delegate = _delegate;
 
 + (instancetype)itemViewWithItem:(id <JYPopupListMenuDataProtocol>)item {
     return [[self alloc] initWithItem:item];
@@ -110,7 +112,7 @@
     return layout;
 }
 
-#pragma mark - UICollectionViewDataSource
+#pragma -- mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
@@ -124,6 +126,7 @@
     JYPopupStyleMenuCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYPopupStyleMenuCollectionViewCell" forIndexPath:indexPath];
     JYMenu *menu = _item.menus[indexPath.row];
     [cell updateViewWithModel:menu];
+    cell.isSelected = indexPath.row == self.indexPath.row ? YES : NO;
     return cell;
 }
 
@@ -132,6 +135,12 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    self.indexPath = indexPath;
+    JYMenu *menu = _item.menus[indexPath.row];
+    if ([self.delegate respondsToSelector:@selector(menuListView:didSelectItem:)]) {
+        [self.delegate menuListView:self didSelectItem:menu];
+    }
+    [self.collectionView reloadData];
 }
 
 @end

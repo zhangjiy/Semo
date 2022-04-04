@@ -81,4 +81,12 @@
     }
 }
 
+#pragma -- mark -- JYWriteFeelingListViewDelegate
+
+- (void)writePaintingListView:(JYWritePaintingListView *)listView didSelectMenuItem:(JYMenu *)item {
+    if ([self.delegate respondsToSelector:@selector(writeFeelingBottomView:didSelectMenuItem:)]) {
+        [self.delegate writeFeelingBottomView:self didSelectMenuItem:item];
+    }
+}
+
 @end

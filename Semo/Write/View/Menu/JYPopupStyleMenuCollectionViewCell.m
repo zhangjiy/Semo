@@ -11,6 +11,7 @@
 #import "JYPrefixHeader.h"
 #define kCornerRadius 4.f
 @interface JYPopupStyleMenuCollectionViewCell ()
+@property (nonatomic, strong) CAShapeLayer *selectedLayer;
 @property (nonatomic, strong) UIImageView *imageView;
 @end
 
@@ -30,10 +31,25 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _imageView.size = CGSizeMake(self.contentView.width, self.contentView.width);
+    _imageView.size = CGSizeMake(self.contentView.width, self.contentView.height);
     _imageView.centerX = self.contentView.width / 2.f;
     _imageView.centerY = self.contentView.height / 2.f;
+}
 
+- (void)setIsSelected:(BOOL)isSelected {
+    if (_isSelected != isSelected) {
+        _isSelected = isSelected;
+        _selectedLayer.hidden = isSelected ? NO : YES;
+    }
+}
+
+- (CAShapeLayer *)selectedLayer {
+    if (!_selectedLayer) {
+        _selectedLayer = [[CAShapeLayer alloc] init];
+        _selectedLayer.hidden = YES;
+    }
+    
+    return _selectedLayer;
 }
 
 - (UIImageView *)imageView {
@@ -47,17 +63,15 @@
 
 - (void)updateViewWithModel:(JYMenu *)model {
     
-    UIImage *image = [self styleImageWithStyleType:model.styleType];
-    self.imageView.image = image;
+    if (!model.image) {
+        model.image = [self styleImageWithStyleType:model.styleType];
+    }
+    self.imageView.image = model.image;
 }
 
 - (UIImage *)styleImageWithStyleType:(JYFeelingStyleType)styleType {
-    if (!self.imageView.image) {
-        CGSize size = CGSizeMake(self.contentView.width - JYViewInset, self.contentView.width - JYViewInset);
-        return [JYStyleImageFactory styleImageFactoryFromStyleType:styleType size:size];
-    } else {
-        return self.imageView.image;
-    }
+    CGSize size = CGSizeMake(self.contentView.width - JYViewInset, self.contentView.height - JYViewInset);
+    return [JYStyleImageFactory styleImageFactoryFromStyleType:styleType size:size borderWidth:(self.contentView.width - JYViewInset) / 40.f];
 }
 
 @end

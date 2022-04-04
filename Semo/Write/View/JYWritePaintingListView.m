@@ -11,7 +11,7 @@
 #import "JYPainting.h"
 #import "JYPrefixHeader.h"
 
-@interface JYWritePaintingListView () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface JYWritePaintingListView () <UICollectionViewDelegate, UICollectionViewDataSource, JYPopupMenuDelegate>
 @property (nonatomic, strong) UICollectionView * collectionView;
 @property (nonatomic, strong) JYPopupMenu *popupStyleMenu;
 @property (nonatomic, strong) JYPopupMenu *popupColorMenu;
@@ -75,6 +75,7 @@
 - (JYPopupMenu *)popupStyleMenu {
     if (!_popupStyleMenu) {
         _popupStyleMenu = [[JYPopupMenu alloc] init];
+        _popupStyleMenu.delegate = self;
         _popupStyleMenu.color = SMGhostWhiteColor;
     }
     
@@ -84,6 +85,7 @@
 - (JYPopupMenu *)popupColorMenu {
     if (!_popupColorMenu) {
         _popupColorMenu = [[JYPopupMenu alloc] init];
+        _popupColorMenu.delegate = self;
         _popupColorMenu.color = SMGhostWhiteColor;
     }
     
@@ -93,6 +95,7 @@
 - (JYPopupMenu *)popupLineWidthMenu {
     if (!_popupLineWidthMenu) {
         _popupLineWidthMenu = [[JYPopupMenu alloc] init];
+        _popupLineWidthMenu.delegate = self;
         _popupLineWidthMenu.color = SMGhostWhiteColor;
     }
     
@@ -102,10 +105,19 @@
 - (JYPopupMenu *)popupPenMenu {
     if (!_popupPenMenu) {
         _popupPenMenu = [[JYPopupMenu alloc] init];
+        _popupPenMenu.delegate = self;
         _popupPenMenu.color = SMGhostWhiteColor;
     }
     
     return _popupPenMenu;
+}
+
+#pragma -- mark - JYPopupMenuDelegate
+
+- (void)popupMenu:(JYPopupMenu *)popupMenu didSelectItem:(JYMenu *)item {
+    if ([self.delegate respondsToSelector:@selector(writePaintingListView:didSelectMenuItem:)]) {
+        [self.delegate writePaintingListView:self didSelectMenuItem:item];
+    }
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -151,8 +163,8 @@
         [self.popupPenMenu showInView:view targetRect:rect animated:YES];
     }
     
-    if ([self.delegate respondsToSelector:@selector(writePaintingListView:didSelectItem:)]) {
-        [self.delegate writePaintingListView:self didSelectItem:item];
+    if ([self.delegate respondsToSelector:@selector(writePaintingListView:didSelectPaintingItem:)]) {
+        [self.delegate writePaintingListView:self didSelectPaintingItem:item];
     }
 }
 

@@ -71,6 +71,8 @@
 #define JYWriteGridWidth (ScreenWidth + [UIScreen mainScreen].scale * 2)
 #define JYWriteGridHeight (JYWriteGridWidth * 2.f)
 
+#define JYWriteDisplayViewSize CGSizeMake((ScreenWidth - JYViewInset * 2), (ScreenWidth - JYViewInset * 2))
+
 // image
 #define JYOffset CGPointMake(0.f, 0.f)
 

@@ -14,40 +14,39 @@
 
 @implementation JYStyleImageFactory
 
-+ (UIImage *)styleImageFactoryFromStyleType:(JYFeelingStyleType)styleType size:(CGSize)size {
++ (UIImage *)styleImageFactoryFromStyleType:(JYFeelingStyleType)styleType size:(CGSize)size borderWidth:(CGFloat)borderWidth {
     UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
-    CGFloat viewInsert = 2;
-    CGSize viewSize = CGSizeMake(size.width - viewInsert * 2, size.height - viewInsert * 2);
+    CGSize viewSize = CGSizeMake(size.width - borderWidth * 2, size.height - borderWidth * 2);
     if (styleType == JYFeelingStyleTypePass) {
-        JYSealFeelingPassView *view = [[JYSealFeelingPassView alloc] initWithFrame:CGRectMake(viewInsert, viewInsert, viewSize.width, viewSize.height)];
+        JYSealFeelingPassView *view = [[JYSealFeelingPassView alloc] initWithFrame:CGRectMake(borderWidth, borderWidth, viewSize.width, viewSize.height)];
         [containerView addSubview:view];
         return [[self class] makeImageWithView:containerView withSize:size];
     } else if (styleType == JYFeelingStyleTypeADR) {
-        JYSealFeelingADRView *view = [[JYSealFeelingADRView alloc] initWithFrame:CGRectMake(viewInsert, viewInsert, viewSize.width, viewSize.height)];
+        JYSealFeelingADRView *view = [[JYSealFeelingADRView alloc] initWithFrame:CGRectMake(borderWidth, borderWidth, viewSize.width, viewSize.height)];
         [containerView addSubview:view];
         return [[self class] makeImageWithView:containerView withSize:size];
     } else if (styleType == JYFeelingStyleTypeSell) {
-        JYSealFeelingSellView *view = [[JYSealFeelingSellView alloc] initWithFrame:CGRectMake(viewInsert, viewInsert, viewSize.width, viewSize.height)];
+        JYSealFeelingSellView *view = [[JYSealFeelingSellView alloc] initWithFrame:CGRectMake(borderWidth, borderWidth, viewSize.width, viewSize.height)];
         [containerView addSubview:view];
         return [[self class] makeImageWithView:containerView withSize:size];
     } else if (styleType == JYFeelingStyleTypeLove) {
-        JYSealFeelingLoveView *view = [[JYSealFeelingLoveView alloc] initWithFrame:CGRectMake(viewInsert, viewInsert, viewSize.width, viewSize.height)];
+        JYSealFeelingLoveView *view = [[JYSealFeelingLoveView alloc] initWithFrame:CGRectMake(borderWidth, borderWidth, viewSize.width, viewSize.height)];
         [containerView addSubview:view];
         return [[self class] makeImageWithView:containerView withSize:size];
     } else if (styleType == JYFeelingStyleTypeEllipse) {
-        JYSealFeelingSimpleView *view = [[JYSealFeelingSimpleView alloc] initWithFrame:CGRectMake(viewInsert, viewInsert, viewSize.width, viewSize.height) type:ZHFigureDrawingTypeOval];
+        JYSealFeelingSimpleView *view = [[JYSealFeelingSimpleView alloc] initWithFrame:CGRectMake(borderWidth, borderWidth, viewSize.width, viewSize.height) type:ZHFigureDrawingTypeOval];
         [containerView addSubview:view];
         return [[self class] makeImageWithView:containerView withSize:size];
     } else if (styleType == JYFeelingStyleTypeRectangle) {
-        JYSealFeelingSimpleView *view = [[JYSealFeelingSimpleView alloc] initWithFrame:CGRectMake(viewInsert, viewInsert, viewSize.width, viewSize.height) type:ZHFigureDrawingTypeRect];
+        JYSealFeelingSimpleView *view = [[JYSealFeelingSimpleView alloc] initWithFrame:CGRectMake(borderWidth, borderWidth, viewSize.width, viewSize.height) type:ZHFigureDrawingTypeRect];
         [containerView addSubview:view];
         return [[self class] makeImageWithView:containerView withSize:size];
     } else if (styleType == JYFeelingStyleTypeRhombus) {
-        JYSealFeelingSimpleView *view = [[JYSealFeelingSimpleView alloc] initWithFrame:CGRectMake(viewInsert, viewInsert, viewSize.width, viewSize.height) type:ZHFigureDrawingTypeRhombus];
+        JYSealFeelingSimpleView *view = [[JYSealFeelingSimpleView alloc] initWithFrame:CGRectMake(borderWidth, borderWidth, viewSize.width, viewSize.height) type:ZHFigureDrawingTypeRhombus];
         [containerView addSubview:view];
         return [[self class] makeImageWithView:containerView withSize:size];
     } else if (styleType == JYFeelingStyleTypeHexagon) {
-        JYSealFeelingSimpleView *view = [[JYSealFeelingSimpleView alloc] initWithFrame:CGRectMake(viewInsert, viewInsert, viewSize.width, viewSize.height) type:ZHFigureDrawingTypeHexagon];
+        JYSealFeelingSimpleView *view = [[JYSealFeelingSimpleView alloc] initWithFrame:CGRectMake(borderWidth, borderWidth, viewSize.width, viewSize.height) type:ZHFigureDrawingTypeHexagon];
         [containerView addSubview:view];
         return [[self class] makeImageWithView:containerView withSize:size];
     }
