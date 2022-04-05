@@ -12,10 +12,11 @@
 #import "JYPopupListMenuDataProtocol.h"
 
 @class JYPopupStyleMenuListView;
+@protocol JYPopupMenuListViewProtocol;
 
 @protocol JYPopupMenuListViewDelegate <NSObject>
 @optional
-- (void)menuListView:(JYPopupStyleMenuListView *)listView didSelectItem:(JYMenu *)item;
+- (void)menuListView:(id <JYPopupMenuListViewProtocol>)listView didSelectItem:(JYMenu *)item;
 @end
 
 @protocol JYPopupMenuListViewProtocol <NSObject>

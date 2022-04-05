@@ -24,9 +24,8 @@ class JYPaintingView: UIView {
         return UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1)
     }
     
-    private func registerBrush(with imageName: String) throws -> Brush {
-        let texture = try canvas.makeTexture(with: UIImage(named: imageName)!.pngData()!)
-        return try canvas.registerBrush(name: imageName, textureID: texture.id)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override public init(frame: CGRect) {
@@ -37,8 +36,13 @@ class JYPaintingView: UIView {
         readDataIfNeeds()
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+    
+    private func registerBrush(with imageName: String) throws -> Brush {
+        let texture = try canvas.makeTexture(with: UIImage(named: imageName)!.pngData()!)
+        return try canvas.registerBrush(name: imageName, textureID: texture.id)
     }
     
     private func setupConfig() {
@@ -54,11 +58,7 @@ class JYPaintingView: UIView {
         addSubview(canvas)
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-    
-    func registerBrushes() {
+    private func registerBrushes() {
         do {
             let pen = canvas.defaultBrush!
             pen.name = "Pen"
@@ -118,62 +118,11 @@ class JYPaintingView: UIView {
         }
         
         if brushes.count > 0 {
-            styleChanged(0)
+            changeStyle(0)
         }
     }
     
-    func changeSizeAction(_ size: CGFloat) {
-        canvas.currentBrush.pointSize = CGFloat(size)
-    }
-    
-    func styleChanged(_ index: Int) {
-        let brush = brushes[index]
-        brush.color = color
-        brush.use()
-        //sizeSlider.value = Float(brush.pointSize)
-    }
-    
-    func togglePencilMode(_ isOn: Bool) {
-        canvas.isPencilMode = isOn
-    }
-    
-    func undoAction() {
-        canvas.undo()
-    }
-    
-    func redoAction() {
-        canvas.redo()
-    }
-    
-    func clearAction() {
-        canvas.clear()
-    }
-    
-    func saveData() {
-        //self.chrysan.showMessage("Saving...")
-        let exporter = DataExporter(canvas: canvas)
-        let path = Path.temp().resource(Date().string())
-        path.createDirectory()
-        exporter.save(to: path.url, progress: { (progress) in
-            //self.chrysan.show(progress: progress, message: "Saving...")
-        }) { (result) in
-            if case let .failure(error) = result {
-                self.chrysan.hide()
-                let alert = UIAlertController(title: "Saving Failed", message: error.localizedDescription, preferredStyle: .alert)
-                alert.addAction(title: "OK", style: .cancel)
-                //self.present(alert, animated: true, completion: nil)
-            } else {
-                let filename = "\(Date().string(format: "yyyyMMddHHmmss")).maliang"
-                
-                let contents = try! FileManager.default.contentsOfDirectory(at: path.url, includingPropertiesForKeys: [], options: .init(rawValue: 0))
-                try? Zip.zipFiles(paths: contents, zipFilePath: Path.documents().resource(filename).url, password: nil, progress: nil)
-                try? FileManager.default.removeItem(at: path.url)
-                //self.chrysan.show(.succeed, message: "Saving Succeed!", hideDelay: 1)
-            }
-        }
-    }
-    
-    func readDataIfNeeds() {
+    private func readDataIfNeeds() {
         guard let file = filePath else {
             return
         }
@@ -210,10 +159,62 @@ class JYPaintingView: UIView {
             
         }
     }
-    
-    func colorChanged(_ color: UIColor) {
+
+    @objc public func changeColor(_ color: UIColor) {
         canvas.currentBrush.color = color
     }
+    
+    @objc public func changeSize(_ size: CGFloat) {
+        canvas.currentBrush.pointSize = CGFloat(size)
+    }
+    
+    @objc public func changeStyle(_ index: Int) {
+        let brush = brushes[index]
+        brush.color = color
+        brush.use()
+        //sizeSlider.value = Float(brush.pointSize)
+    }
+    
+    func togglePencilMode(_ isOn: Bool) {
+        canvas.isPencilMode = isOn
+    }
+    
+    @objc public func undo() {
+        canvas.undo()
+    }
+    
+    func redoAction() {
+        canvas.redo()
+    }
+    
+    func clearAction() {
+        canvas.clear()
+    }
+    
+    func saveData() {
+        //self.chrysan.showMessage("Saving...")
+        let exporter = DataExporter(canvas: canvas)
+        let path = Path.temp().resource(Date().string())
+        path.createDirectory()
+        exporter.save(to: path.url, progress: { (progress) in
+            //self.chrysan.show(progress: progress, message: "Saving...")
+        }) { (result) in
+            if case let .failure(error) = result {
+                self.chrysan.hide()
+                let alert = UIAlertController(title: "Saving Failed", message: error.localizedDescription, preferredStyle: .alert)
+                alert.addAction(title: "OK", style: .cancel)
+                //self.present(alert, animated: true, completion: nil)
+            } else {
+                let filename = "\(Date().string(format: "yyyyMMddHHmmss")).maliang"
+                
+                let contents = try! FileManager.default.contentsOfDirectory(at: path.url, includingPropertiesForKeys: [], options: .init(rawValue: 0))
+                try? Zip.zipFiles(paths: contents, zipFilePath: Path.documents().resource(filename).url, password: nil, progress: nil)
+                try? FileManager.default.removeItem(at: path.url)
+                //self.chrysan.show(.succeed, message: "Saving Succeed!", hideDelay: 1)
+            }
+        }
+    }
+    
 }
 
 extension JYPaintingView: DataObserver {

@@ -11,6 +11,7 @@
 #import "JYSealFeelingSellView.h"
 #import "JYSealFeelingLoveView.h"
 #import "JYSealFeelingSimpleView.h"
+#import "JYPrefixHeader.h"
 
 @implementation JYStyleImageFactory
 
@@ -60,6 +61,34 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
+}
+
++ (UIColor *)textColorFactoryFromStyleType:(JYFeelingStyleType)styleType {
+    if (styleType == JYFeelingStyleTypePass) {
+        return SMSealRedColor;
+    } else if (styleType == JYFeelingStyleTypeADR) {
+        return SMSealGreenColor;
+    } else if (styleType == JYFeelingStyleTypeSell) {
+        return SMSealRedColor;
+    } else if (styleType == JYFeelingStyleTypeLove) {
+        return SMSealBlueColor;
+    } else {
+        return [UIColor blackColor];
+    }
+}
+
++ (NSInteger)indexFactoryFromPenName:(NSString *)name {
+    if ([name isEqualToString:@"Pencil"]) {
+        return 1;
+    } else if ([name isEqualToString:@"Brush"]) {
+        return 2;
+    } else if ([name isEqualToString:@"Grow"]) {
+        return 3;
+    } else if ([name isEqualToString:@"Eraser"]) {
+        return 6;
+    } else {
+        return 0;
+    }
 }
 
 @end

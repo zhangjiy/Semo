@@ -74,6 +74,11 @@
 }
 
 #pragma -- mark -- JYWriteFeelingListViewDelegate
+- (void)writePaintingListView:(JYWritePaintingListView *)listView didSelectPaintingItem:(JYPaintingItem *)item {
+    if ([self.delegate respondsToSelector:@selector(writeFeelingBottomView:didSelectFeelingItem:)]) {
+        [self.delegate writeFeelingBottomView:self didSelectPaintingItem:item];
+    }
+}
 
 - (void)writeFeelingListView:(JYWriteFeelingListView *)listView didSelectItem:(NSString *)item {
     if ([self.delegate respondsToSelector:@selector(writeFeelingBottomView:didSelectFeelingItem:)]) {

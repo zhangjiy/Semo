@@ -154,6 +154,10 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     self.indexPath = indexPath;
+    JYMenu *menu = _item.menus[indexPath.row];
+    if ([self.delegate respondsToSelector:@selector(menuListView:didSelectItem:)]) {
+        [self.delegate menuListView:self didSelectItem:menu];
+    }
     [self.collectionView reloadData];
 }
 

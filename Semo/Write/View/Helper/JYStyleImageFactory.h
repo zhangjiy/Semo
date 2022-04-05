@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JYStyleImageFactory : NSObject
 + (UIImage *)styleImageFactoryFromStyleType:(JYFeelingStyleType)styleType size:(CGSize)size borderWidth:(CGFloat)borderWidth;
++ (UIColor *)textColorFactoryFromStyleType:(JYFeelingStyleType)styleType;
++ (NSInteger)indexFactoryFromPenName:(NSString *)name;
 @end
 
 NS_ASSUME_NONNULL_END

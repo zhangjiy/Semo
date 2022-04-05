@@ -95,30 +95,32 @@
 #pragma -- mark -- JYWriteFeelingBottomViewDelegate
 
 - (void)writeFeelingBottomView:(JYWriteFeelingBottomView *)bottomView didSelectPaintingItem:(JYPaintingItem *)item {
-    
+    if (item.type == JYPaintingTypeUndo) {
+        [self.paintingView undo];
+    }
 }
 
 - (void)writeFeelingBottomView:(JYWriteFeelingBottomView *)bottomView didSelectFeelingItem:(NSString *)item {
+    
     self.feelingDisplayView.text = item;
 }
 
 - (void)writeFeelingBottomView:(JYWriteFeelingBottomView *)bottomView didSelectMenuItem:(JYMenu *)item {
-    UIImage *image = [self styleImageWithStyleType:item.styleType];
-    self.feelingDisplayView.image = image;
+    if (item.type == JYPaintingTypeStyle) {
+        UIImage *image = [self styleImageWithStyleType:item.styleType];
+        self.feelingDisplayView.image = image;
+    } else if (item.type == JYPaintingTypeColor) {
+        [self.paintingView changeColor:item.color];
+    } else if (item.type == JYPaintingTypeSize) {
+        [self.paintingView changeSize:item.lineWidth];
+    } else if (item.type == JYPaintingTypePen) {
+        NSInteger index = [JYStyleImageFactory indexFactoryFromPenName:item.name];
+        [self.paintingView changeStyle:index];
+    }
 }
 
 - (UIImage *)styleImageWithStyleType:(JYFeelingStyleType)styleType {
-    if (styleType == JYFeelingStyleTypePass) {
-        self.feelingDisplayView.textColor = SMSealRedColor;
-    } else if (styleType == JYFeelingStyleTypeADR) {
-        self.feelingDisplayView.textColor = SMSealGreenColor;
-    } else if (styleType == JYFeelingStyleTypeSell) {
-        self.feelingDisplayView.textColor = SMSealRedColor;
-    } else if (styleType == JYFeelingStyleTypeLove) {
-        self.feelingDisplayView.textColor = SMSealBlueColor;
-    } else {
-        self.feelingDisplayView.textColor = [UIColor blackColor];
-    }
+    self.feelingDisplayView.textColor = [JYStyleImageFactory textColorFactoryFromStyleType:styleType];
     CGSize size = JYWriteDisplayViewSize;
     return [JYStyleImageFactory styleImageFactoryFromStyleType:styleType size:size borderWidth:JYWriteDisplayViewSize.width / 40.f];
 }

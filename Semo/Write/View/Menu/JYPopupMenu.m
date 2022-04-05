@@ -684,7 +684,7 @@ static const NSTimeInterval kQBPopupMenuAnimationDuration = 0.2;
 
 #pragma -- mark - JYPopupMenuListViewDelegate
 
-- (void)menuListView:(JYPopupStyleMenuListView *)listView didSelectItem:(JYMenu *)item {
+- (void)menuListView:(id <JYPopupMenuListViewProtocol>)listView didSelectItem:(JYMenu *)item {
     if ([self.delegate respondsToSelector:@selector(popupMenu:didSelectItem:)]) {
         [self.delegate popupMenu:self didSelectItem:item];
     }

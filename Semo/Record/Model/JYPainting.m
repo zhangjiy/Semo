@@ -37,7 +37,7 @@
                 [tempMutableArray addObject:menu];
             }
         } else if (_type == JYPaintingTypePen) {
-            NSArray *penArray = @[@"Pen", @"pencil", @"brush", @"Eraser"];
+            NSArray *penArray = @[@"Pen", @"Pencil", @"Brush", @"Grow", @"Eraser"];
             for (int i = 0; i < penArray.count; i ++) {
                 JYMenu *menu = [[JYMenu alloc] initWithType:_type];
                 menu.name = penArray[i];
