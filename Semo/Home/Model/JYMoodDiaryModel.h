@@ -6,11 +6,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BGFMDB.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JYMoodDiaryModel : NSObject
+#define kJYMoodDiaryTableName @"JYMoodDiaryTableName"
 
+@interface JYMoodDiaryModel : NSObject
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, strong) NSArray <NSString *> * moods;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -16,7 +16,7 @@
         NSMutableArray *tempMutableArray = [NSMutableArray array];
         
         if (_type == JYPaintingTypeStyle) {
-            NSArray *styleArray = @[@(JYFeelingStyleTypePass), @(JYFeelingStyleTypeADR), @(JYFeelingStyleTypeSell), @(JYFeelingStyleTypeLove), @(JYFeelingStyleTypeEllipse), @(JYFeelingStyleTypeRectangle), @(JYFeelingStyleTypeRhombus), @(JYFeelingStyleTypeHexagon)];
+            NSArray *styleArray = @[@(JYMoodStyleTypePass), @(JYMoodStyleTypeADR), @(JYMoodStyleTypeSell), @(JYMoodStyleTypeLove), @(JYMoodStyleTypeEllipse), @(JYMoodStyleTypeRectangle), @(JYMoodStyleTypeRhombus), @(JYMoodStyleTypeHexagon)];
             for (int i = 0; i < styleArray.count; i ++) {
                 JYMenu *menu = [[JYMenu alloc] initWithType:_type];
                 menu.styleType = [styleArray[i] integerValue];

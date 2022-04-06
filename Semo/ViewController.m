@@ -7,15 +7,15 @@
 
 #import "ViewController.h"
 #import "JYPlusControl.h"
-#import "JYFeelingListView.h"
+#import "JYMoodListView.h"
 #import "JYMonthCalendarView.h"
-#import "JYWriteFeelingViewController.h"
+#import "JYRecordMoodViewController.h"
 #import "JYCalendar.h"
 #import "JYPrefixHeader.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) JYPlusControl * plusControl;
-@property (nonatomic, strong) JYFeelingListView * feelingListView;
+@property (nonatomic, strong) JYMoodListView * moodListView;
 @property (nonatomic, strong) JYMonthCalendarView *monthCalendarView;
 @end
 
@@ -69,16 +69,16 @@
     return _plusControl;
 }
 
-//- (JYFeelingListView *)feelingListView {
-//    if (!_feelingListView) {
-//        _feelingListView = [[JYFeelingListView alloc] initWithFrame:CGRectMake(SMHomeLeft, NavigationBarHeight, self.view.width - SMHomeLeft * 2, JYHomeGridHeight)];
+//- (JYMoodListView *)moodListView {
+//    if (!_moodListView) {
+//        _moodListView = [[JYMoodListView alloc] initWithFrame:CGRectMake(SMHomeLeft, NavigationBarHeight, self.view.width - SMHomeLeft * 2, JYHomeGridHeight)];
 //    }
 //    
-//    return _feelingListView;
+//    return _moodListView;
 //}
 
 - (void)plusControlAction:(UIControl *)sender {
-    JYWriteFeelingViewController *controller = [[JYWriteFeelingViewController alloc] init];
+    JYRecordMoodViewController *controller = [[JYRecordMoodViewController alloc] init];
     controller.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:controller animated:YES completion:nil];
 }

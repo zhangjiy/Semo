@@ -3,5 +3,5 @@
 //
 
 #import "JYPrefixHeader.h"
-#import "JYWriteFeelingBottomView.h"
+#import "JYRecordMoodBottomView.h"
 #import "JYPainting.h"

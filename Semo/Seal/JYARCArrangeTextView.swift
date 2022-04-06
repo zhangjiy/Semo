@@ -10,7 +10,7 @@ import UIKit
 
 class JYARCArrangeTextView: UIView {
     @objc var color:UIColor = UIColor.init(red: 180/255.0, green: 40/255.0, blue: 40/255.0, alpha: 1.0)
-    @objc var text:String = "Seven Feeling"
+    @objc var text:String = "Seven Mood"
     var textLength:Int = 0 // 文字长度
     var viewWidth:CGFloat = 0 // view宽度
     var viewHeight:CGFloat = 0 // view高度
