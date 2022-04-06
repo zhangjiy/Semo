@@ -1,4 +1,10 @@
 PODS:
+  - BGFMDB (2.0.13):
+    - BGFMDB/BG (= 2.0.13)
+    - BGFMDB/FMDB (= 2.0.13)
+  - BGFMDB/BG (2.0.13):
+    - BGFMDB/FMDB
+  - BGFMDB/FMDB (2.0.13)
   - Chrysan (2.0.4):
     - SnapKit (~> 5.0)
   - Comet (1.6.2)
@@ -11,6 +17,7 @@ PODS:
   - Zip (2.1.2)
 
 DEPENDENCIES:
+  - BGFMDB
   - Chrysan
   - Comet
   - MaLiang
@@ -21,6 +28,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - BGFMDB
     - Chrysan
     - Comet
     - MaLiang
@@ -30,6 +38,7 @@ SPEC REPOS:
     - Zip
 
 SPEC CHECKSUMS:
+  BGFMDB: 48e6823027232402a678acc7f71484b1fc9171d0
   Chrysan: d8607b02a90e7b4a10129c5f3878a8e565902e7a
   Comet: ec129472bd2b9683c13aefa939703cc3ef0efb14
   MaLiang: 7cf6c70e37577b5ec1b34add37fa6d58808f5451
@@ -38,6 +47,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Zip: b3fef584b147b6e582b2256a9815c897d60ddc67
 
-PODFILE CHECKSUM: d6289a32de16a799e65cc15b285da7348118d3c2
+PODFILE CHECKSUM: 3c8c825cc9e6fc90a3ca7c419ebcc61560385061
 
 COCOAPODS: 1.11.2

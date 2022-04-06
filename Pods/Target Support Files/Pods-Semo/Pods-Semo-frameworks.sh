@@ -176,6 +176,7 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/BGFMDB/BGFMDB.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Chrysan/Chrysan.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Comet/Comet.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MaLiang/MaLiang.framework"
@@ -185,6 +186,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Zip/Zip.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/BGFMDB/BGFMDB.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Chrysan/Chrysan.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Comet/Comet.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MaLiang/MaLiang.framework"
