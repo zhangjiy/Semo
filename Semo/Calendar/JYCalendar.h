@@ -21,10 +21,11 @@ typedef NS_ENUM(NSUInteger, JYCalendarPlaceholderType) {
 };
 
 @class JYCalendar;
+@protocol JYMoodDate;
 
 @protocol JYCalendarDelegate <NSObject>
 @optional
-- (void)calendar:(JYCalendar *)calendar scrollToDate:(NSDate *)date animated:(BOOL)animated;
+- (void)calendar:(JYCalendar *)calendar scrollToDate:(id <JYMoodDate>)date animated:(BOOL)animated;
 
 @end
 
@@ -32,6 +33,9 @@ typedef NS_ENUM(NSUInteger, JYCalendarPlaceholderType) {
 
 @property (nonatomic, weak) id <JYCalendarDelegate> delegate;
 
+@property (nonatomic, strong, readonly) id <JYMoodDate> currentPage;
+@property (nonatomic, assign, readonly) NSInteger currentMonthName;
+@property (nonatomic, assign, readonly) NSInteger todayName;
 @property (nonatomic, strong) NSCalendar *gregorian;
 @property (nonatomic, strong) NSDateFormatter *formatter;
 @property (nonatomic, assign) NSInteger numberOfMonths;

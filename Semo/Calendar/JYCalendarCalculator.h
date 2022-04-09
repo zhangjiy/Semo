@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "JYCalendar.h"
+#import "JYMoodDate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -39,15 +40,21 @@ typedef NS_ENUM(NSUInteger, JYCalendarMonthPosition) {
 
 @property (nonatomic, weak) id <JYCalendarCalculatorDelegate> delegate;
 
-@property (nonatomic, readonly) NSInteger numberOfSectionsIn;
+@property (nonatomic, strong, readonly) id <JYMoodDate> currentMonth;
+@property (nonatomic, assign, readonly) NSInteger currentMonthName;
+@property (nonatomic, assign, readonly) NSInteger numberOfSectionsIn;
+@property (nonatomic, assign, readonly) NSInteger todayName;
 
 - (void)adjustMonthPosition;
 
-- (NSInteger)numberOfRowsInMonth:(NSDate *)month;
-- (NSString *)monthTextForMonth:(NSDate *)month;
-- (NSString *)dayTextForMonth:(NSDate *)month index:(NSInteger)index;
+- (NSInteger)numberOfRowsInMonth:(id <JYMoodDate>)month;
+- (NSString *)monthNameForMonth:(id <JYMoodDate>)month;
 
-- (NSDate *)monthDateForIndex:(NSInteger)index;
+- (NSString *)dayNameForMonth:(id <JYMoodDate>)month index:(NSInteger)index;
+- (NSString *)dayNameForDate:(id <JYMoodDate>)date;
+
+- (JYMoodMonthDate *)monthDateForIndex:(NSInteger)index;
+- (id <JYMoodDate>)dateForIndexPath:(NSIndexPath *)indexPath;
 @end
 
 NS_ASSUME_NONNULL_END

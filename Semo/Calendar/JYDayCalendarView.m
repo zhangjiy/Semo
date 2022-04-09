@@ -8,6 +8,7 @@
 #import "JYDayCalendarView.h"
 #import "JYDayCalendarCollectionViewCell.h"
 #import "JYGridView.h"
+#import "JYMonthMood.h"
 #import "JYPrefixHeader.h"
 
 @interface JYDayCalendarView () <UICollectionViewDelegate, UICollectionViewDataSource>
@@ -75,11 +76,11 @@
     return _gridView;
 }
 
-- (void)setMonth:(NSDate *)month {
-    if (_month != month) {
+- (void)setMonth:(JYMoodMonthDate *)month {
+    //if (_month != month) {
         _month = month;
         [self.collectionView reloadData];
-    }
+    //}
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -90,13 +91,22 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     NSInteger numberOfRows = [self.calculator numberOfRowsInMonth:self.month];
-    return 32;
+    return numberOfRows;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     JYDayCalendarCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    NSString *text = [self.calculator dayTextForMonth:self.month index:indexPath.row];
-    [cell updateViewWithText:text];
+    NSString *text = [self.calculator dayNameForMonth:self.month index:indexPath.row];
+    cell.text = text;
+    NSDictionary *dayMoodDic = self.month.monthMood.dayMoodDict;
+    JYDayMood *dayMood = [dayMoodDic valueForKey:text];
+    NSData *data = dayMood.moods.lastObject;
+    if (data) {
+        UIImage *image = [UIImage imageWithData:data];
+        cell.image = image;
+    } else {
+        cell.image = nil;
+    }
     return cell;
 }
 
@@ -107,6 +117,10 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    id <JYMoodDate> moodDate = [self.calculator dateForIndexPath:indexPath];
+    if ([self.delegate respondsToSelector:@selector(dayCalendarView:didSelectItemAtIndexPath:)]) {
+        [self.delegate dayCalendarView:self didSelectItemAtIndexPath:moodDate];
+    }
 }
 
 @end

@@ -6,17 +6,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JYMoodDate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSCalendar (JYCalendarExtensions)
 
-- (nullable NSDate *)jy_firstDayOfMonth:(NSDate *)month;
-- (nullable NSDate *)jy_lastDayOfMonth:(NSDate *)month;
-- (nullable NSDate *)jy_firstDayOfWeek:(NSDate *)week;
-- (nullable NSDate *)jy_lastDayOfWeek:(NSDate *)week;
-- (nullable NSDate *)jy_middleDayOfWeek:(NSDate *)week;
-- (NSInteger)jy_numberOfDaysInMonth:(NSDate *)month;
+- (nullable id <JYMoodDate>)jy_firstDayOfMonth:(id <JYMoodDate>)month;
+- (nullable id <JYMoodDate>)jy_lastDayOfMonth:(id <JYMoodDate>)month;
+- (nullable id <JYMoodDate>)jy_firstDayOfWeek:(id <JYMoodDate>)week;
+- (nullable id <JYMoodDate>)jy_lastDayOfWeek:(id <JYMoodDate>)week;
+- (nullable id <JYMoodDate>)jy_middleDayOfWeek:(id <JYMoodDate>)week;
+- (NSInteger)jy_numberOfDaysInMonth:(id <JYMoodDate>)month;
 
 @end
 

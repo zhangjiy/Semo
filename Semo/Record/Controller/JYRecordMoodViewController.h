@@ -9,8 +9,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JYRecordMoodViewController : UIViewController
+@class JYRecordMoodViewController, JYMonthMood, JYDayMood;
 
+@protocol JYRecordMoodViewControllerDelegate <NSObject>
+@optional
+- (void)recordMoodViewController:(JYRecordMoodViewController *)controller dayMood:(JYDayMood *)dayMood;
+@end
+
+@interface JYRecordMoodViewController : UIViewController
+@property (nonatomic, weak) id <JYRecordMoodViewControllerDelegate> delegate;
+- (instancetype)initWithDayMood:(JYDayMood *)dayMood;
 @end
 
 NS_ASSUME_NONNULL_END

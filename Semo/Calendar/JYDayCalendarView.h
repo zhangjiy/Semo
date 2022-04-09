@@ -10,8 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class JYDayCalendarView;
+@protocol JYDayCalendarViewDelegate <NSObject>
+@optional
+- (void)dayCalendarView:(JYDayCalendarView *)view didSelectItemAtIndexPath:(id <JYMoodDate>)date;
+@end
+
 @interface JYDayCalendarView : UIView
-@property (nonatomic, strong) NSDate * month;
+@property (nonatomic, weak) id <JYDayCalendarViewDelegate> delegate;
+@property (nonatomic, strong) JYMoodMonthDate * month;
 @property (nonatomic, strong) JYCalendarCalculator * calculator;
 @end
 

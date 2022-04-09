@@ -9,7 +9,7 @@
 #import "JYDayCalendarView.h"
 #import "JYPrefixHeader.h"
 
-@interface JYMonthCalendarCollectionViewCell ()
+@interface JYMonthCalendarCollectionViewCell () <JYDayCalendarViewDelegate>
 @property (nonatomic, strong) UILabel * titleLabel;
 @property (nonatomic, strong) JYDayCalendarView *dayCalendarView;
 @end
@@ -42,14 +42,15 @@
 - (JYDayCalendarView *)dayCalendarView {
     if (!_dayCalendarView) {
         _dayCalendarView = [[JYDayCalendarView alloc]initWithFrame:CGRectZero];
+        _dayCalendarView.delegate = self;
         _dayCalendarView.backgroundColor = [UIColor clearColor];
     }
     
     return _dayCalendarView;
 }
 
-- (void)updateViewWithMonth:(NSDate *)month calculator:(JYCalendarCalculator *)calculator {
-    NSString *text = [calculator monthTextForMonth:month];
+- (void)updateViewWithMonth:(JYMoodMonthDate *)month calculator:(JYCalendarCalculator *)calculator {
+    NSString *text = [calculator monthNameForMonth:month];
     self.titleLabel.text = text;
     self.dayCalendarView.calculator = calculator;
     self.dayCalendarView.month = month;
@@ -64,6 +65,14 @@
     _dayCalendarView.width = self.contentView.width;
     _dayCalendarView.height = self.contentView.height - _titleLabel.bottom - JYViewInset;
     _dayCalendarView.top = _titleLabel.bottom + JYViewInset;
+}
+
+#pragma -- mark -- JYDayCalendarViewDelegate
+
+- (void)dayCalendarView:(JYDayCalendarView *)view didSelectItemAtIndexPath:(id <JYMoodDate>)date {
+    if ([self.delegate respondsToSelector:@selector(monthCalendarCollectionViewCell:didSelectItemAtIndexPath:)]) {
+        [self.delegate monthCalendarCollectionViewCell:self didSelectItemAtIndexPath:date];
+    }
 }
 
 @end

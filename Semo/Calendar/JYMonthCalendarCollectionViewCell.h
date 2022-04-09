@@ -10,8 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class JYMonthCalendarCollectionViewCell;
+@protocol JYMonthCalendarCollectionViewCellDelegate <NSObject>
+@optional
+- (void)monthCalendarCollectionViewCell:(JYMonthCalendarCollectionViewCell *)cell didSelectItemAtIndexPath:(id <JYMoodDate>)date;
+@end
+
 @interface JYMonthCalendarCollectionViewCell : UICollectionViewCell
-- (void)updateViewWithMonth:(NSDate *)month calculator:(JYCalendarCalculator *)calculator;
+@property (nonatomic, weak) id <JYMonthCalendarCollectionViewCellDelegate> delegate;
+- (void)updateViewWithMonth:(JYMoodMonthDate *)month calculator:(JYCalendarCalculator *)calculator;
 @end
 
 NS_ASSUME_NONNULL_END

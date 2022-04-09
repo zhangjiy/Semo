@@ -9,6 +9,7 @@
 #import "JYGridView.h"
 #import "JYRecordMoodManager.h"
 #import "LGDrawer.h"
+#import "JYDayMood.h"
 #import "JYPrefixHeader.h"
 
 @interface JYRecordMoodViewController ()
@@ -16,9 +17,18 @@
 @property (nonatomic, strong) id <JYViewProtocol> recordManager;
 @property (nonatomic, strong) UIButton *cancelButton;
 @property (nonatomic, strong) UIButton *confirmButton;
+@property (nonatomic, strong) JYDayMood * dayMood;
 @end
 
 @implementation JYRecordMoodViewController
+
+- (instancetype)initWithDayMood:(JYDayMood *)dayMood {
+    if (self = [super init]) {
+        self.dayMood = dayMood;
+    }
+    
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -105,9 +115,26 @@
     if (!_confirmButton) {
         _confirmButton = [[UIButton alloc] initWithFrame:CGRectZero];
         [_confirmButton setImage:[self tickImage] forState:UIControlStateNormal];
+        [_confirmButton addTarget:self action:@selector(confirmButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     
     return _confirmButton;
+}
+
+- (void)confirmButtonAction:(UIButton *)sender {
+    NSMutableArray *moods = [[NSMutableArray alloc] init];
+    if (self.dayMood.moods.count > 0) {
+        [moods addObjectsFromArray:self.dayMood.moods];
+    }
+    
+    UIImage *image = self.recordManager.resultMoodImage;
+    NSData *data = UIImagePNGRepresentation(image);
+    [moods addObject:data];
+    self.dayMood.moods = [moods copy];
+    if ([self.delegate respondsToSelector:@selector(recordMoodViewController:dayMood:)]) {
+        [self.delegate recordMoodViewController:self dayMood:self.dayMood];
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (UIImage *)tickImage {

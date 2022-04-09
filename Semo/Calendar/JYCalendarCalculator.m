@@ -10,15 +10,15 @@
 
 @interface JYCalendarCalculator () <JYCalendarDelegate>
 
-@property (nonatomic, strong) NSMutableDictionary<NSNumber *, NSDate *> *months;
-@property (nonatomic, strong) NSMutableDictionary<NSNumber *, NSDate *> *monthHeads;
+@property (nonatomic, strong) NSMutableDictionary<NSNumber *, id <JYMoodDate>> *months;
+@property (nonatomic, strong) NSMutableDictionary<NSNumber *, id <JYMoodDate>> *monthHeads;
 
-@property (nonatomic, strong) NSMutableDictionary<NSNumber *, NSDate *> *weeks;
-@property (nonatomic, strong) NSMutableDictionary<NSDate *, NSNumber *> *rowCounts;
+@property (nonatomic, strong) NSMutableDictionary<NSNumber *, id <JYMoodDate>> *weeks;
+@property (nonatomic, strong) NSMutableDictionary<id <JYMoodDate>, NSNumber *> *rowCounts;
 
 @property (nonatomic, readonly) NSCalendar *gregorian;
-@property (nonatomic, readonly) NSDate *minimumDate;
-@property (nonatomic, readonly) NSDate *maximumDate;
+@property (nonatomic, readonly) id <JYMoodDate> minimumDate;
+@property (nonatomic, readonly) id <JYMoodDate> maximumDate;
 
 @property (nonatomic, strong) JYCalendar *calendar;
 
@@ -56,57 +56,50 @@
     return [super forwardingTargetForSelector:selector];
 }
 
-- (NSDate *)dateForIndexPath:(NSIndexPath *)indexPath scope:(JYCalendarScope)scope {
+- (id <JYMoodDate>)dateForIndexPath:(NSIndexPath *)indexPath scope:(JYCalendarScope)scope {
     if (!indexPath) return nil;
     switch (scope) {
         case JYCalendarScopeMonth: {
-            NSDate *head = [self monthHeadForSection:indexPath.section];
+            id <JYMoodDate> head = [self monthHeadForSection:indexPath.section];
             NSUInteger daysOffset = indexPath.item;
-            NSDate *date = [self.gregorian dateByAddingUnit:NSCalendarUnitDay value:daysOffset toDate:head options:0];
-            return date;
+            NSDate *date = [self.gregorian dateByAddingUnit:NSCalendarUnitDay value:daysOffset toDate:head.date options:0];
+            JYMoodMonthDate *monthDate = [[JYMoodMonthDate alloc] initWithDate:date];
+            return monthDate;
             break;
         }
         case JYCalendarScopeWeek: {
-            NSDate *currentPage = [self weekForSection:indexPath.section];
-            NSDate *date = [self.gregorian dateByAddingUnit:NSCalendarUnitDay value:indexPath.item toDate:currentPage options:0];
-            return date;
+            id <JYMoodDate> currentPage = [self weekForSection:indexPath.section];
+            NSDate *date = [self.gregorian dateByAddingUnit:NSCalendarUnitDay value:indexPath.item toDate:currentPage.date options:0];
+            JYMoodWeekDate *weekDate = [[JYMoodWeekDate alloc] initWithDate:date];
+            return weekDate;
         }
     }
     return nil;
 }
 
-- (NSDate *)dateForIndexPath:(NSIndexPath *)indexPath {
-    if (!indexPath) return nil;
-    return [self dateForIndexPath:indexPath scope:self.calendar.scope];
-}
-
-- (NSIndexPath *)indexPathForDate:(NSDate *)date {
-    return [self indexPathForDate:date atMonthPosition:JYCalendarMonthPositionCurrent scope:self.calendar.scope];
-}
-
-- (NSIndexPath *)indexPathForDate:(NSDate *)date scope:(JYCalendarScope)scope {
+- (NSIndexPath *)indexPathForDate:(id <JYMoodDate>)date scope:(JYCalendarScope)scope {
     return [self indexPathForDate:date atMonthPosition:JYCalendarMonthPositionCurrent scope:scope];
 }
 
-- (NSIndexPath *)indexPathForDate:(NSDate *)date atMonthPosition:(JYCalendarMonthPosition)position scope:(JYCalendarScope)scope {
+- (NSIndexPath *)indexPathForDate:(id <JYMoodDate>)date atMonthPosition:(JYCalendarMonthPosition)position scope:(JYCalendarScope)scope {
     if (!date) return nil;
     NSInteger item = 0;
     NSInteger section = 0;
     switch (scope) {
         case JYCalendarScopeMonth: {
-            section = [self.gregorian components:NSCalendarUnitMonth fromDate:[self.gregorian jy_firstDayOfMonth:self.minimumDate] toDate:[self.gregorian jy_firstDayOfMonth:date] options:0].month;
+            section = [self.gregorian components:NSCalendarUnitMonth fromDate:[self.gregorian jy_firstDayOfMonth:self.minimumDate].date toDate:[self.gregorian jy_firstDayOfMonth:date].date options:0].month;
             if (position == JYCalendarMonthPositionPrevious) {
                 section++;
             } else if (position == JYCalendarMonthPositionNext) {
                 section--;
             }
-            NSDate *head = [self monthHeadForSection:section];
-            item = [self.gregorian components:NSCalendarUnitDay fromDate:head toDate:date options:0].day;
+            id <JYMoodDate> head = [self monthHeadForSection:section];
+            item = [self.gregorian components:NSCalendarUnitDay fromDate:head.date toDate:date.date options:0].day;
             break;
         }
         case JYCalendarScopeWeek: {
-            section = [self.gregorian components:NSCalendarUnitWeekOfYear fromDate:[self.gregorian jy_firstDayOfWeek:self.minimumDate] toDate:[self.gregorian jy_firstDayOfWeek:date] options:0].weekOfYear;
-            item = (([self.gregorian component:NSCalendarUnitWeekday fromDate:date] - self.gregorian.firstWeekday) + 7) % 7;
+            section = [self.gregorian components:NSCalendarUnitWeekOfYear fromDate:[self.gregorian jy_firstDayOfWeek:self.minimumDate].date toDate:[self.gregorian jy_firstDayOfWeek:date].date options:0].weekOfYear;
+            item = (([self.gregorian component:NSCalendarUnitWeekday fromDate:date.date] - self.gregorian.firstWeekday) + 7) % 7;
             break;
         }
     }
@@ -117,11 +110,11 @@
     return indexPath;
 }
 
-- (NSIndexPath *)indexPathForDate:(NSDate *)date atMonthPosition:(JYCalendarMonthPosition)position {
+- (NSIndexPath *)indexPathForDate:(id <JYMoodDate>)date atMonthPosition:(JYCalendarMonthPosition)position {
     return [self indexPathForDate:date atMonthPosition:position scope:self.calendar.scope];
 }
 
-- (NSDate *)pageForSection:(NSInteger)section {
+- (id <JYMoodDate>)pageForSection:(NSInteger)section {
     switch (self.calendar.scope) {
         case JYCalendarScopeWeek:
             return [self.gregorian jy_middleDayOfWeek:[self weekForSection:section]];
@@ -132,37 +125,42 @@
     }
 }
 
-- (NSDate *)monthForSection:(NSInteger)section {
+- (id <JYMoodDate>)monthForSection:(NSInteger)section {
     NSNumber *key = @(section);
-    NSDate *month = self.months[key];
+    id <JYMoodDate> month = self.months[key];
     if (!month) {
-        month = [self.gregorian dateByAddingUnit:NSCalendarUnitMonth value:section toDate:[self.gregorian jy_firstDayOfMonth:self.minimumDate] options:0];
+        NSDate *date = [self.gregorian dateByAddingUnit:NSCalendarUnitMonth value:section toDate:[self.gregorian jy_firstDayOfMonth:self.minimumDate].date options:0];
+        month = [[JYMoodMonthDate alloc] initWithDate:date];
         NSInteger numberOfHeadPlaceholders = [self numberOfHeadPlaceholdersForMonth:month];
-        NSDate *monthHead = [self.gregorian dateByAddingUnit:NSCalendarUnitDay value:-numberOfHeadPlaceholders toDate:month options:0];
+        NSDate *dateHead = [self.gregorian dateByAddingUnit:NSCalendarUnitDay value:-numberOfHeadPlaceholders toDate:month.date options:0];
+        JYMoodMonthDate *monthHead = [[JYMoodMonthDate alloc] initWithDate:dateHead];
         self.months[key] = month;
         self.monthHeads[key] = monthHead;
     }
     return month;
 }
 
-- (NSDate *)monthHeadForSection:(NSInteger)section {
+- (id <JYMoodDate>)monthHeadForSection:(NSInteger)section {
     NSNumber *key = @(section);
-    NSDate *monthHead = self.monthHeads[key];
+    id <JYMoodDate> monthHead = self.monthHeads[key];
     if (!monthHead) {
-        NSDate *month = [self.gregorian dateByAddingUnit:NSCalendarUnitMonth value:section toDate:[self.gregorian jy_firstDayOfMonth:self.minimumDate] options:0];
+        NSDate *date = [self.gregorian dateByAddingUnit:NSCalendarUnitMonth value:section toDate:[self.gregorian jy_firstDayOfMonth:self.minimumDate].date options:0];
+        JYMoodMonthDate *month = [[JYMoodMonthDate alloc] initWithDate:date];
         NSInteger numberOfHeadPlaceholders = [self numberOfHeadPlaceholdersForMonth:month];
-        monthHead = [self.gregorian dateByAddingUnit:NSCalendarUnitDay value:-numberOfHeadPlaceholders toDate:month options:0];
+        NSDate *dateHead = [self.gregorian dateByAddingUnit:NSCalendarUnitDay value:-numberOfHeadPlaceholders toDate:month.date options:0];
+        JYMoodMonthDate *monthHead = [[JYMoodMonthDate alloc] initWithDate:dateHead];
         self.months[key] = month;
         self.monthHeads[key] = monthHead;
     }
     return monthHead;
 }
 
-- (NSDate *)weekForSection:(NSInteger)section {
+- (id <JYMoodDate>)weekForSection:(NSInteger)section {
     NSNumber *key = @(section);
-    NSDate *week = self.weeks[key];
+    id <JYMoodDate> week = self.weeks[key];
     if (!week) {
-        week = [self.gregorian dateByAddingUnit:NSCalendarUnitWeekOfYear value:section toDate:[self.gregorian jy_firstDayOfWeek:self.minimumDate] options:0];
+        NSDate *date = [self.gregorian dateByAddingUnit:NSCalendarUnitWeekOfYear value:section toDate:[self.gregorian jy_firstDayOfWeek:self.minimumDate].date options:0];
+        week = [[JYMoodWeekDate alloc] initWithDate:date];
         self.weeks[key] = week;
     }
     return week;
@@ -179,16 +177,16 @@
     }
 }
 
-- (NSInteger)numberOfHeadPlaceholdersForMonth:(NSDate *)month {
-    NSInteger currentWeekday = [self.gregorian component:NSCalendarUnitWeekday fromDate:month];
+- (NSInteger)numberOfHeadPlaceholdersForMonth:(id <JYMoodDate>)month {
+    NSInteger currentWeekday = [self.gregorian component:NSCalendarUnitWeekday fromDate:month.date];
     NSInteger number = ((currentWeekday- self.gregorian.firstWeekday) + 7) % 7 ?: (7 * (!self.calendar.floatingMode&&(self.calendar.placeholderType == JYCalendarPlaceholderTypeFillSixRows)));
     return number;
 }
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section {
     if (self.calendar.scope == JYCalendarScopeWeek) return 1;
-    NSDate *month = [self monthForSection:section];
-    return [self numberOfRowsInMonth:month];
+    JYMoodMonthDate *monthDate = [self monthForSection:section];
+    return [self numberOfRowsInMonth:monthDate];
 }
 
 - (JYCalendarMonthPosition)monthPositionForIndexPath:(NSIndexPath *)indexPath {
@@ -196,9 +194,9 @@
     if (self.calendar.scope == JYCalendarScopeWeek) {
         return JYCalendarMonthPositionCurrent;
     }
-    NSDate *date = [self dateForIndexPath:indexPath];
-    NSDate *page = [self pageForSection:indexPath.section];
-    NSComparisonResult comparison = [self.gregorian compareDate:date toDate:page toUnitGranularity:NSCalendarUnitMonth];
+    id <JYMoodDate> date = [self dateForIndexPath:indexPath];
+    id <JYMoodDate> page = [self pageForSection:indexPath.section];
+    NSComparisonResult comparison = [self.gregorian compareDate:date.date toDate:page.date toUnitGranularity:NSCalendarUnitMonth];
     switch (comparison) {
         case NSOrderedAscending:
             return JYCalendarMonthPositionPrevious;
@@ -215,12 +213,6 @@
     coordinate.column = indexPath.item % 7;
     return coordinate;
 }
-
-//- (void)reloadSections {
-//    self.numberOfMonths = [self.gregorian components:NSCalendarUnitMonth fromDate:[self.gregorian jy_firstDayOfMonth:self.minimumDate] toDate:self.maximumDate options:0].month+1;
-//    self.numberOfWeeks = [self.gregorian components:NSCalendarUnitWeekOfYear fromDate:[self.gregorian jy_firstDayOfWeek:self.minimumDate] toDate:self.maximumDate options:0].weekOfYear+1;
-//    [self clearCaches];
-//}
 
 - (void)clearCaches {
     [self.months removeAllObjects];
@@ -239,18 +231,39 @@
 
 #pragma mark - Public functinos
 
+- (id <JYMoodDate>)currentMonth {
+    return self.calendar.currentPage;
+}
+
 - (void)adjustMonthPosition {
     [self.calendar adjustMonthPosition];
 }
 
-- (NSString *)monthTextForMonth:(NSDate *)month {
-    NSString *text = [self.calendar.formatter stringFromDate:month];
+- (NSIndexPath *)indexPathForDate:(id <JYMoodDate>)date {
+    return [self indexPathForDate:date atMonthPosition:JYCalendarMonthPositionCurrent scope:self.calendar.scope];
+}
+
+- (NSInteger)todayName {
+    return self.calendar.todayName;
+}
+
+- (NSString *)dayNameForDate:(id <JYMoodDate>)date {
+    NSString *dayName = @([self.gregorian component:NSCalendarUnitDay fromDate:date.date]).stringValue;
+    return dayName;
+}
+
+- (NSInteger)currentMonthName {
+    return self.calendar.currentMonthName;
+}
+
+- (NSString *)monthNameForMonth:(id <JYMoodDate>)month {
+    NSString *text = [self.calendar.formatter stringFromDate:month.date];
     return text;
 }
 
-- (NSString *)dayTextForMonth:(NSDate *)month index:(NSInteger)index {
+- (NSString *)dayNameForMonth:(id <JYMoodDate>)month index:(NSInteger)index {
     NSUInteger daysOffset = index;
-    NSDate *date = [self.gregorian dateByAddingUnit:NSCalendarUnitDay value:daysOffset toDate:month options:0];
+    NSDate *date = [self.gregorian dateByAddingUnit:NSCalendarUnitDay value:daysOffset toDate:month.date options:0];
     if ([self.gregorian isDateInToday:date]) {
         return @"今";
     } else {
@@ -259,20 +272,22 @@
     }
 }
 
-- (NSDate *)monthDateForIndex:(NSInteger)index {
+- (JYMoodMonthDate *)monthDateForIndex:(NSInteger)index {
     NSNumber *key = @(index);
-    NSDate *month = self.months[key];
+    id <JYMoodDate> month = self.months[key];
     if (!month) {
-        month = [self.gregorian dateByAddingUnit:NSCalendarUnitMonth value:index toDate:[self.gregorian jy_firstDayOfMonth:self.minimumDate] options:0];
+        NSDate *date = [self.gregorian dateByAddingUnit:NSCalendarUnitMonth value:index toDate:[self.gregorian jy_firstDayOfMonth:self.minimumDate].date options:0];
+        month = [[JYMoodMonthDate alloc] initWithDate:date];
         NSInteger numberOfHeadPlaceholders = [self numberOfHeadPlaceholdersForMonth:month];
-        NSDate *monthHead = [self.gregorian dateByAddingUnit:NSCalendarUnitDay value:-numberOfHeadPlaceholders toDate:month options:0];
+        NSDate *dateHead = [self.gregorian dateByAddingUnit:NSCalendarUnitDay value:-numberOfHeadPlaceholders toDate:month.date options:0];
+        id <JYMoodDate> monthHead = [[JYMoodMonthDate alloc] initWithDate:dateHead];
         self.months[key] = month;
         self.monthHeads[key] = monthHead;
     }
     return month;
 }
 
-- (NSInteger)numberOfRowsInMonth:(NSDate *)month {
+- (NSInteger)numberOfRowsInMonth:(id <JYMoodDate>)month {
     if (!month) return 0;
     if (self.calendar.placeholderType == JYCalendarPlaceholderTypeFillSixRows) return 6;
 
@@ -285,10 +300,14 @@
     return rowCount.integerValue;
 }
 
+- (id <JYMoodDate>)dateForIndexPath:(NSIndexPath *)indexPath {
+    if (!indexPath) return nil;
+    return [self dateForIndexPath:indexPath scope:self.calendar.scope];
+}
+
 #pragma mark - JYCalendarDelegate
 
-- (void)calendar:(JYCalendar *)calendar scrollToDate:(NSDate *)date animated:(BOOL)animated {
-    //animated &= _scrollEnabled; // No animation if _scrollEnabled == NO;
+- (void)calendar:(JYCalendar *)calendar scrollToDate:(id <JYMoodDate>)date animated:(BOOL)animated {
 
     NSInteger scrollOffset = [self indexPathForDate:date atMonthPosition:JYCalendarMonthPositionCurrent].section;
     if ([self.delegate respondsToSelector:@selector(calendarCalculator:setContentOffset:animated:)]) {

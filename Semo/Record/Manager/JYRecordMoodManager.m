@@ -8,9 +8,10 @@
 #import "JYRecordMoodManager.h"
 #import "JYRecordMoodDisplayView.h"
 #import "JYRecordMoodBottomView.h"
-#import "JYStyleImageFactory.h"
 #import "JYPainting.h"
 #import "Semo-Swift.h"
+#import "JYStyleImageFactory.h"
+#import "LGDrawer.h"
 #import "JYPrefixHeader.h"
 
 @interface JYRecordMoodManager () <JYRecordMoodBottomViewDelegate>
@@ -38,6 +39,14 @@
     [self.bottomView updateViewWithModel:self.painting];
     UIImage *image = [self styleImageWithStyleType:JYMoodStyleTypePass];
     self.moodDisplayView.image = image;
+}
+
+- (UIImage *)resultMoodImage {
+    CGSize size = CGSizeMake(_moodDisplayView.imageSize.width / 10.f, _moodDisplayView.imageSize.height / 10.f);
+    UIImage *sealImage = [self makeImageWithView:self.moodDisplayView withSize:self.moodDisplayView.size];
+    UIImage *paintImage = self.paintingView.image;
+    UIImage *resultImage = [LGDrawer drawImagesWithFinishSize:size image1:sealImage image1Rect:CGRectMake(0, 0, size.width, size.height) image2:paintImage image2Rect:CGRectMake(0, 0, size.width, size.height) clear:YES];
+    return resultImage;
 }
 
 - (void)initSubviews {
@@ -127,7 +136,7 @@
 
 #pragma mark 生成image
 - (UIImage *)makeImageWithView:(UIView *)view withSize:(CGSize)size {
-    UIGraphicsBeginImageContextWithOptions(size, YES, [UIScreen mainScreen].scale);
+    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
     [view.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

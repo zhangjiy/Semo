@@ -10,18 +10,21 @@
 #import "JYMonthCalendarCollectionViewCell.h"
 #import "JYPrefixHeader.h"
 
-@interface JYMonthCalendarView () <UICollectionViewDelegate, UICollectionViewDataSource, JYCalendarCollectionViewLayoutDelegate, JYCalendarCalculatorDelegate>
+@interface JYMonthCalendarView () <UICollectionViewDelegate, UICollectionViewDataSource, JYCalendarCollectionViewLayoutDelegate, JYCalendarCalculatorDelegate, JYMonthCalendarCollectionViewCellDelegate>
 @property (nonatomic, strong) UICollectionView * collectionView;
 
 @property (nonatomic, strong) JYCalendarCalculator * calculator;
+
+@property (nonatomic, strong) id <JYMoodDate> dayDate;
 
 @end
 
 @implementation JYMonthCalendarView
 
-- (instancetype)initWithFrame:(CGRect)frame calendar:(JYCalendar *)calendar {
+- (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor clearColor];
+        JYCalendar *calendar = [[JYCalendar alloc] init];
         self.calculator = [[JYCalendarCalculator alloc] initWithCalendar:calendar];
         self.calculator.delegate = self;
         [self initSubViews];
@@ -36,6 +39,20 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     _collectionView.frame = self.bounds;
+}
+
+- (JYMoodMonthDate *)currentMonth {
+    NSInteger index = self.calculator.currentMonthName;
+    return [self.calculator monthDateForIndex:index];
+}
+
+- (NSString *)dayName {
+    NSString *dayName = [self.calculator dayNameForDate:self.dayDate];
+    return dayName;
+}
+
+- (NSString *)todayName {
+    return [NSString stringWithFormat:@"%ld", (long)self.calculator.todayName];
 }
 
 - (UICollectionView *)collectionView {
@@ -67,6 +84,10 @@
     return layout;
 }
 
+- (void)reloadDate {
+    [self.collectionView reloadData];
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -79,7 +100,8 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     JYMonthCalendarCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    NSDate *moth = [self.calculator monthDateForIndex:indexPath.row];
+    cell.delegate = self;
+    JYMoodMonthDate *moth = [self.calculator monthDateForIndex:indexPath.row];
     [cell updateViewWithMonth:moth calculator:self.calculator];
    
     return cell;
@@ -112,6 +134,15 @@
         }
     }
     [self.collectionView setContentOffset:CGPointMake(0, scrollOffset * self.collectionView.height) animated:animated];
+}
+
+#pragma mark - JYMonthCalendarCollectionViewCellDelegate
+
+- (void)monthCalendarCollectionViewCell:(JYMonthCalendarCollectionViewCell *)cell didSelectItemAtIndexPath:(id <JYMoodDate>)date {
+    self.dayDate = date;
+    if ([self.delegate respondsToSelector:@selector(monthCalendarView:didSelectItemAtIndexPath:)]) {
+        [self.delegate monthCalendarView:self didSelectItemAtIndexPath:self.dayName];
+    }
 }
 
 @end

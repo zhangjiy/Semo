@@ -11,9 +11,10 @@
 #import "JYMonthCalendarView.h"
 #import "JYRecordMoodViewController.h"
 #import "JYCalendar.h"
+#import "JYMonthMood.h"
 #import "JYPrefixHeader.h"
 
-@interface ViewController ()
+@interface ViewController () <JYRecordMoodViewControllerDelegate, JYMonthCalendarViewDelegate>
 @property (nonatomic, strong) JYPlusControl * plusControl;
 @property (nonatomic, strong) JYMoodListView * moodListView;
 @property (nonatomic, strong) JYMonthCalendarView *monthCalendarView;
@@ -51,8 +52,7 @@
 
 - (JYMonthCalendarView *)monthCalendarView {
     if (!_monthCalendarView) {
-        JYCalendar *calendar = [[JYCalendar alloc] init];
-        _monthCalendarView = [[JYMonthCalendarView alloc] initWithFrame:CGRectZero calendar:calendar];
+        _monthCalendarView = [[JYMonthCalendarView alloc] initWithFrame:CGRectZero];
     }
     
     return _monthCalendarView;
@@ -69,16 +69,34 @@
     return _plusControl;
 }
 
-//- (JYMoodListView *)moodListView {
-//    if (!_moodListView) {
-//        _moodListView = [[JYMoodListView alloc] initWithFrame:CGRectMake(SMHomeLeft, NavigationBarHeight, self.view.width - SMHomeLeft * 2, JYHomeGridHeight)];
-//    }
-//    
-//    return _moodListView;
-//}
-
 - (void)plusControlAction:(UIControl *)sender {
-    JYRecordMoodViewController *controller = [[JYRecordMoodViewController alloc] init];
+    [self presentRecordMoodViewController:self.monthCalendarView.todayName];
+}
+
+#pragma -- mark -- JYRecordMoodViewControllerDelegate
+
+- (void)recordMoodViewController:(JYRecordMoodViewController *)controller dayMood:(JYDayMood *)dayMood {
+    JYMoodMonthDate *monthDate = self.monthCalendarView.currentMonth;
+    [monthDate.monthMood saveDayMood:dayMood forKey:dayMood.name];
+    
+    [self.monthCalendarView reloadDate];
+}
+
+#pragma -- mark -- JYMonthCalendarViewDelegate
+
+- (void)monthCalendarView:(JYMonthCalendarView *)view didSelectItemAtIndexPath:(NSString *)dayName {
+    [self presentRecordMoodViewController:dayName];
+}
+
+- (void)presentRecordMoodViewController:(NSString *)dayName {
+    JYMoodMonthDate *monthDate = (JYMoodMonthDate *)self.monthCalendarView.currentMonth;
+    JYDayMood * dayMood = [monthDate.monthMood.dayMoodDict valueForKey:dayName];
+    if (!dayMood) {
+        dayMood = [[JYDayMood alloc] initWithName:dayName];
+    }
+    
+    JYRecordMoodViewController *controller = [[JYRecordMoodViewController alloc] initWithDayMood:dayMood];
+    controller.delegate = self;
     controller.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:controller animated:YES completion:nil];
 }

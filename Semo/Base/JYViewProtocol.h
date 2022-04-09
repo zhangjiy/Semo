@@ -13,6 +13,7 @@
 @protocol JYViewProtocol <NSObject>
 @optional
 @property (nonatomic, strong, readonly) UIView * containerView;
+@property (nonatomic, strong, readonly) UIImage * resultMoodImage;
 - (instancetype)initWithFrame:(CGRect)frame;
 - (void)initConfig;
 - (void)initSubviews;

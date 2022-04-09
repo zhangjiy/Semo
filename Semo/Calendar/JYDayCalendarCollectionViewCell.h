@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JYDayCalendarCollectionViewCell : UICollectionViewCell
-- (void)updateViewWithText:(NSString *)text;
+@property (nonatomic, strong) NSString *text;
+@property (nullable, nonatomic, strong) UIImage *image;
 @end
 
 NS_ASSUME_NONNULL_END

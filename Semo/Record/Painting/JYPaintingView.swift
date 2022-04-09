@@ -13,11 +13,14 @@ import Chrysan
 import Zip
 
 class JYPaintingView: UIView {
-    var canvas: Canvas!
+    @objc public var image: UIImage {
+        return canvas.snapshot() ?? UIImage()
+    }
     
+    var canvas: Canvas!
     var filePath: String?
     
-    public var brushes: [Brush] = []
+    var brushes: [Brush] = []
     var chartlets: [MLTexture] = []
     
     var color: UIColor {
@@ -159,7 +162,7 @@ class JYPaintingView: UIView {
             
         }
     }
-
+    
     @objc public func changeColor(_ color: UIColor) {
         canvas.currentBrush.color = color
     }

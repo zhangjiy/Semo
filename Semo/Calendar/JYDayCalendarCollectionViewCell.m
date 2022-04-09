@@ -11,6 +11,7 @@
 @interface JYDayCalendarCollectionViewCell ()
 @property (nonatomic, strong) UIView * backgroundContentView;
 @property (nonatomic, strong) UILabel * titleLabel;
+@property (nonatomic, strong) UIImageView * imageView;
 @property (nonatomic, strong) JYCalendarCalculator * calculator;
 @end
 
@@ -26,6 +27,15 @@
 - (void)initWithSubViews {
     [self.contentView addSubview:self.backgroundContentView];
     [self.contentView addSubview:self.titleLabel];
+    [self.contentView addSubview:self.imageView];
+}
+
+- (UIImageView *)imageView {
+    if (!_imageView) {
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    }
+    
+    return _imageView;
 }
 
 - (UILabel *)titleLabel {
@@ -52,18 +62,29 @@
     return _backgroundContentView;
 }
 
-- (void)updateViewWithText:(NSString *)text {
-    self.titleLabel.text = text;
+- (void)setText:(NSString *)text {
+    if (_text != text) {
+        _text = text;
+        self.titleLabel.text = text;
+    }
+}
+
+- (void)setImage:(nullable UIImage *)image {
+    if (_image != image) {
+        _image = image;
+        self.imageView.image = image;
+        self.titleLabel.hidden = image ? YES:NO;
+    }
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     
     _backgroundContentView.frame = self.bounds;
-    
-    [self.titleLabel sizeToFit];
-    self.titleLabel.centerY = self.contentView.height / 2.f;
-    self.titleLabel.centerX = self.contentView.width / 2.f;
+    _imageView.size = CGSizeMake(self.contentView.height, self.contentView.height);
+    _imageView.centerX = self.contentView.width / 2.f;
+    _imageView.centerY = self.contentView.height / 2.f;
+    _titleLabel.frame = self.bounds;
 }
 
 @end

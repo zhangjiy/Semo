@@ -80,4 +80,8 @@
     }
 }
 
+- (CGSize)imageSize {
+    return _image.size;
+}
+
 @end
