@@ -30,14 +30,14 @@
 
 - (void)initSubViews {
     [self addSubview:self.gridView];
-    self.gridView.size = [self.gridView drawGridWithVerLineCount:4 horLineCount:8 scale:4/3.f];
+    [self.gridView drawGridWithVerLineCount:4 horLineCount:8 scale:4/3.f];
     [self addSubview:self.collectionView];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     _gridView.centerX = self.width / 2.f;
-    _collectionView.frame = self.bounds;
+    _collectionView.frame = _gridView.frame;
 }
 
 - (UICollectionView *)collectionView {
@@ -121,8 +121,8 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat width = JYHomeGridWidth / 4.f;
-    CGFloat height = width / 4.f * 3.f;
+    CGFloat width = _gridView.gridSize.width * 2;
+    CGFloat height = _gridView.gridSize.height * 2;
     return CGSizeMake(width, height);
 }
 

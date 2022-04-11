@@ -42,7 +42,7 @@
 
 - (void)initSubviews {
     [self.view addSubview:self.gridView];
-    self.gridView.size = [self.gridView drawGridWithVerLineCount:7 horLineCount:14 scale:1.f];
+    [self.gridView drawGridWithVerLineCount:7 horLineCount:14 scale:1.f];
     [self.view addSubview:self.recordManager.containerView];
     [self.view addSubview:self.cancelButton];
     [self.view addSubview:self.confirmButton];

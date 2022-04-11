@@ -8,11 +8,18 @@
 #import "JYGridView.h"
 #import "JYPrefixHeader.h"
 
-@implementation JYGridView
+@implementation JYGridView {
+    NSInteger _verLineCount;
+    NSInteger _horLineCount;
+    CGFloat _scale;
+}
 
 #pragma mark 绘制直线
 
-- (CGSize)drawGridWithVerLineCount:(NSInteger)verLineCount horLineCount:(NSInteger)horLineCount scale:(CGFloat)scale {
+- (void)drawGridWithVerLineCount:(NSInteger)verLineCount horLineCount:(NSInteger)horLineCount scale:(CGFloat)scale {
+    _verLineCount = verLineCount;
+    _horLineCount = horLineCount;
+    _scale = scale;
     CGFloat lineWidth = 1.f;
     void (^addLineWidthRect)(CGPoint rect, CGPoint rects, BOOL dashPattern) = ^(CGPoint rect, CGPoint rects, BOOL dashPattern) {
         UIBezierPath *pathLine = [UIBezierPath bezierPath];
@@ -31,26 +38,33 @@
     };
     CGFloat rVerlineCount = verLineCount * 2.f;
     CGFloat rHorLineCount = horLineCount * 2.f;
-    CGFloat gridWidth = floorf(self.width / rVerlineCount);
-    CGFloat rScale = scale > 0 ? scale : 1.f;
-    CGFloat gridHeight = floorf(self.height / rHorLineCount / rScale);
+    CGFloat gridWidth = self.gridSize.width;
+    CGFloat gridHeight = self.gridSize.height;
     CGFloat rWidth = rVerlineCount * gridWidth;
     CGFloat rHeight = rHorLineCount * gridHeight;
+    CGFloat gap = (self.width - rWidth) / 2.f;
     NSInteger count = 0;
     for (int i = 0; i <= rVerlineCount; i ++) {
         count ++;
         BOOL dashPattern = fmod(count, 2) == 0 ? YES : NO;
-        addLineWidthRect(CGPointMake(i * gridWidth, 0.f), CGPointMake(i * gridWidth, rHeight), dashPattern);
+        addLineWidthRect(CGPointMake(i * gridWidth + gap, 0), CGPointMake(i * gridWidth + gap, rHeight), dashPattern);
     }
     
     count = 0;
     for (int i = 0; i <= rHorLineCount; i ++) {
         count ++;
         BOOL dashPattern = fmod(count, 2) == 0 ? YES : NO;
-        addLineWidthRect(CGPointMake(0.f, i * gridHeight), CGPointMake(rWidth, i * gridHeight), dashPattern);
+        addLineWidthRect(CGPointMake(gap, i * gridHeight), CGPointMake(rWidth + gap, i * gridHeight), dashPattern);
     }
-    
-    return CGSizeMake(rWidth, rHeight);
+}
+
+- (CGSize)gridSize {
+    CGFloat rVerlineCount = _verLineCount * 2.f;
+    CGFloat rHorLineCount = _horLineCount * 2.f;
+    CGFloat rScale = _scale > 0 ? _scale : 1.f;
+    CGFloat gridWidth = floorf(self.width / rVerlineCount);
+    CGFloat gridHeight = floorf(self.height / rHorLineCount / rScale);
+    return CGSizeMake(gridWidth, gridHeight);
 }
 
 @end
