@@ -1,58 +1,56 @@
 //
-//  JYMonthCalendarView.m
+//  JYMonthCalendarViewManager.m
 //  Semo
 //
-//  Created by jiyang on 2022/3/12.
+//  Created by jiyang on 2022/4/10.
 //
 
-#import "JYMonthCalendarView.h"
+#import "JYMonthCalendarViewManager.h"
 #import "JYCalendarCollectionViewLayout.h"
 #import "JYMonthCalendarCollectionViewCell.h"
+#import "JYCalendarCalculator.h"
 #import "JYPrefixHeader.h"
 
-@interface JYMonthCalendarView () <UICollectionViewDelegate, UICollectionViewDataSource, JYCalendarCollectionViewLayoutDelegate, JYCalendarCalculatorDelegate, JYMonthCalendarCollectionViewCellDelegate>
+@interface JYMonthCalendarViewManager () <UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, JYCalendarCollectionViewLayoutDelegate, JYCalendarCalculatorDelegate, JYMonthCalendarCollectionViewCellDelegate>
+@property (nonatomic, strong) UIView * containerView;
 @property (nonatomic, strong) UICollectionView * collectionView;
-
-@property (nonatomic, strong) JYCalendarCalculator * calculator;
-
+@property (nonatomic, strong) JYCalendarCalculator *calculator;
 @property (nonatomic, strong) id <JYMoodDate> dayDate;
-
 @end
 
-@implementation JYMonthCalendarView
+@implementation JYMonthCalendarViewManager
 
 - (instancetype)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = [UIColor clearColor];
-        JYCalendar *calendar = [[JYCalendar alloc] init];
-        self.calculator = [[JYCalendarCalculator alloc] initWithCalendar:calendar];
-        self.calculator.delegate = self;
-        [self initSubViews];
+    self = [super init];
+    if (self) {
+        self.containerView = [[UIView alloc] initWithFrame:frame];
+        [self initSubviews];
+        [self initConfig];
+        [self layoutSubviews];
     }
+    
     return self;
 }
 
-- (void)initSubViews {
-    [self addSubview:self.collectionView];
+- (void)initConfig {
+    
+}
+
+- (void)initSubviews {
+    [self.containerView addSubview:self.collectionView];
 }
 
 - (void)layoutSubviews {
-    [super layoutSubviews];
-    _collectionView.frame = self.bounds;
+    _collectionView.frame = self.containerView.bounds;
 }
 
-- (JYMoodMonthDate *)currentMonth {
-    NSInteger index = self.calculator.currentMonthName;
-    return [self.calculator monthDateForIndex:index];
-}
-
-- (NSString *)dayName {
-    NSString *dayName = [self.calculator dayNameForDate:self.dayDate];
-    return dayName;
-}
-
-- (NSString *)todayName {
-    return [NSString stringWithFormat:@"%ld", (long)self.calculator.todayName];
+- (JYCalendarCalculator *)calculator {
+    if (!_calculator) {
+        _calculator = [[JYCalendarCalculator alloc] init];
+        _calculator.delegate = self;
+    }
+    
+    return _calculator;
 }
 
 - (UICollectionView *)collectionView {
@@ -84,6 +82,20 @@
     return layout;
 }
 
+- (JYMoodMonthDate *)currentMonth {
+    NSInteger index = self.calculator.currentMonthName;
+    return [self.calculator monthDateForIndex:index];
+}
+
+- (NSString *)dayName {
+    NSString *dayName = [self.calculator dayNameForDate:self.dayDate];
+    return dayName;
+}
+
+- (NSString *)todayName {
+    return [NSString stringWithFormat:@"%ld", (long)self.calculator.todayName];
+}
+
 - (void)reloadDate {
     [self.collectionView reloadData];
 }
@@ -95,7 +107,7 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.calculator.numberOfSectionsIn;
+    return self.calculator.numberOfMonths;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -108,7 +120,7 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(self.width, self.height);
+    return CGSizeMake(self.containerView.width, self.containerView.height);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -134,6 +146,39 @@
         }
     }
     [self.collectionView setContentOffset:CGPointMake(0, scrollOffset * self.collectionView.height) animated:animated];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [self scrollViewEndScroll:scrollView];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if ( !decelerate ) {
+        [self scrollViewEndScroll:scrollView];
+    }
+}
+
+- (void)scrollViewEndScroll:(UIScrollView *)scrollView {
+    
+    if (!scrollView.pagingEnabled) {
+        return;
+    }
+    CGFloat targetOffset = 0, contentSize = 0;
+    switch (self.collectionViewFlowLayout.scrollDirection) {
+        case UICollectionViewScrollDirectionHorizontal: {
+            targetOffset = scrollView.contentOffset.x;
+            contentSize = scrollView.width;
+            break;
+        }
+        case UICollectionViewScrollDirectionVertical: {
+            targetOffset = scrollView.contentOffset.y;
+            contentSize = scrollView.height;
+            break;
+        }
+    }
+    
+    NSInteger index = lrint(targetOffset/contentSize);
+    [self.calculator endScroll:index];
 }
 
 #pragma mark - JYMonthCalendarCollectionViewCellDelegate

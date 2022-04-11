@@ -13,8 +13,7 @@
 
 @property (nonatomic, copy) NSLocale *locale;
 
-@property (nullable, nonatomic, strong) NSDate *today;
-@property (nonatomic, strong) id <JYMoodDate> currentPage;
+@property (nonatomic, strong) id <JYMoodDate> sameMonth;
 
 @property (nonatomic, strong) id <JYMoodDate> minimumDate;
 @property (nonatomic, strong) id <JYMoodDate> maximumDate;
@@ -41,13 +40,14 @@
     _timeZone = [NSTimeZone defaultTimeZone];
     [self invalidateDateTools];
     
-    _today = [self.gregorian startOfDayForDate:[NSDate date]];
-    JYMoodMonthDate *monthDate = [[JYMoodMonthDate alloc] initWithDate:_today];
-    _currentPage = [self.gregorian jy_firstDayOfMonth:monthDate];
+    NSDate *dayDate = [self.gregorian startOfDayForDate:[NSDate date]];
+    _today = [[JYMoodMonthDate alloc] initWithDate:dayDate];
+    
+    _currentMonth = [self.gregorian jy_firstDayOfMonth:_today];
+    _sameMonth = [self.gregorian jy_firstDayOfMonth:_today];
 
     _minimumDate = [[JYMoodMonthDate alloc] initWithDate:[self.formatter dateFromString:@"2022-01-01"]];
     _maximumDate = [[JYMoodMonthDate alloc] initWithDate:[self.formatter dateFromString:@"2022-12-31"]];
-    _scope = JYCalendarScopeMonth;
     [self requestBoundingDatesIfNecessary];
     
 }
@@ -75,31 +75,30 @@
         
         _minimumDate = [[JYMoodMonthDate alloc] initWithDate:newMin];
         _maximumDate = [[JYMoodMonthDate alloc] initWithDate:newMax];
-        [self reloadSections];
+        [self reloadDate];
         
         return res;
     }
     return NO;
 }
 
-- (void)reloadSections {
+- (void)reloadDate {
     id <JYMoodDate> firstDayOfMonth = [self.gregorian jy_firstDayOfMonth:self.minimumDate];
-    self.numberOfMonths = [self.gregorian components:NSCalendarUnitMonth fromDate:firstDayOfMonth.date toDate:self.maximumDate.date options:0].month+1;
-    self.numberOfWeeks = [self.gregorian components:NSCalendarUnitWeekOfYear fromDate:[self.gregorian jy_firstDayOfWeek:self.minimumDate].date toDate:self.maximumDate.date options:0].weekOfYear+1;
-    //[self clearCaches];
-}
-
-- (NSInteger)currentMonthName {
-    return [self.gregorian component:NSCalendarUnitMonth fromDate:self.currentPage.date];
-}
-
-- (NSInteger)todayName {
-    return [self.gregorian component:NSCalendarUnitDay fromDate:self.today];
+    _numberOfMonths = [self.gregorian components:NSCalendarUnitMonth fromDate:firstDayOfMonth.date toDate:self.maximumDate.date options:0].month+1;
 }
 
 - (void)adjustMonthPosition {
     [self requestBoundingDatesIfNecessary];
-    [self scrollToPageForDate:self.currentPage animated:NO];
+    [self scrollToPageForDate:self.sameMonth animated:NO];
+}
+
+- (void)endScroll:(NSInteger)index {
+    id <JYMoodDate> minimumPage = [self.gregorian jy_firstDayOfMonth:_minimumDate];
+    NSDate *targetPage = [self.gregorian dateByAddingUnit:NSCalendarUnitMonth value:index toDate:minimumPage.date options:0];
+    BOOL shouldTriggerPageChange = [self isDateInDifferentPage:targetPage];
+    if (shouldTriggerPageChange) {
+        _currentMonth = [[JYMoodMonthDate alloc] initWithDate:targetPage];
+    }
 }
 
 - (void)scrollToPageForDate:(id <JYMoodDate>)date animated:(BOOL)animated {
@@ -108,14 +107,11 @@
         date = [self safeDateForDate:date];
         if (!date) return;
     }
-    
-    if (!self.floatingMode) {
-        if (!_minimumDate || !_maximumDate) {
-            return;
-        }
-        if ([self.delegate respondsToSelector:@selector(calendar:scrollToDate:animated:)]) {
-            [self.delegate calendar:self scrollToDate:date animated:animated];
-        }
+    if (!_minimumDate || !_maximumDate) {
+        return;
+    }
+    if ([self.delegate respondsToSelector:@selector(calendar:scrollToDate:animated:)]) {
+        [self.delegate calendar:self scrollToDate:date animated:animated];
     }
 }
 
@@ -133,6 +129,10 @@
         date = self.maximumDate;
     }
     return date;
+}
+
+- (BOOL)isDateInDifferentPage:(NSDate *)date {
+    return ![self.gregorian isDate:date equalToDate:_currentMonth.date toUnitGranularity:NSCalendarUnitMonth];
 }
 
 @end

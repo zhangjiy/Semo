@@ -8,16 +8,15 @@
 #import "ViewController.h"
 #import "JYPlusControl.h"
 #import "JYMoodListView.h"
-#import "JYMonthCalendarView.h"
 #import "JYRecordMoodViewController.h"
-#import "JYCalendar.h"
+#import "JYMonthCalendarViewManager.h"
 #import "JYMonthMood.h"
 #import "JYPrefixHeader.h"
 
 @interface ViewController () <JYRecordMoodViewControllerDelegate, JYMonthCalendarViewDelegate>
 @property (nonatomic, strong) JYPlusControl * plusControl;
 @property (nonatomic, strong) JYMoodListView * moodListView;
-@property (nonatomic, strong) JYMonthCalendarView *monthCalendarView;
+@property (nonatomic, strong) id <JYMonthCalendarViewManagerProtocol> calendarViewManager;
 @end
 
 @implementation ViewController
@@ -33,29 +32,28 @@
 }
 
 - (void)initSubviews {
-    [self.view addSubview:self.monthCalendarView];
+    [self.view addSubview:self.calendarViewManager.containerView];
     [self.view addSubview:self.plusControl];
 }
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
-    _monthCalendarView.width = self.view.width - SMHomeLeft * 2;
-    _monthCalendarView.height = self.view.height - StatusBarHeight;
-    _monthCalendarView.top = StatusBarHeight;
-    _monthCalendarView.left = SMHomeLeft;
+    _calendarViewManager.containerView.frame = self.view.bounds;
+    [_calendarViewManager layoutSubviews];
+    
     _plusControl.width = SMPluginControlWidth;
     _plusControl.height = SMPluginControlHeight;
     _plusControl.centerX = self.view.width / 2.f;
     _plusControl.bottom = self.view.height - SafeAreaHeight;
 }
 
-- (JYMonthCalendarView *)monthCalendarView {
-    if (!_monthCalendarView) {
-        _monthCalendarView = [[JYMonthCalendarView alloc] initWithFrame:CGRectZero];
+- (id <JYMonthCalendarViewManagerProtocol>)calendarViewManager {
+    if (!_calendarViewManager) {
+        _calendarViewManager = [[JYMonthCalendarViewManager alloc] initWithFrame:self.view.bounds];
     }
     
-    return _monthCalendarView;
+    return _calendarViewManager;
 }
 
 - (JYPlusControl *)plusControl {
@@ -70,16 +68,16 @@
 }
 
 - (void)plusControlAction:(UIControl *)sender {
-    [self presentRecordMoodViewController:self.monthCalendarView.todayName];
+    [self presentRecordMoodViewController:self.calendarViewManager.todayName];
 }
 
 #pragma -- mark -- JYRecordMoodViewControllerDelegate
 
 - (void)recordMoodViewController:(JYRecordMoodViewController *)controller dayMood:(JYDayMood *)dayMood {
-    JYMoodMonthDate *monthDate = self.monthCalendarView.currentMonth;
+    JYMoodMonthDate *monthDate = self.calendarViewManager.currentMonth;
     [monthDate.monthMood saveDayMood:dayMood forKey:dayMood.name];
     
-    [self.monthCalendarView reloadDate];
+    [self.calendarViewManager reloadDate];
 }
 
 #pragma -- mark -- JYMonthCalendarViewDelegate
@@ -89,7 +87,7 @@
 }
 
 - (void)presentRecordMoodViewController:(NSString *)dayName {
-    JYMoodMonthDate *monthDate = (JYMoodMonthDate *)self.monthCalendarView.currentMonth;
+    JYMoodMonthDate *monthDate = (JYMoodMonthDate *)self.calendarViewManager.currentMonth;
     JYDayMood * dayMood = [monthDate.monthMood.dayMoodDict valueForKey:dayName];
     if (!dayMood) {
         dayMood = [[JYDayMood alloc] initWithName:dayName];

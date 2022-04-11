@@ -36,13 +36,14 @@ typedef NS_ENUM(NSUInteger, JYCalendarMonthPosition) {
 
 @interface JYCalendarCalculator : NSObject
 
-- (instancetype)initWithCalendar:(JYCalendar *)calendar;
-
 @property (nonatomic, weak) id <JYCalendarCalculatorDelegate> delegate;
 
+@property (nonatomic, assign, readonly) NSInteger numberOfMonths;
 @property (nonatomic, strong, readonly) id <JYMoodDate> currentMonth;
+@property (nonatomic, strong, readonly) id <JYMoodDate> sameMonth;
+@property (nonatomic, strong, readonly) id <JYMoodDate> today;
 @property (nonatomic, assign, readonly) NSInteger currentMonthName;
-@property (nonatomic, assign, readonly) NSInteger numberOfSectionsIn;
+@property (nonatomic, assign, readonly) NSInteger sameMonthName;
 @property (nonatomic, assign, readonly) NSInteger todayName;
 
 - (void)adjustMonthPosition;
@@ -54,7 +55,14 @@ typedef NS_ENUM(NSUInteger, JYCalendarMonthPosition) {
 - (NSString *)dayNameForDate:(id <JYMoodDate>)date;
 
 - (JYMoodMonthDate *)monthDateForIndex:(NSInteger)index;
-- (id <JYMoodDate>)dateForIndexPath:(NSIndexPath *)indexPath;
+- (id <JYMoodDate>)dayDayForIndex:(NSInteger)index;
+
+- (void)endScroll:(NSInteger)index;
+
+extern NSInteger JYCalendarDataIndexFromDateName(NSInteger value);
+
 @end
+
+
 
 NS_ASSUME_NONNULL_END

@@ -14,7 +14,7 @@
 
 @interface JYRecordMoodViewController ()
 @property (nonatomic, strong) JYGridView *gridView;
-@property (nonatomic, strong) id <JYViewProtocol> recordManager;
+@property (nonatomic, strong) id <JYRecordMoodManagerProtocol> recordManager;
 @property (nonatomic, strong) UIButton *cancelButton;
 @property (nonatomic, strong) UIButton *confirmButton;
 @property (nonatomic, strong) JYDayMood * dayMood;

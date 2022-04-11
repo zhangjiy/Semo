@@ -11,7 +11,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, JYCalendarScope) {
     JYCalendarScopeMonth,
-    JYCalendarScopeWeek
 };
 
 typedef NS_ENUM(NSUInteger, JYCalendarPlaceholderType) {
@@ -33,19 +32,16 @@ typedef NS_ENUM(NSUInteger, JYCalendarPlaceholderType) {
 
 @property (nonatomic, weak) id <JYCalendarDelegate> delegate;
 
-@property (nonatomic, strong, readonly) id <JYMoodDate> currentPage;
-@property (nonatomic, assign, readonly) NSInteger currentMonthName;
-@property (nonatomic, assign, readonly) NSInteger todayName;
+@property (nonatomic, assign, readonly) NSInteger numberOfMonths;
+
+@property (nonatomic, strong, readonly) id <JYMoodDate> currentMonth;
+@property (nonatomic, strong, readonly) id <JYMoodDate> sameMonth;
+@property (nonatomic, strong, readonly) id <JYMoodDate> today;
 @property (nonatomic, strong) NSCalendar *gregorian;
 @property (nonatomic, strong) NSDateFormatter *formatter;
-@property (nonatomic, assign) NSInteger numberOfMonths;
-@property (nonatomic, assign) NSInteger numberOfWeeks;
-
-@property (nonatomic, assign) JYCalendarScope scope;
-@property (nonatomic, assign) JYCalendarPlaceholderType placeholderType;
-@property (nonatomic, assign) BOOL floatingMode;
 
 - (void)adjustMonthPosition;
+- (void)endScroll:(NSInteger)index;
 @end
 
 NS_ASSUME_NONNULL_END

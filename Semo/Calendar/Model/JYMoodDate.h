@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSInteger, JYMoodDateType) {
     JYMoodDateTypeUnknown = 0,
     JYMoodDateTypeMonth,
+    JYMoodDateTypeWeek,
     JYMoodDateTypeDay
 };
 
@@ -25,13 +26,19 @@ typedef NS_ENUM(NSInteger, JYMoodDateType) {
 @property (nonatomic, strong) NSDateFormatter *formatter;
 @end
 
-@interface JYMoodMonthDate : NSObject <JYMoodDate>
-@property (nonatomic, strong) JYMonthMood * monthMood;
+@interface JYMoodDate : NSObject <JYMoodDate>
 - (instancetype)initWithDate:(NSDate *)date;
 @end
 
-@interface JYMoodWeekDate : NSObject <JYMoodDate>
-- (instancetype)initWithDate:(NSDate *)date;
+@interface JYMoodMonthDate : JYMoodDate
+@property (nonatomic, strong) JYMonthMood * monthMood;
 @end
+
+@interface JYMoodWeekDate : JYMoodDate
+@end
+
+@interface JYMoodDayDate : JYMoodDate
+@end
+
 
 NS_ASSUME_NONNULL_END

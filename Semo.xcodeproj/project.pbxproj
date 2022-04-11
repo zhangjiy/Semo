@@ -56,7 +56,6 @@
 		B4A90C6427E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C6327E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.m */; };
 		B4AC37A627DC789200529722 /* JYARCArrangeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37A527DC789200529722 /* JYARCArrangeTextView.swift */; };
 		B4AC37A927DC78D300529722 /* JYARCArrangeStartView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37A727DC78D300529722 /* JYARCArrangeStartView.m */; };
-		B4AC37EE27DCC09500529722 /* JYMonthCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37ED27DCC09500529722 /* JYMonthCalendarView.m */; };
 		B4AC37F127DCC41100529722 /* JYMonthCalendarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37F027DCC41100529722 /* JYMonthCalendarCollectionViewCell.m */; };
 		B4AC37F427DCC56600529722 /* JYCalendarCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37F327DCC56600529722 /* JYCalendarCalculator.m */; };
 		B4AC37F727DCC93500529722 /* NSCalendar+JYCalendarExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37F627DCC93500529722 /* NSCalendar+JYCalendarExtensions.m */; };
@@ -77,6 +76,7 @@
 		B4BF763827E95CFC003BBAC5 /* JYPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF763727E95CFC003BBAC5 /* JYPopupMenu.m */; };
 		B4BF763C27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF763B27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.m */; };
 		B4BF764227E963C9003BBAC5 /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF764127E963C9003BBAC5 /* UIView+ViewController.m */; };
+		B4E521F62802E49A00492B5E /* JYMonthCalendarViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E521F52802E49A00492B5E /* JYMonthCalendarViewManager.m */; };
 		B4E7FA6527F6C42D00604F5E /* ZHDrawingLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA2F27F6C42C00604F5E /* ZHDrawingLineLayer.m */; };
 		B4E7FA6627F6C42D00604F5E /* ZHDrawingCuboidLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA3027F6C42C00604F5E /* ZHDrawingCuboidLayer.m */; };
 		B4E7FA6727F6C42D00604F5E /* ZHDrawingRighTangleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA3127F6C42C00604F5E /* ZHDrawingRighTangleLayer.m */; };
@@ -241,8 +241,6 @@
 		B4AC37A527DC789200529722 /* JYARCArrangeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JYARCArrangeTextView.swift; sourceTree = "<group>"; };
 		B4AC37A727DC78D300529722 /* JYARCArrangeStartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYARCArrangeStartView.m; sourceTree = "<group>"; };
 		B4AC37A827DC78D300529722 /* JYARCArrangeStartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYARCArrangeStartView.h; sourceTree = "<group>"; };
-		B4AC37EC27DCC09500529722 /* JYMonthCalendarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYMonthCalendarView.h; sourceTree = "<group>"; };
-		B4AC37ED27DCC09500529722 /* JYMonthCalendarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYMonthCalendarView.m; sourceTree = "<group>"; };
 		B4AC37EF27DCC41100529722 /* JYMonthCalendarCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYMonthCalendarCollectionViewCell.h; sourceTree = "<group>"; };
 		B4AC37F027DCC41100529722 /* JYMonthCalendarCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYMonthCalendarCollectionViewCell.m; sourceTree = "<group>"; };
 		B4AC37F227DCC56600529722 /* JYCalendarCalculator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYCalendarCalculator.h; sourceTree = "<group>"; };
@@ -283,6 +281,10 @@
 		B4BF763B27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupMenuCollectionViewCell.m; sourceTree = "<group>"; };
 		B4BF764027E963C9003BBAC5 /* UIView+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewController.h"; sourceTree = "<group>"; };
 		B4BF764127E963C9003BBAC5 /* UIView+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewController.m"; sourceTree = "<group>"; };
+		B4E521F42802E49A00492B5E /* JYMonthCalendarViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYMonthCalendarViewManager.h; sourceTree = "<group>"; };
+		B4E521F52802E49A00492B5E /* JYMonthCalendarViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYMonthCalendarViewManager.m; sourceTree = "<group>"; };
+		B4E521F72802E4EF00492B5E /* JYRecordMoodManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYRecordMoodManagerProtocol.h; sourceTree = "<group>"; };
+		B4E521FB2802E5EC00492B5E /* JYMonthCalendarViewManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYMonthCalendarViewManagerProtocol.h; sourceTree = "<group>"; };
 		B4E7FA2D27F6C42C00604F5E /* ZHDrawingCircleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingCircleLayer.h; sourceTree = "<group>"; };
 		B4E7FA2E27F6C42C00604F5E /* ZHDrawingGraffitiLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingGraffitiLayer.h; sourceTree = "<group>"; };
 		B4E7FA2F27F6C42C00604F5E /* ZHDrawingLineLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingLineLayer.m; sourceTree = "<group>"; };
@@ -589,24 +591,9 @@
 		B4AC37EB27DCC07B00529722 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				B4AC37EC27DCC09500529722 /* JYMonthCalendarView.h */,
-				B4AC37ED27DCC09500529722 /* JYMonthCalendarView.m */,
-				B4AC380527DE30E500529722 /* JYCalendarCollectionViewLayout.h */,
-				B4AC380627DE30E500529722 /* JYCalendarCollectionViewLayout.m */,
-				B4AC37EF27DCC41100529722 /* JYMonthCalendarCollectionViewCell.h */,
-				B4AC37F027DCC41100529722 /* JYMonthCalendarCollectionViewCell.m */,
-				B4AC37FB27DD9FB400529722 /* JYDayCalendarView.h */,
-				B4AC37FC27DD9FB400529722 /* JYDayCalendarView.m */,
-				B4AC37FE27DDA4CF00529722 /* JYDayCalendarCollectionViewCell.h */,
-				B4AC37FF27DDA4CF00529722 /* JYDayCalendarCollectionViewCell.m */,
-				B4AC37F227DCC56600529722 /* JYCalendarCalculator.h */,
-				B4AC37F327DCC56600529722 /* JYCalendarCalculator.m */,
-				B4AC37F527DCC93500529722 /* NSCalendar+JYCalendarExtensions.h */,
-				B4AC37F627DCC93500529722 /* NSCalendar+JYCalendarExtensions.m */,
-				B4AC37F827DCCFD000529722 /* JYCalendar.h */,
-				B4AC37F927DCCFD000529722 /* JYCalendar.m */,
-				B480EFC327FE8D9200EA4811 /* JYMoodDate.h */,
-				B480EFC427FE8D9200EA4811 /* JYMoodDate.m */,
+				B4E521FA2802E5B800492B5E /* Model */,
+				B4E521F92802E59300492B5E /* Manager */,
+				B4E521F82802E56D00492B5E /* View */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -655,6 +642,7 @@
 				B4EA2C1127E752BA00779793 /* JYRecordMoodManager.m */,
 				B448897B27FAC922007BD0FA /* JYRecordMoodContextManager.h */,
 				B448897C27FAC922007BD0FA /* JYRecordMoodContextManager.m */,
+				B4E521F72802E4EF00492B5E /* JYRecordMoodManagerProtocol.h */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -694,6 +682,46 @@
 				B4609CE227EB3E44009BC2A5 /* UIControl+Block.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B4E521F82802E56D00492B5E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4AC380527DE30E500529722 /* JYCalendarCollectionViewLayout.h */,
+				B4AC380627DE30E500529722 /* JYCalendarCollectionViewLayout.m */,
+				B4AC37EF27DCC41100529722 /* JYMonthCalendarCollectionViewCell.h */,
+				B4AC37F027DCC41100529722 /* JYMonthCalendarCollectionViewCell.m */,
+				B4AC37FB27DD9FB400529722 /* JYDayCalendarView.h */,
+				B4AC37FC27DD9FB400529722 /* JYDayCalendarView.m */,
+				B4AC37FE27DDA4CF00529722 /* JYDayCalendarCollectionViewCell.h */,
+				B4AC37FF27DDA4CF00529722 /* JYDayCalendarCollectionViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B4E521F92802E59300492B5E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				B4AC37F227DCC56600529722 /* JYCalendarCalculator.h */,
+				B4AC37F327DCC56600529722 /* JYCalendarCalculator.m */,
+				B4AC37F527DCC93500529722 /* NSCalendar+JYCalendarExtensions.h */,
+				B4AC37F627DCC93500529722 /* NSCalendar+JYCalendarExtensions.m */,
+				B4AC37F827DCCFD000529722 /* JYCalendar.h */,
+				B4AC37F927DCCFD000529722 /* JYCalendar.m */,
+				B4E521F42802E49A00492B5E /* JYMonthCalendarViewManager.h */,
+				B4E521F52802E49A00492B5E /* JYMonthCalendarViewManager.m */,
+				B4E521FB2802E5EC00492B5E /* JYMonthCalendarViewManagerProtocol.h */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		B4E521FA2802E5B800492B5E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B480EFC327FE8D9200EA4811 /* JYMoodDate.h */,
+				B480EFC427FE8D9200EA4811 /* JYMoodDate.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B4E7FA2727F6C3FC00604F5E /* Draw */ = {
@@ -1079,11 +1107,11 @@
 				B4E7FA7727F6C42D00604F5E /* ZHDrawingOvalLayer.m in Sources */,
 				B4AC37A927DC78D300529722 /* JYARCArrangeStartView.m in Sources */,
 				B4E7FA6727F6C42D00604F5E /* ZHDrawingRighTangleLayer.m in Sources */,
-				B4AC37EE27DCC09500529722 /* JYMonthCalendarView.m in Sources */,
 				B480EFC527FE8D9200EA4811 /* JYMoodDate.m in Sources */,
 				B4E7FA6627F6C42D00604F5E /* ZHDrawingCuboidLayer.m in Sources */,
 				B41AC73327D6F9BF00CDF4AB /* JYRecordMoodViewController.m in Sources */,
 				B4E7FA6A27F6C42D00604F5E /* ZHDrawingHexagonLayer.m in Sources */,
+				B4E521F62802E49A00492B5E /* JYMonthCalendarViewManager.m in Sources */,
 				B4E7FA6F27F6C42D00604F5E /* ZHDrawingRectLayer.m in Sources */,
 				B4B66B9B27F2D3D1007D3267 /* JYSealMoodSimpleView.m in Sources */,
 				B4AC380727DE30E500529722 /* JYCalendarCollectionViewLayout.m in Sources */,

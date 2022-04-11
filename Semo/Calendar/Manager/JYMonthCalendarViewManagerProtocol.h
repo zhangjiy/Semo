@@ -1,14 +1,15 @@
 //
-//  JYMonthCalendarView.h
+//  JYMonthCalendarViewManagerProtocol.h
 //  Semo
 //
-//  Created by jiyang on 2022/3/12.
+//  Created by jiyang on 2022/4/10.
 //
 
-#import <UIKit/UIKit.h>
-#import "JYCalendarCalculator.h"
+#ifndef JYMonthCalendarViewManagerProtocol_h
+#define JYMonthCalendarViewManagerProtocol_h
 
-NS_ASSUME_NONNULL_BEGIN
+#import "JYViewProtocol.h"
+#import "JYCalendarCalculator.h"
 
 @class JYMonthMood;
 
@@ -19,8 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
-@interface JYMonthCalendarView : UIView
-- (instancetype)initWithFrame:(CGRect)frame;
+@protocol JYMonthCalendarViewManagerProtocol <JYViewProtocol>
+@optional
 @property (nonatomic, weak) id <JYMonthCalendarViewDelegate> delegate;
 @property (nonatomic, strong, readonly) JYMoodMonthDate * currentMonth;
 @property (nonatomic, strong, readonly) NSString * dayName;
@@ -29,4 +30,4 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)reloadDate;
 @end
 
-NS_ASSUME_NONNULL_END
+#endif /* JYMonthCalendarViewManagerProtocol_h */

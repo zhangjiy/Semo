@@ -6,11 +6,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JYViewProtocol.h"
+#import "JYRecordMoodManagerProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JYRecordMoodManager : NSObject <JYViewProtocol>
+@interface JYRecordMoodManager : NSObject <JYRecordMoodManagerProtocol>
 
 @end
 

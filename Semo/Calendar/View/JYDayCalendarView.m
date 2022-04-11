@@ -24,6 +24,7 @@
     if (self = [super initWithFrame:frame]) {
         [self initSubViews];
     }
+    
     return self;
 }
 
@@ -117,7 +118,7 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    id <JYMoodDate> moodDate = [self.calculator dateForIndexPath:indexPath];
+    id <JYMoodDate> moodDate = [self.calculator dayDayForIndex:indexPath.row];
     if ([self.delegate respondsToSelector:@selector(dayCalendarView:didSelectItemAtIndexPath:)]) {
         [self.delegate dayCalendarView:self didSelectItemAtIndexPath:moodDate];
     }
