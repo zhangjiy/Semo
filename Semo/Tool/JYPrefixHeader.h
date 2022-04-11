@@ -62,7 +62,7 @@
 #define JYViewInset 20
 #define JYViewItemInset 10
 
-#define JYHomeGridWidth (ScreenWidth)
+#define JYHomeGridWidth (ScreenWidth + [UIScreen mainScreen].scale * 2)
 #define JYHomeGridHeight (JYHomeGridWidth * 2.f)
 
 #define JYWriteTop 50
