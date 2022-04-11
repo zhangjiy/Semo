@@ -76,8 +76,8 @@
     layout.delegate = self;
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing = 0;
-    layout.itemSize = [UIScreen mainScreen].bounds.size;
-    layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    layout.itemSize = self.containerView.bounds.size;
+    layout.sectionInset = UIEdgeInsetsZero;
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     return layout;
 }
@@ -185,8 +185,8 @@
 
 - (void)monthCalendarCollectionViewCell:(JYMonthCalendarCollectionViewCell *)cell didSelectItemAtIndexPath:(id <JYMoodDate>)date {
     self.dayDate = date;
-    if ([self.delegate respondsToSelector:@selector(monthCalendarView:didSelectItemAtIndexPath:)]) {
-        [self.delegate monthCalendarView:self didSelectItemAtIndexPath:self.dayName];
+    if ([self.delegate respondsToSelector:@selector(monthCalendarViewManager:didSelectItemAtIndexPath:)]) {
+        [self.delegate monthCalendarViewManager:self didSelectItemAtIndexPath:self.dayName];
     }
 }
 

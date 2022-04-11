@@ -7,6 +7,7 @@
 
 #import "JYDayCalendarView.h"
 #import "JYDayCalendarCollectionViewCell.h"
+#import "JYYearCalendarCollectionViewCell.h"
 #import "JYGridView.h"
 #import "JYMonthMood.h"
 #import "JYPrefixHeader.h"
@@ -14,7 +15,6 @@
 @interface JYDayCalendarView () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView * collectionView;
 @property (nonatomic, strong) JYGridView *gridView;
-
 @property (nonatomic, strong) JYCalendar *calendar;
 @end
 
@@ -49,7 +49,8 @@
         _collectionView.pagingEnabled = YES;
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
-        [_collectionView registerClass:[JYDayCalendarCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+        [_collectionView registerClass:[JYDayCalendarCollectionViewCell class] forCellWithReuseIdentifier:@"JYDayCalendarCollectionViewCell"];
+        [_collectionView registerClass:[JYYearCalendarCollectionViewCell class] forCellWithReuseIdentifier:@"JYYearCalendarCollectionViewCell"];
         _collectionView.scrollsToTop = NO;
         _collectionView.contentInset = UIEdgeInsetsZero;
         if (@available(iOS 11.0, *)) _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -92,11 +93,19 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     NSInteger numberOfRows = [self.calculator numberOfRowsInMonth:self.month];
-    return numberOfRows;
+    return numberOfRows + 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    JYDayCalendarCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    NSInteger numberOfRows = [self.calculator numberOfRowsInMonth:self.month];
+    if (indexPath.row == numberOfRows) {
+        JYYearCalendarCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYYearCalendarCollectionViewCell" forIndexPath:indexPath];
+
+        NSString *text = [self.calculator monthNameForMonth:self.month];
+        cell.text = text;
+        return cell;
+    }
+    JYDayCalendarCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYDayCalendarCollectionViewCell" forIndexPath:indexPath];
     NSString *text = [self.calculator dayNameForMonth:self.month index:indexPath.row];
     cell.text = text;
     NSDictionary *dayMoodDic = self.month.monthMood.dayMoodDict;

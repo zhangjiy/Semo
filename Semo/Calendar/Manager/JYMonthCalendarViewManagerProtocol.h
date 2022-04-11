@@ -12,11 +12,11 @@
 #import "JYCalendarCalculator.h"
 
 @class JYMonthMood;
+@protocol JYMonthCalendarViewManagerProtocol;
 
-@class JYMonthCalendarView;
 @protocol JYMonthCalendarViewDelegate <NSObject>
 @optional
-- (void)monthCalendarView:(JYMonthCalendarView *)view didSelectItemAtIndexPath:(NSString *)dayName;
+- (void)monthCalendarViewManager:(id <JYMonthCalendarViewManagerProtocol>)manager didSelectItemAtIndexPath:(NSString *)dayName;
 @end
 
 

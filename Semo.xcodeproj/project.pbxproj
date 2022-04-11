@@ -77,6 +77,7 @@
 		B4BF763C27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF763B27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.m */; };
 		B4BF764227E963C9003BBAC5 /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF764127E963C9003BBAC5 /* UIView+ViewController.m */; };
 		B4E521F62802E49A00492B5E /* JYMonthCalendarViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E521F52802E49A00492B5E /* JYMonthCalendarViewManager.m */; };
+		B4E522022803C55600492B5E /* JYYearCalendarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E522012803C55600492B5E /* JYYearCalendarCollectionViewCell.m */; };
 		B4E7FA6527F6C42D00604F5E /* ZHDrawingLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA2F27F6C42C00604F5E /* ZHDrawingLineLayer.m */; };
 		B4E7FA6627F6C42D00604F5E /* ZHDrawingCuboidLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA3027F6C42C00604F5E /* ZHDrawingCuboidLayer.m */; };
 		B4E7FA6727F6C42D00604F5E /* ZHDrawingRighTangleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA3127F6C42C00604F5E /* ZHDrawingRighTangleLayer.m */; };
@@ -285,6 +286,8 @@
 		B4E521F52802E49A00492B5E /* JYMonthCalendarViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYMonthCalendarViewManager.m; sourceTree = "<group>"; };
 		B4E521F72802E4EF00492B5E /* JYRecordMoodManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYRecordMoodManagerProtocol.h; sourceTree = "<group>"; };
 		B4E521FB2802E5EC00492B5E /* JYMonthCalendarViewManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYMonthCalendarViewManagerProtocol.h; sourceTree = "<group>"; };
+		B4E522002803C55600492B5E /* JYYearCalendarCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYYearCalendarCollectionViewCell.h; sourceTree = "<group>"; };
+		B4E522012803C55600492B5E /* JYYearCalendarCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYYearCalendarCollectionViewCell.m; sourceTree = "<group>"; };
 		B4E7FA2D27F6C42C00604F5E /* ZHDrawingCircleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingCircleLayer.h; sourceTree = "<group>"; };
 		B4E7FA2E27F6C42C00604F5E /* ZHDrawingGraffitiLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingGraffitiLayer.h; sourceTree = "<group>"; };
 		B4E7FA2F27F6C42C00604F5E /* ZHDrawingLineLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingLineLayer.m; sourceTree = "<group>"; };
@@ -695,6 +698,8 @@
 				B4AC37FC27DD9FB400529722 /* JYDayCalendarView.m */,
 				B4AC37FE27DDA4CF00529722 /* JYDayCalendarCollectionViewCell.h */,
 				B4AC37FF27DDA4CF00529722 /* JYDayCalendarCollectionViewCell.m */,
+				B4E522002803C55600492B5E /* JYYearCalendarCollectionViewCell.h */,
+				B4E522012803C55600492B5E /* JYYearCalendarCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1146,6 +1151,7 @@
 				B4BF763827E95CFC003BBAC5 /* JYPopupMenu.m in Sources */,
 				B4E7FA7A27F6C42D00604F5E /* ZHDrawingTrapezoidLayer.m in Sources */,
 				B490453627F00EEF005A265A /* JYPopupStyleMenuCollectionViewCell.m in Sources */,
+				B4E522022803C55600492B5E /* JYYearCalendarCollectionViewCell.m in Sources */,
 				B4E7FA7827F6C42D00604F5E /* ZHDrawingRulerLineLayer.m in Sources */,
 				B4E7FA6D27F6C42D00604F5E /* ZHDrawingTriangularPyramidLayer.m in Sources */,
 				B41AC73727D7007300CDF4AB /* JYMoodListView.m in Sources */,

@@ -10,7 +10,6 @@
 #import "JYPrefixHeader.h"
 
 @interface JYMonthCalendarCollectionViewCell () <JYDayCalendarViewDelegate>
-@property (nonatomic, strong) UILabel * titleLabel;
 @property (nonatomic, strong) JYDayCalendarView *dayCalendarView;
 @end
 
@@ -24,19 +23,7 @@
 }
 
 - (void)initWithSubViews {
-    [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.dayCalendarView];
-}
-
-- (UILabel *)titleLabel {
-    if (!_titleLabel) {
-        _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.textColor = [UIColor blackColor];
-        _titleLabel.font = [UIFont fontWithName:@"MarkerFelt-Wide" size:15];
-    }
-    
-    return _titleLabel;
 }
 
 - (JYDayCalendarView *)dayCalendarView {
@@ -50,21 +37,15 @@
 }
 
 - (void)updateViewWithMonth:(JYMoodMonthDate *)month calculator:(JYCalendarCalculator *)calculator {
-    NSString *text = [calculator monthNameForMonth:month];
-    self.titleLabel.text = text;
     self.dayCalendarView.calculator = calculator;
     self.dayCalendarView.month = month;
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _titleLabel.top = 10;
-    _titleLabel.size = CGSizeMake(self.contentView.width, 25);
-    _titleLabel.centerX = self.contentView.width / 2.f;
-    
     _dayCalendarView.width = self.contentView.width;
-    _dayCalendarView.height = self.contentView.height - _titleLabel.bottom - JYViewInset;
-    _dayCalendarView.top = _titleLabel.bottom + JYViewInset;
+    _dayCalendarView.height = self.contentView.height - StatusBarHeight - JYViewInset;
+    _dayCalendarView.top = StatusBarHeight + JYViewInset;
 }
 
 #pragma -- mark -- JYDayCalendarViewDelegate
