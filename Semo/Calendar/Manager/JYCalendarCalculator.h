@@ -57,6 +57,8 @@ typedef NS_ENUM(NSUInteger, JYCalendarMonthPosition) {
 - (JYMoodMonthDate *)monthDateForIndex:(NSInteger)index;
 - (id <JYMoodDate>)dayDayForIndex:(NSInteger)index;
 
+- (BOOL)isToday:(id <JYMoodDate>)month index:(NSInteger)index;
+
 - (void)endScroll:(NSInteger)index;
 
 extern NSInteger JYCalendarDataIndexFromDateName(NSInteger value);

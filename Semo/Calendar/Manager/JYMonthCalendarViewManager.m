@@ -20,6 +20,8 @@
 
 @implementation JYMonthCalendarViewManager
 
+@synthesize delegate = _delegate;
+
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super init];
     if (self) {
@@ -83,7 +85,7 @@
 }
 
 - (JYMoodMonthDate *)currentMonth {
-    NSInteger index = self.calculator.currentMonthName;
+    NSInteger index = JYCalendarDataIndexFromDateName(self.calculator.currentMonthName);
     return [self.calculator monthDateForIndex:index];
 }
 

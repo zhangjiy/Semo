@@ -132,7 +132,7 @@
 - (JYARCArrangeStartView *)arrangeStartView0 {
     if (!_arrangeStartView0) {
         CGSize size = CGSizeMake(self.width / 12.f, self.height / 24.f);
-        _arrangeStartView0 = [[JYARCArrangeStartView alloc] initWithFrame:CGRectMake(self.width / 12.f, self.height / 2.2f, size.width, size.height)];
+        _arrangeStartView0 = [[JYARCArrangeStartView alloc] initWithFrame:CGRectMake(self.width / 18.f, self.height / 2.f, size.width, size.height)];
         _arrangeStartView0.color = SMSealGreenColor;
         _arrangeStartView0.stars = @[@(5.f * (self.width / 130))];
         [_arrangeStartView0 drawStars];
@@ -144,7 +144,7 @@
 - (JYARCArrangeStartView *)arrangeStartView1 {
     if (!_arrangeStartView1) {
         CGSize size = CGSizeMake(self.width / 12.f, self.height / 24.f);
-        _arrangeStartView1 = [[JYARCArrangeStartView alloc] initWithFrame:CGRectMake(self.width * 0.82, self.height / 2.1f, size.width, size.height)];
+        _arrangeStartView1 = [[JYARCArrangeStartView alloc] initWithFrame:CGRectMake(self.width * 0.86, self.height / 2.2f, size.width, size.height)];
         _arrangeStartView1.color = SMSealGreenColor;
         _arrangeStartView1.stars = @[@(5.f * (self.width / 130))];
         [_arrangeStartView1 drawStars];

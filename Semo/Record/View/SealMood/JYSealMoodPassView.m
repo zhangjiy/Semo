@@ -61,19 +61,19 @@
     }
     
     if (!_circleLayer1.path) {
-        CGFloat radius = (self.width * 0.9) / 2.f;
+        CGFloat radius = (self.width * 0.95) / 2.f;
         UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.width / 2.f, self.height / 2.f) radius:radius startAngle:0 endAngle:2.f * M_PI clockwise:false];
         _circleLayer1.path = [path CGPath];
     }
     
     if (!_circleLayer2.path) {
-        CGFloat radius = (self.width * 0.68) / 2.f;
+        CGFloat radius = (self.width * 0.72) / 2.f;
         UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.width / 2.f, self.height / 2.f) radius:radius startAngle:1.2f * M_PI endAngle:1.8f * M_PI clockwise:true];
         _circleLayer2.path = [path CGPath];
     }
     
     if (!_circleLayer3.path) {
-        CGFloat radius = (self.width * 0.68) / 2.f;
+        CGFloat radius = (self.width * 0.72) / 2.f;
         UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.width / 2.f, self.height / 2.f) radius:radius startAngle:0.2 * M_PI endAngle:0.8f * M_PI clockwise:true];
         _circleLayer3.path = [path CGPath];
     }
@@ -125,8 +125,8 @@
 
 - (JYARCArrangeTextView *)arrangeTextView0 {
     if (!_arrangeTextView0) {
-        CGSize size = CGSizeMake(self.width * 0.8, self.height * 0.6);
-        _arrangeTextView0 = [[JYARCArrangeTextView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, self.height / 20.f, size.width, size.height)];
+        CGSize size = CGSizeMake(self.width * 0.9, self.height * 0.7);
+        _arrangeTextView0 = [[JYARCArrangeTextView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, self.height / 50.f, size.width, size.height)];
         _arrangeTextView0.text = @"20220316 10:45";
         [_arrangeTextView0 drawText];
     }
@@ -135,8 +135,8 @@
 
 - (JYARCArrangeTextView *)arrangeTextView1 {
     if (!_arrangeTextView1) {
-        CGSize size = CGSizeMake(self.width * 0.8, self.width * 0.6);
-        _arrangeTextView1 = [[JYARCArrangeTextView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, (self.height * 0.35), size.width, size.height)];
+        CGSize size = CGSizeMake(self.width * 0.9, self.height * 0.7);
+        _arrangeTextView1 = [[JYARCArrangeTextView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, (self.height * 0.28), size.width, size.height)];
         _arrangeTextView1.text = @"20220316 10:45";
         [_arrangeTextView1 drawText];
     }
@@ -146,8 +146,8 @@
 
 - (JYARCArrangeStartView *)arrangeStartView0 {
     if (!_arrangeStartView0) {
-        CGSize size = CGSizeMake(self.width / 2.4, self.height / 12.f);
-        _arrangeStartView0 = [[JYARCArrangeStartView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, self.height / 4.3, size.width, size.height)];
+        CGSize size = CGSizeMake(self.width / 2.2, self.height / 12.f);
+        _arrangeStartView0 = [[JYARCArrangeStartView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, self.height * 0.21, size.width, size.height)];
         [_arrangeStartView0 drawStars];
     }
     
@@ -156,8 +156,8 @@
 
 - (JYARCArrangeStartView *)arrangeStartView1 {
     if (!_arrangeStartView1) {
-        CGSize size = CGSizeMake(self.width / 2.4, self.height / 12.f);
-        _arrangeStartView1 = [[JYARCArrangeStartView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, self.height / 1.47, size.width, size.height)];
+        CGSize size = CGSizeMake(self.width / 2.2, self.height / 12.f);
+        _arrangeStartView1 = [[JYARCArrangeStartView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, self.height * 0.71, size.width, size.height)];
         [_arrangeStartView1 drawStars];
     }
     

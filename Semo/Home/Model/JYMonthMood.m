@@ -9,12 +9,20 @@
 
 @implementation JYMonthMood
 
-- (instancetype)initWithName:(NSString *)name {
-    if (self = [super init]) {
-        if (name.length == 0) {
-            NSAssert(name,@"name不能为空!");
+- (instancetype)initWithTableName:(NSString *)tableName name:(NSString *)name {
+    if (name.length == 0) {
+        NSAssert(name,@"name不能为空!");
+    }
+    if ([JYMonthMood bg_isExistForTableName:tableName]) {
+        NSString *where = [NSString stringWithFormat:@"where %@=%@",bg_sqlKey(@"name"),bg_sqlValue(name)];
+        NSArray *arr = [JYMonthMood bg_find:tableName where:where];
+        if (arr.count > 0) {
+            return arr.firstObject;
         }
+    }
+    if (self = [super init]) {
         _name = name;
+        self.bg_tableName = tableName;
     }
     
     return self;

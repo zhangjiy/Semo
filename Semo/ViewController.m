@@ -51,6 +51,7 @@
 - (id <JYMonthCalendarViewManagerProtocol>)calendarViewManager {
     if (!_calendarViewManager) {
         _calendarViewManager = [[JYMonthCalendarViewManager alloc] initWithFrame:self.view.bounds];
+        _calendarViewManager.delegate = self;
     }
     
     return _calendarViewManager;

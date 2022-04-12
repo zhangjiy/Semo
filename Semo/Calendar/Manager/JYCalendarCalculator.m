@@ -119,15 +119,21 @@
     return text;
 }
 
-- (NSString *)dayNameForMonth:(id <JYMoodDate>)month index:(NSInteger)index {
+- (BOOL)isToday:(id <JYMoodDate>)month index:(NSInteger)index {
     NSUInteger daysOffset = index;
     NSDate *date = [self.gregorian dateByAddingUnit:NSCalendarUnitDay value:daysOffset toDate:month.date options:0];
     if ([self.gregorian isDateInToday:date]) {
-        return @"今";
-    } else {
-        NSString *text = @([self.gregorian component:NSCalendarUnitDay fromDate:date]).stringValue;
-        return text;
+        return YES;
     }
+    
+    return NO;
+}
+
+- (NSString *)dayNameForMonth:(id <JYMoodDate>)month index:(NSInteger)index {
+    NSUInteger daysOffset = index;
+    NSDate *date = [self.gregorian dateByAddingUnit:NSCalendarUnitDay value:daysOffset toDate:month.date options:0];
+    NSString *text = @([self.gregorian component:NSCalendarUnitDay fromDate:date]).stringValue;
+    return text;
 }
 
 - (JYMoodMonthDate *)monthDateForIndex:(NSInteger)index {

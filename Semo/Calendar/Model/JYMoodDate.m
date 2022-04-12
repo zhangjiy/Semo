@@ -59,7 +59,7 @@
 - (NSString *)tableName {
     NSDate *date = [NSDate now];
     NSString *year = @([self.gregorian component:NSCalendarUnitYear fromDate:date]).stringValue;
-    return year;
+    return [NSString stringWithFormat:@"%@_%@", @"TableName", year];
 }
 
 - (JYMoodDateType)dateType {
@@ -67,22 +67,9 @@
 }
 
 - (JYMonthMood *)monthMood {
-    if (![JYMonthMood bg_isExistForTableName:self.tableName]) {
-        _monthMood = [[JYMonthMood alloc] initWithName:self.name];
-        _monthMood.bg_tableName = self.tableName;
-    }
-    
     if (!_monthMood) {
-        NSString *where = [NSString stringWithFormat:@"where %@=%@",bg_sqlKey(@"name"),bg_sqlValue(self.name)];
-        NSArray *arr = [JYMonthMood bg_find:self.tableName where:where];
-        if (arr.count == 0) {
-            _monthMood = arr.firstObject;
-        } else {
-            _monthMood = [[JYMonthMood alloc] initWithName:self.name];
-            _monthMood.bg_tableName = self.tableName;
-        }
+        _monthMood = [[JYMonthMood alloc] initWithTableName:self.tableName name:self.name];
     }
-       
     return _monthMood;
 }
 

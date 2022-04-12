@@ -107,6 +107,9 @@
     }
     JYDayCalendarCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYDayCalendarCollectionViewCell" forIndexPath:indexPath];
     NSString *text = [self.calculator dayNameForMonth:self.month index:indexPath.row];
+    if ([self.calculator isToday:self.month index:indexPath.row]) {
+        
+    }
     cell.text = text;
     NSDictionary *dayMoodDic = self.month.monthMood.dayMoodDict;
     JYDayMood *dayMood = [dayMoodDic valueForKey:text];
