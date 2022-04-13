@@ -1,17 +1,20 @@
 //
-//  JYWritePaintingListView.m
+//  JYRecordPaintingListView.m
 //  Semo
 //
 //  Created by jiyang on 2022/3/19.
 //
 
-#import "JYWritePaintingListView.h"
-#import "JYWritePaintingListCollectionViewCell.h"
+#import "JYRecordPaintingListView.h"
+#import "JYRecordPaintingStyleCollectionViewCell.h"
+#import "JYRecordPaintingColorCollectionViewCell.h"
+#import "JYRecordPaintingSizeCollectionViewCell.h"
+#import "JYRecordPaintingPenCollectionViewCell.h"
 #import "JYPopupMenu.h"
 #import "JYPainting.h"
 #import "JYPrefixHeader.h"
 
-@interface JYWritePaintingListView () <UICollectionViewDelegate, UICollectionViewDataSource, JYPopupMenuDelegate>
+@interface JYRecordPaintingListView () <UICollectionViewDelegate, UICollectionViewDataSource, JYPopupMenuDelegate>
 @property (nonatomic, strong) UICollectionView * collectionView;
 @property (nonatomic, strong) JYPopupMenu *popupStyleMenu;
 @property (nonatomic, strong) JYPopupMenu *popupColorMenu;
@@ -20,7 +23,7 @@
 @property (nonatomic, strong) JYPainting *painting;
 @end
 
-@implementation JYWritePaintingListView
+@implementation JYRecordPaintingListView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -53,7 +56,10 @@
         _collectionView.pagingEnabled = YES;
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
-        [_collectionView registerClass:[JYWritePaintingListCollectionViewCell class] forCellWithReuseIdentifier:@"JYWritePaintingListCollectionViewCell"];
+        [_collectionView registerClass:[JYRecordPaintingStyleCollectionViewCell class] forCellWithReuseIdentifier:@"JYRecordPaintingStyleCollectionViewCell"];
+        [_collectionView registerClass:[JYRecordPaintingColorCollectionViewCell class] forCellWithReuseIdentifier:@"JYRecordPaintingColorCollectionViewCell"];
+        [_collectionView registerClass:[JYRecordPaintingSizeCollectionViewCell class] forCellWithReuseIdentifier:@"JYRecordPaintingSizeCollectionViewCell"];
+        [_collectionView registerClass:[JYRecordPaintingPenCollectionViewCell class] forCellWithReuseIdentifier:@"JYRecordPaintingPenCollectionViewCell"];
         _collectionView.scrollsToTop = NO;
         _collectionView.contentInset = UIEdgeInsetsZero;
         if (@available(iOS 11.0, *)) _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -115,8 +121,8 @@
 #pragma -- mark - JYPopupMenuDelegate
 
 - (void)popupMenu:(JYPopupMenu *)popupMenu didSelectItem:(JYMenu *)item {
-    if ([self.delegate respondsToSelector:@selector(writePaintingListView:didSelectMenuItem:)]) {
-        [self.delegate writePaintingListView:self didSelectMenuItem:item];
+    if ([self.delegate respondsToSelector:@selector(recordPaintingListView:didSelectMenuItem:)]) {
+        [self.delegate recordPaintingListView:self didSelectMenuItem:item];
     }
 }
 
@@ -132,10 +138,21 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    JYWritePaintingListCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYWritePaintingListCollectionViewCell" forIndexPath:indexPath];
     JYPaintingItem *item = self.painting.plantings[indexPath.row];
-    [cell updateViewWithModel:item];
-    return cell;
+    if (item.type == JYPaintingTypeColor) {
+        JYRecordPaintingColorCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYRecordPaintingColorCollectionViewCell" forIndexPath:indexPath];
+        return cell;
+    } else if (item.type == JYPaintingTypeSize) {
+        JYRecordPaintingSizeCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYRecordPaintingSizeCollectionViewCell" forIndexPath:indexPath];
+        return cell;
+    } else if (item.type == JYPaintingTypePen) {
+        JYRecordPaintingPenCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYRecordPaintingPenCollectionViewCell" forIndexPath:indexPath];
+        return cell;
+    } else {
+        JYRecordPaintingStyleCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYRecordPaintingStyleCollectionViewCell" forIndexPath:indexPath];
+        return cell;
+    }
+    
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -145,8 +162,8 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     JYPaintingItem *item = self.painting.plantings[indexPath.row];
 
-    JYWritePaintingListCollectionViewCell * cell = (JYWritePaintingListCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    CGRect rectInCollectionView =[self.collectionView convertRect:cell.frame toView:self.collectionView];
+    UICollectionViewCell * cell = [collectionView cellForItemAtIndexPath:indexPath];
+    CGRect rectInCollectionView = [self.collectionView convertRect:cell.frame toView:self.collectionView];
     UIView *view = self.firstAvailableWBViewController.view;
     CGRect rect = [self.collectionView convertRect:rectInCollectionView toView:view];
     if (item.type == JYPaintingTypeStyle) {
@@ -163,8 +180,8 @@
         [self.popupPenMenu showInView:view targetRect:rect animated:YES];
     }
     
-    if ([self.delegate respondsToSelector:@selector(writePaintingListView:didSelectPaintingItem:)]) {
-        [self.delegate writePaintingListView:self didSelectPaintingItem:item];
+    if ([self.delegate respondsToSelector:@selector(recordPaintingListView:didSelectPaintingItem:)]) {
+        [self.delegate recordPaintingListView:self didSelectPaintingItem:item];
     }
 }
 

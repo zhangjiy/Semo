@@ -6,13 +6,13 @@
 //
 
 #import "JYRecordMoodBottomView.h"
-#import "JYWritePaintingListView.h"
+#import "JYRecordPaintingListView.h"
 #import "JYRecordMoodListView.h"
 #import "JYPainting.h"
 #import "JYPrefixHeader.h"
 
-@interface JYRecordMoodBottomView () <JYRecordMoodListViewDelegate, JYWritePaintingListViewDelegate>
-@property (nonatomic, strong) JYWritePaintingListView *paintingListView;
+@interface JYRecordMoodBottomView () <JYRecordMoodListViewDelegate, JYRecordPaintingListViewDelegate>
+@property (nonatomic, strong) JYRecordPaintingListView *paintingListView;
 @property (nonatomic, strong) JYRecordMoodListView *moodListView;
 @end
 
@@ -47,9 +47,9 @@
     [self.paintingListView updateViewWithModel:model];
 }
 
-- (JYWritePaintingListView *)paintingListView {
+- (JYRecordPaintingListView *)paintingListView {
     if (!_paintingListView) {
-        _paintingListView = [[JYWritePaintingListView alloc] initWithFrame:CGRectZero];
+        _paintingListView = [[JYRecordPaintingListView alloc] initWithFrame:CGRectZero];
         _paintingListView.delegate = self;
     }
     
@@ -65,7 +65,7 @@
     return _moodListView;
 }
 
-#pragma -- mark -- JYWritePaintingListViewDelegate
+#pragma -- mark -- JYRecordPaintingListViewDelegate
 
 - (void)RecordMoodBottomView:(JYRecordMoodBottomView *)bottomView didSelectPaintingItem:(JYPaintingItem *)item {
     if ([self.delegate respondsToSelector:@selector(RecordMoodBottomView:didSelectPaintingItem:)]) {
@@ -74,7 +74,7 @@
 }
 
 #pragma -- mark -- JYRecordMoodListViewDelegate
-- (void)writePaintingListView:(JYWritePaintingListView *)listView didSelectPaintingItem:(JYPaintingItem *)item {
+- (void)recordPaintingListView:(JYRecordPaintingListView *)listView didSelectPaintingItem:(JYPaintingItem *)item {
     if ([self.delegate respondsToSelector:@selector(RecordMoodBottomView:didSelectMoodItem:)]) {
         [self.delegate RecordMoodBottomView:self didSelectPaintingItem:item];
     }
@@ -88,7 +88,7 @@
 
 #pragma -- mark -- JYRecordMoodListViewDelegate
 
-- (void)writePaintingListView:(JYWritePaintingListView *)listView didSelectMenuItem:(JYMenu *)item {
+- (void)recordPaintingListView:(JYRecordPaintingListView *)listView didSelectMenuItem:(JYMenu *)item {
     if ([self.delegate respondsToSelector:@selector(RecordMoodBottomView:didSelectMenuItem:)]) {
         [self.delegate RecordMoodBottomView:self didSelectMenuItem:item];
     }

@@ -61,7 +61,7 @@
 }
 
 - (UIImage *)resultMoodImage {
-    CGSize size = CGSizeMake(_moodDisplayView.imageSize.width / 6.f, _moodDisplayView.imageSize.height / 6.f);
+    CGSize size = CGSizeMake(_moodDisplayView.imageSize.width / 7.f, _moodDisplayView.imageSize.height / 7.f);
     UIImage *sealImage = [self makeImageWithView:self.moodDisplayView withSize:self.moodDisplayView.size];
     UIImage *paintImage = self.paintingView.image;
     UIImage *resultImage = [LGDrawer drawImagesWithFinishSize:size image1:sealImage image1Rect:CGRectMake(0, 0, size.width, size.height) image2:paintImage image2Rect:CGRectMake(0, 0, size.width, size.height) clear:YES];

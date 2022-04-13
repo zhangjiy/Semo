@@ -52,8 +52,8 @@
 		B490453627F00EEF005A265A /* JYPopupStyleMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B490453527F00EEF005A265A /* JYPopupStyleMenuCollectionViewCell.m */; };
 		B4A90C5927E415F10085CAC4 /* JYGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C5827E415F10085CAC4 /* JYGridView.m */; };
 		B4A90C5E27E6168E0085CAC4 /* JYRecordMoodBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C5D27E6168E0085CAC4 /* JYRecordMoodBottomView.m */; };
-		B4A90C6127E62AE50085CAC4 /* JYWritePaintingListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C6027E62AE50085CAC4 /* JYWritePaintingListView.m */; };
-		B4A90C6427E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C6327E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.m */; };
+		B4A90C6127E62AE50085CAC4 /* JYRecordPaintingListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C6027E62AE50085CAC4 /* JYRecordPaintingListView.m */; };
+		B4A90C6427E62D2D0085CAC4 /* JYRecordPaintingStyleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C6327E62D2D0085CAC4 /* JYRecordPaintingStyleCollectionViewCell.m */; };
 		B4AC37A627DC789200529722 /* JYARCArrangeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37A527DC789200529722 /* JYARCArrangeTextView.swift */; };
 		B4AC37A927DC78D300529722 /* JYARCArrangeStartView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37A727DC78D300529722 /* JYARCArrangeStartView.m */; };
 		B4AC37F127DCC41100529722 /* JYMonthCalendarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37F027DCC41100529722 /* JYMonthCalendarCollectionViewCell.m */; };
@@ -78,6 +78,10 @@
 		B4BF764227E963C9003BBAC5 /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF764127E963C9003BBAC5 /* UIView+ViewController.m */; };
 		B4E521F62802E49A00492B5E /* JYMonthCalendarViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E521F52802E49A00492B5E /* JYMonthCalendarViewManager.m */; };
 		B4E522022803C55600492B5E /* JYYearCalendarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E522012803C55600492B5E /* JYYearCalendarCollectionViewCell.m */; };
+		B4E5220F2806691700492B5E /* JYRecordPaintingColorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E5220E2806691700492B5E /* JYRecordPaintingColorCollectionViewCell.m */; };
+		B4E522122806709300492B5E /* JYGradientCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E522112806709300492B5E /* JYGradientCircleView.m */; };
+		B4E52215280691FD00492B5E /* JYRecordPaintingSizeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E52214280691FD00492B5E /* JYRecordPaintingSizeCollectionViewCell.m */; };
+		B4E52218280696C400492B5E /* JYRecordPaintingPenCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E52217280696C400492B5E /* JYRecordPaintingPenCollectionViewCell.m */; };
 		B4E7FA6527F6C42D00604F5E /* ZHDrawingLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA2F27F6C42C00604F5E /* ZHDrawingLineLayer.m */; };
 		B4E7FA6627F6C42D00604F5E /* ZHDrawingCuboidLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA3027F6C42C00604F5E /* ZHDrawingCuboidLayer.m */; };
 		B4E7FA6727F6C42D00604F5E /* ZHDrawingRighTangleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E7FA3127F6C42C00604F5E /* ZHDrawingRighTangleLayer.m */; };
@@ -121,7 +125,7 @@
 		B4EC076627DEFF4500CB0877 /* JYRecordMoodView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EC076527DEFF4500CB0877 /* JYRecordMoodView.m */; };
 		B4EC076927DF00D800CB0877 /* JYRecordMoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EC076827DF00D800CB0877 /* JYRecordMoodTableViewCell.m */; };
 		B4EC076C27DF013F00CB0877 /* JYRecordMoodListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EC076B27DF013F00CB0877 /* JYRecordMoodListView.m */; };
-		B4EC077027DF01D000CB0877 /* JYRecordMoodCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EC076F27DF01D000CB0877 /* JYRecordMoodCollectionViewCell.m */; };
+		B4EC077027DF01D000CB0877 /* JYRecordMoodListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EC076F27DF01D000CB0877 /* JYRecordMoodListCollectionViewCell.m */; };
 		B4EC077427DF07D800CB0877 /* JYSealMoodPassView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EC077327DF07D800CB0877 /* JYSealMoodPassView.m */; };
 		B4F5455527D83E5D00D6184C /* JYMoodView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F5455427D83E5D00D6184C /* JYMoodView.m */; };
 /* End PBXBuildFile section */
@@ -234,10 +238,10 @@
 		B4A90C5827E415F10085CAC4 /* JYGridView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYGridView.m; sourceTree = "<group>"; };
 		B4A90C5C27E6168E0085CAC4 /* JYRecordMoodBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYRecordMoodBottomView.h; sourceTree = "<group>"; };
 		B4A90C5D27E6168E0085CAC4 /* JYRecordMoodBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYRecordMoodBottomView.m; sourceTree = "<group>"; };
-		B4A90C5F27E62AE50085CAC4 /* JYWritePaintingListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYWritePaintingListView.h; sourceTree = "<group>"; };
-		B4A90C6027E62AE50085CAC4 /* JYWritePaintingListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYWritePaintingListView.m; sourceTree = "<group>"; };
-		B4A90C6227E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYWritePaintingListCollectionViewCell.h; sourceTree = "<group>"; };
-		B4A90C6327E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYWritePaintingListCollectionViewCell.m; sourceTree = "<group>"; };
+		B4A90C5F27E62AE50085CAC4 /* JYRecordPaintingListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYRecordPaintingListView.h; sourceTree = "<group>"; };
+		B4A90C6027E62AE50085CAC4 /* JYRecordPaintingListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYRecordPaintingListView.m; sourceTree = "<group>"; };
+		B4A90C6227E62D2D0085CAC4 /* JYRecordPaintingStyleCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYRecordPaintingStyleCollectionViewCell.h; sourceTree = "<group>"; };
+		B4A90C6327E62D2D0085CAC4 /* JYRecordPaintingStyleCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYRecordPaintingStyleCollectionViewCell.m; sourceTree = "<group>"; };
 		B4AC37A427DC789200529722 /* Semo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Semo-Bridging-Header.h"; sourceTree = "<group>"; };
 		B4AC37A527DC789200529722 /* JYARCArrangeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JYARCArrangeTextView.swift; sourceTree = "<group>"; };
 		B4AC37A727DC78D300529722 /* JYARCArrangeStartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYARCArrangeStartView.m; sourceTree = "<group>"; };
@@ -288,6 +292,14 @@
 		B4E521FB2802E5EC00492B5E /* JYMonthCalendarViewManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYMonthCalendarViewManagerProtocol.h; sourceTree = "<group>"; };
 		B4E522002803C55600492B5E /* JYYearCalendarCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYYearCalendarCollectionViewCell.h; sourceTree = "<group>"; };
 		B4E522012803C55600492B5E /* JYYearCalendarCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYYearCalendarCollectionViewCell.m; sourceTree = "<group>"; };
+		B4E5220D2806691700492B5E /* JYRecordPaintingColorCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYRecordPaintingColorCollectionViewCell.h; sourceTree = "<group>"; };
+		B4E5220E2806691700492B5E /* JYRecordPaintingColorCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYRecordPaintingColorCollectionViewCell.m; sourceTree = "<group>"; };
+		B4E522102806709300492B5E /* JYGradientCircleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYGradientCircleView.h; sourceTree = "<group>"; };
+		B4E522112806709300492B5E /* JYGradientCircleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYGradientCircleView.m; sourceTree = "<group>"; };
+		B4E52213280691FD00492B5E /* JYRecordPaintingSizeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYRecordPaintingSizeCollectionViewCell.h; sourceTree = "<group>"; };
+		B4E52214280691FD00492B5E /* JYRecordPaintingSizeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYRecordPaintingSizeCollectionViewCell.m; sourceTree = "<group>"; };
+		B4E52216280696C400492B5E /* JYRecordPaintingPenCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYRecordPaintingPenCollectionViewCell.h; sourceTree = "<group>"; };
+		B4E52217280696C400492B5E /* JYRecordPaintingPenCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYRecordPaintingPenCollectionViewCell.m; sourceTree = "<group>"; };
 		B4E7FA2D27F6C42C00604F5E /* ZHDrawingCircleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingCircleLayer.h; sourceTree = "<group>"; };
 		B4E7FA2E27F6C42C00604F5E /* ZHDrawingGraffitiLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHDrawingGraffitiLayer.h; sourceTree = "<group>"; };
 		B4E7FA2F27F6C42C00604F5E /* ZHDrawingLineLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHDrawingLineLayer.m; sourceTree = "<group>"; };
@@ -365,7 +377,7 @@
 		B4EC076A27DF013F00CB0877 /* JYRecordMoodListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYRecordMoodListView.h; sourceTree = "<group>"; };
 		B4EC076B27DF013F00CB0877 /* JYRecordMoodListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYRecordMoodListView.m; sourceTree = "<group>"; };
 		B4EC076E27DF01D000CB0877 /* JYRecordMoodListCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYRecordMoodListCollectionViewCell.h; sourceTree = "<group>"; };
-		B4EC076F27DF01D000CB0877 /* JYRecordMoodCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYRecordMoodCollectionViewCell.m; sourceTree = "<group>"; };
+		B4EC076F27DF01D000CB0877 /* JYRecordMoodListCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYRecordMoodListCollectionViewCell.m; sourceTree = "<group>"; };
 		B4EC077227DF07D800CB0877 /* JYSealMoodPassView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYSealMoodPassView.h; sourceTree = "<group>"; };
 		B4EC077327DF07D800CB0877 /* JYSealMoodPassView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYSealMoodPassView.m; sourceTree = "<group>"; };
 		B4F5455327D83E5D00D6184C /* JYMoodView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYMoodView.h; sourceTree = "<group>"; };
@@ -683,6 +695,8 @@
 				B4609CE527EB40BB009BC2A5 /* JYSizeSlider.m */,
 				B4609CE127EB3E44009BC2A5 /* UIControl+Block.h */,
 				B4609CE227EB3E44009BC2A5 /* UIControl+Block.m */,
+				B4E522102806709300492B5E /* JYGradientCircleView.h */,
+				B4E522112806709300492B5E /* JYGradientCircleView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -727,6 +741,23 @@
 				B480EFC427FE8D9200EA4811 /* JYMoodDate.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B4E5220C28065FA500492B5E /* PaintingList */ = {
+			isa = PBXGroup;
+			children = (
+				B4A90C5F27E62AE50085CAC4 /* JYRecordPaintingListView.h */,
+				B4A90C6027E62AE50085CAC4 /* JYRecordPaintingListView.m */,
+				B4A90C6227E62D2D0085CAC4 /* JYRecordPaintingStyleCollectionViewCell.h */,
+				B4A90C6327E62D2D0085CAC4 /* JYRecordPaintingStyleCollectionViewCell.m */,
+				B4E5220D2806691700492B5E /* JYRecordPaintingColorCollectionViewCell.h */,
+				B4E5220E2806691700492B5E /* JYRecordPaintingColorCollectionViewCell.m */,
+				B4E52213280691FD00492B5E /* JYRecordPaintingSizeCollectionViewCell.h */,
+				B4E52214280691FD00492B5E /* JYRecordPaintingSizeCollectionViewCell.m */,
+				B4E52216280696C400492B5E /* JYRecordPaintingPenCollectionViewCell.h */,
+				B4E52217280696C400492B5E /* JYRecordPaintingPenCollectionViewCell.m */,
+			);
+			path = PaintingList;
 			sourceTree = "<group>";
 		};
 		B4E7FA2727F6C3FC00604F5E /* Draw */ = {
@@ -869,6 +900,7 @@
 		B4EC076D27DF018A00CB0877 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B4E5220C28065FA500492B5E /* PaintingList */,
 				B4B66B9527F2CA6A007D3267 /* Helper */,
 				B4609CCA27EAB09C009BC2A5 /* Model */,
 				B4BF763527E95CB5003BBAC5 /* Menu */,
@@ -881,12 +913,8 @@
 				B4EC076827DF00D800CB0877 /* JYRecordMoodTableViewCell.m */,
 				B4EC076A27DF013F00CB0877 /* JYRecordMoodListView.h */,
 				B4EC076B27DF013F00CB0877 /* JYRecordMoodListView.m */,
-				B4A90C5F27E62AE50085CAC4 /* JYWritePaintingListView.h */,
-				B4A90C6027E62AE50085CAC4 /* JYWritePaintingListView.m */,
-				B4A90C6227E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.h */,
-				B4A90C6327E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.m */,
 				B4EC076E27DF01D000CB0877 /* JYRecordMoodListCollectionViewCell.h */,
-				B4EC076F27DF01D000CB0877 /* JYRecordMoodCollectionViewCell.m */,
+				B4EC076F27DF01D000CB0877 /* JYRecordMoodListCollectionViewCell.m */,
 				B448897527F9DC02007BD0FA /* JYRecordMoodDisplayView.h */,
 				B448897627F9DC02007BD0FA /* JYRecordMoodDisplayView.m */,
 			);
@@ -1113,6 +1141,7 @@
 				B4AC37A927DC78D300529722 /* JYARCArrangeStartView.m in Sources */,
 				B4E7FA6727F6C42D00604F5E /* ZHDrawingRighTangleLayer.m in Sources */,
 				B480EFC527FE8D9200EA4811 /* JYMoodDate.m in Sources */,
+				B4E5220F2806691700492B5E /* JYRecordPaintingColorCollectionViewCell.m in Sources */,
 				B4E7FA6627F6C42D00604F5E /* ZHDrawingCuboidLayer.m in Sources */,
 				B41AC73327D6F9BF00CDF4AB /* JYRecordMoodViewController.m in Sources */,
 				B4E7FA6A27F6C42D00604F5E /* ZHDrawingHexagonLayer.m in Sources */,
@@ -1123,12 +1152,14 @@
 				B4E7FA6927F6C42D00604F5E /* ZHDrawingAxisLayer.m in Sources */,
 				B4BF762B27E8B220003BBAC5 /* QBPopupMenuItemView.m in Sources */,
 				B41AC72627D5AA9D00CDF4AB /* UIDeviceHelper.m in Sources */,
+				B4E522122806709300492B5E /* JYGradientCircleView.m in Sources */,
+				B4E52218280696C400492B5E /* JYRecordPaintingPenCollectionViewCell.m in Sources */,
 				B448898827FAD701007BD0FA /* JYPopupSizeMenuCollectionViewCell.m in Sources */,
 				B41AC6E327D5A69F00CDF4AB /* AppDelegate.m in Sources */,
 				B4E7FA7627F6C42D00604F5E /* ZHDrawingArrowLayer.m in Sources */,
 				B4E7FA6B27F6C42D00604F5E /* ZHDrawingDottedlineLayer.m in Sources */,
 				B4E7FA7427F6C42D00604F5E /* ZHDrawingGraffitiLayer.m in Sources */,
-				B4EC077027DF01D000CB0877 /* JYRecordMoodCollectionViewCell.m in Sources */,
+				B4EC077027DF01D000CB0877 /* JYRecordMoodListCollectionViewCell.m in Sources */,
 				B41AC6F427D5A6A400CDF4AB /* main.m in Sources */,
 				B4E7FA7D27F6C42D00604F5E /* ZHDrawingConeLayer.m in Sources */,
 				B4BF764227E963C9003BBAC5 /* UIView+ViewController.m in Sources */,
@@ -1141,7 +1172,7 @@
 				B4A90C5E27E6168E0085CAC4 /* JYRecordMoodBottomView.m in Sources */,
 				B4EC076627DEFF4500CB0877 /* JYRecordMoodView.m in Sources */,
 				B4E7FA7027F6C42D00604F5E /* ZHDrawingTriangleLayer.m in Sources */,
-				B4A90C6427E62D2D0085CAC4 /* JYWritePaintingListCollectionViewCell.m in Sources */,
+				B4A90C6427E62D2D0085CAC4 /* JYRecordPaintingStyleCollectionViewCell.m in Sources */,
 				B4AC37F127DCC41100529722 /* JYMonthCalendarCollectionViewCell.m in Sources */,
 				B4E7FA7227F6C42D00604F5E /* ZHDrawingArcLayer.m in Sources */,
 				B4EA2C0D27E74E8800779793 /* PaintingPreview.swift in Sources */,
@@ -1173,10 +1204,11 @@
 				B4E7FA8627F865DF00604F5E /* XDVerticalGradientColorSlider.m in Sources */,
 				B4EA2C0927E74E0000779793 /* MathUtils.swift in Sources */,
 				B4E7FA7327F6C42D00604F5E /* ZHDrawingCosineLayer.m in Sources */,
-				B4A90C6127E62AE50085CAC4 /* JYWritePaintingListView.m in Sources */,
+				B4A90C6127E62AE50085CAC4 /* JYRecordPaintingListView.m in Sources */,
 				B4E7FA6C27F6C42D00604F5E /* ZHDrawingThreeDCoordinateLayer.m in Sources */,
 				B448898527FAD68D007BD0FA /* JYPopupPenMenuListView.m in Sources */,
 				B4EA2C0027E7482000779793 /* JYPaintingView.swift in Sources */,
+				B4E52215280691FD00492B5E /* JYRecordPaintingSizeCollectionViewCell.m in Sources */,
 				B4AC380027DDA4CF00529722 /* JYDayCalendarCollectionViewCell.m in Sources */,
 				B41AC73C27D71A5700CDF4AB /* JYMoodTableViewCell.m in Sources */,
 				B4EC076C27DF013F00CB0877 /* JYRecordMoodListView.m in Sources */,
