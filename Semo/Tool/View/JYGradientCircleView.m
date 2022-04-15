@@ -50,38 +50,11 @@
     self.shapeLayer.strokeColor = [UIColor redColor].CGColor;
     self.shapeLayer.lineWidth = 10.f;
     
-    //关于角度坐标体系    顺时针方向
-    /*           -M_PI_2(M_PI+M_PI_2)
-                    ∧
-                    |
-                    |
-                    |
-                    |
-       M_PI---------|----------＞  0
-                    |
-                    |
-                    |
-                    |
-                  M_PI_2
-     */
-//    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.bounds.size.width*0.5, self.bounds.size.height*0.5) radius:self.bounds.size.width/2 - self.margin*2 startAngle:self.startAngle endAngle:self.endAngle clockwise:self.isClockwise];
-//    self.shapeLayer.path = bezierPath.CGPath;
-    
     //创建渐变层
     self.gradientLayer = [[CAGradientLayer alloc] init];
     self.gradientLayer.frame = self.bounds;
     
-    /*
-     (0，0) -------- (1，0)
-           |        |
-           |   0.5  |
-           |        |
-     (0，1) -------- (1，1)
-     */
-//    sel.gradientLayer.colors = @[(__bridge id)[UIColor orangeColor].CGColor,(__bridge id)[UIColor orangeColor].CGColor];
     self.gradientLayer.locations = @[@0, @0.5, @1];
-//    self.gradientLayer.startPoint = CGPointMake(0, 0);
-//    self.gradientLayer.endPoint = CGPointMake(1, 1);
     self.gradientLayer.mask = self.shapeLayer;
     [self.layer addSublayer:self.gradientLayer];
 }

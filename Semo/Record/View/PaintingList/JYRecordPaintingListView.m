@@ -10,6 +10,7 @@
 #import "JYRecordPaintingColorCollectionViewCell.h"
 #import "JYRecordPaintingSizeCollectionViewCell.h"
 #import "JYRecordPaintingPenCollectionViewCell.h"
+#import "JYRecordPaintingUndoCollectionViewCell.h"
 #import "JYPopupMenu.h"
 #import "JYPainting.h"
 #import "JYPrefixHeader.h"
@@ -60,6 +61,7 @@
         [_collectionView registerClass:[JYRecordPaintingColorCollectionViewCell class] forCellWithReuseIdentifier:@"JYRecordPaintingColorCollectionViewCell"];
         [_collectionView registerClass:[JYRecordPaintingSizeCollectionViewCell class] forCellWithReuseIdentifier:@"JYRecordPaintingSizeCollectionViewCell"];
         [_collectionView registerClass:[JYRecordPaintingPenCollectionViewCell class] forCellWithReuseIdentifier:@"JYRecordPaintingPenCollectionViewCell"];
+        [_collectionView registerClass:[JYRecordPaintingUndoCollectionViewCell class] forCellWithReuseIdentifier:@"JYRecordPaintingUndoCollectionViewCell"];
         _collectionView.scrollsToTop = NO;
         _collectionView.contentInset = UIEdgeInsetsZero;
         if (@available(iOS 11.0, *)) _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -148,11 +150,13 @@
     } else if (item.type == JYPaintingTypePen) {
         JYRecordPaintingPenCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYRecordPaintingPenCollectionViewCell" forIndexPath:indexPath];
         return cell;
+    } else if (item.type == JYPaintingTypeUndo) {
+        JYRecordPaintingUndoCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYRecordPaintingUndoCollectionViewCell" forIndexPath:indexPath];
+        return cell;
     } else {
         JYRecordPaintingStyleCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYRecordPaintingStyleCollectionViewCell" forIndexPath:indexPath];
         return cell;
     }
-    
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
