@@ -168,24 +168,42 @@
 
     UICollectionViewCell * cell = [collectionView cellForItemAtIndexPath:indexPath];
     CGRect rectInCollectionView = [self.collectionView convertRect:cell.frame toView:self.collectionView];
-    UIView *view = self.firstAvailableWBViewController.view;
-    CGRect rect = [self.collectionView convertRect:rectInCollectionView toView:view];
-    if (item.type == JYPaintingTypeStyle) {
-        self.popupStyleMenu.item = item;
-        [self.popupStyleMenu showInView:view targetRect:rect animated:YES];
-    } else if (item.type == JYPaintingTypeColor) {
-        self.popupColorMenu.item = item;
-        [self.popupColorMenu showInView:view targetRect:rect animated:YES];
-    } else if (item.type == JYPaintingTypeSize) {
-        self.popupLineWidthMenu.item = item;
-        [self.popupLineWidthMenu showInView:view targetRect:rect animated:YES];
-    } else if (item.type == JYPaintingTypePen) {
-        self.popupPenMenu.item = item;
-        [self.popupPenMenu showInView:view targetRect:rect animated:YES];
+    if ([self.delegate respondsToSelector:@selector(overlayView)]) {
+        UIView *view = self.delegate.overlayView;
+        CGRect rect = [self.collectionView convertRect:rectInCollectionView toView:view];
+        [self dismissMenu];
+        if (item.type == JYPaintingTypeStyle) {
+            self.popupStyleMenu.item = item;
+            [self.popupStyleMenu showInView:view targetRect:rect animated:YES];
+        } else if (item.type == JYPaintingTypeColor) {
+            self.popupColorMenu.item = item;
+            [self.popupColorMenu showInView:view targetRect:rect animated:YES];
+        } else if (item.type == JYPaintingTypeSize) {
+            self.popupLineWidthMenu.item = item;
+            [self.popupLineWidthMenu showInView:view targetRect:rect animated:YES];
+        } else if (item.type == JYPaintingTypePen) {
+            self.popupPenMenu.item = item;
+            [self.popupPenMenu showInView:view targetRect:rect animated:YES];
+        }
     }
     
     if ([self.delegate respondsToSelector:@selector(recordPaintingListView:didSelectPaintingItem:)]) {
         [self.delegate recordPaintingListView:self didSelectPaintingItem:item];
+    }
+}
+
+- (void)dismissMenu {
+    if (self.popupStyleMenu.isVisible) {
+        [self.popupStyleMenu dismissAnimated:YES];
+    }
+    if (self.popupColorMenu.isVisible) {
+        [self.popupColorMenu dismissAnimated:YES];
+    }
+    if (self.popupLineWidthMenu.isVisible) {
+        [self.popupLineWidthMenu dismissAnimated:YES];
+    }
+    if (self.popupPenMenu.isVisible) {
+        [self.popupPenMenu dismissAnimated:YES];
     }
 }
 

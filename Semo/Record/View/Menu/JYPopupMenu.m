@@ -170,6 +170,7 @@ static const NSTimeInterval kQBPopupMenuAnimationDuration = 0.2;
     
     // Show
     [view addSubview:self.overlayView];
+    [view sendSubviewToBack:self.overlayView];
     
     if (animated) {
         self.alpha = 0;

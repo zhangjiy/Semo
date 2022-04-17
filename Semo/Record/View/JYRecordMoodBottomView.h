@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol JYRecordMoodBottomViewDelegate <NSObject>
 @optional
+@property (nonatomic, strong, readonly) UIView *overlayView;
 - (void)RecordMoodBottomView:(JYRecordMoodBottomView *)bottomView didSelectPaintingItem:(JYPaintingItem *)item;
 - (void)RecordMoodBottomView:(JYRecordMoodBottomView *)bottomView didSelectMoodItem:(NSString *)item;
 - (void)RecordMoodBottomView:(JYRecordMoodBottomView *)bottomView didSelectMenuItem:(JYMenu *)item;

@@ -86,6 +86,14 @@
     }
 }
 
+- (UIView *)overlayView {
+    if ([self.delegate respondsToSelector:@selector(overlayView)]) {
+        return self.delegate.overlayView;
+    }
+    
+    return nil;
+}
+
 #pragma -- mark -- JYRecordMoodListViewDelegate
 
 - (void)recordPaintingListView:(JYRecordPaintingListView *)listView didSelectMenuItem:(JYMenu *)item {

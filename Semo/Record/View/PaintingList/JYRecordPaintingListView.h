@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol JYRecordPaintingListViewDelegate <NSObject>
 @optional
+@property (nonatomic, strong, readonly) UIView *overlayView;
 - (void)recordPaintingListView:(JYRecordPaintingListView *)listView didSelectPaintingItem:(JYPaintingItem *)item;
 - (void)recordPaintingListView:(JYRecordPaintingListView *)listView didSelectMenuItem:(JYMenu *)item;
 @end

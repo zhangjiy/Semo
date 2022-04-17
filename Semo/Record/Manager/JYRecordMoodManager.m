@@ -128,6 +128,10 @@
     }
 }
 
+- (UIView *)overlayView {
+    return self.containerView;
+}
+
 - (UIImage *)styleImageWithStyleType:(JYMoodStyleType)styleType {
     self.moodDisplayView.textColor = [JYStyleImageFactory textColorFactoryFromStyleType:styleType];
     CGSize size = JYWriteDisplayViewSize;

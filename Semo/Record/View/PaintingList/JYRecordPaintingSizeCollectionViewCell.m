@@ -25,13 +25,39 @@
 
 - (void)initSubviews {
     UIBezierPath *path = [UIBezierPath bezierPath];
-    path.lineCapStyle = kCGLineCapRound;
-    CGFloat lineLength = self.contentView.width * 0.8;
+    
+    CGFloat lineLength = self.contentView.width * 0.5;
     CGFloat left = (self.contentView.width - lineLength) / 2.f;
-    [path moveToPoint:CGPointMake(left, self.contentView.height / 2.f)];
-    [path addCurveToPoint:CGPointMake(lineLength, self.contentView.height / 2.f) controlPoint1:CGPointMake(lineLength * 0.4, 0) controlPoint2:CGPointMake(lineLength * 0.6, self.contentView.height)];
-    [path stroke];
-    [path closePath];
+    CGPoint startPoint = CGPointMake(left, self.contentView.height / 2.f);
+    CGFloat height = lineLength / 3.f;
+    [path moveToPoint:startPoint];
+    
+    for (float x = 0.0; x < fabs(lineLength); x++) {
+        float startX = x;
+        float yCosine = sin(x / 10 * M_PI) * height + startPoint.y;
+        CGPoint cosinePoint = CGPointMake(startX + startPoint.x, yCosine);
+    
+        [path addLineToPoint:cosinePoint];
+    }
+    
+    
+//    startPoint = CGPointMake(left, self.contentView.height / 3.f);
+//    endPoint = CGPointMake((left + lineLength/2.f), self.contentView.height / 2.f);
+//
+//    for (float x = 0.0; x < fabs(endPoint.x - startPoint.x); x++) {
+//        float startX;
+//        if (width > 0) {
+//            startX = x;
+//        }else{
+//            startX = -x;
+//        }
+//        float yCosine = sin(x / 50 * M_PI) * height + startPoint.y;
+//        CGPoint cosinePoint = CGPointMake(startX + startPoint.x, yCosine);
+//
+//        [path addLineToPoint:cosinePoint];
+//    }
+//
+    
     CAShapeLayer *layer = [[CAShapeLayer alloc] init];
     layer.lineWidth = 2.f;
     layer.strokeColor = [UIColor blackColor].CGColor;
@@ -39,6 +65,8 @@
     layer.path = path.CGPath;
     [self.contentView.layer addSublayer:layer];
 }
+
+
 
 - (void)layoutSubviews {
     [super layoutSubviews];
