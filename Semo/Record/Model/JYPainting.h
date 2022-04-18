@@ -6,13 +6,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JYPopupListMenuDataProtocol.h"
+#import "JYPopupMenuListDataProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @class UIColor;
 
-@interface JYPaintingItem : NSObject <JYPopupListMenuDataProtocol>
+@interface JYPaintingItem : NSObject <JYPopupMenuListDataProtocol>
 @property (nonatomic, assign) JYPaintingType type;
 @property (nonatomic, assign) BOOL enabled;
 @property (nonatomic, strong) NSString * title;

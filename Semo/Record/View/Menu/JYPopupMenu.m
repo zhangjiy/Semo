@@ -44,7 +44,7 @@ static const NSTimeInterval kQBPopupMenuAnimationDuration = 0.2;
     return [JYPopupColorMenuListView class];
 }
 
-+ (instancetype)popupListMenuWithItem:(id <JYPopupListMenuDataProtocol>)item {
++ (instancetype)popupListMenuWithItem:(id <JYPopupMenuListDataProtocol>)item {
     return [[self alloc] initWithItem:item];
 }
 
@@ -69,7 +69,7 @@ static const NSTimeInterval kQBPopupMenuAnimationDuration = 0.2;
     return self;
 }
 
-- (instancetype)initWithItem:(id <JYPopupListMenuDataProtocol>)item {
+- (instancetype)initWithItem:(id <JYPopupMenuListDataProtocol>)item {
     self = [self initWithFrame:CGRectZero];
     
     if (self) {
@@ -82,7 +82,7 @@ static const NSTimeInterval kQBPopupMenuAnimationDuration = 0.2;
 
 #pragma mark - Accessors
 
-- (void)setItem:(id <JYPopupListMenuDataProtocol>)item {
+- (void)setItem:(id <JYPopupMenuListDataProtocol>)item {
     _item = item;
     
     // Create item views

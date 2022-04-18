@@ -33,7 +33,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _imageView.size = CGSizeMake(self.contentView.width - 15, self.contentView.width - 15);
+    _imageView.size = CGSizeMake(self.contentView.width, self.contentView.width);
     _imageView.centerX = self.contentView.width / 2.f;
     _imageView.centerY = self.contentView.height / 2.f;
 
@@ -45,7 +45,7 @@
         _imageView.backgroundColor = [UIColor clearColor];
         _imageView.contentMode = UIViewContentModeCenter;
         _imageView.layer.masksToBounds = YES;
-        _imageView.layer.cornerRadius = (self.contentView.width - 15) / 2.f;
+        _imageView.layer.cornerRadius = (self.contentView.width) / 2.f;
     }
     return _imageView;
 }

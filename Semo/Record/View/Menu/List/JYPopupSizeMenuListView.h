@@ -6,11 +6,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JYPopupMenuContentView.h"
 #import "JYPopupMenuListViewProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JYPopupSizeMenuListView : UIView <JYPopupMenuListViewProtocol>
+@interface JYPopupSizeMenuListView : JYPopupMenuContentView <JYPopupMenuListViewProtocol>
 
 @end
 

@@ -13,21 +13,19 @@
 #import "JYPrefixHeader.h"
 
 @interface JYPopupPenMenuListView () <UICollectionViewDelegate, UICollectionViewDataSource>
-@property (nonatomic, strong) UIImageView * imageView;
 @property (nonatomic, strong) UICollectionView * collectionView;
 @property (nonatomic, strong) NSIndexPath *indexPath;
 @end
 
 @implementation JYPopupPenMenuListView
 @synthesize item = _item;
-@synthesize image = _image;
 @synthesize delegate = _delegate;
 
-+ (instancetype)itemViewWithItem:(id <JYPopupListMenuDataProtocol>)item {
++ (instancetype)itemViewWithItem:(id <JYPopupMenuListDataProtocol>)item {
     return [[self alloc] initWithItem:item];
 }
 
-- (instancetype)initWithItem:( id<JYPopupListMenuDataProtocol>)item {
+- (instancetype)initWithItem:( id<JYPopupMenuListDataProtocol>)item {
     self = [self initWithFrame:CGRectZero];
     
     if (self) {
@@ -50,22 +48,18 @@
 }
 
 - (void)initSubViews {
-    [self addSubview:self.imageView];
+    [super initSubViews];
     [self addSubview:self.collectionView];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _imageView.frame = self.bounds;
     _collectionView.frame = self.bounds;
     _collectionView.contentInset = UIEdgeInsetsMake((self.height - SMPaintingMenuItemHeight - JYViewItemInset), JYViewItemInset, JYViewInset, JYViewItemInset);
 }
 
-- (void)setImage:(UIImage *)image {
-    self.imageView.image = image;
-}
-
-- (void)setItem:(id<JYPopupListMenuDataProtocol>)item {
+- (void)setItem:(id<JYPopupMenuListDataProtocol>)item {
+    [super setItem:item];
     if (_item != item) {
         _item = item;
     }
@@ -74,16 +68,11 @@
 #pragma mark - Updating the View
 
 - (CGSize)sizeThatFits:(CGSize)size {
-    CGSize viewSize = CGSizeMake(55 * _item.menus.count + JYViewItemInset * 2 + JYViewItemInset * (_item.menus.count - 1), 60);
-    return viewSize;
-}
-
-- (UIImageView *)imageView {
-    if (!_imageView) {
-        _imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-    }
+    CGSize superViewSize = [super sizeThatFits:CGSizeZero];
     
-    return _imageView;
+    CGFloat height = 60 + superViewSize.height;
+    CGSize viewSize = CGSizeMake(55 * _item.menus.count + JYViewItemInset * 2 + JYViewItemInset * (_item.menus.count - 1), height);
+    return viewSize;
 }
 
 - (UICollectionView *)collectionView {
@@ -92,7 +81,6 @@
         _collectionView.backgroundColor = [UIColor clearColor];
         _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.showsVerticalScrollIndicator = NO;
-        _collectionView.pagingEnabled = YES;
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
         [_collectionView registerClass:[JYPopupPenMenuCollectionViewCell class] forCellWithReuseIdentifier:@"JYPopupPenMenuCollectionViewCell"];

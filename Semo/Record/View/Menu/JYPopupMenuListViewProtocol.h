@@ -9,7 +9,8 @@
 #define JYPopupMenuListViewProtocol_h
 
 #import <Foundation/Foundation.h>
-#import "JYPopupListMenuDataProtocol.h"
+#import "JYPopupMenuContentViewProtocol.h"
+#import "JYPopupMenuListDataProtocol.h"
 
 @class JYPopupStyleMenuListView;
 @protocol JYPopupMenuListViewProtocol;
@@ -19,12 +20,11 @@
 - (void)menuListView:(id <JYPopupMenuListViewProtocol>)listView didSelectItem:(JYMenu *)item;
 @end
 
-@protocol JYPopupMenuListViewProtocol <NSObject>
+@protocol JYPopupMenuListViewProtocol <JYPopupMenuContentViewProtocol>
 @property (nonatomic, weak) id <JYPopupMenuListViewDelegate> delegate;
-@property (nonatomic, strong) id <JYPopupListMenuDataProtocol> item;
-@property (nonatomic, strong) UIImage *image;
-+ (instancetype)itemViewWithItem:(id <JYPopupListMenuDataProtocol>)item;
-- (instancetype)initWithItem:(id<JYPopupListMenuDataProtocol>)item;
+@property (nonatomic, strong) id <JYPopupMenuListDataProtocol> item;
++ (instancetype)itemViewWithItem:(id <JYPopupMenuListDataProtocol>)item;
+- (instancetype)initWithItem:(id<JYPopupMenuListDataProtocol>)item;
 
 @end
 

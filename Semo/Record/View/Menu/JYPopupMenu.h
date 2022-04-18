@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JYPopupListMenuDataProtocol.h"
+#import "JYPopupMenuListDataProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -33,7 +33,7 @@ typedef NS_ENUM(NSUInteger, JYPopupMenuArrowDirection) {
 @interface JYPopupMenu : UIView
 
 @property (nonatomic, weak) id<JYPopupMenuDelegate> delegate;
-@property (nonatomic, strong) id <JYPopupListMenuDataProtocol> item;
+@property (nonatomic, strong) id <JYPopupMenuListDataProtocol> item;
 @property (nonatomic, assign, getter = isVisible, readonly) BOOL visible;
 @property (nonatomic, assign) CGFloat height;
 @property (nonatomic, assign) CGFloat cornerRadius;
@@ -45,8 +45,8 @@ typedef NS_ENUM(NSUInteger, JYPopupMenuArrowDirection) {
 @property (nonatomic, strong) UIColor *color;
 @property (nonatomic, strong) UIColor *highlightedColor;
 
-+ (instancetype)popupListMenuWithItem:(id <JYPopupListMenuDataProtocol>)item;
-- (instancetype)initWithItem:(id <JYPopupListMenuDataProtocol>)item;
++ (instancetype)popupListMenuWithItem:(id <JYPopupMenuListDataProtocol>)item;
+- (instancetype)initWithItem:(id <JYPopupMenuListDataProtocol>)item;
 
 - (void)showInView:(UIView *)view targetRect:(CGRect)targetRect animated:(BOOL)animated;
 - (void)dismissAnimated:(BOOL)animated;

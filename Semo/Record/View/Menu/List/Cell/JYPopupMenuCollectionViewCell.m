@@ -33,18 +33,18 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _colorView.size = CGSizeMake(self.contentView.width - 15, self.contentView.width - 15);
+    _colorView.size = CGSizeMake(self.contentView.width - 5, self.contentView.width - 5);
     _colorView.centerX = self.contentView.width / 2.f;
     _colorView.centerY = self.contentView.height / 2.f;
 
-    _selectedLayer.frame = CGRectMake(5, 5, ceilf(self.contentView.width - 10), ceilf(self.contentView.width - 10));
+    _selectedLayer.frame = CGRectMake(0, 0, ceilf(self.contentView.width), ceilf(self.contentView.width));
 }
 
 - (UIView *)colorView {
     if (!_colorView) {
         _colorView = [[UIImageView alloc] initWithFrame:CGRectZero];
         _colorView.layer.masksToBounds = YES;
-        _colorView.layer.cornerRadius = (self.contentView.width - 15) / 2.f;
+        _colorView.layer.cornerRadius = (self.contentView.width - 5) / 2.f;
     }
     return _colorView;
 }
@@ -59,7 +59,7 @@
 - (CAShapeLayer *)selectedLayer {
     if (!_selectedLayer) {
         _selectedLayer = [[CAShapeLayer alloc] init];
-        _selectedLayer.cornerRadius = ceilf((self.contentView.width - 10)) / 2.f;
+        _selectedLayer.cornerRadius = ceilf(self.contentView.width / 2.f);
         _selectedLayer.borderWidth = 3.f;
         _selectedLayer.borderColor = SMGridLineColor.CGColor;
         _selectedLayer.hidden = YES;

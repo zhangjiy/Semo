@@ -26,7 +26,7 @@
 
 #define SMPaintingMenuWidth (ScreenWidth - JYViewInset * 2)
 #define SMPaintingMenuHeight 120
-#define SMPaintingMenuItemHeight 40
+#define SMPaintingMenuItemHeight 30
 #define SMPaintingStyleMenuItemInset 20
 
 #define SMPaintingStyleMenuHeight 100

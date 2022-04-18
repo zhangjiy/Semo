@@ -12,7 +12,6 @@
 #import "JYPrefixHeader.h"
 
 @interface JYPopupColorMenuListView () <UICollectionViewDelegate, UICollectionViewDataSource>
-@property (nonatomic, strong) UIImageView * imageView;
 @property (nonatomic, strong) UICollectionView * collectionView;
 @property (nonatomic, strong) XDVerticalGradientColorSlider * colorSlider;
 @property (nonatomic, strong) NSIndexPath *indexPath;
@@ -20,14 +19,13 @@
 
 @implementation JYPopupColorMenuListView
 @synthesize item = _item;
-@synthesize image = _image;
 @synthesize delegate = _delegate;
 
-+ (instancetype)itemViewWithItem:(id <JYPopupListMenuDataProtocol>)item {
++ (instancetype)itemViewWithItem:(id <JYPopupMenuListDataProtocol>)item {
     return [[self alloc] initWithItem:item];
 }
 
-- (instancetype)initWithItem:( id<JYPopupListMenuDataProtocol>)item {
+- (instancetype)initWithItem:( id<JYPopupMenuListDataProtocol>)item {
     self = [self initWithFrame:CGRectZero];
     
     if (self) {
@@ -50,28 +48,25 @@
 }
 
 - (void)initSubViews {
-    [self addSubview:self.imageView];
+    [super initSubViews];
     [self addSubview:self.collectionView];
-    [self addSubview:self.colorSlider];
+    //[self addSubview:self.colorSlider];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _imageView.frame = self.bounds;
     _collectionView.frame = self.bounds;
-    _collectionView.contentInset = UIEdgeInsetsMake((self.height - SMPaintingMenuItemHeight - JYViewItemInset), JYViewItemInset, JYViewInset, JYViewItemInset);
+    CGSize superViewSize = [super sizeThatFits:CGSizeZero];
+    _collectionView.contentInset = UIEdgeInsetsMake(superViewSize.height + JYViewItemInset * 2, JYViewItemInset, JYViewInset, JYViewItemInset);
     
     _colorSlider.size = CGSizeMake(self.width - JYViewInset * 2, SMPaintingMenuSliderHeight);
     _colorSlider.left = JYViewInset;
-    _colorSlider.top = SMPaintingMenuColorSlideTop;
+    _colorSlider.bottom = self.height - SMPaintingMenuItemHeight - JYViewInset;
 
 }
 
-- (void)setImage:(UIImage *)image {
-    self.imageView.image = image;
-}
-
-- (void)setItem:(id<JYPopupListMenuDataProtocol>)item {
+- (void)setItem:(id<JYPopupMenuListDataProtocol>)item {
+    [super setItem:item];
     if (_item != item) {
         _item = item;
     }
@@ -80,16 +75,12 @@
 #pragma mark - Updating the View
 
 - (CGSize)sizeThatFits:(CGSize)size {
-    CGSize viewSize = CGSizeMake(SMPaintingMenuItemHeight * _item.menus.count + JYViewItemInset * 2 + JYViewItemInset * (_item.menus.count - 1), SMPaintingMenuHeight);
-    return viewSize;
-}
-
-- (UIImageView *)imageView {
-    if (!_imageView) {
-        _imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-    }
+    CGSize superViewSize = [super sizeThatFits:CGSizeZero];
     
-    return _imageView;
+    CGFloat height = SMPaintingMenuItemHeight * 2 + JYViewItemInset * 2 + JYViewInset + superViewSize.height;
+    CGFloat listWidth = SMPaintingMenuItemHeight * _item.menus.count + JYViewItemInset * 2 + JYViewItemInset * (_item.menus.count - 1);
+    CGFloat width = (MIN(listWidth, ScreenWidth - JYViewItemInset * 2));
+    return CGSizeMake(width, height);
 }
 
 - (UICollectionView *)collectionView {
@@ -98,7 +89,6 @@
         _collectionView.backgroundColor = [UIColor clearColor];
         _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.showsVerticalScrollIndicator = NO;
-        _collectionView.pagingEnabled = YES;
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
         [_collectionView registerClass:[JYPopupMenuCollectionViewCell class] forCellWithReuseIdentifier:@"JYPopupMenuCollectionViewCell"];
@@ -112,7 +102,7 @@
 - (UICollectionViewFlowLayout *)collectionViewFlowLayout {
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc] init];
     layout.minimumLineSpacing = JYViewItemInset;
-    layout.minimumInteritemSpacing = JYViewItemInset;
+    layout.minimumInteritemSpacing = 0;
     layout.itemSize = [UIScreen mainScreen].bounds.size;
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     return layout;

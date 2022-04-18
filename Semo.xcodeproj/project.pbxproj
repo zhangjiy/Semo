@@ -48,6 +48,7 @@
 		B4609CE027EB3CE1009BC2A5 /* JYColorSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CDF27EB3CE1009BC2A5 /* JYColorSlider.m */; };
 		B4609CE327EB3E44009BC2A5 /* UIControl+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CE227EB3E44009BC2A5 /* UIControl+Block.m */; };
 		B4609CE627EB40BB009BC2A5 /* JYSizeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CE527EB40BB009BC2A5 /* JYSizeSlider.m */; };
+		B47EAAF4280CF96A00F6E8EF /* JYPopupMenuContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B47EAAF3280CF96A00F6E8EF /* JYPopupMenuContentView.m */; };
 		B480EFC527FE8D9200EA4811 /* JYMoodDate.m in Sources */ = {isa = PBXBuildFile; fileRef = B480EFC427FE8D9200EA4811 /* JYMoodDate.m */; };
 		B490453327F00BE7005A265A /* JYPopupStyleMenuListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B490453227F00BE7005A265A /* JYPopupStyleMenuListView.m */; };
 		B490453627F00EEF005A265A /* JYPopupStyleMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B490453527F00EEF005A265A /* JYPopupStyleMenuCollectionViewCell.m */; };
@@ -215,7 +216,7 @@
 		B448899627FD2A16007BD0FA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		B448899A27FD3ADC007BD0FA /* JYMonthMood.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYMonthMood.h; sourceTree = "<group>"; };
 		B448899B27FD3ADC007BD0FA /* JYMonthMood.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYMonthMood.m; sourceTree = "<group>"; };
-		B4609CB427E99167009BC2A5 /* JYPopupListMenuDataProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupListMenuDataProtocol.h; sourceTree = "<group>"; };
+		B4609CB427E99167009BC2A5 /* JYPopupMenuListDataProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuListDataProtocol.h; sourceTree = "<group>"; };
 		B4609CB527E995BF009BC2A5 /* JYPopupMenuOverlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuOverlayView.h; sourceTree = "<group>"; };
 		B4609CB627E995BF009BC2A5 /* JYPopupMenuOverlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupMenuOverlayView.m; sourceTree = "<group>"; };
 		B4609CCB27EAB0AE009BC2A5 /* JYMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYMenu.h; sourceTree = "<group>"; };
@@ -230,6 +231,10 @@
 		B4609CE227EB3E44009BC2A5 /* UIControl+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Block.m"; sourceTree = "<group>"; };
 		B4609CE427EB40BB009BC2A5 /* JYSizeSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYSizeSlider.h; sourceTree = "<group>"; };
 		B4609CE527EB40BB009BC2A5 /* JYSizeSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYSizeSlider.m; sourceTree = "<group>"; };
+		B47EAAF2280CF96A00F6E8EF /* JYPopupMenuContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuContentView.h; sourceTree = "<group>"; };
+		B47EAAF3280CF96A00F6E8EF /* JYPopupMenuContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupMenuContentView.m; sourceTree = "<group>"; };
+		B47EAAF8280CF9CE00F6E8EF /* JYPopupMenuContentViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuContentViewProtocol.h; sourceTree = "<group>"; };
+		B47EAAF9280CFAF400F6E8EF /* JYPopupMenuDataProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuDataProtocol.h; sourceTree = "<group>"; };
 		B480EFC327FE8D9200EA4811 /* JYMoodDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYMoodDate.h; sourceTree = "<group>"; };
 		B480EFC427FE8D9200EA4811 /* JYMoodDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYMoodDate.m; sourceTree = "<group>"; };
 		B490453027F009C3005A265A /* JYPopupMenuListViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuListViewProtocol.h; sourceTree = "<group>"; };
@@ -672,9 +677,13 @@
 				B4BF763627E95CFC003BBAC5 /* JYPopupMenu.h */,
 				B4BF763727E95CFC003BBAC5 /* JYPopupMenu.m */,
 				B490453027F009C3005A265A /* JYPopupMenuListViewProtocol.h */,
-				B4609CB427E99167009BC2A5 /* JYPopupListMenuDataProtocol.h */,
+				B4609CB427E99167009BC2A5 /* JYPopupMenuListDataProtocol.h */,
 				B4609CB527E995BF009BC2A5 /* JYPopupMenuOverlayView.h */,
 				B4609CB627E995BF009BC2A5 /* JYPopupMenuOverlayView.m */,
+				B47EAAF2280CF96A00F6E8EF /* JYPopupMenuContentView.h */,
+				B47EAAF3280CF96A00F6E8EF /* JYPopupMenuContentView.m */,
+				B47EAAF8280CF9CE00F6E8EF /* JYPopupMenuContentViewProtocol.h */,
+				B47EAAF9280CFAF400F6E8EF /* JYPopupMenuDataProtocol.h */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -1159,6 +1168,7 @@
 				B41AC72627D5AA9D00CDF4AB /* UIDeviceHelper.m in Sources */,
 				B4E522122806709300492B5E /* JYGradientCircleView.m in Sources */,
 				B4E52218280696C400492B5E /* JYRecordPaintingPenCollectionViewCell.m in Sources */,
+				B47EAAF4280CF96A00F6E8EF /* JYPopupMenuContentView.m in Sources */,
 				B448898827FAD701007BD0FA /* JYPopupSizeMenuCollectionViewCell.m in Sources */,
 				B41AC6E327D5A69F00CDF4AB /* AppDelegate.m in Sources */,
 				B4E7FA7627F6C42D00604F5E /* ZHDrawingArrowLayer.m in Sources */,

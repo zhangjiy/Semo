@@ -37,8 +37,6 @@
     
     CGFloat height = (self.width - 100 - 60) / (float)Plantings.count;
     _paintingListView.size = CGSizeMake(self.width, height);
-    _paintingListView.top = 10;
-    
     _moodListView.size = CGSizeMake(self.width, 50);
     _moodListView.bottom = self.height - SafeAreaHeight;
 }

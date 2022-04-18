@@ -12,7 +12,6 @@
 #import "JYPrefixHeader.h"
 
 @interface JYPopupSizeMenuListView () <UICollectionViewDelegate, UICollectionViewDataSource>
-@property (nonatomic, strong) UIImageView * imageView;
 @property (nonatomic, strong) UICollectionView * collectionView;
 @property (nonatomic, strong) JYSizeSlider * sizeSlider;
 @property (nonatomic, strong) NSIndexPath *indexPath;
@@ -20,14 +19,13 @@
 
 @implementation JYPopupSizeMenuListView
 @synthesize item = _item;
-@synthesize image = _image;
 @synthesize delegate = _delegate;
 
-+ (instancetype)itemViewWithItem:(id <JYPopupListMenuDataProtocol>)item {
++ (instancetype)itemViewWithItem:(id <JYPopupMenuListDataProtocol>)item {
     return [[self alloc] initWithItem:item];
 }
 
-- (instancetype)initWithItem:( id<JYPopupListMenuDataProtocol>)item {
+- (instancetype)initWithItem:( id<JYPopupMenuListDataProtocol>)item {
     self = [self initWithFrame:CGRectZero];
     
     if (self) {
@@ -50,27 +48,22 @@
 }
 
 - (void)initSubViews {
-    [self addSubview:self.imageView];
+    [super initSubViews];
     [self addSubview:self.collectionView];
-    [self addSubview:self.sizeSlider];
+    //[self addSubview:self.sizeSlider];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _imageView.frame = self.bounds;
     _collectionView.frame = self.bounds;
     _collectionView.contentInset = UIEdgeInsetsMake((self.height - SMPaintingMenuItemHeight - JYViewItemInset), JYViewItemInset, JYViewInset, JYViewItemInset);
-    _sizeSlider.size = CGSizeMake(self.width - JYViewInset * 2, SMPaintingMenuSliderHeight);
+    _sizeSlider.size = CGSizeMake(self.width - JYViewInset * 2, 30);
     _sizeSlider.left = JYViewInset;
-    _sizeSlider.top = SMPaintingMenuSizeSlideTop;
-
+    _sizeSlider.bottom = self.height - SMPaintingMenuItemHeight - JYViewInset;
 }
 
-- (void)setImage:(UIImage *)image {
-    self.imageView.image = image;
-}
-
-- (void)setItem:(id<JYPopupListMenuDataProtocol>)item {
+- (void)setItem:(id<JYPopupMenuListDataProtocol>)item {
+    [super setItem:item];
     if (_item != item) {
         _item = item;
     }
@@ -79,16 +72,11 @@
 #pragma mark - Updating the View
 
 - (CGSize)sizeThatFits:(CGSize)size {
-    CGSize viewSize = CGSizeMake(SMPaintingMenuItemHeight * _item.menus.count + JYViewItemInset * 2 + JYViewItemInset * (_item.menus.count - 1), SMPaintingMenuHeight);
-    return viewSize;
-}
-
-- (UIImageView *)imageView {
-    if (!_imageView) {
-        _imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-    }
+    CGSize superViewSize = [super sizeThatFits:CGSizeZero];
     
-    return _imageView;
+    CGFloat height = 60 + superViewSize.height;
+    CGSize viewSize = CGSizeMake(SMPaintingMenuItemHeight * _item.menus.count + JYViewItemInset * 2 + JYViewItemInset * (_item.menus.count - 1), height);
+    return viewSize;
 }
 
 - (UICollectionView *)collectionView {
@@ -97,7 +85,6 @@
         _collectionView.backgroundColor = [UIColor clearColor];
         _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.showsVerticalScrollIndicator = NO;
-        _collectionView.pagingEnabled = YES;
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
         [_collectionView registerClass:[JYPopupSizeMenuCollectionViewCell class] forCellWithReuseIdentifier:@"JYPopupSizeMenuCollectionViewCell"];

@@ -23,10 +23,18 @@
                 [tempMutableArray addObject:menu];
             }
         } else if (_type == JYPaintingTypeColor) {
-            NSArray *colorArray = @[[UIColor blackColor], [UIColor whiteColor], [UIColor redColor], [UIColor yellowColor], [UIColor greenColor], [UIColor blueColor], [UIColor colorWithHue:0.8 saturation:1 brightness:1 alpha:1]];
-            for (int i = 0; i < colorArray.count; i ++) {
+            int colorCount = 6;
+            for (int i = 0; i < colorCount; i++) {
+                UIColor *color = [UIColor colorWithWhite:i/(float)(colorCount - 1) alpha:1.0];
                 JYMenu *menu = [[JYMenu alloc] initWithType:_type];
-                menu.color = colorArray[i];
+                menu.color = color;
+                [tempMutableArray addObject:menu];
+            }
+            colorCount = 16;
+            for (int i = 0; i < colorCount; i++) {
+                UIColor *color = [UIColor colorWithHue:i / (float)colorCount saturation:1.0 brightness:1.0 alpha:1.0];
+                JYMenu *menu = [[JYMenu alloc] initWithType:_type];
+                menu.color = color;
                 [tempMutableArray addObject:menu];
             }
         } else if (_type == JYPaintingTypeSize) {
@@ -60,19 +68,19 @@
         NSMutableArray *temp = [NSMutableArray array];
         JYPaintingItem *item0 = [[JYPaintingItem alloc] init];
         item0.type = JYPaintingTypeStyle;
-        item0.title = @"0";
+        item0.title = @"选个模板吧";
         [temp addObject:item0];
         JYPaintingItem *item1 = [[JYPaintingItem alloc] init];
         item1.type = JYPaintingTypeSize;
-        item1.title = @"1";
+        item1.title = @"线条宽度";
         [temp addObject:item1];
         JYPaintingItem *item2 = [[JYPaintingItem alloc] init];
         item2.type = JYPaintingTypeColor;
-        item2.title = @"2";
+        item2.title = @"线条颜色";
         [temp addObject:item2];
         JYPaintingItem *item3 = [[JYPaintingItem alloc] init];
         item3.type = JYPaintingTypePen;
-        item3.title = @"3";
+        item3.title = @"画笔类型";
         [temp addObject:item3];
         JYPaintingItem *item4 = [[JYPaintingItem alloc] init];
         item4.type = JYPaintingTypeUndo;
