@@ -50,9 +50,9 @@
 
 #pragma -- mark -- JYDayCalendarViewDelegate
 
-- (void)dayCalendarView:(JYDayCalendarView *)view didSelectItemAtIndexPath:(id <JYMoodDate>)date {
-    if ([self.delegate respondsToSelector:@selector(monthCalendarCollectionViewCell:didSelectItemAtIndexPath:)]) {
-        [self.delegate monthCalendarCollectionViewCell:self didSelectItemAtIndexPath:date];
+- (void)dayCalendarView:(JYDayCalendarView *)view didSelectItem:(id <JYMoodDate>)date didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.delegate respondsToSelector:@selector(monthCalendarCollectionViewCell:didSelectItem:didSelectItemAtIndexPath:)]) {
+        [self.delegate monthCalendarCollectionViewCell:self didSelectItem:date didSelectItemAtIndexPath:indexPath];
     }
 }
 

@@ -79,7 +79,7 @@
 @implementation JYMoodWeekDate
 
 - (JYMoodDateType)dateType {
-    return JYMoodDateTypeDay;
+    return JYMoodDateTypeWeek;
 }
 
 @end
@@ -87,7 +87,12 @@
 @implementation JYMoodDayDate
 
 - (JYMoodDateType)dateType {
-    return JYMoodDateTypeWeek;
+    return JYMoodDateTypeDay;
+}
+
+- (NSString *)name {
+    NSString *dayName = @([self.gregorian component:NSCalendarUnitDay fromDate:self.date]).stringValue;
+    return dayName;
 }
 
 @end

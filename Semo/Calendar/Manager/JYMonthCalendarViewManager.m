@@ -9,6 +9,7 @@
 #import "JYCalendarCollectionViewLayout.h"
 #import "JYMonthCalendarCollectionViewCell.h"
 #import "JYCalendarCalculator.h"
+#import "JYMonthMood.h"
 #import "JYPrefixHeader.h"
 
 @interface JYMonthCalendarViewManager () <UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, JYCalendarCollectionViewLayoutDelegate, JYCalendarCalculatorDelegate, JYMonthCalendarCollectionViewCellDelegate>
@@ -185,7 +186,21 @@
 
 #pragma mark - JYMonthCalendarCollectionViewCellDelegate
 
-- (void)monthCalendarCollectionViewCell:(JYMonthCalendarCollectionViewCell *)cell didSelectItemAtIndexPath:(id <JYMoodDate>)date {
+- (void)monthCalendarCollectionViewCell:(JYMonthCalendarCollectionViewCell *)cell didSelectItem:(id <JYMoodDate>)date didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger todayIndex = JYCalendarDataIndexFromDateName(self.calculator.todayName);
+    if (indexPath.row > todayIndex) {
+        return;
+    }
+    
+    if (indexPath.row < todayIndex) {
+        NSString *text = date.name;
+        NSDictionary *dayMoodDic = self.currentMonth.monthMood.dayMoodDict;
+        JYDayMood *dayMood = [dayMoodDic valueForKey:text];
+        NSData *data = dayMood.moods.lastObject;
+        if (data) {
+            return;
+        }
+    }
     self.dayDate = date;
     if ([self.delegate respondsToSelector:@selector(monthCalendarViewManager:didSelectItemAtIndexPath:)]) {
         [self.delegate monthCalendarViewManager:self didSelectItemAtIndexPath:self.dayName];
