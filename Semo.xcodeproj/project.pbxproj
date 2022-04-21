@@ -27,6 +27,7 @@
 		B41AC73C27D71A5700CDF4AB /* JYMoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC73B27D71A5600CDF4AB /* JYMoodTableViewCell.m */; };
 		B41AC74027D71EBB00CDF4AB /* JYMoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC73F27D71EBB00CDF4AB /* JYMoodModel.m */; };
 		B41FF20427E84AB9004D0329 /* JYPainting.m in Sources */ = {isa = PBXBuildFile; fileRef = B41FF20327E84AB9004D0329 /* JYPainting.m */; };
+		B42209D2280E7C3100A2D68F /* JYMenuLocal.m in Sources */ = {isa = PBXBuildFile; fileRef = B42209D1280E7C3100A2D68F /* JYMenuLocal.m */; };
 		B43109EC2806FB5D00D11D2F /* JYRecordPaintingUndoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B43109EB2806FB5D00D11D2F /* JYRecordPaintingUndoCollectionViewCell.m */; };
 		B43C4CA527F1460F00F4C22B /* JYSealMoodADRView.m in Sources */ = {isa = PBXBuildFile; fileRef = B43C4CA427F1460F00F4C22B /* JYSealMoodADRView.m */; };
 		B43C4CAA27F1ACC200F4C22B /* JYSealMoodSellView.m in Sources */ = {isa = PBXBuildFile; fileRef = B43C4CA927F1ACC200F4C22B /* JYSealMoodSellView.m */; };
@@ -48,6 +49,13 @@
 		B4609CE027EB3CE1009BC2A5 /* JYColorSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CDF27EB3CE1009BC2A5 /* JYColorSlider.m */; };
 		B4609CE327EB3E44009BC2A5 /* UIControl+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CE227EB3E44009BC2A5 /* UIControl+Block.m */; };
 		B4609CE627EB40BB009BC2A5 /* JYSizeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CE527EB40BB009BC2A5 /* JYSizeSlider.m */; };
+		B46ED563281105EC000712F8 /* NSMutableArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = B46ED555281105EB000712F8 /* NSMutableArray+Safe.m */; };
+		B46ED564281105EC000712F8 /* NSMutableDictionary+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = B46ED558281105EC000712F8 /* NSMutableDictionary+Safe.m */; };
+		B46ED565281105EC000712F8 /* NSMutableString+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = B46ED55D281105EC000712F8 /* NSMutableString+Safe.m */; };
+		B46ED566281105EC000712F8 /* NSDictionary+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = B46ED55F281105EC000712F8 /* NSDictionary+Safe.m */; };
+		B46ED567281105EC000712F8 /* NSObject+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = B46ED560281105EC000712F8 /* NSObject+Swizzling.m */; };
+		B46ED568281105EC000712F8 /* NSArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = B46ED561281105EC000712F8 /* NSArray+Safe.m */; };
+		B46ED569281105EC000712F8 /* NSObject+ImpChangeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B46ED562281105EC000712F8 /* NSObject+ImpChangeTool.m */; };
 		B47EAAF4280CF96A00F6E8EF /* JYPopupMenuContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B47EAAF3280CF96A00F6E8EF /* JYPopupMenuContentView.m */; };
 		B480EFC527FE8D9200EA4811 /* JYMoodDate.m in Sources */ = {isa = PBXBuildFile; fileRef = B480EFC427FE8D9200EA4811 /* JYMoodDate.m */; };
 		B490453327F00BE7005A265A /* JYPopupStyleMenuListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B490453227F00BE7005A265A /* JYPopupStyleMenuListView.m */; };
@@ -188,6 +196,8 @@
 		B41AC73F27D71EBB00CDF4AB /* JYMoodModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYMoodModel.m; sourceTree = "<group>"; };
 		B41FF20227E84AB9004D0329 /* JYPainting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPainting.h; sourceTree = "<group>"; };
 		B41FF20327E84AB9004D0329 /* JYPainting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPainting.m; sourceTree = "<group>"; };
+		B42209D0280E7C3100A2D68F /* JYMenuLocal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYMenuLocal.h; sourceTree = "<group>"; };
+		B42209D1280E7C3100A2D68F /* JYMenuLocal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYMenuLocal.m; sourceTree = "<group>"; };
 		B43109EA2806FB5D00D11D2F /* JYRecordPaintingUndoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYRecordPaintingUndoCollectionViewCell.h; sourceTree = "<group>"; };
 		B43109EB2806FB5D00D11D2F /* JYRecordPaintingUndoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYRecordPaintingUndoCollectionViewCell.m; sourceTree = "<group>"; };
 		B43C4CA327F1460F00F4C22B /* JYSealMoodADRView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYSealMoodADRView.h; sourceTree = "<group>"; };
@@ -231,6 +241,21 @@
 		B4609CE227EB3E44009BC2A5 /* UIControl+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Block.m"; sourceTree = "<group>"; };
 		B4609CE427EB40BB009BC2A5 /* JYSizeSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYSizeSlider.h; sourceTree = "<group>"; };
 		B4609CE527EB40BB009BC2A5 /* JYSizeSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYSizeSlider.m; sourceTree = "<group>"; };
+		B46ED554281105EB000712F8 /* NSMutableString+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+Safe.h"; sourceTree = "<group>"; };
+		B46ED555281105EB000712F8 /* NSMutableArray+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Safe.m"; sourceTree = "<group>"; };
+		B46ED556281105EB000712F8 /* NSDictionary+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Safe.h"; sourceTree = "<group>"; };
+		B46ED557281105EC000712F8 /* SafeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafeObject.h; sourceTree = "<group>"; };
+		B46ED558281105EC000712F8 /* NSMutableDictionary+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+Safe.m"; sourceTree = "<group>"; };
+		B46ED559281105EC000712F8 /* NSObject+ImpChangeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ImpChangeTool.h"; sourceTree = "<group>"; };
+		B46ED55A281105EC000712F8 /* NSArray+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Safe.h"; sourceTree = "<group>"; };
+		B46ED55B281105EC000712F8 /* NSObject+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Swizzling.h"; sourceTree = "<group>"; };
+		B46ED55C281105EC000712F8 /* NSMutableArray+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Safe.h"; sourceTree = "<group>"; };
+		B46ED55D281105EC000712F8 /* NSMutableString+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+Safe.m"; sourceTree = "<group>"; };
+		B46ED55E281105EC000712F8 /* NSMutableDictionary+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+Safe.h"; sourceTree = "<group>"; };
+		B46ED55F281105EC000712F8 /* NSDictionary+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Safe.m"; sourceTree = "<group>"; };
+		B46ED560281105EC000712F8 /* NSObject+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Swizzling.m"; sourceTree = "<group>"; };
+		B46ED561281105EC000712F8 /* NSArray+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Safe.m"; sourceTree = "<group>"; };
+		B46ED562281105EC000712F8 /* NSObject+ImpChangeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ImpChangeTool.m"; sourceTree = "<group>"; };
 		B47EAAF2280CF96A00F6E8EF /* JYPopupMenuContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuContentView.h; sourceTree = "<group>"; };
 		B47EAAF3280CF96A00F6E8EF /* JYPopupMenuContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupMenuContentView.m; sourceTree = "<group>"; };
 		B47EAAF8280CF9CE00F6E8EF /* JYPopupMenuContentViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuContentViewProtocol.h; sourceTree = "<group>"; };
@@ -506,6 +531,7 @@
 		B41AC71C27D5AA9C00CDF4AB /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				B46ED553281105EB000712F8 /* SafeObject */,
 				B4E7FA2727F6C3FC00604F5E /* Draw */,
 				B4BF763F27E96399003BBAC5 /* View */,
 				B4BF761D27E8B220003BBAC5 /* QBPopupMenu */,
@@ -594,8 +620,32 @@
 			children = (
 				B4609CCB27EAB0AE009BC2A5 /* JYMenu.h */,
 				B4609CCC27EAB0AE009BC2A5 /* JYMenu.m */,
+				B42209D0280E7C3100A2D68F /* JYMenuLocal.h */,
+				B42209D1280E7C3100A2D68F /* JYMenuLocal.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B46ED553281105EB000712F8 /* SafeObject */ = {
+			isa = PBXGroup;
+			children = (
+				B46ED557281105EC000712F8 /* SafeObject.h */,
+				B46ED55A281105EC000712F8 /* NSArray+Safe.h */,
+				B46ED561281105EC000712F8 /* NSArray+Safe.m */,
+				B46ED55C281105EC000712F8 /* NSMutableArray+Safe.h */,
+				B46ED555281105EB000712F8 /* NSMutableArray+Safe.m */,
+				B46ED556281105EB000712F8 /* NSDictionary+Safe.h */,
+				B46ED55F281105EC000712F8 /* NSDictionary+Safe.m */,
+				B46ED55E281105EC000712F8 /* NSMutableDictionary+Safe.h */,
+				B46ED558281105EC000712F8 /* NSMutableDictionary+Safe.m */,
+				B46ED554281105EB000712F8 /* NSMutableString+Safe.h */,
+				B46ED55D281105EC000712F8 /* NSMutableString+Safe.m */,
+				B46ED559281105EC000712F8 /* NSObject+ImpChangeTool.h */,
+				B46ED562281105EC000712F8 /* NSObject+ImpChangeTool.m */,
+				B46ED55B281105EC000712F8 /* NSObject+Swizzling.h */,
+				B46ED560281105EC000712F8 /* NSObject+Swizzling.m */,
+			);
+			path = SafeObject;
 			sourceTree = "<group>";
 		};
 		B4AC37A327DC782700529722 /* Seal */ = {
@@ -1160,6 +1210,7 @@
 				B41AC73327D6F9BF00CDF4AB /* JYRecordMoodViewController.m in Sources */,
 				B4E7FA6A27F6C42D00604F5E /* ZHDrawingHexagonLayer.m in Sources */,
 				B4E521F62802E49A00492B5E /* JYMonthCalendarViewManager.m in Sources */,
+				B46ED565281105EC000712F8 /* NSMutableString+Safe.m in Sources */,
 				B4E7FA6F27F6C42D00604F5E /* ZHDrawingRectLayer.m in Sources */,
 				B4B66B9B27F2D3D1007D3267 /* JYSealMoodSimpleView.m in Sources */,
 				B4AC380727DE30E500529722 /* JYCalendarCollectionViewLayout.m in Sources */,
@@ -1186,6 +1237,7 @@
 				B41FF20427E84AB9004D0329 /* JYPainting.m in Sources */,
 				B4A90C5E27E6168E0085CAC4 /* JYRecordMoodBottomView.m in Sources */,
 				B4EC076627DEFF4500CB0877 /* JYRecordMoodView.m in Sources */,
+				B46ED564281105EC000712F8 /* NSMutableDictionary+Safe.m in Sources */,
 				B4E7FA7027F6C42D00604F5E /* ZHDrawingTriangleLayer.m in Sources */,
 				B4A90C6427E62D2D0085CAC4 /* JYRecordPaintingStyleCollectionViewCell.m in Sources */,
 				B4AC37F127DCC41100529722 /* JYMonthCalendarCollectionViewCell.m in Sources */,
@@ -1204,10 +1256,12 @@
 				B4F5455527D83E5D00D6184C /* JYMoodView.m in Sources */,
 				B4E7FA7C27F6C42D00604F5E /* ZHDrawingCylinderLayer.m in Sources */,
 				B4BF762E27E8B220003BBAC5 /* QBPopupMenuOverlayView.m in Sources */,
+				B46ED566281105EC000712F8 /* NSDictionary+Safe.m in Sources */,
 				B43C4CAA27F1ACC200F4C22B /* JYSealMoodSellView.m in Sources */,
 				B448898B27FAD79D007BD0FA /* JYPopupPenMenuCollectionViewCell.m in Sources */,
 				B4BF762C27E8B220003BBAC5 /* QBPopupMenuItem.m in Sources */,
 				B4EA2BF927E7000D00779793 /* LGDrawer.m in Sources */,
+				B42209D2280E7C3100A2D68F /* JYMenuLocal.m in Sources */,
 				B4E7FA7527F6C42D00604F5E /* ZHDrawingCircleLayer.m in Sources */,
 				B4E7FA7B27F6C42D00604F5E /* ZHDrawingRulerArrowLayer.m in Sources */,
 				B4AC37FD27DD9FB400529722 /* JYDayCalendarView.m in Sources */,
@@ -1222,10 +1276,13 @@
 				B4A90C6127E62AE50085CAC4 /* JYRecordPaintingListView.m in Sources */,
 				B43109EC2806FB5D00D11D2F /* JYRecordPaintingUndoCollectionViewCell.m in Sources */,
 				B4E7FA6C27F6C42D00604F5E /* ZHDrawingThreeDCoordinateLayer.m in Sources */,
+				B46ED568281105EC000712F8 /* NSArray+Safe.m in Sources */,
 				B448898527FAD68D007BD0FA /* JYPopupPenMenuListView.m in Sources */,
 				B4EA2C0027E7482000779793 /* JYPaintingView.swift in Sources */,
+				B46ED569281105EC000712F8 /* NSObject+ImpChangeTool.m in Sources */,
 				B4E52215280691FD00492B5E /* JYRecordPaintingSizeCollectionViewCell.m in Sources */,
 				B4AC380027DDA4CF00529722 /* JYDayCalendarCollectionViewCell.m in Sources */,
+				B46ED563281105EC000712F8 /* NSMutableArray+Safe.m in Sources */,
 				B41AC73C27D71A5700CDF4AB /* JYMoodTableViewCell.m in Sources */,
 				B4EC076C27DF013F00CB0877 /* JYRecordMoodListView.m in Sources */,
 				B448898227FAD5FA007BD0FA /* JYPopupSizeMenuListView.m in Sources */,
@@ -1253,6 +1310,7 @@
 				B4EA2C0727E74E0000779793 /* ChartletEditor.swift in Sources */,
 				B4AC37F727DCC93500529722 /* NSCalendar+JYCalendarExtensions.m in Sources */,
 				B43C4CAD27F1B52700F4C22B /* JYSealMoodLoveView.m in Sources */,
+				B46ED567281105EC000712F8 /* NSObject+Swizzling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

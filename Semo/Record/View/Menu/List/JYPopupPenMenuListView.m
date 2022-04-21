@@ -10,11 +10,11 @@
 #import "JYSizeSlider.h"
 #import "XDVerticalGradientColorSlider.h"
 #import "JYPainting.h"
+#import "JYMenuLocal.h"
 #import "JYPrefixHeader.h"
 
 @interface JYPopupPenMenuListView () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView * collectionView;
-@property (nonatomic, strong) NSIndexPath *indexPath;
 @end
 
 @implementation JYPopupPenMenuListView
@@ -114,7 +114,7 @@
     JYPopupPenMenuCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYPopupPenMenuCollectionViewCell" forIndexPath:indexPath];
     JYMenu *menu = _item.menus[indexPath.row];
     [cell updateViewWithModel:menu];
-    cell.isSelected = indexPath.row == self.indexPath.row ? YES : NO;
+    cell.isSelected = indexPath.row == self.item.menuLocal.selectedIndex ? YES : NO;
     return cell;
 }
 
@@ -123,7 +123,8 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    self.indexPath = indexPath;
+    self.item.menuLocal.selectedIndex = indexPath.row;
+    [self.item.menuLocal bg_saveOrUpdate];
     JYMenu *menu = _item.menus[indexPath.row];
     if ([self.delegate respondsToSelector:@selector(menuListView:didSelectItem:)]) {
         [self.delegate menuListView:self didSelectItem:menu];

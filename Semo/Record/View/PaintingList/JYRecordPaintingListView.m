@@ -22,6 +22,7 @@
 @property (nonatomic, strong) JYPopupMenu *popupLineWidthMenu;
 @property (nonatomic, strong) JYPopupMenu *popupPenMenu;
 @property (nonatomic, strong) JYPainting *painting;
+
 @end
 
 @implementation JYRecordPaintingListView

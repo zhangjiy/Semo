@@ -10,13 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class UIColor;
+@class UIColor, JYMenuLocal;
 
 @interface JYPaintingItem : NSObject <JYPopupMenuListDataProtocol>
-@property (nonatomic, assign) JYPaintingType type;
+@property (nonatomic, assign, readonly) JYPaintingType type;
 @property (nonatomic, assign) BOOL enabled;
 @property (nonatomic, strong) NSString * title;
 @end
+
 
 @interface JYPainting : NSObject
 @property (nonatomic, strong) NSArray <JYPaintingItem *> * plantings;

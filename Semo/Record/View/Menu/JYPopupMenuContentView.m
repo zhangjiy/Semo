@@ -35,8 +35,8 @@
     [super layoutSubviews];
     _imageView.frame = self.bounds;
     [_titleLabel sizeToFit];
-    _titleLabel.left = JYViewInset;
-    _titleLabel.top = JYViewInset;
+    _titleLabel.left = SMHomeLeft;
+    _titleLabel.top = SMHomeLeft;
 }
 
 - (void)setImage:(UIImage *)image {
@@ -54,7 +54,7 @@
 
 - (CGSize)sizeThatFits:(CGSize)size {
     CGFloat height = _titleLabel.intrinsicContentSize.height + JYViewItemInset;
-    CGFloat viewWidth = _titleLabel.intrinsicContentSize.width + JYViewInset * 2;
+    CGFloat viewWidth = _titleLabel.intrinsicContentSize.width + SMHomeLeft * 2;
     CGSize viewSize = CGSizeMake(MIN(viewWidth, ScreenWidth - JYViewItemInset * 2), height);
     return viewSize;
 }

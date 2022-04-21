@@ -8,10 +8,11 @@
 #import "JYRecordMoodManager.h"
 #import "JYRecordMoodDisplayView.h"
 #import "JYRecordMoodBottomView.h"
+#import "JYMenuLocal.h"
 #import "JYPainting.h"
 #import "Semo-Swift.h"
-#import "JYStyleImageFactory.h"
 #import "LGDrawer.h"
+#import "JYStyleImageFactory.h"
 #import "JYPrefixHeader.h"
 
 @interface JYRecordMoodManager () <JYRecordMoodBottomViewDelegate>
@@ -37,8 +38,32 @@
 
 - (void)initConfig {
     [self.bottomView updateViewWithModel:self.painting];
-    UIImage *image = [self styleImageWithStyleType:JYMoodStyleTypePass];
-    self.moodDisplayView.image = image;
+    [self initPaintingConfig];
+}
+
+- (void)initPaintingConfig {
+    for (JYPaintingItem *item in self.painting.plantings) {
+        NSArray <JYMenu *> *menus = item.menus;
+        NSInteger index = item.menuLocal.selectedIndex;
+        JYMenu *menu = menus[index];
+        if (item.type == JYPaintingTypeStyle) {
+            UIImage *image = [self styleImageWithStyleType:menu.styleType];
+            self.moodDisplayView.image = image;
+        } else if (item.type == JYPaintingTypeColor) {
+            dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.f * NSEC_PER_SEC));
+             __weak typeof(self) weakSelf = self;
+            dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+                __strong typeof(self) strongSelf = weakSelf;
+                [strongSelf.paintingView changeColor:menu.color];;
+            });
+        } else if (item.type == JYPaintingTypeSize) {
+            [self.paintingView changeSize:menu.lineWidth];
+        } else if (item.type == JYPaintingTypePen) {
+            NSInteger index = [JYStyleImageFactory indexFactoryFromPenName:menu.name];
+            [self.paintingView changeStyle:index];
+        }
+    }
+    
 }
 
 - (void)initSubviews {
