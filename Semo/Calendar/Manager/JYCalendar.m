@@ -46,8 +46,6 @@
     _currentMonth = [self.gregorian jy_firstDayOfMonth:_today];
     _sameMonth = [self.gregorian jy_firstDayOfMonth:_today];
 
-    _minimumDate = [[JYMoodMonthDate alloc] initWithDate:[self.formatter dateFromString:@"2022-01-01"]];
-    _maximumDate = [[JYMoodMonthDate alloc] initWithDate:[self.formatter dateFromString:@"2022-12-31"]];
     [self requestBoundingDatesIfNecessary];
     
 }
@@ -63,18 +61,18 @@
 - (BOOL)requestBoundingDatesIfNecessary {
     if (_needsRequestingBoundingDates) {
         _needsRequestingBoundingDates = NO;
-        self.formatter.dateFormat = @"yyyy-MM-dd";
-        NSDate *newMin = [self.formatter dateFromString:@"2022-01-01"];
-        newMin = [self.gregorian startOfDayForDate:newMin];
-        NSDate *newMax = [self.formatter dateFromString:@"2022-12-31"];
-        newMax = [self.gregorian startOfDayForDate:newMax];
+        NSDate *maxDate = _today.date;
+        maxDate = [self.gregorian startOfDayForDate:maxDate];
         
-        NSAssert([self.gregorian compareDate:newMin toDate:newMax toUnitGranularity:NSCalendarUnitDay] != NSOrderedDescending, @"The minimum date of calendar should be earlier than the maximum.");
+        NSDate *minDate = [self getPriousorLaterDateFromDate:maxDate withMonth:-11];
+        minDate = [self.gregorian startOfDayForDate:minDate];
         
-        BOOL res = ![self.gregorian isDate:newMin inSameDayAsDate:_minimumDate.date] || ![self.gregorian isDate:newMax inSameDayAsDate:_maximumDate.date];
+        NSAssert([self.gregorian compareDate:minDate toDate:maxDate toUnitGranularity:NSCalendarUnitDay] != NSOrderedDescending, @"The minimum date of calendar should be earlier than the maximum.");
         
-        _minimumDate = [[JYMoodMonthDate alloc] initWithDate:newMin];
-        _maximumDate = [[JYMoodMonthDate alloc] initWithDate:newMax];
+        BOOL res = ![self.gregorian isDate:minDate inSameDayAsDate:_minimumDate.date] || ![self.gregorian isDate:maxDate inSameDayAsDate:_maximumDate.date];
+        
+        _minimumDate = [[JYMoodMonthDate alloc] initWithDate:minDate];
+        _maximumDate = [[JYMoodMonthDate alloc] initWithDate:maxDate];
         [self reloadDate];
         
         return res;
@@ -133,6 +131,15 @@
 
 - (BOOL)isDateInDifferentPage:(NSDate *)date {
     return ![self.gregorian isDate:date equalToDate:_currentMonth.date toUnitGranularity:NSCalendarUnitMonth];
+}
+
+- (NSDate*)getPriousorLaterDateFromDate:(NSDate*)date withMonth:(int)month{
+
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    [comps setMonth:month];
+    NSCalendar *calender = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDate *mDate = [calender dateByAddingComponents:comps toDate:date options:0];
+    return mDate;
 }
 
 @end

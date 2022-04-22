@@ -59,12 +59,9 @@
     return _backgroundContentView;
 }
 
-- (void)setText:(NSString *)text {
-    if (_text != text) {
-        _text = text;
-        self.yearLabel.text = @"2022";
-        self.monthLabel.text = @"四月";
-    }
+- (void)updateYearText:(NSString *)yearText monthText:(NSString *)monthText{
+    self.yearLabel.text = yearText;
+    self.monthLabel.text = [NSString stringWithFormat:@"%@%@", monthText, @"月"];
 }
 
 - (void)layoutSubviews {

@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JYYearCalendarCollectionViewCell : UICollectionViewCell
-@property (nonatomic, strong) NSString *text;
+- (void)updateYearText:(NSString *)yearText monthText:(NSString *)monthText;
 @end
 
 NS_ASSUME_NONNULL_END

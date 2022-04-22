@@ -48,6 +48,8 @@ typedef NS_ENUM(NSUInteger, JYCalendarMonthPosition) {
 
 - (void)adjustMonthPosition;
 
+- (NSString *)yearNameForMonth:(id <JYMoodDate>)month;
+
 - (NSInteger)numberOfRowsInMonth:(id <JYMoodDate>)month;
 - (NSString *)monthNameForMonth:(id <JYMoodDate>)month;
 

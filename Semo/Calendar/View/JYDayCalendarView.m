@@ -103,8 +103,9 @@
     if (indexPath.row == numberOfRows) {
         JYYearCalendarCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYYearCalendarCollectionViewCell" forIndexPath:indexPath];
 
-        NSString *text = [self.calculator monthNameForMonth:self.month];
-        cell.text = text;
+        NSString *yearText = [self.calculator yearNameForMonth:self.month];
+        NSString *monthText = [self.calculator monthNameForMonth:self.month];
+        [cell updateYearText:yearText monthText:monthText];
         return cell;
     }
     NSString *text = [self.calculator dayNameForMonth:self.month index:indexPath.row];

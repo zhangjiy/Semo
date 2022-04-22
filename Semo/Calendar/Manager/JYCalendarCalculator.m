@@ -115,7 +115,12 @@
 }
 
 - (NSString *)monthNameForMonth:(id <JYMoodDate>)month {
-    NSString *text = [self.calendar.formatter stringFromDate:month.date];
+    NSString *text = @([self.calendar.gregorian component:NSCalendarUnitMonth fromDate:month.date]).stringValue;
+    return text;
+}
+
+- (NSString *)yearNameForMonth:(id <JYMoodDate>)month {
+    NSString *text = @([self.calendar.gregorian component:NSCalendarUnitYear fromDate:month.date]).stringValue;
     return text;
 }
 
