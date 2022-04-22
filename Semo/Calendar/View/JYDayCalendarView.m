@@ -7,6 +7,7 @@
 
 #import "JYDayCalendarView.h"
 #import "JYDayCalendarCollectionViewCell.h"
+#import "JYDayMoodImageCollectionViewCell.h"
 #import "JYYearCalendarCollectionViewCell.h"
 #import "JYGridView.h"
 #import "JYMonthMood.h"
@@ -49,6 +50,7 @@
         _collectionView.pagingEnabled = YES;
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
+        [_collectionView registerClass:[JYDayMoodImageCollectionViewCell class] forCellWithReuseIdentifier:@"JYDayMoodImageCollectionViewCell"];
         [_collectionView registerClass:[JYDayCalendarCollectionViewCell class] forCellWithReuseIdentifier:@"JYDayCalendarCollectionViewCell"];
         [_collectionView registerClass:[JYYearCalendarCollectionViewCell class] forCellWithReuseIdentifier:@"JYYearCalendarCollectionViewCell"];
         _collectionView.scrollsToTop = NO;
@@ -105,21 +107,21 @@
         cell.text = text;
         return cell;
     }
-    JYDayCalendarCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYDayCalendarCollectionViewCell" forIndexPath:indexPath];
     NSString *text = [self.calculator dayNameForMonth:self.month index:indexPath.row];
+    NSDictionary *dayMoodDic = self.month.monthMood.dayMoodDict;
+    JYDayMood *dayMood = [dayMoodDic valueForKey:text];
+    NSArray *moods = dayMood.moods;
+    if (moods.count > 0) {
+        JYDayMoodImageCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYDayMoodImageCollectionViewCell" forIndexPath:indexPath];
+        cell.images = moods;
+        return cell;
+    }
+    
+    JYDayCalendarCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYDayCalendarCollectionViewCell" forIndexPath:indexPath];
     if ([self.calculator isToday:self.month index:indexPath.row]) {
         
     }
     cell.text = text;
-    NSDictionary *dayMoodDic = self.month.monthMood.dayMoodDict;
-    JYDayMood *dayMood = [dayMoodDic valueForKey:text];
-    NSData *data = dayMood.moods.lastObject;
-    if (data) {
-        UIImage *image = [UIImage imageWithData:data];
-        cell.image = image;
-    } else {
-        cell.image = nil;
-    }
     return cell;
 }
 

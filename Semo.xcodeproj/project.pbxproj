@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		AF6E6458AA744AAA00D4465E /* Pods_Semo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA25C72885D57D9EEC085F12 /* Pods_Semo.framework */; };
+		B40B2A4C28126E1200B3D760 /* TYPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B40B2A4828126E1200B3D760 /* TYPageControl.m */; };
+		B40B2A4D28126E1200B3D760 /* TYCyclePagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B40B2A4928126E1200B3D760 /* TYCyclePagerView.m */; };
+		B40B2A4E28126E1200B3D760 /* TYCyclePagerTransformLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B40B2A4A28126E1200B3D760 /* TYCyclePagerTransformLayout.m */; };
+		B40B2A5128126FF400B3D760 /* JYDayMoodImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B40B2A5028126FF400B3D760 /* JYDayMoodImageCollectionViewCell.m */; };
+		B40B2A54281272D700B3D760 /* JYCyclePagerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B40B2A53281272D700B3D760 /* JYCyclePagerCollectionViewCell.m */; };
 		B41AC6E327D5A69F00CDF4AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC6E227D5A69F00CDF4AB /* AppDelegate.m */; };
 		B41AC6E627D5A69F00CDF4AB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC6E527D5A69F00CDF4AB /* SceneDelegate.m */; };
 		B41AC6E927D5A69F00CDF4AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC6E827D5A69F00CDF4AB /* ViewController.m */; };
@@ -160,6 +165,16 @@
 /* Begin PBXFileReference section */
 		198F52BE70F9FB1EB88BFFB5 /* Pods-Semo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Semo.debug.xcconfig"; path = "Target Support Files/Pods-Semo/Pods-Semo.debug.xcconfig"; sourceTree = "<group>"; };
 		4019989A400F21FB12E7117C /* Pods-Semo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Semo.release.xcconfig"; path = "Target Support Files/Pods-Semo/Pods-Semo.release.xcconfig"; sourceTree = "<group>"; };
+		B40B2A4628126E1200B3D760 /* TYCyclePagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYCyclePagerView.h; sourceTree = "<group>"; };
+		B40B2A4728126E1200B3D760 /* TYCyclePagerTransformLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYCyclePagerTransformLayout.h; sourceTree = "<group>"; };
+		B40B2A4828126E1200B3D760 /* TYPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPageControl.m; sourceTree = "<group>"; };
+		B40B2A4928126E1200B3D760 /* TYCyclePagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYCyclePagerView.m; sourceTree = "<group>"; };
+		B40B2A4A28126E1200B3D760 /* TYCyclePagerTransformLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYCyclePagerTransformLayout.m; sourceTree = "<group>"; };
+		B40B2A4B28126E1200B3D760 /* TYPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPageControl.h; sourceTree = "<group>"; };
+		B40B2A4F28126FF400B3D760 /* JYDayMoodImageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYDayMoodImageCollectionViewCell.h; sourceTree = "<group>"; };
+		B40B2A5028126FF400B3D760 /* JYDayMoodImageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYDayMoodImageCollectionViewCell.m; sourceTree = "<group>"; };
+		B40B2A52281272D700B3D760 /* JYCyclePagerCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYCyclePagerCollectionViewCell.h; sourceTree = "<group>"; };
+		B40B2A53281272D700B3D760 /* JYCyclePagerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYCyclePagerCollectionViewCell.m; sourceTree = "<group>"; };
 		B41AC6DE27D5A69F00CDF4AB /* Semo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Semo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41AC6E127D5A69F00CDF4AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B41AC6E227D5A69F00CDF4AB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -455,6 +470,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B40B2A4528126E1200B3D760 /* TYCyclePagerView */ = {
+			isa = PBXGroup;
+			children = (
+				B40B2A4628126E1200B3D760 /* TYCyclePagerView.h */,
+				B40B2A4928126E1200B3D760 /* TYCyclePagerView.m */,
+				B40B2A4728126E1200B3D760 /* TYCyclePagerTransformLayout.h */,
+				B40B2A4A28126E1200B3D760 /* TYCyclePagerTransformLayout.m */,
+				B40B2A4B28126E1200B3D760 /* TYPageControl.h */,
+				B40B2A4828126E1200B3D760 /* TYPageControl.m */,
+			);
+			path = TYCyclePagerView;
+			sourceTree = "<group>";
+		};
 		B41AC6D527D5A69F00CDF4AB = {
 			isa = PBXGroup;
 			children = (
@@ -741,6 +769,7 @@
 		B4BF763F27E96399003BBAC5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B40B2A4528126E1200B3D760 /* TYCyclePagerView */,
 				B4E7FA8527F865DF00604F5E /* XDVerticalGradientColorSlider.h */,
 				B4E7FA8427F865DE00604F5E /* XDVerticalGradientColorSlider.m */,
 				B4BF764027E963C9003BBAC5 /* UIView+ViewController.h */,
@@ -776,6 +805,10 @@
 				B4AC37FF27DDA4CF00529722 /* JYDayCalendarCollectionViewCell.m */,
 				B4E522002803C55600492B5E /* JYYearCalendarCollectionViewCell.h */,
 				B4E522012803C55600492B5E /* JYYearCalendarCollectionViewCell.m */,
+				B40B2A4F28126FF400B3D760 /* JYDayMoodImageCollectionViewCell.h */,
+				B40B2A5028126FF400B3D760 /* JYDayMoodImageCollectionViewCell.m */,
+				B40B2A52281272D700B3D760 /* JYCyclePagerCollectionViewCell.h */,
+				B40B2A53281272D700B3D760 /* JYCyclePagerCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1195,6 +1228,7 @@
 			files = (
 				B41AC72F27D6F11D00CDF4AB /* JYPlusControl.m in Sources */,
 				B4EA2C1227E752BA00779793 /* JYRecordMoodManager.m in Sources */,
+				B40B2A4E28126E1200B3D760 /* TYCyclePagerTransformLayout.m in Sources */,
 				B4EA2C0827E74E0000779793 /* ChartletImageCache.swift in Sources */,
 				B4BF763427E95C7B003BBAC5 /* JYPopupColorMenuListView.m in Sources */,
 				B41AC6E927D5A69F00CDF4AB /* ViewController.m in Sources */,
@@ -1263,8 +1297,10 @@
 				B4EA2BF927E7000D00779793 /* LGDrawer.m in Sources */,
 				B42209D2280E7C3100A2D68F /* JYMenuLocal.m in Sources */,
 				B4E7FA7527F6C42D00604F5E /* ZHDrawingCircleLayer.m in Sources */,
+				B40B2A54281272D700B3D760 /* JYCyclePagerCollectionViewCell.m in Sources */,
 				B4E7FA7B27F6C42D00604F5E /* ZHDrawingRulerArrowLayer.m in Sources */,
 				B4AC37FD27DD9FB400529722 /* JYDayCalendarView.m in Sources */,
+				B40B2A5128126FF400B3D760 /* JYDayMoodImageCollectionViewCell.m in Sources */,
 				B4E7FA6827F6C42D00604F5E /* ZHDrawingSphereLayer.m in Sources */,
 				B4EA2C0B27E74E0000779793 /* ChartletPicker.swift in Sources */,
 				B4E7FA8027F6C42D00604F5E /* ZHFigureDrawingLayer.m in Sources */,
@@ -1305,9 +1341,11 @@
 				B4609CCD27EAB0AE009BC2A5 /* JYMenu.m in Sources */,
 				B448897A27FAC7E2007BD0FA /* JYSealMoodView.m in Sources */,
 				B448899027FC1D55007BD0FA /* JYDayMood.m in Sources */,
+				B40B2A4C28126E1200B3D760 /* TYPageControl.m in Sources */,
 				B41AC72527D5AA9D00CDF4AB /* UIView+JYFrame.m in Sources */,
 				B4609CD527EAE670009BC2A5 /* UIImage+CornerRadius.m in Sources */,
 				B4EA2C0727E74E0000779793 /* ChartletEditor.swift in Sources */,
+				B40B2A4D28126E1200B3D760 /* TYCyclePagerView.m in Sources */,
 				B4AC37F727DCC93500529722 /* NSCalendar+JYCalendarExtensions.m in Sources */,
 				B43C4CAD27F1B52700F4C22B /* JYSealMoodLoveView.m in Sources */,
 				B46ED567281105EC000712F8 /* NSObject+Swizzling.m in Sources */,
