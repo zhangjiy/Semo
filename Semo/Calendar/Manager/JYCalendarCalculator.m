@@ -69,8 +69,8 @@
     [self.calendar adjustMonthPosition];
 }
 
-- (NSInteger)currentMonthName {
-    return [self.gregorian component:NSCalendarUnitMonth fromDate:self.currentMonth.date];
+- (NSInteger)currentPage {
+    return self.calendar.currentPage;
 }
 
 - (NSInteger)sameMonthName {

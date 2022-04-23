@@ -86,7 +86,7 @@
 }
 
 - (JYMoodMonthDate *)currentMonth {
-    NSInteger index = JYCalendarDataIndexFromDateName(self.calculator.currentMonthName);
+    NSInteger index = self.calculator.currentPage;
     return [self.calculator monthDateForIndex:index];
 }
 
@@ -188,7 +188,7 @@
 
 - (void)monthCalendarCollectionViewCell:(JYMonthCalendarCollectionViewCell *)cell didSelectItem:(id <JYMoodDate>)date didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger todayIndex = JYCalendarDataIndexFromDateName(self.calculator.todayName);
-    if (indexPath.row > todayIndex) {
+    if (self.calculator.currentPage == MonthsAgo && indexPath.row > todayIndex) {
         return;
     }
     

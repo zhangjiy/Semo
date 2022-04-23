@@ -9,6 +9,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+static NSInteger const MonthsAgo = 11;
+
 typedef NS_ENUM(NSUInteger, JYCalendarScope) {
     JYCalendarScopeMonth,
 };
@@ -33,6 +35,7 @@ typedef NS_ENUM(NSUInteger, JYCalendarPlaceholderType) {
 @property (nonatomic, weak) id <JYCalendarDelegate> delegate;
 
 @property (nonatomic, assign, readonly) NSInteger numberOfMonths;
+@property (nonatomic, assign, readonly) NSInteger currentPage;
 
 @property (nonatomic, strong, readonly) id <JYMoodDate> currentMonth;
 @property (nonatomic, strong, readonly) id <JYMoodDate> sameMonth;

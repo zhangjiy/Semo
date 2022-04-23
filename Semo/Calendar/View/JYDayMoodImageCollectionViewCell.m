@@ -25,6 +25,9 @@
 
 - (void)initWithSubViews {
     [self.contentView addSubview:self.cyclePagerView];
+    UILongPressGestureRecognizer *longGesture = [[UILongPressGestureRecognizer alloc] init];
+    [self.cyclePagerView addGestureRecognizer:longGesture];
+    [longGesture addTarget:self action:@selector(longAction:)];
 }
 
 - (TYCyclePagerView *)cyclePagerView {
@@ -37,6 +40,10 @@
     }
     
     return _cyclePagerView;
+}
+
+- (void)longAction:(UILongPressGestureRecognizer *)gesture {
+    
 }
 
 - (void)setImages:(NSArray *)images {

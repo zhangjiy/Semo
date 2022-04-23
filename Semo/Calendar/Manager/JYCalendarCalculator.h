@@ -39,10 +39,10 @@ typedef NS_ENUM(NSUInteger, JYCalendarMonthPosition) {
 @property (nonatomic, weak) id <JYCalendarCalculatorDelegate> delegate;
 
 @property (nonatomic, assign, readonly) NSInteger numberOfMonths;
+@property (nonatomic, assign, readonly) NSInteger currentPage;
 @property (nonatomic, strong, readonly) id <JYMoodDate> currentMonth;
 @property (nonatomic, strong, readonly) id <JYMoodDate> sameMonth;
 @property (nonatomic, strong, readonly) id <JYMoodDate> today;
-@property (nonatomic, assign, readonly) NSInteger currentMonthName;
 @property (nonatomic, assign, readonly) NSInteger sameMonthName;
 @property (nonatomic, assign, readonly) NSInteger todayName;
 

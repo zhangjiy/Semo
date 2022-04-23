@@ -18,7 +18,8 @@
 @property (nonatomic, strong) id <JYMoodDate> minimumDate;
 @property (nonatomic, strong) id <JYMoodDate> maximumDate;
 
-@property (nonatomic, assign) BOOL needsRequestingBoundingDates;
+@property (nonatomic, assign) BOOL needRequestingBoundingDates;
+@property (nonatomic, assign) BOOL needScrollToPage;
 @end
 
 @implementation JYCalendar
@@ -32,13 +33,16 @@
 }
 
 - (void)initialize {
-    _needsRequestingBoundingDates = YES;
+    _needRequestingBoundingDates = YES;
+    _needScrollToPage = YES;
     _gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     _formatter = [[NSDateFormatter alloc] init];
     _formatter.dateFormat = @"yyyy-MM-dd";
     _locale = [NSLocale currentLocale];
     _timeZone = [NSTimeZone defaultTimeZone];
     [self invalidateDateTools];
+    
+    _currentPage = MonthsAgo;
     
     NSDate *dayDate = [self.gregorian startOfDayForDate:[NSDate date]];
     _today = [[JYMoodMonthDate alloc] initWithDate:dayDate];
@@ -59,12 +63,12 @@
 }
 
 - (BOOL)requestBoundingDatesIfNecessary {
-    if (_needsRequestingBoundingDates) {
-        _needsRequestingBoundingDates = NO;
+    if (_needRequestingBoundingDates) {
+        _needRequestingBoundingDates = NO;
         NSDate *maxDate = _today.date;
         maxDate = [self.gregorian startOfDayForDate:maxDate];
         
-        NSDate *minDate = [self getPriousorLaterDateFromDate:maxDate withMonth:-11];
+        NSDate *minDate = [self getPriousorLaterDateFromDate:maxDate withMonth:-MonthsAgo];
         minDate = [self.gregorian startOfDayForDate:minDate];
         
         NSAssert([self.gregorian compareDate:minDate toDate:maxDate toUnitGranularity:NSCalendarUnitDay] != NSOrderedDescending, @"The minimum date of calendar should be earlier than the maximum.");
@@ -95,21 +99,24 @@
     NSDate *targetPage = [self.gregorian dateByAddingUnit:NSCalendarUnitMonth value:index toDate:minimumPage.date options:0];
     BOOL shouldTriggerPageChange = [self isDateInDifferentPage:targetPage];
     if (shouldTriggerPageChange) {
-        _currentMonth = [[JYMoodMonthDate alloc] initWithDate:targetPage];
+        _currentPage = index;
     }
 }
 
 - (void)scrollToPageForDate:(id <JYMoodDate>)date animated:(BOOL)animated {
-    if (!date) return;
-    if (![self isDateInRange:date]) {
-        date = [self safeDateForDate:date];
+    if (_needScrollToPage) {
+        _needScrollToPage = NO;
         if (!date) return;
-    }
-    if (!_minimumDate || !_maximumDate) {
-        return;
-    }
-    if ([self.delegate respondsToSelector:@selector(calendar:scrollToDate:animated:)]) {
-        [self.delegate calendar:self scrollToDate:date animated:animated];
+        if (![self isDateInRange:date]) {
+            date = [self safeDateForDate:date];
+            if (!date) return;
+        }
+        if (!_minimumDate || !_maximumDate) {
+            return;
+        }
+        if ([self.delegate respondsToSelector:@selector(calendar:scrollToDate:animated:)]) {
+            [self.delegate calendar:self scrollToDate:date animated:animated];
+        }
     }
 }
 
@@ -133,7 +140,7 @@
     return ![self.gregorian isDate:date equalToDate:_currentMonth.date toUnitGranularity:NSCalendarUnitMonth];
 }
 
-- (NSDate*)getPriousorLaterDateFromDate:(NSDate*)date withMonth:(int)month{
+- (NSDate*)getPriousorLaterDateFromDate:(NSDate*)date withMonth:(NSInteger)month{
 
     NSDateComponents *comps = [[NSDateComponents alloc] init];
     [comps setMonth:month];
