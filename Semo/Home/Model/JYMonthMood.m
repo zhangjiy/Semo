@@ -40,4 +40,16 @@
     [self bg_saveOrUpdate];
 }
 
+- (void)deleteDayMoodForKey:(NSString *)key {
+    NSMutableDictionary * temp = [[NSMutableDictionary alloc] init];
+    if (_dayMoodDict) {
+        [temp addEntriesFromDictionary:_dayMoodDict];
+    }
+    
+    [temp removeObjectForKey:key];
+    _dayMoodDict = [temp copy];
+    
+    [self bg_saveOrUpdate];
+}
+
 @end

@@ -56,4 +56,10 @@
     }
 }
 
+- (void)dayCalendarView:(JYDayCalendarView *)view didDeleteItem:(id <JYMoodDate>)date didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.delegate respondsToSelector:@selector(monthCalendarCollectionViewCell:didDeleteItem:didSelectItemAtIndexPath:)]) {
+        [self.delegate monthCalendarCollectionViewCell:self didDeleteItem:date didSelectItemAtIndexPath:indexPath];
+    }
+}
+
 @end

@@ -8,6 +8,7 @@
 #import "JYDayMoodImageCollectionViewCell.h"
 #import "TYCyclePagerView.h"
 #import "JYCyclePagerCollectionViewCell.h"
+#import "QBPopupMenu.h"
 #import "JYPrefixHeader.h"
 
 @interface JYDayMoodImageCollectionViewCell () <TYCyclePagerViewDataSource, TYCyclePagerViewDelegate>
@@ -43,7 +44,22 @@
 }
 
 - (void)longAction:(UILongPressGestureRecognizer *)gesture {
-    
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        if ([self.delegate respondsToSelector:@selector(inView:)]) {
+            UIView *inview = [self.delegate inView:self];
+            CGRect rect = [inview convertRect:self.frame toView:inview];
+            QBPopupMenuItem *item = [QBPopupMenuItem itemWithTitle:@"Delete" target:self action:@selector(popupMenuAction:)];
+            QBPopupMenu *popupMenu = [[QBPopupMenu alloc] initWithItems:@[item]];
+            popupMenu.tag = 1000;
+            [popupMenu showInView:inview targetRect:rect animated:YES];
+        }
+    }
+}
+
+- (void)popupMenuAction:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(dayMoodImageCollectionViewCell:didDeleteAction:)]) {
+        [self.delegate dayMoodImageCollectionViewCell:self didDeleteAction:sender];
+    }
 }
 
 - (void)setImages:(NSArray *)images {

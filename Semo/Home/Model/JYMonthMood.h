@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) NSDictionary <NSString *, JYDayMood *> * dayMoodDict;
 - (instancetype)initWithTableName:(NSString *)tableName name:(NSString *)name;
 - (void)saveDayMood:(nullable JYDayMood *)value forKey:(NSString *)key;
+- (void)deleteDayMoodForKey:(NSString *)key;
 @end
 
 NS_ASSUME_NONNULL_END

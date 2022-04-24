@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol JYMonthCalendarCollectionViewCellDelegate <NSObject>
 @optional
 - (void)monthCalendarCollectionViewCell:(JYMonthCalendarCollectionViewCell *)cell didSelectItem:(id <JYMoodDate>)date didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+- (void)monthCalendarCollectionViewCell:(JYMonthCalendarCollectionViewCell *)cell didDeleteItem:(id <JYMoodDate>)date didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @interface JYMonthCalendarCollectionViewCell : UICollectionViewCell

@@ -17,12 +17,7 @@
 
 @interface JYRecordPaintingListView () <UICollectionViewDelegate, UICollectionViewDataSource, JYPopupMenuDelegate>
 @property (nonatomic, strong) UICollectionView * collectionView;
-@property (nonatomic, strong) JYPopupMenu *popupStyleMenu;
-@property (nonatomic, strong) JYPopupMenu *popupColorMenu;
-@property (nonatomic, strong) JYPopupMenu *popupLineWidthMenu;
-@property (nonatomic, strong) JYPopupMenu *popupPenMenu;
 @property (nonatomic, strong) JYPainting *painting;
-
 @end
 
 @implementation JYRecordPaintingListView
@@ -81,46 +76,6 @@
     return layout;
 }
 
-- (JYPopupMenu *)popupStyleMenu {
-    if (!_popupStyleMenu) {
-        _popupStyleMenu = [[JYPopupMenu alloc] init];
-        _popupStyleMenu.delegate = self;
-        _popupStyleMenu.color = SMGhostWhiteColor;
-    }
-    
-    return _popupStyleMenu;
-}
-
-- (JYPopupMenu *)popupColorMenu {
-    if (!_popupColorMenu) {
-        _popupColorMenu = [[JYPopupMenu alloc] init];
-        _popupColorMenu.delegate = self;
-        _popupColorMenu.color = SMGhostWhiteColor;
-    }
-    
-    return _popupColorMenu;
-}
-
-- (JYPopupMenu *)popupLineWidthMenu {
-    if (!_popupLineWidthMenu) {
-        _popupLineWidthMenu = [[JYPopupMenu alloc] init];
-        _popupLineWidthMenu.delegate = self;
-        _popupLineWidthMenu.color = SMGhostWhiteColor;
-    }
-    
-    return _popupLineWidthMenu;
-}
-
-- (JYPopupMenu *)popupPenMenu {
-    if (!_popupPenMenu) {
-        _popupPenMenu = [[JYPopupMenu alloc] init];
-        _popupPenMenu.delegate = self;
-        _popupPenMenu.color = SMGhostWhiteColor;
-    }
-    
-    return _popupPenMenu;
-}
-
 #pragma -- mark - JYPopupMenuDelegate
 
 - (void)popupMenu:(JYPopupMenu *)popupMenu didSelectItem:(JYMenu *)item {
@@ -173,19 +128,12 @@
         UIView *view = self.delegate.overlayView;
         CGRect rect = [self.collectionView convertRect:rectInCollectionView toView:view];
         [self dismissMenu];
-        if (item.type == JYPaintingTypeStyle) {
-            self.popupStyleMenu.item = item;
-            [self.popupStyleMenu showInView:view targetRect:rect animated:YES];
-        } else if (item.type == JYPaintingTypeColor) {
-            self.popupColorMenu.item = item;
-            [self.popupColorMenu showInView:view targetRect:rect animated:YES];
-        } else if (item.type == JYPaintingTypeSize) {
-            self.popupLineWidthMenu.item = item;
-            [self.popupLineWidthMenu showInView:view targetRect:rect animated:YES];
-        } else if (item.type == JYPaintingTypePen) {
-            self.popupPenMenu.item = item;
-            [self.popupPenMenu showInView:view targetRect:rect animated:YES];
-        }
+        JYPopupMenu *popupMenu = [[JYPopupMenu alloc] initWithItem:item];
+        popupMenu.tag = 1000;
+        popupMenu.item = item;
+        popupMenu.delegate = self;
+        popupMenu.color = SMGhostWhiteColor;
+        [popupMenu showInView:view targetRect:rect animated:YES];
     }
     
     if ([self.delegate respondsToSelector:@selector(recordPaintingListView:didSelectPaintingItem:)]) {
@@ -194,17 +142,13 @@
 }
 
 - (void)dismissMenu {
-    if (self.popupStyleMenu.isVisible) {
-        [self.popupStyleMenu dismissAnimated:YES];
-    }
-    if (self.popupColorMenu.isVisible) {
-        [self.popupColorMenu dismissAnimated:YES];
-    }
-    if (self.popupLineWidthMenu.isVisible) {
-        [self.popupLineWidthMenu dismissAnimated:YES];
-    }
-    if (self.popupPenMenu.isVisible) {
-        [self.popupPenMenu dismissAnimated:YES];
+    if ([self.delegate respondsToSelector:@selector(overlayView)]) {
+        UIView *overlayView = self.delegate.overlayView;
+        UIView *view = [overlayView viewWithTag:1000];
+        if ([view isKindOfClass:[JYPopupMenu class]]) {
+            JYPopupMenu *popupMenu = (JYPopupMenu *)view;
+            [popupMenu dismissAnimated:YES];
+        }
     }
 }
 

@@ -13,7 +13,7 @@
 #import "JYMonthMood.h"
 #import "JYPrefixHeader.h"
 
-@interface JYDayCalendarView () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface JYDayCalendarView () <UICollectionViewDelegate, UICollectionViewDataSource, JYDayMoodImageCollectionViewCellDelegate>
 @property (nonatomic, strong) UICollectionView * collectionView;
 @property (nonatomic, strong) JYGridView *gridView;
 @property (nonatomic, strong) JYCalendar *calendar;
@@ -87,6 +87,20 @@
     //}
 }
 
+#pragma mark - JYDayMoodImageCollectionViewCellDelegate
+
+- (UIView *)inView:(JYDayMoodImageCollectionViewCell *)cell {
+    return self.collectionView;
+}
+
+- (void)dayMoodImageCollectionViewCell:(JYDayMoodImageCollectionViewCell *)cell didDeleteAction:(id)deleteAction {
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+    id <JYMoodDate> moodDate = [self.calculator dayDayForIndex:indexPath.row];
+    if ([self.delegate respondsToSelector:@selector(dayCalendarView:didDeleteItem:didSelectItemAtIndexPath:)]) {
+        [self.delegate dayCalendarView:self didDeleteItem:moodDate didSelectItemAtIndexPath:indexPath];
+    }
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -114,6 +128,7 @@
     NSArray *moods = dayMood.moods;
     if (moods.count > 0) {
         JYDayMoodImageCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYDayMoodImageCollectionViewCell" forIndexPath:indexPath];
+        cell.delegate = self;
         cell.images = moods;
         return cell;
     }
