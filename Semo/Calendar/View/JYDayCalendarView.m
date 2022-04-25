@@ -93,11 +93,19 @@
     return self.collectionView;
 }
 
-- (void)dayMoodImageCollectionViewCell:(JYDayMoodImageCollectionViewCell *)cell didDeleteItemAtIndex:(NSInteger)index {
+- (void)dayMoodImageCollectionViewCell:(JYDayMoodImageCollectionViewCell *)cell didSelectedItemAtIndex:(NSInteger)deleteAtIndex {
     NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
     id <JYMoodDate> moodDate = [self.calculator dayDayForIndex:indexPath.row];
-    if ([self.delegate respondsToSelector:@selector(dayCalendarView:didDeleteItem:didDeleteItemAtIndex:)]) {
-        [self.delegate dayCalendarView:self didDeleteItem:moodDate didDeleteItemAtIndex:index];
+    if ([self.delegate respondsToSelector:@selector(dayCalendarView:didSelectedItem:didSelectedItemAtIndex:)]) {
+        [self.delegate dayCalendarView:self didSelectedItem:moodDate didSelectedItemAtIndex:indexPath.row];
+    }
+}
+
+- (void)dayMoodImageCollectionViewCell:(JYDayMoodImageCollectionViewCell *)cell didDeletedItemAtIndex:(NSInteger)index {
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+    id <JYMoodDate> moodDate = [self.calculator dayDayForIndex:indexPath.row];
+    if ([self.delegate respondsToSelector:@selector(dayCalendarView:didDeletedItem:didDeletedItemAtIndex:)]) {
+        [self.delegate dayCalendarView:self didDeletedItem:moodDate didDeletedItemAtIndex:index];
     }
 }
 
@@ -149,8 +157,8 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     id <JYMoodDate> moodDate = [self.calculator dayDayForIndex:indexPath.row];
-    if ([self.delegate respondsToSelector:@selector(dayCalendarView:didSelectItem:didSelectItemAtIndexPath:)]) {
-        [self.delegate dayCalendarView:self didSelectItem:moodDate didSelectItemAtIndexPath:indexPath];
+    if ([self.delegate respondsToSelector:@selector(dayCalendarView:didSelectedItem:didSelectedItemAtIndex:)]) {
+        [self.delegate dayCalendarView:self didSelectedItem:moodDate didSelectedItemAtIndex:indexPath.row];
     }
 }
 

@@ -11,12 +11,17 @@
 #import "JYViewProtocol.h"
 #import "JYCalendarCalculator.h"
 
+typedef NS_ENUM(NSUInteger, JYMonthCalendarJumpType) {
+    JYMonthCalendarJumpTypeRecord,
+    JYMonthCalendarJumpTypeDetail
+};
+
 @class JYMonthMood;
 @protocol JYMonthCalendarViewManagerProtocol;
 
 @protocol JYMonthCalendarViewDelegate <NSObject>
 @optional
-- (void)monthCalendarViewManager:(id <JYMonthCalendarViewManagerProtocol>)manager didSelectItemAtIndexPath:(NSString *)dayName;
+- (void)monthCalendarViewManager:(id <JYMonthCalendarViewManagerProtocol>)manager didSelectItemAtIndexPath:(NSString *)dayName jumpType:(JYMonthCalendarJumpType)jumpType;
 @end
 
 

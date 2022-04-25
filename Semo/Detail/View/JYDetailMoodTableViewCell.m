@@ -5,12 +5,12 @@
 //  Created by jiyang on 2022/3/8.
 //
 
-#import "JYMoodTableViewCell.h"
+#import "JYDetailMoodTableViewCell.h"
 #import "JYMoodView.h"
 #import "JYMoodModel.h"
 #import "JYPrefixHeader.h"
 
-@interface JYMoodTableViewCell ()
+@interface JYDetailMoodTableViewCell ()
 @property (nonatomic, strong) UIView *borderView;
 @property (nonatomic, strong) JYMoodView *moodView;
 @property (nonatomic, strong) UILabel *weakLabel;
@@ -19,7 +19,7 @@
 @property (nonatomic, strong) UIView *dateLineView;
 @end
 
-@implementation JYMoodTableViewCell
+@implementation JYDetailMoodTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

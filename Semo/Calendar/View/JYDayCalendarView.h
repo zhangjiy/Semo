@@ -13,8 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @class JYDayCalendarView;
 @protocol JYDayCalendarViewDelegate <NSObject>
 @optional
-- (void)dayCalendarView:(JYDayCalendarView *)view didSelectItem:(id <JYMoodDate>)date didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
-- (void)dayCalendarView:(JYDayCalendarView *)view didDeleteItem:(id <JYMoodDate>)date didDeleteItemAtIndex:(NSInteger)index;
+- (void)dayCalendarView:(JYDayCalendarView *)view didSelectedItem:(id <JYMoodDate>)date didSelectedItemAtIndex:(NSInteger)index;
+- (void)dayCalendarView:(JYDayCalendarView *)view didDeletedItem:(id <JYMoodDate>)date didDeletedItemAtIndex:(NSInteger)index;
 @end
 
 @interface JYDayCalendarView : UIView

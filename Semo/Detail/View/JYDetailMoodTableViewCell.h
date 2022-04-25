@@ -1,5 +1,5 @@
 //
-//  JYMoodTableViewCell.h
+//  JYDetailMoodTableViewCell.h
 //  Semo
 //
 //  Created by jiyang on 2022/3/8.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JYMoodTableViewCell : UITableViewCell
+@interface JYDetailMoodTableViewCell : UITableViewCell
 - (void)updateViewWithModel:(JYMoodModel *)moodModel;
 @end
 

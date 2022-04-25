@@ -7,15 +7,14 @@
 
 #import "ViewController.h"
 #import "JYPlusControl.h"
-#import "JYMoodListView.h"
 #import "JYRecordMoodViewController.h"
 #import "JYMonthCalendarViewManager.h"
+#import "JYDetailMoodViewController.h"
 #import "JYMonthMood.h"
 #import "JYPrefixHeader.h"
 
 @interface ViewController () <JYRecordMoodViewControllerDelegate, JYMonthCalendarViewDelegate>
 @property (nonatomic, strong) JYPlusControl * plusControl;
-@property (nonatomic, strong) JYMoodListView * moodListView;
 @property (nonatomic, strong) id <JYMonthCalendarViewManagerProtocol> calendarViewManager;
 @end
 
@@ -83,8 +82,14 @@
 
 #pragma -- mark -- JYMonthCalendarViewManagerDelegate
 
-- (void)monthCalendarViewManager:(id <JYMonthCalendarViewManagerProtocol>)manager didSelectItemAtIndexPath:(NSString *)dayName {
-    [self presentRecordMoodViewController:dayName];
+- (void)monthCalendarViewManager:(id <JYMonthCalendarViewManagerProtocol>)manager didSelectItemAtIndexPath:(NSString *)dayName jumpType:(JYMonthCalendarJumpType)jumpType {
+    if (jumpType == JYMonthCalendarJumpTypeRecord) {
+        [self presentRecordMoodViewController:dayName];
+    } else if (jumpType == JYMonthCalendarJumpTypeDetail) {
+        JYDetailMoodViewController *controller = [[JYDetailMoodViewController alloc] init];
+        controller.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self pushViewController:controller animated:YES];
+    }
 }
 
 - (void)presentRecordMoodViewController:(NSString *)dayName {

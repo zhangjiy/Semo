@@ -1,24 +1,24 @@
 //
-//  JYMoodListView.m
+//  JYDetailMoodListView.m
 //  Semo
 //
 //  Created by jiyang on 2022/3/8.
 //
 
-#import "JYMoodListView.h"
-#import "JYMoodTableViewCell.h"
+#import "JYDetailMoodListView.h"
+#import "JYDetailMoodTableViewCell.h"
 #import "JYMoodModel.h"
 #import "JYPrefixHeader.h"
 
-static NSString *const kJYMoodTableViewCell = @"kJYMoodTableViewCell";
+static NSString *const kJYDetailMoodTableViewCell = @"kJYDetailMoodTableViewCell";
 
-@interface JYMoodListView () <UITableViewDelegate, UITableViewDataSource>
+@interface JYDetailMoodListView () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView * tableView;
 
 @property (nonatomic, strong) NSArray * testmoods;
 @end
 
-@implementation JYMoodListView
+@implementation JYDetailMoodListView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -80,7 +80,7 @@ static NSString *const kJYMoodTableViewCell = @"kJYMoodTableViewCell";
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.backgroundColor = [UIColor clearColor];
         _tableView.tableFooterView = [[UIView alloc] init];
-        [_tableView registerClass:[JYMoodTableViewCell class] forCellReuseIdentifier:kJYMoodTableViewCell];
+        [_tableView registerClass:[JYDetailMoodTableViewCell class] forCellReuseIdentifier:kJYDetailMoodTableViewCell];
     }
     return _tableView;
 }
@@ -97,7 +97,7 @@ static NSString *const kJYMoodTableViewCell = @"kJYMoodTableViewCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    JYMoodTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kJYMoodTableViewCell forIndexPath:indexPath];
+    JYDetailMoodTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kJYDetailMoodTableViewCell forIndexPath:indexPath];
     JYMoodModel *model = self.testmoods[indexPath.row];
     [cell updateViewWithModel:model];
     return cell;

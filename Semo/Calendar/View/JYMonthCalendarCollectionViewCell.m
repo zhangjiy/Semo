@@ -50,15 +50,15 @@
 
 #pragma -- mark -- JYDayCalendarViewDelegate
 
-- (void)dayCalendarView:(JYDayCalendarView *)view didSelectItem:(id <JYMoodDate>)date didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    if ([self.delegate respondsToSelector:@selector(monthCalendarCollectionViewCell:didSelectItem:didSelectItemAtIndexPath:)]) {
-        [self.delegate monthCalendarCollectionViewCell:self didSelectItem:date didSelectItemAtIndexPath:indexPath];
+- (void)dayCalendarView:(JYDayCalendarView *)view didSelectedItem:(id <JYMoodDate>)date didSelectedItemAtIndex:(NSInteger)index {
+    if ([self.delegate respondsToSelector:@selector(monthCalendarCollectionViewCell:didSelectedItem:didSelectedItemAtIndex:)]) {
+        [self.delegate monthCalendarCollectionViewCell:self didSelectedItem:date didSelectedItemAtIndex:index];
     }
 }
 
-- (void)dayCalendarView:(JYDayCalendarView *)view didDeleteItem:(id <JYMoodDate>)date didDeleteItemAtIndex:(NSInteger)index {
-    if ([self.delegate respondsToSelector:@selector(monthCalendarCollectionViewCell:didDeleteItem:didDeleteItemAtIndex:)]) {
-        [self.delegate monthCalendarCollectionViewCell:self didDeleteItem:date didDeleteItemAtIndex:index];
+- (void)dayCalendarView:(JYDayCalendarView *)view didDeletedItem:(id <JYMoodDate>)date didDeletedItemAtIndex:(NSInteger)index {
+    if ([self.delegate respondsToSelector:@selector(monthCalendarCollectionViewCell:didDeletedItem:didDeletedItemAtIndex:)]) {
+        [self.delegate monthCalendarCollectionViewCell:self didDeletedItem:date didDeletedItemAtIndex:index];
     }
 }
 

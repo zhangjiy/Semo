@@ -186,28 +186,32 @@
 
 #pragma mark - JYMonthCalendarCollectionViewCellDelegate
 
-- (void)monthCalendarCollectionViewCell:(JYMonthCalendarCollectionViewCell *)cell didSelectItem:(id <JYMoodDate>)date didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+- (void)monthCalendarCollectionViewCell:(JYMonthCalendarCollectionViewCell *)cell didSelectedItem:(id <JYMoodDate>)date didSelectedItemAtIndex:(NSInteger)index {
+    self.dayDate = date;
     NSInteger todayIndex = JYCalendarDataIndexFromDateName(self.calculator.todayName);
-    if (self.calculator.currentPage == MonthsAgo && indexPath.row > todayIndex) {
+    if (self.calculator.currentPage == MonthsAgo && index > todayIndex) {
         return;
     }
     
-    if (indexPath.row < todayIndex) {
+    if (index < todayIndex) {
         NSString *text = date.name;
         NSDictionary *dayMoodDic = self.currentMonth.monthMood.dayMoodDict;
         JYDayMood *dayMood = [dayMoodDic valueForKey:text];
         NSData *data = dayMood.moods.lastObject;
         if (data) {
+            if ([self.delegate respondsToSelector:@selector(monthCalendarViewManager:didSelectItemAtIndexPath:jumpType:)]) {
+                [self.delegate monthCalendarViewManager:self didSelectItemAtIndexPath:self.dayName jumpType:JYMonthCalendarJumpTypeDetail];
+            }
             return;
         }
     }
-    self.dayDate = date;
-    if ([self.delegate respondsToSelector:@selector(monthCalendarViewManager:didSelectItemAtIndexPath:)]) {
-        [self.delegate monthCalendarViewManager:self didSelectItemAtIndexPath:self.dayName];
+    
+    if ([self.delegate respondsToSelector:@selector(monthCalendarViewManager:didSelectItemAtIndexPath:jumpType:)]) {
+        [self.delegate monthCalendarViewManager:self didSelectItemAtIndexPath:self.dayName jumpType:JYMonthCalendarJumpTypeRecord];
     }
 }
 
-- (void)monthCalendarCollectionViewCell:(JYMonthCalendarCollectionViewCell *)cell didDeleteItem:(id <JYMoodDate>)date didDeleteItemAtIndex:(NSInteger)index {
+- (void)monthCalendarCollectionViewCell:(JYMonthCalendarCollectionViewCell *)cell didDeletedItem:(id <JYMoodDate>)date didDeletedItemAtIndex:(NSInteger)index {
     JYMoodMonthDate *moth = self.currentMonth;
     [moth.monthMood deleteDayMoodForKey:date.name itemAtIndex:index];
     [self reloadDate];

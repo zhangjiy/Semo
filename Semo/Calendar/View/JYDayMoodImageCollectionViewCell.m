@@ -72,8 +72,8 @@
 
 - (void)cyclePagerCollectionViewCell:(JYCyclePagerCollectionViewCell *)cell didDeleteAction:(id)sender {
     NSIndexPath *indexPath = [self.cyclePagerView.collectionView indexPathForCell:cell];
-    if ([self.delegate respondsToSelector:@selector(dayMoodImageCollectionViewCell:didDeleteItemAtIndex:)]) {
-        [self.delegate dayMoodImageCollectionViewCell:self didDeleteItemAtIndex:indexPath.row];
+    if ([self.delegate respondsToSelector:@selector(dayMoodImageCollectionViewCell:didDeletedItemAtIndex:)]) {
+        [self.delegate dayMoodImageCollectionViewCell:self didDeletedItemAtIndex:indexPath.row];
     }
 }
 
@@ -97,6 +97,12 @@
     layout.itemSize = pageView.size;
     layout.itemSpacing = 0;
     return layout;
+}
+
+- (void)pagerView:(TYCyclePagerView *)pageView didSelectedItemCell:(__kindof UICollectionViewCell *)cell atIndex:(NSInteger)index {
+    if ([self.delegate respondsToSelector:@selector(dayMoodImageCollectionViewCell:didSelectedItemAtIndex:)]) {
+        [self.delegate dayMoodImageCollectionViewCell:self didSelectedItemAtIndex:index];
+    }
 }
 
 @end
