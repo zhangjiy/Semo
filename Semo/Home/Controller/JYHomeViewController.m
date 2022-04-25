@@ -5,7 +5,7 @@
 //  Created by jiyang on 2022/3/7.
 //
 
-#import "ViewController.h"
+#import "JYHomeViewController.h"
 #import "JYPlusControl.h"
 #import "JYRecordMoodViewController.h"
 #import "JYMonthCalendarViewManager.h"
@@ -13,15 +13,16 @@
 #import "JYMonthMood.h"
 #import "JYPrefixHeader.h"
 
-@interface ViewController () <JYRecordMoodViewControllerDelegate, JYMonthCalendarViewDelegate>
+@interface JYHomeViewController () <JYRecordMoodViewControllerDelegate, JYMonthCalendarViewDelegate>
 @property (nonatomic, strong) JYPlusControl * plusControl;
 @property (nonatomic, strong) id <JYMonthCalendarViewManagerProtocol> calendarViewManager;
 @end
 
-@implementation ViewController
+@implementation JYHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBar.hidden = YES;
     [self setupConfig];
     [self initSubviews];
 }
@@ -88,7 +89,7 @@
     } else if (jumpType == JYMonthCalendarJumpTypeDetail) {
         JYDetailMoodViewController *controller = [[JYDetailMoodViewController alloc] init];
         controller.modalPresentationStyle = UIModalPresentationFullScreen;
-        [self pushViewController:controller animated:YES];
+        [self.navigationController pushViewController:controller animated:YES];
     }
 }
 
