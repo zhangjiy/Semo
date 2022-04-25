@@ -6,6 +6,7 @@
 //
 
 #import "JYCyclePagerCollectionViewCell.h"
+#import "QBPopupMenu.h"
 #import "JYPrefixHeader.h"
 
 @interface JYCyclePagerCollectionViewCell ()
@@ -23,6 +24,27 @@
 
 - (void)initWithSubViews {
     [self.contentView addSubview:self.imageView];
+    UILongPressGestureRecognizer *longGesture = [[UILongPressGestureRecognizer alloc] init];
+    [self addGestureRecognizer:longGesture];
+    [longGesture addTarget:self action:@selector(longAction:)];
+}
+
+- (void)longAction:(UILongPressGestureRecognizer *)gesture {
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        if ([self.delegate respondsToSelector:@selector(targetRect)]) {
+            UIView *inview = [self.delegate inView:self];
+            CGRect rect = self.delegate.targetRect;
+            QBPopupMenuItem *item = [QBPopupMenuItem itemWithTitle:@"Delete" target:self action:@selector(popupMenuAction:)];
+            QBPopupMenu *popupMenu = [[QBPopupMenu alloc] initWithItems:@[item]];
+            [popupMenu showInView:inview targetRect:rect animated:YES];
+        }
+    }
+}
+
+- (void)popupMenuAction:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(cyclePagerCollectionViewCell:didDeleteAction:)]) {
+        [self.delegate cyclePagerCollectionViewCell:self didDeleteAction:sender];
+    }
 }
 
 - (void)setImage:(nullable UIImage *)image {
@@ -46,4 +68,5 @@
     _imageView.centerX = self.contentView.width / 2.f;
     _imageView.centerY = self.contentView.height / 2.f;
 }
+
 @end

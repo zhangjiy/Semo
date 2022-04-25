@@ -8,10 +8,9 @@
 #import "JYDayMoodImageCollectionViewCell.h"
 #import "TYCyclePagerView.h"
 #import "JYCyclePagerCollectionViewCell.h"
-#import "QBPopupMenu.h"
 #import "JYPrefixHeader.h"
 
-@interface JYDayMoodImageCollectionViewCell () <TYCyclePagerViewDataSource, TYCyclePagerViewDelegate>
+@interface JYDayMoodImageCollectionViewCell () <TYCyclePagerViewDataSource, TYCyclePagerViewDelegate, JYCyclePagerCollectionViewCellDelegate>
 @property (nonatomic, strong) TYCyclePagerView * cyclePagerView;
 @end
 
@@ -26,9 +25,6 @@
 
 - (void)initWithSubViews {
     [self.contentView addSubview:self.cyclePagerView];
-    UILongPressGestureRecognizer *longGesture = [[UILongPressGestureRecognizer alloc] init];
-    [self.cyclePagerView addGestureRecognizer:longGesture];
-    [longGesture addTarget:self action:@selector(longAction:)];
 }
 
 - (TYCyclePagerView *)cyclePagerView {
@@ -43,25 +39,6 @@
     return _cyclePagerView;
 }
 
-- (void)longAction:(UILongPressGestureRecognizer *)gesture {
-    if (gesture.state == UIGestureRecognizerStateBegan) {
-        if ([self.delegate respondsToSelector:@selector(inView:)]) {
-            UIView *inview = [self.delegate inView:self];
-            CGRect rect = [inview convertRect:self.frame toView:inview];
-            QBPopupMenuItem *item = [QBPopupMenuItem itemWithTitle:@"Delete" target:self action:@selector(popupMenuAction:)];
-            QBPopupMenu *popupMenu = [[QBPopupMenu alloc] initWithItems:@[item]];
-            popupMenu.tag = 1000;
-            [popupMenu showInView:inview targetRect:rect animated:YES];
-        }
-    }
-}
-
-- (void)popupMenuAction:(id)sender {
-    if ([self.delegate respondsToSelector:@selector(dayMoodImageCollectionViewCell:didDeleteAction:)]) {
-        [self.delegate dayMoodImageCollectionViewCell:self didDeleteAction:sender];
-    }
-}
-
 - (void)setImages:(NSArray *)images {
     if (_images != images) {
         _images = images;
@@ -74,6 +51,32 @@
     _cyclePagerView.frame = self.contentView.bounds;
 }
 
+#pragma mark -- JYCyclePagerCollectionViewCellDelegate
+
+- (CGRect)targetRect {
+    if ([self.delegate respondsToSelector:@selector(inView:)]) {
+        UIView *inview = [self.delegate inView:self];
+        CGRect rect = [inview convertRect:self.frame toView:inview];
+        return rect;
+    }
+
+    return CGRectZero;
+}
+
+- (UIView *)inView:(JYCyclePagerCollectionViewCell *)cell {
+    if ([self.delegate respondsToSelector:@selector(inView:)]) {
+        return [self.delegate inView:self];
+    }
+    return nil;
+}
+
+- (void)cyclePagerCollectionViewCell:(JYCyclePagerCollectionViewCell *)cell didDeleteAction:(id)sender {
+    NSIndexPath *indexPath = [self.cyclePagerView.collectionView indexPathForCell:cell];
+    if ([self.delegate respondsToSelector:@selector(dayMoodImageCollectionViewCell:didDeleteItemAtIndex:)]) {
+        [self.delegate dayMoodImageCollectionViewCell:self didDeleteItemAtIndex:indexPath.row];
+    }
+}
+
 #pragma mark -- TYCyclePagerViewDataSource
 
 - (NSInteger)numberOfItemsInPagerView:(TYCyclePagerView *)pageView {
@@ -84,6 +87,7 @@
     NSData *data = self.images[index];
     UIImage *image = [UIImage imageWithData:data];
     JYCyclePagerCollectionViewCell *cell = [pagerView dequeueReusableCellWithReuseIdentifier:@"JYCyclePagerCollectionViewCell" forIndex:index];
+    cell.delegate = self;
     cell.image = image;
     return cell;
 }

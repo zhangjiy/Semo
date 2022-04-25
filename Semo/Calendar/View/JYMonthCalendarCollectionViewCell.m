@@ -56,9 +56,9 @@
     }
 }
 
-- (void)dayCalendarView:(JYDayCalendarView *)view didDeleteItem:(id <JYMoodDate>)date didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    if ([self.delegate respondsToSelector:@selector(monthCalendarCollectionViewCell:didDeleteItem:didSelectItemAtIndexPath:)]) {
-        [self.delegate monthCalendarCollectionViewCell:self didDeleteItem:date didSelectItemAtIndexPath:indexPath];
+- (void)dayCalendarView:(JYDayCalendarView *)view didDeleteItem:(id <JYMoodDate>)date didDeleteItemAtIndex:(NSInteger)index {
+    if ([self.delegate respondsToSelector:@selector(monthCalendarCollectionViewCell:didDeleteItem:didDeleteItemAtIndex:)]) {
+        [self.delegate monthCalendarCollectionViewCell:self didDeleteItem:date didDeleteItemAtIndex:index];
     }
 }
 

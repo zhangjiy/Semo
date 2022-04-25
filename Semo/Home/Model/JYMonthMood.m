@@ -40,15 +40,18 @@
     [self bg_saveOrUpdate];
 }
 
-- (void)deleteDayMoodForKey:(NSString *)key {
-    NSMutableDictionary * temp = [[NSMutableDictionary alloc] init];
+- (void)deleteDayMoodForKey:(NSString *)key itemAtIndex:(NSInteger)index{
+    NSMutableDictionary * tempDict = [[NSMutableDictionary alloc] init];
     if (_dayMoodDict) {
-        [temp addEntriesFromDictionary:_dayMoodDict];
+        [tempDict addEntriesFromDictionary:_dayMoodDict];
     }
     
-    [temp removeObjectForKey:key];
-    _dayMoodDict = [temp copy];
+    JYDayMood *dayMood = [tempDict valueForKey:key];
+    NSMutableArray *tempArray = [NSMutableArray arrayWithArray:dayMood.moods];
+    [tempArray removeObjectAtIndex:index];
+    dayMood.moods = [tempArray copy];
     
+    _dayMoodDict = [tempDict copy];
     [self bg_saveOrUpdate];
 }
 

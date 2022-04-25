@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol JYDayMoodImageCollectionViewCellDelegate <NSObject>
 @optional
 - (UIView *)inView:(JYDayMoodImageCollectionViewCell *)cell;
-- (void)dayMoodImageCollectionViewCell:(JYDayMoodImageCollectionViewCell *)cell didDeleteAction:(id)deleteAction;
+- (void)dayMoodImageCollectionViewCell:(JYDayMoodImageCollectionViewCell *)cell didDeleteItemAtIndex:(NSInteger)deleteAtIndex;
 @end
 
 @interface JYDayMoodImageCollectionViewCell : UICollectionViewCell

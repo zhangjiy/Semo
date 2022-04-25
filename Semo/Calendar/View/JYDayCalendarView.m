@@ -93,11 +93,11 @@
     return self.collectionView;
 }
 
-- (void)dayMoodImageCollectionViewCell:(JYDayMoodImageCollectionViewCell *)cell didDeleteAction:(id)deleteAction {
+- (void)dayMoodImageCollectionViewCell:(JYDayMoodImageCollectionViewCell *)cell didDeleteItemAtIndex:(NSInteger)index {
     NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
     id <JYMoodDate> moodDate = [self.calculator dayDayForIndex:indexPath.row];
-    if ([self.delegate respondsToSelector:@selector(dayCalendarView:didDeleteItem:didSelectItemAtIndexPath:)]) {
-        [self.delegate dayCalendarView:self didDeleteItem:moodDate didSelectItemAtIndexPath:indexPath];
+    if ([self.delegate respondsToSelector:@selector(dayCalendarView:didDeleteItem:didDeleteItemAtIndex:)]) {
+        [self.delegate dayCalendarView:self didDeleteItem:moodDate didDeleteItemAtIndex:index];
     }
 }
 

@@ -207,9 +207,9 @@
     }
 }
 
-- (void)monthCalendarCollectionViewCell:(JYMonthCalendarCollectionViewCell *)cell didDeleteItem:(id <JYMoodDate>)date didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+- (void)monthCalendarCollectionViewCell:(JYMonthCalendarCollectionViewCell *)cell didDeleteItem:(id <JYMoodDate>)date didDeleteItemAtIndex:(NSInteger)index {
     JYMoodMonthDate *moth = self.currentMonth;
-    [moth.monthMood deleteDayMoodForKey:date.name];
+    [moth.monthMood deleteDayMoodForKey:date.name itemAtIndex:index];
     [self reloadDate];
 }
 
