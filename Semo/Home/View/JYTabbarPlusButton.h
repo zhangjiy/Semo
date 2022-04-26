@@ -9,8 +9,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JYTabbarPlusButton : CYLPlusButton
-
+@interface JYTabbarPlusButton : CYLPlusButton <CYLPlusButtonSubclassing>
+ 
 @end
 
 NS_ASSUME_NONNULL_END
