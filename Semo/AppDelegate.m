@@ -6,7 +6,7 @@
 //
 
 #import "AppDelegate.h"
-#import "JYHomeViewController.h"
+#import "JYMainRootViewController.h"
 
 @interface AppDelegate ()
 
@@ -24,9 +24,8 @@
     }
     
     self.window = [[UIWindow alloc] init];
-    JYHomeViewController * rootController = [[JYHomeViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:rootController];
-    [self.window setRootViewController:nav];
+    JYMainRootViewController * rootController = [[JYMainRootViewController alloc] init];
+    [self.window setRootViewController:rootController];
     [self.window makeKeyAndVisible];
 
     return YES;

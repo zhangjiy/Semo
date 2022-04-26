@@ -8,6 +8,9 @@ PODS:
   - Chrysan (2.0.4):
     - SnapKit (~> 5.0)
   - Comet (1.6.2)
+  - CYLTabBarController (1.29.2):
+    - CYLTabBarController/Core (= 1.29.2)
+  - CYLTabBarController/Core (1.29.2)
   - MaLiang (2.9.2)
   - Masonry (1.1.0)
   - SDWebImage (5.12.4):
@@ -20,6 +23,7 @@ DEPENDENCIES:
   - BGFMDB
   - Chrysan
   - Comet
+  - CYLTabBarController
   - MaLiang
   - Masonry
   - SDWebImage
@@ -31,6 +35,7 @@ SPEC REPOS:
     - BGFMDB
     - Chrysan
     - Comet
+    - CYLTabBarController
     - MaLiang
     - Masonry
     - SDWebImage
@@ -41,12 +46,13 @@ SPEC CHECKSUMS:
   BGFMDB: 48e6823027232402a678acc7f71484b1fc9171d0
   Chrysan: d8607b02a90e7b4a10129c5f3878a8e565902e7a
   Comet: ec129472bd2b9683c13aefa939703cc3ef0efb14
+  CYLTabBarController: db44b5901a28693a8a4279e4721b3aafdd36c178
   MaLiang: 7cf6c70e37577b5ec1b34add37fa6d58808f5451
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SDWebImage: 631cf572cc93dfdfe54162e556410a61f1141928
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Zip: b3fef584b147b6e582b2256a9815c897d60ddc67
 
-PODFILE CHECKSUM: 3c8c825cc9e6fc90a3ca7c419ebcc61560385061
+PODFILE CHECKSUM: cc905b31e52d3f4774e46f256a1c9706f9ae98b0
 
 COCOAPODS: 1.11.2

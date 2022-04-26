@@ -16,10 +16,10 @@
 #define SMHomeLeft 15
 
 // PluginControl
-#define SMPluginControlInset 6
-#define SMPluginControlBorderWidth 4
-#define SMPluginControlWidth 33
-#define SMPluginControlHeight 33
+#define SMPluginControlInset 10
+#define SMPluginControlBorderWidth 3
+#define SMPluginControlWidth 44
+#define SMPluginControlHeight 44
 
 // MoodsListView
 #define SMMoodListCellHeight 180

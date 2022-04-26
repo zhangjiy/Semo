@@ -1,5 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-Semo/Pods-Semo-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/BGFMDB/BGFMDB.framework
+${BUILT_PRODUCTS_DIR}/CYLTabBarController/CYLTabBarController.framework
 ${BUILT_PRODUCTS_DIR}/Chrysan/Chrysan.framework
 ${BUILT_PRODUCTS_DIR}/Comet/Comet.framework
 ${BUILT_PRODUCTS_DIR}/MaLiang/MaLiang.framework

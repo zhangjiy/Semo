@@ -5,7 +5,7 @@
 //  Created by jiyang on 2022/3/7.
 //
 
-#import "JYHomeViewController.h"
+#import "JYMoodHomeViewController.h"
 #import "JYPlusControl.h"
 #import "JYRecordMoodViewController.h"
 #import "JYMonthCalendarViewManager.h"
@@ -13,12 +13,12 @@
 #import "JYMonthMood.h"
 #import "JYPrefixHeader.h"
 
-@interface JYHomeViewController () <JYRecordMoodViewControllerDelegate, JYMonthCalendarViewDelegate>
+@interface JYMoodHomeViewController () <JYRecordMoodViewControllerDelegate, JYMonthCalendarViewDelegate>
 @property (nonatomic, strong) JYPlusControl * plusControl;
 @property (nonatomic, strong) id <JYMonthCalendarViewManagerProtocol> calendarViewManager;
 @end
 
-@implementation JYHomeViewController
+@implementation JYMoodHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

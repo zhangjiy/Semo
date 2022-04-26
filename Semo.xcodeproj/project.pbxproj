@@ -14,7 +14,7 @@
 		B40B2A5128126FF400B3D760 /* JYDayMoodImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B40B2A5028126FF400B3D760 /* JYDayMoodImageCollectionViewCell.m */; };
 		B40B2A54281272D700B3D760 /* JYCyclePagerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B40B2A53281272D700B3D760 /* JYCyclePagerCollectionViewCell.m */; };
 		B41AC6E327D5A69F00CDF4AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC6E227D5A69F00CDF4AB /* AppDelegate.m */; };
-		B41AC6E927D5A69F00CDF4AB /* JYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC6E827D5A69F00CDF4AB /* JYHomeViewController.m */; };
+		B41AC6E927D5A69F00CDF4AB /* JYMoodHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC6E827D5A69F00CDF4AB /* JYMoodHomeViewController.m */; };
 		B41AC6EE27D5A6A400CDF4AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41AC6ED27D5A6A400CDF4AB /* Assets.xcassets */; };
 		B41AC6F427D5A6A400CDF4AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC6F327D5A6A400CDF4AB /* main.m */; };
 		B41AC6FE27D5A6A500CDF4AB /* SemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B41AC6FD27D5A6A500CDF4AB /* SemoTests.m */; };
@@ -89,6 +89,10 @@
 		B4BF763827E95CFC003BBAC5 /* JYPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF763727E95CFC003BBAC5 /* JYPopupMenu.m */; };
 		B4BF763C27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF763B27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.m */; };
 		B4BF764227E963C9003BBAC5 /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF764127E963C9003BBAC5 /* UIView+ViewController.m */; };
+		B4D964052817A17500FBE518 /* JYMainRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D964042817A17500FBE518 /* JYMainRootViewController.m */; };
+		B4D964082817A27E00FBE518 /* JYTabbarPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D964072817A27E00FBE518 /* JYTabbarPlusButton.m */; };
+		B4D9640B2817A32100FBE518 /* JYTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D9640A2817A32100FBE518 /* JYTabbarViewController.m */; };
+		B4D9640E2817A66000FBE518 /* JYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D9640D2817A66000FBE518 /* JYSettingViewController.m */; };
 		B4E521F62802E49A00492B5E /* JYMonthCalendarViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E521F52802E49A00492B5E /* JYMonthCalendarViewManager.m */; };
 		B4E522022803C55600492B5E /* JYYearCalendarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E522012803C55600492B5E /* JYYearCalendarCollectionViewCell.m */; };
 		B4E5220F2806691700492B5E /* JYRecordPaintingColorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E5220E2806691700492B5E /* JYRecordPaintingColorCollectionViewCell.m */; };
@@ -176,8 +180,8 @@
 		B41AC6DE27D5A69F00CDF4AB /* Semo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Semo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41AC6E127D5A69F00CDF4AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B41AC6E227D5A69F00CDF4AB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B41AC6E727D5A69F00CDF4AB /* JYHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYHomeViewController.h; sourceTree = "<group>"; };
-		B41AC6E827D5A69F00CDF4AB /* JYHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYHomeViewController.m; sourceTree = "<group>"; };
+		B41AC6E727D5A69F00CDF4AB /* JYMoodHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYMoodHomeViewController.h; sourceTree = "<group>"; };
+		B41AC6E827D5A69F00CDF4AB /* JYMoodHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYMoodHomeViewController.m; sourceTree = "<group>"; };
 		B41AC6ED27D5A6A400CDF4AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B41AC6F227D5A6A400CDF4AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B41AC6F327D5A6A400CDF4AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -330,6 +334,14 @@
 		B4BF763B27E95DFB003BBAC5 /* JYPopupMenuCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupMenuCollectionViewCell.m; sourceTree = "<group>"; };
 		B4BF764027E963C9003BBAC5 /* UIView+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewController.h"; sourceTree = "<group>"; };
 		B4BF764127E963C9003BBAC5 /* UIView+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewController.m"; sourceTree = "<group>"; };
+		B4D964032817A17500FBE518 /* JYMainRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYMainRootViewController.h; sourceTree = "<group>"; };
+		B4D964042817A17500FBE518 /* JYMainRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYMainRootViewController.m; sourceTree = "<group>"; };
+		B4D964062817A27E00FBE518 /* JYTabbarPlusButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYTabbarPlusButton.h; sourceTree = "<group>"; };
+		B4D964072817A27E00FBE518 /* JYTabbarPlusButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYTabbarPlusButton.m; sourceTree = "<group>"; };
+		B4D964092817A32100FBE518 /* JYTabbarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYTabbarViewController.h; sourceTree = "<group>"; };
+		B4D9640A2817A32100FBE518 /* JYTabbarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYTabbarViewController.m; sourceTree = "<group>"; };
+		B4D9640C2817A66000FBE518 /* JYSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYSettingViewController.h; sourceTree = "<group>"; };
+		B4D9640D2817A66000FBE518 /* JYSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYSettingViewController.m; sourceTree = "<group>"; };
 		B4E521F42802E49A00492B5E /* JYMonthCalendarViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYMonthCalendarViewManager.h; sourceTree = "<group>"; };
 		B4E521F52802E49A00492B5E /* JYMonthCalendarViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYMonthCalendarViewManager.m; sourceTree = "<group>"; };
 		B4E521F72802E4EF00492B5E /* JYRecordMoodManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYRecordMoodManagerProtocol.h; sourceTree = "<group>"; };
@@ -574,6 +586,8 @@
 				B4F5455427D83E5D00D6184C /* JYMoodView.m */,
 				B4A90C5727E415F10085CAC4 /* JYGridView.h */,
 				B4A90C5827E415F10085CAC4 /* JYGridView.m */,
+				B4D964062817A27E00FBE518 /* JYTabbarPlusButton.h */,
+				B4D964072817A27E00FBE518 /* JYTabbarPlusButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -632,8 +646,14 @@
 		B420E04128166214002C58E3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B41AC6E727D5A69F00CDF4AB /* JYHomeViewController.h */,
-				B41AC6E827D5A69F00CDF4AB /* JYHomeViewController.m */,
+				B41AC6E727D5A69F00CDF4AB /* JYMoodHomeViewController.h */,
+				B41AC6E827D5A69F00CDF4AB /* JYMoodHomeViewController.m */,
+				B4D9640C2817A66000FBE518 /* JYSettingViewController.h */,
+				B4D9640D2817A66000FBE518 /* JYSettingViewController.m */,
+				B4D964032817A17500FBE518 /* JYMainRootViewController.h */,
+				B4D964042817A17500FBE518 /* JYMainRootViewController.m */,
+				B4D964092817A32100FBE518 /* JYTabbarViewController.h */,
+				B4D9640A2817A32100FBE518 /* JYTabbarViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1255,7 +1275,7 @@
 				B40B2A4E28126E1200B3D760 /* TYCyclePagerTransformLayout.m in Sources */,
 				B4EA2C0827E74E0000779793 /* ChartletImageCache.swift in Sources */,
 				B4BF763427E95C7B003BBAC5 /* JYPopupColorMenuListView.m in Sources */,
-				B41AC6E927D5A69F00CDF4AB /* JYHomeViewController.m in Sources */,
+				B41AC6E927D5A69F00CDF4AB /* JYMoodHomeViewController.m in Sources */,
 				B4E7FA6527F6C42D00604F5E /* ZHDrawingLineLayer.m in Sources */,
 				B4BF762D27E8B220003BBAC5 /* QBPlasticPopupMenu.m in Sources */,
 				B448897727F9DC02007BD0FA /* JYRecordMoodDisplayView.m in Sources */,
@@ -1270,6 +1290,7 @@
 				B4E521F62802E49A00492B5E /* JYMonthCalendarViewManager.m in Sources */,
 				B46ED565281105EC000712F8 /* NSMutableString+Safe.m in Sources */,
 				B4E7FA6F27F6C42D00604F5E /* ZHDrawingRectLayer.m in Sources */,
+				B4D964052817A17500FBE518 /* JYMainRootViewController.m in Sources */,
 				B4B66B9B27F2D3D1007D3267 /* JYSealMoodSimpleView.m in Sources */,
 				B4AC380727DE30E500529722 /* JYCalendarCollectionViewLayout.m in Sources */,
 				B4E7FA6927F6C42D00604F5E /* ZHDrawingAxisLayer.m in Sources */,
@@ -1282,6 +1303,7 @@
 				B41AC6E327D5A69F00CDF4AB /* AppDelegate.m in Sources */,
 				B4E7FA7627F6C42D00604F5E /* ZHDrawingArrowLayer.m in Sources */,
 				B4E7FA6B27F6C42D00604F5E /* ZHDrawingDottedlineLayer.m in Sources */,
+				B4D9640B2817A32100FBE518 /* JYTabbarViewController.m in Sources */,
 				B4E7FA7427F6C42D00604F5E /* ZHDrawingGraffitiLayer.m in Sources */,
 				B4EC077027DF01D000CB0877 /* JYRecordMoodListCollectionViewCell.m in Sources */,
 				B41AC6F427D5A6A400CDF4AB /* main.m in Sources */,
@@ -1308,6 +1330,7 @@
 				B4BF763827E95CFC003BBAC5 /* JYPopupMenu.m in Sources */,
 				B4E7FA7A27F6C42D00604F5E /* ZHDrawingTrapezoidLayer.m in Sources */,
 				B490453627F00EEF005A265A /* JYPopupStyleMenuCollectionViewCell.m in Sources */,
+				B4D9640E2817A66000FBE518 /* JYSettingViewController.m in Sources */,
 				B4E522022803C55600492B5E /* JYYearCalendarCollectionViewCell.m in Sources */,
 				B4E7FA7827F6C42D00604F5E /* ZHDrawingRulerLineLayer.m in Sources */,
 				B4E7FA6D27F6C42D00604F5E /* ZHDrawingTriangularPyramidLayer.m in Sources */,
@@ -1327,6 +1350,7 @@
 				B4AC37FD27DD9FB400529722 /* JYDayCalendarView.m in Sources */,
 				B40B2A5128126FF400B3D760 /* JYDayMoodImageCollectionViewCell.m in Sources */,
 				B4E7FA6827F6C42D00604F5E /* ZHDrawingSphereLayer.m in Sources */,
+				B4D964082817A27E00FBE518 /* JYTabbarPlusButton.m in Sources */,
 				B4EA2C0B27E74E0000779793 /* ChartletPicker.swift in Sources */,
 				B4E7FA8027F6C42D00604F5E /* ZHFigureDrawingLayer.m in Sources */,
 				B43C4CA527F1460F00F4C22B /* JYSealMoodADRView.m in Sources */,

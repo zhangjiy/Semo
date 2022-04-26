@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JYHomeViewController : UIViewController
+@interface JYMoodHomeViewController : UIViewController
 
 
 @end
