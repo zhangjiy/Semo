@@ -31,14 +31,14 @@
 
 - (void)initSubViews {
     [self addSubview:self.gridView];
-    [self.gridView drawGridWithVerLineCount:4 horLineCount:8 scale:4/3.f];
+    [_gridView drawGridWithVerLineCount:4 horLineCount:8 scale:6/5.f];
     [self addSubview:self.collectionView];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     _gridView.centerX = self.width / 2.f;
-    _collectionView.frame = _gridView.frame;
+    _collectionView.frame = self.bounds;
 }
 
 - (UICollectionView *)collectionView {
@@ -65,7 +65,6 @@
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc] init];
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing = 0;
-    layout.itemSize = [UIScreen mainScreen].bounds.size;
     layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     return layout;
@@ -73,7 +72,7 @@
 
 - (JYGridView *)gridView {
     if (!_gridView) {
-        _gridView = [[JYGridView alloc] initWithFrame:CGRectMake(0, 0, JYHomeGridWidth, JYHomeGridHeight)];
+        _gridView = [[JYGridView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight - JYHomeTopViewHeight)];
         _gridView.backgroundColor = SMHomeBackgroudColor;
     }
     

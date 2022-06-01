@@ -6,10 +6,12 @@
 //
 
 #import "JYMonthCalendarCollectionViewCell.h"
+#import "JYGridView.h"
 #import "JYDayCalendarView.h"
 #import "JYPrefixHeader.h"
 
 @interface JYMonthCalendarCollectionViewCell () <JYDayCalendarViewDelegate>
+@property (nonatomic, strong) JYGridView *gridView;
 @property (nonatomic, strong) JYDayCalendarView *dayCalendarView;
 @end
 
@@ -23,7 +25,18 @@
 }
 
 - (void)initWithSubViews {
+    //[self.contentView addSubview:self.gridView];
+    [self.gridView drawGridWithVerLineCount:4 horLineCount:8 scale:4/3.f];
     [self.contentView addSubview:self.dayCalendarView];
+}
+
+- (JYGridView *)gridView {
+    if (!_gridView) {
+        _gridView = [[JYGridView alloc] initWithFrame:CGRectMake(0, 0, JYHomeGridWidth, JYHomeGridHeight)];
+        _gridView.backgroundColor = [UIColor redColor];
+    }
+    
+    return _gridView;
 }
 
 - (JYDayCalendarView *)dayCalendarView {
@@ -43,9 +56,8 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _dayCalendarView.width = self.contentView.width;
-    _dayCalendarView.height = self.contentView.height - StatusBarHeight - JYViewInset;
-    _dayCalendarView.top = StatusBarHeight + JYViewInset;
+    _gridView.frame = self.contentView.bounds;
+    _dayCalendarView.frame = self.contentView.bounds;
 }
 
 #pragma -- mark -- JYDayCalendarViewDelegate

@@ -79,7 +79,6 @@
     layout.delegate = self;
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing = 0;
-    layout.itemSize = self.containerView.bounds.size;
     layout.sectionInset = UIEdgeInsetsZero;
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     return layout;

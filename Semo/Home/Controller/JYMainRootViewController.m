@@ -39,30 +39,11 @@
 
 
     if (should && [self cyl_tabBarController].selectedIndex == viewController.cyl_tabIndex) {
-//        @try {
-//            [[[self class] cyl_topmostViewController] performSelector:@selector(refresh)];
-//        } @catch (NSException *exception) {
-//            NSLog(@"🔴类名与方法名：%@（在第%@行），描述：%@", @(__PRETTY_FUNCTION__), @(__LINE__), exception.reason);
-//        }
     }
     return should;
 }
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
-    
     UIControl *control = [viewController cyl_tabButton];
-//
-//    UIView *animationView;
-//    if ([control cyl_isTabButton]) {
-//        //获取到tab view
-//        animationView = [control cyl_tabImageView];
-//    }
-//    //动画
-////    [self addScaleAnimationOnView:animationView repeatCount:1];
-//
-//    //中间按钮点击
-//    if ([control cyl_isTabButton]|| [control cyl_isPlusButton]) {
-//    }
-    
     UIView *animationView;
     // 如果 PlusButton 也添加了点击事件，那么点击 PlusButton 后不会触发该代理方法。
     if ([control isKindOfClass:[CYLExternPlusButton class]]) {

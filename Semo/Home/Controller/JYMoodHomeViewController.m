@@ -6,7 +6,7 @@
 //
 
 #import "JYMoodHomeViewController.h"
-#import "JYPlusControl.h"
+#import "JYHomeTopView.h"
 #import "JYRecordMoodViewController.h"
 #import "JYMonthCalendarViewManager.h"
 #import "JYDetailMoodViewController.h"
@@ -14,7 +14,7 @@
 #import "JYPrefixHeader.h"
 
 @interface JYMoodHomeViewController () <JYRecordMoodViewControllerDelegate, JYMonthCalendarViewDelegate>
-@property (nonatomic, strong) JYPlusControl * plusControl;
+@property (nonatomic, strong) JYHomeTopView *topView;
 @property (nonatomic, strong) id <JYMonthCalendarViewManagerProtocol> calendarViewManager;
 @end
 
@@ -33,39 +33,34 @@
 
 - (void)initSubviews {
     [self.view addSubview:self.calendarViewManager.containerView];
-    [self.view addSubview:self.plusControl];
+    [self.view addSubview:self.topView];
 }
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
-    _calendarViewManager.containerView.frame = self.view.bounds;
+    //_calendarViewManager.containerView.frame = self.view.bounds;
     [_calendarViewManager layoutSubviews];
     
-    _plusControl.width = SMPluginControlWidth;
-    _plusControl.height = SMPluginControlHeight;
-    _plusControl.centerX = self.view.width / 2.f;
-    _plusControl.bottom = self.view.height - SafeAreaHeight;
+    _topView.size = CGSizeMake(self.view.width, JYHomeTopViewHeight);
 }
 
 - (id <JYMonthCalendarViewManagerProtocol>)calendarViewManager {
     if (!_calendarViewManager) {
-        _calendarViewManager = [[JYMonthCalendarViewManager alloc] initWithFrame:self.view.bounds];
+        _calendarViewManager = [[JYMonthCalendarViewManager alloc] initWithFrame:CGRectMake(0, JYHomeTopViewHeight, self.view.width, self.view.height - JYHomeBottomViewHeight)];
         _calendarViewManager.delegate = self;
     }
     
     return _calendarViewManager;
 }
 
-- (JYPlusControl *)plusControl {
-    if (!_plusControl) {
-        _plusControl = [[JYPlusControl alloc] initWithFrame:CGRectZero];
-        _plusControl.layer.masksToBounds = YES;
-        _plusControl.layer.cornerRadius = SMPluginControlWidth / 2.f;
-        [_plusControl addTarget:self action:@selector(plusControlAction:) forControlEvents:UIControlEventTouchUpInside];
+- (JYHomeTopView *)topView {
+    if (!_topView) {
+        _topView = [[JYHomeTopView alloc] initWithFrame:CGRectZero];
+        _topView.backgroundColor = [UIColor colorWithRed:223/255.f green:225/255.f blue:215/255.f alpha:1.f];
     }
     
-    return _plusControl;
+    return _topView;
 }
 
 - (void)plusControlAction:(UIControl *)sender {
