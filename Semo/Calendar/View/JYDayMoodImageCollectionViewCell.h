@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface JYDayMoodImageCollectionViewCell : UICollectionViewCell
-@property (nonatomic, strong) NSArray *images;
+@property (nonatomic, strong) NSArray *moods;
 @property (nonatomic, weak) id <JYDayMoodImageCollectionViewCellDelegate> delegate;
 @end
 

@@ -16,6 +16,7 @@ typedef NS_ENUM(NSInteger, JYPaintingType) {
     JYPaintingTypeSize,
     JYPaintingTypePen,
     JYPaintingTypeUndo,
+    JYPaintingTypeCustom,
 };
 
 typedef NS_ENUM(NSInteger, JYMoodStyleType) {

@@ -11,6 +11,7 @@
 #import "JYRecordPaintingSizeCollectionViewCell.h"
 #import "JYRecordPaintingPenCollectionViewCell.h"
 #import "JYRecordPaintingUndoCollectionViewCell.h"
+#import "JYRecordPaintingCustomCollectionViewCell.h"
 #import "JYPopupMenu.h"
 #import "JYPainting.h"
 #import "JYPrefixHeader.h"
@@ -58,6 +59,7 @@
         [_collectionView registerClass:[JYRecordPaintingSizeCollectionViewCell class] forCellWithReuseIdentifier:@"JYRecordPaintingSizeCollectionViewCell"];
         [_collectionView registerClass:[JYRecordPaintingPenCollectionViewCell class] forCellWithReuseIdentifier:@"JYRecordPaintingPenCollectionViewCell"];
         [_collectionView registerClass:[JYRecordPaintingUndoCollectionViewCell class] forCellWithReuseIdentifier:@"JYRecordPaintingUndoCollectionViewCell"];
+        [_collectionView registerClass:[JYRecordPaintingCustomCollectionViewCell class] forCellWithReuseIdentifier:@"JYRecordPaintingCustomCollectionViewCell"];
         _collectionView.scrollsToTop = NO;
         _collectionView.contentInset = UIEdgeInsetsZero;
         if (@available(iOS 11.0, *)) _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -70,9 +72,8 @@
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc] init];
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing = 10;
-    layout.itemSize = [UIScreen mainScreen].bounds.size;
     layout.sectionInset = UIEdgeInsetsMake(0, 50, 0, 50);
-    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     return layout;
 }
 
@@ -91,26 +92,32 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    
-    return self.painting.plantings.count;
+    NSArray *plantings = self.painting.plantings;
+    return plantings.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    JYPaintingItem *item = self.painting.plantings[indexPath.row];
-    if (item.type == JYPaintingTypeColor) {
+    NSArray *plantings = self.painting.plantings;
+    JYPaintingItem *item = plantings[indexPath.row];
+    if (item.type == JYPaintingTypeStyle) {
+        JYRecordPaintingStyleCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYRecordPaintingStyleCollectionViewCell" forIndexPath:indexPath];
+        return cell;
+    }
+    else if (item.type == JYPaintingTypeColor) {
         JYRecordPaintingColorCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYRecordPaintingColorCollectionViewCell" forIndexPath:indexPath];
         return cell;
     } else if (item.type == JYPaintingTypeSize) {
         JYRecordPaintingSizeCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYRecordPaintingSizeCollectionViewCell" forIndexPath:indexPath];
         return cell;
-    } else if (item.type == JYPaintingTypePen) {
+    }
+    else if (item.type == JYPaintingTypePen) {
         JYRecordPaintingPenCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYRecordPaintingPenCollectionViewCell" forIndexPath:indexPath];
         return cell;
     } else if (item.type == JYPaintingTypeUndo) {
         JYRecordPaintingUndoCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYRecordPaintingUndoCollectionViewCell" forIndexPath:indexPath];
         return cell;
     } else {
-        JYRecordPaintingStyleCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYRecordPaintingStyleCollectionViewCell" forIndexPath:indexPath];
+        JYRecordPaintingCustomCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYRecordPaintingCustomCollectionViewCell" forIndexPath:indexPath];
         return cell;
     }
 }

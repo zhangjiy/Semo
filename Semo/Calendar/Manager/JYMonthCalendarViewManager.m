@@ -196,8 +196,8 @@
         NSString *text = date.name;
         NSDictionary *dayMoodDic = self.currentMonth.monthMood.dayMoodDict;
         JYDayMood *dayMood = [dayMoodDic valueForKey:text];
-        NSData *data = dayMood.moods.lastObject;
-        if (data) {
+        JYMood *mood = dayMood.moods.lastObject;
+        if (mood) {
             if ([self.delegate respondsToSelector:@selector(monthCalendarViewManager:didSelectItemAtIndexPath:jumpType:)]) {
                 [self.delegate monthCalendarViewManager:self didSelectItemAtIndexPath:self.dayName jumpType:JYMonthCalendarJumpTypeDetail];
             }

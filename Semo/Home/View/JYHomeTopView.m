@@ -10,6 +10,7 @@
 #import "JYPrefixHeader.h"
 
 @interface JYHomeTopView ()
+@property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) JYHomeTodayMoodView *todayMoodView;
 @property (nonatomic, strong) UIButton *rightButton;
 @end
@@ -26,6 +27,7 @@
 }
 
 - (void)initSubviews {
+    //[self addSubview:self.titleLabel];
     [self addSubview:self.todayMoodView];
     [self addSubview:self.rightButton];
 }
@@ -34,20 +36,35 @@
     [super layoutSubviews];
     
     _rightButton.size = CGSizeMake(40, 40);
-    _rightButton.right = self.width - 20;
+    _rightButton.right = self.width - 10;
     _rightButton.centerY = self.height / 2.f + 15;
     
-    _todayMoodView.size = CGSizeMake((self.width - 20 * 3 - 40), 40);
+    _todayMoodView.size = CGSizeMake((self.width - 20 * 2 - 40), 40);
     _todayMoodView.left = 20;
     _todayMoodView.centerY = self.height / 2.f + 15;
+    
+    [_titleLabel sizeToFit];
+    _titleLabel.left = 20;
+    _titleLabel.bottom = _todayMoodView.top - 5;
+}
+
+- (UILabel *)titleLabel {
+    if (!_titleLabel) {
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        _titleLabel.font = [UIFont systemFontOfSize:15];
+        _titleLabel.textColor = [UIColor blackColor];
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.text = @"每月统计";
+    }
+    return _titleLabel;
 }
 
 - (JYHomeTodayMoodView *)todayMoodView {
     if (!_todayMoodView) {
         _todayMoodView = [[JYHomeTodayMoodView alloc] initWithFrame:CGRectZero];
-        _todayMoodView.backgroundColor = SMHomeBackgroudColor;
         _todayMoodView.layer.masksToBounds = YES;
         _todayMoodView.layer.cornerRadius = 5.f;
+        _todayMoodView.layer.borderWidth = 0.5f;
     }
     
     return _todayMoodView;

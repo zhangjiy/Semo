@@ -68,12 +68,12 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return Moods.count;
+    return RecordMoods.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     JYRecordMoodListCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    NSString *text = Moods[indexPath.row];
+    NSString *text = RecordMoods[indexPath.row];
     UIColor *color = MoodColors[indexPath.row];
     cell.text = text;
     cell.color = color;
@@ -82,14 +82,14 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat width = (self.width - collectionView.contentInset.left * 2) / (float)Moods.count;
+    CGFloat width = (self.width - collectionView.contentInset.left * 2) / (float)RecordMoods.count;
     return CGSizeMake(width, width);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     self.indexPath = indexPath;
     [self.collectionView reloadData];
-    NSString *text = Moods[indexPath.row];
+    NSString *text = RecordMoods[indexPath.row];
     if ([self.delegate respondsToSelector:@selector(RecordMoodListView:didSelectItem:)]) {
         [self.delegate RecordMoodListView:self didSelectItem:text];
     }

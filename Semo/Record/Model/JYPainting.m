@@ -96,7 +96,11 @@
         JYPaintingItem *item4 = [[JYPaintingItem alloc] initWithType:JYPaintingTypeUndo];
         item4.title = @"4";
         [temp addObject:item4];
+        JYPaintingItem *item5 = [[JYPaintingItem alloc] initWithType:JYPaintingTypeCustom];
+        item5.title = @"自定义";
+        [temp addObject:item5];
         _plantings = [NSArray arrayWithArray:temp];
+        
     }
     
     return _plantings;

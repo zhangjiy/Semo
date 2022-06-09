@@ -136,7 +136,7 @@
     if (moods.count > 0) {
         JYDayMoodImageCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYDayMoodImageCollectionViewCell" forIndexPath:indexPath];
         cell.delegate = self;
-        cell.images = moods;
+        cell.moods = moods;
         return cell;
     }
     

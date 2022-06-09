@@ -63,6 +63,10 @@
     return _moodListView;
 }
 
+- (NSInteger)index {
+    return self.moodListView.indexPath.row;
+}
+
 #pragma -- mark -- JYRecordPaintingListViewDelegate
 
 - (void)RecordMoodBottomView:(JYRecordMoodBottomView *)bottomView didSelectPaintingItem:(JYPaintingItem *)item {

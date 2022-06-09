@@ -8,6 +8,7 @@
 #import "JYDayMoodImageCollectionViewCell.h"
 #import "TYCyclePagerView.h"
 #import "JYCyclePagerCollectionViewCell.h"
+#import "JYMood.h"
 #import "JYPrefixHeader.h"
 
 @interface JYDayMoodImageCollectionViewCell () <TYCyclePagerViewDataSource, TYCyclePagerViewDelegate, JYCyclePagerCollectionViewCellDelegate>
@@ -39,9 +40,9 @@
     return _cyclePagerView;
 }
 
-- (void)setImages:(NSArray *)images {
-    if (_images != images) {
-        _images = images;
+- (void)setMoods:(NSArray *)moods {
+    if (_moods != moods) {
+        _moods = moods;
         [self.cyclePagerView reloadData];
     }
 }
@@ -80,12 +81,12 @@
 #pragma mark -- TYCyclePagerViewDataSource
 
 - (NSInteger)numberOfItemsInPagerView:(TYCyclePagerView *)pageView {
-    return self.images.count;
+    return self.moods.count;
 }
 
 - (UICollectionViewCell *)pagerView:(TYCyclePagerView *)pagerView cellForItemAtIndex:(NSInteger)index {
-    NSData *data = self.images[index];
-    UIImage *image = [UIImage imageWithData:data];
+    JYMood *mood = self.moods[index];
+    UIImage *image = [UIImage imageWithData:mood.data];
     JYCyclePagerCollectionViewCell *cell = [pagerView dequeueReusableCellWithReuseIdentifier:@"JYCyclePagerCollectionViewCell" forIndex:index];
     cell.delegate = self;
     cell.image = image;

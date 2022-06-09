@@ -8,32 +8,6 @@
 #import "JYRecordMoodListCollectionViewCell.h"
 #import "JYPrefixHeader.h"
 
-@interface JYStrokeLabel : UILabel
-
-@end
-
-@implementation JYStrokeLabel
-
-//- (void)drawRect:(CGRect)rect {
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGContextSetLineWidth(context, 2.5);
-//    
-//    CGContextSetLineJoin(context, kCGLineJoinRound);
-//    
-//    CGContextSetTextDrawingMode(context, kCGTextStroke);
-//    
-//    self.textColor = SMSealRedColor;
-//    
-//    [super drawTextInRect:rect];
-//    
-//    CGContextSetTextDrawingMode(context, kCGTextFill);
-//    self.textColor = [UIColor whiteColor];
-//    
-//    [super drawTextInRect:rect];
-//}
-
-@end
-
 @interface JYRecordMoodListCollectionViewCell ()
 @property (nonatomic, strong) CAShapeLayer *selectedLayer;
 @property (nonatomic, strong) UILabel *textLabel;

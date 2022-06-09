@@ -24,6 +24,7 @@
 @end
 
 @implementation JYRecordMoodManager
+@synthesize index = _index;
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super init];
@@ -124,6 +125,10 @@
     }
     
     return _painting;
+}
+
+- (NSInteger)index {
+    return self.bottomView.index;
 }
 
 #pragma -- mark -- JYRecordMoodBottomViewDelegate
