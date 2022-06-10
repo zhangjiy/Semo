@@ -13,7 +13,7 @@
 #import "JYMonthMood.h"
 #import "JYPrefixHeader.h"
 
-@interface JYMoodHomeViewController () <JYRecordMoodViewControllerDelegate, JYMonthCalendarViewDelegate>
+@interface JYMoodHomeViewController () <JYHomeTopViewDelegate, JYRecordMoodViewControllerDelegate, JYMonthCalendarViewDelegate>
 @property (nonatomic, strong) JYHomeTopView *topView;
 @property (nonatomic, strong) id <JYMonthCalendarViewManagerProtocol> calendarViewManager;
 @end
@@ -58,6 +58,7 @@
     if (!_topView) {
         _topView = [[JYHomeTopView alloc] initWithFrame:CGRectZero];
         _topView.backgroundColor = [UIColor colorWithRed:223/255.f green:225/255.f blue:215/255.f alpha:1.f];
+        _topView.delegate = self;
     }
     
     return _topView;
@@ -65,6 +66,37 @@
 
 - (void)plusControlAction:(UIControl *)sender {
     [self presentRecordMoodViewController:self.calendarViewManager.todayName];
+}
+
+- (void)plusButtonAction:(UIButton *)sender {
+    [self presentRecordMoodViewController:self.calendarViewManager.todayName];
+}
+
+#pragma -- mark -- JYHomeTopViewDelegate
+
+- (void)homeTopView:(JYHomeTopView *)view rightButtonAction:(UIButton *)sender {
+    //分享的标题
+     NSString *textToShare = @"分享的标题。";
+    //分享的图片
+     UIImage *imageToShare = [UIImage imageNamed:@"chartlet-2.png"];
+     //分享的url
+     NSURL *urlToShare = [NSURL URLWithString:@"http://www.baidu.com"];
+     //在这里呢 如果想分享图片 就把图片添加进去  文字什么的通上
+     NSArray *activityItems = @[textToShare,imageToShare, urlToShare];
+     UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
+      //不出现在活动项目
+    activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeCopyToPasteboard,UIActivityTypeAssignToContact,UIActivityTypeSaveToCameraRoll];
+    [self presentViewController:activityVC animated:YES completion:nil];
+     // 分享之后的回调
+        activityVC.completionWithItemsHandler = ^(UIActivityType  _Nullable activityType, BOOL completed, NSArray * _Nullable returnedItems, NSError * _Nullable activityError) {
+            if (completed) {
+                NSLog(@"completed");
+                //分享 成功
+            } else  {
+                NSLog(@"cancled");
+                //分享 取消
+            }
+        };
 }
 
 #pragma -- mark -- JYRecordMoodViewControllerDelegate

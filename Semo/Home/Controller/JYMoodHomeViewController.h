@@ -6,8 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JYHomeViewControllerProtocol.h"
 
-@interface JYMoodHomeViewController : UIViewController
+@interface JYMoodHomeViewController : UIViewController <JYHomeViewControllerProtocol>
 
 
 @end

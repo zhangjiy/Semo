@@ -9,8 +9,4 @@
 
 @implementation JYHomeTodayMoodDataManager
 
-- (void)ff {
-    
-}
-
 @end

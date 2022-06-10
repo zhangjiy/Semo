@@ -32,6 +32,7 @@ typedef NS_ENUM(NSInteger, JYMoodDateType) {
 
 @interface JYMoodMonthDate : JYMoodDate
 @property (nonatomic, strong) JYMonthMood * monthMood;
+@property (nonatomic, strong, readonly) NSArray * monthMoodAnalysis;
 @end
 
 @interface JYMoodWeekDate : JYMoodDate

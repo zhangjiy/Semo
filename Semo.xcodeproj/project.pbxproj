@@ -281,6 +281,7 @@
 		B46ED562281105EC000712F8 /* NSObject+ImpChangeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ImpChangeTool.m"; sourceTree = "<group>"; };
 		B47C619828520D2800E0097B /* UIImage+WBTDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WBTDraw.m"; sourceTree = "<group>"; };
 		B47C619928520D2900E0097B /* UIImage+WBTDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WBTDraw.h"; sourceTree = "<group>"; };
+		B47C619E2852EA6100E0097B /* JYHomeViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYHomeViewControllerProtocol.h; sourceTree = "<group>"; };
 		B47EAAF2280CF96A00F6E8EF /* JYPopupMenuContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuContentView.h; sourceTree = "<group>"; };
 		B47EAAF3280CF96A00F6E8EF /* JYPopupMenuContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupMenuContentView.m; sourceTree = "<group>"; };
 		B47EAAF8280CF9CE00F6E8EF /* JYPopupMenuContentViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuContentViewProtocol.h; sourceTree = "<group>"; };
@@ -571,6 +572,7 @@
 		B41AC71827D5A9FF00CDF4AB /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B47C619D2852115B00E0097B /* Manager */,
 				B420E04128166214002C58E3 /* Controller */,
 				B41AC73D27D71E9600CDF4AB /* Model */,
 				B41AC73427D7000A00CDF4AB /* View */,
@@ -609,8 +611,6 @@
 				B4292A0B2847270800DA4737 /* JYHomeTodayMoodView.m */,
 				B4292A132848519C00DA4737 /* JYHomeTodayMoodCollectionViewCell.h */,
 				B4292A142848519C00DA4737 /* JYHomeTodayMoodCollectionViewCell.m */,
-				B4DAEF0028503DC90027C64B /* JYHomeTodayMoodDataManager.h */,
-				B4DAEF0128503DCA0027C64B /* JYHomeTodayMoodDataManager.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -745,6 +745,16 @@
 				B46ED560281105EC000712F8 /* NSObject+Swizzling.m */,
 			);
 			path = SafeObject;
+			sourceTree = "<group>";
+		};
+		B47C619D2852115B00E0097B /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				B4DAEF0028503DC90027C64B /* JYHomeTodayMoodDataManager.h */,
+				B4DAEF0128503DCA0027C64B /* JYHomeTodayMoodDataManager.m */,
+				B47C619E2852EA6100E0097B /* JYHomeViewControllerProtocol.h */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		B4AC37A327DC782700529722 /* Seal */ = {

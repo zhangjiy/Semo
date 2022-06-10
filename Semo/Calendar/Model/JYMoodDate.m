@@ -73,6 +73,28 @@
     return _monthMood;
 }
 
+- (NSArray *)monthMoodAnalysis {
+    NSInteger xi = 0;
+    NSInteger nu = 0;
+    NSInteger you = 0;
+    NSInteger si = 0;
+    NSInteger bei = 0;
+    NSInteger kong = 0;
+    NSInteger jing = 0;
+    NSDictionary <NSString *, JYDayMood *> * dayMoodDict = self.monthMood.dayMoodDict;
+    for (JYDayMood *dayMood in dayMoodDict.allValues) {
+        xi += [dayMood.dayMoodAnalysis[0] integerValue];
+        nu += [dayMood.dayMoodAnalysis[1] integerValue];
+        you += [dayMood.dayMoodAnalysis[2] integerValue];
+        si += [dayMood.dayMoodAnalysis[3] integerValue];
+        bei += [dayMood.dayMoodAnalysis[4] integerValue];
+        kong += [dayMood.dayMoodAnalysis[5] integerValue];
+        jing += [dayMood.dayMoodAnalysis[6] integerValue];
+    }
+    
+    return @[@(xi), @(nu), @(you), @(si), @(bei), @(kong), @(jing)];
+}
+
 @end
 
 

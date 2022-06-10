@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface JYDayMood : NSObject
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) NSArray <JYMood *> * moods;
+@property (nonatomic, strong, readonly) NSArray * dayMoodAnalysis;
 - (instancetype)initWithName:(NSString *)name;
 @end
 

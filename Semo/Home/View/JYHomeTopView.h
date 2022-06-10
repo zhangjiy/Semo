@@ -9,8 +9,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JYHomeTopView : UIView
+@class JYHomeTopView;
 
+@protocol JYHomeTopViewDelegate <NSObject>
+@optional
+@property (nonatomic, strong, readonly) UIView *overlayView;
+- (void)homeTopView:(JYHomeTopView *)view rightButtonAction:(UIButton *)sender;
+@end
+
+
+@interface JYHomeTopView : UIView
+@property (nonatomic, weak) id <JYHomeTopViewDelegate> delegate;
 @end
 
 NS_ASSUME_NONNULL_END

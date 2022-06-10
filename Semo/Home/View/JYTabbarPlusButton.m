@@ -6,6 +6,7 @@
 //
 
 #import "JYTabbarPlusButton.h"
+#import "JYHomeViewControllerProtocol.h"
 
 @implementation JYTabbarPlusButton
 
@@ -20,7 +21,7 @@
     button.frame = CGRectMake(0.0, 0.0, 74, 70);
     
     // if you use `+plusChildViewController` , do not addTarget to plusButton.
-    [button addTarget:button action:@selector(clickPublish) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:button action:@selector(clickPublish:) forControlEvents:UIControlEventTouchUpInside];
     return button;
     
 }
@@ -28,14 +29,16 @@
 #pragma mark -
 #pragma mark - Event Response
 
-- (void)clickPublish {
-//    CYLTabBarController *tabBarController = [self cyl_tabBarController];
-//    UIViewController *viewController = tabBarController.selectedViewController;
-    
-//    id <LYWriteMoodDiaryViewProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYWriteMoodDiaryViewProtocol)];
-//    if ([obj isKindOfClass:[UIViewController class]]) {
-//        [viewController presentViewController:(UIViewController *)obj animated:YES completion:nil];
-//    }
+- (void)clickPublish:(UIButton *)sender {
+    CYLTabBarController *tabBarController = [self cyl_tabBarController];
+    UIViewController <JYHomeViewControllerProtocol> *viewController = tabBarController.selectedViewController;
+    if ([viewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navigationController = (UINavigationController *)viewController;
+        viewController = navigationController.viewControllers.firstObject;
+    }
+    if ([viewController respondsToSelector:@selector(plusButtonAction:)]) {
+        [viewController plusButtonAction:sender];
+    }
 }
 
 #pragma mark - CYLPlusButtonSubclassing

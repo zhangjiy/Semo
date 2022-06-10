@@ -41,7 +41,7 @@
     
     _todayMoodView.size = CGSizeMake((self.width - 20 * 2 - 40), 40);
     _todayMoodView.left = 20;
-    _todayMoodView.centerY = self.height / 2.f + 15;
+    _todayMoodView.centerY = self.height / 2.f + 16;
     
     [_titleLabel sizeToFit];
     _titleLabel.left = 20;
@@ -75,9 +75,16 @@
     if (!_rightButton) {
         _rightButton = [[UIButton alloc] initWithFrame:CGRectZero];
         [_rightButton setImage:[UIImage imageNamed:@"lbs_icon_share_black.png"] forState:UIControlStateNormal];
+        [_rightButton addTarget:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     
     return _rightButton;
+}
+
+- (void)rightButtonAction:(UIButton *)sender {
+    if ([self.delegate respondsToSelector:@selector(homeTopView:rightButtonAction:)]) {
+        [self.delegate homeTopView:self rightButtonAction:sender];
+    }
 }
 
 @end
