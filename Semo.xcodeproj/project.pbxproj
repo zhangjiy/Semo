@@ -61,6 +61,9 @@
 		B46ED568281105EC000712F8 /* NSArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = B46ED561281105EC000712F8 /* NSArray+Safe.m */; };
 		B46ED569281105EC000712F8 /* NSObject+ImpChangeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B46ED562281105EC000712F8 /* NSObject+ImpChangeTool.m */; };
 		B47C619A28520D2900E0097B /* UIImage+WBTDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C619828520D2800E0097B /* UIImage+WBTDraw.m */; };
+		B47C61A42853385100E0097B /* JYSettingListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C61A32853385100E0097B /* JYSettingListView.m */; };
+		B47C61A8285338CE00E0097B /* JYSettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C61A7285338CE00E0097B /* JYSettingModel.m */; };
+		B47C61AB28533D9500E0097B /* JYSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C61AA28533D9500E0097B /* JYSettingTableViewCell.m */; };
 		B47EAAF4280CF96A00F6E8EF /* JYPopupMenuContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B47EAAF3280CF96A00F6E8EF /* JYPopupMenuContentView.m */; };
 		B480EFC527FE8D9200EA4811 /* JYMoodDate.m in Sources */ = {isa = PBXBuildFile; fileRef = B480EFC427FE8D9200EA4811 /* JYMoodDate.m */; };
 		B490453327F00BE7005A265A /* JYPopupStyleMenuListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B490453227F00BE7005A265A /* JYPopupStyleMenuListView.m */; };
@@ -282,6 +285,12 @@
 		B47C619828520D2800E0097B /* UIImage+WBTDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WBTDraw.m"; sourceTree = "<group>"; };
 		B47C619928520D2900E0097B /* UIImage+WBTDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WBTDraw.h"; sourceTree = "<group>"; };
 		B47C619E2852EA6100E0097B /* JYHomeViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYHomeViewControllerProtocol.h; sourceTree = "<group>"; };
+		B47C61A22853385100E0097B /* JYSettingListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYSettingListView.h; sourceTree = "<group>"; };
+		B47C61A32853385100E0097B /* JYSettingListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYSettingListView.m; sourceTree = "<group>"; };
+		B47C61A6285338CE00E0097B /* JYSettingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYSettingModel.h; sourceTree = "<group>"; };
+		B47C61A7285338CE00E0097B /* JYSettingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYSettingModel.m; sourceTree = "<group>"; };
+		B47C61A928533D9500E0097B /* JYSettingTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYSettingTableViewCell.h; sourceTree = "<group>"; };
+		B47C61AA28533D9500E0097B /* JYSettingTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYSettingTableViewCell.m; sourceTree = "<group>"; };
 		B47EAAF2280CF96A00F6E8EF /* JYPopupMenuContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuContentView.h; sourceTree = "<group>"; };
 		B47EAAF3280CF96A00F6E8EF /* JYPopupMenuContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupMenuContentView.m; sourceTree = "<group>"; };
 		B47EAAF8280CF9CE00F6E8EF /* JYPopupMenuContentViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuContentViewProtocol.h; sourceTree = "<group>"; };
@@ -535,6 +544,7 @@
 		B41AC6E027D5A69F00CDF4AB /* Semo */ = {
 			isa = PBXGroup;
 			children = (
+				B47C619F2853379C00E0097B /* Setting */,
 				B4EA2C1327E7598500779793 /* Textures */,
 				B41AC71C27D5AA9C00CDF4AB /* Helper */,
 				B4EA2C0E27E7522C00779793 /* Base */,
@@ -673,8 +683,6 @@
 			children = (
 				B41AC6E727D5A69F00CDF4AB /* JYMoodHomeViewController.h */,
 				B41AC6E827D5A69F00CDF4AB /* JYMoodHomeViewController.m */,
-				B4D9640C2817A66000FBE518 /* JYSettingViewController.h */,
-				B4D9640D2817A66000FBE518 /* JYSettingViewController.m */,
 				B4D964032817A17500FBE518 /* JYMainRootViewController.h */,
 				B4D964042817A17500FBE518 /* JYMainRootViewController.m */,
 				B4D964092817A32100FBE518 /* JYTabbarViewController.h */,
@@ -755,6 +763,45 @@
 				B47C619E2852EA6100E0097B /* JYHomeViewControllerProtocol.h */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		B47C619F2853379C00E0097B /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				B47C61A5285338B900E0097B /* Model */,
+				B47C61A1285337EB00E0097B /* View */,
+				B47C61A0285337E300E0097B /* Controller */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		B47C61A0285337E300E0097B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B4D9640C2817A66000FBE518 /* JYSettingViewController.h */,
+				B4D9640D2817A66000FBE518 /* JYSettingViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B47C61A1285337EB00E0097B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B47C61A22853385100E0097B /* JYSettingListView.h */,
+				B47C61A32853385100E0097B /* JYSettingListView.m */,
+				B47C61A928533D9500E0097B /* JYSettingTableViewCell.h */,
+				B47C61AA28533D9500E0097B /* JYSettingTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B47C61A5285338B900E0097B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B47C61A6285338CE00E0097B /* JYSettingModel.h */,
+				B47C61A7285338CE00E0097B /* JYSettingModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B4AC37A327DC782700529722 /* Seal */ = {
@@ -1325,6 +1372,7 @@
 				B480EFC527FE8D9200EA4811 /* JYMoodDate.m in Sources */,
 				B4E5220F2806691700492B5E /* JYRecordPaintingColorCollectionViewCell.m in Sources */,
 				B4E7FA6627F6C42D00604F5E /* ZHDrawingCuboidLayer.m in Sources */,
+				B47C61AB28533D9500E0097B /* JYSettingTableViewCell.m in Sources */,
 				B41AC73327D6F9BF00CDF4AB /* JYRecordMoodViewController.m in Sources */,
 				B4E7FA6A27F6C42D00604F5E /* ZHDrawingHexagonLayer.m in Sources */,
 				B4E521F62802E49A00492B5E /* JYMonthCalendarViewManager.m in Sources */,
@@ -1336,6 +1384,7 @@
 				B4E7FA6927F6C42D00604F5E /* ZHDrawingAxisLayer.m in Sources */,
 				B4DAEF0228503DCA0027C64B /* JYHomeTodayMoodDataManager.m in Sources */,
 				B4BF762B27E8B220003BBAC5 /* QBPopupMenuItemView.m in Sources */,
+				B47C61A42853385100E0097B /* JYSettingListView.m in Sources */,
 				B41AC72627D5AA9D00CDF4AB /* UIDeviceHelper.m in Sources */,
 				B4DAEF08285050FD0027C64B /* JYRecordPaintingCustomCollectionViewCell.m in Sources */,
 				B4E522122806709300492B5E /* JYGradientCircleView.m in Sources */,
@@ -1383,6 +1432,7 @@
 				B4E7FA7C27F6C42D00604F5E /* ZHDrawingCylinderLayer.m in Sources */,
 				B4BF762E27E8B220003BBAC5 /* QBPopupMenuOverlayView.m in Sources */,
 				B46ED566281105EC000712F8 /* NSDictionary+Safe.m in Sources */,
+				B47C61A8285338CE00E0097B /* JYSettingModel.m in Sources */,
 				B43C4CAA27F1ACC200F4C22B /* JYSealMoodSellView.m in Sources */,
 				B448898B27FAD79D007BD0FA /* JYPopupPenMenuCollectionViewCell.m in Sources */,
 				B4BF762C27E8B220003BBAC5 /* QBPopupMenuItem.m in Sources */,
