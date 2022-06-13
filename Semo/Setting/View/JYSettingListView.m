@@ -25,24 +25,49 @@ static NSString *const kJYSettingTableViewCell = @"kJYSettingTableViewCell";
     if (self) {
         [self initSubviews];
         
-        JYSettingModel *model0 = [[JYSettingModel alloc] init];
-        model0.title = @"密码";
-        JYSettingModel *model1 = [[JYSettingModel alloc] init];
-        model1.title = @"导出日记";
-        JYSettingModel *model2 = [[JYSettingModel alloc] init];
-        model2.title = @"数据备份与恢复";
+//        JYSettingModel *model0 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeSwitch];
+//        model0.title = @"密码";
+//        model0.icon = @"ico_setting_arrow.png";
+//
+//        JYSettingModel *modelLine0 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeLine];
+//        modelLine0.backgoundColor = [UIColor lightGrayColor];
+        
+//        JYSettingModel *model1 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeArrow];
+//        model1.title = @"导出日记";
+//        model1.icon = @"ico_setting_arrow.png";
+//
+//        JYSettingModel *modelLine1 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeLine];
+//        modelLine1.backgoundColor = [UIColor lightGrayColor];
+//
+//        JYSettingModel *model2 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeArrow];
+//        model2.title = @"数据备份与恢复";
+//        model2.icon = @"ico_setting_arrow.png";
         
         
-        JYSettingModel *model3 = [[JYSettingModel alloc] init];
-        model1.title = @"好评鼓励";
-        JYSettingModel *model4 = [[JYSettingModel alloc] init];
-        model2.title = @"帮助中心";
-        JYSettingModel *model5 = [[JYSettingModel alloc] init];
-        model3.title = @"意见反馈";
-        JYSettingModel *model6 = [[JYSettingModel alloc] init];
-        model4.title = @"关于我们";
+//        JYSettingModel *modelSelction0 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeSection];
+//        modelSelction0.backgoundColor = [UIColor grayColor];
         
-        self.settings = @[model0, model1, model2, model3, model4, model5, model6];
+        
+        JYSettingModel *model3 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeArrow];
+        model3.title = @"好评鼓励";
+        model3.icon = @"ico_setting_arrow.png";
+        model3.showBottomLine = YES;
+        
+        JYSettingModel *model4 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeArrow];
+        model4.title = @"帮助中心";
+        model4.icon = @"ico_setting_arrow.png";
+        model4.showBottomLine = YES;
+        
+        JYSettingModel *model5 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeArrow];
+        model5.title = @"意见反馈";
+        model5.icon = @"ico_setting_arrow.png";
+        model5.showBottomLine = YES;
+        
+        JYSettingModel *model6 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeArrow];
+        model6.title = @"关于我们";
+        model6.icon = @"ico_setting_arrow.png";
+        
+        self.settings = @[model3, model4, model5, model6];
     }
     
     return self;
@@ -78,14 +103,14 @@ static NSString *const kJYSettingTableViewCell = @"kJYSettingTableViewCell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return SMMoodListCellHeight;
+    return 44;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    JYSettingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kJYSettingTableViewCell forIndexPath:indexPath];
     JYSettingModel *model = self.settings[indexPath.row];
+    JYSettingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kJYSettingTableViewCell forIndexPath:indexPath];
     [cell updateViewWithModel:model];
+    
     return cell;
 }
 

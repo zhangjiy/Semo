@@ -55,7 +55,6 @@
     JYSettingViewController *second = [[JYSettingViewController alloc] init];
     UIViewController *generalVC = [[CYLBaseNavigationController alloc]
                                                     initWithRootViewController:second];
-    [generalVC cyl_setHideNavigationBarSeparator:YES];
     
     return @[homePageVC,generalVC,];
 }

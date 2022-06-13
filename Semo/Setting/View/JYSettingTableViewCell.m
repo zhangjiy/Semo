@@ -43,15 +43,15 @@
     _titleLabel.left = 15;
     _titleLabel.centerY = self.contentView.height / 2.f;
     
-    _arrowButton.size = CGSizeMake(44, self.contentView.height);
+    _arrowButton.size = CGSizeMake(27, 51);
     _arrowButton.right = self.width;
     _arrowButton.centerY = self.contentView.height / 2.f;
     
-    _switchButton.size = CGSizeMake(44, self.contentView.height);
+    _switchButton.size = CGSizeMake(20, 20);
     _switchButton.right = self.width;
     _switchButton.centerY = self.contentView.height / 2.f;
     
-    _lineView.size = CGSizeMake(self.contentView.width - 15 * 2, 0.5f);
+    _lineView.size = CGSizeMake(self.contentView.width - 15, 0.5f);
     _lineView.left = 15;
     _lineView.bottom = self.contentView.height;
 }
@@ -80,14 +80,17 @@
 - (UIView *)lineView {
     if (!_lineView) {
         _lineView = [[UIView alloc] initWithFrame:CGRectZero];
-        _lineView.backgroundColor = [UIColor blackColor];
+        _lineView.backgroundColor = [UIColor lightGrayColor];
     }
     return _lineView;
 }
 
 - (void)updateViewWithModel:(JYSettingModel *)model {
+    self.switchButton.hidden = model.type == JYSettingItemTypeSwitch ? NO:YES;
+    self.lineView.hidden = !model.showBottomLine;
     self.titleLabel.text = model.title;
     [self.arrowButton setImage:[UIImage imageNamed:model.icon] forState:UIControlStateNormal];
+    self.contentView.backgroundColor = model.backgoundColor;
 }
 
 @end

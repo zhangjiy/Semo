@@ -81,6 +81,7 @@
 		B4AC37FD27DD9FB400529722 /* JYDayCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37FC27DD9FB400529722 /* JYDayCalendarView.m */; };
 		B4AC380027DDA4CF00529722 /* JYDayCalendarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC37FF27DDA4CF00529722 /* JYDayCalendarCollectionViewCell.m */; };
 		B4AC380727DE30E500529722 /* JYCalendarCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AC380627DE30E500529722 /* JYCalendarCollectionViewLayout.m */; };
+		B4AD4C022856D9710032FF6D /* JYSettingTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AD4C012856D9710032FF6D /* JYSettingTopView.m */; };
 		B4B66B9427F29C32007D3267 /* JYHeartView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B66B9327F29C32007D3267 /* JYHeartView.m */; };
 		B4B66B9827F2CAE0007D3267 /* JYStyleImageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B66B9727F2CADF007D3267 /* JYStyleImageFactory.m */; };
 		B4B66B9B27F2D3D1007D3267 /* JYSealMoodSimpleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B66B9A27F2D3D1007D3267 /* JYSealMoodSimpleView.m */; };
@@ -328,6 +329,8 @@
 		B4AC37FF27DDA4CF00529722 /* JYDayCalendarCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYDayCalendarCollectionViewCell.m; sourceTree = "<group>"; };
 		B4AC380527DE30E500529722 /* JYCalendarCollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYCalendarCollectionViewLayout.h; sourceTree = "<group>"; };
 		B4AC380627DE30E500529722 /* JYCalendarCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYCalendarCollectionViewLayout.m; sourceTree = "<group>"; };
+		B4AD4C002856D9710032FF6D /* JYSettingTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYSettingTopView.h; sourceTree = "<group>"; };
+		B4AD4C012856D9710032FF6D /* JYSettingTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYSettingTopView.m; sourceTree = "<group>"; };
 		B4B66B9227F29C32007D3267 /* JYHeartView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYHeartView.h; sourceTree = "<group>"; };
 		B4B66B9327F29C32007D3267 /* JYHeartView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYHeartView.m; sourceTree = "<group>"; };
 		B4B66B9627F2CADF007D3267 /* JYStyleImageFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYStyleImageFactory.h; sourceTree = "<group>"; };
@@ -791,6 +794,8 @@
 				B47C61A32853385100E0097B /* JYSettingListView.m */,
 				B47C61A928533D9500E0097B /* JYSettingTableViewCell.h */,
 				B47C61AA28533D9500E0097B /* JYSettingTableViewCell.m */,
+				B4AD4C002856D9710032FF6D /* JYSettingTopView.h */,
+				B4AD4C012856D9710032FF6D /* JYSettingTopView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1365,6 +1370,7 @@
 				B4E7FA6527F6C42D00604F5E /* ZHDrawingLineLayer.m in Sources */,
 				B4BF762D27E8B220003BBAC5 /* QBPlasticPopupMenu.m in Sources */,
 				B4292A0C2847270800DA4737 /* JYHomeTodayMoodView.m in Sources */,
+				B4AD4C022856D9710032FF6D /* JYSettingTopView.m in Sources */,
 				B448897727F9DC02007BD0FA /* JYRecordMoodDisplayView.m in Sources */,
 				B4E7FA7727F6C42D00604F5E /* ZHDrawingOvalLayer.m in Sources */,
 				B4AC37A927DC78D300529722 /* JYARCArrangeStartView.m in Sources */,
