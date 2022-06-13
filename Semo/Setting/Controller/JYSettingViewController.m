@@ -6,12 +6,15 @@
 //
 
 #import "JYSettingViewController.h"
-#import "JYSettingTopView.h"
+#import <StoreKit/StoreKit.h>
 #import "JYSettingListView.h"
+#import "JYSettingModel.h"
+#import "JYHelpCenterViewController.h"
+#import "JYUserFeedBackViewController.h"
+#import "JYAboutUsViewController.h"
 #import "JYPrefixHeader.h"
 
-@interface JYSettingViewController ()
-@property (nonatomic, strong) JYSettingTopView *topView;
+@interface JYSettingViewController () <JYSettingListViewDelegate>
 @property (nonatomic, strong) JYSettingListView *settingListView;
 @end
 
@@ -19,40 +22,64 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBar.hidden = YES;
+    self.title = @"设置";
     [self initSubviews];
 }
 
 - (void)initSubviews {
     [self.view addSubview:self.settingListView];
-    [self.view addSubview:self.topView];
 }
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
-    _topView.size = CGSizeMake(self.view.width, NavigationBarHeight);
-    _settingListView.height = self.view.height;
-    _settingListView.width = self.view.width;
+    _settingListView.size = CGSizeMake(self.view.width, self.view.height - NavigationBarHeight);
     _settingListView.top = NavigationBarHeight;
-}
-
-- (JYSettingTopView *)topView {
-    if (!_topView) {
-        _topView = [[JYSettingTopView alloc] initWithFrame:CGRectZero];
-        _topView.backgroundColor = [UIColor colorWithRed:223/255.f green:225/255.f blue:215/255.f alpha:1.f];
-    }
-    
-    return _topView;
 }
 
 - (JYSettingListView *)settingListView {
     if (!_settingListView) {
         _settingListView = [[JYSettingListView alloc] initWithFrame:CGRectZero];
         _settingListView.backgroundColor = SMHomeBackgroudColor;
-        
+        _settingListView.delegate = self;
     }
     
     return _settingListView;
+}
+
+#pragma mark -- JYSettingListViewDelegate
+
+- (void)settingListView:(JYSettingListView *)listView didSelectItem:(JYSettingModel *)item {
+    if (item.type == JYSettingItemTypeComment) {
+        [self gotoStoreComment];
+    } else if (item.type == JYSettingItemTypeHelp) {
+        [self gotoHelpCenter];
+    } else if (item.type == JYSettingItemTypeFeedback) {
+        [self gotoUserFeedBack];
+    } else if (item.type == JYSettingItemTypeAbout) {
+        [self gotoAboutUs];
+    }
+}
+
+- (void)gotoStoreComment {
+    NSString * nsStringToOpen = [NSString stringWithFormat: @"itms-apps://itunes.apple.com/app/id%@?action=write-review", @"1573880428"];//替换为对应的APPID
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:nsStringToOpen] options:@{} completionHandler:^(BOOL success) {
+        
+    }];
+}
+
+- (void)gotoHelpCenter {
+    JYHelpCenterViewController *vc = [[JYHelpCenterViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)gotoUserFeedBack {
+    JYUserFeedBackViewController *vc = [[JYUserFeedBackViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)gotoAboutUs {
+    JYAboutUsViewController *vc = [[JYAboutUsViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

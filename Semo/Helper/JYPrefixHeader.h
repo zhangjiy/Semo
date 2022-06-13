@@ -13,6 +13,7 @@
 #import "UIView+ViewController.h"
 #import "UIColor+Extensions.h"
 #import "UIImage+WBTDraw.h"
+#import "NSString+WBTSize.h"
 
 #define SMHomeLeft 15
 

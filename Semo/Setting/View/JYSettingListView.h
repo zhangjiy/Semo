@@ -9,8 +9,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JYSettingListView : UIView
+@class JYSettingListView, JYSettingModel;
 
+@protocol JYSettingListViewDelegate <NSObject>
+@optional
+- (void)settingListView:(JYSettingListView *)listView didSelectItem:(JYSettingModel *)item;
+@end
+
+@interface JYSettingListView : UIView
+@property (nonatomic, weak) id <JYSettingListViewDelegate> delegate;
 @end
 
 NS_ASSUME_NONNULL_END

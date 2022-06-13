@@ -48,24 +48,28 @@ static NSString *const kJYSettingTableViewCell = @"kJYSettingTableViewCell";
 //        modelSelction0.backgoundColor = [UIColor grayColor];
         
         
-        JYSettingModel *model3 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeArrow];
+        JYSettingModel *model3 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeComment];
         model3.title = @"好评鼓励";
         model3.icon = @"ico_setting_arrow.png";
         model3.showBottomLine = YES;
+        model3.rightViewType = JYSettingRightViewTypeArrow;
         
-        JYSettingModel *model4 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeArrow];
+        JYSettingModel *model4 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeHelp];
         model4.title = @"帮助中心";
         model4.icon = @"ico_setting_arrow.png";
         model4.showBottomLine = YES;
+        model4.rightViewType = JYSettingRightViewTypeArrow;
         
-        JYSettingModel *model5 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeArrow];
+        JYSettingModel *model5 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeFeedback];
         model5.title = @"意见反馈";
         model5.icon = @"ico_setting_arrow.png";
         model5.showBottomLine = YES;
+        model5.rightViewType = JYSettingRightViewTypeArrow;
         
-        JYSettingModel *model6 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeArrow];
+        JYSettingModel *model6 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeAbout];
         model6.title = @"关于我们";
         model6.icon = @"ico_setting_arrow.png";
+        model6.rightViewType = JYSettingRightViewTypeArrow;
         
         self.settings = @[model3, model4, model5, model6];
     }
@@ -115,7 +119,10 @@ static NSString *const kJYSettingTableViewCell = @"kJYSettingTableViewCell";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    JYSettingModel *model = self.settings[indexPath.row];
+    if ([self.delegate respondsToSelector:@selector(settingListView:didSelectItem:)]) {
+        [self.delegate settingListView:self didSelectItem:model];
+    }
 }
 
 @end

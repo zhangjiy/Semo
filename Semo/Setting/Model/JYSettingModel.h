@@ -11,11 +11,21 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, JYSettingItemType) {
-    JYSettingItemTypeNone = 0,
-    JYSettingItemTypeArrow,
-    JYSettingItemTypeSwitch,
-    JYSettingItemTypeLine,
-    JYSettingItemTypeSection,
+    JYSettingItemTypePassword = 0,
+    JYSettingItemTypeExport,
+    JYSettingItemTypeBackups,
+    JYSettingItemTypeComment,
+    JYSettingItemTypeHelp,
+    JYSettingItemTypeFeedback,
+    JYSettingItemTypeAbout
+};
+
+typedef NS_ENUM(NSInteger, JYSettingRightViewType) {
+    JYSettingRightViewTypeNone = 0,
+    JYSettingRightViewTypeArrow,
+    JYSettingRightViewTypeSwitch,
+    JYSettingRightViewTypeLine,
+    JYSettingRightViewTypeSection,
 };
 
 @interface JYSettingModel : NSObject
@@ -23,6 +33,7 @@ typedef NS_ENUM(NSInteger, JYSettingItemType) {
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *icon;
 @property (nonatomic, strong) UIColor *backgoundColor;
+@property (nonatomic, assign) JYSettingRightViewType rightViewType;
 @property (nonatomic, assign) BOOL showBottomLine;
 - (instancetype)initWithType:(JYSettingItemType)type;
 @end

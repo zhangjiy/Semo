@@ -1,22 +1,22 @@
 //
-//  JYSettingTableViewCell.m
+//  JYHelpCenterTableViewCell.m
 //  Semo
 //
-//  Created by jiyang on 2022/6/10.
+//  Created by jiyang on 2022/6/13.
 //
 
-#import "JYSettingTableViewCell.h"
-#import "JYSettingModel.h"
+#import "JYHelpCenterTableViewCell.h"
+#import "JYHelpCenterModel.h"
 #import "JYPrefixHeader.h"
 
-@interface JYSettingTableViewCell ()
+@interface JYHelpCenterTableViewCell ()
+@property (nonatomic, strong) UILabel *lineMarkLabel;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIButton *arrowButton;
-@property (nonatomic, strong) UISwitch *switchButton;
 @property (nonatomic, strong) UIView *lineView;
 @end
 
-@implementation JYSettingTableViewCell
+@implementation JYHelpCenterTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -30,30 +30,37 @@
 }
 
 - (void)initSubViews {
+    [self.contentView addSubview:self.lineMarkLabel];
     [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.arrowButton];
-    [self.contentView addSubview:self.switchButton];
     [self.contentView addSubview:self.lineView];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     
+    [_lineMarkLabel sizeToFit];
+    _lineMarkLabel.left = 15;
+    _lineMarkLabel.centerY = self.contentView.height / 2.f;
+    
     [_titleLabel sizeToFit];
-    _titleLabel.left = 15;
+    _titleLabel.left = _lineMarkLabel.right + 3;
     _titleLabel.centerY = self.contentView.height / 2.f;
     
     _arrowButton.size = CGSizeMake(27, 51);
     _arrowButton.right = self.width;
     _arrowButton.centerY = self.contentView.height / 2.f;
     
-    _switchButton.size = CGSizeMake(20, 20);
-    _switchButton.right = self.width;
-    _switchButton.centerY = self.contentView.height / 2.f;
-    
     _lineView.size = CGSizeMake(self.contentView.width - 15, 0.5f);
     _lineView.left = 15;
     _lineView.bottom = self.contentView.height;
+}
+
+- (UILabel *)lineMarkLabel {
+    if (!_lineMarkLabel) {
+        _lineMarkLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    }
+    return _lineMarkLabel;
 }
 
 - (UILabel *)titleLabel {
@@ -70,13 +77,6 @@
     return _arrowButton;
 }
 
-- (UISwitch *)switchButton {
-    if (!_switchButton) {
-        _switchButton = [[UISwitch alloc] initWithFrame:CGRectZero];
-    }
-    return _switchButton;
-}
-
 - (UIView *)lineView {
     if (!_lineView) {
         _lineView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -85,12 +85,13 @@
     return _lineView;
 }
 
-- (void)updateViewWithModel:(JYSettingModel *)model {
-    self.switchButton.hidden = model.rightViewType == JYSettingRightViewTypeSwitch ? NO:YES;
+- (void)updateViewWithModel:(JYHelpCenterModel *)model {
     self.lineView.hidden = !model.showBottomLine;
+    self.lineMarkLabel.text = model.lineMark;
     self.titleLabel.text = model.title;
     [self.arrowButton setImage:[UIImage imageNamed:model.icon] forState:UIControlStateNormal];
     self.contentView.backgroundColor = model.backgoundColor;
 }
 
 @end
+
