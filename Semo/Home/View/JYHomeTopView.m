@@ -48,6 +48,10 @@
     _titleLabel.bottom = _todayMoodView.top - 5;
 }
 
+- (void)setMonthDate:(JYMoodMonthDate *)monthDate {
+    self.todayMoodView.monthDate = monthDate;
+}
+
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];

@@ -181,6 +181,10 @@
     
     NSInteger index = lrint(targetOffset/contentSize);
     [self.calculator endScroll:index];
+    
+    if ([self.delegate respondsToSelector:@selector(monthCalendarViewManager:didScrollItem:)]) {
+        [self.delegate monthCalendarViewManager:self didScrollItem:self.currentMonth];
+    }
 }
 
 #pragma mark - JYMonthCalendarCollectionViewCellDelegate

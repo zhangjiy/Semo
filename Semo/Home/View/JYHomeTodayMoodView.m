@@ -7,6 +7,7 @@
 
 #import "JYHomeTodayMoodView.h"
 #import "JYHomeTodayMoodCollectionViewCell.h"
+#import "JYMoodDate.h"
 #import "JYPrefixHeader.h"
 
 @interface JYHomeTodayMoodView () <UICollectionViewDelegate, UICollectionViewDataSource>
@@ -58,6 +59,10 @@
     return layout;
 }
 
+- (void)setMonthDate:(JYMoodMonthDate *)monthDate {
+    _monthDate = monthDate;
+    [self.collectionView reloadData];
+}
 
 #pragma mark - UICollectionViewDataSource
 
@@ -73,8 +78,11 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     JYHomeTodayMoodCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     NSString *text = HomeMoods[indexPath.row];
+    NSArray * monthMoodAnalysis = self.monthDate.monthMoodAnalysis;
+    NSNumber *count = [monthMoodAnalysis objectAtIndex:indexPath.row];
     UIColor *color = HomeMoodColors[indexPath.row];
     cell.text = text;
+    cell.count = count;
     cell.color = color;
     return cell;
 }

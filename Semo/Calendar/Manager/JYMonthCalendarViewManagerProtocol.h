@@ -22,6 +22,7 @@ typedef NS_ENUM(NSUInteger, JYMonthCalendarJumpType) {
 @protocol JYMonthCalendarViewDelegate <NSObject>
 @optional
 - (void)monthCalendarViewManager:(id <JYMonthCalendarViewManagerProtocol>)manager didSelectItemAtIndexPath:(NSString *)dayName jumpType:(JYMonthCalendarJumpType)jumpType;
+- (void)monthCalendarViewManager:(id <JYMonthCalendarViewManagerProtocol>)manager didScrollItem:(JYMoodMonthDate *)moodMonthDate;
 @end
 
 

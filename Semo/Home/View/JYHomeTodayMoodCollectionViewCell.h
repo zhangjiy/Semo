@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JYHomeTodayMoodCollectionViewCell : UICollectionViewCell
 @property (nonatomic, strong) NSString * text;
+@property (nonatomic, strong) NSNumber * count;
 @property (nonatomic, strong) UIColor * color;
 @end
 

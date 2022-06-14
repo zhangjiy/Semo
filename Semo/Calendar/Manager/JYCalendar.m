@@ -95,12 +95,10 @@
 }
 
 - (void)endScroll:(NSInteger)index {
-    id <JYMoodDate> minimumPage = [self.gregorian jy_firstDayOfMonth:_minimumDate];
-    NSDate *targetPage = [self.gregorian dateByAddingUnit:NSCalendarUnitMonth value:index toDate:minimumPage.date options:0];
-    BOOL shouldTriggerPageChange = [self isDateInDifferentPage:targetPage];
-    if (shouldTriggerPageChange) {
-        _currentPage = index;
-    }
+    //id <JYMoodDate> minimumPage = [self.gregorian jy_firstDayOfMonth:_minimumDate];
+    //NSDate *targetPage = [self.gregorian dateByAddingUnit:NSCalendarUnitMonth value:index toDate:minimumPage.date options:0];
+    //BOOL shouldTriggerPageChange = [self isDateInDifferentPage:targetPage];
+    _currentPage = index;
 }
 
 - (void)scrollToPageForDate:(id <JYMoodDate>)date animated:(BOOL)animated {

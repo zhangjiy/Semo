@@ -25,6 +25,7 @@
     self.navigationController.navigationBar.hidden = YES;
     [self setupConfig];
     [self initSubviews];
+    self.topView.monthDate = self.calendarViewManager.currentMonth;
 }
 
 - (void)setupConfig {
@@ -121,7 +122,7 @@
 }
 
 - (void)presentRecordMoodViewController:(NSString *)dayName {
-    JYMoodMonthDate *monthDate = (JYMoodMonthDate *)self.calendarViewManager.currentMonth;
+    JYMoodMonthDate *monthDate = self.calendarViewManager.currentMonth;
     JYDayMood * dayMood = [monthDate.monthMood.dayMoodDict valueForKey:dayName];
     if (!dayMood) {
         dayMood = [[JYDayMood alloc] initWithName:dayName];
@@ -131,6 +132,10 @@
     controller.delegate = self;
     controller.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (void)monthCalendarViewManager:(id <JYMonthCalendarViewManagerProtocol>)manager didScrollItem:(JYMoodMonthDate *)moodMonthDate {
+    self.topView.monthDate = moodMonthDate;
 }
 
 @end

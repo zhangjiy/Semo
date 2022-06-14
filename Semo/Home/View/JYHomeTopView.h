@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class JYHomeTopView;
+@class JYHomeTopView, JYMoodMonthDate;
 
 @protocol JYHomeTopViewDelegate <NSObject>
 @optional
@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @interface JYHomeTopView : UIView
+@property (nonatomic, strong) JYMoodMonthDate *monthDate;
 @property (nonatomic, weak) id <JYHomeTopViewDelegate> delegate;
 @end
 

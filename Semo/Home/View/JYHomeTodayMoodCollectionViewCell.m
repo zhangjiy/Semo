@@ -91,7 +91,13 @@
     if (_text != text) {
         _text = text;
         self.textLabel.text = text;
-        self.countLabel.text = @"7个";
+    }
+}
+
+- (void)setCount:(NSNumber *)count {
+    if (_count != count) {
+        _count = count;
+        self.countLabel.text = [NSString stringWithFormat:@"%@%@", count, @"个"];
     }
 }
 
