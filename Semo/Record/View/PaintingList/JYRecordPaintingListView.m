@@ -118,6 +118,7 @@
         return cell;
     } else {
         JYRecordPaintingCustomCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYRecordPaintingCustomCollectionViewCell" forIndexPath:indexPath];
+        cell.isSelected = item.selected;
         return cell;
     }
 }
@@ -129,18 +130,23 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     JYPaintingItem *item = self.painting.plantings[indexPath.row];
 
-    UICollectionViewCell * cell = [collectionView cellForItemAtIndexPath:indexPath];
-    CGRect rectInCollectionView = [self.collectionView convertRect:cell.frame toView:self.collectionView];
-    if ([self.delegate respondsToSelector:@selector(overlayView)]) {
-        UIView *view = self.delegate.overlayView;
-        CGRect rect = [self.collectionView convertRect:rectInCollectionView toView:view];
-        [self dismissMenu];
-        JYPopupMenu *popupMenu = [[JYPopupMenu alloc] initWithItem:item];
-        popupMenu.tag = 1000;
-        popupMenu.item = item;
-        popupMenu.delegate = self;
-        popupMenu.color = SMGhostWhiteColor;
-        [popupMenu showInView:view targetRect:rect animated:YES];
+    if (item.type == JYPaintingTypeCustom) {
+        item.selected = !item.selected;
+        [self.collectionView reloadData];
+    } else if (item.type != JYPaintingTypeUndo) {
+        UICollectionViewCell * cell = [collectionView cellForItemAtIndexPath:indexPath];
+        CGRect rectInCollectionView = [self.collectionView convertRect:cell.frame toView:self.collectionView];
+        if ([self.delegate respondsToSelector:@selector(overlayView)]) {
+            UIView *view = self.delegate.overlayView;
+            CGRect rect = [self.collectionView convertRect:rectInCollectionView toView:view];
+            [self dismissMenu];
+            JYPopupMenu *popupMenu = [[JYPopupMenu alloc] initWithItem:item];
+            popupMenu.tag = 1000;
+            popupMenu.item = item;
+            popupMenu.delegate = self;
+            popupMenu.color = SMGhostWhiteColor;
+            [popupMenu showInView:view targetRect:rect animated:YES];
+        }
     }
     
     if ([self.delegate respondsToSelector:@selector(recordPaintingListView:didSelectPaintingItem:)]) {

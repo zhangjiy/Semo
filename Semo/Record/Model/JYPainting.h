@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface JYPaintingItem : NSObject <JYPopupMenuListDataProtocol>
 @property (nonatomic, assign, readonly) JYPaintingType type;
 @property (nonatomic, assign) BOOL enabled;
+@property (nonatomic, assign) BOOL selected;
 @property (nonatomic, strong) NSString * title;
 @end
 

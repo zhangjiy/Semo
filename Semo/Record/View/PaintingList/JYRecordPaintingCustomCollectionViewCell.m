@@ -12,7 +12,7 @@
 
 @interface JYRecordPaintingCustomCollectionViewCell ()
 @property (nonatomic, strong) UIView *circleView;
-@property (nonatomic, strong) UIButton *selectedButton;
+@property (nonatomic, strong) UIImageView *selectedImageView;
 @end
 
 @implementation JYRecordPaintingCustomCollectionViewCell
@@ -27,7 +27,7 @@
 
 - (void)initSubviews {
     [self.contentView addSubview:self.circleView];
-    [self.contentView addSubview:self.selectedButton];
+    [self.contentView addSubview:self.selectedImageView];
 }
 
 - (UIView *)circleView {
@@ -42,16 +42,14 @@
     return _circleView;
 }
 
-- (UIButton *)selectedButton {
-    if (!_selectedButton) {
-        _selectedButton = [[UIButton alloc] initWithFrame:CGRectZero];
-        _selectedButton.layer.masksToBounds = YES;
-        _selectedButton.layer.cornerRadius = self.contentView.width * 0.4 * 0.5;
-        [_selectedButton setBackgroundImage:[UIImage wbt_imageWithColor:SMSealRedColor] forState:UIControlStateSelected];
-        [_selectedButton addTarget:self action:@selector(selectedButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+- (UIImageView *)selectedImageView {
+    if (!_selectedImageView) {
+        _selectedImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        _selectedImageView.layer.masksToBounds = YES;
+        _selectedImageView.layer.cornerRadius = self.contentView.width * 0.4 * 0.5;
     }
     
-    return _selectedButton;
+    return _selectedImageView;
 }
 
 - (void)layoutSubviews {
@@ -59,9 +57,16 @@
     _circleView.size = CGSizeMake(self.contentView.width * 0.5, self.contentView.width * 0.5);
     _circleView.top = (self.contentView.height - _circleView.size.height) / 2.f;
     _circleView.left = (self.contentView.width - _circleView.size.width) / 2.f;
-    _selectedButton.size = CGSizeMake(self.contentView.width * 0.4, self.contentView.width * 0.4);
-    _selectedButton.top = (self.contentView.height - _selectedButton.size.height) / 2.f;
-    _selectedButton.left = (self.contentView.width - _selectedButton.size.width) / 2.f;
+    _selectedImageView.size = CGSizeMake(self.contentView.width * 0.4, self.contentView.width * 0.4);
+    _selectedImageView.top = (self.contentView.height - _selectedImageView.size.height) / 2.f;
+    _selectedImageView.left = (self.contentView.width - _selectedImageView.size.width) / 2.f;
+}
+
+- (void)setIsSelected:(BOOL)isSelected {
+    if (_isSelected != isSelected) {
+        _isSelected = isSelected;
+        _selectedImageView.image = isSelected ? [UIImage wbt_imageWithColor:SMSealRedColor] : nil;
+    }
 }
 
 - (void)selectedButtonAction:(UIButton *)sender {
