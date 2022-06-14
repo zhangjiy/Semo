@@ -68,7 +68,6 @@ static NSString *const kJYHelpCenterTableViewCell = @"kJYHelpCenterTableViewCell
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.backgroundColor = [UIColor clearColor];
-        _tableView.tableFooterView = [[UIView alloc] init];
         [_tableView registerClass:[JYHelpCenterTableViewCell class] forCellReuseIdentifier:kJYHelpCenterTableViewCell];
     }
     return _tableView;

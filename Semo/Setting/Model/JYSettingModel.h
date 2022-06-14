@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, JYSettingItemType) {
-    JYSettingItemTypePassword = 0,
+    JYSettingItemTypeSection = 0,
+    JYSettingItemTypePassword,
     JYSettingItemTypeExport,
     JYSettingItemTypeBackups,
     JYSettingItemTypeComment,
@@ -24,8 +25,6 @@ typedef NS_ENUM(NSInteger, JYSettingRightViewType) {
     JYSettingRightViewTypeNone = 0,
     JYSettingRightViewTypeArrow,
     JYSettingRightViewTypeSwitch,
-    JYSettingRightViewTypeLine,
-    JYSettingRightViewTypeSection,
 };
 
 @interface JYSettingModel : NSObject

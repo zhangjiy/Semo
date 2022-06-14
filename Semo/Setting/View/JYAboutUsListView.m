@@ -69,7 +69,6 @@ static NSString *const kJYAboutUsTableViewCell = @"kJYAboutUsTableViewCell";
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.backgroundColor = [UIColor clearColor];
-        _tableView.tableFooterView = [[UIView alloc] init];
         [_tableView registerClass:[JYAboutUsTableViewCell class] forCellReuseIdentifier:kJYAboutUsTableViewCell];
     }
     return _tableView;

@@ -47,6 +47,8 @@ static NSString *const kJYSettingTableViewCell = @"kJYSettingTableViewCell";
 //        JYSettingModel *modelSelction0 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeSection];
 //        modelSelction0.backgoundColor = [UIColor grayColor];
         
+        JYSettingModel *model0 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeSection];
+        model0.backgoundColor = [UIColor grayColor];
         
         JYSettingModel *model3 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeComment];
         model3.title = @"好评鼓励";
@@ -71,7 +73,7 @@ static NSString *const kJYSettingTableViewCell = @"kJYSettingTableViewCell";
         model6.icon = @"ico_setting_arrow.png";
         model6.rightViewType = JYSettingRightViewTypeArrow;
         
-        self.settings = @[model3, model4, model5, model6];
+        self.settings = @[model0, model3, model4, model5, model6];
     }
     
     return self;
@@ -94,7 +96,6 @@ static NSString *const kJYSettingTableViewCell = @"kJYSettingTableViewCell";
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.backgroundColor = [UIColor clearColor];
-        _tableView.tableFooterView = [[UIView alloc] init];
         [_tableView registerClass:[JYSettingTableViewCell class] forCellReuseIdentifier:kJYSettingTableViewCell];
     }
     return _tableView;
@@ -107,13 +108,18 @@ static NSString *const kJYSettingTableViewCell = @"kJYSettingTableViewCell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    JYSettingModel *model = self.settings[indexPath.row];
+    if (model.type == JYSettingItemTypeSection) {
+        return 10;
+    }
     return 44;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     JYSettingModel *model = self.settings[indexPath.row];
     JYSettingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kJYSettingTableViewCell forIndexPath:indexPath];
-    [cell updateViewWithModel:model];
+    cell.settingModel = model;
     
     return cell;
 }

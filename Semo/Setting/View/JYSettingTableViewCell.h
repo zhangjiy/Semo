@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class JYSettingModel;
 
 @interface JYSettingTableViewCell : UITableViewCell
-- (void)updateViewWithModel:(JYSettingModel *)model;
+@property (nonatomic, strong) JYSettingModel *settingModel;;
 @end
 
 NS_ASSUME_NONNULL_END

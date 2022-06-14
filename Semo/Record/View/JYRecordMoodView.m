@@ -30,7 +30,6 @@
 //        _tableView.showsVerticalScrollIndicator = NO;
 //        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 //        _tableView.backgroundColor = [UIColor clearColor];
-//        _tableView.tableFooterView = [[UIView alloc] init];
 //        [_tableView registerClass:[JYRecordMoodTableViewCell class] forCellReuseIdentifier:kJYRecordMoodTableViewCell];
 //    }
 //    return _tableView;

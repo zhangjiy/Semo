@@ -79,7 +79,6 @@ static NSString *const kJYDetailMoodTableViewCell = @"kJYDetailMoodTableViewCell
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.backgroundColor = [UIColor clearColor];
-        _tableView.tableFooterView = [[UIView alloc] init];
         [_tableView registerClass:[JYDetailMoodTableViewCell class] forCellReuseIdentifier:kJYDetailMoodTableViewCell];
     }
     return _tableView;
