@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class JYHelpCenterModel;
 
 @interface JYHelpCenterTableViewCell : UITableViewCell
-- (void)updateViewWithModel:(JYHelpCenterModel *)model;
+@property (nonatomic, strong) JYHelpCenterModel *helpCenterModel;
 @end
 
 NS_ASSUME_NONNULL_END

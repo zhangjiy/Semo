@@ -10,8 +10,8 @@
 #import "JYPrefixHeader.h"
 
 @interface JYHelpCenterTableViewCell ()
-@property (nonatomic, strong) UILabel *lineMarkLabel;
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *contentLabel;
 @property (nonatomic, strong) UIButton *arrowButton;
 @property (nonatomic, strong) UIView *lineView;
 @end
@@ -30,22 +30,24 @@
 }
 
 - (void)initSubViews {
-    [self.contentView addSubview:self.lineMarkLabel];
     [self.contentView addSubview:self.titleLabel];
-    [self.contentView addSubview:self.arrowButton];
+    [self.contentView addSubview:self.contentLabel];
+    //[self.contentView addSubview:self.arrowButton];
     [self.contentView addSubview:self.lineView];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    [_lineMarkLabel sizeToFit];
-    _lineMarkLabel.left = 15;
-    _lineMarkLabel.centerY = self.contentView.height / 2.f;
+    _titleLabel.width = self.contentView.width - 15 * 2;
+    _titleLabel.height = [_helpCenterModel.title wbt_sizeWithFont:_titleLabel.font forWidth:_titleLabel.width].height;
+    _titleLabel.top = 10;
+    _titleLabel.left = 15;
     
-    [_titleLabel sizeToFit];
-    _titleLabel.left = _lineMarkLabel.right + 3;
-    _titleLabel.centerY = self.contentView.height / 2.f;
+    _contentLabel.width = self.contentView.width - 15 * 2;
+    _contentLabel.height = [_helpCenterModel.content wbt_sizeWithFont:_contentLabel.font forWidth:_contentLabel.width].height;
+    _contentLabel.top = _titleLabel.bottom + 10;
+    _contentLabel.left = 15;
     
     _arrowButton.size = CGSizeMake(27, 51);
     _arrowButton.right = self.width;
@@ -56,18 +58,24 @@
     _lineView.bottom = self.contentView.height;
 }
 
-- (UILabel *)lineMarkLabel {
-    if (!_lineMarkLabel) {
-        _lineMarkLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    }
-    return _lineMarkLabel;
-}
-
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        _titleLabel.font = [UIFont systemFontOfSize:16];
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.numberOfLines = 0;
     }
     return _titleLabel;
+}
+
+- (UILabel *)contentLabel {
+    if (!_contentLabel) {
+        _contentLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        _contentLabel.font = [UIFont systemFontOfSize:14];
+        _contentLabel.textAlignment = NSTextAlignmentCenter;
+        _contentLabel.numberOfLines = 0;
+    }
+    return _contentLabel;
 }
 
 - (UIButton *)arrowButton {
@@ -85,12 +93,15 @@
     return _lineView;
 }
 
-- (void)updateViewWithModel:(JYHelpCenterModel *)model {
-    self.lineView.hidden = !model.showBottomLine;
-    self.lineMarkLabel.text = model.lineMark;
-    self.titleLabel.text = model.title;
-    [self.arrowButton setImage:[UIImage imageNamed:model.icon] forState:UIControlStateNormal];
-    self.contentView.backgroundColor = model.backgoundColor;
+- (void)setHelpCenterModel:(JYHelpCenterModel *)helpCenterModel {
+    if (_helpCenterModel != helpCenterModel) {
+        _helpCenterModel = helpCenterModel;
+        self.lineView.hidden = !helpCenterModel.showBottomLine;
+        self.titleLabel.text = helpCenterModel.title;
+        self.contentLabel.text = helpCenterModel.content;
+        [self.arrowButton setImage:[UIImage imageNamed:helpCenterModel.icon] forState:UIControlStateNormal];
+        self.contentView.backgroundColor = helpCenterModel.backgoundColor;
+    }
 }
 
 @end

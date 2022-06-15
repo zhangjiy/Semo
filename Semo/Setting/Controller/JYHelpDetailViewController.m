@@ -59,8 +59,6 @@
 - (void)setHelpCenterModel:(JYHelpCenterModel *)helpCenterModel {
     if (_helpCenterModel != helpCenterModel) {
         _helpCenterModel = helpCenterModel;
-        self.titleLabel.text = helpCenterModel.title;
-        self.contentLabel.text = @"水井坊的积分看来是福建省来得快积分发就是劳动纠纷分解落实的积分发就是快乐的减肥解放路开始的减肥就流口水的积分";
     }
 }
 
