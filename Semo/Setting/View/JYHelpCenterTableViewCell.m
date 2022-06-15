@@ -46,7 +46,7 @@
     
     _contentLabel.width = self.contentView.width - 15 * 2;
     _contentLabel.height = [_helpCenterModel.content wbt_sizeWithFont:_contentLabel.font forWidth:_contentLabel.width].height;
-    _contentLabel.top = _titleLabel.bottom + 10;
+    _contentLabel.top = _titleLabel.bottom + 5;
     _contentLabel.left = 15;
     
     _arrowButton.size = CGSizeMake(27, 51);

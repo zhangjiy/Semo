@@ -36,7 +36,7 @@ static NSString *const kJYHelpCenterTableViewCell = @"kJYHelpCenterTableViewCell
 //        model1.showBottomLine = YES;
         
         JYHelpCenterModel *model2 = [[JYHelpCenterModel alloc] init];
-        model2.title = @"我可以一天记录多个心情吗？";
+        model2.title = @"我可以一天记录多个心情么？";
         model2.content = @"可以！直接点击 + 号，就可以继续创作当天的心情。";
         model2.showBottomLine = YES;
         
@@ -87,7 +87,7 @@ static NSString *const kJYHelpCenterTableViewCell = @"kJYHelpCenterTableViewCell
     CGFloat titileHeight = [model.title wbt_sizeWithFont:[UIFont systemFontOfSize:16] forWidth:(self.width - 15 * 2)].height;
     
     CGFloat contentHeight = [model.content wbt_sizeWithFont:[UIFont systemFontOfSize:14] forWidth:(self.width - 15 * 2)].height;
-    return 10 + titileHeight + 10 + contentHeight + 10;
+    return 10 + titileHeight + 5 + contentHeight + 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

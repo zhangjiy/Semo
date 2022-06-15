@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class JYAboutUsModel;
 
 @interface JYAboutUsTableViewCell : UITableViewCell
-- (void)updateViewWithModel:(JYAboutUsModel *)model;
+@property (nonatomic, strong) JYAboutUsModel *aboutUsModel;
 @end
 
 NS_ASSUME_NONNULL_END

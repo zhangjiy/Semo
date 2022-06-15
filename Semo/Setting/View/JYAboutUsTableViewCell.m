@@ -39,15 +39,15 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    [_titleLabel sizeToFit];
-    _titleLabel.left = 15;
+    _titleLabel.width = self.contentView.width - 15 * 2;
+    _titleLabel.height = [_aboutUsModel.title wbt_sizeWithFont:_titleLabel.font forWidth:_titleLabel.width].height;
     _titleLabel.top = 10;
+    _titleLabel.left = 15;
     
     _contentLabel.width = self.contentView.width - 15 * 2;
-    _contentLabel.height = self.contentView.height - _titleLabel.bottom - 5 - 10;
-    _contentLabel.left = 15;
+    _contentLabel.height = [_aboutUsModel.content wbt_sizeWithFont:_contentLabel.font forWidth:_contentLabel.width].height;
     _contentLabel.top = _titleLabel.bottom + 5;
-    
+    _contentLabel.left = 15;
     
     _arrowButton.size = CGSizeMake(27, 51);
     _arrowButton.right = self.width;
@@ -61,6 +61,7 @@
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        _titleLabel.font = [UIFont systemFontOfSize:16];
     }
     return _titleLabel;
 }
@@ -89,13 +90,16 @@
     return _lineView;
 }
 
-- (void)updateViewWithModel:(JYAboutUsModel *)model {
-    self.lineView.hidden = !model.showBottomLine;
-    self.titleLabel.text = model.title;
-    self.contentLabel.text = model.content;
-    self.contentLabel.textColor = model.contentColor;
-    [self.arrowButton setImage:[UIImage imageNamed:model.icon] forState:UIControlStateNormal];
-    self.contentView.backgroundColor = model.backgoundColor;
+- (void)setAboutUsModel:(JYAboutUsModel *)aboutUsModel {
+    if (_aboutUsModel != aboutUsModel) {
+        _aboutUsModel = aboutUsModel;
+        self.lineView.hidden = !aboutUsModel.showBottomLine;
+        self.titleLabel.text = aboutUsModel.title;
+        self.contentLabel.text = aboutUsModel.content;
+        self.contentLabel.textColor = aboutUsModel.contentColor;
+        [self.arrowButton setImage:[UIImage imageNamed:aboutUsModel.icon] forState:UIControlStateNormal];
+        self.contentView.backgroundColor = aboutUsModel.backgoundColor;
+    }
 }
 
 @end

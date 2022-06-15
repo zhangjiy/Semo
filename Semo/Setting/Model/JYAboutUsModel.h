@@ -17,7 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIColor *backgoundColor;
 @property (nonatomic, strong) UIColor *contentColor;
 @property (nonatomic, assign) BOOL showBottomLine;
-@property (nonatomic, assign) CGFloat cellHeight;
 @end
 
 NS_ASSUME_NONNULL_END
