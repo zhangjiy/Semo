@@ -48,7 +48,7 @@
 
 - (id <JYMonthCalendarViewManagerProtocol>)calendarViewManager {
     if (!_calendarViewManager) {
-        _calendarViewManager = [[JYMonthCalendarViewManager alloc] initWithFrame:CGRectMake(0, JYHomeTopViewHeight + 10, self.view.width, self.view.height - JYHomeBottomViewHeight)];
+        _calendarViewManager = [[JYMonthCalendarViewManager alloc] initWithFrame:CGRectMake(0, JYHomeTopViewHeight, self.view.width, self.view.height - JYHomeBottomViewHeight)];
         _calendarViewManager.delegate = self;
     }
     

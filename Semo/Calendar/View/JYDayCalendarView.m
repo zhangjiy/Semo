@@ -37,6 +37,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    _gridView.top = 10;
     _gridView.centerX = self.width / 2.f;
     _collectionView.frame = self.bounds;
 }
@@ -54,7 +55,7 @@
         [_collectionView registerClass:[JYDayCalendarCollectionViewCell class] forCellWithReuseIdentifier:@"JYDayCalendarCollectionViewCell"];
         [_collectionView registerClass:[JYYearCalendarCollectionViewCell class] forCellWithReuseIdentifier:@"JYYearCalendarCollectionViewCell"];
         _collectionView.scrollsToTop = NO;
-        _collectionView.contentInset = UIEdgeInsetsZero;
+        _collectionView.contentInset = UIEdgeInsetsMake(10, 0, 0, 0);
         if (@available(iOS 11.0, *)) _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
     
