@@ -25,19 +25,19 @@ static NSString *const kJYAboutUsTableViewCell = @"kJYAboutUsTableViewCell";
     if (self) {
         [self initSubviews];
         
-        JYAboutUsModel *model0 = [[JYAboutUsModel alloc] init];
+        JYAboutUsModel *model0 = [[JYAboutUsModel alloc] initWithType:JYAboutUsItemTypeNone];
         model0.title = @"产品理念";
         model0.content = @"七情记录";
         model0.showBottomLine = YES;
         model0.contentColor = [UIColor blackColor];
         
-        JYAboutUsModel *model1 = [[JYAboutUsModel alloc] init];
+        JYAboutUsModel *model1 = [[JYAboutUsModel alloc] initWithType:JYAboutUsItemTypeNone];
         model1.title = @"出品团队";
         model1.content = @"七情由张吉阳个人制作出品。致力于倾听客户心声、持续创造价值，正在开心的探索无线可能。请期待我更多的作品，感谢支持。";
         model1.showBottomLine = YES;
         model1.contentColor = [UIColor blackColor];
         
-        JYAboutUsModel *model2 = [[JYAboutUsModel alloc] init];
+        JYAboutUsModel *model2 = [[JYAboutUsModel alloc] initWithType:JYAboutUsItemTypeContact];
         model2.title = @"任何有意思的想法，欢迎随时召唤我";
         model2.content = @"semord@outlook.com";
         model2.showBottomLine = YES;
@@ -96,7 +96,10 @@ static NSString *const kJYAboutUsTableViewCell = @"kJYAboutUsTableViewCell";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    JYAboutUsModel *model = self.settings[indexPath.row];
+    if ([self.delegate respondsToSelector:@selector(aboutUsListView:didSelectItem:)]) {
+        [self.delegate aboutUsListView:self didSelectItem:model];
+    }
 }
 
 @end

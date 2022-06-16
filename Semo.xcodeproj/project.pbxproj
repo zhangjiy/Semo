@@ -53,6 +53,7 @@
 		B4609CE027EB3CE1009BC2A5 /* JYColorSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CDF27EB3CE1009BC2A5 /* JYColorSlider.m */; };
 		B4609CE327EB3E44009BC2A5 /* UIControl+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CE227EB3E44009BC2A5 /* UIControl+Block.m */; };
 		B4609CE627EB40BB009BC2A5 /* JYSizeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CE527EB40BB009BC2A5 /* JYSizeSlider.m */; };
+		B464F6FB285A0E4000F32874 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B464F6FA285A0E3F00F32874 /* MBProgressHUD.m */; };
 		B46ED563281105EC000712F8 /* NSMutableArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = B46ED555281105EB000712F8 /* NSMutableArray+Safe.m */; };
 		B46ED564281105EC000712F8 /* NSMutableDictionary+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = B46ED558281105EC000712F8 /* NSMutableDictionary+Safe.m */; };
 		B46ED565281105EC000712F8 /* NSMutableString+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = B46ED55D281105EC000712F8 /* NSMutableString+Safe.m */; };
@@ -283,6 +284,8 @@
 		B4609CE227EB3E44009BC2A5 /* UIControl+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Block.m"; sourceTree = "<group>"; };
 		B4609CE427EB40BB009BC2A5 /* JYSizeSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYSizeSlider.h; sourceTree = "<group>"; };
 		B4609CE527EB40BB009BC2A5 /* JYSizeSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYSizeSlider.m; sourceTree = "<group>"; };
+		B464F6F9285A0E3F00F32874 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		B464F6FA285A0E3F00F32874 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		B46ED554281105EB000712F8 /* NSMutableString+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+Safe.h"; sourceTree = "<group>"; };
 		B46ED555281105EB000712F8 /* NSMutableArray+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Safe.m"; sourceTree = "<group>"; };
 		B46ED556281105EB000712F8 /* NSDictionary+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Safe.h"; sourceTree = "<group>"; };
@@ -592,13 +595,13 @@
 		B41AC6E027D5A69F00CDF4AB /* Semo */ = {
 			isa = PBXGroup;
 			children = (
-				B47C619F2853379C00E0097B /* Setting */,
 				B4EA2C1327E7598500779793 /* Textures */,
 				B41AC71C27D5AA9C00CDF4AB /* Helper */,
 				B4EA2C0E27E7522C00779793 /* Base */,
 				B4AC37EB27DCC07B00529722 /* Calendar */,
 				B4AC37A327DC782700529722 /* Seal */,
 				B420E03B28163FAF002C58E3 /* Detail */,
+				B47C619F2853379C00E0097B /* Setting */,
 				B4EA2BFA27E747AC00779793 /* Record */,
 				B41AC71827D5A9FF00CDF4AB /* Home */,
 				B41AC6E127D5A69F00CDF4AB /* AppDelegate.h */,
@@ -641,6 +644,7 @@
 		B41AC71C27D5AA9C00CDF4AB /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				B464F6F8285A0E1D00F32874 /* MBProgressHUB */,
 				B4AD4C3328575E2F0032FF6D /* NSString+WBTSize.h */,
 				B4AD4C3228575E2F0032FF6D /* NSString+WBTSize.m */,
 				B47C619928520D2900E0097B /* UIImage+WBTDraw.h */,
@@ -781,6 +785,15 @@
 				B42209D1280E7C3100A2D68F /* JYMenuLocal.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B464F6F8285A0E1D00F32874 /* MBProgressHUB */ = {
+			isa = PBXGroup;
+			children = (
+				B464F6F9285A0E3F00F32874 /* MBProgressHUD.h */,
+				B464F6FA285A0E3F00F32874 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUB;
 			sourceTree = "<group>";
 		};
 		B46ED553281105EB000712F8 /* SafeObject */ = {
@@ -1503,6 +1516,7 @@
 				B4E7FA7127F6C42D00604F5E /* ZHDrawingRhombusLayer.m in Sources */,
 				B41FF20427E84AB9004D0329 /* JYPainting.m in Sources */,
 				B4AD4C2428573B2A0032FF6D /* JYAboutUsListView.m in Sources */,
+				B464F6FB285A0E4000F32874 /* MBProgressHUD.m in Sources */,
 				B4A90C5E27E6168E0085CAC4 /* JYRecordMoodBottomView.m in Sources */,
 				B4EC076627DEFF4500CB0877 /* JYRecordMoodView.m in Sources */,
 				B46ED564281105EC000712F8 /* NSMutableDictionary+Safe.m in Sources */,

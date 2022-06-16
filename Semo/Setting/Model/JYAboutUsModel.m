@@ -9,4 +9,13 @@
 
 @implementation JYAboutUsModel
 
+- (instancetype)initWithType:(JYAboutUsItemType)type {
+    if (self = [super init]) {
+        _type = type;
+        _backgoundColor = [UIColor whiteColor];
+    }
+    
+    return self;
+}
+
 @end
