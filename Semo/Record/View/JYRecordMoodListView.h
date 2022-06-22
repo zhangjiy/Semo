@@ -13,12 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol JYRecordMoodListViewDelegate <NSObject>
 @optional
-- (void)RecordMoodListView:(JYRecordMoodListView *)listView didSelectItem:(NSString *)item;
+- (void)recordMoodListView:(JYRecordMoodListView *)listView didSelectItem:(NSString *)item;
 @end
 
 @interface JYRecordMoodListView : UIView
 @property (nonatomic, weak) id <JYRecordMoodListViewDelegate> delegate;
-@property (nonatomic, strong, readonly) NSIndexPath * indexPath;
+@property (nonatomic, assign, readonly) NSUInteger  index;
 @end
 
 NS_ASSUME_NONNULL_END

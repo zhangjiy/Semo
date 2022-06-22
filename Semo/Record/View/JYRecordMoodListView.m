@@ -6,18 +6,22 @@
 //
 
 #import "JYRecordMoodListView.h"
+#import "MBSwitch.h"
 #import "JYRecordMoodListCollectionViewCell.h"
 #import "JYPrefixHeader.h"
 
 @interface JYRecordMoodListView () <UICollectionViewDelegate, UICollectionViewDataSource>
+@property (nonatomic, strong) MBSwitch * customSwitch;
 @property (nonatomic, strong) UICollectionView * collectionView;
-@property (nonatomic, strong) NSIndexPath * indexPath;
+@property (nonatomic, assign) NSUInteger index;
+
 @end
 
 @implementation JYRecordMoodListView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        self.index = -1;
         [self initSubViews];
     }
     return self;
@@ -25,11 +29,26 @@
 
 - (void)initSubViews {
     [self addSubview:self.collectionView];
+    //[self addSubview:self.customSwitch];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _collectionView.frame = self.bounds;
+    CGFloat itemWidth = [self itemWidth];
+    _collectionView.size = CGSizeMake(self.width, itemWidth);
+    _customSwitch.size = CGSizeMake(40, 40);
+    _customSwitch.right = self.width - 15;
+    _customSwitch.top = _collectionView.bottom;
+}
+
+- (MBSwitch *)customSwitch {
+    if (!_customSwitch) {
+        _customSwitch = [[MBSwitch alloc] initWithFrame:CGRectZero];
+        [_customSwitch addTarget:self action:@selector(customSwitchAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    return _customSwitch;
+
 }
 
 - (UICollectionView *)collectionView {
@@ -42,8 +61,7 @@
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
         [_collectionView registerClass:[JYRecordMoodListCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
-        _collectionView.scrollsToTop = NO;
-        _collectionView.contentInset = UIEdgeInsetsMake(0, 15, 0, 15);
+        _collectionView.contentInset = UIEdgeInsetsMake(0, 15, 0, 0);
         if (@available(iOS 11.0, *)) _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
     
@@ -54,11 +72,19 @@
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc] init];
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing = 0;
-    layout.itemSize = [UIScreen mainScreen].bounds.size;
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     return layout;
 }
 
+- (void)setIndex:(NSUInteger)index {
+    if (_index != index) {
+        _index = index;
+    }
+}
+
+- (void)customSwitchAction:(UIControl *)sender {
+    
+}
 
 #pragma mark - UICollectionViewDataSource
 
@@ -77,21 +103,29 @@
     UIColor *color = MoodColors[indexPath.row];
     cell.text = text;
     cell.color = color;
-    cell.isSelected = indexPath.row == self.indexPath.row ? YES : NO;
+    cell.isSelected = indexPath.row == self.index ? YES : NO;
     return cell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat width = (self.width - collectionView.contentInset.left * 2) / (float)RecordMoods.count;
+    CGFloat width = [self itemWidth];
     return CGSizeMake(width, width);
 }
 
+- (CGFloat)itemWidth {
+    CGFloat width = (self.width - self.collectionView.contentInset.left * 2) / (float)RecordMoods.count;
+    return width;
+}
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    self.indexPath = indexPath;
+    
+    self.customSwitch.hidden = NO;
+    
+    self.index = indexPath.row;
     [self.collectionView reloadData];
     NSString *text = RecordMoods[indexPath.row];
-    if ([self.delegate respondsToSelector:@selector(RecordMoodListView:didSelectItem:)]) {
-        [self.delegate RecordMoodListView:self didSelectItem:text];
+    if ([self.delegate respondsToSelector:@selector(recordMoodListView:didSelectItem:)]) {
+        [self.delegate recordMoodListView:self didSelectItem:text];
     }
 }
 

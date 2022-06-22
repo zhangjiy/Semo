@@ -9,7 +9,7 @@
 #import "JYPrefixHeader.h"
 
 @interface JYRecordMoodListCollectionViewCell ()
-@property (nonatomic, strong) CAShapeLayer *selectedLayer;
+@property (nonatomic, strong) UIView *selectedView;
 @property (nonatomic, strong) UILabel *textLabel;
 @end
 
@@ -25,29 +25,31 @@
 
 - (void)initSubviews {
     [self.contentView addSubview:self.textLabel];
-    [self.contentView.layer addSublayer:self.selectedLayer];
+    [self.contentView addSubview:self.selectedView];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     _textLabel.size = CGSizeMake(ceilf(self.contentView.width - 14), ceilf(self.contentView.width - 14));
     _textLabel.centerX = self.contentView.width / 2.f;
-    _textLabel.centerY = self.contentView.height / 2.f;
+    _textLabel.bottom = self.contentView.height - 10;
     
-    _selectedLayer.frame = CGRectMake(5, 5, ceilf(self.contentView.width - 10), ceilf(self.contentView.width - 10));
+    _selectedView.size = CGSizeMake(ceilf(self.contentView.width - 10), ceilf(self.contentView.width - 10));
+    _selectedView.centerX = self.contentView.width / 2.f;
+    _selectedView.centerY = _textLabel.centerY;
 }
 
-- (CAShapeLayer *)selectedLayer {
-    if (!_selectedLayer) {
-        _selectedLayer = [[CAShapeLayer alloc] init];
-        _selectedLayer.masksToBounds = YES;
-        _selectedLayer.cornerRadius = ceilf((self.contentView.width - 10)) / 2.f;
-        _selectedLayer.borderWidth = 4.f;
-        _selectedLayer.borderColor = SMGridLineColor.CGColor;
-        _selectedLayer.hidden = YES;
+- (UIView *)selectedView {
+    if (!_selectedView) {
+        _selectedView = [[UIView alloc] initWithFrame:CGRectZero];
+        _selectedView.layer.masksToBounds = YES;
+        _selectedView.layer.cornerRadius = ceilf((self.contentView.width - 10)) / 2.f;
+        _selectedView.layer.borderWidth = 4.f;
+        _selectedView.layer.borderColor = SMGridLineColor.CGColor;
+        _selectedView.hidden = YES;
     }
     
-    return _selectedLayer;
+    return _selectedView;
 }
 
 - (UILabel *)textLabel {
@@ -79,7 +81,7 @@
 - (void)setIsSelected:(BOOL)isSelected {
     if (_isSelected != isSelected) {
         _isSelected = isSelected;
-        _selectedLayer.hidden = isSelected ? NO : YES;
+        _selectedView.hidden = isSelected ? NO : YES;
     }
 }
 

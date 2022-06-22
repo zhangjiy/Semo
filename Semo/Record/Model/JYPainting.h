@@ -16,12 +16,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, readonly) JYPaintingType type;
 @property (nonatomic, assign) BOOL enabled;
 @property (nonatomic, assign) BOOL selected;
+@property (nonatomic, assign) BOOL disable;
 @property (nonatomic, strong) NSString * title;
 @end
 
 
 @interface JYPainting : NSObject
 @property (nonatomic, strong) NSArray <JYPaintingItem *> * plantings;
+- (JYPaintingItem *)item:(JYPaintingType)type;
 @end
 
 NS_ASSUME_NONNULL_END

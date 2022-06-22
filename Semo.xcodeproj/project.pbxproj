@@ -101,6 +101,7 @@
 		B4B66B9427F29C32007D3267 /* JYHeartView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B66B9327F29C32007D3267 /* JYHeartView.m */; };
 		B4B66B9827F2CAE0007D3267 /* JYStyleImageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B66B9727F2CADF007D3267 /* JYStyleImageFactory.m */; };
 		B4B66B9B27F2D3D1007D3267 /* JYSealMoodSimpleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B66B9A27F2D3D1007D3267 /* JYSealMoodSimpleView.m */; };
+		B4B8626D2861612900D90F4A /* MBSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B8626C2861612800D90F4A /* MBSwitch.m */; };
 		B4BF762A27E8B220003BBAC5 /* QBPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF761E27E8B220003BBAC5 /* QBPopupMenu.m */; };
 		B4BF762B27E8B220003BBAC5 /* QBPopupMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF762227E8B220003BBAC5 /* QBPopupMenuItemView.m */; };
 		B4BF762C27E8B220003BBAC5 /* QBPopupMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF762327E8B220003BBAC5 /* QBPopupMenuItem.m */; };
@@ -385,6 +386,8 @@
 		B4B66B9727F2CADF007D3267 /* JYStyleImageFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYStyleImageFactory.m; sourceTree = "<group>"; };
 		B4B66B9927F2D3D1007D3267 /* JYSealMoodSimpleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYSealMoodSimpleView.h; sourceTree = "<group>"; };
 		B4B66B9A27F2D3D1007D3267 /* JYSealMoodSimpleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYSealMoodSimpleView.m; sourceTree = "<group>"; };
+		B4B8626B2861612800D90F4A /* MBSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSwitch.h; sourceTree = "<group>"; };
+		B4B8626C2861612800D90F4A /* MBSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSwitch.m; sourceTree = "<group>"; };
 		B4BF761E27E8B220003BBAC5 /* QBPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenu.m; sourceTree = "<group>"; };
 		B4BF761F27E8B220003BBAC5 /* QBPlasticPopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPlasticPopupMenu.h; sourceTree = "<group>"; };
 		B4BF762027E8B220003BBAC5 /* QBPopupMenuPagenatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPopupMenuPagenatorView.h; sourceTree = "<group>"; };
@@ -644,6 +647,8 @@
 		B41AC71C27D5AA9C00CDF4AB /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				B4B8626B2861612800D90F4A /* MBSwitch.h */,
+				B4B8626C2861612800D90F4A /* MBSwitch.m */,
 				B464F6F8285A0E1D00F32874 /* MBProgressHUB */,
 				B4AD4C3328575E2F0032FF6D /* NSString+WBTSize.h */,
 				B4AD4C3228575E2F0032FF6D /* NSString+WBTSize.m */,
@@ -1562,6 +1567,7 @@
 				B4EA2C0B27E74E0000779793 /* ChartletPicker.swift in Sources */,
 				B4E7FA8027F6C42D00604F5E /* ZHFigureDrawingLayer.m in Sources */,
 				B43C4CA527F1460F00F4C22B /* JYSealMoodADRView.m in Sources */,
+				B4B8626D2861612900D90F4A /* MBSwitch.m in Sources */,
 				B4E7FA8627F865DF00604F5E /* XDVerticalGradientColorSlider.m in Sources */,
 				B4EA2C0927E74E0000779793 /* MathUtils.swift in Sources */,
 				B4E7FA7327F6C42D00604F5E /* ZHDrawingCosineLayer.m in Sources */,

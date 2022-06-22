@@ -73,7 +73,7 @@
 #define HomeMoodColors @[[UIColor colorWithRed:218/255.f green:88/255.f blue:78/255.f alpha:1.f], [UIColor colorWithRed:230/255.f green:157/255.f blue:78/255.f alpha:1.f], [UIColor colorWithRed:241/255.f green:206/255.f blue:97/255.f alpha:1.f], [UIColor colorWithRed:121/255.f green:193/255.f blue:114/255.f alpha:1.f], [UIColor colorWithRed:64/255.f green:122/255.f blue:235/255.f alpha:1.f], [UIColor colorWithRed:173/255.f green:127/255.f blue:207/255.f alpha:1.f], [UIColor colorWithRed:149/255.f green:134/255.f blue:108/255.f alpha:1.f]]
 
 #define JYWriteTop 50
-#define JYWriteBottomHeight 155
+#define JYWriteBottomHeight 120
 
 #define JYWriteGridWidth (ScreenWidth + [UIScreen mainScreen].scale * 2)
 #define JYWriteGridHeight (JYWriteGridWidth * 2.f)
@@ -101,7 +101,7 @@
 
 #define RecordMoods @[@"喜", @"怒", @"忧", @"思", @"悲", @"恐", @"惊"]
 
-#define MoodColors @[[UIColor whiteColor], [UIColor colorWithRed:218/255.f green:88/255.f blue:78/255.f alpha:1.f], [UIColor colorWithRed:230/255.f green:157/255.f blue:78/255.f alpha:1.f], [UIColor colorWithRed:241/255.f green:206/255.f blue:97/255.f alpha:1.f], [UIColor colorWithRed:121/255.f green:193/255.f blue:114/255.f alpha:1.f], [UIColor colorWithRed:64/255.f green:122/255.f blue:235/255.f alpha:1.f], [UIColor colorWithRed:173/255.f green:127/255.f blue:207/255.f alpha:1.f], [UIColor colorWithRed:149/255.f green:134/255.f blue:108/255.f alpha:1.f]]
+#define MoodColors @[[UIColor colorWithRed:218/255.f green:88/255.f blue:78/255.f alpha:1.f], [UIColor colorWithRed:230/255.f green:157/255.f blue:78/255.f alpha:1.f], [UIColor colorWithRed:241/255.f green:206/255.f blue:97/255.f alpha:1.f], [UIColor colorWithRed:121/255.f green:193/255.f blue:114/255.f alpha:1.f], [UIColor colorWithRed:64/255.f green:122/255.f blue:235/255.f alpha:1.f], [UIColor colorWithRed:173/255.f green:127/255.f blue:207/255.f alpha:1.f], [UIColor colorWithRed:149/255.f green:134/255.f blue:108/255.f alpha:1.f]]
 
 #define Plantings @[@"1", @"2", @"3", @"4", @"5"]
 

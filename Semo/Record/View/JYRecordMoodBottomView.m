@@ -14,6 +14,7 @@
 @interface JYRecordMoodBottomView () <JYRecordMoodListViewDelegate, JYRecordPaintingListViewDelegate>
 @property (nonatomic, strong) JYRecordPaintingListView *paintingListView;
 @property (nonatomic, strong) JYRecordMoodListView *moodListView;
+@property (nonatomic, strong) UILabel * longPressTipLabel;
 @end
 
 @implementation JYRecordMoodBottomView
@@ -30,6 +31,7 @@
 - (void)initSubviews {
     [self addSubview:self.paintingListView];
     [self addSubview:self.moodListView];
+    [self addSubview:self.longPressTipLabel];
 }
 
 - (void)layoutSubviews {
@@ -37,8 +39,14 @@
     
     CGFloat height = (self.width - 100 - 60) / (float)Plantings.count;
     _paintingListView.size = CGSizeMake(self.width, height);
-    _moodListView.size = CGSizeMake(self.width, 50);
-    _moodListView.bottom = self.height - SafeAreaHeight;
+    //_paintingListView.backgroundColor = [UIColor blueColor];
+    _moodListView.size = CGSizeMake(self.width, self.height - height - SafeAreaHeight);
+    _moodListView.top = _paintingListView.bottom + 5;
+    //_moodListView.backgroundColor = [UIColor greenColor];
+    
+    [_longPressTipLabel sizeToFit];
+    _longPressTipLabel.right = self.width - 20;
+    _longPressTipLabel.top = _moodListView.bottom + 5;
 }
 
 - (void)updateViewWithModel:(JYPainting *)model {
@@ -63,28 +71,38 @@
     return _moodListView;
 }
 
+- (UILabel *)longPressTipLabel {
+    if (!_longPressTipLabel) {
+        _longPressTipLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        _longPressTipLabel.font = [UIFont systemFontOfSize:10];
+        _longPressTipLabel.text = @"长按显示或隐藏文字";
+        _longPressTipLabel.textColor = [UIColor lightGrayColor];
+    }
+    return _longPressTipLabel;
+}
+
 - (NSInteger)index {
-    return self.moodListView.indexPath.row;
+    return self.moodListView.index;
 }
 
 #pragma -- mark -- JYRecordPaintingListViewDelegate
 
-- (void)RecordMoodBottomView:(JYRecordMoodBottomView *)bottomView didSelectPaintingItem:(JYPaintingItem *)item {
-    if ([self.delegate respondsToSelector:@selector(RecordMoodBottomView:didSelectPaintingItem:)]) {
-        [self.delegate RecordMoodBottomView:self didSelectPaintingItem:item];
+- (void)recordMoodBottomView:(JYRecordMoodBottomView *)bottomView didSelectPaintingItem:(JYPaintingItem *)item {
+    if ([self.delegate respondsToSelector:@selector(recordMoodBottomView:didSelectPaintingItem:)]) {
+        [self.delegate recordMoodBottomView:self didSelectPaintingItem:item];
     }
 }
 
 #pragma -- mark -- JYRecordMoodListViewDelegate
 - (void)recordPaintingListView:(JYRecordPaintingListView *)listView didSelectPaintingItem:(JYPaintingItem *)item {
-    if ([self.delegate respondsToSelector:@selector(RecordMoodBottomView:didSelectMoodItem:)]) {
-        [self.delegate RecordMoodBottomView:self didSelectPaintingItem:item];
+    if ([self.delegate respondsToSelector:@selector(recordMoodBottomView:didSelectMoodItem:)]) {
+        [self.delegate recordMoodBottomView:self didSelectPaintingItem:item];
     }
 }
 
-- (void)RecordMoodListView:(JYRecordMoodListView *)listView didSelectItem:(NSString *)item {
-    if ([self.delegate respondsToSelector:@selector(RecordMoodBottomView:didSelectMoodItem:)]) {
-        [self.delegate RecordMoodBottomView:self didSelectMoodItem:item];
+- (void)recordMoodListView:(JYRecordMoodListView *)listView didSelectItem:(NSString *)item {
+    if ([self.delegate respondsToSelector:@selector(recordMoodBottomView:didSelectMoodItem:)]) {
+        [self.delegate recordMoodBottomView:self didSelectMoodItem:item];
     }
 }
 
@@ -99,8 +117,8 @@
 #pragma -- mark -- JYRecordMoodListViewDelegate
 
 - (void)recordPaintingListView:(JYRecordPaintingListView *)listView didSelectMenuItem:(JYMenu *)item {
-    if ([self.delegate respondsToSelector:@selector(RecordMoodBottomView:didSelectMenuItem:)]) {
-        [self.delegate RecordMoodBottomView:self didSelectMenuItem:item];
+    if ([self.delegate respondsToSelector:@selector(recordMoodBottomView:didSelectMenuItem:)]) {
+        [self.delegate recordMoodBottomView:self didSelectMenuItem:item];
     }
 }
 

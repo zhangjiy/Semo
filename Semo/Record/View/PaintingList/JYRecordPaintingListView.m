@@ -59,7 +59,6 @@
         [_collectionView registerClass:[JYRecordPaintingSizeCollectionViewCell class] forCellWithReuseIdentifier:@"JYRecordPaintingSizeCollectionViewCell"];
         [_collectionView registerClass:[JYRecordPaintingPenCollectionViewCell class] forCellWithReuseIdentifier:@"JYRecordPaintingPenCollectionViewCell"];
         [_collectionView registerClass:[JYRecordPaintingUndoCollectionViewCell class] forCellWithReuseIdentifier:@"JYRecordPaintingUndoCollectionViewCell"];
-        [_collectionView registerClass:[JYRecordPaintingCustomCollectionViewCell class] forCellWithReuseIdentifier:@"JYRecordPaintingCustomCollectionViewCell"];
         _collectionView.scrollsToTop = NO;
         _collectionView.contentInset = UIEdgeInsetsZero;
         if (@available(iOS 11.0, *)) _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -70,9 +69,9 @@
 
 - (UICollectionViewFlowLayout *)collectionViewFlowLayout {
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.minimumLineSpacing = 0;
-    layout.minimumInteritemSpacing = 10;
-    layout.sectionInset = UIEdgeInsetsMake(0, 50, 0, 50);
+    layout.minimumLineSpacing = 15;
+    layout.minimumInteritemSpacing = 15;
+    layout.sectionInset = UIEdgeInsetsMake(0, 40, 0, 40);
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     return layout;
 }
@@ -102,8 +101,7 @@
     if (item.type == JYPaintingTypeStyle) {
         JYRecordPaintingStyleCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYRecordPaintingStyleCollectionViewCell" forIndexPath:indexPath];
         return cell;
-    }
-    else if (item.type == JYPaintingTypeColor) {
+    } else if (item.type == JYPaintingTypeColor) {
         JYRecordPaintingColorCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYRecordPaintingColorCollectionViewCell" forIndexPath:indexPath];
         return cell;
     } else if (item.type == JYPaintingTypeSize) {
@@ -113,17 +111,18 @@
     else if (item.type == JYPaintingTypePen) {
         JYRecordPaintingPenCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYRecordPaintingPenCollectionViewCell" forIndexPath:indexPath];
         return cell;
-    } else if (item.type == JYPaintingTypeUndo) {
-        JYRecordPaintingUndoCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYRecordPaintingUndoCollectionViewCell" forIndexPath:indexPath];
-        return cell;
     } else {
-        JYRecordPaintingCustomCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYRecordPaintingCustomCollectionViewCell" forIndexPath:indexPath];
-        cell.isSelected = item.selected;
+        JYRecordPaintingUndoCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYRecordPaintingUndoCollectionViewCell" forIndexPath:indexPath];
         return cell;
     }
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSArray *plantings = self.painting.plantings;
+    if (plantings.count > 0) {
+        CGFloat width = (self.width  - 40 * 2 - 15 * (plantings.count - 1)) / plantings.count;
+        return CGSizeMake(width, self.height);
+    }
     return CGSizeMake(self.height, self.height);
 }
 

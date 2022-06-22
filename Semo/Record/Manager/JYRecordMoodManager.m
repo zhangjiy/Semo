@@ -133,18 +133,18 @@
 
 #pragma -- mark -- JYRecordMoodBottomViewDelegate
 
-- (void)RecordMoodBottomView:(JYRecordMoodBottomView *)bottomView didSelectPaintingItem:(JYPaintingItem *)item {
+- (void)recordMoodBottomView:(JYRecordMoodBottomView *)bottomView didSelectPaintingItem:(JYPaintingItem *)item {
     if (item.type == JYPaintingTypeUndo) {
         [self.paintingView undo];
     }
 }
 
-- (void)RecordMoodBottomView:(JYRecordMoodBottomView *)bottomView didSelectMoodItem:(NSString *)item {
+- (void)recordMoodBottomView:(JYRecordMoodBottomView *)bottomView didSelectMoodItem:(NSString *)item {
     
     self.moodDisplayView.text = item;
 }
 
-- (void)RecordMoodBottomView:(JYRecordMoodBottomView *)bottomView didSelectMenuItem:(JYMenu *)item {
+- (void)recordMoodBottomView:(JYRecordMoodBottomView *)bottomView didSelectMenuItem:(JYMenu *)item {
     if (item.type == JYPaintingTypeStyle) {
         UIImage *image = [self styleImageWithStyleType:item.styleType];
         self.moodDisplayView.image = image;
