@@ -7,6 +7,7 @@ PODS:
   - BGFMDB/FMDB (2.0.13)
   - Chrysan (2.0.4):
     - SnapKit (~> 5.0)
+  - CircleMenu (4.1.0)
   - Comet (1.6.2)
   - CYLTabBarController (1.29.2):
     - CYLTabBarController/Core (= 1.29.2)
@@ -22,6 +23,7 @@ PODS:
 DEPENDENCIES:
   - BGFMDB
   - Chrysan
+  - CircleMenu
   - Comet
   - CYLTabBarController
   - MaLiang
@@ -34,6 +36,7 @@ SPEC REPOS:
   trunk:
     - BGFMDB
     - Chrysan
+    - CircleMenu
     - Comet
     - CYLTabBarController
     - MaLiang
@@ -45,6 +48,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   BGFMDB: 48e6823027232402a678acc7f71484b1fc9171d0
   Chrysan: d8607b02a90e7b4a10129c5f3878a8e565902e7a
+  CircleMenu: a66095199a5e26f19acbb212f077010257767fe5
   Comet: ec129472bd2b9683c13aefa939703cc3ef0efb14
   CYLTabBarController: db44b5901a28693a8a4279e4721b3aafdd36c178
   MaLiang: 7cf6c70e37577b5ec1b34add37fa6d58808f5451
@@ -53,6 +57,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Zip: b3fef584b147b6e582b2256a9815c897d60ddc67
 
-PODFILE CHECKSUM: cc905b31e52d3f4774e46f256a1c9706f9ae98b0
+PODFILE CHECKSUM: 3318f880a70634c36add9c9f317994e8e95a605f
 
 COCOAPODS: 1.11.2

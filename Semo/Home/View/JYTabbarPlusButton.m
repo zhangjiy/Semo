@@ -17,7 +17,7 @@
     [button setImage:normalButtonImage forState:UIControlStateNormal];
     [button setImage:hlightButtonImage forState:UIControlStateHighlighted];
     [button setImage:hlightButtonImage forState:UIControlStateSelected];
-    button.imageEdgeInsets = UIEdgeInsetsMake(5, 0, -5, 0);
+    //button.imageEdgeInsets = UIEdgeInsetsMake(5, 0, -5, 0);
     button.frame = CGRectMake(0.0, 0.0, 74, 70);
     
     // if you use `+plusChildViewController` , do not addTarget to plusButton.

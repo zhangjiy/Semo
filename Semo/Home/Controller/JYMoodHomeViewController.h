@@ -7,9 +7,11 @@
 
 #import <UIKit/UIKit.h>
 #import "JYHomeViewControllerProtocol.h"
+#import "CEReversibleAnimationController.h"
 
 @interface JYMoodHomeViewController : UIViewController <JYHomeViewControllerProtocol>
 
+@property (nonatomic, strong) CEReversibleAnimationController *settingsAnimationController;
 
 @end
 

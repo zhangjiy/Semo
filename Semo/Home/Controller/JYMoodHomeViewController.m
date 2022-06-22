@@ -6,6 +6,9 @@
 //
 
 #import "JYMoodHomeViewController.h"
+#import "AppDelegate.h"
+#import "CEBaseInteractionController.h"
+#import "JYMoodSelectViewController.h"
 #import "JYHomeTopView.h"
 #import "JYRecordMoodViewController.h"
 #import "JYMonthCalendarViewManager.h"
@@ -13,7 +16,7 @@
 #import "JYMonthMood.h"
 #import "JYPrefixHeader.h"
 
-@interface JYMoodHomeViewController () <JYHomeTopViewDelegate, JYRecordMoodViewControllerDelegate, JYMonthCalendarViewDelegate>
+@interface JYMoodHomeViewController () <JYHomeTopViewDelegate, JYRecordMoodViewControllerDelegate, JYMonthCalendarViewDelegate, UIViewControllerTransitioningDelegate>
 @property (nonatomic, strong) JYHomeTopView *topView;
 @property (nonatomic, strong) id <JYMonthCalendarViewManagerProtocol> calendarViewManager;
 @end
@@ -70,7 +73,15 @@
 }
 
 - (void)plusButtonAction:(UIButton *)sender {
-    [self presentRecordMoodViewController:self.calendarViewManager.todayName];
+    NSString *className = [NSString stringWithFormat:@"CE%@AnimationController", @"Crossfade"];
+    id transitionInstance = [[NSClassFromString(className) alloc] init];
+   
+    AppDelegateAccessor.settingsAnimationController = transitionInstance;
+    JYMoodSelectViewController *vc = [[JYMoodSelectViewController alloc] init];
+    vc.modalPresentationStyle = UIModalPresentationFullScreen;
+    vc.transitioningDelegate = self;
+    [self presentViewController:vc animated:YES completion:nil];
+//    [self presentRecordMoodViewController:self.calendarViewManager.todayName];
 }
 
 #pragma -- mark -- JYHomeTopViewDelegate
@@ -137,5 +148,26 @@
 - (void)monthCalendarViewManager:(id <JYMonthCalendarViewManagerProtocol>)manager didScrollItem:(JYMoodMonthDate *)moodMonthDate {
     self.topView.monthDate = moodMonthDate;
 }
+
+#pragma mark - UIViewControllerTransitioningDelegate
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    
+    if (AppDelegateAccessor.settingsInteractionController) {
+        [AppDelegateAccessor.settingsInteractionController wireToViewController:presented forOperation:CEInteractionOperationDismiss];
+    }
+    
+    AppDelegateAccessor.settingsAnimationController.reverse = NO;
+    return AppDelegateAccessor.settingsAnimationController;
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    AppDelegateAccessor.settingsAnimationController.reverse = YES;
+    return AppDelegateAccessor.settingsAnimationController;
+ }
+
+ - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
+     return AppDelegateAccessor.settingsInteractionController && AppDelegateAccessor.settingsInteractionController.interactionInProgress ? AppDelegateAccessor.settingsInteractionController : nil;
+ }
 
 @end

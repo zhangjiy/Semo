@@ -69,6 +69,22 @@
 		B480EFC527FE8D9200EA4811 /* JYMoodDate.m in Sources */ = {isa = PBXBuildFile; fileRef = B480EFC427FE8D9200EA4811 /* JYMoodDate.m */; };
 		B490453327F00BE7005A265A /* JYPopupStyleMenuListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B490453227F00BE7005A265A /* JYPopupStyleMenuListView.m */; };
 		B490453627F00EEF005A265A /* JYPopupStyleMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B490453527F00EEF005A265A /* JYPopupStyleMenuCollectionViewCell.m */; };
+		B49B13D72863092100BBE6BF /* CECubeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B13B82863092100BBE6BF /* CECubeAnimationController.m */; };
+		B49B13D82863092100BBE6BF /* CETurnAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B13BA2863092100BBE6BF /* CETurnAnimationController.m */; };
+		B49B13D92863092100BBE6BF /* CEFoldAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B13BB2863092100BBE6BF /* CEFoldAnimationController.m */; };
+		B49B13DA2863092100BBE6BF /* CECrossfadeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B13BC2863092100BBE6BF /* CECrossfadeAnimationController.m */; };
+		B49B13DB2863092100BBE6BF /* CEReversibleAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B13BF2863092100BBE6BF /* CEReversibleAnimationController.m */; };
+		B49B13DC2863092100BBE6BF /* CECardsAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B13C02863092100BBE6BF /* CECardsAnimationController.m */; };
+		B49B13DD2863092100BBE6BF /* CEPortalAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B13C62863092100BBE6BF /* CEPortalAnimationController.m */; };
+		B49B13DE2863092100BBE6BF /* CEPanAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B13C82863092100BBE6BF /* CEPanAnimationController.m */; };
+		B49B13DF2863092100BBE6BF /* CEFlipAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B13C92863092100BBE6BF /* CEFlipAnimationController.m */; };
+		B49B13E02863092100BBE6BF /* CENatGeoAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B13CC2863092100BBE6BF /* CENatGeoAnimationController.m */; };
+		B49B13E12863092100BBE6BF /* CEExplodeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B13CD2863092100BBE6BF /* CEExplodeAnimationController.m */; };
+		B49B13E22863092100BBE6BF /* CEBaseInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B13CF2863092100BBE6BF /* CEBaseInteractionController.m */; };
+		B49B13E32863092100BBE6BF /* CEPinchInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B13D22863092100BBE6BF /* CEPinchInteractionController.m */; };
+		B49B13E42863092100BBE6BF /* CEHorizontalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B13D42863092100BBE6BF /* CEHorizontalSwipeInteractionController.m */; };
+		B49B13E52863092100BBE6BF /* CEVerticalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B13D52863092100BBE6BF /* CEVerticalSwipeInteractionController.m */; };
+		B49B13E828630F6100BBE6BF /* JYMoodSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B13E728630F6100BBE6BF /* JYMoodSelectViewController.m */; };
 		B4A90C5927E415F10085CAC4 /* JYGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C5827E415F10085CAC4 /* JYGridView.m */; };
 		B4A90C5E27E6168E0085CAC4 /* JYRecordMoodBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C5D27E6168E0085CAC4 /* JYRecordMoodBottomView.m */; };
 		B4A90C6127E62AE50085CAC4 /* JYRecordPaintingListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C6027E62AE50085CAC4 /* JYRecordPaintingListView.m */; };
@@ -102,6 +118,7 @@
 		B4B66B9827F2CAE0007D3267 /* JYStyleImageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B66B9727F2CADF007D3267 /* JYStyleImageFactory.m */; };
 		B4B66B9B27F2D3D1007D3267 /* JYSealMoodSimpleView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B66B9A27F2D3D1007D3267 /* JYSealMoodSimpleView.m */; };
 		B4B8626D2861612900D90F4A /* MBSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B8626C2861612800D90F4A /* MBSwitch.m */; };
+		B4B862B32862C4CC00D90F4A /* JYCircleMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B862B22862C4CC00D90F4A /* JYCircleMenuView.swift */; };
 		B4BF762A27E8B220003BBAC5 /* QBPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF761E27E8B220003BBAC5 /* QBPopupMenu.m */; };
 		B4BF762B27E8B220003BBAC5 /* QBPopupMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF762227E8B220003BBAC5 /* QBPopupMenuItemView.m */; };
 		B4BF762C27E8B220003BBAC5 /* QBPopupMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BF762327E8B220003BBAC5 /* QBPopupMenuItem.m */; };
@@ -322,6 +339,38 @@
 		B490453227F00BE7005A265A /* JYPopupStyleMenuListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupStyleMenuListView.m; sourceTree = "<group>"; };
 		B490453427F00EEF005A265A /* JYPopupStyleMenuCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupStyleMenuCollectionViewCell.h; sourceTree = "<group>"; };
 		B490453527F00EEF005A265A /* JYPopupStyleMenuCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupStyleMenuCollectionViewCell.m; sourceTree = "<group>"; };
+		B49B13B82863092100BBE6BF /* CECubeAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CECubeAnimationController.m; sourceTree = "<group>"; };
+		B49B13B92863092100BBE6BF /* CEPortalAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEPortalAnimationController.h; sourceTree = "<group>"; };
+		B49B13BA2863092100BBE6BF /* CETurnAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CETurnAnimationController.m; sourceTree = "<group>"; };
+		B49B13BB2863092100BBE6BF /* CEFoldAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEFoldAnimationController.m; sourceTree = "<group>"; };
+		B49B13BC2863092100BBE6BF /* CECrossfadeAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CECrossfadeAnimationController.m; sourceTree = "<group>"; };
+		B49B13BD2863092100BBE6BF /* CEExplodeAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEExplodeAnimationController.h; sourceTree = "<group>"; };
+		B49B13BE2863092100BBE6BF /* CENatGeoAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CENatGeoAnimationController.h; sourceTree = "<group>"; };
+		B49B13BF2863092100BBE6BF /* CEReversibleAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEReversibleAnimationController.m; sourceTree = "<group>"; };
+		B49B13C02863092100BBE6BF /* CECardsAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CECardsAnimationController.m; sourceTree = "<group>"; };
+		B49B13C12863092100BBE6BF /* CEFlipAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEFlipAnimationController.h; sourceTree = "<group>"; };
+		B49B13C22863092100BBE6BF /* CEPanAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEPanAnimationController.h; sourceTree = "<group>"; };
+		B49B13C32863092100BBE6BF /* CECubeAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECubeAnimationController.h; sourceTree = "<group>"; };
+		B49B13C42863092100BBE6BF /* CEFoldAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEFoldAnimationController.h; sourceTree = "<group>"; };
+		B49B13C52863092100BBE6BF /* CETurnAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CETurnAnimationController.h; sourceTree = "<group>"; };
+		B49B13C62863092100BBE6BF /* CEPortalAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEPortalAnimationController.m; sourceTree = "<group>"; };
+		B49B13C72863092100BBE6BF /* CECrossfadeAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECrossfadeAnimationController.h; sourceTree = "<group>"; };
+		B49B13C82863092100BBE6BF /* CEPanAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEPanAnimationController.m; sourceTree = "<group>"; };
+		B49B13C92863092100BBE6BF /* CEFlipAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEFlipAnimationController.m; sourceTree = "<group>"; };
+		B49B13CA2863092100BBE6BF /* CECardsAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CECardsAnimationController.h; sourceTree = "<group>"; };
+		B49B13CB2863092100BBE6BF /* CEReversibleAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEReversibleAnimationController.h; sourceTree = "<group>"; };
+		B49B13CC2863092100BBE6BF /* CENatGeoAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CENatGeoAnimationController.m; sourceTree = "<group>"; };
+		B49B13CD2863092100BBE6BF /* CEExplodeAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEExplodeAnimationController.m; sourceTree = "<group>"; };
+		B49B13CF2863092100BBE6BF /* CEBaseInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEBaseInteractionController.m; sourceTree = "<group>"; };
+		B49B13D02863092100BBE6BF /* CEHorizontalSwipeInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEHorizontalSwipeInteractionController.h; sourceTree = "<group>"; };
+		B49B13D12863092100BBE6BF /* CEVerticalSwipeInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEVerticalSwipeInteractionController.h; sourceTree = "<group>"; };
+		B49B13D22863092100BBE6BF /* CEPinchInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEPinchInteractionController.m; sourceTree = "<group>"; };
+		B49B13D32863092100BBE6BF /* CEBaseInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEBaseInteractionController.h; sourceTree = "<group>"; };
+		B49B13D42863092100BBE6BF /* CEHorizontalSwipeInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEHorizontalSwipeInteractionController.m; sourceTree = "<group>"; };
+		B49B13D52863092100BBE6BF /* CEVerticalSwipeInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEVerticalSwipeInteractionController.m; sourceTree = "<group>"; };
+		B49B13D62863092100BBE6BF /* CEPinchInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEPinchInteractionController.h; sourceTree = "<group>"; };
+		B49B13E628630F6100BBE6BF /* JYMoodSelectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYMoodSelectViewController.h; sourceTree = "<group>"; };
+		B49B13E728630F6100BBE6BF /* JYMoodSelectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYMoodSelectViewController.m; sourceTree = "<group>"; };
 		B4A90C5727E415F10085CAC4 /* JYGridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYGridView.h; sourceTree = "<group>"; };
 		B4A90C5827E415F10085CAC4 /* JYGridView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYGridView.m; sourceTree = "<group>"; };
 		B4A90C5C27E6168E0085CAC4 /* JYRecordMoodBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYRecordMoodBottomView.h; sourceTree = "<group>"; };
@@ -388,6 +437,7 @@
 		B4B66B9A27F2D3D1007D3267 /* JYSealMoodSimpleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYSealMoodSimpleView.m; sourceTree = "<group>"; };
 		B4B8626B2861612800D90F4A /* MBSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSwitch.h; sourceTree = "<group>"; };
 		B4B8626C2861612800D90F4A /* MBSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSwitch.m; sourceTree = "<group>"; };
+		B4B862B22862C4CC00D90F4A /* JYCircleMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JYCircleMenuView.swift; sourceTree = "<group>"; };
 		B4BF761E27E8B220003BBAC5 /* QBPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenu.m; sourceTree = "<group>"; };
 		B4BF761F27E8B220003BBAC5 /* QBPlasticPopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPlasticPopupMenu.h; sourceTree = "<group>"; };
 		B4BF762027E8B220003BBAC5 /* QBPopupMenuPagenatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPopupMenuPagenatorView.h; sourceTree = "<group>"; };
@@ -647,6 +697,8 @@
 		B41AC71C27D5AA9C00CDF4AB /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				B49B13B72863092100BBE6BF /* AnimationControllers */,
+				B49B13CE2863092100BBE6BF /* InteractionControllers */,
 				B4B8626B2861612800D90F4A /* MBSwitch.h */,
 				B4B8626C2861612800D90F4A /* MBSwitch.m */,
 				B464F6F8285A0E1D00F32874 /* MBProgressHUB */,
@@ -680,6 +732,7 @@
 				B4292A0B2847270800DA4737 /* JYHomeTodayMoodView.m */,
 				B4292A132848519C00DA4737 /* JYHomeTodayMoodCollectionViewCell.h */,
 				B4292A142848519C00DA4737 /* JYHomeTodayMoodCollectionViewCell.m */,
+				B4B862B22862C4CC00D90F4A /* JYCircleMenuView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -742,6 +795,8 @@
 			children = (
 				B41AC6E727D5A69F00CDF4AB /* JYMoodHomeViewController.h */,
 				B41AC6E827D5A69F00CDF4AB /* JYMoodHomeViewController.m */,
+				B49B13E628630F6100BBE6BF /* JYMoodSelectViewController.h */,
+				B49B13E728630F6100BBE6BF /* JYMoodSelectViewController.m */,
 				B4D964032817A17500FBE518 /* JYMainRootViewController.h */,
 				B4D964042817A17500FBE518 /* JYMainRootViewController.m */,
 				B4D964092817A32100FBE518 /* JYTabbarViewController.h */,
@@ -897,6 +952,50 @@
 				B4AD4C2928573C8B0032FF6D /* JYAboutUsModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B49B13B72863092100BBE6BF /* AnimationControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B49B13C32863092100BBE6BF /* CECubeAnimationController.h */,
+				B49B13B82863092100BBE6BF /* CECubeAnimationController.m */,
+				B49B13B92863092100BBE6BF /* CEPortalAnimationController.h */,
+				B49B13C62863092100BBE6BF /* CEPortalAnimationController.m */,
+				B49B13C52863092100BBE6BF /* CETurnAnimationController.h */,
+				B49B13BA2863092100BBE6BF /* CETurnAnimationController.m */,
+				B49B13C42863092100BBE6BF /* CEFoldAnimationController.h */,
+				B49B13BB2863092100BBE6BF /* CEFoldAnimationController.m */,
+				B49B13C72863092100BBE6BF /* CECrossfadeAnimationController.h */,
+				B49B13BC2863092100BBE6BF /* CECrossfadeAnimationController.m */,
+				B49B13BD2863092100BBE6BF /* CEExplodeAnimationController.h */,
+				B49B13CD2863092100BBE6BF /* CEExplodeAnimationController.m */,
+				B49B13BE2863092100BBE6BF /* CENatGeoAnimationController.h */,
+				B49B13CC2863092100BBE6BF /* CENatGeoAnimationController.m */,
+				B49B13CB2863092100BBE6BF /* CEReversibleAnimationController.h */,
+				B49B13BF2863092100BBE6BF /* CEReversibleAnimationController.m */,
+				B49B13CA2863092100BBE6BF /* CECardsAnimationController.h */,
+				B49B13C02863092100BBE6BF /* CECardsAnimationController.m */,
+				B49B13C12863092100BBE6BF /* CEFlipAnimationController.h */,
+				B49B13C92863092100BBE6BF /* CEFlipAnimationController.m */,
+				B49B13C22863092100BBE6BF /* CEPanAnimationController.h */,
+				B49B13C82863092100BBE6BF /* CEPanAnimationController.m */,
+			);
+			path = AnimationControllers;
+			sourceTree = "<group>";
+		};
+		B49B13CE2863092100BBE6BF /* InteractionControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B49B13CF2863092100BBE6BF /* CEBaseInteractionController.m */,
+				B49B13D02863092100BBE6BF /* CEHorizontalSwipeInteractionController.h */,
+				B49B13D12863092100BBE6BF /* CEVerticalSwipeInteractionController.h */,
+				B49B13D22863092100BBE6BF /* CEPinchInteractionController.m */,
+				B49B13D32863092100BBE6BF /* CEBaseInteractionController.h */,
+				B49B13D42863092100BBE6BF /* CEHorizontalSwipeInteractionController.m */,
+				B49B13D52863092100BBE6BF /* CEVerticalSwipeInteractionController.m */,
+				B49B13D62863092100BBE6BF /* CEPinchInteractionController.h */,
+			);
+			path = InteractionControllers;
 			sourceTree = "<group>";
 		};
 		B4AC37A327DC782700529722 /* Seal */ = {
@@ -1480,6 +1579,7 @@
 				B4E5220F2806691700492B5E /* JYRecordPaintingColorCollectionViewCell.m in Sources */,
 				B4E7FA6627F6C42D00604F5E /* ZHDrawingCuboidLayer.m in Sources */,
 				B47C61AB28533D9500E0097B /* JYSettingTableViewCell.m in Sources */,
+				B49B13DB2863092100BBE6BF /* CEReversibleAnimationController.m in Sources */,
 				B41AC73327D6F9BF00CDF4AB /* JYRecordMoodViewController.m in Sources */,
 				B4E7FA6A27F6C42D00604F5E /* ZHDrawingHexagonLayer.m in Sources */,
 				B4E521F62802E49A00492B5E /* JYMonthCalendarViewManager.m in Sources */,
@@ -1487,12 +1587,14 @@
 				B4E7FA6F27F6C42D00604F5E /* ZHDrawingRectLayer.m in Sources */,
 				B4D964052817A17500FBE518 /* JYMainRootViewController.m in Sources */,
 				B4AD4C082856E4590032FF6D /* JYHelpCenterListView.m in Sources */,
+				B49B13DF2863092100BBE6BF /* CEFlipAnimationController.m in Sources */,
 				B4B66B9B27F2D3D1007D3267 /* JYSealMoodSimpleView.m in Sources */,
 				B4AC380727DE30E500529722 /* JYCalendarCollectionViewLayout.m in Sources */,
 				B4E7FA6927F6C42D00604F5E /* ZHDrawingAxisLayer.m in Sources */,
 				B4DAEF0228503DCA0027C64B /* JYHomeTodayMoodDataManager.m in Sources */,
 				B4BF762B27E8B220003BBAC5 /* QBPopupMenuItemView.m in Sources */,
 				B47C61A42853385100E0097B /* JYSettingListView.m in Sources */,
+				B49B13E42863092100BBE6BF /* CEHorizontalSwipeInteractionController.m in Sources */,
 				B4AD4C1E285738E80032FF6D /* JYPhotoCollectionViewCell.m in Sources */,
 				B41AC72627D5AA9D00CDF4AB /* UIDeviceHelper.m in Sources */,
 				B4DAEF08285050FD0027C64B /* JYRecordPaintingCustomCollectionViewCell.m in Sources */,
@@ -1500,6 +1602,8 @@
 				B4E52218280696C400492B5E /* JYRecordPaintingPenCollectionViewCell.m in Sources */,
 				B47C619A28520D2900E0097B /* UIImage+WBTDraw.m in Sources */,
 				B47EAAF4280CF96A00F6E8EF /* JYPopupMenuContentView.m in Sources */,
+				B49B13E22863092100BBE6BF /* CEBaseInteractionController.m in Sources */,
+				B49B13DD2863092100BBE6BF /* CEPortalAnimationController.m in Sources */,
 				B448898827FAD701007BD0FA /* JYPopupSizeMenuCollectionViewCell.m in Sources */,
 				B41AC6E327D5A69F00CDF4AB /* AppDelegate.m in Sources */,
 				B4AD4C2728573BA50032FF6D /* JYAboutUsTableViewCell.m in Sources */,
@@ -1515,13 +1619,16 @@
 				B4BF764227E963C9003BBAC5 /* UIView+ViewController.m in Sources */,
 				B4B66B9827F2CAE0007D3267 /* JYStyleImageFactory.m in Sources */,
 				B4BF762A27E8B220003BBAC5 /* QBPopupMenu.m in Sources */,
+				B4B862B32862C4CC00D90F4A /* JYCircleMenuView.swift in Sources */,
 				B4609CD227EAE62F009BC2A5 /* UIImageView+CornerRadius.m in Sources */,
 				B4AC37F427DCC56600529722 /* JYCalendarCalculator.m in Sources */,
 				B4AD4C18285736D10032FF6D /* JYPredicateMethod.m in Sources */,
 				B4E7FA7127F6C42D00604F5E /* ZHDrawingRhombusLayer.m in Sources */,
+				B49B13D92863092100BBE6BF /* CEFoldAnimationController.m in Sources */,
 				B41FF20427E84AB9004D0329 /* JYPainting.m in Sources */,
 				B4AD4C2428573B2A0032FF6D /* JYAboutUsListView.m in Sources */,
 				B464F6FB285A0E4000F32874 /* MBProgressHUD.m in Sources */,
+				B49B13E12863092100BBE6BF /* CEExplodeAnimationController.m in Sources */,
 				B4A90C5E27E6168E0085CAC4 /* JYRecordMoodBottomView.m in Sources */,
 				B4EC076627DEFF4500CB0877 /* JYRecordMoodView.m in Sources */,
 				B46ED564281105EC000712F8 /* NSMutableDictionary+Safe.m in Sources */,
@@ -1534,6 +1641,7 @@
 				B4609CB727E995BF009BC2A5 /* JYPopupMenuOverlayView.m in Sources */,
 				B4D9641F2818DA6400FBE518 /* JYHomeTopView.m in Sources */,
 				B448899C27FD3ADC007BD0FA /* JYMonthMood.m in Sources */,
+				B49B13E828630F6100BBE6BF /* JYMoodSelectViewController.m in Sources */,
 				B4B66B9427F29C32007D3267 /* JYHeartView.m in Sources */,
 				B4BF763827E95CFC003BBAC5 /* JYPopupMenu.m in Sources */,
 				B4AD4C2D285755020032FF6D /* JYViewController.m in Sources */,
@@ -1550,6 +1658,7 @@
 				B4BF762E27E8B220003BBAC5 /* QBPopupMenuOverlayView.m in Sources */,
 				B46ED566281105EC000712F8 /* NSDictionary+Safe.m in Sources */,
 				B47C61A8285338CE00E0097B /* JYSettingModel.m in Sources */,
+				B49B13DA2863092100BBE6BF /* CECrossfadeAnimationController.m in Sources */,
 				B43C4CAA27F1ACC200F4C22B /* JYSealMoodSellView.m in Sources */,
 				B448898B27FAD79D007BD0FA /* JYPopupPenMenuCollectionViewCell.m in Sources */,
 				B4BF762C27E8B220003BBAC5 /* QBPopupMenuItem.m in Sources */,
@@ -1571,6 +1680,7 @@
 				B4E7FA8627F865DF00604F5E /* XDVerticalGradientColorSlider.m in Sources */,
 				B4EA2C0927E74E0000779793 /* MathUtils.swift in Sources */,
 				B4E7FA7327F6C42D00604F5E /* ZHDrawingCosineLayer.m in Sources */,
+				B49B13E52863092100BBE6BF /* CEVerticalSwipeInteractionController.m in Sources */,
 				B4A90C6127E62AE50085CAC4 /* JYRecordPaintingListView.m in Sources */,
 				B43109EC2806FB5D00D11D2F /* JYRecordPaintingUndoCollectionViewCell.m in Sources */,
 				B4E7FA6C27F6C42D00604F5E /* ZHDrawingThreeDCoordinateLayer.m in Sources */,
@@ -1579,6 +1689,7 @@
 				B448898527FAD68D007BD0FA /* JYPopupPenMenuListView.m in Sources */,
 				B4EA2C0027E7482000779793 /* JYPaintingView.swift in Sources */,
 				B46ED569281105EC000712F8 /* NSObject+ImpChangeTool.m in Sources */,
+				B49B13D72863092100BBE6BF /* CECubeAnimationController.m in Sources */,
 				B4AD4C052856E4050032FF6D /* JYHelpCenterViewController.m in Sources */,
 				B4E52215280691FD00492B5E /* JYRecordPaintingSizeCollectionViewCell.m in Sources */,
 				B4AC380027DDA4CF00529722 /* JYDayCalendarCollectionViewCell.m in Sources */,
@@ -1593,6 +1704,7 @@
 				B4E7FA6E27F6C42D00604F5E /* ZHDrawingRegularPolygonLayer.m in Sources */,
 				B4609CE627EB40BB009BC2A5 /* JYSizeSlider.m in Sources */,
 				B4A90C5927E415F10085CAC4 /* JYGridView.m in Sources */,
+				B49B13DC2863092100BBE6BF /* CECardsAnimationController.m in Sources */,
 				B4EC077427DF07D800CB0877 /* JYSealMoodPassView.m in Sources */,
 				B4E7FA7927F6C42D00604F5E /* ZHDrawingPentagonLayer.m in Sources */,
 				B41AC74027D71EBB00CDF4AB /* JYMoodModel.m in Sources */,
@@ -1608,10 +1720,14 @@
 				B4609CCD27EAB0AE009BC2A5 /* JYMenu.m in Sources */,
 				B448897A27FAC7E2007BD0FA /* JYSealMoodView.m in Sources */,
 				B448899027FC1D55007BD0FA /* JYDayMood.m in Sources */,
+				B49B13DE2863092100BBE6BF /* CEPanAnimationController.m in Sources */,
+				B49B13D82863092100BBE6BF /* CETurnAnimationController.m in Sources */,
 				B40B2A4C28126E1200B3D760 /* TYPageControl.m in Sources */,
 				B4292A152848519C00DA4737 /* JYHomeTodayMoodCollectionViewCell.m in Sources */,
+				B49B13E32863092100BBE6BF /* CEPinchInteractionController.m in Sources */,
 				B41AC72527D5AA9D00CDF4AB /* UIView+JYFrame.m in Sources */,
 				B4609CD527EAE670009BC2A5 /* UIImage+CornerRadius.m in Sources */,
+				B49B13E02863092100BBE6BF /* CENatGeoAnimationController.m in Sources */,
 				B4EA2C0727E74E0000779793 /* ChartletEditor.swift in Sources */,
 				B40B2A4D28126E1200B3D760 /* TYCyclePagerView.m in Sources */,
 				B4AC37F727DCC93500529722 /* NSCalendar+JYCalendarExtensions.m in Sources */,

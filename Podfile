@@ -5,6 +5,7 @@ target 'Semo' do
     pod 'Zip'
     pod 'SDWebImage'
     pod 'CYLTabBarController'
+    pod 'CircleMenu'
     pod 'SnapKit'
     pod 'Masonry'
     pod 'Comet'
