@@ -6,6 +6,7 @@
 //
 
 #import "JYMoodHomeViewController.h"
+#import "Semo-Swift.h"
 #import "AppDelegate.h"
 #import "CEBaseInteractionController.h"
 #import "JYMoodSelectViewController.h"
@@ -68,19 +69,34 @@
     return _topView;
 }
 
+
+- (void)showSelectMoodMenuView {
+    UIWindow *window = [UIApplication sharedApplication].delegate.window;
+    UIView *view = [window viewWithTag:1000];
+    if (view) {
+       [view removeFromSuperview];
+    }
+    JYCircleMenuView *selectMoodMenuView = [[JYCircleMenuView alloc] initWithFrame:window.bounds];
+    selectMoodMenuView.tag = 1000;
+    selectMoodMenuView.delegate = self;
+    [window addSubview:selectMoodMenuView];
+    [selectMoodMenuView onTap];
+}
+
 - (void)plusControlAction:(UIControl *)sender {
     [self presentRecordMoodViewController:self.calendarViewManager.todayName];
 }
 
 - (void)plusButtonAction:(UIButton *)sender {
-    NSString *className = [NSString stringWithFormat:@"CE%@AnimationController", @"Crossfade"];
-    id transitionInstance = [[NSClassFromString(className) alloc] init];
-   
-    AppDelegateAccessor.settingsAnimationController = transitionInstance;
-    JYMoodSelectViewController *vc = [[JYMoodSelectViewController alloc] init];
-    vc.modalPresentationStyle = UIModalPresentationFullScreen;
-    vc.transitioningDelegate = self;
-    [self presentViewController:vc animated:YES completion:nil];
+    [self showSelectMoodMenuView];
+//    NSString *className = [NSString stringWithFormat:@"CE%@AnimationController", @"Crossfade"];
+//    id transitionInstance = [[NSClassFromString(className) alloc] init];
+//
+//    AppDelegateAccessor.settingsAnimationController = transitionInstance;
+//    JYMoodSelectViewController *vc = [[JYMoodSelectViewController alloc] init];
+//    vc.modalPresentationStyle = UIModalPresentationFullScreen;
+//    vc.transitioningDelegate = self;
+//    [self presentViewController:vc animated:YES completion:nil];
 //    [self presentRecordMoodViewController:self.calendarViewManager.todayName];
 }
 
@@ -109,6 +125,25 @@
                 //分享 取消
             }
         };
+}
+
+- (void)circleMenuView:(JYCircleMenuView *)circleMenu willDisplay:(UIButton *)button atIndex:(NSInteger)atIndex {
+    
+}
+
+- (void)circleMenuView:(JYCircleMenuView *)circleMenu buttonWillSelected:(UIButton *)button atIndex:(NSInteger)atIndex {
+    
+}
+
+- (void)circleMenuView:(JYCircleMenuView *)circleMenu buttonDidSelected:(UIButton *)button atIndex:(NSInteger)atIndex {
+    
+}
+
+- (void)circleMenuViewCollapsed:(JYCircleMenuView *)circleMenu {
+}
+
+- (void)circleMenuViewOpened:(JYCircleMenuView *)circleMenu {
+    
 }
 
 #pragma -- mark -- JYRecordMoodViewControllerDelegate

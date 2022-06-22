@@ -111,6 +111,15 @@ open class JYCircleMenuView: UIView, CircleMenuDelegate {
     }
     
     public func menuCollapsed(_ circleMenu: CircleMenu) {
+        UIView.animate(
+            withDuration: 0.2,
+            delay: 0,
+            options: UIView.AnimationOptions.curveEaseIn,
+            animations: { () -> Void in
+                self.alpha = 0
+            }, completion: { (_) -> Void in
+                self.removeFromSuperview()
+        })
         delegate?.circleMenuViewCollapsed?(self)
     }
 
