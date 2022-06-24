@@ -32,6 +32,13 @@
     self.topView.monthDate = self.calendarViewManager.currentMonth;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    UIWindow *window = [UIApplication sharedApplication].delegate.window;
+    UIView *view = [window viewWithTag:1000];
+    [view removeFromSuperview];
+}
+
 - (void)setupConfig {
     self.view.backgroundColor = SMHomeBackgroudColor;
 }
@@ -137,6 +144,7 @@
 
 - (void)circleMenuView:(JYCircleMenuView *)circleMenu buttonDidSelected:(UIButton *)button atIndex:(NSInteger)atIndex {
     
+    [self presentRecordMoodViewController:self.calendarViewManager.todayName];
 }
 
 - (void)circleMenuViewCollapsed:(JYCircleMenuView *)circleMenu {
@@ -173,8 +181,22 @@
     if (!dayMood) {
         dayMood = [[JYDayMood alloc] initWithName:dayName];
     }
-    
+    //Fold
+    //Cube
+    //Portal
+    //Crossfade
+    //Explode
+    //NatGeo
+    //Reversible
+    //Cards
+    //Flip
+    //Pan
+    NSString *className = [NSString stringWithFormat:@"CE%@AnimationController", @"Portal"];
+    id transitionInstance = [[NSClassFromString(className) alloc] init];
+    AppDelegateAccessor.settingsAnimationController = transitionInstance;
     JYRecordMoodViewController *controller = [[JYRecordMoodViewController alloc] initWithDayMood:dayMood];
+    controller.modalPresentationStyle = UIModalPresentationFullScreen;
+    controller.transitioningDelegate = self;
     controller.delegate = self;
     controller.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:controller animated:YES completion:nil];

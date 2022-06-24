@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initSubviews];
+    self.view.backgroundColor = [UIColor greenColor];
 
 }
 
@@ -30,7 +31,7 @@
 }
 
 - (void)initSubviews {
-    [self.view addSubview:self.selectMoodMenuView];
+    //[self.view addSubview:self.selectMoodMenuView];
 }
 
 - (void)viewWillLayoutSubviews {

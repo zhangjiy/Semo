@@ -23,15 +23,16 @@ import CircleMenu
 
 open class JYCircleMenuView: UIView, CircleMenuDelegate {
     @IBOutlet open weak var delegate: AnyObject?
-    let items: [(icon: String, color: UIColor)] = [
-        ("icon_home", UIColor(red: 0.19, green: 0.57, blue: 1, alpha: 1)),
-        ("icon_search", UIColor(red: 0.22, green: 0.74, blue: 0, alpha: 1)),
-        ("notifications-btn", UIColor(red: 0.96, green: 0.23, blue: 0.21, alpha: 1)),
-        ("settings-btn", UIColor(red: 0.51, green: 0.15, blue: 1, alpha: 1)),
-        ("nearby-btn", UIColor(red: 1, green: 0.39, blue: 0, alpha: 1)),
-        ("icon_home", UIColor(red: 0.19, green: 0.57, blue: 1, alpha: 1)),
-        ("icon_search", UIColor(red: 0.22, green: 0.74, blue: 0, alpha: 1))
+    let items: [(title: String, color: UIColor)] = [
+        ("喜", UIColor(red: 218/255, green: 88/255, blue: 78/255, alpha: 1)),
+        ("怒", UIColor(red: 230/255, green: 206/255, blue: 78/255, alpha: 1)),
+        ("忧", UIColor(red: 241/255, green: 206/255, blue: 97/255, alpha: 1)),
+        ("思", UIColor(red: 121/255, green: 193/255, blue: 114/255, alpha: 1)),
+        ("悲", UIColor(red: 64/255, green: 122/255, blue: 235/255, alpha: 1)),
+        ("恐", UIColor(red: 173/255, green: 127/255, blue: 207/255, alpha: 1)),
+        ("惊", UIColor(red: 149/255, green: 134/255, blue: 108/255, alpha: 1))
     ]
+    
     var menuButton: CircleMenu!
     var visualEffectView: UIVisualEffectView!
     var isShow: Bool = false
@@ -60,14 +61,14 @@ open class JYCircleMenuView: UIView, CircleMenuDelegate {
         visualEffectView = UIVisualEffectView.init(effect: blurEffect)
         visualEffectView.frame = bounds
         addSubview(visualEffectView);
-        
+        let distance:Float = Float((self.bounds.width - 60) / 2)
         menuButton = CircleMenu(
-            frame: CGRect(x: (bounds.width - 50) / 2, y: (bounds.height - 50) / 2, width: 50, height: 50),
+            frame: CGRect(x: (bounds.width - 60) / 2, y: (bounds.height - 60) / 2, width: 60, height: 60),
           normalIcon:"icon_menu",
           selectedIcon:"icon_close",
           buttonsCount: 7,
-          duration: 4,
-          distance: 120)
+            duration: 1,
+          distance: distance)
         menuButton.delegate = self
         //button.layer.cornerRadius = button.frame.size.width / 2.0
         menuButton.backgroundColor = UIColor.red
@@ -92,13 +93,8 @@ open class JYCircleMenuView: UIView, CircleMenuDelegate {
     
     public func circleMenu(_ circleMenu: CircleMenu, willDisplay button: UIButton, atIndex: Int) {
         button.backgroundColor = items[atIndex].color
-
-        button.setImage(UIImage(named: items[atIndex].icon), for: .normal)
-
-        // set highlited image
-        let highlightedImage = UIImage(named: items[atIndex].icon)?.withRenderingMode(.alwaysTemplate)
-        button.setImage(highlightedImage, for: .highlighted)
-        button.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+        button.setTitle(items[atIndex].title, for: .normal)
+        button.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         delegate?.circleMenuView?(self, willDisplay: button, atIndex: atIndex)
     }
 
