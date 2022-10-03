@@ -17,7 +17,7 @@
 #import "JYMonthMood.h"
 #import "JYPrefixHeader.h"
 
-@interface JYMoodHomeViewController () <JYHomeTopViewDelegate, JYRecordMoodViewControllerDelegate, JYMonthCalendarViewDelegate, UIViewControllerTransitioningDelegate>
+@interface JYMoodHomeViewController () <JYHomeTopViewDelegate, JYRecordMoodViewControllerDelegate, JYMonthCalendarViewDelegate, JYCircleMenuViewDelegate, UIViewControllerTransitioningDelegate>
 @property (nonatomic, strong) JYHomeTopView *topView;
 @property (nonatomic, strong) id <JYMonthCalendarViewManagerProtocol> calendarViewManager;
 @end
@@ -91,7 +91,7 @@
 }
 
 - (void)plusControlAction:(UIControl *)sender {
-    [self presentRecordMoodViewController:self.calendarViewManager.todayName];
+//    [self presentRecordMoodViewController:self.calendarViewManager.todayName];
 }
 
 - (void)plusButtonAction:(UIButton *)sender {
@@ -144,7 +144,7 @@
 
 - (void)circleMenuView:(JYCircleMenuView *)circleMenu buttonDidSelected:(UIButton *)button atIndex:(NSInteger)atIndex {
     
-    [self presentRecordMoodViewController:self.calendarViewManager.todayName];
+    [self presentRecordMoodViewController:self.calendarViewManager.todayName moodText:button.titleLabel.text];
 }
 
 - (void)circleMenuViewCollapsed:(JYCircleMenuView *)circleMenu {
@@ -167,7 +167,7 @@
 
 - (void)monthCalendarViewManager:(id <JYMonthCalendarViewManagerProtocol>)manager didSelectItemAtIndexPath:(NSString *)dayName jumpType:(JYMonthCalendarJumpType)jumpType {
     if (jumpType == JYMonthCalendarJumpTypeRecord) {
-        [self presentRecordMoodViewController:dayName];
+        [self presentRecordMoodViewController:dayName moodText:nil];
     } else if (jumpType == JYMonthCalendarJumpTypeDetail) {
         JYDetailMoodViewController *controller = [[JYDetailMoodViewController alloc] init];
         controller.modalPresentationStyle = UIModalPresentationFullScreen;
@@ -175,7 +175,7 @@
     }
 }
 
-- (void)presentRecordMoodViewController:(NSString *)dayName {
+- (void)presentRecordMoodViewController:(NSString *)dayName moodText:(nullable NSString *)moodText {
     JYMoodMonthDate *monthDate = self.calendarViewManager.currentMonth;
     JYDayMood * dayMood = [monthDate.monthMood.dayMoodDict valueForKey:dayName];
     if (!dayMood) {
@@ -194,7 +194,7 @@
     NSString *className = [NSString stringWithFormat:@"CE%@AnimationController", @"Portal"];
     id transitionInstance = [[NSClassFromString(className) alloc] init];
     AppDelegateAccessor.settingsAnimationController = transitionInstance;
-    JYRecordMoodViewController *controller = [[JYRecordMoodViewController alloc] initWithDayMood:dayMood];
+    JYRecordMoodViewController *controller = [[JYRecordMoodViewController alloc] initWithDayMood:dayMood moodText:moodText];
     controller.modalPresentationStyle = UIModalPresentationFullScreen;
     controller.transitioningDelegate = self;
     controller.delegate = self;

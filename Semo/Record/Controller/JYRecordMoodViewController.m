@@ -18,13 +18,16 @@
 @property (nonatomic, strong) UIButton *cancelButton;
 @property (nonatomic, strong) UIButton *confirmButton;
 @property (nonatomic, strong) JYDayMood * dayMood;
+@property (nonatomic, strong) NSString * moodText;
 @end
 
 @implementation JYRecordMoodViewController
 
-- (instancetype)initWithDayMood:(JYDayMood *)dayMood {
+- (instancetype)initWithDayMood:(JYDayMood *)dayMood moodText:(nullable NSString *)moodText {
     if (self = [super init]) {
         self.dayMood = dayMood;
+        self.moodText = moodText;
+        
     }
     
     return self;
@@ -34,6 +37,7 @@
     [super viewDidLoad];
     [self setupConfig];
     [self initSubviews];
+    self.recordManager.text = self.moodText;
 }
 
 - (void)setupConfig {

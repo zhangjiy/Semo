@@ -63,14 +63,14 @@ open class JYCircleMenuView: UIView, CircleMenuDelegate {
         addSubview(visualEffectView);
         let distance:Float = Float((self.bounds.width - 60) / 2)
         menuButton = CircleMenu(
-            frame: CGRect(x: (bounds.width - 60) / 2, y: (bounds.height - 60) / 2, width: 60, height: 60),
-          normalIcon:"icon_menu",
-          selectedIcon:"icon_close",
+            frame: CGRect(x: (bounds.width - 54) / 2, y: (bounds.height - 54) / 2, width: 54, height: 54),
+          normalIcon:"",
+          selectedIcon:"story_publish_icon_close",
           buttonsCount: 7,
             duration: 1,
           distance: distance)
         menuButton.delegate = self
-        //button.layer.cornerRadius = button.frame.size.width / 2.0
+        menuButton.layer.cornerRadius = menuButton.frame.size.width / 2.0
         menuButton.backgroundColor = UIColor.red
         addSubview(menuButton)
     }

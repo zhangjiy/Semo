@@ -24,6 +24,7 @@
 @end
 
 @implementation JYRecordMoodManager
+@synthesize text = _text;
 @synthesize index = _index;
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -71,6 +72,13 @@
     [self.containerView addSubview:self.moodDisplayView];
     [self.containerView addSubview:self.paintingView];
     [self.containerView addSubview:self.bottomView];
+}
+
+- (void)setText:(NSString *)text {
+    if (_text != text) {
+        _text = text;
+        self.moodDisplayView.text = text;
+    }
 }
 
 - (void)layoutSubviews {

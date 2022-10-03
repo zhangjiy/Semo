@@ -12,6 +12,7 @@
 
 @protocol JYRecordMoodManagerProtocol <JYViewProtocol>
 @optional
+@property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong, readonly) UIImage * resultMoodImage;
 @property (nonatomic, assign, readonly) NSInteger index;
 @end

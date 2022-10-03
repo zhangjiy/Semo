@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JYRecordMoodViewController : UIViewController
 @property (nonatomic, weak) id <JYRecordMoodViewControllerDelegate> delegate;
-- (instancetype)initWithDayMood:(JYDayMood *)dayMood;
+- (instancetype)initWithDayMood:(JYDayMood *)dayMood moodText:(nullable NSString *)moodText;
 @end
 
 NS_ASSUME_NONNULL_END
