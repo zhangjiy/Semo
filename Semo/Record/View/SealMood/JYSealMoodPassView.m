@@ -127,7 +127,11 @@
     if (!_arrangeTextView0) {
         CGSize size = CGSizeMake(self.width * 0.9, self.height * 0.7);
         _arrangeTextView0 = [[JYARCArrangeTextView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, self.height / 50.f, size.width, size.height)];
-        _arrangeTextView0.text = @"20220316 10:45";
+        NSDate *date = [NSDate date];
+        NSDateFormatter *dateFmt = [[NSDateFormatter alloc]init];
+        dateFmt.dateFormat = @"yyyyMMdd HH:mm";
+        NSString *dateStr = [dateFmt stringFromDate:date];
+        _arrangeTextView0.text = dateStr;
         [_arrangeTextView0 drawText];
     }
     return _arrangeTextView0;
@@ -137,7 +141,11 @@
     if (!_arrangeTextView1) {
         CGSize size = CGSizeMake(self.width * 0.9, self.height * 0.7);
         _arrangeTextView1 = [[JYARCArrangeTextView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, (self.height * 0.28), size.width, size.height)];
-        _arrangeTextView1.text = @"20220316 10:45";
+        NSDate *date = [NSDate date];
+        NSDateFormatter *dateFmt = [[NSDateFormatter alloc]init];
+        dateFmt.dateFormat = @"yyyyMMdd HH:mm";
+        NSString *dateStr = [dateFmt stringFromDate:date];
+        _arrangeTextView1.text = dateStr;
         [_arrangeTextView1 drawText];
     }
     return _arrangeTextView1;

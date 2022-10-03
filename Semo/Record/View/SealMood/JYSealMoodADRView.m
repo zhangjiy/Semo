@@ -110,7 +110,12 @@
     if (!_arrangeTextView0) {
         CGSize size = CGSizeMake(self.width * 0.9, self.width * 0.6);
         _arrangeTextView0 = [[JYARCArrangeTextView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, self.height / 38.f, size.width, size.height)];
-        _arrangeTextView0.text = @"20220316.1045Fri.MOOD";
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        dateFormatter.monthSymbols = @[@"01", @"02", @"03", @"04", @"05", @"06", @"07", @"08", @"09", @"10", @"11", @"12"];
+        dateFormatter.weekdaySymbols = @[@"Sun", @"Mon", @"Tue", @"Wed", @"Thu", @"Fri", @"Sat"];
+        dateFormatter.dateFormat = @"yyyyMMMMdd.HHmmEEEE";
+        NSString *dateStr = [dateFormatter stringFromDate:[NSDate date]];
+        _arrangeTextView0.text = [NSString stringWithFormat:@"%@%@", dateStr, @".MOOD"];
         _arrangeTextView0.color = SMSealGreenColor;
         [_arrangeTextView0 drawText];
     }
@@ -121,7 +126,12 @@
     if (!_arrangeTextView1) {
         CGSize size = CGSizeMake(self.width * 0.9, self.width * 0.6);
         _arrangeTextView1 = [[JYARCArrangeTextView alloc] initWithFrame:CGRectMake((self.width - size.width) / 2.f, (self.height * 0.36), size.width, size.height)];
-        _arrangeTextView1.text = @"20220316.1045Fri.MOOD";
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        dateFormatter.monthSymbols = @[@"01", @"02", @"03", @"04", @"05", @"06", @"07", @"08", @"09", @"10", @"11", @"12"];
+        dateFormatter.weekdaySymbols = @[@"Sun", @"Mon", @"Tue", @"Wed", @"Thu", @"Fri", @"Sat"];
+        dateFormatter.dateFormat = @"yyyyMMMMdd.HHmmEEEE";
+        NSString *dateStr = [dateFormatter stringFromDate:[NSDate date]];
+        _arrangeTextView1.text = [NSString stringWithFormat:@"%@%@", dateStr, @".MOOD"];
         _arrangeTextView1.color = SMSealGreenColor;
         [_arrangeTextView1 drawText];
     }
