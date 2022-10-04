@@ -10,7 +10,7 @@
 #import "JYRecordMoodListCollectionViewCell.h"
 #import "JYPrefixHeader.h"
 
-@interface JYRecordMoodListView () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface JYRecordMoodListView () <UICollectionViewDelegate, UICollectionViewDataSource, JYRecordMoodListCollectionViewCellDelegate>
 @property (nonatomic, strong) MBSwitch * customSwitch;
 @property (nonatomic, strong) UICollectionView * collectionView;
 @property (nonatomic, assign) NSUInteger index;
@@ -99,6 +99,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     JYRecordMoodListCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    cell.delegate = self;
     NSString *text = RecordMoods[indexPath.row];
     UIColor *color = MoodColors[indexPath.row];
     cell.text = text;
@@ -126,6 +127,14 @@
     NSString *text = RecordMoods[indexPath.row];
     if ([self.delegate respondsToSelector:@selector(recordMoodListView:didSelectItem:)]) {
         [self.delegate recordMoodListView:self didSelectItem:text];
+    }
+}
+
+- (void)recordMoodListCollectionViewCell:(JYRecordMoodListCollectionViewCell *)cell didLongPress:(UIGestureRecognizer *)gesture {
+    self.index = -1;
+    [self.collectionView reloadData];
+    if ([self.delegate respondsToSelector:@selector(recordMoodListView:didSelectItem:)]) {
+        [self.delegate recordMoodListView:self didSelectItem:nil];
     }
 }
 

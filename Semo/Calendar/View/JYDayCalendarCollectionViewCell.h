@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JYDayCalendarCollectionViewCell : UICollectionViewCell
 @property (nonatomic, strong) NSString *text;
+@property (nonatomic, assign) BOOL isToday;
 @end
 
 NS_ASSUME_NONNULL_END

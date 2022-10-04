@@ -48,6 +48,11 @@
     }
 }
 
+- (void)setIsToday:(BOOL)isToday {
+    _isToday = isToday;
+    self.titleLabel.textColor = isToday ? [UIColor colorWithRed:218/255.f green:88/255.f blue:78/255.f alpha:1.f] : [UIColor blackColor];
+}
+
 - (void)layoutSubviews {
     [super layoutSubviews];
     _titleLabel.frame = self.bounds;

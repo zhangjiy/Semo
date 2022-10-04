@@ -143,7 +143,9 @@
     
     JYDayCalendarCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JYDayCalendarCollectionViewCell" forIndexPath:indexPath];
     if ([self.calculator isToday:self.month index:indexPath.row]) {
-        
+        cell.isToday = YES;
+    } else {
+        cell.isToday = NO;
     }
     cell.text = text;
     return cell;

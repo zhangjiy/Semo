@@ -26,6 +26,9 @@
 - (void)initSubviews {
     [self.contentView addSubview:self.textLabel];
     [self.contentView addSubview:self.selectedView];
+    UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] init];
+    [gesture addTarget:self action:@selector(longPress:)];
+    [self.contentView addGestureRecognizer:gesture];
 }
 
 - (void)layoutSubviews {
@@ -82,6 +85,12 @@
     if (_isSelected != isSelected) {
         _isSelected = isSelected;
         _selectedView.hidden = isSelected ? NO : YES;
+    }
+}
+
+- (void)longPress:(UIGestureRecognizer *)gesture {
+    if ([self.delegate respondsToSelector:@selector(recordMoodListCollectionViewCell:didLongPress:)]) {
+        [self.delegate recordMoodListCollectionViewCell:self didLongPress:gesture];
     }
 }
 

@@ -117,7 +117,6 @@
     cell.delegate = self;
     JYMoodMonthDate *moth = [self.calculator monthDateForIndex:indexPath.row];
     [cell updateViewWithMonth:moth calculator:self.calculator];
-   
     return cell;
 }
 
