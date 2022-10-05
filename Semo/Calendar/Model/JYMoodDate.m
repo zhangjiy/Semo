@@ -13,7 +13,6 @@
 @synthesize name = _name;
 @synthesize dateType = _dateType;
 @synthesize gregorian = _gregorian;
-@synthesize formatter = _formatter;
 
 - (instancetype)initWithDate:(NSDate *)date {
     if (self = [super init]) {
@@ -26,8 +25,6 @@
 
 - (void)initialize {
     _gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    _formatter = [[NSDateFormatter alloc] init];
-    _formatter.dateFormat = @"yyyy-MM-dd";
 }
 
 - (void)encodeWithCoder:(nonnull NSCoder *)coder {
@@ -51,7 +48,9 @@
 
 - (NSString *)name {
     NSString *year = @([self.gregorian component:NSCalendarUnitYear fromDate:self.date]).stringValue;
-    NSString *month = [self.formatter stringFromDate:self.date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"MM";
+    NSString *month = [formatter stringFromDate:self.date];
     NSString *name = [NSString stringWithFormat:@"%@_%@", year, month];
     return name;
 }

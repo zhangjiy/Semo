@@ -14,7 +14,7 @@
         NSAssert(name,@"name不能为空!");
     }
     if ([JYMonthMood bg_isExistForTableName:tableName]) {
-        NSString *where = [NSString stringWithFormat:@"where %@=%@",bg_sqlKey(@"name"),bg_sqlValue(name)];
+        NSString *where = [NSString stringWithFormat:@"where %@=%@", bg_sqlKey(@"name"), bg_sqlValue(name)];
         NSArray *arr = [JYMonthMood bg_find:tableName where:where];
         if (arr.count > 0) {
             return arr.firstObject;

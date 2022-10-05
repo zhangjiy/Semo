@@ -22,6 +22,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.backgroundColor = [UIColor clearColor];
         self.contentView.backgroundColor = [UIColor clearColor];
         self.containerView = [[UIView alloc] initWithFrame:self.contentView.bounds];
@@ -36,7 +37,7 @@
     [self.containerView addSubview:self.titleLabel];
     [self.containerView addSubview:self.arrowButton];
     [self.containerView addSubview:self.switchButton];
-    [self.containerView addSubview:self.lineView];
+    //[self.containerView addSubview:self.lineView];
 }
 
 - (void)layoutSubviews {
@@ -86,7 +87,6 @@
     if (!_lineView) {
         _lineView = [[UIView alloc] initWithFrame:CGRectZero];
         _lineView.backgroundColor = [UIColor lightGrayColor];
-        _lineView.hidden = YES;
     }
     return _lineView;
 }
@@ -96,7 +96,7 @@
         _settingModel = settingModel;
         self.containerView.hidden = settingModel.type == JYSettingItemTypeSection ? YES:NO;
         self.switchButton.hidden = settingModel.rightViewType == JYSettingRightViewTypeSwitch ? NO:YES;
-        self.lineView.hidden = !settingModel.showBottomLine;
+        //self.lineView.hidden = !settingModel.showBottomLine;
         self.titleLabel.text = settingModel.title;
         [self.arrowButton setImage:[UIImage imageNamed:settingModel.icon] forState:UIControlStateNormal];
         self.contentView.backgroundColor = settingModel.backgoundColor;

@@ -23,7 +23,6 @@ typedef NS_ENUM(NSInteger, JYMoodDateType) {
 @property (nonatomic, assign, readonly) JYMoodDateType dateType;
 @property (nonatomic, strong, readonly) NSString * name;
 @property (nonatomic, strong) NSCalendar *gregorian;
-@property (nonatomic, strong) NSDateFormatter *formatter;
 @end
 
 @interface JYMoodDate : NSObject <JYMoodDate>

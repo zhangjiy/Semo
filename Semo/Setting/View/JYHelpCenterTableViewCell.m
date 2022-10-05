@@ -21,6 +21,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.backgroundColor = [UIColor clearColor];
         self.contentView.backgroundColor = [UIColor clearColor];
         [self initSubViews];
@@ -33,7 +34,7 @@
     [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.contentLabel];
     //[self.contentView addSubview:self.arrowButton];
-    [self.contentView addSubview:self.lineView];
+    //[self.contentView addSubview:self.lineView];
 }
 
 - (void)layoutSubviews {
@@ -96,7 +97,7 @@
 - (void)setHelpCenterModel:(JYHelpCenterModel *)helpCenterModel {
     if (_helpCenterModel != helpCenterModel) {
         _helpCenterModel = helpCenterModel;
-        self.lineView.hidden = !helpCenterModel.showBottomLine;
+        //self.lineView.hidden = !helpCenterModel.showBottomLine;
         self.titleLabel.text = helpCenterModel.title;
         self.contentLabel.text = helpCenterModel.content;
         [self.arrowButton setImage:[UIImage imageNamed:helpCenterModel.icon] forState:UIControlStateNormal];

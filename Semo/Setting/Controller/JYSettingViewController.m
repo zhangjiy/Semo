@@ -13,6 +13,9 @@
 #import "JYHelpCenterViewController.h"
 #import "JYUserFeedBackViewController.h"
 #import "JYAboutUsViewController.h"
+#import "MBProgressHUD.h"
+#import "JYMoodDate.h"
+#import "JYMonthMood.h"
 #import "JYPrefixHeader.h"
 
 @interface JYSettingViewController () <MFMailComposeViewControllerDelegate, JYSettingListViewDelegate>
@@ -50,7 +53,9 @@
 #pragma mark -- JYSettingListViewDelegate
 
 - (void)settingListView:(JYSettingListView *)listView didSelectItem:(JYSettingModel *)item {
-    if (item.type == JYSettingItemTypeComment) {
+    if (item.type == JYSettingItemTypeExport) {
+        [self gotoExport];
+    } else if (item.type == JYSettingItemTypeComment) {
         [self gotoStoreComment];
     } else if (item.type == JYSettingItemTypeHelp) {
         [self gotoHelpCenter];
@@ -58,6 +63,65 @@
         [self gotoUserFeedBack];
     } else if (item.type == JYSettingItemTypeAbout) {
         [self gotoAboutUs];
+    }
+}
+
+- (void)gotoExport {
+//    NSArray *selectArrray = [self.calendar selectedDates];
+//    if (selectArrray.count < 2) {
+//        [LYToastTool bottomShowWithText:LY_LocalizedString(@"kLYExportErrorDate") delay:1.f];
+//        return ;
+//    }
+    
+    NSArray *yearArrray = @[@"2022", @"2023", @"2024", @"2025"];
+    NSArray *monthArrray = @[@"01", @"02", @"03", @"04", @"05", @"06", @"07", @"08", @"09", @"10", @"11", @"12"];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    __block NSMutableArray *resultArray = [NSMutableArray array];
+    [yearArrray enumerateObjectsUsingBlock:^(NSString * year, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSString *tableName = [NSString stringWithFormat:@"%@_%@", @"TableName", year];
+        if ([JYMonthMood bg_isExistForTableName:tableName]) {
+            [monthArrray enumerateObjectsUsingBlock:^(NSString * month, NSUInteger idx, BOOL * _Nonnull stop) {
+                NSString *name = [NSString stringWithFormat:@"%@_%@", year, month];
+                NSString *where = [NSString stringWithFormat:@"where %@=%@", bg_sqlKey(@"name"), bg_sqlValue(name)];
+                NSArray *array = [JYMonthMood bg_find:tableName where:where];
+                if (array.count > 0) {
+                    [resultArray addObjectsFromArray:array];
+                }
+            }];
+        }
+        if ([[yearArrray lastObject] isEqual:year]) {
+            [hud hideAnimated:YES];
+        }
+    }];
+
+    if (!resultArray.count) {
+        [hud showAnimated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.label.text = @"empt";
+        [hud hideAnimated:YES afterDelay:2.f];
+        
+    } else {
+        NSError *error = nil;
+        NSString * path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"moods.csv"];
+        [[resultArray componentsJoinedByString:@","] writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:&error];
+        NSArray *urls = @[[NSURL fileURLWithPath:path]];
+    
+        UIActivityViewController *activituVC = [[UIActivityViewController alloc]initWithActivityItems:urls applicationActivities:nil];
+        NSArray *cludeActivitys = @[
+                                  UIActivityTypePostToVimeo,
+                                  UIActivityTypeMessage,
+                                  UIActivityTypeMail,
+                                  UIActivityTypeCopyToPasteboard,
+                                  UIActivityTypePrint,
+                                  UIActivityTypeAssignToContact,
+                                  UIActivityTypeSaveToCameraRoll,
+                                  UIActivityTypeAddToReadingList,
+                                  UIActivityTypePostToFlickr,
+                                  UIActivityTypePostToTencentWeibo];
+        activituVC.excludedActivityTypes = cludeActivitys;
+        //显示分享窗口
+        [self presentViewController:activituVC animated:YES completion:nil];
     }
 }
 

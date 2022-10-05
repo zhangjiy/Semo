@@ -37,7 +37,6 @@ typedef NS_ENUM(NSUInteger, JYCalendarPlaceholderType) {
 @property (nonatomic, assign, readonly) NSInteger numberOfMonths;
 @property (nonatomic, assign, readonly) NSInteger currentPage;
 
-@property (nonatomic, strong, readonly) id <JYMoodDate> currentMonth;
 @property (nonatomic, strong, readonly) id <JYMoodDate> sameMonth;
 @property (nonatomic, strong, readonly) id <JYMoodDate> today;
 @property (nonatomic, strong) NSCalendar *gregorian;

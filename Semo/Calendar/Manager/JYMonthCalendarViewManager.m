@@ -195,7 +195,13 @@
         return;
     }
     
-    if (index < todayIndex) {
+    NSDate *currentDate = [NSDate date];
+    NSDateFormatter *dateFmt = [[NSDateFormatter alloc]init];
+    dateFmt.dateFormat = @"yyyyMMdd";
+    NSInteger currentDateInt = [[dateFmt stringFromDate:currentDate] integerValue];
+    NSInteger dateInt = [[dateFmt stringFromDate:date.date] integerValue];
+
+    if (dateInt < currentDateInt) {
         NSString *text = date.name;
         NSDictionary *dayMoodDic = self.currentMonth.monthMood.dayMoodDict;
         JYDayMood *dayMood = [dayMoodDic valueForKey:text];

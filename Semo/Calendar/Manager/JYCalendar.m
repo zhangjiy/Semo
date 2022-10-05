@@ -46,8 +46,6 @@
     
     NSDate *dayDate = [self.gregorian startOfDayForDate:[NSDate date]];
     _today = [[JYMoodMonthDate alloc] initWithDate:dayDate];
-    
-    _currentMonth = [self.gregorian jy_firstDayOfMonth:_today];
     _sameMonth = [self.gregorian jy_firstDayOfMonth:_today];
 
     [self requestBoundingDatesIfNecessary];
@@ -95,9 +93,6 @@
 }
 
 - (void)endScroll:(NSInteger)index {
-    //id <JYMoodDate> minimumPage = [self.gregorian jy_firstDayOfMonth:_minimumDate];
-    //NSDate *targetPage = [self.gregorian dateByAddingUnit:NSCalendarUnitMonth value:index toDate:minimumPage.date options:0];
-    //BOOL shouldTriggerPageChange = [self isDateInDifferentPage:targetPage];
     _currentPage = index;
 }
 
@@ -132,10 +127,6 @@
         date = self.maximumDate;
     }
     return date;
-}
-
-- (BOOL)isDateInDifferentPage:(NSDate *)date {
-    return ![self.gregorian isDate:date equalToDate:_currentMonth.date toUnitGranularity:NSCalendarUnitMonth];
 }
 
 - (NSDate*)getPriousorLaterDateFromDate:(NSDate*)date withMonth:(NSInteger)month{

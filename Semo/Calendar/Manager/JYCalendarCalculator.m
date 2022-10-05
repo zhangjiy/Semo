@@ -86,7 +86,8 @@
 }
 
 - (id<JYMoodDate>)currentMonth {
-    return self.calendar.currentMonth;
+    id<JYMoodDate> mouth = [self monthDateForIndex:self.currentPage];
+    return mouth;
 }
 
 - (id<JYMoodDate>)today {
