@@ -41,7 +41,6 @@
         _titleLabel.font = [UIFont boldSystemFontOfSize:20];
         _titleLabel.textColor = [UIColor blackColor];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.text = @"设置";
     }
     return _titleLabel;
 }

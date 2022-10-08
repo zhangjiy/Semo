@@ -92,14 +92,14 @@
     // set the text color for selected state
     // 选中状态下的文字属性
     NSMutableDictionary *selectedAttrs = [NSMutableDictionary dictionary];
-    //selectedAttrs[NSForegroundColorAttributeName] = themeButtonColor;
+    selectedAttrs[NSForegroundColorAttributeName] = [UIColor colorWithRed:218/255.f green:88/255.f blue:78/255.f alpha:1.f];
     //selectedAttrs[NSFontAttributeName] = HPL11 ;
 
     // set the text Attributes
     // 设置文字属性
-//    UITabBarItem *tabBar = [UITabBarItem appearance];
-//    [tabBar setTitleTextAttributes:normalAttrs forState:UIControlStateNormal];
-//    [tabBar setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
+    UITabBarItem *tabBar = [UITabBarItem appearance];
+    [tabBar setTitleTextAttributes:normalAttrs forState:UIControlStateNormal];
+    [tabBar setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
     
     // Set the dark color to selected tab (the dimmed background)
     // TabBarItem选中后的背景颜色

@@ -72,12 +72,12 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return HomeMoods.count;
+    return RecordMoods.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     JYHomeTodayMoodCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    NSString *text = HomeMoods[indexPath.row];
+    NSString *text = RecordMoods[indexPath.row];
     NSArray * monthMoodAnalysis = self.monthDate.monthMoodAnalysis;
     NSNumber *count = [monthMoodAnalysis objectAtIndex:indexPath.row];
     UIColor *color = HomeMoodColors[indexPath.row];
@@ -88,7 +88,7 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat width = (self.width - collectionView.contentInset.left * 2) / (float)HomeMoods.count;
+    CGFloat width = (self.width - collectionView.contentInset.left * 2) / (float)RecordMoods.count;
     return CGSizeMake(width, width);
 }
 

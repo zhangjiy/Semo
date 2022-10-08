@@ -61,6 +61,8 @@
 		B46ED567281105EC000712F8 /* NSObject+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = B46ED560281105EC000712F8 /* NSObject+Swizzling.m */; };
 		B46ED568281105EC000712F8 /* NSArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = B46ED561281105EC000712F8 /* NSArray+Safe.m */; };
 		B46ED569281105EC000712F8 /* NSObject+ImpChangeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B46ED562281105EC000712F8 /* NSObject+ImpChangeTool.m */; };
+		B46F13A428F13E1600533D85 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B46F13A628F13E1600533D85 /* Localizable.strings */; };
+		B46F13AA28F13EE400533D85 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B46F13AC28F13EE400533D85 /* InfoPlist.strings */; };
 		B47C619A28520D2900E0097B /* UIImage+WBTDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C619828520D2800E0097B /* UIImage+WBTDraw.m */; };
 		B47C61A42853385100E0097B /* JYSettingListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C61A32853385100E0097B /* JYSettingListView.m */; };
 		B47C61A8285338CE00E0097B /* JYSettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C61A7285338CE00E0097B /* JYSettingModel.m */; };
@@ -319,6 +321,10 @@
 		B46ED560281105EC000712F8 /* NSObject+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Swizzling.m"; sourceTree = "<group>"; };
 		B46ED561281105EC000712F8 /* NSArray+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Safe.m"; sourceTree = "<group>"; };
 		B46ED562281105EC000712F8 /* NSObject+ImpChangeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ImpChangeTool.m"; sourceTree = "<group>"; };
+		B46F13A528F13E1600533D85 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B46F13A728F13E2300533D85 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		B46F13AB28F13EE400533D85 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B46F13AD28F13EE500533D85 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		B47C619828520D2800E0097B /* UIImage+WBTDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WBTDraw.m"; sourceTree = "<group>"; };
 		B47C619928520D2900E0097B /* UIImage+WBTDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WBTDraw.h"; sourceTree = "<group>"; };
 		B47C619E2852EA6100E0097B /* JYHomeViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYHomeViewControllerProtocol.h; sourceTree = "<group>"; };
@@ -662,6 +668,8 @@
 				B41AC6ED27D5A6A400CDF4AB /* Assets.xcassets */,
 				B41AC6F227D5A6A400CDF4AB /* Info.plist */,
 				B41AC6F327D5A6A400CDF4AB /* main.m */,
+				B46F13A628F13E1600533D85 /* Localizable.strings */,
+				B46F13AC28F13EE400533D85 /* InfoPlist.strings */,
 			);
 			path = Semo;
 			sourceTree = "<group>";
@@ -1472,6 +1480,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = B41AC6D527D5A69F00CDF4AB;
 			productRefGroup = B41AC6DF27D5A69F00CDF4AB /* Products */;
@@ -1491,8 +1500,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4EA2C1827E7598500779793 /* brush.png in Resources */,
+				B46F13AA28F13EE400533D85 /* InfoPlist.strings in Resources */,
 				B4EA2C1A27E7598500779793 /* pencil.png in Resources */,
 				B4EA2C1B27E7598500779793 /* claw.png in Resources */,
+				B46F13A428F13E1600533D85 /* Localizable.strings in Resources */,
 				B4EA2C1927E7598500779793 /* glow.png in Resources */,
 				B4EA2C0A27E74E0000779793 /* ChartletPicker.storyboard in Resources */,
 				B41AC6EE27D5A6A400CDF4AB /* Assets.xcassets in Resources */,
@@ -1767,6 +1778,27 @@
 			targetProxy = B41AC70427D5A6A500CDF4AB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B46F13A628F13E1600533D85 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B46F13A528F13E1600533D85 /* en */,
+				B46F13A728F13E2300533D85 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		B46F13AC28F13EE400533D85 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B46F13AB28F13EE400533D85 /* en */,
+				B46F13AD28F13EE500533D85 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B41AC70B27D5A6A500CDF4AB /* Debug */ = {
