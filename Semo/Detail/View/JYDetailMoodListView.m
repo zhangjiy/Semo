@@ -14,8 +14,6 @@ static NSString *const kJYDetailMoodTableViewCell = @"kJYDetailMoodTableViewCell
 
 @interface JYDetailMoodListView () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView * tableView;
-
-@property (nonatomic, strong) NSArray * testmoods;
 @end
 
 @implementation JYDetailMoodListView
@@ -24,42 +22,15 @@ static NSString *const kJYDetailMoodTableViewCell = @"kJYDetailMoodTableViewCell
     self = [super initWithFrame:frame];
     if (self) {
         [self initSubviews];
-        
-        JYMoodModel *model0 = [[JYMoodModel alloc] init];
-        model0.moodString = @"喜";
-        model0.weak = @"星期一";
-        model0.month = @"三月";
-        model0.outline = @"啥也不说了，都是眼泪";
-        JYMoodModel *model1 = [[JYMoodModel alloc] init];
-        model1.moodString = @"怒";
-        model1.weak = @"星期二";
-        model1.month = @"三月";
-        model1.outline = @"此时无声胜有声";
-        JYMoodModel *model2 = [[JYMoodModel alloc] init];
-        model2.moodString = @"忧";
-        model2.weak = @"星期三";
-        model2.month = @"三月";
-        JYMoodModel *model3 = [[JYMoodModel alloc] init];
-        model3.moodString = @"思";
-        model3.weak = @"星期四";
-        model3.month = @"三月";
-        JYMoodModel *model4 = [[JYMoodModel alloc] init];
-        model4.moodString = @"悲";
-        model4.weak = @"星期五";
-        model4.month = @"三月";
-        JYMoodModel *model5 = [[JYMoodModel alloc] init];
-        model5.moodString = @"恐";
-        model5.weak = @"星期六";
-        model5.month = @"三月";
-        JYMoodModel *model6 = [[JYMoodModel alloc] init];
-        model6.moodString = @"惧";
-        model6.weak = @"星期日";
-        model6.month = @"三月";
-        
-        self.testmoods = @[model0, model1, model2, model3, model4, model5, model6];
     }
     
     return self;
+}
+
+- (void)setDayMood:(JYDayMood *)dayMood {
+    if (_dayMood != dayMood) {
+        _dayMood = dayMood;
+    }
 }
 
 - (void)initSubviews {
@@ -87,7 +58,7 @@ static NSString *const kJYDetailMoodTableViewCell = @"kJYDetailMoodTableViewCell
 #pragma mark - UITableViewDataSource & UITableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.testmoods.count;
+    return self.dayMood.moods.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -97,13 +68,17 @@ static NSString *const kJYDetailMoodTableViewCell = @"kJYDetailMoodTableViewCell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     JYDetailMoodTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kJYDetailMoodTableViewCell forIndexPath:indexPath];
-    JYMoodModel *model = self.testmoods[indexPath.row];
-    [cell updateViewWithModel:model];
+    JYMood *mood = self.dayMood.moods[indexPath.row];
+    cell.mood = mood;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    JYMood *mood = self.dayMood.moods[indexPath.row];
+    if ([self.delegate respondsToSelector:@selector(detailMoodListView:didSelectItem:)]) {
+        [self.delegate detailMoodListView:self didSelectItem:mood];
+    }
 }
 
 @end

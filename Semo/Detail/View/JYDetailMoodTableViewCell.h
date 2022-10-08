@@ -6,12 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JYMoodModel.h"
+#import "JYMood.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JYDetailMoodTableViewCell : UITableViewCell
-- (void)updateViewWithModel:(JYMoodModel *)moodModel;
+@property (nonatomic, strong) JYMood *mood;
 @end
 
 NS_ASSUME_NONNULL_END

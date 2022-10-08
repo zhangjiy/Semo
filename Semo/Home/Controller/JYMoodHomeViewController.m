@@ -17,7 +17,7 @@
 #import "JYMonthMood.h"
 #import "JYPrefixHeader.h"
 
-@interface JYMoodHomeViewController () <JYHomeTopViewDelegate, JYRecordMoodViewControllerDelegate, JYMonthCalendarViewDelegate, JYCircleMenuViewDelegate, UIViewControllerTransitioningDelegate>
+@interface JYMoodHomeViewController () <JYHomeTopViewDelegate, JYRecordMoodViewControllerDelegate, JYDetailMoodViewControllerDelegate, JYMonthCalendarViewDelegate, JYCircleMenuViewDelegate, UIViewControllerTransitioningDelegate>
 @property (nonatomic, strong) JYHomeTopView *topView;
 @property (nonatomic, strong) id <JYMonthCalendarViewManagerProtocol> calendarViewManager;
 @end
@@ -53,8 +53,9 @@
     
     //_calendarViewManager.containerView.frame = self.view.bounds;
     [_calendarViewManager layoutSubviews];
-    
     _topView.size = CGSizeMake(self.view.width, JYHomeTopViewHeight);
+    _topView.left = 0;
+    _topView.top = 0;
 }
 
 - (id <JYMonthCalendarViewManagerProtocol>)calendarViewManager {
@@ -169,7 +170,10 @@
     if (jumpType == JYMonthCalendarJumpTypeRecord) {
         [self presentRecordMoodViewController:dayName moodText:nil];
     } else if (jumpType == JYMonthCalendarJumpTypeDetail) {
-        JYDetailMoodViewController *controller = [[JYDetailMoodViewController alloc] init];
+        JYMoodMonthDate *monthDate = self.calendarViewManager.currentMonth;
+        JYDayMood * dayMood = [monthDate.monthMood.dayMoodDict valueForKey:dayName];
+        JYDetailMoodViewController *controller = [[JYDetailMoodViewController alloc] initWithDayMood:dayMood];
+        controller.delegate = self;
         controller.modalPresentationStyle = UIModalPresentationFullScreen;
         [self.navigationController pushViewController:controller animated:YES];
     }
@@ -181,16 +185,6 @@
     if (!dayMood) {
         dayMood = [[JYDayMood alloc] initWithName:dayName];
     }
-    //Fold
-    //Cube
-    //Portal
-    //Crossfade
-    //Explode
-    //NatGeo
-    //Reversible
-    //Cards
-    //Flip
-    //Pan
     NSString *className = [NSString stringWithFormat:@"CE%@AnimationController", @"Portal"];
     id transitionInstance = [[NSClassFromString(className) alloc] init];
     AppDelegateAccessor.settingsAnimationController = transitionInstance;
@@ -227,4 +221,21 @@
      return AppDelegateAccessor.settingsInteractionController && AppDelegateAccessor.settingsInteractionController.interactionInProgress ? AppDelegateAccessor.settingsInteractionController : nil;
  }
 
+#pragma mark - JYDetailMoodViewControllerDelegate
+
+- (void)detailMoodViewController:(JYDetailMoodViewController *)controller didSelectItem:(JYMood *)item {
+    //[self presentRecordMoodViewController:item. moodText:button.titleLabel.text];
+}
+
 @end
+
+//Fold
+//Cube
+//Portal
+//Crossfade
+//Explode
+//NatGeo
+//Reversible
+//Cards
+//Flip
+//Pan

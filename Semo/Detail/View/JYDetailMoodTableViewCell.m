@@ -12,7 +12,7 @@
 
 @interface JYDetailMoodTableViewCell ()
 @property (nonatomic, strong) UIView *borderView;
-@property (nonatomic, strong) JYMoodView *moodView;
+@property (nonatomic, strong) UIImageView *moodImageView;
 @property (nonatomic, strong) UILabel *weakLabel;
 @property (nonatomic, strong) UILabel *monthLabel;
 @property (nonatomic, strong) UILabel *outlineLabel;
@@ -32,41 +32,34 @@
     return self;
 }
 
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
+
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    
+}
+
 - (void)initSubViews {
     [self.contentView addSubview:self.borderView];
-    [self.contentView addSubview:self.moodView];
-    [self.contentView addSubview:self.weakLabel];
-    [self.contentView addSubview:self.dateLineView];
-    [self.contentView addSubview:self.monthLabel];
-    [self.contentView addSubview:self.outlineLabel];
+    [self.contentView addSubview:self.moodImageView];
+//    [self.contentView addSubview:self.weakLabel];
+//    [self.contentView addSubview:self.dateLineView];
+//    [self.contentView addSubview:self.monthLabel];
+//    [self.contentView addSubview:self.outlineLabel];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     _borderView.width = self.contentView.width - 15 * 2;
-    _borderView.height = self.contentView.height - 15 - 20;
+    _borderView.height = self.contentView.height - 15 * 2;
     _borderView.left = 15;
     _borderView.top = 15;
     
-    _moodView.size = CGSizeMake(60, 60);
-    _moodView.top = _borderView.top + 15;
-    _moodView.centerX = self.contentView.width / 2.f;
+    _moodImageView.size = CGSizeMake(self.contentView.height - 40, self.contentView.height - 40);
+    _moodImageView.centerY = self.contentView.height / 2.f;
+    _moodImageView.centerX = self.contentView.width / 2.f;
     
-    [_weakLabel sizeToFit];
-    _weakLabel.left = _borderView.left + 15;
-    _weakLabel.top = _borderView.top + 15;
-    
-    _dateLineView.size = CGSizeMake(33, 1);
-    _dateLineView.centerX = _weakLabel.centerX;
-    _dateLineView.top = _weakLabel.bottom + 5;
-    
-    [_monthLabel sizeToFit];
-    _monthLabel.centerX = _weakLabel.centerX;
-    _monthLabel.top = _dateLineView.bottom + 5;
-    
-    [_outlineLabel sizeToFit];
-    _outlineLabel.centerX = self.contentView.width / 2.f;;
-    _outlineLabel.top = _moodView.bottom + 15;
 }
 
 - (UIView *)borderView {
@@ -78,13 +71,12 @@
     return _borderView;
 }
 
-- (JYMoodView *)moodView {
-    if (!_moodView) {
-        _moodView = [[JYMoodView alloc] initWithFrame:CGRectZero];
-        _moodView.font = [UIFont systemFontOfSize:30 weight:UIFontWeightBlack];
+- (UIImageView *)moodImageView {
+    if (!_moodImageView) {
+        _moodImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
     }
     
-    return _moodView;
+    return _moodImageView;
 }
 
 - (UILabel *)weakLabel {
@@ -117,15 +109,11 @@
     return _dateLineView;
 }
 
-- (void)updateViewWithModel:(JYMoodModel *)moodModel {
-    if (moodModel.moodImageUrl) {
-        
-    } else {
-        self.moodView.text = moodModel.moodString;
+- (void)setMood:(JYMood *)mood {
+    if (_mood != mood) {
+        _mood = mood;
+        _moodImageView.image = [UIImage imageWithData:mood.data];
     }
-    self.weakLabel.text = moodModel.weak;
-    self.monthLabel.text = moodModel.month;
-    self.outlineLabel.text = moodModel.outline;
 }
 
 @end

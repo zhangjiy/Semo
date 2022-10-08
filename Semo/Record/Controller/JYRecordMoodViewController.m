@@ -135,7 +135,7 @@
     NSData *data = UIImagePNGRepresentation(image);
     JYMood *mood = [[JYMood alloc] initWithType:self.recordManager.index];
     mood.data = data;
-    [moods addObject:mood];
+    [moods insertObject:mood atIndex:0];
     self.dayMood.moods = [moods copy];
     if ([self.delegate respondsToSelector:@selector(recordMoodViewController:dayMood:)]) {
         [self.delegate recordMoodViewController:self dayMood:self.dayMood];
