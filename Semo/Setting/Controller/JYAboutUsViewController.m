@@ -62,8 +62,8 @@
     MFMailComposeViewController *mailCompose = [[MFMailComposeViewController alloc] init];
     [mailCompose setMailComposeDelegate:self];
     [mailCompose setToRecipients:@[@"semord@outlook.com"]];
-    [mailCompose setSubject:@"设置邮件主题"];
-    NSString *emailContent = @"我是邮件内容";
+    [mailCompose setSubject:NSLocalizedString(@"设置邮件主题", nil)];
+    NSString *emailContent = NSLocalizedString(@"我是邮件内容", nil);
     [mailCompose setMessageBody:emailContent isHTML:NO];
     [self presentViewController:mailCompose animated:YES completion:nil];
 }

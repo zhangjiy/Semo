@@ -24,13 +24,13 @@ import CircleMenu
 open class JYCircleMenuView: UIView, CircleMenuDelegate {
     @IBOutlet open weak var delegate: AnyObject?
     let items: [(title: String, color: UIColor)] = [
-        ("喜", UIColor(red: 218/255, green: 88/255, blue: 78/255, alpha: 1)),
-        ("怒", UIColor(red: 230/255, green: 206/255, blue: 78/255, alpha: 1)),
-        ("忧", UIColor(red: 241/255, green: 206/255, blue: 97/255, alpha: 1)),
-        ("思", UIColor(red: 121/255, green: 193/255, blue: 114/255, alpha: 1)),
-        ("悲", UIColor(red: 64/255, green: 122/255, blue: 235/255, alpha: 1)),
-        ("恐", UIColor(red: 173/255, green: 127/255, blue: 207/255, alpha: 1)),
-        ("惊", UIColor(red: 149/255, green: 134/255, blue: 108/255, alpha: 1))
+        (NSLocalizedString("喜", comment: ""), UIColor(red: 218/255, green: 88/255, blue: 78/255, alpha: 1)),
+        (NSLocalizedString("怒", comment: ""), UIColor(red: 230/255, green: 206/255, blue: 78/255, alpha: 1)),
+        (NSLocalizedString("忧", comment: ""), UIColor(red: 241/255, green: 206/255, blue: 97/255, alpha: 1)),
+        (NSLocalizedString("思", comment: ""), UIColor(red: 121/255, green: 193/255, blue: 114/255, alpha: 1)),
+        (NSLocalizedString("悲", comment: ""), UIColor(red: 64/255, green: 122/255, blue: 235/255, alpha: 1)),
+        (NSLocalizedString("恐", comment: ""), UIColor(red: 173/255, green: 127/255, blue: 207/255, alpha: 1)),
+        (NSLocalizedString("惊", comment: ""), UIColor(red: 149/255, green: 134/255, blue: 108/255, alpha: 1))
     ]
     
     var menuButton: CircleMenu!

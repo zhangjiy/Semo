@@ -82,16 +82,16 @@
     if (!_plantings) {
         NSMutableArray *temp = [NSMutableArray array];
         JYPaintingItem *item0 = [[JYPaintingItem alloc] initWithType:JYPaintingTypeStyle];
-        item0.title = @"选个模板吧";
+        item0.title = NSLocalizedString(@"选个模板吧", nil);
         [temp addObject:item0];
         JYPaintingItem *item1 = [[JYPaintingItem alloc] initWithType:JYPaintingTypeSize];
-        item1.title = @"线条宽度";
+        item1.title = NSLocalizedString(@"线条宽度", nil);
         [temp addObject:item1];
         JYPaintingItem *item2 = [[JYPaintingItem alloc] initWithType:JYPaintingTypeColor];
-        item2.title = @"线条颜色";
+        item2.title = NSLocalizedString(@"线条颜色", nil);
         [temp addObject:item2];
         JYPaintingItem *item3 = [[JYPaintingItem alloc] initWithType:JYPaintingTypePen];
-        item3.title = @"画笔类型";
+        item3.title = NSLocalizedString(@"画笔类型", nil);
         [temp addObject:item3];
         JYPaintingItem *item4 = [[JYPaintingItem alloc] initWithType:JYPaintingTypeUndo];
         item4.title = @"4";

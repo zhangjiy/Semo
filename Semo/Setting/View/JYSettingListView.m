@@ -51,30 +51,30 @@ static NSString *const kJYSettingTableViewCell = @"kJYSettingTableViewCell";
         model0.backgoundColor = [UIColor lightGrayColor];
         
         JYSettingModel *model2 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeExport];
-        model2.title = @"文件备份";
+        model2.title = NSLocalizedString(@"备份与恢复", nil);
         model2.icon = @"ico_setting_arrow.png";
         model2.rightViewType = JYSettingRightViewTypeArrow;
         
         JYSettingModel *model3 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeComment];
-        model3.title = @"好评鼓励";
+        model3.title = NSLocalizedString(@"好评鼓励", nil);
         model3.icon = @"ico_setting_arrow.png";
         model3.showBottomLine = YES;
         model3.rightViewType = JYSettingRightViewTypeArrow;
         
         JYSettingModel *model4 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeHelp];
-        model4.title = @"帮助中心";
+        model4.title = NSLocalizedString(@"帮助中心", nil);
         model4.icon = @"ico_setting_arrow.png";
         model4.showBottomLine = YES;
         model4.rightViewType = JYSettingRightViewTypeArrow;
         
         JYSettingModel *model5 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeFeedback];
-        model5.title = @"意见反馈";
+        model5.title = NSLocalizedString(@"意见反馈", nil);
         model5.icon = @"ico_setting_arrow.png";
         model5.showBottomLine = YES;
         model5.rightViewType = JYSettingRightViewTypeArrow;
         
         JYSettingModel *model6 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeAbout];
-        model6.title = @"关于我们";
+        model6.title = NSLocalizedString(@"关于我们", nil);
         model6.icon = @"ico_setting_arrow.png";
         model6.rightViewType = JYSettingRightViewTypeArrow;
         

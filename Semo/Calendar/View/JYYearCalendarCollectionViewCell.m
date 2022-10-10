@@ -61,7 +61,7 @@
 
 - (void)updateYearText:(NSString *)yearText monthText:(NSString *)monthText{
     self.yearLabel.text = yearText;
-    self.monthLabel.text = [NSString stringWithFormat:@"%@%@", monthText, @"月"];
+    self.monthLabel.text = [NSString stringWithFormat:@"%@%@", monthText, NSLocalizedString(@"月", nil)];
 }
 
 - (void)layoutSubviews {

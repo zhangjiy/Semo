@@ -26,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"设置";
+    self.title = NSLocalizedString(@"设置", nil);
     [self initSubviews];
 }
 
@@ -159,9 +159,9 @@
     // 设置密送人
     // [mailCompose setBccRecipients:@[@"6789@163.com"]];
     // 设置邮件主题
-    [mailCompose setSubject:@"设置邮件主题"];
+    [mailCompose setSubject:NSLocalizedString(@"设置邮件主题", nil)];
     //设置邮件的正文内容
-    NSString *emailContent = @"我是邮件内容";
+    NSString *emailContent = NSLocalizedString(@"我是邮件内容", nil);
     // 是否为HTML格式
     [mailCompose setMessageBody:emailContent isHTML:NO];
     // 如使用HTML格式，则为以下代码

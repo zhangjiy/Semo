@@ -75,7 +75,7 @@
     if (!_longPressTipLabel) {
         _longPressTipLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _longPressTipLabel.font = [UIFont systemFontOfSize:10];
-        _longPressTipLabel.text = @"长按隐藏文字";
+        _longPressTipLabel.text = NSLocalizedString(@"长按隐藏文字", nil);
         _longPressTipLabel.textColor = [UIColor lightGrayColor];
     }
     return _longPressTipLabel;
