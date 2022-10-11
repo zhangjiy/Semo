@@ -67,6 +67,7 @@
 }
 
 - (void)gotoExport {
+    return;
 //    NSArray *selectArrray = [self.calendar selectedDates];
 //    if (selectArrray.count < 2) {
 //        [LYToastTool bottomShowWithText:LY_LocalizedString(@"kLYExportErrorDate") delay:1.f];

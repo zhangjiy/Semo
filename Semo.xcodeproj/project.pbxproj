@@ -63,6 +63,9 @@
 		B46ED569281105EC000712F8 /* NSObject+ImpChangeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B46ED562281105EC000712F8 /* NSObject+ImpChangeTool.m */; };
 		B46F13A428F13E1600533D85 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B46F13A628F13E1600533D85 /* Localizable.strings */; };
 		B46F13AA28F13EE400533D85 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B46F13AC28F13EE400533D85 /* InfoPlist.strings */; };
+		B47401AB28F55BB30023A24C /* JYBackupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B47401AA28F55BB30023A24C /* JYBackupViewController.m */; };
+		B47401AE28F55BF00023A24C /* JYRecoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B47401AD28F55BF00023A24C /* JYRecoveryViewController.m */; };
+		B47401B128F55D7B0023A24C /* JYRecoverTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B47401B028F55D7B0023A24C /* JYRecoverTableViewCell.m */; };
 		B47C619A28520D2900E0097B /* UIImage+WBTDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C619828520D2800E0097B /* UIImage+WBTDraw.m */; };
 		B47C61A42853385100E0097B /* JYSettingListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C61A32853385100E0097B /* JYSettingListView.m */; };
 		B47C61A8285338CE00E0097B /* JYSettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C61A7285338CE00E0097B /* JYSettingModel.m */; };
@@ -325,6 +328,12 @@
 		B46F13A728F13E2300533D85 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B46F13AB28F13EE400533D85 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B46F13AD28F13EE500533D85 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		B47401A928F55BB30023A24C /* JYBackupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYBackupViewController.h; sourceTree = "<group>"; };
+		B47401AA28F55BB30023A24C /* JYBackupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYBackupViewController.m; sourceTree = "<group>"; };
+		B47401AC28F55BF00023A24C /* JYRecoveryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYRecoveryViewController.h; sourceTree = "<group>"; };
+		B47401AD28F55BF00023A24C /* JYRecoveryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYRecoveryViewController.m; sourceTree = "<group>"; };
+		B47401AF28F55D7B0023A24C /* JYRecoverTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYRecoverTableViewCell.h; sourceTree = "<group>"; };
+		B47401B028F55D7B0023A24C /* JYRecoverTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYRecoverTableViewCell.m; sourceTree = "<group>"; };
 		B47C619828520D2800E0097B /* UIImage+WBTDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WBTDraw.m"; sourceTree = "<group>"; };
 		B47C619928520D2900E0097B /* UIImage+WBTDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WBTDraw.h"; sourceTree = "<group>"; };
 		B47C619E2852EA6100E0097B /* JYHomeViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYHomeViewControllerProtocol.h; sourceTree = "<group>"; };
@@ -920,6 +929,10 @@
 				B4AD4C132857367E0032FF6D /* JYUserFeedBackViewController.m */,
 				B4AD4C1F28573A560032FF6D /* JYAboutUsViewController.h */,
 				B4AD4C2028573A560032FF6D /* JYAboutUsViewController.m */,
+				B47401A928F55BB30023A24C /* JYBackupViewController.h */,
+				B47401AA28F55BB30023A24C /* JYBackupViewController.m */,
+				B47401AC28F55BF00023A24C /* JYRecoveryViewController.h */,
+				B47401AD28F55BF00023A24C /* JYRecoveryViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -945,6 +958,8 @@
 				B4AD4C2328573B2A0032FF6D /* JYAboutUsListView.m */,
 				B4AD4C2528573BA50032FF6D /* JYAboutUsTableViewCell.h */,
 				B4AD4C2628573BA50032FF6D /* JYAboutUsTableViewCell.m */,
+				B47401AF28F55D7B0023A24C /* JYRecoverTableViewCell.h */,
+				B47401B028F55D7B0023A24C /* JYRecoverTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1621,6 +1636,7 @@
 				B4AD4C3428575E300032FF6D /* NSString+WBTSize.m in Sources */,
 				B4E7FA7627F6C42D00604F5E /* ZHDrawingArrowLayer.m in Sources */,
 				B4E7FA6B27F6C42D00604F5E /* ZHDrawingDottedlineLayer.m in Sources */,
+				B47401AE28F55BF00023A24C /* JYRecoveryViewController.m in Sources */,
 				B4D9640B2817A32100FBE518 /* JYTabbarViewController.m in Sources */,
 				B4E7FA7427F6C42D00604F5E /* ZHDrawingGraffitiLayer.m in Sources */,
 				B4EC077027DF01D000CB0877 /* JYRecordMoodListCollectionViewCell.m in Sources */,
@@ -1648,6 +1664,7 @@
 				B4A90C6427E62D2D0085CAC4 /* JYRecordPaintingStyleCollectionViewCell.m in Sources */,
 				B4AC37F127DCC41100529722 /* JYMonthCalendarCollectionViewCell.m in Sources */,
 				B4E7FA7227F6C42D00604F5E /* ZHDrawingArcLayer.m in Sources */,
+				B47401AB28F55BB30023A24C /* JYBackupViewController.m in Sources */,
 				B4EA2C0D27E74E8800779793 /* PaintingPreview.swift in Sources */,
 				B4609CB727E995BF009BC2A5 /* JYPopupMenuOverlayView.m in Sources */,
 				B4D9641F2818DA6400FBE518 /* JYHomeTopView.m in Sources */,
@@ -1719,6 +1736,7 @@
 				B4EC077427DF07D800CB0877 /* JYSealMoodPassView.m in Sources */,
 				B4E7FA7927F6C42D00604F5E /* ZHDrawingPentagonLayer.m in Sources */,
 				B41AC74027D71EBB00CDF4AB /* JYMoodModel.m in Sources */,
+				B47401B128F55D7B0023A24C /* JYRecoverTableViewCell.m in Sources */,
 				B490453327F00BE7005A265A /* JYPopupStyleMenuListView.m in Sources */,
 				B4AD4C0E2856E6410032FF6D /* JYHelpCenterTableViewCell.m in Sources */,
 				B4609CE027EB3CE1009BC2A5 /* JYColorSlider.m in Sources */,
