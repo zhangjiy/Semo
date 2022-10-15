@@ -90,6 +90,7 @@
 		B49B13E42863092100BBE6BF /* CEHorizontalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B13D42863092100BBE6BF /* CEHorizontalSwipeInteractionController.m */; };
 		B49B13E52863092100BBE6BF /* CEVerticalSwipeInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B13D52863092100BBE6BF /* CEVerticalSwipeInteractionController.m */; };
 		B49B13E828630F6100BBE6BF /* JYMoodSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49B13E728630F6100BBE6BF /* JYMoodSelectViewController.m */; };
+		B4A07B9A28FA83EE00184BF0 /* ICACloud.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A07B9928FA83EE00184BF0 /* ICACloud.m */; };
 		B4A90C5927E415F10085CAC4 /* JYGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C5827E415F10085CAC4 /* JYGridView.m */; };
 		B4A90C5E27E6168E0085CAC4 /* JYRecordMoodBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C5D27E6168E0085CAC4 /* JYRecordMoodBottomView.m */; };
 		B4A90C6127E62AE50085CAC4 /* JYRecordPaintingListView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A90C6027E62AE50085CAC4 /* JYRecordPaintingListView.m */; };
@@ -386,6 +387,9 @@
 		B49B13D62863092100BBE6BF /* CEPinchInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEPinchInteractionController.h; sourceTree = "<group>"; };
 		B49B13E628630F6100BBE6BF /* JYMoodSelectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYMoodSelectViewController.h; sourceTree = "<group>"; };
 		B49B13E728630F6100BBE6BF /* JYMoodSelectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYMoodSelectViewController.m; sourceTree = "<group>"; };
+		B4A07B9828FA83EE00184BF0 /* ICACloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICACloud.h; sourceTree = "<group>"; };
+		B4A07B9928FA83EE00184BF0 /* ICACloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICACloud.m; sourceTree = "<group>"; };
+		B4A07B9F28FAA12200184BF0 /* Semo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Semo.entitlements; sourceTree = "<group>"; };
 		B4A90C5727E415F10085CAC4 /* JYGridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYGridView.h; sourceTree = "<group>"; };
 		B4A90C5827E415F10085CAC4 /* JYGridView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYGridView.m; sourceTree = "<group>"; };
 		B4A90C5C27E6168E0085CAC4 /* JYRecordMoodBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYRecordMoodBottomView.h; sourceTree = "<group>"; };
@@ -663,6 +667,7 @@
 		B41AC6E027D5A69F00CDF4AB /* Semo */ = {
 			isa = PBXGroup;
 			children = (
+				B4A07B9F28FAA12200184BF0 /* Semo.entitlements */,
 				B4EA2C1327E7598500779793 /* Textures */,
 				B41AC71C27D5AA9C00CDF4AB /* Helper */,
 				B4EA2C0E27E7522C00779793 /* Base */,
@@ -714,6 +719,7 @@
 		B41AC71C27D5AA9C00CDF4AB /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				B4A07B9728FA83CB00184BF0 /* Icloud */,
 				B49B13B72863092100BBE6BF /* AnimationControllers */,
 				B49B13CE2863092100BBE6BF /* InteractionControllers */,
 				B4B8626B2861612800D90F4A /* MBSwitch.h */,
@@ -1019,6 +1025,15 @@
 				B49B13D62863092100BBE6BF /* CEPinchInteractionController.h */,
 			);
 			path = InteractionControllers;
+			sourceTree = "<group>";
+		};
+		B4A07B9728FA83CB00184BF0 /* Icloud */ = {
+			isa = PBXGroup;
+			children = (
+				B4A07B9828FA83EE00184BF0 /* ICACloud.h */,
+				B4A07B9928FA83EE00184BF0 /* ICACloud.m */,
+			);
+			path = Icloud;
 			sourceTree = "<group>";
 		};
 		B4AC37A327DC782700529722 /* Seal */ = {
@@ -1707,6 +1722,7 @@
 				B4B8626D2861612900D90F4A /* MBSwitch.m in Sources */,
 				B4E7FA8627F865DF00604F5E /* XDVerticalGradientColorSlider.m in Sources */,
 				B4EA2C0927E74E0000779793 /* MathUtils.swift in Sources */,
+				B4A07B9A28FA83EE00184BF0 /* ICACloud.m in Sources */,
 				B4E7FA7327F6C42D00604F5E /* ZHDrawingCosineLayer.m in Sources */,
 				B49B13E52863092100BBE6BF /* CEVerticalSwipeInteractionController.m in Sources */,
 				B4A90C6127E62AE50085CAC4 /* JYRecordPaintingListView.m in Sources */,
@@ -1939,10 +1955,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Semo/Semo.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5XWZB6V6UY;
+				DEVELOPMENT_TEAM = FDA79PS86R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Semo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1954,7 +1971,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jiyang.Semo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiyang.semord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1973,10 +1990,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Semo/Semo.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5XWZB6V6UY;
+				DEVELOPMENT_TEAM = FDA79PS86R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Semo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1988,7 +2006,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jiyang.Semo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiyang.semord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

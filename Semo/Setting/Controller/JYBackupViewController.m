@@ -7,6 +7,10 @@
 
 #import "JYBackupViewController.h"
 #import "JYRecoveryViewController.h"
+#import "MBProgressHUD.h"
+#import "JYMoodDate.h"
+#import "JYMonthMood.h"
+#import "ICACloud.h"
 #import "JYPrefixHeader.h"
 
 @interface JYBackupViewController ()
@@ -115,7 +119,81 @@
 }
 
 - (void)backupButtonAction:(UIButton *)sender {
+//    NSArray *selectArrray = [self.calendar selectedDates];
+//    if (selectArrray.count < 2) {
+//        [LYToastTool bottomShowWithText:LY_LocalizedString(@"kLYExportErrorDate") delay:1.f];
+//        return ;
+//    }
     
+    NSArray *yearArrray = @[@"2022", @"2023", @"2024", @"2025"];
+    NSArray *monthArrray = @[@"01", @"02", @"03", @"04", @"05", @"06", @"07", @"08", @"09", @"10", @"11", @"12"];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    __block NSMutableArray *resultArray = [NSMutableArray array];
+    [yearArrray enumerateObjectsUsingBlock:^(NSString * year, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSString *tableName = [NSString stringWithFormat:@"%@_%@", @"TableName", year];
+        if ([JYMonthMood bg_isExistForTableName:tableName]) {
+            [monthArrray enumerateObjectsUsingBlock:^(NSString * month, NSUInteger idx, BOOL * _Nonnull stop) {
+                NSString *name = [NSString stringWithFormat:@"%@_%@", year, month];
+                NSString *where = [NSString stringWithFormat:@"where %@=%@", bg_sqlKey(@"name"), bg_sqlValue(name)];
+                NSArray *array = [JYMonthMood bg_find:tableName where:where];
+                if (array.count > 0) {
+                    [resultArray addObjectsFromArray:array];
+                }
+            }];
+        }
+        if ([[yearArrray lastObject] isEqual:year]) {
+            [hud hideAnimated:YES];
+        }
+    }];
+
+    if (!resultArray.count) {
+        [hud showAnimated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.label.text = @"empt";
+        [hud hideAnimated:YES afterDelay:2.f];
+        
+    } else {
+        NSError *error = nil;
+        NSString * path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"moods.csv"];
+        [[resultArray componentsJoinedByString:@","] writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:&error];
+        NSArray *urls = @[[NSURL fileURLWithPath:path]];
+    
+        
+        ICACloud *cloud = [[ICACloud alloc] initWithUbiquityContainerIdentifier:@"XXXXXXXXXX.com.mycompany.cloudtest"
+            rootDirectoryPath:@"Path/To/Data/Root"];
+        if (cloud.isConnected) {
+            [cloud createDirectoryAtPath:@"Subdirectory" completion:^(NSError *error) {
+                if (error) {
+                  NSLog(@"Failed to create subdirectory");
+                  return;
+                }
+                
+                [cloud uploadLocalFile:@"/Users/me/Downloads/LocalImage.png"
+                  toPath:@"Subdirectory/CloudImage.png"
+                  completion:^(NSError *error) {
+                  if (error) NSLog(@"Failed to upload: %@", error);
+              }];
+          }];
+        }
+        
+        
+//        UIActivityViewController *activituVC = [[UIActivityViewController alloc]initWithActivityItems:urls applicationActivities:nil];
+//        NSArray *cludeActivitys = @[
+//                                  UIActivityTypePostToVimeo,
+//                                  UIActivityTypeMessage,
+//                                  UIActivityTypeMail,
+//                                  UIActivityTypeCopyToPasteboard,
+//                                  UIActivityTypePrint,
+//                                  UIActivityTypeAssignToContact,
+//                                  UIActivityTypeSaveToCameraRoll,
+//                                  UIActivityTypeAddToReadingList,
+//                                  UIActivityTypePostToFlickr,
+//                                  UIActivityTypePostToTencentWeibo];
+//        activituVC.excludedActivityTypes = cludeActivitys;
+//        //显示分享窗口
+//        [self presentViewController:activituVC animated:YES completion:nil];
+    }
 }
 
 - (void)recoverButtonAction:(UIButton *)sender {
