@@ -8,39 +8,39 @@
 
 CFBundleName = "Semo";
 
-"喜" = "Joy"
-"怒" = "Anger"
-"忧" = "Worry"
-"思" = "Miss"
-"悲" = "Sad"
-"恐" = "Fear"
-"惊" = "Shock"
+"喜" = "Joy";
+"怒" = "Anger";
+"忧" = "Worry";
+"思" = "Miss";
+"悲" = "Sad";
+"恐" = "Fear";
+"惊" = "Shock";
 
-"月" = "M"
+"月" = "M";
 
-"长按隐藏文字" = "Long press to hide text"
-"选个模板吧" = "Choose a template"
-"线条宽度" = "Line width"
-"线条颜色" = "Line color"
-"画笔类型" = "Brush type"
+"长按隐藏文字" = "Long press to hide text";
+"选个模板吧" = "Choose a template";
+"线条宽度" = "Line width";
+"线条颜色" = "Line color";
+"画笔类型" = "Brush type";
 
-"设置" = "Setting"
-"备份与恢复" = "Backup and recovery"
-"好评鼓励" "Praise and encouragement"
-"帮助中心" = "Help Center"
-"意见反馈" = "Feedback"
-"设置邮件主题" = "Set Message Subject"
-"我是邮件内容" = "I am the mail content"
-"关于我们" = "About us"
+"设置" = "Setting";
+"备份与恢复" = "Backup and recovery";
+"好评鼓励" = "Praise and encouragement";
+"帮助中心" = "Help Center";
+"意见反馈" = "Feedback";
+"设置邮件主题" = "Set Message Subject";
+"我是邮件内容" = "I am the mail content";
+"关于我们" = "About us";
 
-"你能看到我的心情记录么？" = "Can you see my mood record?"
-"不能！七情非常非常重视大家的隐私，因此所有的数据都是存在你的手机里，包括我在内的任何人都不能看到你的心情记录。" = "No! Semo attaches great importance to everyone's privacy, so all the data are stored in your mobile phone, and no one, including me, can see your mood records."
-"我可以一天记录多个心情么？" = "Can I record multiple moods in one day?"
-"可以！直接点击 + 号，就可以继续创作当天的心情。" = "Sure! Click the+sign directly to continue to create the mood of the day."
+"你能看到我的心情记录么？" = "Can you see my mood record?";
+"不能！七情非常非常重视大家的隐私，因此所有的数据都是存在你的手机里，包括我在内的任何人都不能看到你的心情记录。" = "No! Semo attaches great importance to everyone's privacy, so all the data are stored in your mobile phone, and no one, including me, can see your mood records.";
+"我可以一天记录多个心情么？" = "Can I record multiple moods in one day?";
+"可以！直接点击 + 号，就可以继续创作当天的心情。" = "Sure! Click the+sign directly to continue to create the mood of the day.";
 
-"产品理念" = "Product concept"
-"简单有趣的记录你的心情" = "Record your mood simply and interestingly"
-"出品团队" = "Production team"
-"七情由张吉阳个人制作出品。致力于倾听客户心声、持续创造价值，正在开心的探索无线可能。请期待我更多的作品，感谢支持。" = "Semo is made by Zhang Jiyang. Committed to listening to customers and creating value continuously, we are happily exploring wireless possibilities. Please look forward to my more works, thank you for your support."
-"任何有意思的想法，欢迎随时召唤我" = "Any interesting idea, please call me at any time"
+"产品理念" = "Product concept";
+"简单有趣的记录你的心情" = "Record your mood simply and interestingly";
+"出品团队" = "Production team";
+"七情由张吉阳个人制作出品。致力于倾听客户心声、持续创造价值，正在开心的探索无线可能。请期待我更多的作品，感谢支持。" = "Semo is made by Zhang Jiyang. Committed to listening to customers and creating value continuously, we are happily exploring wireless possibilities. Please look forward to my more works, thank you for your support.";
+"任何有意思的想法，欢迎随时召唤我" = "Any interesting idea, please call me at any time";
 
