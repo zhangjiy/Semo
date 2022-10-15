@@ -50,7 +50,7 @@
     _titleLabel.centerY = self.containerView.height / 2.f;
     
     _arrowButton.size = CGSizeMake(27, 51);
-    _arrowButton.right = self.width;
+    _arrowButton.right = self.width - 5;
     _arrowButton.centerY = self.containerView.height / 2.f;
     
     _switchButton.size = CGSizeMake(20, 20);
@@ -65,6 +65,7 @@
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        _titleLabel.font = [UIFont systemFontOfSize:15];
     }
     return _titleLabel;
 }

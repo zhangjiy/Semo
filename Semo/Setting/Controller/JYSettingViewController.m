@@ -10,6 +10,7 @@
 #import <MessageUI/MessageUI.h>
 #import "JYSettingListView.h"
 #import "JYSettingModel.h"
+#import "JYBackupViewController.h"
 #import "JYHelpCenterViewController.h"
 #import "JYUserFeedBackViewController.h"
 #import "JYAboutUsViewController.h"
@@ -27,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"设置", nil);
+    self.view.backgroundColor = SMHomeBackgroudColor;
     [self initSubviews];
 }
 
@@ -67,6 +69,8 @@
 }
 
 - (void)gotoExport {
+    JYBackupViewController *vc = [[JYBackupViewController alloc] init];
+    [self presentViewController:vc animated:YES completion:nil];
     return;
 //    NSArray *selectArrray = [self.calendar selectedDates];
 //    if (selectArrray.count < 2) {

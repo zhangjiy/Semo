@@ -47,8 +47,8 @@ static NSString *const kJYSettingTableViewCell = @"kJYSettingTableViewCell";
 //        JYSettingModel *modelSelction0 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeSection];
 //        modelSelction0.backgoundColor = [UIColor grayColor];
         
-        JYSettingModel *model0 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeSection];
-        model0.backgoundColor = [UIColor lightGrayColor];
+//        JYSettingModel *model0 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeSection];
+//        model0.backgoundColor = [UIColor lightGrayColor];
         
         JYSettingModel *model2 = [[JYSettingModel alloc] initWithType:JYSettingItemTypeExport];
         model2.title = NSLocalizedString(@"备份与恢复", nil);
@@ -78,7 +78,7 @@ static NSString *const kJYSettingTableViewCell = @"kJYSettingTableViewCell";
         model6.icon = @"ico_setting_arrow.png";
         model6.rightViewType = JYSettingRightViewTypeArrow;
         
-        self.settings = @[model0, model2, model3, model4, model5, model6];
+        self.settings = @[model2, model3, model4, model5, model6];
     }
     
     return self;
@@ -99,7 +99,7 @@ static NSString *const kJYSettingTableViewCell = @"kJYSettingTableViewCell";
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.showsVerticalScrollIndicator = NO;
-        //_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.backgroundColor = [UIColor clearColor];
         [_tableView registerClass:[JYSettingTableViewCell class] forCellReuseIdentifier:kJYSettingTableViewCell];
     }

@@ -23,6 +23,7 @@ static NSString *const kJYRecoveryTableViewCell = @"kJYRecoveryTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = SMHomeBackgroudColor;
     [self initSubViews];
 }
 
@@ -64,6 +65,8 @@ static NSString *const kJYRecoveryTableViewCell = @"kJYRecoveryTableViewCell";
 - (UIButton *)recoverButton {
     if (!_recoverButton) {
         _recoverButton = [[UIButton alloc] initWithFrame:CGRectZero];
+        [_recoverButton setTitleColor:[UIColor colorWithRed:218/255.f green:88/255.f blue:78/255.f alpha:1.f] forState:UIControlStateNormal];
+        _recoverButton.titleLabel.font = [UIFont systemFontOfSize:15];
         [_recoverButton setTitle:NSLocalizedString(@"恢复", nil) forState:UIControlStateNormal];
         [_recoverButton addTarget:self action:@selector(recoverButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -86,6 +89,7 @@ static NSString *const kJYRecoveryTableViewCell = @"kJYRecoveryTableViewCell";
 - (UIButton *)closeButton {
     if (!_closeButton) {
         _closeButton = [[UIButton alloc] initWithFrame:CGRectZero];
+        [_closeButton setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
         [_closeButton addTarget:self action:@selector(closeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     
@@ -97,7 +101,7 @@ static NSString *const kJYRecoveryTableViewCell = @"kJYRecoveryTableViewCell";
 }
 
 - (void)closeButtonAction:(UIButton *)sender {
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate

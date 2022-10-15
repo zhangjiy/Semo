@@ -12,7 +12,7 @@
 - (instancetype)initWithType:(JYAboutUsItemType)type {
     if (self = [super init]) {
         _type = type;
-        _backgoundColor = [UIColor whiteColor];
+        _backgoundColor = [UIColor clearColor];
     }
     
     return self;
