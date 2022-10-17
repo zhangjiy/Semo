@@ -7,7 +7,6 @@
 
 #import "JYDetailMoodTableViewCell.h"
 #import "JYMoodView.h"
-#import "JYMoodModel.h"
 #import "JYPrefixHeader.h"
 
 @interface JYDetailMoodTableViewCell ()

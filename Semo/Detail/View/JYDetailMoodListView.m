@@ -7,7 +7,6 @@
 
 #import "JYDetailMoodListView.h"
 #import "JYDetailMoodTableViewCell.h"
-#import "JYMoodModel.h"
 #import "JYPrefixHeader.h"
 
 static NSString *const kJYDetailMoodTableViewCell = @"kJYDetailMoodTableViewCell";

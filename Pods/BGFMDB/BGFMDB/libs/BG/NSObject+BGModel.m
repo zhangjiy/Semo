@@ -283,6 +283,18 @@
     [[BGDB shareManager] closeDB];
     return results;
 }
++(NSArray* _Nullable)bg_findSqlData:(NSString* _Nullable)tablename where:(NSString* _Nullable)where{
+    if(tablename == nil) {
+        tablename = NSStringFromClass([self class]);
+    }
+    __block NSArray* results;
+    [[BGDB shareManager] queryWithTableName:tablename conditions:where complete:^(NSArray * _Nullable array) {
+        results = array;
+    }];
+    //关闭数据库
+    [[BGDB shareManager] closeDB];
+    return results;
+}
 /**
  同上条件异步.
  */

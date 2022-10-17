@@ -7,6 +7,11 @@
 
 #import "JYRecoveryViewController.h"
 #import "JYRecoverTableViewCell.h"
+#import "iCloud.h"
+#import "JYICloudModel.h"
+#import "JYMonthMood.h"
+#import "JYICloudFileModel.h"
+#import "MBProgressHUD.h"
 #import "JYPrefixHeader.h"
 
 static NSString *const kJYRecoveryTableViewCell = @"kJYRecoveryTableViewCell";
@@ -25,6 +30,7 @@ static NSString *const kJYRecoveryTableViewCell = @"kJYRecoveryTableViewCell";
     [super viewDidLoad];
     self.view.backgroundColor = SMHomeBackgroudColor;
     [self initSubViews];
+    [self fetchData];
 }
 
 - (void)viewWillLayoutSubviews {
@@ -60,6 +66,37 @@ static NSString *const kJYRecoveryTableViewCell = @"kJYRecoveryTableViewCell";
     }
     
     return _titleLabel;
+}
+
+- (void)fetchData {
+    if ([[iCloud sharedCloud] checkCloudAvailability]) {
+        NSArray *files = [[iCloud sharedCloud] listCloudFiles];
+        NSMutableArray *mutableArray = [NSMutableArray array];
+        for (NSString *file in files) {
+            NSString *dot = [file stringByDeletingLastPathComponent];
+            if ([dot containsString:@"semo"]) {
+                NSString *tildeInPath = [file stringByAbbreviatingWithTildeInPath];
+                NSArray *arr = [tildeInPath componentsSeparatedByString:@","];
+                JYICloudFileModel *fileModel = [[JYICloudFileModel alloc] init];
+                fileModel.name = arr.firstObject;
+                fileModel.moodCount = [[arr objectAtIndex:1] integerValue];
+                [mutableArray addObject:fileModel];
+            }
+//            [[iCloud sharedCloud] retrieveCloudDocumentWithName:@"Name10.ext" completion:^(UIDocument *cloudDocument, NSData *documentData, NSError *error) {
+//                NSError *arerror = nil;
+//                JYICloudModel *cloudModel = [NSKeyedUnarchiver unarchivedObjectOfClass:JYICloudModel.class fromData:documentData error:&arerror];
+//                [hud hideAnimated:YES];
+//            }];
+        }
+        self.moods = [mutableArray copy];
+        [self.moodsTableView reloadData];
+    } else {
+        MBProgressHUD *hud = [[MBProgressHUD alloc] init];
+        [hud showAnimated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.label.text = NSLocalizedString(@"iCloud 不可用", nil);
+        [hud hideAnimated:YES afterDelay:2.f];
+    }
 }
 
 - (UIButton *)recoverButton {

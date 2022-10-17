@@ -65,8 +65,8 @@
         _needRequestingBoundingDates = NO;
         NSDate *maxDate = _today.date;
         maxDate = [self.gregorian startOfDayForDate:maxDate];
-        
-        NSDate *minDate = [self getPriousorLaterDateFromDate:maxDate withMonth:-MonthsAgo];
+        NSDate *minDate = [self.formatter dateFromString:[NSString stringWithFormat:@"%ld%@", OriginYear, @"-01-01"]];
+        //NSDate *minDate = [self getPriousorLaterDateFromDate:maxDate withMonth:-MonthsAgo];
         minDate = [self.gregorian startOfDayForDate:minDate];
         
         NSAssert([self.gregorian compareDate:minDate toDate:maxDate toUnitGranularity:NSCalendarUnitDay] != NSOrderedDescending, @"The minimum date of calendar should be earlier than the maximum.");
@@ -139,3 +139,24 @@
 }
 
 @end
+
+extern NSArray * JYYears(void) {
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    [formatter setDateFormat:@"yyyy"];
+    NSInteger currentYear= [[formatter stringFromDate:date] integerValue];
+    if (currentYear < OriginYear) {
+        return nil;
+    }
+    NSMutableArray *mutableArray = [NSMutableArray array];
+    for (int i = OriginYear; i <= currentYear; i ++) {
+        [mutableArray addObject:[NSString stringWithFormat:@"%d", i]];
+    }
+    
+    return [mutableArray copy];
+}
+
+extern NSArray * JYMonths(void) {
+    return @[@"01", @"02", @"03", @"04", @"05", @"06", @"07", @"08", @"09", @"10", @"11", @"12"];
+}

@@ -10,5 +10,6 @@
 #define BGFMDB_h
 
 #import "NSObject+BGModel.h"
+#import "BGTool.h"
 
 #endif /* BGFMDB_h */

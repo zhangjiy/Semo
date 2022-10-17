@@ -67,7 +67,7 @@ open class JYCircleMenuView: UIView, CircleMenuDelegate {
           normalIcon:"",
           selectedIcon:"story_publish_icon_close",
           buttonsCount: 7,
-            duration: 1,
+            duration: 0.5,
           distance: distance)
         menuButton.delegate = self
         menuButton.layer.cornerRadius = menuButton.frame.size.width / 2.0

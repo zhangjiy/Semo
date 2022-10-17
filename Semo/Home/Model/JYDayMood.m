@@ -6,6 +6,9 @@
 //
 
 #import "JYDayMood.h"
+#import "MJExtension.h"
+
+MJSecureCodingImplementation(JYDayMood, YES)
 
 @implementation JYDayMood
 
@@ -42,7 +45,7 @@
             jing ++;
         }
     }
-    
+
     return @[@(xi), @(nu), @(you), @(si), @(bei), @(kong), @(jing)];
 }
 

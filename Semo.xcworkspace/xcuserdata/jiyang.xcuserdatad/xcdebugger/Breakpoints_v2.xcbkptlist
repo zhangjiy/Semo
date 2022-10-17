@@ -179,23 +179,104 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9CCFB5F7-1BD1-4539-BFE7-A9AFA7D42CF6"
+            uuid = "385F188E-531E-4118-A58A-17DF0C56D0D4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Semo/Home/Controller/JYMoodHomeViewController.m"
+            filePath = "Pods/MJExtension/MJExtension/NSObject+MJKeyValue.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "-circleMenuView:buttonDidSelected:atIndex:"
+            startingLineNumber = "456"
+            endingLineNumber = "456"
+            landmarkName = "+mj_keyValuesArrayWithObjectArray:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F133AAB3-AE00-45CB-867B-EDA6F2AE7729"
+            uuid = "64E4E4F7-2B49-43A6-885E-8345CE632A19"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/MJExtension/MJExtension/NSObject+MJKeyValue.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "472"
+            endingLineNumber = "472"
+            landmarkName = "+mj_keyValuesArrayWithObjectArray:keys:ignoredKeys:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "64E4E4F7-2B49-43A6-885E-8345CE632A19 - d3010dc9746ff291"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[NSObject(MJKeyValue) mj_keyValuesArrayWithObjectArray:keys:ignoredKeys:]"
+                  moduleName = "MJExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiyang/Movies/Semo/Pods/MJExtension/MJExtension/NSObject+MJKeyValue.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "472"
+                  endingLineNumber = "472"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "64E4E4F7-2B49-43A6-885E-8345CE632A19 - d3010dc9746ff291"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[NSObject(MJKeyValue) mj_keyValuesArrayWithObjectArray:keys:ignoredKeys:]"
+                  moduleName = "MJExtension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jiyang/Movies/Semo/Pods/MJExtension/MJExtension/NSObject+MJKeyValue.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "472"
+                  endingLineNumber = "472"
+                  offsetFromSymbolStart = "196">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "15D88EBE-13FE-408A-82A2-B0226531BC79"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/MJExtension/MJExtension/NSObject+MJKeyValue.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "477"
+            endingLineNumber = "477"
+            landmarkName = "+mj_keyValuesArrayWithObjectArray:keys:ignoredKeys:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5D964846-FEA1-471E-B9AA-0D34098CAE56"
+            shouldBeEnabled = "Yes"
+            condition = "array.count &gt; 0"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/BGFMDB/BGFMDB/libs/BG/NSObject+BGModel.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "280"
+            endingLineNumber = "280"
+            landmarkName = "+bg_find:where:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DB1A9ED6-F7AD-493E-BD88-57E4E7767826"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -204,38 +285,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "165"
             endingLineNumber = "165"
-            landmarkName = "-backupButtonAction:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E614B948-DEA8-43C3-A335-1C40DAA0BB48"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Semo/Setting/Controller/JYBackupViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "-backupButtonAction:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9CDC1859-9128-4B18-873D-BD6DDD5C4C2D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Semo/Setting/Controller/JYBackupViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
             landmarkName = "-backupButtonAction:"
             landmarkType = "7">
          </BreakpointContent>

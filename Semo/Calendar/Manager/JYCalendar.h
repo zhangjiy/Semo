@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 static NSInteger const MonthsAgo = 11;
+static NSInteger const OriginYear = 2022;
 
 typedef NS_ENUM(NSUInteger, JYCalendarScope) {
     JYCalendarScopeMonth,
@@ -45,5 +46,8 @@ typedef NS_ENUM(NSUInteger, JYCalendarPlaceholderType) {
 - (void)adjustMonthPosition;
 - (void)endScroll:(NSInteger)index;
 @end
+
+extern NSArray * JYYears(void);
+extern NSArray * JYMonths(void);
 
 NS_ASSUME_NONNULL_END

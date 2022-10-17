@@ -7,6 +7,8 @@
 
 #import "JYMonthMood.h"
 
+MJSecureCodingImplementation(JYMonthMood, YES)
+
 @implementation JYMonthMood
 
 - (instancetype)initWithTableName:(NSString *)tableName name:(NSString *)name {
@@ -53,6 +55,16 @@
     
     _dayMoodDict = [tempDict copy];
     [self bg_saveOrUpdate];
+}
+
+- (NSInteger)moodCount {
+    NSInteger count = 0;
+    for (NSString *key in self.dayMoodDict.allKeys) {
+        JYDayMood *dayMood = [self.dayMoodDict valueForKey:key];
+        count += dayMood.moods.count;
+    }
+    
+    return count;
 }
 
 @end

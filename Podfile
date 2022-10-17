@@ -2,6 +2,7 @@ target 'Semo' do
     use_frameworks!
     pod 'MaLiang'
     pod 'BGFMDB'
+    pod 'MJExtension'
     pod 'Zip'
     pod 'SDWebImage'
     pod 'CYLTabBarController'

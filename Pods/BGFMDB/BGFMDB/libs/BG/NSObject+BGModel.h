@@ -201,7 +201,7 @@ NSMutableData,UIImage,NSDate,NSURL,NSRange,CGRect,CGSize,CGPoint,自定义对象
  2017-07-19 16:17:53.350 即查询2017年7月19日16时17分53秒350毫秒的数据
  */
 +(NSArray* _Nullable)bg_find:(NSString* _Nullable)tablename type:(bg_dataTimeType)type dateTime:(NSString* _Nonnull)dateTime;
-
++(NSArray* _Nullable)bg_findSqlData:(NSString* _Nullable)tablename where:(NSString* _Nullable)where;
 /**
  支持keyPath.
  @where 条件参数,不能为nil.
