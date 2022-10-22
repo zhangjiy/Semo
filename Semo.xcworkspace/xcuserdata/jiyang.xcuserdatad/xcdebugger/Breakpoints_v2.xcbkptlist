@@ -259,33 +259,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5D964846-FEA1-471E-B9AA-0D34098CAE56"
-            shouldBeEnabled = "Yes"
-            condition = "array.count &gt; 0"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/BGFMDB/BGFMDB/libs/BG/NSObject+BGModel.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "280"
-            endingLineNumber = "280"
-            landmarkName = "+bg_find:where:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DB1A9ED6-F7AD-493E-BD88-57E4E7767826"
+            uuid = "13BF084B-C89A-4644-99B8-AAAD85E3B175"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Semo/Setting/Controller/JYBackupViewController.m"
+            filePath = "Semo/Helper/iCloud/iCloud.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
-            landmarkName = "-backupButtonAction:"
+            startingLineNumber = "393"
+            endingLineNumber = "393"
+            landmarkName = "-saveAndCloseDocumentWithName:withContent:completion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

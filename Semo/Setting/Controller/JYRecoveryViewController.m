@@ -22,6 +22,7 @@ static NSString *const kJYRecoveryTableViewCell = @"kJYRecoveryTableViewCell";
 @property (nonatomic, strong) UITableView *moodsTableView;
 @property (nonatomic, strong) UIButton *closeButton;
 @property (nonatomic, strong) NSArray *moods;
+@property (nonatomic, strong) NSIndexPath *selectedIndexPath;
 @end
 
 @implementation JYRecoveryViewController
@@ -48,7 +49,8 @@ static NSString *const kJYRecoveryTableViewCell = @"kJYRecoveryTableViewCell";
     _closeButton.centerX = self.view.width / 2.f;
     _closeButton.bottom = self.view.height - (SafeAreaHeight + 20);
     
-    _moodsTableView.size = CGSizeMake(self.view.width, self.view.height - 70 - 20 - _closeButton.top);
+    _moodsTableView.size = CGSizeMake(self.view.width, self.view.height - 70 - 50 - (SafeAreaHeight + 20));
+    _moodsTableView.top = _titleLabel.bottom + 20;
     _moodsTableView.centerX = self.view.width / 2.f;
 }
 
@@ -72,21 +74,28 @@ static NSString *const kJYRecoveryTableViewCell = @"kJYRecoveryTableViewCell";
     if ([[iCloud sharedCloud] checkCloudAvailability]) {
         NSArray *files = [[iCloud sharedCloud] listCloudFiles];
         NSMutableArray *mutableArray = [NSMutableArray array];
-        for (NSString *file in files) {
-            NSString *dot = [file stringByDeletingLastPathComponent];
-            if ([dot containsString:@"semo"]) {
-                NSString *tildeInPath = [file stringByAbbreviatingWithTildeInPath];
-                NSArray *arr = [tildeInPath componentsSeparatedByString:@","];
+        NSString *newTime = @"0";
+        NSInteger index = 0;
+        for (NSURL *url in files) {
+            NSString *file = url.absoluteString;
+            NSString *fileName = [file lastPathComponent];
+            if ([fileName containsString:@"semo"]) {
+                NSArray *arr = [fileName componentsSeparatedByString:@"_"];
                 JYICloudFileModel *fileModel = [[JYICloudFileModel alloc] init];
-                fileModel.name = arr.firstObject;
-                fileModel.moodCount = [[arr objectAtIndex:1] integerValue];
-                [mutableArray addObject:fileModel];
+                fileModel.fileName = fileName;
+                fileModel.moodCount = [arr.lastObject integerValue];
+                fileModel.time = arr.firstObject;
+                NSString *time = [fileModel.time stringByReplacingOccurrencesOfString:@"-" withString:@""];
+                time = [time stringByReplacingOccurrencesOfString:@":" withString:@""];
+                time = [time stringByReplacingOccurrencesOfString:@"+" withString:@""];
+                if ([time integerValue] > [newTime integerValue]) {
+                    newTime = time;
+                    index = [files indexOfObject:url];
+                    [mutableArray insertObject:fileModel atIndex:0];
+                } else {
+                    [mutableArray addObject:fileModel];
+                }
             }
-//            [[iCloud sharedCloud] retrieveCloudDocumentWithName:@"Name10.ext" completion:^(UIDocument *cloudDocument, NSData *documentData, NSError *error) {
-//                NSError *arerror = nil;
-//                JYICloudModel *cloudModel = [NSKeyedUnarchiver unarchivedObjectOfClass:JYICloudModel.class fromData:documentData error:&arerror];
-//                [hud hideAnimated:YES];
-//            }];
         }
         self.moods = [mutableArray copy];
         [self.moodsTableView reloadData];
@@ -134,7 +143,20 @@ static NSString *const kJYRecoveryTableViewCell = @"kJYRecoveryTableViewCell";
 }
 
 - (void)recoverButtonAction:(UIButton *)sender {
-    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    if (!self.selectedIndexPath) {
+        [hud showAnimated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.label.text = NSLocalizedString(@"选择要恢复的数据", nil);;
+        [hud hideAnimated:YES afterDelay:2.f];
+        return;
+    }
+    JYICloudFileModel *fileModel = self.moods[self.selectedIndexPath.row];
+    [[iCloud sharedCloud] retrieveCloudDocumentWithName:fileModel.fileName completion:^(UIDocument *cloudDocument, NSData *documentData, NSError *error) {
+        NSError *arerror = nil;
+        [NSKeyedUnarchiver unarchivedObjectOfClass:JYICloudModel.class fromData:documentData error:&arerror];
+        [hud hideAnimated:YES];
+    }];
 }
 
 - (void)closeButtonAction:(UIButton *)sender {
@@ -148,25 +170,36 @@ static NSString *const kJYRecoveryTableViewCell = @"kJYRecoveryTableViewCell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-
     return 70;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     JYRecoverTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kJYRecoveryTableViewCell forIndexPath:indexPath];
+    JYICloudFileModel *fileModel = self.moods[indexPath.row];
+    if (self.selectedIndexPath && indexPath.row == self.selectedIndexPath.row) {
+        fileModel.selected = YES;
+    } else {
+        fileModel.selected = NO;
+    }
+    fileModel.index = (indexPath.row + 1);
+    cell.fileModel = fileModel;
     cell.delegate = self;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
 }
 
 #pragma mark = JYRecoverTableViewCellDelegate
 
 - (void)recoverTableViewCell:(JYRecoverTableViewCell *)cell didSelectAction:(UIButton *)sender {
-    
+    NSIndexPath *indexPath = [self.moodsTableView indexPathForCell:cell];
+    self.selectedIndexPath = indexPath;
+    [self.moodsTableView reloadData];
 }
 
 @end
+

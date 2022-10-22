@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JYICloudFileModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JYRecoverTableViewCell : UITableViewCell
 @property (nonatomic, weak) id <JYRecoverTableViewCellDelegate> delegate;
+@property (nonatomic, strong) JYICloudFileModel *fileModel;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -161,7 +161,7 @@
         NSError *error = nil;
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:iCloudModel requiringSecureCoding:YES error:&error];
         if ([[iCloud sharedCloud] checkCloudAvailability]) {
-            [[iCloud sharedCloud] saveAndCloseDocumentWithName:[NSString stringWithFormat:@"%@%@%ld%@", iCloudModel.dateString, @"/", count, @".semo"] withContent:data completion:^(UIDocument *cloudDocument, NSData *documentData, NSError *error) {
+            [[iCloud sharedCloud] saveAndCloseDocumentWithName:[NSString stringWithFormat:@"%@%@%ld", iCloudModel.dateString, @"_semo_", count] withContent:data completion:^(UIDocument *cloudDocument, NSData *documentData, NSError *error) {
                 [hud hideAnimated:YES];
             }];
         } else {

@@ -10,8 +10,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JYICloudFileModel : NSObject
-@property (nonatomic, strong) NSString *name;
+@property (nonatomic, assign) NSInteger index;
+@property (nonatomic, strong) NSString *time;
 @property (nonatomic, assign) NSInteger moodCount;
+@property (nonatomic, strong) NSString *fileName;
+@property (nonatomic, assign) BOOL selected;
 @end
 
 NS_ASSUME_NONNULL_END
