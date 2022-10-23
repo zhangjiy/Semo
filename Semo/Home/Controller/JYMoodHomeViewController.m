@@ -20,6 +20,7 @@
 @interface JYMoodHomeViewController () <JYHomeTopViewDelegate, JYRecordMoodViewControllerDelegate, JYDetailMoodViewControllerDelegate, JYMonthCalendarViewDelegate, JYCircleMenuViewDelegate, UIViewControllerTransitioningDelegate>
 @property (nonatomic, strong) JYHomeTopView *topView;
 @property (nonatomic, strong) id <JYMonthCalendarViewManagerProtocol> calendarViewManager;
+@property (nonatomic, strong) NSString *selectedDayName;
 @end
 
 @implementation JYMoodHomeViewController
@@ -92,20 +93,13 @@
 }
 
 - (void)plusControlAction:(UIControl *)sender {
-//    [self presentRecordMoodViewController:self.calendarViewManager.todayName];
+
 }
 
 - (void)plusButtonAction:(UIButton *)sender {
+    self.selectedDayName = self.calendarViewManager.todayName;
     [self showSelectMoodMenuView];
-//    NSString *className = [NSString stringWithFormat:@"CE%@AnimationController", @"Crossfade"];
-//    id transitionInstance = [[NSClassFromString(className) alloc] init];
-//
-//    AppDelegateAccessor.settingsAnimationController = transitionInstance;
-//    JYMoodSelectViewController *vc = [[JYMoodSelectViewController alloc] init];
-//    vc.modalPresentationStyle = UIModalPresentationFullScreen;
-//    vc.transitioningDelegate = self;
-//    [self presentViewController:vc animated:YES completion:nil];
-//    [self presentRecordMoodViewController:self.calendarViewManager.todayName];
+
 }
 
 #pragma -- mark -- JYHomeTopViewDelegate
@@ -145,7 +139,7 @@
 
 - (void)circleMenuView:(JYCircleMenuView *)circleMenu buttonDidSelected:(UIButton *)button atIndex:(NSInteger)atIndex {
     
-    [self presentRecordMoodViewController:self.calendarViewManager.todayName moodText:button.titleLabel.text];
+    [self presentRecordMoodViewController:self.selectedDayName moodText:button.titleLabel.text];
 }
 
 - (void)circleMenuViewCollapsed:(JYCircleMenuView *)circleMenu {
@@ -168,7 +162,8 @@
 
 - (void)monthCalendarViewManager:(id <JYMonthCalendarViewManagerProtocol>)manager didSelectItemAtIndexPath:(NSString *)dayName jumpType:(JYMonthCalendarJumpType)jumpType {
     if (jumpType == JYMonthCalendarJumpTypeRecord) {
-        [self presentRecordMoodViewController:dayName moodText:nil];
+        self.selectedDayName = dayName;
+        [self showSelectMoodMenuView];
     } else if (jumpType == JYMonthCalendarJumpTypeDetail) {
         JYMoodMonthDate *monthDate = self.calendarViewManager.currentMonth;
         JYDayMood * dayMood = [monthDate.monthMood.dayMoodDict valueForKey:dayName];
@@ -224,7 +219,6 @@
 #pragma mark - JYDetailMoodViewControllerDelegate
 
 - (void)detailMoodViewController:(JYDetailMoodViewController *)controller didSelectItem:(JYMood *)item {
-    //[self presentRecordMoodViewController:item. moodText:button.titleLabel.text];
 }
 
 @end

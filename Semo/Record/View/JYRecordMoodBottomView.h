@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JYRecordMoodBottomView : UIView
 @property (nonatomic, weak) id <JYRecordMoodBottomViewDelegate> delegate;
-@property (nonatomic, assign, readonly) NSInteger index;
+@property (nonatomic, assign) NSInteger index;
 - (void)updateViewWithModel:(JYPainting *)model;
 @end
 

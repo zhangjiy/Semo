@@ -85,6 +85,10 @@
     return self.moodListView.index;
 }
 
+- (void)setIndex:(NSInteger)index {
+    self.moodListView.index = index;
+}
+
 #pragma -- mark -- JYRecordPaintingListViewDelegate
 
 - (void)recordMoodBottomView:(JYRecordMoodBottomView *)bottomView didSelectPaintingItem:(JYPaintingItem *)item {

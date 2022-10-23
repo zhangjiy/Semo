@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JYRecordMoodListView : UIView
 @property (nonatomic, weak) id <JYRecordMoodListViewDelegate> delegate;
-@property (nonatomic, assign, readonly) NSUInteger  index;
+@property (nonatomic, assign) NSUInteger  index;
 @end
 
 NS_ASSUME_NONNULL_END

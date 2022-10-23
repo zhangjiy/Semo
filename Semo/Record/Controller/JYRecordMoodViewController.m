@@ -27,7 +27,6 @@
     if (self = [super init]) {
         self.dayMood = dayMood;
         self.moodText = moodText;
-        
     }
     
     return self;
@@ -38,6 +37,17 @@
     [self setupConfig];
     [self initSubviews];
     self.recordManager.text = self.moodText;
+    self.recordManager.index = [self indexFromMoodText:self.moodText];
+}
+
+- (NSInteger)indexFromMoodText:(NSString *)text {
+    for (NSString *mood in RecordMoods) {
+        if ([text isEqualToString:mood]) {
+            return [RecordMoods indexOfObject:mood];
+        }
+    }
+    
+    return 0;
 }
 
 - (void)setupConfig {

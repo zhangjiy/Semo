@@ -13,7 +13,6 @@
 @interface JYRecordMoodListView () <UICollectionViewDelegate, UICollectionViewDataSource, JYRecordMoodListCollectionViewCellDelegate>
 @property (nonatomic, strong) MBSwitch * customSwitch;
 @property (nonatomic, strong) UICollectionView * collectionView;
-@property (nonatomic, assign) NSUInteger index;
 
 @end
 
@@ -79,6 +78,7 @@
 - (void)setIndex:(NSUInteger)index {
     if (_index != index) {
         _index = index;
+        [self.collectionView reloadData];
     }
 }
 

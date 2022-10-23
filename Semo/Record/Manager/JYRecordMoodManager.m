@@ -139,6 +139,10 @@
     return self.bottomView.index;
 }
 
+- (void)setIndex:(NSInteger)index {
+    self.bottomView.index = index;
+}
+
 #pragma -- mark -- JYRecordMoodBottomViewDelegate
 
 - (void)recordMoodBottomView:(JYRecordMoodBottomView *)bottomView didSelectPaintingItem:(JYPaintingItem *)item {
