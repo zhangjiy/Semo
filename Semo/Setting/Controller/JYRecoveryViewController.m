@@ -152,11 +152,35 @@ static NSString *const kJYRecoveryTableViewCell = @"kJYRecoveryTableViewCell";
         return;
     }
     JYICloudFileModel *fileModel = self.moods[self.selectedIndexPath.row];
+    __weak typeof(self) weakSelf = self;
     [[iCloud sharedCloud] retrieveCloudDocumentWithName:fileModel.fileName completion:^(UIDocument *cloudDocument, NSData *documentData, NSError *error) {
-        NSError *arerror = nil;
-        [NSKeyedUnarchiver unarchivedObjectOfClass:JYICloudModel.class fromData:documentData error:&arerror];
-        [hud hideAnimated:YES];
+        [hud showAnimated:YES];
+        hud.mode = MBProgressHUDModeText;
+        if (error) {
+            hud.label.text = NSLocalizedString(@"失败", nil);
+        } else {
+            __strong typeof(self) strongSelf = weakSelf;
+            NSError *arerror = nil;
+            JYICloudModel * cloudModel = [NSKeyedUnarchiver unarchivedObjectOfClass:JYICloudModel.class fromData:documentData error:&arerror];
+            [strongSelf recoverCloudData:cloudModel];
+            hud.label.text = NSLocalizedString(@"成功, 需要重启应用", nil);;
+        }
+        [hud hideAnimated:YES afterDelay:2.f];
     }];
+}
+
+- (void)recoverCloudData:(JYICloudModel *)cloud {
+    NSData *jsonData = [cloud.jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSArray *array = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+    for (NSDictionary *dict in array) {
+        NSString *name = [dict valueForKey:@"BG_name"];
+        NSArray *arr = [name componentsSeparatedByString:@"_"];
+        if (arr.firstObject) {
+            NSString *tableName = [NSString stringWithFormat:@"%@_%@", @"TableName", arr.firstObject];
+            JYMonthMood *monthMood =  [BGTool objectFromJsonStringWithTableName:tableName class:[JYMonthMood class] valueDict:dict];
+            [monthMood bg_saveOrUpdate];
+        }
+    }
 }
 
 - (void)closeButtonAction:(UIButton *)sender {
