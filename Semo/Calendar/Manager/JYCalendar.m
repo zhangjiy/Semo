@@ -107,6 +107,8 @@
         if (!_minimumDate || !_maximumDate) {
             return;
         }
+        _currentPage = [self monthFromDate:date] - 1;
+        
         if ([self.delegate respondsToSelector:@selector(calendar:scrollToDate:animated:)]) {
             [self.delegate calendar:self scrollToDate:date animated:animated];
         }
@@ -136,6 +138,13 @@
     NSCalendar *calender = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDate *mDate = [calender dateByAddingComponents:comps toDate:date options:0];
     return mDate;
+}
+
+- (NSInteger)monthFromDate:(id <JYMoodDate>)date {
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:NSCalendarUnitMonth fromDate:date.date];
+    NSInteger month = [components month];
+    return month;
 }
 
 @end
