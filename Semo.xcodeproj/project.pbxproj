@@ -47,6 +47,7 @@
 		B448899C27FD3ADC007BD0FA /* JYMonthMood.m in Sources */ = {isa = PBXBuildFile; fileRef = B448899B27FD3ADC007BD0FA /* JYMonthMood.m */; };
 		B44DF49028FB078900788EEE /* JYICloudModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B44DF48F28FB078900788EEE /* JYICloudModel.m */; };
 		B44DF49528FD065E00788EEE /* JYICloudFileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B44DF49428FD065D00788EEE /* JYICloudFileModel.m */; };
+		B450F19C290D4DA800B45BF9 /* JYRecordMood.m in Sources */ = {isa = PBXBuildFile; fileRef = B450F19B290D4DA800B45BF9 /* JYRecordMood.m */; };
 		B4609CB727E995BF009BC2A5 /* JYPopupMenuOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CB627E995BF009BC2A5 /* JYPopupMenuOverlayView.m */; };
 		B4609CCD27EAB0AE009BC2A5 /* JYMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CCC27EAB0AE009BC2A5 /* JYMenu.m */; };
 		B4609CD227EAE62F009BC2A5 /* UIImageView+CornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = B4609CD127EAE62F009BC2A5 /* UIImageView+CornerRadius.m */; };
@@ -297,6 +298,8 @@
 		B44DF48F28FB078900788EEE /* JYICloudModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYICloudModel.m; sourceTree = "<group>"; };
 		B44DF49328FD065D00788EEE /* JYICloudFileModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYICloudFileModel.h; sourceTree = "<group>"; };
 		B44DF49428FD065D00788EEE /* JYICloudFileModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYICloudFileModel.m; sourceTree = "<group>"; };
+		B450F19A290D4DA800B45BF9 /* JYRecordMood.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYRecordMood.h; sourceTree = "<group>"; };
+		B450F19B290D4DA800B45BF9 /* JYRecordMood.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYRecordMood.m; sourceTree = "<group>"; };
 		B4609CB427E99167009BC2A5 /* JYPopupMenuListDataProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuListDataProtocol.h; sourceTree = "<group>"; };
 		B4609CB527E995BF009BC2A5 /* JYPopupMenuOverlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYPopupMenuOverlayView.h; sourceTree = "<group>"; };
 		B4609CB627E995BF009BC2A5 /* JYPopupMenuOverlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYPopupMenuOverlayView.m; sourceTree = "<group>"; };
@@ -870,6 +873,8 @@
 				B4609CCC27EAB0AE009BC2A5 /* JYMenu.m */,
 				B42209D0280E7C3100A2D68F /* JYMenuLocal.h */,
 				B42209D1280E7C3100A2D68F /* JYMenuLocal.m */,
+				B450F19A290D4DA800B45BF9 /* JYRecordMood.h */,
+				B450F19B290D4DA800B45BF9 /* JYRecordMood.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1703,6 +1708,7 @@
 				B4AD4C2D285755020032FF6D /* JYViewController.m in Sources */,
 				B4E7FA7A27F6C42D00604F5E /* ZHDrawingTrapezoidLayer.m in Sources */,
 				B490453627F00EEF005A265A /* JYPopupStyleMenuCollectionViewCell.m in Sources */,
+				B450F19C290D4DA800B45BF9 /* JYRecordMood.m in Sources */,
 				B4D9640E2817A66000FBE518 /* JYSettingViewController.m in Sources */,
 				B4AD4C1B285737700032FF6D /* JYPlaceholderTextView.m in Sources */,
 				B4E522022803C55600492B5E /* JYYearCalendarCollectionViewCell.m in Sources */,

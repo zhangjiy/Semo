@@ -8,12 +8,13 @@
 #import "JYRecordMoodListView.h"
 #import "MBSwitch.h"
 #import "JYRecordMoodListCollectionViewCell.h"
+#import "JYRecordMood.h"
 #import "JYPrefixHeader.h"
 
 @interface JYRecordMoodListView () <UICollectionViewDelegate, UICollectionViewDataSource, JYRecordMoodListCollectionViewCellDelegate>
 @property (nonatomic, strong) MBSwitch * customSwitch;
 @property (nonatomic, strong) UICollectionView * collectionView;
-
+@property (nonatomic, strong) NSArray * recordMoods;
 @end
 
 @implementation JYRecordMoodListView
@@ -21,6 +22,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.index = -1;
+        self.recordMoods = JYRecordMoods();
         [self initSubViews];
     }
     return self;
@@ -94,17 +96,15 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return RecordMoods.count;
+    return self.recordMoods.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     JYRecordMoodListCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     cell.delegate = self;
-    NSString *text = RecordMoods[indexPath.row];
-    UIColor *color = MoodColors[indexPath.row];
-    cell.text = text;
-    cell.color = color;
-    cell.isSelected = indexPath.row == self.index ? YES : NO;
+    JYRecordMood *recordMood = self.recordMoods[indexPath.row];
+    recordMood.isSelected = indexPath.row == self.index ? YES : NO;
+    cell.recordMood = recordMood;
     return cell;
 }
 
@@ -114,7 +114,7 @@
 }
 
 - (CGFloat)itemWidth {
-    CGFloat width = (self.width - self.collectionView.contentInset.left * 2) / (float)RecordMoods.count;
+    CGFloat width = (self.width - self.collectionView.contentInset.left * 2) / (float)self.recordMoods.count;
     return width;
 }
 
@@ -124,17 +124,21 @@
     
     self.index = indexPath.row;
     [self.collectionView reloadData];
-    NSString *text = RecordMoods[indexPath.row];
+    JYRecordMood *recordMood = [self.recordMoods objectAtIndex:indexPath.row];
     if ([self.delegate respondsToSelector:@selector(recordMoodListView:didSelectItem:)]) {
-        [self.delegate recordMoodListView:self didSelectItem:text];
+        [self.delegate recordMoodListView:self didSelectItem:recordMood.text];
     }
 }
 
 - (void)recordMoodListCollectionViewCell:(JYRecordMoodListCollectionViewCell *)cell didLongPress:(UIGestureRecognizer *)gesture {
-    self.index = -1;
-    [self.collectionView reloadData];
-    if ([self.delegate respondsToSelector:@selector(recordMoodListView:didSelectItem:)]) {
-        [self.delegate recordMoodListView:self didSelectItem:nil];
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+    if (indexPath.row == self.index) {
+        JYRecordMood *recordMood = [self.recordMoods objectAtIndex:self.index];
+        recordMood.hiddenText = !recordMood.hiddenText;
+        [self.collectionView reloadData];
+        if ([self.delegate respondsToSelector:@selector(recordMoodListView:didSelectItem:)]) {
+            [self.delegate recordMoodListView:self didSelectItem:recordMood.text];
+        }
     }
 }
 

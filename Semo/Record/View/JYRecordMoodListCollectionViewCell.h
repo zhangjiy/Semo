@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JYRecordMood.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,9 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface JYRecordMoodListCollectionViewCell : UICollectionViewCell
-@property (nonatomic, strong) NSString * text;
-@property (nonatomic, strong) UIColor * color;
-@property (nonatomic, assign) BOOL isSelected;
+@property (nonatomic, strong) JYRecordMood * recordMood;
 @property (nonatomic, weak) id <JYRecordMoodListCollectionViewCellDelegate> delegate;
 @end
 

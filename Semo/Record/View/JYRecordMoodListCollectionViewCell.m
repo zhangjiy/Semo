@@ -67,30 +67,18 @@
     return _textLabel;
 }
 
-- (void)setText:(NSString *)text {
-    if (_text != text) {
-        _text = text;
-        self.textLabel.text = text;
-    }
-}
-
-- (void)setColor:(UIColor *)color {
-    if (_color != color) {
-        _color = color;
-        self.textLabel.backgroundColor = color;
-    }
-}
-
-- (void)setIsSelected:(BOOL)isSelected {
-    if (_isSelected != isSelected) {
-        _isSelected = isSelected;
-        _selectedView.hidden = isSelected ? NO : YES;
-    }
+- (void)setRecordMood:(JYRecordMood *)recordMood {
+    _recordMood = recordMood;
+    self.textLabel.text = recordMood.hiddenText ? @"" : recordMood.text;
+    self.textLabel.backgroundColor = recordMood.color;
+    self.selectedView.hidden = recordMood.isSelected ? NO : YES;
 }
 
 - (void)longPress:(UIGestureRecognizer *)gesture {
-    if ([self.delegate respondsToSelector:@selector(recordMoodListCollectionViewCell:didLongPress:)]) {
-        [self.delegate recordMoodListCollectionViewCell:self didLongPress:gesture];
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        if ([self.delegate respondsToSelector:@selector(recordMoodListCollectionViewCell:didLongPress:)]) {
+            [self.delegate recordMoodListCollectionViewCell:self didLongPress:gesture];
+        }
     }
 }
 
